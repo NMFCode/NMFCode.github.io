@@ -24,7 +24,7 @@ class Program
     }
 ```
 
-Next, we need to consider how the initialization should look. In our example, this will take place in the class constructor.
+Next, we need to consider how the initialization should look like. In our example, this will take place in the class constructor.
 
 ```csharp
 public Program()
