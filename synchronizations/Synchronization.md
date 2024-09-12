@@ -45,8 +45,8 @@ public Program()
             familyRootModel.RootElements.Add(familyRegister);
             personRootModel.RootElements.Add(personRegister);
 
-            repository.Models.Add(new Uri("ttc:source"), familyRootModel);
-            repository.Models.Add(new Uri("ttc:target"), personRootModel);
+            repository.Models.Add(new Uri("example/Uri"), familyRootModel);
+            repository.Models.Add(new Uri("example/URI"), personRootModel);
         }
 ```
 
@@ -80,6 +80,7 @@ Synchronization Direction:
 Change Propagation Mode:
     The change propagation mode is set to TwoWay, indicating bidirectional synchronization.
     Changes can propagate in both directions, allowing both models to react to each other's updates.
+The idea is that you declare that these two model elements are corresponding to each other
 
 
 ```csharp
@@ -153,8 +154,7 @@ public class FamilyRegisterToPersonRegister : SynchronizationRule<FamilyRegister
             }
         }
 ```
-This method named [SynchronizeMany](../synchronizations/api/NMF.Synchronizations.SynchronizationRuleBase.yml) facilitates bidirectional synchronization, implying that the method itself defines a dependency between both models. It synchronizes dependent elements using a synchronization rule, accepting a rule, left and right selectors in the model, and the types of dependent elements. Then, it initiates synchronization using the provided parameters.
-
+This method named [SynchronizeMany](../synchronizations/api/NMF.Synchronizations.SynchronizationRuleBase.yml) facilitates bidirectional synchronization, implying that the method itself defines a dependency between both models. It synchronizes dependent elements using a synchronization rule, accepting a rule, left and right selectors in the model, and the types of dependent elements. Then, it initiates synchronization using the provided parameters. It is a synchronization block, consisting of two lenses and a reference to a synchronization rule.
 
 ```csharp
 public class MemberToMember : SynchronizationRule<IFamilyMember, IPerson>
@@ -173,7 +173,7 @@ In this example, people and family members are being synchronized. The synchroni
 
 **Note:**
 
-At this point, it can be added that when synchronizing between a family and a person register that are already populated, the collision rule applies. For example, there is a man named Smith who marries a woman named Muster. As a result, the woman appears as Smith in the family register and as Muster in the person register. This leads to a collision, and the left side (family register) wins, so the woman's name in the person register is changed to Smith.
+At this point, it can be added that when synchronizing between a family and a person register that are already populated, the collision rule applies. For example, there is a man named Smith who marries a woman named Muster. As a result, the woman appears as Smith in the family register and as Muster in the person register. This leads to a collision, and the left side (family register) wins, so the woman's name in the person register is changed to Smith. This is only important for the initial synchronization.
 
 </aside>
 
@@ -199,7 +199,7 @@ This expression defines a static field `fullName` of type `ObservingFunc<IFamily
 [ObservableProxy(typeof(Helpers), "GetFullNameInc")] // connected with INotifyValue
 ```   
 `ObservableProxy`:
-    The annotations indicate that the `fullName` variable is constantly observed. This means that through the `GetFullNameInc` function with the parameter type `INotifyValue`, the `fullName` of the family member is continuously monitored. Upon any changes, the family member is notified, and the changes are propagated in real-time.
+    The annotations indicate that the `fullName` variable is constantly observed. This means that through the `GetFullNameInc` function with the parameter type `INotifyValue`, the `fullName` of the family member is continuously monitored. Upon any changes, the family member is notified, and the changes are propagated.
 `LensPut`:
     `LensPut` ensures that the `SetFullName` method is always executed whenever the `GetFullName` method is used.
 
@@ -218,6 +218,6 @@ public static void SetFullName(this IFamilyMember member, string newName)
     }
 }
 ```
-The `SetFullName` method is an extension method designed for objects implementing the `IFamilyMember` interface. When invoked, it first retrieves the associated family of the member. Assuming the full name is structured as "Last Name, First Name", it parses the `newName` parameter to extract the last and first names accordingly. Subsequently, it updates the member's Name property with the extracted first name. Additionally, if the associated family exists and its name differs from the extracted last name, it determines the member's gender based on familial relationships and adds the member to the family's collection, specifying the gender and the extracted last name. This method effectively manages the synchronization of the full name and family association of a family member.
+The `SetFullName` method is an extension method designed for objects implementing the `IFamilyMember` interface. When invoked, it first retrieves the associated family of the member. Assuming the full name is structured as "Last Name, First Name", it parses the `newName` parameter to extract the last and first names accordingly. Subsequently, it updates the member's Name property with the extracted first name. Additionally, if the associated family exists and its name differs from the extracted last name, it determines the member's gender based on familial relationships and adds the member to the family's collection, specifying the gender and the extracted last name. This method effectively manages the synchronization of the full name and family association of a family member. Since SetFullName is defined as LensPut, it is essentially the method used to overwrite the result of GetFullName.
 
 ## Github Tutorial: [here](https://github.com/Cemtk6246/Family2Person)
