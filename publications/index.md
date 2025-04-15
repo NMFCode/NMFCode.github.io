@@ -13,4 +13,4 @@ There have been a range of publications on NMF or parts of it. If you want to ci
 }
 ```
 
-Would you like your paper listed here on the website since it is using NMF? Please just submit a PR to [the website sources](https://github.com/NMFCode/NMFdocs) or write an email to [Georg Hinkel](mailto:georg.hinkel@gmail.com).
+Would you like your paper listed here on the website since it is using NMF? Please just submit a PR to [the website sources](https://github.com/NMFCode/NMFdocs) or write an email to [Georg Hinkel](mailto:georg.hinkel@hs-rm.de).
