@@ -16,14 +16,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IdentifierScopeExtensions.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IdentifierScopeExtensions
     path: src/Models/Models/Meta/IdentifierScopeExtensions.cs
-    startLine: 7
+    startLine: 5
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes extension method for identifier scopes
+  example: []
   syntax:
     content: public static class IdentifierScopeExtensions
     content.vb: Public Module IdentifierScopeExtensions
@@ -52,23 +54,28 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IdentifierScopeExtensions.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetActual
     path: src/Models/Models/Meta/IdentifierScopeExtensions.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Gets the actual identifier scope
+  example: []
   syntax:
     content: public static IdentifierScope GetActual(this IdentifierScope current, IdentifierScope inherited)
     parameters:
     - id: current
       type: NMF.Models.Meta.IdentifierScope
+      description: The identifier scope declared
     - id: inherited
       type: NMF.Models.Meta.IdentifierScope
+      description: The inherited identifier scope
     return:
       type: NMF.Models.Meta.IdentifierScope
+      description: The actual identifier scope
     content.vb: Public Shared Function GetActual(current As IdentifierScope, inherited As IdentifierScope) As IdentifierScope
   overload: NMF.Models.Meta.IdentifierScopeExtensions.GetActual*
 references:

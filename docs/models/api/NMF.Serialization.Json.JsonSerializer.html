@@ -1,0 +1,972 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class JsonSerializer </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class JsonSerializer ">
+    
+    <meta name="description" content="Denotes a Json Serializer based on System.Text.Json">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NMF.Serialization.Json.JsonSerializer">
+
+
+
+  <h1 id="NMF_Serialization_Json_JsonSerializer" data-uid="NMF.Serialization.Json.JsonSerializer" class="text-break">Class JsonSerializer</h1>
+  <div class="markdown level0 summary"><p>Denotes a Json Serializer based on System.Text.Json</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="NMF.Serialization.Serializer.html">Serializer</a></div>
+    <div class="level2"><span class="xref">JsonSerializer</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_SelectRoot_System_Object_System_Boolean_">Serializer.SelectRoot(object, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateSerializationContext_System_Object_">Serializer.CreateSerializationContext(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_Settings">Serializer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_KnownTypes">Serializer.KnownTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_System_String_">Serializer.RegisterNamespace(ITypeSerializationInfo, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetTypeInfo_System_String_System_String_">Serializer.GetTypeInfo(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateTypeSerializationInfoFor_System_Type_">Serializer.CreateTypeSerializationInfoFor(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_InitializeTypeSerializationInfo_System_Type_NMF_Serialization_ITypeSerializationInfo_">Serializer.InitializeTypeSerializationInfo(Type, ITypeSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConvertString_System_String_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlSerializationContext_">Serializer.ConvertString(string, IPropertySerializationInfo, XmlSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetAttributeValue_System_Object_NMF_Serialization_ITypeSerializationInfo_System_Boolean_NMF_Serialization_XmlSerializationContext_">Serializer.GetAttributeValue(object, ITypeSerializationInfo, bool, XmlSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnConverterException_NMF_Serialization_ConverterExceptionEventArgs_">Serializer.OnConverterException(ConverterExceptionEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_">Serializer.HandleUnknownType(IPropertySerializationInfo, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_">Serializer.OnUnknownElement(UnknownElementEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_">Serializer.OnUnknownAttribute(UnknownAttributeEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_">Serializer.OnUnknownType(UnknownTypeEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownElement">Serializer.UnknownElement</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownAttribute">Serializer.UnknownAttribute</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownType">Serializer.UnknownType</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConverterException">Serializer.ConverterException</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfoForInstance_System_Object_System_Boolean_">Serializer.GetSerializationInfoForInstance(object, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfo_System_Type_System_Boolean_">Serializer.GetSerializationInfo(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateAddToPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_">Serializer.CreateAddToPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateSetPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_">Serializer.CreateSetPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Serialization.html">Serialization</a>.<a class="xref" href="NMF.Serialization.Json.html">Json</a></h6>
+  <h6><strong>Assembly</strong>: NMF.Serialization.Json.dll</h6>
+  <h5 id="NMF_Serialization_Json_JsonSerializer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JsonSerializer : Serializer</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer__ctor.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L18">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer__ctor_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer__ctor" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor">JsonSerializer()</h4>
+  <div class="markdown level1 summary"><p>Creates a new model serializer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_Serializer_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.%23ctor(NMF.Serialization.Serializer)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L30">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer__ctor_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_Serializer_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor(NMF.Serialization.Serializer)">JsonSerializer(Serializer)</h4>
+  <div class="markdown level1 summary"><p>Creates a new serializer and copies settings and known types from the given serializer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer(Serializer parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Serializer.html">Serializer</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>An XML serializer to copy settings and known type information from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_Serializer_NMF_Serialization_XmlSerializationSettings_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.%23ctor(NMF.Serialization.Serializer%2CNMF.Serialization.XmlSerializationSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L37">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer__ctor_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_Serializer_NMF_Serialization_XmlSerializationSettings_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor(NMF.Serialization.Serializer,NMF.Serialization.XmlSerializationSettings)">JsonSerializer(Serializer, XmlSerializationSettings)</h4>
+  <div class="markdown level1 summary"><p>Creates a new serializer and copies settings and known types from the given serializer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer(Serializer parent, XmlSerializationSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Serializer.html">Serializer</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>An XML serializer to copy settings and known type information from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationSettings.html">XmlSerializationSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The serialization settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_XmlSerializationSettings_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.%23ctor(NMF.Serialization.XmlSerializationSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L24">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer__ctor_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_XmlSerializationSettings_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor(NMF.Serialization.XmlSerializationSettings)">JsonSerializer(XmlSerializationSettings)</h4>
+  <div class="markdown level1 summary"><p>Creates a new model serializer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer(XmlSerializationSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationSettings.html">XmlSerializationSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The serialization settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_XmlSerializationSettings_System_Collections_Generic_IEnumerable_System_Type__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.%23ctor(NMF.Serialization.XmlSerializationSettings%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L44">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer__ctor_" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer__ctor_NMF_Serialization_XmlSerializationSettings_System_Collections_Generic_IEnumerable_System_Type__" data-uid="NMF.Serialization.Json.JsonSerializer.#ctor(NMF.Serialization.XmlSerializationSettings,System.Collections.Generic.IEnumerable{System.Type})">JsonSerializer(XmlSerializationSettings, IEnumerable&lt;Type&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new serializer and copies settings and known types from the given serializer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonSerializer(XmlSerializationSettings settings, IEnumerable&lt;Type&gt; knownTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationSettings.html">XmlSerializationSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The serialization settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td><span class="parametername">knownTypes</span></td>
+        <td><p>A collection of known types</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_CreateObject_NMF_Serialization_Json_Utf8JsonStreamReader__NMF_Serialization_ITypeSerializationInfo__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.CreateObject(NMF.Serialization.Json.Utf8JsonStreamReader%40%2CNMF.Serialization.ITypeSerializationInfo%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L307">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_CreateObject_" data-uid="NMF.Serialization.Json.JsonSerializer.CreateObject*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_CreateObject_NMF_Serialization_Json_Utf8JsonStreamReader__NMF_Serialization_ITypeSerializationInfo__" data-uid="NMF.Serialization.Json.JsonSerializer.CreateObject(NMF.Serialization.Json.Utf8JsonStreamReader@,NMF.Serialization.ITypeSerializationInfo@)">CreateObject(ref Utf8JsonStreamReader, ref ITypeSerializationInfo)</h4>
+  <div class="markdown level1 summary"><p>Creates the output object for the given reader position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected object CreateObject(ref Utf8JsonStreamReader reader, ref ITypeSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Json.Utf8JsonStreamReader.html">Utf8JsonStreamReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>the JSON reader with the current position</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>the type info</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><p>the created object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_Deserialize_NMF_Serialization_Json_Utf8JsonStreamReader__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.Deserialize(NMF.Serialization.Json.Utf8JsonStreamReader%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L267">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_Deserialize_" data-uid="NMF.Serialization.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_Deserialize_NMF_Serialization_Json_Utf8JsonStreamReader__" data-uid="NMF.Serialization.Json.JsonSerializer.Deserialize(NMF.Serialization.Json.Utf8JsonStreamReader@)">Deserialize(ref Utf8JsonStreamReader)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the contents from the given reader</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Deserialize(ref Utf8JsonStreamReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Json.Utf8JsonStreamReader.html">Utf8JsonStreamReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>the JSON reader to read from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><p>the object contained in the JSON format</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_Deserialize_NMF_Serialization_Json_Utf8JsonStreamReader__System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.Deserialize(NMF.Serialization.Json.Utf8JsonStreamReader%40%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L278">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_Deserialize_" data-uid="NMF.Serialization.Json.JsonSerializer.Deserialize*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_Deserialize_NMF_Serialization_Json_Utf8JsonStreamReader__System_Boolean_" data-uid="NMF.Serialization.Json.JsonSerializer.Deserialize(NMF.Serialization.Json.Utf8JsonStreamReader@,System.Boolean)">Deserialize(ref Utf8JsonStreamReader, bool)</h4>
+  <div class="markdown level1 summary"><p>Deserializes the contents from the given reader</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Deserialize(ref Utf8JsonStreamReader reader, bool fragment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Json.Utf8JsonStreamReader.html">Utf8JsonStreamReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>the JSON reader to read from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">fragment</span></td>
+        <td><p>true, if the stream contains a fragment, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><p>the object contained in the JSON format</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_Initialize_NMF_Serialization_Json_Utf8JsonStreamReader__NMF_Serialization_XmlSerializationContext_System_Object_NMF_Serialization_ITypeSerializationInfo_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.Initialize(NMF.Serialization.Json.Utf8JsonStreamReader%40%2CNMF.Serialization.XmlSerializationContext%2CSystem.Object%2CNMF.Serialization.ITypeSerializationInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L347">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_Initialize_" data-uid="NMF.Serialization.Json.JsonSerializer.Initialize*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_Initialize_NMF_Serialization_Json_Utf8JsonStreamReader__NMF_Serialization_XmlSerializationContext_System_Object_NMF_Serialization_ITypeSerializationInfo_" data-uid="NMF.Serialization.Json.JsonSerializer.Initialize(NMF.Serialization.Json.Utf8JsonStreamReader@,NMF.Serialization.XmlSerializationContext,System.Object,NMF.Serialization.ITypeSerializationInfo)">Initialize(ref Utf8JsonStreamReader, XmlSerializationContext, object, ITypeSerializationInfo)</h4>
+  <div class="markdown level1 summary"><p>Initializes the provided object given the reader position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Initialize(ref Utf8JsonStreamReader reader, XmlSerializationContext context, object deserialized, ITypeSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Json.Utf8JsonStreamReader.html">Utf8JsonStreamReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>the JSON reader</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>the serialization context</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">deserialized</span></td>
+        <td><p>the deserialized object that should be initialized</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>the type information for the object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_OverrideIdentifiedObject_System_Object_NMF_Serialization_Json_Utf8JsonStreamReader_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.OverrideIdentifiedObject(System.Object%2CNMF.Serialization.Json.Utf8JsonStreamReader%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L461">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_OverrideIdentifiedObject_" data-uid="NMF.Serialization.Json.JsonSerializer.OverrideIdentifiedObject*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_OverrideIdentifiedObject_System_Object_NMF_Serialization_Json_Utf8JsonStreamReader_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.Json.JsonSerializer.OverrideIdentifiedObject(System.Object,NMF.Serialization.Json.Utf8JsonStreamReader,NMF.Serialization.XmlSerializationContext)">OverrideIdentifiedObject(object, Utf8JsonStreamReader, XmlSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the already identified element should be overridden</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool OverrideIdentifiedObject(object obj, Utf8JsonStreamReader reader, XmlSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object that would be overridden</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.Json.Utf8JsonStreamReader.html">Utf8JsonStreamReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The current reader position</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true, if the element shall be overridden, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_Serialize_System_Object_System_Text_Json_Utf8JsonWriter_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlIdentificationMode_NMF_Serialization_XmlSerializationContext_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.Serialize(System.Object%2CSystem.Text.Json.Utf8JsonWriter%2CNMF.Serialization.IPropertySerializationInfo%2CNMF.Serialization.XmlIdentificationMode%2CNMF.Serialization.XmlSerializationContext%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L73">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_Serialize_" data-uid="NMF.Serialization.Json.JsonSerializer.Serialize*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_Serialize_System_Object_System_Text_Json_Utf8JsonWriter_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlIdentificationMode_NMF_Serialization_XmlSerializationContext_System_Boolean_" data-uid="NMF.Serialization.Json.JsonSerializer.Serialize(System.Object,System.Text.Json.Utf8JsonWriter,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlIdentificationMode,NMF.Serialization.XmlSerializationContext,System.Boolean)">Serialize(object, Utf8JsonWriter, IPropertySerializationInfo, XmlIdentificationMode, XmlSerializationContext, bool)</h4>
+  <div class="markdown level1 summary"><p>Serializes the given object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Serialize(object obj, Utf8JsonWriter writer, IPropertySerializationInfo property, XmlIdentificationMode identificationMode, XmlSerializationContext context, bool shallow = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object to be serialized</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter">Utf8JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The Utf8JsonWriter to write the JSON-code on</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.IPropertySerializationInfo.html">IPropertySerializationInfo</a></td>
+        <td><span class="parametername">property</span></td>
+        <td><p>The property for which the object is serialized</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlIdentificationMode.html">XmlIdentificationMode</a></td>
+        <td><span class="parametername">identificationMode</span></td>
+        <td><p>A value indicating whether it is allowed to the serializer to use identifier</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">shallow</span></td>
+        <td><p>true, if only attributes should be serialized, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NMF_Serialization_Json_JsonSerializer_Serialize_System_Object_System_Text_Json_Utf8JsonWriter_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlIdentificationMode_NMF_Serialization_XmlSerializationContext_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If a converter is provided that is able to convert the object to string and convert the string back to this object, just the string-conversion is printed out</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_Serialize_System_Object_System_Text_Json_Utf8JsonWriter_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.Serialize(System.Object%2CSystem.Text.Json.Utf8JsonWriter%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L56">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_Serialize_" data-uid="NMF.Serialization.Json.JsonSerializer.Serialize*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_Serialize_System_Object_System_Text_Json_Utf8JsonWriter_System_Boolean_System_Boolean_" data-uid="NMF.Serialization.Json.JsonSerializer.Serialize(System.Object,System.Text.Json.Utf8JsonWriter,System.Boolean,System.Boolean)">Serialize(object, Utf8JsonWriter, bool, bool)</h4>
+  <div class="markdown level1 summary"><p>Serializes the given object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Serialize(object source, Utf8JsonWriter target, bool shallow = false, bool fragment = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The object to be serialized</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter">Utf8JsonWriter</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The Utf8JsonWriter to write the JSON-code on</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">shallow</span></td>
+        <td><p>true, if only attributes should be serialized, otherwise false</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">fragment</span></td>
+        <td><p>true, if the element should be serialized as fragment</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_WriteConstructorProperties_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.WriteConstructorProperties(System.Text.Json.Utf8JsonWriter%2CSystem.Object%2CNMF.Serialization.ITypeSerializationInfo%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L128">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_WriteConstructorProperties_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteConstructorProperties*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_WriteConstructorProperties_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteConstructorProperties(System.Text.Json.Utf8JsonWriter,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)">WriteConstructorProperties(Utf8JsonWriter, object, ITypeSerializationInfo, XmlSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Writes the properties necessary for the constrctor call of this element</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteConstructorProperties(Utf8JsonWriter writer, object obj, ITypeSerializationInfo info, XmlSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter">Utf8JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The JSON writer to write to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The element</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The serialization information of the objects type</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_WriteIdentifiedObject_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_XmlIdentificationMode_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.WriteIdentifiedObject(System.Text.Json.Utf8JsonWriter%2CSystem.Object%2CNMF.Serialization.XmlIdentificationMode%2CNMF.Serialization.ITypeSerializationInfo%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L206">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_WriteIdentifiedObject_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteIdentifiedObject*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_WriteIdentifiedObject_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_XmlIdentificationMode_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteIdentifiedObject(System.Text.Json.Utf8JsonWriter,System.Object,NMF.Serialization.XmlIdentificationMode,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)">WriteIdentifiedObject(Utf8JsonWriter, object, XmlIdentificationMode, ITypeSerializationInfo, XmlSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Writes the provided identified object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool WriteIdentifiedObject(Utf8JsonWriter writer, object obj, XmlIdentificationMode identificationMode, ITypeSerializationInfo info, XmlSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter">Utf8JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The Json writer to write to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The element</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlIdentificationMode.html">XmlIdentificationMode</a></td>
+        <td><span class="parametername">identificationMode</span></td>
+        <td><p>The identification mode for the current object</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The serialization information of the objects type</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true, if the object could be written as identified object, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer_WriteProperties_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer.WriteProperties(System.Text.Json.Utf8JsonWriter%2CSystem.Object%2CNMF.Serialization.ITypeSerializationInfo%2CNMF.Serialization.XmlSerializationContext%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L145">View Source</a>
+  </span>
+  <a id="NMF_Serialization_Json_JsonSerializer_WriteProperties_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteProperties*"></a>
+  <h4 id="NMF_Serialization_Json_JsonSerializer_WriteProperties_System_Text_Json_Utf8JsonWriter_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_System_Boolean_" data-uid="NMF.Serialization.Json.JsonSerializer.WriteProperties(System.Text.Json.Utf8JsonWriter,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext,System.Boolean)">WriteProperties(Utf8JsonWriter, object, ITypeSerializationInfo, XmlSerializationContext, bool)</h4>
+  <div class="markdown level1 summary"><p>Writes the properties of the given object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteProperties(Utf8JsonWriter writer, object obj, ITypeSerializationInfo info, XmlSerializationContext context, bool shallow)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter">Utf8JsonWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The Json writer to write to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The element</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The serialization information of the objects type</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The serialization context</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">shallow</span></td>
+        <td><p>true, if only attributes should be serialized, otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_JsonSerializer.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.JsonSerializer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/JsonSerializer.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

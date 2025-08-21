@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ETypeParameter
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
@@ -95,8 +95,10 @@ items:
   - NMF.Models.ModelElement.EnforceModels
   - NMF.Models.ModelElement.PreferIdentifiers
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -164,14 +166,16 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ETypeParameter()
     content.vb: Public Sub New()
@@ -193,11 +197,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EBounds
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 60
+    startLine: 63
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -254,11 +258,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Children
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 76
+    startLine: 79
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -288,11 +292,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferencedElements
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 87
+    startLine: 90
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -322,11 +326,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 98
+    startLine: 101
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -353,11 +357,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForNonIdentifiedChild
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 135
+    startLine: 138
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -389,11 +393,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 151
+    startLine: 154
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -431,11 +435,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 172
+    startLine: 175
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -470,11 +474,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/ETypeParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Interop/EcoreInterop/Model/ETypeParameter.cs
-    startLine: 184
+    startLine: 187
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1169,37 +1173,57 @@ references:
     name: ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.eventargs
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)

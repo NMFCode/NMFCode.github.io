@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AssociationCollectionDeletionReferencedElementsCollection
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
@@ -36,13 +36,15 @@ items:
   summary: The collection class to to represent the children of the AssociationCollectionDeletion class
   example: []
   syntax:
-    content: 'public class AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection : ReferenceCollection, INotifyCollectionChanged, IDisposable, ICollectionExpression<IModelElement>, IEnumerableExpression<IModelElement>, IEnumerableExpression, ICollection<IModelElement>, IEnumerable<IModelElement>, IEnumerable'
-    content.vb: Public Class AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection Inherits ReferenceCollection Implements INotifyCollectionChanged, IDisposable, ICollectionExpression(Of IModelElement), IEnumerableExpression(Of IModelElement), IEnumerableExpression, ICollection(Of IModelElement), IEnumerable(Of IModelElement), IEnumerable
+    content: 'public class AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection : ReferenceCollection, INotifyCollectionChanged, IList, ICollection, IDisposable, ICollectionExpression<IModelElement>, IEnumerableExpression<IModelElement>, IEnumerableExpression, ICollection<IModelElement>, IEnumerable<IModelElement>, IEnumerable'
+    content.vb: Public Class AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection Inherits ReferenceCollection Implements INotifyCollectionChanged, IList, ICollection, IDisposable, ICollectionExpression(Of IModelElement), IEnumerableExpression(Of IModelElement), IEnumerableExpression, ICollection(Of IModelElement), IEnumerable(Of IModelElement), IEnumerable
   inheritance:
   - System.Object
   - NMF.Models.Collections.ReferenceCollection
   implements:
   - System.Collections.Specialized.INotifyCollectionChanged
+  - System.Collections.IList
+  - System.Collections.ICollection
   - System.IDisposable
   - NMF.Expressions.ICollectionExpression{NMF.Models.IModelElement}
   - NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
@@ -56,6 +58,7 @@ items:
   - NMF.Models.Collections.ReferenceCollection.AsNotifiable
   - NMF.Models.Collections.ReferenceCollection.PropagateCollectionChanges(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   - NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
   - NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   - NMF.Models.Collections.ReferenceCollection.Dispose
   - NMF.Models.Collections.ReferenceCollection.Dispose(System.Boolean)
@@ -80,7 +83,7 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
@@ -114,7 +117,7 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
@@ -148,14 +151,15 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AttachCore
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 235
+    startLine: 236
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
+  summary: Attaches the collection
   example: []
   syntax:
     content: protected override void AttachCore()
@@ -176,14 +180,15 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DetachCore
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 240
+    startLine: 242
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
+  summary: Detaches the collection
   example: []
   syntax:
     content: protected override void DetachCore()
@@ -204,11 +209,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 249
+    startLine: 251
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -239,11 +244,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 261
+    startLine: 263
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -270,11 +275,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 271
+    startLine: 273
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -308,11 +313,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 285
+    startLine: 287
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -349,11 +354,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 299
+    startLine: 301
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -387,11 +392,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/AssociationCollectionDeletion.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Models/Models/Changes/AssociationCollectionDeletion.cs
-    startLine: 313
+    startLine: 315
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -464,6 +469,22 @@ references:
   name: INotifyCollectionChanged
   nameWithType: INotifyCollectionChanged
   fullName: System.Collections.Specialized.INotifyCollectionChanged
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -724,6 +745,47 @@ references:
   - name: " "
   - uid: NMF.Expressions.ValueChangedEventArgs
     name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+  commentId: M:NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+  parent: NMF.Models.Collections.ReferenceCollection
+  isExternal: true
+  href: NMF.Models.Collections.ReferenceCollection.html#NMF_Models_Collections_ReferenceCollection_PropagateValueChanges_System_Object_NMF_Models_BubbledChangeEventArgs_
+  name: PropagateValueChanges(object, BubbledChangeEventArgs)
+  nameWithType: ReferenceCollection.PropagateValueChanges(object, BubbledChangeEventArgs)
+  fullName: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(object, NMF.Models.BubbledChangeEventArgs)
+  nameWithType.vb: ReferenceCollection.PropagateValueChanges(Object, BubbledChangeEventArgs)
+  fullName.vb: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(Object, NMF.Models.BubbledChangeEventArgs)
+  name.vb: PropagateValueChanges(Object, BubbledChangeEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+    name: PropagateValueChanges
+    href: NMF.Models.Collections.ReferenceCollection.html#NMF_Models_Collections_ReferenceCollection_PropagateValueChanges_System_Object_NMF_Models_BubbledChangeEventArgs_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+    href: NMF.Models.BubbledChangeEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+    name: PropagateValueChanges
+    href: NMF.Models.Collections.ReferenceCollection.html#NMF_Models_Collections_ReferenceCollection_PropagateValueChanges_System_Object_NMF_Models_BubbledChangeEventArgs_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+    href: NMF.Models.BubbledChangeEventArgs.html
   - name: )
 - uid: NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   commentId: M:NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
@@ -1096,6 +1158,33 @@ references:
     name: Specialized
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: NMF.Expressions.ICollectionExpression`1
   commentId: T:NMF.Expressions.ICollectionExpression`1
   name: ICollectionExpression<T>
@@ -1250,33 +1339,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections
-  commentId: N:System.Collections
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections
-  nameWithType: System.Collections
-  fullName: System.Collections
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: NMF.Models.Changes.AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection.#ctor*
   commentId: Overload:NMF.Models.Changes.AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection.#ctor
   href: NMF.Models.Changes.AssociationCollectionDeletion.AssociationCollectionDeletionReferencedElementsCollection.html#NMF_Models_Changes_AssociationCollectionDeletion_AssociationCollectionDeletionReferencedElementsCollection__ctor_NMF_Models_Changes_AssociationCollectionDeletion_

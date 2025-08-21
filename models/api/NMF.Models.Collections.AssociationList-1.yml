@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AssociationList
     path: src/Models/Models/Collections/AssociationList.cs
-    startLine: 13
+    startLine: 10
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -84,14 +84,15 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClearItems
     path: src/Models/Models/Collections/AssociationList.cs
-    startLine: 16
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes all elements from the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void ClearItems()
@@ -114,25 +115,32 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: InsertItem
     path: src/Models/Models/Collections/AssociationList.cs
-    startLine: 29
+    startLine: 26
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Inserts an element into the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: protected override void InsertItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub InsertItem(index As Integer, item As T)
   overridden: System.Collections.ObjectModel.Collection{{T}}.InsertItem(System.Int32,{T})
   overload: NMF.Models.Collections.AssociationList`1.InsertItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: AssociationList(Of T).InsertItem(Integer, T)
   fullName.vb: NMF.Models.Collections.AssociationList(Of T).InsertItem(Integer, T)
   name.vb: InsertItem(Integer, T)
@@ -150,23 +158,29 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveItem
     path: src/Models/Models/Collections/AssociationList.cs
-    startLine: 39
+    startLine: 36
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes the element at the specified index of the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void RemoveItem(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to remove.
     content.vb: Protected Overrides Sub RemoveItem(index As Integer)
   overridden: System.Collections.ObjectModel.Collection{{T}}.RemoveItem(System.Int32)
   overload: NMF.Models.Collections.AssociationList`1.RemoveItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is equal to or greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: AssociationList(Of T).RemoveItem(Integer)
   fullName.vb: NMF.Models.Collections.AssociationList(Of T).RemoveItem(Integer)
   name.vb: RemoveItem(Integer)
@@ -184,25 +198,32 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetItem
     path: src/Models/Models/Collections/AssociationList.cs
-    startLine: 46
+    startLine: 43
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Replaces the element at the specified index.
   example: []
   syntax:
     content: protected override void SetItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to replace.
     - id: item
       type: '{T}'
+      description: The new value for the element at the specified index. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub SetItem(index As Integer, item As T)
   overridden: System.Collections.ObjectModel.Collection{{T}}.SetItem(System.Int32,{T})
   overload: NMF.Models.Collections.AssociationList`1.SetItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: AssociationList(Of T).SetItem(Integer, T)
   fullName.vb: NMF.Models.Collections.AssociationList(Of T).SetItem(Integer, T)
   name.vb: SetItem(Integer, T)
@@ -1618,6 +1639,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1.clearitems
   - name: (
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: System.Collections.ObjectModel.Collection{{T}}.InsertItem(System.Int32,{T})
   commentId: M:System.Collections.ObjectModel.Collection{`0}.InsertItem(System.Int32,`0)
   parent: System.Collections.ObjectModel.Collection{{T}}

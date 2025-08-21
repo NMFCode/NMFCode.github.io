@@ -1,0 +1,1422 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Glsp.Language.GraphicalLanguage
+  commentId: T:NMF.Glsp.Language.GraphicalLanguage
+  id: GraphicalLanguage
+  parent: NMF.Glsp.Language
+  children:
+  - NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault
+  - NMF.Glsp.Language.GraphicalLanguage.AddRule(NMF.Glsp.Language.DescriptorBase)
+  - NMF.Glsp.Language.GraphicalLanguage.AllRules
+  - NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints
+  - NMF.Glsp.Language.GraphicalLanguage.Create(System.Object,NMF.Glsp.Notation.IDiagram,NMF.Glsp.Processing.ISkeletonTrace)
+  - NMF.Glsp.Language.GraphicalLanguage.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  - NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+  - NMF.Glsp.Language.GraphicalLanguage.Descriptor``1
+  - NMF.Glsp.Language.GraphicalLanguage.DiagramType
+  - NMF.Glsp.Language.GraphicalLanguage.Initialize
+  - NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions(System.String)
+  - NMF.Glsp.Language.GraphicalLanguage.StartRule
+  - NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+  langs:
+  - csharp
+  - vb
+  name: GraphicalLanguage
+  nameWithType: GraphicalLanguage
+  fullName: NMF.Glsp.Language.GraphicalLanguage
+  type: Class
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GraphicalLanguage
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 27
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Denotes a graphical language
+  example: []
+  syntax:
+    content: 'public abstract class GraphicalLanguage : IClientSessionProvider'
+    content.vb: Public MustInherit Class GraphicalLanguage Implements IClientSessionProvider
+  inheritance:
+  - System.Object
+  implements:
+  - NMF.Glsp.Contracts.IClientSessionProvider
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.Glsp.Language.GraphicalLanguage.DiagramType
+  commentId: P:NMF.Glsp.Language.GraphicalLanguage.DiagramType
+  id: DiagramType
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: DiagramType
+  nameWithType: GraphicalLanguage.DiagramType
+  fullName: NMF.Glsp.Language.GraphicalLanguage.DiagramType
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DiagramType
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 32
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets the diagram type supported by this graphical language
+  example: []
+  syntax:
+    content: public virtual string DiagramType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overridable ReadOnly Property DiagramType As String
+  overload: NMF.Glsp.Language.GraphicalLanguage.DiagramType*
+  implements:
+  - NMF.Glsp.Contracts.IClientSessionProvider.DiagramType
+- uid: NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+  commentId: P:NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+  id: DefaultLayoutEngine
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: DefaultLayoutEngine
+  nameWithType: GraphicalLanguage.DefaultLayoutEngine
+  fullName: NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DefaultLayoutEngine
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 37
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets the default layout engine for this language
+  example: []
+  syntax:
+    content: public virtual ILayoutEngine DefaultLayoutEngine { get; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Contracts.ILayoutEngine
+    content.vb: Public Overridable ReadOnly Property DefaultLayoutEngine As ILayoutEngine
+  overload: NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine*
+- uid: NMF.Glsp.Language.GraphicalLanguage.StartRule
+  commentId: P:NMF.Glsp.Language.GraphicalLanguage.StartRule
+  id: StartRule
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: StartRule
+  nameWithType: GraphicalLanguage.StartRule
+  fullName: NMF.Glsp.Language.GraphicalLanguage.StartRule
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: StartRule
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 42
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets the rule to start with
+  example: []
+  syntax:
+    content: public abstract DescriptorBase StartRule { get; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Language.DescriptorBase
+    content.vb: Public MustOverride ReadOnly Property StartRule As DescriptorBase
+  overload: NMF.Glsp.Language.GraphicalLanguage.StartRule*
+- uid: NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+  commentId: P:NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+  id: SupportedActions
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: SupportedActions
+  nameWithType: GraphicalLanguage.SupportedActions
+  fullName: NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SupportedActions
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 45
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets a collection with supported action kinds
+  example: []
+  syntax:
+    content: public virtual IEnumerable<string> SupportedActions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Overridable ReadOnly Property SupportedActions As IEnumerable(Of String)
+  overload: NMF.Glsp.Language.GraphicalLanguage.SupportedActions*
+  implements:
+  - NMF.Glsp.Contracts.IClientSessionProvider.SupportedActions
+- uid: NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault
+  id: ActionKindsSupportedByDefault
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: ActionKindsSupportedByDefault()
+  nameWithType: GraphicalLanguage.ActionKindsSupportedByDefault()
+  fullName: NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ActionKindsSupportedByDefault
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 58
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets a collection of action kinds supported by default
+  example: []
+  syntax:
+    content: protected IEnumerable<string> ActionKindsSupportedByDefault()
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: ''
+    content.vb: Protected Function ActionKindsSupportedByDefault() As IEnumerable(Of String)
+  overload: NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault*
+- uid: NMF.Glsp.Language.GraphicalLanguage.AllRules
+  commentId: P:NMF.Glsp.Language.GraphicalLanguage.AllRules
+  id: AllRules
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: AllRules
+  nameWithType: GraphicalLanguage.AllRules
+  fullName: NMF.Glsp.Language.GraphicalLanguage.AllRules
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AllRules
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 104
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Gets a collection of all rules
+  example: []
+  syntax:
+    content: public IEnumerable<DescriptorBase> AllRules { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.Glsp.Language.DescriptorBase}
+    content.vb: Public ReadOnly Property AllRules As IEnumerable(Of DescriptorBase)
+  overload: NMF.Glsp.Language.GraphicalLanguage.AllRules*
+- uid: NMF.Glsp.Language.GraphicalLanguage.Initialize
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.Initialize
+  id: Initialize
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: GraphicalLanguage.Initialize()
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Initialize
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 115
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Initializes the graphical language
+  example: []
+  syntax:
+    content: public void Initialize()
+    content.vb: Public Sub Initialize()
+  overload: NMF.Glsp.Language.GraphicalLanguage.Initialize*
+- uid: NMF.Glsp.Language.GraphicalLanguage.Descriptor``1
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.Descriptor``1
+  id: Descriptor``1
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: Descriptor<T>()
+  nameWithType: GraphicalLanguage.Descriptor<T>()
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Descriptor<T>()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Descriptor
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 140
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Resolves the given descriptor type to a descriptor
+  example: []
+  syntax:
+    content: 'public T Descriptor<T>() where T : DescriptorBase'
+    typeParameters:
+    - id: T
+      description: The type of elements
+    return:
+      type: '{T}'
+      description: The descriptor instance, if any
+    content.vb: Public Function Descriptor(Of T As DescriptorBase)() As T
+  overload: NMF.Glsp.Language.GraphicalLanguage.Descriptor*
+  nameWithType.vb: GraphicalLanguage.Descriptor(Of T)()
+  fullName.vb: NMF.Glsp.Language.GraphicalLanguage.Descriptor(Of T)()
+  name.vb: Descriptor(Of T)()
+- uid: NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints
+  id: CalculateTypeHints
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: CalculateTypeHints()
+  nameWithType: GraphicalLanguage.CalculateTypeHints()
+  fullName: NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CalculateTypeHints
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 156
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Calculates shape hints for this language
+  example: []
+  syntax:
+    content: public IEnumerable<TypeHint> CalculateTypeHints()
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.TypeHint}
+      description: A collection of shape hints
+    content.vb: Public Function CalculateTypeHints() As IEnumerable(Of TypeHint)
+  overload: NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints*
+- uid: NMF.Glsp.Language.GraphicalLanguage.AddRule(NMF.Glsp.Language.DescriptorBase)
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.AddRule(NMF.Glsp.Language.DescriptorBase)
+  id: AddRule(NMF.Glsp.Language.DescriptorBase)
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: AddRule(DescriptorBase)
+  nameWithType: GraphicalLanguage.AddRule(DescriptorBase)
+  fullName: NMF.Glsp.Language.GraphicalLanguage.AddRule(NMF.Glsp.Language.DescriptorBase)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddRule
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 165
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Adds the given rule to the list of supported descriptors
+  example: []
+  syntax:
+    content: protected void AddRule(DescriptorBase rule)
+    parameters:
+    - id: rule
+      type: NMF.Glsp.Language.DescriptorBase
+      description: ''
+    content.vb: Protected Sub AddRule(rule As DescriptorBase)
+  overload: NMF.Glsp.Language.GraphicalLanguage.AddRule*
+- uid: NMF.Glsp.Language.GraphicalLanguage.Create(System.Object,NMF.Glsp.Notation.IDiagram,NMF.Glsp.Processing.ISkeletonTrace)
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.Create(System.Object,NMF.Glsp.Notation.IDiagram,NMF.Glsp.Processing.ISkeletonTrace)
+  id: Create(System.Object,NMF.Glsp.Notation.IDiagram,NMF.Glsp.Processing.ISkeletonTrace)
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: Create(object, IDiagram, ISkeletonTrace)
+  nameWithType: GraphicalLanguage.Create(object, IDiagram, ISkeletonTrace)
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Create(object, NMF.Glsp.Notation.IDiagram, NMF.Glsp.Processing.ISkeletonTrace)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Create
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 177
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Creates a graph element for the given semantic root element
+  example: []
+  syntax:
+    content: public GGraph Create(object semanticRoot, IDiagram diagram, ISkeletonTrace trace)
+    parameters:
+    - id: semanticRoot
+      type: System.Object
+      description: The semantic root element
+    - id: diagram
+      type: NMF.Glsp.Notation.IDiagram
+      description: The notational instance
+    - id: trace
+      type: NMF.Glsp.Processing.ISkeletonTrace
+      description: The trace object
+    return:
+      type: NMF.Glsp.Graph.GGraph
+      description: A graph notation
+    content.vb: Public Function Create(semanticRoot As Object, diagram As IDiagram, trace As ISkeletonTrace) As GGraph
+  overload: NMF.Glsp.Language.GraphicalLanguage.Create*
+  nameWithType.vb: GraphicalLanguage.Create(Object, IDiagram, ISkeletonTrace)
+  fullName.vb: NMF.Glsp.Language.GraphicalLanguage.Create(Object, NMF.Glsp.Notation.IDiagram, NMF.Glsp.Processing.ISkeletonTrace)
+  name.vb: Create(Object, IDiagram, ISkeletonTrace)
+- uid: NMF.Glsp.Language.GraphicalLanguage.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  id: CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: CreateSession(IDictionary<string, object>, IModelServer)
+  nameWithType: GraphicalLanguage.CreateSession(IDictionary<string, object>, IModelServer)
+  fullName: NMF.Glsp.Language.GraphicalLanguage.CreateSession(System.Collections.Generic.IDictionary<string, object>, NMF.Models.Services.IModelServer)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateSession
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 183
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Creates a session
+  example: []
+  syntax:
+    content: public virtual IGlspClientSession CreateSession(IDictionary<string, object> args, IModelServer modelServer)
+    parameters:
+    - id: args
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+      description: arguments passed by the GLSP client
+    - id: modelServer
+      type: NMF.Models.Services.IModelServer
+      description: the model server for which to create the session
+    return:
+      type: NMF.Glsp.Contracts.IGlspClientSession
+      description: A GLSP session
+    content.vb: Public Overridable Function CreateSession(args As IDictionary(Of String, Object), modelServer As IModelServer) As IGlspClientSession
+  overload: NMF.Glsp.Language.GraphicalLanguage.CreateSession*
+  implements:
+  - NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  nameWithType.vb: GraphicalLanguage.CreateSession(IDictionary(Of String, Object), IModelServer)
+  fullName.vb: NMF.Glsp.Language.GraphicalLanguage.CreateSession(System.Collections.Generic.IDictionary(Of String, Object), NMF.Models.Services.IModelServer)
+  name.vb: CreateSession(IDictionary(Of String, Object), IModelServer)
+- uid: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions(System.String)
+  commentId: M:NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions(System.String)
+  id: RetrieveRootActions(System.String)
+  parent: NMF.Glsp.Language.GraphicalLanguage
+  langs:
+  - csharp
+  - vb
+  name: RetrieveRootActions(string)
+  nameWithType: GraphicalLanguage.RetrieveRootActions(string)
+  fullName: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions(string)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/GraphicalLanguage.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: RetrieveRootActions
+    path: src/Glsp/Glsp/Language/GraphicalLanguage.cs
+    startLine: 193
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Obtains a collection of root actions
+  example: []
+  syntax:
+    content: public virtual IEnumerable<LabeledAction> RetrieveRootActions(string contextId)
+    parameters:
+    - id: contextId
+      type: System.String
+      description: ''
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.LabeledAction}
+      description: ''
+    content.vb: Public Overridable Function RetrieveRootActions(contextId As String) As IEnumerable(Of LabeledAction)
+  overload: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions*
+  nameWithType.vb: GraphicalLanguage.RetrieveRootActions(String)
+  fullName.vb: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions(String)
+  name.vb: RetrieveRootActions(String)
+references:
+- uid: NMF.Glsp.Language
+  commentId: N:NMF.Glsp.Language
+  href: NMF.html
+  name: NMF.Glsp.Language
+  nameWithType: NMF.Glsp.Language
+  fullName: NMF.Glsp.Language
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Language
+    name: Language
+    href: NMF.Glsp.Language.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Language
+    name: Language
+    href: NMF.Glsp.Language.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NMF.Glsp.Contracts.IClientSessionProvider
+  commentId: T:NMF.Glsp.Contracts.IClientSessionProvider
+  parent: NMF.Glsp.Contracts
+  href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  name: IClientSessionProvider
+  nameWithType: IClientSessionProvider
+  fullName: NMF.Glsp.Contracts.IClientSessionProvider
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.Glsp.Contracts
+  commentId: N:NMF.Glsp.Contracts
+  href: NMF.html
+  name: NMF.Glsp.Contracts
+  nameWithType: NMF.Glsp.Contracts
+  fullName: NMF.Glsp.Contracts
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+- uid: NMF.Glsp.Language.GraphicalLanguage.DiagramType*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.DiagramType
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_DiagramType
+  name: DiagramType
+  nameWithType: GraphicalLanguage.DiagramType
+  fullName: NMF.Glsp.Language.GraphicalLanguage.DiagramType
+- uid: NMF.Glsp.Contracts.IClientSessionProvider.DiagramType
+  commentId: P:NMF.Glsp.Contracts.IClientSessionProvider.DiagramType
+  parent: NMF.Glsp.Contracts.IClientSessionProvider
+  href: NMF.Glsp.Contracts.IClientSessionProvider.html#NMF_Glsp_Contracts_IClientSessionProvider_DiagramType
+  name: DiagramType
+  nameWithType: IClientSessionProvider.DiagramType
+  fullName: NMF.Glsp.Contracts.IClientSessionProvider.DiagramType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_DefaultLayoutEngine
+  name: DefaultLayoutEngine
+  nameWithType: GraphicalLanguage.DefaultLayoutEngine
+  fullName: NMF.Glsp.Language.GraphicalLanguage.DefaultLayoutEngine
+- uid: NMF.Glsp.Contracts.ILayoutEngine
+  commentId: T:NMF.Glsp.Contracts.ILayoutEngine
+  parent: NMF.Glsp.Contracts
+  href: NMF.Glsp.Contracts.ILayoutEngine.html
+  name: ILayoutEngine
+  nameWithType: ILayoutEngine
+  fullName: NMF.Glsp.Contracts.ILayoutEngine
+- uid: NMF.Glsp.Language.GraphicalLanguage.StartRule*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.StartRule
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_StartRule
+  name: StartRule
+  nameWithType: GraphicalLanguage.StartRule
+  fullName: NMF.Glsp.Language.GraphicalLanguage.StartRule
+- uid: NMF.Glsp.Language.DescriptorBase
+  commentId: T:NMF.Glsp.Language.DescriptorBase
+  parent: NMF.Glsp.Language
+  href: NMF.Glsp.Language.DescriptorBase.html
+  name: DescriptorBase
+  nameWithType: DescriptorBase
+  fullName: NMF.Glsp.Language.DescriptorBase
+- uid: NMF.Glsp.Language.GraphicalLanguage.SupportedActions*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_SupportedActions
+  name: SupportedActions
+  nameWithType: GraphicalLanguage.SupportedActions
+  fullName: NMF.Glsp.Language.GraphicalLanguage.SupportedActions
+- uid: NMF.Glsp.Contracts.IClientSessionProvider.SupportedActions
+  commentId: P:NMF.Glsp.Contracts.IClientSessionProvider.SupportedActions
+  parent: NMF.Glsp.Contracts.IClientSessionProvider
+  href: NMF.Glsp.Contracts.IClientSessionProvider.html#NMF_Glsp_Contracts_IClientSessionProvider_SupportedActions
+  name: SupportedActions
+  nameWithType: IClientSessionProvider.SupportedActions
+  fullName: NMF.Glsp.Contracts.IClientSessionProvider.SupportedActions
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_ActionKindsSupportedByDefault
+  name: ActionKindsSupportedByDefault
+  nameWithType: GraphicalLanguage.ActionKindsSupportedByDefault
+  fullName: NMF.Glsp.Language.GraphicalLanguage.ActionKindsSupportedByDefault
+- uid: NMF.Glsp.Language.GraphicalLanguage.AllRules*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.AllRules
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_AllRules
+  name: AllRules
+  nameWithType: GraphicalLanguage.AllRules
+  fullName: NMF.Glsp.Language.GraphicalLanguage.AllRules
+- uid: System.Collections.Generic.IEnumerable{NMF.Glsp.Language.DescriptorBase}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.Glsp.Language.DescriptorBase}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DescriptorBase>
+  nameWithType: IEnumerable<DescriptorBase>
+  fullName: System.Collections.Generic.IEnumerable<NMF.Glsp.Language.DescriptorBase>
+  nameWithType.vb: IEnumerable(Of DescriptorBase)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.Glsp.Language.DescriptorBase)
+  name.vb: IEnumerable(Of DescriptorBase)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Glsp.Language.DescriptorBase
+    name: DescriptorBase
+    href: NMF.Glsp.Language.DescriptorBase.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Language.DescriptorBase
+    name: DescriptorBase
+    href: NMF.Glsp.Language.DescriptorBase.html
+  - name: )
+- uid: NMF.Glsp.Language.GraphicalLanguage.Initialize*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.Initialize
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_Initialize
+  name: Initialize
+  nameWithType: GraphicalLanguage.Initialize
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Initialize
+- uid: NMF.Glsp.Language.GraphicalLanguage.Descriptor*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.Descriptor
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_Descriptor__1
+  name: Descriptor
+  nameWithType: GraphicalLanguage.Descriptor
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Descriptor
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_CalculateTypeHints
+  name: CalculateTypeHints
+  nameWithType: GraphicalLanguage.CalculateTypeHints
+  fullName: NMF.Glsp.Language.GraphicalLanguage.CalculateTypeHints
+- uid: System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.TypeHint}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.TypeHint}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TypeHint>
+  nameWithType: IEnumerable<TypeHint>
+  fullName: System.Collections.Generic.IEnumerable<NMF.Glsp.Protocol.Types.TypeHint>
+  nameWithType.vb: IEnumerable(Of TypeHint)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.Glsp.Protocol.Types.TypeHint)
+  name.vb: IEnumerable(Of TypeHint)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.Types.TypeHint
+    name: TypeHint
+    href: NMF.Glsp.Protocol.Types.TypeHint.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.Types.TypeHint
+    name: TypeHint
+    href: NMF.Glsp.Protocol.Types.TypeHint.html
+  - name: )
+- uid: NMF.Glsp.Language.GraphicalLanguage.AddRule*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.AddRule
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_AddRule_NMF_Glsp_Language_DescriptorBase_
+  name: AddRule
+  nameWithType: GraphicalLanguage.AddRule
+  fullName: NMF.Glsp.Language.GraphicalLanguage.AddRule
+- uid: NMF.Glsp.Language.GraphicalLanguage.Create*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.Create
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_Create_System_Object_NMF_Glsp_Notation_IDiagram_NMF_Glsp_Processing_ISkeletonTrace_
+  name: Create
+  nameWithType: GraphicalLanguage.Create
+  fullName: NMF.Glsp.Language.GraphicalLanguage.Create
+- uid: NMF.Glsp.Notation.IDiagram
+  commentId: T:NMF.Glsp.Notation.IDiagram
+  parent: NMF.Glsp.Notation
+  href: NMF.Glsp.Notation.IDiagram.html
+  name: IDiagram
+  nameWithType: IDiagram
+  fullName: NMF.Glsp.Notation.IDiagram
+- uid: NMF.Glsp.Processing.ISkeletonTrace
+  commentId: T:NMF.Glsp.Processing.ISkeletonTrace
+  parent: NMF.Glsp.Processing
+  href: NMF.Glsp.Processing.ISkeletonTrace.html
+  name: ISkeletonTrace
+  nameWithType: ISkeletonTrace
+  fullName: NMF.Glsp.Processing.ISkeletonTrace
+- uid: NMF.Glsp.Graph.GGraph
+  commentId: T:NMF.Glsp.Graph.GGraph
+  parent: NMF.Glsp.Graph
+  href: NMF.Glsp.Graph.GGraph.html
+  name: GGraph
+  nameWithType: GGraph
+  fullName: NMF.Glsp.Graph.GGraph
+- uid: NMF.Glsp.Notation
+  commentId: N:NMF.Glsp.Notation
+  href: NMF.html
+  name: NMF.Glsp.Notation
+  nameWithType: NMF.Glsp.Notation
+  fullName: NMF.Glsp.Notation
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Notation
+    name: Notation
+    href: NMF.Glsp.Notation.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Notation
+    name: Notation
+    href: NMF.Glsp.Notation.html
+- uid: NMF.Glsp.Processing
+  commentId: N:NMF.Glsp.Processing
+  href: NMF.html
+  name: NMF.Glsp.Processing
+  nameWithType: NMF.Glsp.Processing
+  fullName: NMF.Glsp.Processing
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Processing
+    name: Processing
+    href: NMF.Glsp.Processing.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Processing
+    name: Processing
+    href: NMF.Glsp.Processing.html
+- uid: NMF.Glsp.Graph
+  commentId: N:NMF.Glsp.Graph
+  href: NMF.html
+  name: NMF.Glsp.Graph
+  nameWithType: NMF.Glsp.Graph
+  fullName: NMF.Glsp.Graph
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Graph
+    name: Graph
+    href: NMF.Glsp.Graph.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Graph
+    name: Graph
+    href: NMF.Glsp.Graph.html
+- uid: NMF.Glsp.Language.GraphicalLanguage.CreateSession*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.CreateSession
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_CreateSession_System_Collections_Generic_IDictionary_System_String_System_Object__NMF_Models_Services_IModelServer_
+  name: CreateSession
+  nameWithType: GraphicalLanguage.CreateSession
+  fullName: NMF.Glsp.Language.GraphicalLanguage.CreateSession
+- uid: NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  commentId: M:NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+  parent: NMF.Glsp.Contracts.IClientSessionProvider
+  isExternal: true
+  href: NMF.Glsp.Contracts.IClientSessionProvider.html#NMF_Glsp_Contracts_IClientSessionProvider_CreateSession_System_Collections_Generic_IDictionary_System_String_System_Object__NMF_Models_Services_IModelServer_
+  name: CreateSession(IDictionary<string, object>, IModelServer)
+  nameWithType: IClientSessionProvider.CreateSession(IDictionary<string, object>, IModelServer)
+  fullName: NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary<string, object>, NMF.Models.Services.IModelServer)
+  nameWithType.vb: IClientSessionProvider.CreateSession(IDictionary(Of String, Object), IModelServer)
+  fullName.vb: NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary(Of String, Object), NMF.Models.Services.IModelServer)
+  name.vb: CreateSession(IDictionary(Of String, Object), IModelServer)
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+    name: CreateSession
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html#NMF_Glsp_Contracts_IClientSessionProvider_CreateSession_System_Collections_Generic_IDictionary_System_String_System_Object__NMF_Models_Services_IModelServer_
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Services.IModelServer
+    name: IModelServer
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider.CreateSession(System.Collections.Generic.IDictionary{System.String,System.Object},NMF.Models.Services.IModelServer)
+    name: CreateSession
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html#NMF_Glsp_Contracts_IClientSessionProvider_CreateSession_System_Collections_Generic_IDictionary_System_String_System_Object__NMF_Models_Services_IModelServer_
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Services.IModelServer
+    name: IModelServer
+  - name: )
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, object>
+  nameWithType: IDictionary<string, object>
+  fullName: System.Collections.Generic.IDictionary<string, object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Models.Services.IModelServer
+  commentId: T:NMF.Models.Services.IModelServer
+  parent: NMF.Models.Services
+  name: IModelServer
+  nameWithType: IModelServer
+  fullName: NMF.Models.Services.IModelServer
+- uid: NMF.Glsp.Contracts.IGlspClientSession
+  commentId: T:NMF.Glsp.Contracts.IGlspClientSession
+  parent: NMF.Glsp.Contracts
+  href: NMF.Glsp.Contracts.IGlspClientSession.html
+  name: IGlspClientSession
+  nameWithType: IGlspClientSession
+  fullName: NMF.Glsp.Contracts.IGlspClientSession
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: NMF.Models.Services
+  commentId: N:NMF.Models.Services
+  name: NMF.Models.Services
+  nameWithType: NMF.Models.Services
+  fullName: NMF.Models.Services
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+- uid: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions*
+  commentId: Overload:NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions
+  href: NMF.Glsp.Language.GraphicalLanguage.html#NMF_Glsp_Language_GraphicalLanguage_RetrieveRootActions_System_String_
+  name: RetrieveRootActions
+  nameWithType: GraphicalLanguage.RetrieveRootActions
+  fullName: NMF.Glsp.Language.GraphicalLanguage.RetrieveRootActions
+- uid: System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.LabeledAction}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.Glsp.Protocol.Types.LabeledAction}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LabeledAction>
+  nameWithType: IEnumerable<LabeledAction>
+  fullName: System.Collections.Generic.IEnumerable<NMF.Glsp.Protocol.Types.LabeledAction>
+  nameWithType.vb: IEnumerable(Of LabeledAction)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.Glsp.Protocol.Types.LabeledAction)
+  name.vb: IEnumerable(Of LabeledAction)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.Types.LabeledAction
+    name: LabeledAction
+    href: NMF.Glsp.Protocol.Types.LabeledAction.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.Types.LabeledAction
+    name: LabeledAction
+    href: NMF.Glsp.Protocol.Types.LabeledAction.html
+  - name: )

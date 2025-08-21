@@ -38,11 +38,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetExpressionRewriter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -56,9 +56,8 @@ items:
   - System.Linq.Expressions.ExpressionVisitor
   inheritedMembers:
   - System.Linq.Expressions.ExpressionVisitor.Visit(System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.Expression})
-  - System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
-  - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
   - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.String)
+  - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
   - System.Linq.Expressions.ExpressionVisitor.VisitBlock(System.Linq.Expressions.BlockExpression)
   - System.Linq.Expressions.ExpressionVisitor.VisitCatchBlock(System.Linq.Expressions.CatchBlock)
   - System.Linq.Expressions.ExpressionVisitor.VisitConstant(System.Linq.Expressions.ConstantExpression)
@@ -77,6 +76,7 @@ items:
   - System.Linq.Expressions.ExpressionVisitor.VisitSwitchCase(System.Linq.Expressions.SwitchCase)
   - System.Linq.Expressions.ExpressionVisitor.VisitTry(System.Linq.Expressions.TryExpression)
   - System.Linq.Expressions.ExpressionVisitor.VisitTypeBinary(System.Linq.Expressions.TypeBinaryExpression)
+  - System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -100,11 +100,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 30
+    startLine: 29
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -141,11 +141,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 47
+    startLine: 46
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -184,11 +184,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 65
+    startLine: 64
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -229,11 +229,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 80
+    startLine: 79
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -264,11 +264,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Value
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 103
+    startLine: 102
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -295,11 +295,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 109
+    startLine: 108
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -330,22 +330,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Visit
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 117
+    startLine: 116
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Dispatches the expression to one of the more specialized visit methods in this class.
   example: []
   syntax:
     content: public override Expression Visit(Expression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.Expression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Public Overrides Function Visit(node As Expression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.Visit(System.Linq.Expressions.Expression)
   overload: NMF.Expressions.SetExpressionRewriter.Visit*
@@ -363,22 +366,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitBinary
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 124
+    startLine: 123
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.BinaryExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitBinary(BinaryExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.BinaryExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitBinary(node As BinaryExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitBinary(System.Linq.Expressions.BinaryExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitBinary*
@@ -396,22 +402,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitConditional
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 309
+    startLine: 308
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.ConditionalExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitConditional(ConditionalExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.ConditionalExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitConditional(node As ConditionalExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitConditional(System.Linq.Expressions.ConditionalExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitConditional*
@@ -429,22 +438,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitDefault
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 340
+    startLine: 339
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the <xref href="System.Linq.Expressions.DefaultExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitDefault(DefaultExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.DefaultExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitDefault(node As DefaultExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitDefault(System.Linq.Expressions.DefaultExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitDefault*
@@ -462,22 +474,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitElementInit
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 346
+    startLine: 345
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.ElementInit" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override ElementInit VisitElementInit(ElementInit node)
     parameters:
     - id: node
       type: System.Linq.Expressions.ElementInit
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.ElementInit
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitElementInit(node As ElementInit) As ElementInit
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitElementInit(System.Linq.Expressions.ElementInit)
   overload: NMF.Expressions.SetExpressionRewriter.VisitElementInit*
@@ -495,22 +510,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitIndex
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 352
+    startLine: 351
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.IndexExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitIndex(IndexExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.IndexExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitIndex(node As IndexExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitIndex(System.Linq.Expressions.IndexExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitIndex*
@@ -528,22 +546,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitListInit
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 358
+    startLine: 357
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.ListInitExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitListInit(ListInitExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.ListInitExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitListInit(node As ListInitExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitListInit(System.Linq.Expressions.ListInitExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitListInit*
@@ -561,22 +582,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMember
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 364
+    startLine: 363
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MemberExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitMember(MemberExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MemberExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMember(node As MemberExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMember(System.Linq.Expressions.MemberExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMember*
@@ -594,22 +618,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMemberAssignment
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 384
+    startLine: 383
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MemberAssignment" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override MemberAssignment VisitMemberAssignment(MemberAssignment node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MemberAssignment
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.MemberAssignment
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMemberAssignment(node As MemberAssignment) As MemberAssignment
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMemberAssignment*
@@ -627,22 +654,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMemberInit
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 390
+    startLine: 389
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MemberInitExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitMemberInit(MemberInitExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MemberInitExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMemberInit(node As MemberInitExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMemberInit*
@@ -660,22 +690,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMemberListBinding
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 396
+    startLine: 395
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MemberListBinding" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override MemberListBinding VisitMemberListBinding(MemberListBinding node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MemberListBinding
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.MemberListBinding
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMemberListBinding(node As MemberListBinding) As MemberListBinding
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMemberListBinding*
@@ -693,22 +726,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMemberMemberBinding
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 402
+    startLine: 401
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MemberMemberBinding" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override MemberMemberBinding VisitMemberMemberBinding(MemberMemberBinding node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MemberMemberBinding
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.MemberMemberBinding
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMemberMemberBinding(node As MemberMemberBinding) As MemberMemberBinding
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMemberMemberBinding*
@@ -726,22 +762,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitMethodCall
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 408
+    startLine: 407
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.MethodCallExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitMethodCall(MethodCallExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.MethodCallExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitMethodCall(node As MethodCallExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitMethodCall*
@@ -759,22 +798,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitNew
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 511
+    startLine: 510
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.NewExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitNew(NewExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.NewExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitNew(node As NewExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitNew(System.Linq.Expressions.NewExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitNew*
@@ -792,22 +834,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitNewArray
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 517
+    startLine: 516
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.NewArrayExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitNewArray(NewArrayExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.NewArrayExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitNewArray(node As NewArrayExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitNewArray(System.Linq.Expressions.NewArrayExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitNewArray*
@@ -825,22 +870,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitParameter
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 523
+    startLine: 522
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the <xref href="System.Linq.Expressions.ParameterExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitParameter(ParameterExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.ParameterExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitParameter(node As ParameterExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitParameter(System.Linq.Expressions.ParameterExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitParameter*
@@ -858,22 +906,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitUnary
     path: src/Expressions/Expressions/ExpressionRewriter/SetExpressionRewriter.cs
-    startLine: 529
+    startLine: 528
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the children of the <xref href="System.Linq.Expressions.UnaryExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitUnary(UnaryExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.UnaryExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitUnary(node As UnaryExpression) As Expression
   overridden: System.Linq.Expressions.ExpressionVisitor.VisitUnary(System.Linq.Expressions.UnaryExpression)
   overload: NMF.Expressions.SetExpressionRewriter.VisitUnary*
@@ -966,128 +1017,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression
   - name: )
   - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
-  parent: System.Linq.Expressions.ExpressionVisitor
-  definition: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
-  name: Visit<T>(ReadOnlyCollection<T>, Func<T, T>)
-  nameWithType: ExpressionVisitor.Visit<T>(ReadOnlyCollection<T>, Func<T, T>)
-  fullName: System.Linq.Expressions.ExpressionVisitor.Visit<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, System.Func<T, T>)
-  nameWithType.vb: ExpressionVisitor.Visit(Of T)(ReadOnlyCollection(Of T), Func(Of T, T))
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.Visit(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), System.Func(Of T, T))
-  name.vb: Visit(Of T)(ReadOnlyCollection(Of T), Func(Of T, T))
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
-    name: Visit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
-    name: Visit
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  parent: System.Linq.Expressions.ExpressionVisitor
-  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  name: VisitAndConvert<T>(T, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  name.vb: VisitAndConvert(Of T)(T, String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.String)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -1142,6 +1071,53 @@ references:
   - name: " "
   - name: T
   - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  parent: System.Linq.Expressions.ExpressionVisitor
+  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  name: VisitAndConvert<T>(T, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  name.vb: VisitAndConvert(Of T)(T, String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
   - name: ','
   - name: " "
   - uid: System.String
@@ -1708,6 +1684,81 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.typebinaryexpression
   - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
+  parent: System.Linq.Expressions.ExpressionVisitor
+  definition: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
+  name: Visit<T>(ReadOnlyCollection<T>, Func<T, T>)
+  nameWithType: ExpressionVisitor.Visit<T>(ReadOnlyCollection<T>, Func<T, T>)
+  fullName: System.Linq.Expressions.ExpressionVisitor.Visit<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, System.Func<T, T>)
+  nameWithType.vb: ExpressionVisitor.Visit(Of T)(ReadOnlyCollection(Of T), Func(Of T, T))
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.Visit(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), System.Func(Of T, T))
+  name.vb: Visit(Of T)(ReadOnlyCollection(Of T), Func(Of T, T))
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
+    name: Visit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
+    name: Visit
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit-1(system-collections-objectmodel-readonlycollection((-0))-system-func((-0-0)))
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -2012,6 +2063,160 @@ references:
     name: Expressions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
+  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  name: VisitAndConvert<T>(T, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  name.vb: VisitAndConvert(Of T)(T, String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
+  name: VisitLambda<T>(Expression<T>)
+  nameWithType: ExpressionVisitor.VisitLambda<T>(Expression<T>)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitLambda<T>(System.Linq.Expressions.Expression<T>)
+  nameWithType.vb: ExpressionVisitor.VisitLambda(Of T)(Expression(Of T))
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitLambda(Of T)(System.Linq.Expressions.Expression(Of T))
+  name.vb: VisitLambda(Of T)(Expression(Of T))
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
+    name: VisitLambda
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
+    name: VisitLambda
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
   commentId: M:System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
   isExternal: true
@@ -2082,160 +2287,6 @@ references:
   - name: " "
   - name: T
   - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  name: VisitAndConvert<T>(T, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  name.vb: VisitAndConvert(Of T)(T, String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
-  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
-  name: VisitLambda<T>(Expression<T>)
-  nameWithType: ExpressionVisitor.VisitLambda<T>(Expression<T>)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitLambda<T>(System.Linq.Expressions.Expression<T>)
-  nameWithType.vb: ExpressionVisitor.VisitLambda(Of T)(Expression(Of T))
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitLambda(Of T)(System.Linq.Expressions.Expression(Of T))
-  name.vb: VisitLambda(Of T)(Expression(Of T))
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
-    name: VisitLambda
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Linq.Expressions.Expression`1
-    name: Expression
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitLambda``1(System.Linq.Expressions.Expression{``0})
-    name: VisitLambda
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Linq.Expressions.Expression`1
-    name: Expression
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
-  - name: (
-  - name: Of
   - name: " "
   - name: T
   - name: )
@@ -2703,6 +2754,14 @@ references:
   name: Visit
   nameWithType: SetExpressionRewriter.Visit
   fullName: NMF.Expressions.SetExpressionRewriter.Visit
+- uid: System.Linq.Expressions.BinaryExpression
+  commentId: T:System.Linq.Expressions.BinaryExpression
+  parent: System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression
+  name: BinaryExpression
+  nameWithType: BinaryExpression
+  fullName: System.Linq.Expressions.BinaryExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitBinary(System.Linq.Expressions.BinaryExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitBinary(System.Linq.Expressions.BinaryExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2739,14 +2798,14 @@ references:
   name: VisitBinary
   nameWithType: SetExpressionRewriter.VisitBinary
   fullName: NMF.Expressions.SetExpressionRewriter.VisitBinary
-- uid: System.Linq.Expressions.BinaryExpression
-  commentId: T:System.Linq.Expressions.BinaryExpression
+- uid: System.Linq.Expressions.ConditionalExpression
+  commentId: T:System.Linq.Expressions.ConditionalExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression
-  name: BinaryExpression
-  nameWithType: BinaryExpression
-  fullName: System.Linq.Expressions.BinaryExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression
+  name: ConditionalExpression
+  nameWithType: ConditionalExpression
+  fullName: System.Linq.Expressions.ConditionalExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitConditional(System.Linq.Expressions.ConditionalExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitConditional(System.Linq.Expressions.ConditionalExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2783,14 +2842,14 @@ references:
   name: VisitConditional
   nameWithType: SetExpressionRewriter.VisitConditional
   fullName: NMF.Expressions.SetExpressionRewriter.VisitConditional
-- uid: System.Linq.Expressions.ConditionalExpression
-  commentId: T:System.Linq.Expressions.ConditionalExpression
+- uid: System.Linq.Expressions.DefaultExpression
+  commentId: T:System.Linq.Expressions.DefaultExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression
-  name: ConditionalExpression
-  nameWithType: ConditionalExpression
-  fullName: System.Linq.Expressions.ConditionalExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression
+  name: DefaultExpression
+  nameWithType: DefaultExpression
+  fullName: System.Linq.Expressions.DefaultExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitDefault(System.Linq.Expressions.DefaultExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitDefault(System.Linq.Expressions.DefaultExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2827,14 +2886,14 @@ references:
   name: VisitDefault
   nameWithType: SetExpressionRewriter.VisitDefault
   fullName: NMF.Expressions.SetExpressionRewriter.VisitDefault
-- uid: System.Linq.Expressions.DefaultExpression
-  commentId: T:System.Linq.Expressions.DefaultExpression
+- uid: System.Linq.Expressions.ElementInit
+  commentId: T:System.Linq.Expressions.ElementInit
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression
-  name: DefaultExpression
-  nameWithType: DefaultExpression
-  fullName: System.Linq.Expressions.DefaultExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit
+  name: ElementInit
+  nameWithType: ElementInit
+  fullName: System.Linq.Expressions.ElementInit
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitElementInit(System.Linq.Expressions.ElementInit)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitElementInit(System.Linq.Expressions.ElementInit)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2871,14 +2930,14 @@ references:
   name: VisitElementInit
   nameWithType: SetExpressionRewriter.VisitElementInit
   fullName: NMF.Expressions.SetExpressionRewriter.VisitElementInit
-- uid: System.Linq.Expressions.ElementInit
-  commentId: T:System.Linq.Expressions.ElementInit
+- uid: System.Linq.Expressions.IndexExpression
+  commentId: T:System.Linq.Expressions.IndexExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit
-  name: ElementInit
-  nameWithType: ElementInit
-  fullName: System.Linq.Expressions.ElementInit
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression
+  name: IndexExpression
+  nameWithType: IndexExpression
+  fullName: System.Linq.Expressions.IndexExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitIndex(System.Linq.Expressions.IndexExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitIndex(System.Linq.Expressions.IndexExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2915,14 +2974,14 @@ references:
   name: VisitIndex
   nameWithType: SetExpressionRewriter.VisitIndex
   fullName: NMF.Expressions.SetExpressionRewriter.VisitIndex
-- uid: System.Linq.Expressions.IndexExpression
-  commentId: T:System.Linq.Expressions.IndexExpression
+- uid: System.Linq.Expressions.ListInitExpression
+  commentId: T:System.Linq.Expressions.ListInitExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression
-  name: IndexExpression
-  nameWithType: IndexExpression
-  fullName: System.Linq.Expressions.IndexExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression
+  name: ListInitExpression
+  nameWithType: ListInitExpression
+  fullName: System.Linq.Expressions.ListInitExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitListInit(System.Linq.Expressions.ListInitExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitListInit(System.Linq.Expressions.ListInitExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -2959,14 +3018,14 @@ references:
   name: VisitListInit
   nameWithType: SetExpressionRewriter.VisitListInit
   fullName: NMF.Expressions.SetExpressionRewriter.VisitListInit
-- uid: System.Linq.Expressions.ListInitExpression
-  commentId: T:System.Linq.Expressions.ListInitExpression
+- uid: System.Linq.Expressions.MemberExpression
+  commentId: T:System.Linq.Expressions.MemberExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression
-  name: ListInitExpression
-  nameWithType: ListInitExpression
-  fullName: System.Linq.Expressions.ListInitExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression
+  name: MemberExpression
+  nameWithType: MemberExpression
+  fullName: System.Linq.Expressions.MemberExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMember(System.Linq.Expressions.MemberExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMember(System.Linq.Expressions.MemberExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3003,14 +3062,14 @@ references:
   name: VisitMember
   nameWithType: SetExpressionRewriter.VisitMember
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMember
-- uid: System.Linq.Expressions.MemberExpression
-  commentId: T:System.Linq.Expressions.MemberExpression
+- uid: System.Linq.Expressions.MemberAssignment
+  commentId: T:System.Linq.Expressions.MemberAssignment
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression
-  name: MemberExpression
-  nameWithType: MemberExpression
-  fullName: System.Linq.Expressions.MemberExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment
+  name: MemberAssignment
+  nameWithType: MemberAssignment
+  fullName: System.Linq.Expressions.MemberAssignment
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3047,14 +3106,14 @@ references:
   name: VisitMemberAssignment
   nameWithType: SetExpressionRewriter.VisitMemberAssignment
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMemberAssignment
-- uid: System.Linq.Expressions.MemberAssignment
-  commentId: T:System.Linq.Expressions.MemberAssignment
+- uid: System.Linq.Expressions.MemberInitExpression
+  commentId: T:System.Linq.Expressions.MemberInitExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment
-  name: MemberAssignment
-  nameWithType: MemberAssignment
-  fullName: System.Linq.Expressions.MemberAssignment
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression
+  name: MemberInitExpression
+  nameWithType: MemberInitExpression
+  fullName: System.Linq.Expressions.MemberInitExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3091,14 +3150,14 @@ references:
   name: VisitMemberInit
   nameWithType: SetExpressionRewriter.VisitMemberInit
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMemberInit
-- uid: System.Linq.Expressions.MemberInitExpression
-  commentId: T:System.Linq.Expressions.MemberInitExpression
+- uid: System.Linq.Expressions.MemberListBinding
+  commentId: T:System.Linq.Expressions.MemberListBinding
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression
-  name: MemberInitExpression
-  nameWithType: MemberInitExpression
-  fullName: System.Linq.Expressions.MemberInitExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding
+  name: MemberListBinding
+  nameWithType: MemberListBinding
+  fullName: System.Linq.Expressions.MemberListBinding
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3135,14 +3194,14 @@ references:
   name: VisitMemberListBinding
   nameWithType: SetExpressionRewriter.VisitMemberListBinding
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMemberListBinding
-- uid: System.Linq.Expressions.MemberListBinding
-  commentId: T:System.Linq.Expressions.MemberListBinding
+- uid: System.Linq.Expressions.MemberMemberBinding
+  commentId: T:System.Linq.Expressions.MemberMemberBinding
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding
-  name: MemberListBinding
-  nameWithType: MemberListBinding
-  fullName: System.Linq.Expressions.MemberListBinding
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding
+  name: MemberMemberBinding
+  nameWithType: MemberMemberBinding
+  fullName: System.Linq.Expressions.MemberMemberBinding
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3179,14 +3238,14 @@ references:
   name: VisitMemberMemberBinding
   nameWithType: SetExpressionRewriter.VisitMemberMemberBinding
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMemberMemberBinding
-- uid: System.Linq.Expressions.MemberMemberBinding
-  commentId: T:System.Linq.Expressions.MemberMemberBinding
+- uid: System.Linq.Expressions.MethodCallExpression
+  commentId: T:System.Linq.Expressions.MethodCallExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding
-  name: MemberMemberBinding
-  nameWithType: MemberMemberBinding
-  fullName: System.Linq.Expressions.MemberMemberBinding
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression
+  name: MethodCallExpression
+  nameWithType: MethodCallExpression
+  fullName: System.Linq.Expressions.MethodCallExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3223,14 +3282,14 @@ references:
   name: VisitMethodCall
   nameWithType: SetExpressionRewriter.VisitMethodCall
   fullName: NMF.Expressions.SetExpressionRewriter.VisitMethodCall
-- uid: System.Linq.Expressions.MethodCallExpression
-  commentId: T:System.Linq.Expressions.MethodCallExpression
+- uid: System.Linq.Expressions.NewExpression
+  commentId: T:System.Linq.Expressions.NewExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression
-  name: MethodCallExpression
-  nameWithType: MethodCallExpression
-  fullName: System.Linq.Expressions.MethodCallExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression
+  name: NewExpression
+  nameWithType: NewExpression
+  fullName: System.Linq.Expressions.NewExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitNew(System.Linq.Expressions.NewExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitNew(System.Linq.Expressions.NewExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3267,14 +3326,14 @@ references:
   name: VisitNew
   nameWithType: SetExpressionRewriter.VisitNew
   fullName: NMF.Expressions.SetExpressionRewriter.VisitNew
-- uid: System.Linq.Expressions.NewExpression
-  commentId: T:System.Linq.Expressions.NewExpression
+- uid: System.Linq.Expressions.NewArrayExpression
+  commentId: T:System.Linq.Expressions.NewArrayExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression
-  name: NewExpression
-  nameWithType: NewExpression
-  fullName: System.Linq.Expressions.NewExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression
+  name: NewArrayExpression
+  nameWithType: NewArrayExpression
+  fullName: System.Linq.Expressions.NewArrayExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitNewArray(System.Linq.Expressions.NewArrayExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitNewArray(System.Linq.Expressions.NewArrayExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3311,14 +3370,14 @@ references:
   name: VisitNewArray
   nameWithType: SetExpressionRewriter.VisitNewArray
   fullName: NMF.Expressions.SetExpressionRewriter.VisitNewArray
-- uid: System.Linq.Expressions.NewArrayExpression
-  commentId: T:System.Linq.Expressions.NewArrayExpression
+- uid: System.Linq.Expressions.ParameterExpression
+  commentId: T:System.Linq.Expressions.ParameterExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression
-  name: NewArrayExpression
-  nameWithType: NewArrayExpression
-  fullName: System.Linq.Expressions.NewArrayExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression
+  name: ParameterExpression
+  nameWithType: ParameterExpression
+  fullName: System.Linq.Expressions.ParameterExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitParameter(System.Linq.Expressions.ParameterExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitParameter(System.Linq.Expressions.ParameterExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3355,14 +3414,14 @@ references:
   name: VisitParameter
   nameWithType: SetExpressionRewriter.VisitParameter
   fullName: NMF.Expressions.SetExpressionRewriter.VisitParameter
-- uid: System.Linq.Expressions.ParameterExpression
-  commentId: T:System.Linq.Expressions.ParameterExpression
+- uid: System.Linq.Expressions.UnaryExpression
+  commentId: T:System.Linq.Expressions.UnaryExpression
   parent: System.Linq.Expressions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression
-  name: ParameterExpression
-  nameWithType: ParameterExpression
-  fullName: System.Linq.Expressions.ParameterExpression
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression
+  name: UnaryExpression
+  nameWithType: UnaryExpression
+  fullName: System.Linq.Expressions.UnaryExpression
 - uid: System.Linq.Expressions.ExpressionVisitor.VisitUnary(System.Linq.Expressions.UnaryExpression)
   commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitUnary(System.Linq.Expressions.UnaryExpression)
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -3399,11 +3458,3 @@ references:
   name: VisitUnary
   nameWithType: SetExpressionRewriter.VisitUnary
   fullName: NMF.Expressions.SetExpressionRewriter.VisitUnary
-- uid: System.Linq.Expressions.UnaryExpression
-  commentId: T:System.Linq.Expressions.UnaryExpression
-  parent: System.Linq.Expressions
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression
-  name: UnaryExpression
-  nameWithType: UnaryExpression
-  fullName: System.Linq.Expressions.UnaryExpression

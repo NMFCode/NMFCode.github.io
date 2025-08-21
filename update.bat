@@ -3,4 +3,4 @@ git pull
 cd ..\publications
 python bib.py
 cd ..
-docfx
+DOCFX_SOURCE_BRANCH_NAME=main docfx

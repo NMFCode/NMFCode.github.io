@@ -47,14 +47,16 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Model
     path: src/Models/Models/Model.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Denotes a container for model elements
+  example: []
   syntax:
     content: >-
       [XmlElementName("XMI")]
@@ -107,8 +109,10 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
   - NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
@@ -181,11 +185,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FragmentPrefix
     path: src/Models/Models/Model.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -212,14 +216,16 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Model.cs
-    startLine: 49
+    startLine: 53
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public Model()
     content.vb: Public Sub New()
@@ -241,11 +247,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelUri
     path: src/Models/Models/Model.cs
-    startLine: 59
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -274,11 +280,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RootElements
     path: src/Models/Models/Model.cs
-    startLine: 84
+    startLine: 88
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -326,11 +332,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Children
     path: src/Models/Models/Model.cs
-    startLine: 99
+    startLine: 103
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -360,11 +366,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferencedElements
     path: src/Models/Models/Model.cs
-    startLine: 110
+    startLine: 114
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -394,11 +400,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Models/Models/Model.cs
-    startLine: 121
+    startLine: 125
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -425,11 +431,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelUriChanging
     path: src/Models/Models/Model.cs
-    startLine: 136
+    startLine: 140
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -456,11 +462,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelUriChanged
     path: src/Models/Models/Model.cs
-    startLine: 141
+    startLine: 145
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -487,11 +493,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnModelUriChanging
     path: src/Models/Models/Model.cs
-    startLine: 152
+    startLine: 156
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -519,11 +525,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnModelUriChanged
     path: src/Models/Models/Model.cs
-    startLine: 165
+    startLine: 169
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -551,11 +557,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Models/Models/Model.cs
-    startLine: 237
+    startLine: 241
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -593,11 +599,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Models/Models/Model.cs
-    startLine: 251
+    startLine: 255
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -632,11 +638,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Models/Models/Model.cs
-    startLine: 265
+    startLine: 269
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -671,11 +677,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCompositionName
     path: src/Models/Models/Model.cs
-    startLine: 280
+    startLine: 284
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -710,11 +716,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Models/Models/Model.cs
-    startLine: 292
+    startLine: 296
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -743,11 +749,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: PromoteSingleRootElement
     path: src/Models/Models/Model.cs
-    startLine: 597
+    startLine: 591
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -774,11 +780,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Repository
     path: src/Models/Models/Model.cs
-    startLine: 602
+    startLine: 596
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -805,11 +811,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Models/Models/Model.cs
-    startLine: 605
+    startLine: 599
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -847,11 +853,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForNonIdentifiedChild
     path: src/Models/Models/Model.cs
-    startLine: 624
+    startLine: 618
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -883,11 +889,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateUriWithFragment
     path: src/Models/Models/Model.cs
-    startLine: 645
+    startLine: 639
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -928,11 +934,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RegisterId
     path: src/Models/Models/Model.cs
-    startLine: 681
+    startLine: 675
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -969,11 +975,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnregisterId
     path: src/Models/Models/Model.cs
-    startLine: 705
+    startLine: 699
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1007,11 +1013,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateUriForElement
     path: src/Models/Models/Model.cs
-    startLine: 719
+    startLine: 713
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1039,11 +1045,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SimplifyUri
     path: src/Models/Models/Model.cs
-    startLine: 734
+    startLine: 728
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1071,11 +1077,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ResolveGlobal
     path: src/Models/Models/Model.cs
-    startLine: 758
+    startLine: 752
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1109,11 +1115,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Resolve
     path: src/Models/Models/Model.cs
-    startLine: 769
+    startLine: 763
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1131,6 +1137,8 @@ items:
     content.vb: Public Overrides Function Resolve(relativeUri As String) As IModelElement
   overridden: NMF.Models.ModelElement.Resolve(System.String)
   overload: NMF.Models.Model.Resolve*
+  implements:
+  - NMF.Models.IModelElement.Resolve(System.String)
   nameWithType.vb: Model.Resolve(String)
   fullName.vb: NMF.Models.Model.Resolve(String)
   name.vb: Resolve(String)
@@ -1148,11 +1156,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForChild
     path: src/Models/Models/Model.cs
-    startLine: 837
+    startLine: 831
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1184,11 +1192,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EnsureAllElementsContained
     path: src/Models/Models/Model.cs
-    startLine: 847
+    startLine: 841
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1211,11 +1219,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SerializeAsReference
     path: src/Models/Models/Model.cs
-    startLine: 871
+    startLine: 865
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1246,11 +1254,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnlockRequested
     path: src/Models/Models/Model.cs
-    startLine: 879
+    startLine: 873
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1275,11 +1283,11 @@ items:
   source:
     remote:
       path: Models/Models/Model.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnBubbledChange
     path: src/Models/Models/Model.cs
-    startLine: 883
+    startLine: 877
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -1791,40 +1799,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
@@ -3905,6 +3938,37 @@ references:
   name: Resolve
   nameWithType: Model.Resolve
   fullName: NMF.Models.Model.Resolve
+- uid: NMF.Models.IModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.IModelElement.Resolve(System.String)
+  parent: NMF.Models.IModelElement
+  isExternal: true
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  name: Resolve(string)
+  nameWithType: IModelElement.Resolve(string)
+  fullName: NMF.Models.IModelElement.Resolve(string)
+  nameWithType.vb: IModelElement.Resolve(String)
+  fullName.vb: NMF.Models.IModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
   commentId: M:NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
   parent: NMF.Models.ModelElement

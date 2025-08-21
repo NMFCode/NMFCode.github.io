@@ -6,7 +6,7 @@ items:
   parent: NMF.CodeGen
   children:
   - NMF.CodeGen.ClassGenerator`1.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
-  - NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
+  - NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   - NMF.CodeGen.ClassGenerator`1.CreateOutput(`0,NMF.Transformations.Core.ITransformationContext)
   - NMF.CodeGen.ClassGenerator`1.CreateSeparatePublicInterface(`0,System.CodeDom.CodeTypeDeclaration)
   - NMF.CodeGen.ClassGenerator`1.GetName(`0)
@@ -33,11 +33,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassGenerator
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 20
+    startLine: 18
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -233,11 +233,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateOutput
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 29
+    startLine: 27
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -274,11 +274,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSeparatePublicInterface
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 40
+    startLine: 38
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -314,11 +314,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddImplementationBaseClass
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 50
+    startLine: 48
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -349,11 +349,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetName
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 57
+    startLine: 55
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -386,11 +386,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 66
+    startLine: 64
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -428,11 +428,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ShouldContainMembers
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 130
+    startLine: 129
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -468,11 +468,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ResolveMultipleInheritanceMembers
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 208
+    startLine: 207
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -495,43 +495,49 @@ items:
   nameWithType.vb: ClassGenerator(Of T).ResolveMultipleInheritanceMembers(CodeTypeDeclaration, HashSet(Of CodeTypeMember), CodeConstructor)
   fullName.vb: NMF.CodeGen.ClassGenerator(Of T).ResolveMultipleInheritanceMembers(System.CodeDom.CodeTypeDeclaration, System.Collections.Generic.HashSet(Of System.CodeDom.CodeTypeMember), System.CodeDom.CodeConstructor)
   name.vb: ResolveMultipleInheritanceMembers(CodeTypeDeclaration, HashSet(Of CodeTypeMember), CodeConstructor)
-- uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  commentId: M:NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  id: CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
+- uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  id: CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   parent: NMF.CodeGen.ClassGenerator`1
   langs:
   - csharp
   - vb
-  name: CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  nameWithType: ClassGenerator<T>.CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName: NMF.CodeGen.ClassGenerator<T>.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
+  name: CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  nameWithType: ClassGenerator<T>.CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName: NMF.CodeGen.ClassGenerator<T>.CreateInterfaceMembers(T, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
   type: Method
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateInterfaceMembers
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 388
+    startLine: 389
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
   summary: Generates the interface members for the given type
   example: []
   syntax:
-    content: protected virtual void CreateInterfaceMembers(CodeTypeDeclaration generatedType, CodeTypeDeclaration interfaceDecl)
+    content: protected virtual void CreateInterfaceMembers(T input, CodeTypeDeclaration generatedType, CodeTypeDeclaration interfaceDecl, ITransformationContext context)
     parameters:
+    - id: input
+      type: '{T}'
+      description: The input for which the interface members need to be generated
     - id: generatedType
       type: System.CodeDom.CodeTypeDeclaration
       description: The generated type
     - id: interfaceDecl
       type: System.CodeDom.CodeTypeDeclaration
       description: The interface declaration
-    content.vb: Protected Overridable Sub CreateInterfaceMembers(generatedType As CodeTypeDeclaration, interfaceDecl As CodeTypeDeclaration)
+    - id: context
+      type: NMF.Transformations.Core.ITransformationContext
+      description: The transformation context
+    content.vb: Protected Overridable Sub CreateInterfaceMembers(input As T, generatedType As CodeTypeDeclaration, interfaceDecl As CodeTypeDeclaration, context As ITransformationContext)
   overload: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers*
-  nameWithType.vb: ClassGenerator(Of T).CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName.vb: NMF.CodeGen.ClassGenerator(Of T).CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
+  nameWithType.vb: ClassGenerator(Of T).CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName.vb: NMF.CodeGen.ClassGenerator(Of T).CreateInterfaceMembers(T, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
 - uid: NMF.CodeGen.ClassGenerator`1.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{`0,``0})
   commentId: M:NMF.CodeGen.ClassGenerator`1.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{`0,``0})
   id: RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{`0,``0})
@@ -546,11 +552,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireGenerateProperty
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 445
+    startLine: 446
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -590,11 +596,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireGenerateProperties
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 458
+    startLine: 459
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -634,11 +640,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireGenerateMethod
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 471
+    startLine: 472
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -678,11 +684,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireGenerateMethods
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 484
+    startLine: 485
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -722,11 +728,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireEvent
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 497
+    startLine: 501
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -766,11 +772,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireEvents
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 510
+    startLine: 514
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -810,11 +816,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireBaseClass
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 523
+    startLine: 527
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -854,11 +860,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireBaseClass
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 538
+    startLine: 542
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -892,11 +898,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireBaseClasses
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 550
+    startLine: 554
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -936,11 +942,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/ClassGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireBaseClasses
     path: src/Transformations/CodeGen/ClassGenerator.cs
-    startLine: 568
+    startLine: 572
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -27831,7 +27837,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers*
   commentId: Overload:NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers
-  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
+  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
   name: CreateInterfaceMembers
   nameWithType: ClassGenerator<T>.CreateInterfaceMembers
   fullName: NMF.CodeGen.ClassGenerator<T>.CreateInterfaceMembers

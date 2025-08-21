@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ModelElementExtensionsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelElementExtensionsCollection
     path: src/Models/Models/Meta/ModelElementExtensionsCollection.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a collection type for extensions of model elements
+  example: []
   syntax:
     content: 'public class ModelElementExtensionsCollection : ObservableOppositeList<IModelElement, IModelElementExtension>, IReadOnlyList<IModelElementExtension>, IReadOnlyCollection<IModelElementExtension>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IModelElementExtension>, IList<IModelElementExtension>, ICollectionExpression<IModelElementExtension>, IEnumerableExpression<IModelElementExtension>, IEnumerableExpression, ICollection<IModelElementExtension>, IEnumerable<IModelElementExtension>, IEnumerable'
     content.vb: Public Class ModelElementExtensionsCollection Inherits ObservableOppositeList(Of IModelElement, IModelElementExtension) Implements IReadOnlyList(Of IModelElementExtension), IReadOnlyCollection(Of IModelElementExtension), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IModelElementExtension), IList(Of IModelElementExtension), ICollectionExpression(Of IModelElementExtension), IEnumerableExpression(Of IModelElementExtension), IEnumerableExpression, ICollection(Of IModelElementExtension), IEnumerable(Of IModelElementExtension), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ModelElementExtensionsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/ModelElementExtensionsCollection.cs
-    startLine: 37
+    startLine: 44
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ModelElementExtensionsCollection(IModelElement parent)
     parameters:
     - id: parent
       type: NMF.Models.IModelElement
+      description: the parent element
     content.vb: Public Sub New(parent As IModelElement)
   overload: NMF.Models.Meta.ModelElementExtensionsCollection.#ctor*
   nameWithType.vb: ModelElementExtensionsCollection.New(IModelElement)
@@ -135,20 +140,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ModelElementExtensionsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/ModelElementExtensionsCollection.cs
-    startLine: 50
+    startLine: 58
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite element
   example: []
   syntax:
     content: protected override void SetOpposite(IModelElementExtension item, IModelElement parent)
     parameters:
     - id: item
       type: NMF.Models.IModelElementExtension
+      description: The item for which the opposite should be set
     - id: parent
       type: NMF.Models.IModelElement
     content.vb: Protected Overrides Sub SetOpposite(item As IModelElementExtension, parent As IModelElement)

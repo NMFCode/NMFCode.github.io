@@ -18,14 +18,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FileMapLocator
     path: src/Models/Models/Repository/FileMapLocator.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a locator that locates URI through a mapping to files
+  example: []
   syntax:
     content: 'public class FileMapLocator : MapLocator, IModelLocator'
     content.vb: Public Class FileMapLocator Inherits MapLocator Implements IModelLocator
@@ -59,14 +61,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/FileMapLocator.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public FileMapLocator()
     content.vb: Public Sub New()
@@ -88,19 +92,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/FileMapLocator.cs
-    startLine: 12
+    startLine: 20
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public FileMapLocator(IDictionary<Uri, string> mappings)
     parameters:
     - id: mappings
       type: System.Collections.Generic.IDictionary{System.Uri,System.String}
+      description: the mappings
     content.vb: Public Sub New(mappings As IDictionary(Of Uri, String))
   overload: NMF.Models.Repository.FileMapLocator.#ctor*
   nameWithType.vb: FileMapLocator.New(IDictionary(Of Uri, String))
@@ -120,22 +127,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Open
     path: src/Models/Models/Repository/FileMapLocator.cs
-    startLine: 14
+    startLine: 23
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Opens the given URI
   example: []
   syntax:
     content: public override Stream Open(Uri repositoryId)
     parameters:
     - id: repositoryId
       type: System.Uri
+      description: the URI as used in the repository
     return:
       type: System.IO.Stream
+      description: A stream
     content.vb: Public Overrides Function Open(repositoryId As Uri) As Stream
   overridden: NMF.Models.Repository.MapLocator.Open(System.Uri)
   overload: NMF.Models.Repository.FileMapLocator.Open*

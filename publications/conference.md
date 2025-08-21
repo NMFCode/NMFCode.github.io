@@ -1,6 +1,16 @@
 Conference Articles
 ---
 
+### 2025
+
+G. Hinkel, A. Hert, N. Hettler, and K. Weinert: **[AnyText: Incremental, left-recursive Parsing and Pretty-Printing from
+a single Grammar Definition with first-class LSP support](https://doi.org/10.1145/3732771.3742716)** in _Proceedings of the 18th ACM SIGPLAN International Conference on
+Software Language Engineering, SLE 2025, Koblenz, Germany, June
+12-13, 2025_, pp. 98-111, 2025
+**DOI:** [10.1145/3732771.3742716](https://dx.doi.org/10.1145/3732771.3742716)  
+
+
+
 ### 2018
 
 G. Hinkel, K. Busch, and R. Heinrich: **[Refinements and Structural Decompositions in Generated Code](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2018b.pdf)** in _Proceedings of the 6th International Conference on Model-Driven Engineering and Software Development_, . 2018

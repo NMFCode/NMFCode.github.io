@@ -20,14 +20,16 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationCallEventArgs
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Denotes event args that an operation is or was called
+  example: []
   syntax:
     content: 'public class OperationCallEventArgs : EventArgs'
     content.vb: Public Class OperationCallEventArgs Inherits EventArgs
@@ -57,23 +59,28 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 14
+    startLine: 20
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public OperationCallEventArgs(IModelElement target, IOperation operation, params object[] arguments)
     parameters:
     - id: target
       type: NMF.Models.IModelElement
+      description: The target model element
     - id: operation
       type: NMF.Models.Meta.IOperation
+      description: The operation that was called
     - id: arguments
       type: System.Object[]
+      description: The arguments
     content.vb: Public Sub New(target As IModelElement, operation As IOperation, ParamArray arguments As Object())
   overload: NMF.Models.OperationCallEventArgs.#ctor*
   nameWithType.vb: OperationCallEventArgs.New(IModelElement, IOperation, ParamArray Object())
@@ -93,14 +100,16 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Operation
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 21
+    startLine: 30
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: The operation
+  example: []
   syntax:
     content: public IOperation Operation { get; }
     parameters: []
@@ -122,14 +131,16 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Arguments
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 29
+    startLine: 41
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: The arguments
+  example: []
   syntax:
     content: public object[] Arguments { get; }
     parameters: []
@@ -151,14 +162,16 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Target
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 37
+    startLine: 52
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: The target
+  example: []
   syntax:
     content: public IModelElement Target { get; }
     parameters: []
@@ -180,14 +193,16 @@ items:
   source:
     remote:
       path: Models/Models/OperationCallEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Result
     path: src/Models/Models/OperationCallEventArgs.cs
-    startLine: 45
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Gets or sets the result of the call
+  example: []
   syntax:
     content: public object Result { get; set; }
     parameters: []

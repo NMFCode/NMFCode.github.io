@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ProcessingInstruction
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -90,8 +90,10 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -162,7 +164,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Data
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -216,7 +218,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Target
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -270,7 +272,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -301,7 +303,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DataChanging
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -332,7 +334,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DataChanged
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -363,7 +365,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetChanging
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -394,7 +396,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetChanged
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -425,7 +427,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnDataChanging
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -457,7 +459,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnDataChanged
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -489,7 +491,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnTargetChanging
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -521,7 +523,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnTargetChanged
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -553,7 +555,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -595,7 +597,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -634,7 +636,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForAttribute
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -673,7 +675,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Type/ProcessingInstruction.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Interop/EcoreInterop/Type/ProcessingInstruction.cs
@@ -1186,37 +1188,57 @@ references:
     name: ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.eventargs
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)

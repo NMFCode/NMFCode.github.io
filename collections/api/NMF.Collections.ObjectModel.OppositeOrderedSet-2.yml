@@ -22,19 +22,23 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OppositeOrderedSet
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an abstract base class for an ordered set with opposites
+  example: []
   syntax:
     content: 'public abstract class OppositeOrderedSet<TParent, TCollected> : OrderedSet<TCollected>, IList, ICollection, IOrderedSet<TCollected>, IList<TCollected>, ISet<TCollected>, ICollection<TCollected>, IEnumerable<TCollected>, IEnumerable'
     typeParameters:
     - id: TParent
+      description: the type of the parent element
     - id: TCollected
+      description: the collection item type
     content.vb: Public MustInherit Class OppositeOrderedSet(Of TParent, TCollected) Inherits OrderedSet(Of TCollected) Implements IList, ICollection, IOrderedSet(Of TCollected), IList(Of TCollected), ISet(Of TCollected), ICollection(Of TCollected), IEnumerable(Of TCollected), IEnumerable
   inheritance:
   - System.Object
@@ -95,14 +99,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets the parent element
+  example: []
   syntax:
     content: public TParent Parent { get; }
     parameters: []
@@ -126,21 +132,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 13
+    startLine: 24
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Sets the opposite of the given item
+  example: []
   syntax:
     content: protected abstract void SetOpposite(TCollected item, TParent newParent)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: the item
     - id: newParent
       type: '{TParent}'
+      description: the new parent or null, if the item is removed from the collection
     content.vb: Protected MustOverride Sub SetOpposite(item As TCollected, newParent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.SetOpposite*
   nameWithType.vb: OppositeOrderedSet(Of TParent, TCollected).SetOpposite(TCollected, TParent)
@@ -159,21 +169,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 15
+    startLine: 31
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: protected OppositeOrderedSet(TParent parent)
     parameters:
     - id: parent
       type: '{TParent}'
+      description: the parent model element
     content.vb: Protected Sub New(parent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if parent is null
   nameWithType.vb: OppositeOrderedSet(Of TParent, TCollected).New(TParent)
   fullName.vb: NMF.Collections.ObjectModel.OppositeOrderedSet(Of TParent, TCollected).New(TParent)
   name.vb: New(TParent)
@@ -191,20 +208,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 22
+    startLine: 39
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.Generic.OrderedSet{{TCollected}}.Clear
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: OppositeOrderedSet(Of TParent, TCollected).Clear()
   fullName.vb: NMF.Collections.ObjectModel.OppositeOrderedSet(Of TParent, TCollected).Clear()
 - uid: NMF.Collections.ObjectModel.OppositeOrderedSet`2.Add(`1)
@@ -221,22 +243,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 32
+    startLine: 50
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(TCollected item)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As TCollected) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{TCollected}}.Add({TCollected})
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.Add*
@@ -256,24 +281,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 42
+    startLine: 61
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(TCollected item, int index)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As TCollected, index As Integer) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{TCollected}}.Remove({TCollected},System.Int32)
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.Remove*
@@ -294,24 +323,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Replace
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 52
+    startLine: 72
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the item at the given arrayIndex
   example: []
   syntax:
     content: protected override void Replace(int index, TCollected oldValue, TCollected newValue)
     parameters:
     - id: index
       type: System.Int32
+      description: The arrayIndex on which the item is replaced
     - id: oldValue
       type: '{TCollected}'
+      description: The old value
     - id: newValue
       type: '{TCollected}'
+      description: The new value
     content.vb: Protected Overrides Sub Replace(index As Integer, oldValue As TCollected, newValue As TCollected)
   overridden: NMF.Collections.Generic.OrderedSet{{TCollected}}.Replace(System.Int32,{TCollected},{TCollected})
   overload: NMF.Collections.ObjectModel.OppositeOrderedSet`2.Replace*
@@ -2424,6 +2457,13 @@ references:
   name: TCollected
   nameWithType: TCollected
   fullName: TCollected
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.ObjectModel.OppositeOrderedSet`2.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.OppositeOrderedSet`2.#ctor
   href: NMF.Collections.ObjectModel.OppositeOrderedSet-2.html#NMF_Collections_ObjectModel_OppositeOrderedSet_2__ctor__0_
@@ -2433,6 +2473,13 @@ references:
   nameWithType.vb: OppositeOrderedSet(Of TParent, TCollected).New
   fullName.vb: NMF.Collections.ObjectModel.OppositeOrderedSet(Of TParent, TCollected).New
   name.vb: New
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.OrderedSet{{TCollected}}.Clear
   commentId: M:NMF.Collections.Generic.OrderedSet{`1}.Clear
   parent: NMF.Collections.Generic.OrderedSet{{TCollected}}

@@ -1,0 +1,740 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil
+  commentId: T:NMF.AnyText.AnyTextJsonRpcServerUtil
+  id: AnyTextJsonRpcServerUtil
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget(StreamJsonRpc.JsonRpc,NMF.AnyText.ILspServer)
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Pipelines.IDuplexPipe,NMF.AnyText.ILspServer)
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream)
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream,NMF.AnyText.ILspServer)
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.Net.WebSockets.WebSocket,NMF.AnyText.ILspServer)
+  - NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource(System.Diagnostics.SourceLevels)
+  langs:
+  - csharp
+  - vb
+  name: AnyTextJsonRpcServerUtil
+  nameWithType: AnyTextJsonRpcServerUtil
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AnyTextJsonRpcServerUtil
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 11
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Helper class to configure Stream JSON RPC for the usage with the LSP implementation
+  example: []
+  syntax:
+    content: public static class AnyTextJsonRpcServerUtil
+    content.vb: Public Module AnyTextJsonRpcServerUtil
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.Net.WebSockets.WebSocket,NMF.AnyText.ILspServer)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.Net.WebSockets.WebSocket,NMF.AnyText.ILspServer)
+  id: CreateServer(System.Net.WebSockets.WebSocket,NMF.AnyText.ILspServer)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateServer(WebSocket, ILspServer)
+  nameWithType: AnyTextJsonRpcServerUtil.CreateServer(WebSocket, ILspServer)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.Net.WebSockets.WebSocket, NMF.AnyText.ILspServer)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateServer
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Creates a StreamJSON RPC object for the given transport
+  example: []
+  syntax:
+    content: public static JsonRpc CreateServer(WebSocket webSocket, ILspServer server)
+    parameters:
+    - id: webSocket
+      type: System.Net.WebSockets.WebSocket
+      description: The websocket connection
+    - id: server
+      type: NMF.AnyText.ILspServer
+      description: The server implementation
+    return:
+      type: StreamJsonRpc.JsonRpc
+      description: A JSON RPC object that manages the connection to the client
+    content.vb: Public Shared Function CreateServer(webSocket As WebSocket, server As ILspServer) As JsonRpc
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer*
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Pipelines.IDuplexPipe,NMF.AnyText.ILspServer)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Pipelines.IDuplexPipe,NMF.AnyText.ILspServer)
+  id: CreateServer(System.IO.Pipelines.IDuplexPipe,NMF.AnyText.ILspServer)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateServer(IDuplexPipe, ILspServer)
+  nameWithType: AnyTextJsonRpcServerUtil.CreateServer(IDuplexPipe, ILspServer)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Pipelines.IDuplexPipe, NMF.AnyText.ILspServer)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateServer
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 32
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Creates a StreamJSON RPC object for the given transport
+  example: []
+  syntax:
+    content: public static JsonRpc CreateServer(IDuplexPipe pipe, ILspServer server)
+    parameters:
+    - id: pipe
+      type: System.IO.Pipelines.IDuplexPipe
+      description: The pipe used for the connection
+    - id: server
+      type: NMF.AnyText.ILspServer
+      description: The server implementation
+    return:
+      type: StreamJsonRpc.JsonRpc
+      description: A JSON RPC object that manages the connection to the client
+    content.vb: Public Shared Function CreateServer(pipe As IDuplexPipe, server As ILspServer) As JsonRpc
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer*
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream,NMF.AnyText.ILspServer)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream,NMF.AnyText.ILspServer)
+  id: CreateServer(System.IO.Stream,NMF.AnyText.ILspServer)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateServer(Stream, ILspServer)
+  nameWithType: AnyTextJsonRpcServerUtil.CreateServer(Stream, ILspServer)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream, NMF.AnyText.ILspServer)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateServer
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 45
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Creates a StreamJSON RPC object for the given transport
+  example: []
+  syntax:
+    content: public static JsonRpc CreateServer(Stream stream, ILspServer server)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream that represents the connection with the client
+    - id: server
+      type: NMF.AnyText.ILspServer
+      description: The server implementation
+    return:
+      type: StreamJsonRpc.JsonRpc
+      description: A JSON RPC object that manages the connection to the client
+    content.vb: Public Shared Function CreateServer(stream As Stream, server As ILspServer) As JsonRpc
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer*
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream)
+  id: CreateServer(System.IO.Stream)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateServer(Stream)
+  nameWithType: AnyTextJsonRpcServerUtil.CreateServer(Stream)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateServer
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 56
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Creates a StreamJSON RPC object for the given transport without localRpcTarget
+  example: []
+  syntax:
+    content: public static JsonRpc CreateServer(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream that represents the connection with the client
+    return:
+      type: StreamJsonRpc.JsonRpc
+      description: A JSON RPC object that manages the connection to the client
+    content.vb: Public Shared Function CreateServer(stream As Stream) As JsonRpc
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer*
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget(StreamJsonRpc.JsonRpc,NMF.AnyText.ILspServer)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget(StreamJsonRpc.JsonRpc,NMF.AnyText.ILspServer)
+  id: AddLocalRpcTarget(StreamJsonRpc.JsonRpc,NMF.AnyText.ILspServer)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: AddLocalRpcTarget(JsonRpc, ILspServer)
+  nameWithType: AnyTextJsonRpcServerUtil.AddLocalRpcTarget(JsonRpc, ILspServer)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget(StreamJsonRpc.JsonRpc, NMF.AnyText.ILspServer)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddLocalRpcTarget
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 67
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Registers an ILspServer implementation as a local RPC target on the specified JsonRpc instance.
+  example: []
+  syntax:
+    content: public static void AddLocalRpcTarget(JsonRpc rpc, ILspServer server)
+    parameters:
+    - id: rpc
+      type: StreamJsonRpc.JsonRpc
+      description: The JsonRpc instance that will handle incoming RPC calls.
+    - id: server
+      type: NMF.AnyText.ILspServer
+      description: The ILspServer implementation to be registered as the local target.
+    content.vb: Public Shared Sub AddLocalRpcTarget(rpc As JsonRpc, server As ILspServer)
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget*
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource(System.Diagnostics.SourceLevels)
+  commentId: M:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource(System.Diagnostics.SourceLevels)
+  id: CreateTraceSource(System.Diagnostics.SourceLevels)
+  parent: NMF.AnyText.AnyTextJsonRpcServerUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTraceSource(SourceLevels)
+  nameWithType: AnyTextJsonRpcServerUtil.CreateTraceSource(SourceLevels)
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource(System.Diagnostics.SourceLevels)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateTraceSource
+    path: src/AnyText/AnyText.Lsp/AnyTextJsonRpcServerUtil.cs
+    startLine: 85
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Creates and configures a <xref href="System.Diagnostics.TraceSource" data-throw-if-not-resolved="false"></xref> instance for logging trace information.
+  example: []
+  syntax:
+    content: public static TraceSource CreateTraceSource(SourceLevels sourceLevels = (SourceLevels)-1)
+    parameters:
+    - id: sourceLevels
+      type: System.Diagnostics.SourceLevels
+      description: The SourceLevel used to filter messages by type and severity. Defaults to <xref href="System.Diagnostics.SourceLevels.All" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Diagnostics.TraceSource
+      description: A <xref href="System.Diagnostics.TraceSource" data-throw-if-not-resolved="false"></xref> instance configured for the specified logging level.
+    content.vb: Public Shared Function CreateTraceSource(sourceLevels As SourceLevels = -1) As TraceSource
+  overload: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource*
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer*
+  commentId: Overload:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer
+  href: NMF.AnyText.AnyTextJsonRpcServerUtil.html#NMF_AnyText_AnyTextJsonRpcServerUtil_CreateServer_System_Net_WebSockets_WebSocket_NMF_AnyText_ILspServer_
+  name: CreateServer
+  nameWithType: AnyTextJsonRpcServerUtil.CreateServer
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateServer
+- uid: System.Net.WebSockets.WebSocket
+  commentId: T:System.Net.WebSockets.WebSocket
+  parent: System.Net.WebSockets
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.websockets.websocket
+  name: WebSocket
+  nameWithType: WebSocket
+  fullName: System.Net.WebSockets.WebSocket
+- uid: NMF.AnyText.ILspServer
+  commentId: T:NMF.AnyText.ILspServer
+  parent: NMF.AnyText
+  href: NMF.AnyText.ILspServer.html
+  name: ILspServer
+  nameWithType: ILspServer
+  fullName: NMF.AnyText.ILspServer
+- uid: StreamJsonRpc.JsonRpc
+  commentId: T:StreamJsonRpc.JsonRpc
+  parent: StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
+  name: JsonRpc
+  nameWithType: JsonRpc
+  fullName: StreamJsonRpc.JsonRpc
+- uid: System.Net.WebSockets
+  commentId: N:System.Net.WebSockets
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.WebSockets
+  nameWithType: System.Net.WebSockets
+  fullName: System.Net.WebSockets
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.WebSockets
+    name: WebSockets
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.websockets
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.WebSockets
+    name: WebSockets
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.websockets
+- uid: StreamJsonRpc
+  commentId: N:StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc
+  name: StreamJsonRpc
+  nameWithType: StreamJsonRpc
+  fullName: StreamJsonRpc
+- uid: System.IO.Pipelines.IDuplexPipe
+  commentId: T:System.IO.Pipelines.IDuplexPipe
+  parent: System.IO.Pipelines
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.pipelines.iduplexpipe
+  name: IDuplexPipe
+  nameWithType: IDuplexPipe
+  fullName: System.IO.Pipelines.IDuplexPipe
+- uid: System.IO.Pipelines
+  commentId: N:System.IO.Pipelines
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO.Pipelines
+  nameWithType: System.IO.Pipelines
+  fullName: System.IO.Pipelines
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  - name: .
+  - uid: System.IO.Pipelines
+    name: Pipelines
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.pipelines
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  - name: .
+  - uid: System.IO.Pipelines
+    name: Pipelines
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.pipelines
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget*
+  commentId: Overload:NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget
+  href: NMF.AnyText.AnyTextJsonRpcServerUtil.html#NMF_AnyText_AnyTextJsonRpcServerUtil_AddLocalRpcTarget_StreamJsonRpc_JsonRpc_NMF_AnyText_ILspServer_
+  name: AddLocalRpcTarget
+  nameWithType: AnyTextJsonRpcServerUtil.AddLocalRpcTarget
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.AddLocalRpcTarget
+- uid: System.Diagnostics.TraceSource
+  commentId: T:System.Diagnostics.TraceSource
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.tracesource
+  name: TraceSource
+  nameWithType: TraceSource
+  fullName: System.Diagnostics.TraceSource
+- uid: System.Diagnostics.SourceLevels.All
+  commentId: F:System.Diagnostics.SourceLevels.All
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.sourcelevels#system-diagnostics-sourcelevels-all
+  name: All
+  nameWithType: SourceLevels.All
+  fullName: System.Diagnostics.SourceLevels.All
+- uid: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource*
+  commentId: Overload:NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource
+  href: NMF.AnyText.AnyTextJsonRpcServerUtil.html#NMF_AnyText_AnyTextJsonRpcServerUtil_CreateTraceSource_System_Diagnostics_SourceLevels_
+  name: CreateTraceSource
+  nameWithType: AnyTextJsonRpcServerUtil.CreateTraceSource
+  fullName: NMF.AnyText.AnyTextJsonRpcServerUtil.CreateTraceSource
+- uid: System.Diagnostics.SourceLevels
+  commentId: T:System.Diagnostics.SourceLevels
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.sourcelevels
+  name: SourceLevels
+  nameWithType: SourceLevels
+  fullName: System.Diagnostics.SourceLevels
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics

@@ -34,18 +34,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableOrderedSet
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an observable ordered set
+  example: []
   syntax:
     content: 'public class ObservableOrderedSet<T> : OrderedSet<T>, INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression<T>, IListExpression<T>, ISetExpression<T>, ICollectionExpression<T>, IEnumerableExpression<T>, IOrderedSet<T>, IList<T>, ISet<T>, ICollection<T>, IEnumerable<T>, ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Class ObservableOrderedSet(Of T) Inherits OrderedSet(Of T) Implements INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression(Of T), IListExpression(Of T), ISetExpression(Of T), ICollectionExpression(Of T), IEnumerableExpression(Of T), IOrderedSet(Of T), IList(Of T), ISet(Of T), ICollection(Of T), IEnumerable(Of T), ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable
   inheritance:
   - System.Object
@@ -99,6 +102,8 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
   nameWithType.vb: ObservableOrderedSet(Of T)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T)
   name.vb: ObservableOrderedSet(Of T)
@@ -116,14 +121,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnPropertyChanged
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 14
+    startLine: 18
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  example: []
   syntax:
     content: protected void OnPropertyChanged(string property)
     parameters:
@@ -148,14 +154,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 19
+    startLine: 24
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  example: []
   syntax:
     content: protected void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     parameters:
@@ -179,14 +186,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  example: []
   syntax:
     content: protected void OnCollectionChanging(NotifyCollectionChangedEventArgs e)
     parameters:
@@ -210,14 +218,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 31
+    startLine: 38
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Occurs when the collection changes.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler CollectionChanged
@@ -242,14 +251,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 33
+    startLine: 42
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets raised when an attempt is made to change a given collection
   example: []
   syntax:
     content: public event EventHandler<NotifyCollectionChangedEventArgs> CollectionChanging
@@ -274,14 +284,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: PropertyChanged
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 35
+    startLine: 46
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Occurs when a property value changes.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler PropertyChanged
@@ -306,11 +317,11 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AsNotifiable
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 39
+    startLine: 51
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
@@ -341,18 +352,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireEvents
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 55
+    startLine: 71
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Determines whether events are subscribed
+  example: []
   syntax:
     content: protected bool RequireEvents()
     return:
       type: System.Boolean
+      description: True, if there is any subscriber to CollectionChanged, PropertyChanged or CollectionChanging
     content.vb: Protected Function RequireEvents() As Boolean
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.RequireEvents*
   nameWithType.vb: ObservableOrderedSet(Of T).RequireEvents()
@@ -371,22 +385,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 60
+    startLine: 78
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As T) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Add({T})
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Add*
@@ -408,21 +425,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SilentAdd
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 76
+    startLine: 99
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Adds the element without notifications
+  example: []
   syntax:
     content: protected bool SilentAdd(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: the element to be added
     return:
       type: System.Boolean
+      description: true, if the element was added, otherwise false
     content.vb: Protected Function SilentAdd(item As T) As Boolean
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentAdd*
   nameWithType.vb: ObservableOrderedSet(Of T).SilentAdd(T)
@@ -441,25 +462,35 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 81
+    startLine: 105
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public override void Insert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overrides Sub Insert(index As Integer, item As T)
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Insert(System.Int32,{T})
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
   nameWithType.vb: ObservableOrderedSet(Of T).Insert(Integer, T)
@@ -479,21 +510,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SilentInsert
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 96
+    startLine: 125
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts the element at the given index without notifications
+  example: []
   syntax:
     content: protected void SilentInsert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: the index at which the element should be inserted
     - id: item
       type: '{T}'
+      description: the item to insert
     content.vb: Protected Sub SilentInsert(index As Integer, item As T)
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentInsert*
   nameWithType.vb: ObservableOrderedSet(Of T).SilentInsert(Integer, T)
@@ -513,20 +548,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 101
+    startLine: 131
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Clear
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Clear
   - System.Collections.IList.Clear
@@ -546,14 +586,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SilentClear
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 116
+    startLine: 149
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Clears the collection contents without notifications
+  example: []
   syntax:
     content: protected void SilentClear()
     content.vb: Protected Sub SilentClear()
@@ -574,24 +616,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 121
+    startLine: 155
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As T, index As Integer) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Remove({T},System.Int32)
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Remove*
@@ -612,23 +658,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SilentRemove
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 140
+    startLine: 180
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the element without notifications
+  example: []
   syntax:
     content: protected bool SilentRemove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: the element to remove
     - id: index
       type: System.Int32
+      description: the index of the removed element
     return:
       type: System.Boolean
+      description: true, if the removal was successful, otherwise false
     content.vb: Protected Function SilentRemove(item As T, index As Integer) As Boolean
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentRemove*
   nameWithType.vb: ObservableOrderedSet(Of T).SilentRemove(T, Integer)
@@ -648,24 +699,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Replace
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 145
+    startLine: 186
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the item at the given arrayIndex
   example: []
   syntax:
     content: protected override void Replace(int index, T oldValue, T newValue)
     parameters:
     - id: index
       type: System.Int32
+      description: The arrayIndex on which the item is replaced
     - id: oldValue
       type: '{T}'
+      description: The old value
     - id: newValue
       type: '{T}'
+      description: The new value
     content.vb: Protected Overrides Sub Replace(index As Integer, oldValue As T, newValue As T)
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Replace(System.Int32,{T},{T})
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace*
@@ -686,23 +741,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SilentReplace
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 160
+    startLine: 207
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the element without notifications
+  example: []
   syntax:
     content: protected void SilentReplace(int index, T oldValue, T newValue)
     parameters:
     - id: index
       type: System.Int32
+      description: the index of the element
     - id: oldValue
       type: '{T}'
+      description: the old value
     - id: newValue
       type: '{T}'
+      description: the new value
     content.vb: Protected Sub SilentReplace(index As Integer, oldValue As T, newValue As T)
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentReplace*
   nameWithType.vb: ObservableOrderedSet(Of T).SilentReplace(Integer, T, T)
@@ -722,19 +782,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Collections/Collections/ObjectModel/ObservableOrderedSet.cs
-    startLine: 165
+    startLine: 214
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: NMF.Collections.ObjectModel.ObservableOrderedSet`1.ToString*
@@ -935,7 +997,7 @@ references:
   - name: T
   - name: )
 - uid: NMF.Expressions.ICollectionExpression{{T}}
-  commentId: T:NMF.Expressions.ICollectionExpression{`0}
+  commentId: T:NMF.Expressions.ICollectionExpression{``0}
   parent: NMF.Expressions
   definition: NMF.Expressions.ICollectionExpression`1
   name: ICollectionExpression<T>
@@ -959,7 +1021,7 @@ references:
   - name: T
   - name: )
 - uid: NMF.Expressions.IEnumerableExpression{{T}}
-  commentId: T:NMF.Expressions.IEnumerableExpression{`0}
+  commentId: T:NMF.Expressions.IEnumerableExpression{``0}
   parent: NMF.Expressions
   definition: NMF.Expressions.IEnumerableExpression`1
   name: IEnumerableExpression<T>
@@ -1982,6 +2044,49 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  parent: NMF.Collections.CollectionExtensions
+  definition: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
   - name: )
 - uid: System
   commentId: N:System
@@ -3065,6 +3170,76 @@ references:
   fullName: NMF.Collections.Generic.DecoratedSet<T>.Count
   nameWithType.vb: DecoratedSet(Of T).Count
   fullName.vb: NMF.Collections.Generic.DecoratedSet(Of T).Count
+- uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NMF.Collections.CollectionExtensions
+  commentId: T:NMF.Collections.CollectionExtensions
+  parent: NMF.Collections
+  href: NMF.Collections.CollectionExtensions.html
+  name: CollectionExtensions
+  nameWithType: CollectionExtensions
+  fullName: NMF.Collections.CollectionExtensions
+- uid: NMF.Collections
+  commentId: N:NMF.Collections
+  href: NMF.html
+  name: NMF.Collections
+  nameWithType: NMF.Collections
+  fullName: NMF.Collections
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.OnPropertyChanged*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableOrderedSet`1.OnPropertyChanged
   href: NMF.Collections.ObjectModel.ObservableOrderedSet-1.html#NMF_Collections_ObjectModel_ObservableOrderedSet_1_OnPropertyChanged_System_String_
@@ -3442,6 +3617,20 @@ references:
   fullName: NMF.Collections.ObjectModel.ObservableOrderedSet<T>.SilentAdd
   nameWithType.vb: ObservableOrderedSet(Of T).SilentAdd
   fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T).SilentAdd
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.OrderedSet{{T}}.Insert(System.Int32,{T})
   commentId: M:NMF.Collections.Generic.OrderedSet{`0}.Insert(System.Int32,`0)
   parent: NMF.Collections.Generic.OrderedSet{{T}}

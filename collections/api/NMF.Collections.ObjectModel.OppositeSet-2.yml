@@ -21,19 +21,23 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OppositeSet
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 60
+    startLine: 85
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an abstract base class for a set with opposites
+  example: []
   syntax:
     content: 'public abstract class OppositeSet<TParent, TCollected> : DecoratedSet<TCollected>, ISet<TCollected>, ICollection<TCollected>, IEnumerable<TCollected>, IList, ICollection, IEnumerable'
     typeParameters:
     - id: TParent
+      description: the type of the parent
     - id: TCollected
+      description: the type of the collection items
     content.vb: Public MustInherit Class OppositeSet(Of TParent, TCollected) Inherits DecoratedSet(Of TCollected) Implements ISet(Of TCollected), ICollection(Of TCollected), IEnumerable(Of TCollected), IList, ICollection, IEnumerable
   inheritance:
   - System.Object
@@ -85,14 +89,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 62
+    startLine: 90
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets the parent element
+  example: []
   syntax:
     content: public TParent Parent { get; }
     parameters: []
@@ -116,21 +122,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 64
+    startLine: 97
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Sets the opposite of the given item
+  example: []
   syntax:
     content: protected abstract void SetOpposite(TCollected item, TParent newParent)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: the item
     - id: newParent
       type: '{TParent}'
+      description: the new parent or null, if the item is removed from the collection
     content.vb: Protected MustOverride Sub SetOpposite(item As TCollected, newParent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeSet`2.SetOpposite*
   nameWithType.vb: OppositeSet(Of TParent, TCollected).SetOpposite(TCollected, TParent)
@@ -149,21 +159,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 66
+    startLine: 104
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: protected OppositeSet(TParent parent)
     parameters:
     - id: parent
       type: '{TParent}'
+      description: the parent model element
     content.vb: Protected Sub New(parent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeSet`2.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if parent is null
   nameWithType.vb: OppositeSet(Of TParent, TCollected).New(TParent)
   fullName.vb: NMF.Collections.ObjectModel.OppositeSet(Of TParent, TCollected).New(TParent)
   name.vb: New(TParent)
@@ -181,20 +198,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 73
+    startLine: 112
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.Generic.DecoratedSet{{TCollected}}.Clear
   overload: NMF.Collections.ObjectModel.OppositeSet`2.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: OppositeSet(Of TParent, TCollected).Clear()
   fullName.vb: NMF.Collections.ObjectModel.OppositeSet(Of TParent, TCollected).Clear()
 - uid: NMF.Collections.ObjectModel.OppositeSet`2.Add(`1)
@@ -211,22 +233,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 83
+    startLine: 123
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(TCollected item)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As TCollected) As Boolean
   overridden: NMF.Collections.Generic.DecoratedSet{{TCollected}}.Add({TCollected})
   overload: NMF.Collections.ObjectModel.OppositeSet`2.Add*
@@ -246,25 +271,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 93
+    startLine: 134
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override bool Remove(TCollected item)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overrides Function Remove(item As TCollected) As Boolean
   overridden: NMF.Collections.Generic.DecoratedSet{{TCollected}}.Remove({TCollected})
   overload: NMF.Collections.ObjectModel.OppositeSet`2.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: OppositeSet(Of TParent, TCollected).Remove(TCollected)
   fullName.vb: NMF.Collections.ObjectModel.OppositeSet(Of TParent, TCollected).Remove(TCollected)
 references:
@@ -1887,6 +1919,13 @@ references:
   name: TCollected
   nameWithType: TCollected
   fullName: TCollected
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.ObjectModel.OppositeSet`2.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.OppositeSet`2.#ctor
   href: NMF.Collections.ObjectModel.OppositeSet-2.html#NMF_Collections_ObjectModel_OppositeSet_2__ctor__0_
@@ -1896,6 +1935,13 @@ references:
   nameWithType.vb: OppositeSet(Of TParent, TCollected).New
   fullName.vb: NMF.Collections.ObjectModel.OppositeSet(Of TParent, TCollected).New
   name.vb: New
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.DecoratedSet{{TCollected}}.Clear
   commentId: M:NMF.Collections.Generic.DecoratedSet{`1}.Clear
   parent: NMF.Collections.Generic.DecoratedSet{{TCollected}}

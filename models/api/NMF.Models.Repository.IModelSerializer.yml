@@ -18,14 +18,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IModelSerializer
     path: src/Models/Models/Repository/IModelSerializer.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a serializer component for model elements
+  example: []
   syntax:
     content: public interface IModelSerializer
     content.vb: Public Interface IModelSerializer
@@ -47,21 +49,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Serialize
     path: src/Models/Models/Repository/IModelSerializer.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Serializes the given model to the given target stream
+  example: []
   syntax:
     content: void Serialize(Model model, Stream target)
     parameters:
     - id: model
       type: NMF.Models.Model
+      description: the model to serialize
     - id: target
       type: System.IO.Stream
+      description: the target stream
     content.vb: Sub Serialize(model As Model, target As Stream)
   overload: NMF.Models.Repository.IModelSerializer.Serialize*
 - uid: NMF.Models.Repository.IModelSerializer.SerializeFragment(NMF.Models.ModelElement,System.IO.Stream)
@@ -78,21 +84,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SerializeFragment
     path: src/Models/Models/Repository/IModelSerializer.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Serialize the given model element as a fragment to the given stream
+  example: []
   syntax:
     content: void SerializeFragment(ModelElement element, Stream target)
     parameters:
     - id: element
       type: NMF.Models.ModelElement
+      description: the model element to serialize
     - id: target
       type: System.IO.Stream
+      description: the target stream
     content.vb: Sub SerializeFragment(element As ModelElement, target As Stream)
   overload: NMF.Models.Repository.IModelSerializer.SerializeFragment*
 - uid: NMF.Models.Repository.IModelSerializer.Deserialize(System.IO.Stream,System.Uri,NMF.Models.Repository.IModelRepository,System.Boolean)
@@ -109,27 +119,34 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Deserialize
     path: src/Models/Models/Repository/IModelSerializer.cs
-    startLine: 15
+    startLine: 32
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Deserializes the given source into a model
+  example: []
   syntax:
     content: Model Deserialize(Stream source, Uri modelUri, IModelRepository repository, bool addToRepository)
     parameters:
     - id: source
       type: System.IO.Stream
+      description: the source stream
     - id: modelUri
       type: System.Uri
+      description: the URI of the model
     - id: repository
       type: NMF.Models.Repository.IModelRepository
+      description: the repository in the context of which the model is deserialized
     - id: addToRepository
       type: System.Boolean
+      description: true, if the model should be added to the repository, otherwise false
     return:
       type: NMF.Models.Model
+      description: the deserialized model
     content.vb: Function Deserialize(source As Stream, modelUri As Uri, repository As IModelRepository, addToRepository As Boolean) As Model
   overload: NMF.Models.Repository.IModelSerializer.Deserialize*
   nameWithType.vb: IModelSerializer.Deserialize(Stream, Uri, IModelRepository, Boolean)

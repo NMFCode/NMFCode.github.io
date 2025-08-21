@@ -1,0 +1,2099 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.ILspServer
+  commentId: T:NMF.AnyText.ILspServer
+  id: ILspServer
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
+  - NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.Exit
+  - NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)
+  - NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)
+  - NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
+  - NMF.AnyText.ILspServer.Initialized
+  - NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.Shutdown
+  langs:
+  - csharp
+  - vb
+  name: ILspServer
+  nameWithType: ILspServer
+  fullName: NMF.AnyText.ILspServer
+  type: Interface
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ILspServer
+    path: src/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+    startLine: 6
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Denotes an interface for an LSP server
+  example: []
+  syntax:
+    content: public interface ILspServer
+    content.vb: Public Interface ILspServer
+- uid: NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
+  id: CodeAction(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: CodeAction(JToken)
+  nameWithType: ILspServer.CodeAction(JToken)
+  fullName: NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.CodeAction.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CodeAction
+    path: src/AnyText/AnyText.Lsp/ILspServer.CodeAction.cs
+    startLine: 12
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/codeAction</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/codeAction")]
+
+      CodeAction[] CodeAction(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (CodeActionParams)
+    return:
+      type: LspTypes.CodeAction[]
+    content.vb: >-
+      <JsonRpcMethod("textDocument/codeAction")>
+
+      Function CodeAction(arg As JToken) As CodeAction()
+  overload: NMF.AnyText.ILspServer.CodeAction*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/codeAction
+- uid: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  id: CodeLens(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: CodeLens(JToken)
+  nameWithType: ILspServer.CodeLens(JToken)
+  fullName: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.CodeLens.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CodeLens
+    path: src/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/codeLens</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/codeLens")]
+
+      CodeLens[] CodeLens(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (CodeLensParams)
+    return:
+      type: LspTypes.CodeLens[]
+      description: A Array of <xref href="NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)" data-throw-if-not-resolved="false"></xref> objects containing the available CodeLenses of the document.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/codeLens")>
+
+      Function CodeLens(arg As JToken) As CodeLens()
+  overload: NMF.AnyText.ILspServer.CodeLens*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/codeLens
+- uid: NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
+  id: CodeLensResolve(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: CodeLensResolve(JToken)
+  nameWithType: ILspServer.CodeLensResolve(JToken)
+  fullName: NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.CodeLens.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CodeLensResolve
+    path: src/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>codeLense/resolve</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("codeLens/resolve")]
+
+      CodeLens CodeLensResolve(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (CodeLens)
+    return:
+      type: LspTypes.CodeLens
+      description: A <xref href="NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)" data-throw-if-not-resolved="false"></xref> object containing the executed CodeLens
+    content.vb: >-
+      <JsonRpcMethod("codeLens/resolve")>
+
+      Function CodeLensResolve(arg As JToken) As CodeLens
+  overload: NMF.AnyText.ILspServer.CodeLensResolve*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: codeLens/resolve
+- uid: NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
+  id: DidChange(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: DidChange(JToken)
+  nameWithType: ILspServer.DidChange(JToken)
+  fullName: NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DidChange
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when the client signals a change
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/didChange")]
+
+      void DidChange(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: the parameters of the request
+    content.vb: >-
+      <JsonRpcMethod("textDocument/didChange")>
+
+      Sub DidChange(arg As JToken)
+  overload: NMF.AnyText.ILspServer.DidChange*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/didChange
+- uid: NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)
+  id: DidClose(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: DidClose(JToken)
+  nameWithType: ILspServer.DidClose(JToken)
+  fullName: NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DidClose
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 26
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when the client closed a document
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/didClose")]
+
+      void DidClose(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: the parameters of the request
+    content.vb: >-
+      <JsonRpcMethod("textDocument/didClose")>
+
+      Sub DidClose(arg As JToken)
+  overload: NMF.AnyText.ILspServer.DidClose*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/didClose
+- uid: NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
+  id: DidOpen(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: DidOpen(JToken)
+  nameWithType: ILspServer.DidOpen(JToken)
+  fullName: NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DidOpen
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 33
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when the client opened a document
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/didOpen")]
+
+      void DidOpen(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: the parameters of the request
+    content.vb: >-
+      <JsonRpcMethod("textDocument/didOpen")>
+
+      Sub DidOpen(arg As JToken)
+  overload: NMF.AnyText.ILspServer.DidOpen*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/didOpen
+- uid: NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
+  commentId: M:NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
+  id: DidSave(LspTypes.TextDocumentIdentifier,System.String)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: DidSave(TextDocumentIdentifier, string)
+  nameWithType: ILspServer.DidSave(TextDocumentIdentifier, string)
+  fullName: NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier, string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DidSave
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 41
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when the client saved a document
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/didSave")]
+
+      void DidSave(TextDocumentIdentifier textDocument, string text)
+    parameters:
+    - id: textDocument
+      type: LspTypes.TextDocumentIdentifier
+      description: the document to save
+    - id: text
+      type: System.String
+      description: the actual text
+    content.vb: >-
+      <JsonRpcMethod("textDocument/didSave")>
+
+      Sub DidSave(textDocument As TextDocumentIdentifier, text As String)
+  overload: NMF.AnyText.ILspServer.DidSave*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/didSave
+  nameWithType.vb: ILspServer.DidSave(TextDocumentIdentifier, String)
+  fullName.vb: NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier, String)
+  name.vb: DidSave(TextDocumentIdentifier, String)
+- uid: NMF.AnyText.ILspServer.Exit
+  commentId: M:NMF.AnyText.ILspServer.Exit
+  id: Exit
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Exit()
+  nameWithType: ILspServer.Exit()
+  fullName: NMF.AnyText.ILspServer.Exit()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Exit
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 47
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when the client exits
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("exit")]
+
+      void Exit()
+    content.vb: >-
+      <JsonRpcMethod("exit")>
+
+      Sub [Exit]()
+  overload: NMF.AnyText.ILspServer.Exit*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: exit
+- uid: NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
+  commentId: M:NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
+  id: Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)
+  nameWithType: ILspServer.Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)
+  fullName: NMF.AnyText.ILspServer.Initialize(int?, LspTypes._InitializeParams_ClientInfo, string, string, System.Uri, LspTypes.ClientCapabilities, LspTypes.TraceValue, LspTypes.WorkspaceFolder[], object)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Initialize
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 63
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Initializes the server
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("initialize")]
+
+      InitializeResult Initialize(int? processId, _InitializeParams_ClientInfo clientInfo, string locale, string rootPath, Uri rootUri, ClientCapabilities capabilities, TraceValue trace, WorkspaceFolder[] workspaceFolders, object InitializationOptions = null)
+    parameters:
+    - id: processId
+      type: System.Nullable{System.Int32}
+      description: ''
+    - id: clientInfo
+      type: LspTypes._InitializeParams_ClientInfo
+      description: ''
+    - id: locale
+      type: System.String
+      description: the language
+    - id: rootPath
+      type: System.String
+      description: ''
+    - id: rootUri
+      type: System.Uri
+      description: ''
+    - id: capabilities
+      type: LspTypes.ClientCapabilities
+      description: capabilities of the client
+    - id: trace
+      type: LspTypes.TraceValue
+      description: ''
+    - id: workspaceFolders
+      type: LspTypes.WorkspaceFolder[]
+      description: workspace folders
+    - id: InitializationOptions
+      type: System.Object
+      description: options for the initialization
+    return:
+      type: LspTypes.InitializeResult
+      description: ''
+    content.vb: >-
+      <JsonRpcMethod("initialize")>
+
+      Function Initialize(processId As Integer?, clientInfo As _InitializeParams_ClientInfo, locale As String, rootPath As String, rootUri As Uri, capabilities As ClientCapabilities, trace As TraceValue, workspaceFolders As WorkspaceFolder(), InitializationOptions As Object = Nothing) As InitializeResult
+  overload: NMF.AnyText.ILspServer.Initialize*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: initialize
+  nameWithType.vb: ILspServer.Initialize(Integer?, _InitializeParams_ClientInfo, String, String, Uri, ClientCapabilities, TraceValue, WorkspaceFolder(), Object)
+  fullName.vb: NMF.AnyText.ILspServer.Initialize(Integer?, LspTypes._InitializeParams_ClientInfo, String, String, System.Uri, LspTypes.ClientCapabilities, LspTypes.TraceValue, LspTypes.WorkspaceFolder(), Object)
+  name.vb: Initialize(Integer?, _InitializeParams_ClientInfo, String, String, Uri, ClientCapabilities, TraceValue, WorkspaceFolder(), Object)
+- uid: NMF.AnyText.ILspServer.Initialized
+  commentId: M:NMF.AnyText.ILspServer.Initialized
+  id: Initialized
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Initialized()
+  nameWithType: ILspServer.Initialized()
+  fullName: NMF.AnyText.ILspServer.Initialized()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Initialized
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 77
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Initializes the server
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("initialized")]
+
+      void Initialized()
+    content.vb: >-
+      <JsonRpcMethod("initialized")>
+
+      Sub Initialized()
+  overload: NMF.AnyText.ILspServer.Initialized*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: initialized
+- uid: NMF.AnyText.ILspServer.Shutdown
+  commentId: M:NMF.AnyText.ILspServer.Shutdown
+  id: Shutdown
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Shutdown()
+  nameWithType: ILspServer.Shutdown()
+  fullName: NMF.AnyText.ILspServer.Shutdown()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Shutdown
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 83
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Shuts down the server
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("shutdown")]
+
+      void Shutdown()
+    content.vb: >-
+      <JsonRpcMethod("shutdown")>
+
+      Sub Shutdown()
+  overload: NMF.AnyText.ILspServer.Shutdown*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: shutdown
+- uid: NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
+  id: SetTrace(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: SetTrace(JToken)
+  nameWithType: ILspServer.SetTrace(JToken)
+  fullName: NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SetTrace
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 90
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>$/setTrace</code> request from the client. This is used to set the trace setting of the server.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("$/setTrace")]
+
+      void SetTrace(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (SetTraceParams)
+    content.vb: >-
+      <JsonRpcMethod("$/setTrace")>
+
+      Sub SetTrace(arg As JToken)
+  overload: NMF.AnyText.ILspServer.SetTrace*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: $/setTrace
+- uid: NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  id: HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: HandleCompletion(JToken)
+  nameWithType: ILspServer.HandleCompletion(JToken)
+  fullName: NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: HandleCompletion
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 98
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Suggests completions
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/completion")]
+
+      CompletionList HandleCompletion(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: ''
+    return:
+      type: LspTypes.CompletionList
+      description: A completion list
+    content.vb: >-
+      <JsonRpcMethod("textDocument/completion")>
+
+      Function HandleCompletion(arg As JToken) As CompletionList
+  overload: NMF.AnyText.ILspServer.HandleCompletion*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/completion
+- uid: NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+  id: ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: ExecuteCommand(JToken)
+  nameWithType: ILspServer.ExecuteCommand(JToken)
+  fullName: NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ExecuteCommand
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 106
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>workspace/ececuteCommand</code> request from the client. This is used to execute an action on the
+
+    Server.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("workspace/executeCommand")]
+
+      void ExecuteCommand(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (ExceuteCommandParams)
+    content.vb: >-
+      <JsonRpcMethod("workspace/executeCommand")>
+
+      Sub ExecuteCommand(arg As JToken)
+  overload: NMF.AnyText.ILspServer.ExecuteCommand*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: workspace/executeCommand
+- uid: NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
+  id: ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: ProvideInlayHints(JToken)
+  nameWithType: ILspServer.ProvideInlayHints(JToken)
+  fullName: NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ProvideInlayHints
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 114
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Provides Inlay hints for the document
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/inlayHint")]
+
+      InlayHint[] ProvideInlayHints(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The parameters of the request
+    return:
+      type: NMF.AnyText.InlayClasses.InlayHint[]
+      description: A list of inlay hints
+    content.vb: >-
+      <JsonRpcMethod("textDocument/inlayHint")>
+
+      Function ProvideInlayHints(arg As JToken) As InlayHint()
+  overload: NMF.AnyText.ILspServer.ProvideInlayHints*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/inlayHint
+- uid: NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
+  id: QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryDocumentHighlights(JToken)
+  nameWithType: ILspServer.QueryDocumentHighlights(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.DocumentHighlights.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryDocumentHighlights
+    path: src/AnyText/AnyText.Lsp/ILspServer.DocumentHighlights.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/documentHighlight</code> request from the client. This is used to retrieve the locations and kinds
+
+    of all highlights for a literal at a given position in the document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/documentHighlight")]
+
+      DocumentHighlight[] QueryDocumentHighlights(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (DocumentHighlightParams)
+    return:
+      type: LspTypes.DocumentHighlight[]
+      description: An array of <xref href="LspTypes.DocumentHighlight" data-throw-if-not-resolved="false"></xref> objects containing the range and kind of all matching highlights in the document.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/documentHighlight")>
+
+      Function QueryDocumentHighlights(arg As JToken) As DocumentHighlight()
+  overload: NMF.AnyText.ILspServer.QueryDocumentHighlights*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/documentHighlight
+- uid: NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)
+  id: QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryDocumentSymbols(JToken)
+  nameWithType: ILspServer.QueryDocumentSymbols(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.DocumentSymbol.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryDocumentSymbols
+    path: src/AnyText/AnyText.Lsp/ILspServer.DocumentSymbol.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/documentSymbol/full</code> request from the client. This is used to retrieve all document symbols for a document, 
+
+    which can be used to show the outline of and jump to notable parts of the document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/documentSymbol")]
+
+      DocumentSymbol[] QueryDocumentSymbols(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (DocumentSymbolParams)
+    return:
+      type: LspTypes.DocumentSymbol[]
+      description: An array of <xref href="NMF.AnyText.DocumentSymbol" data-throw-if-not-resolved="false"></xref> objects, each containing details on a document symbol with subsequent children symbols.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/documentSymbol")>
+
+      Function QueryDocumentSymbols(arg As JToken) As DocumentSymbol()
+  overload: NMF.AnyText.ILspServer.QueryDocumentSymbols*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/documentSymbol
+- uid: NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
+  id: QueryReferences(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryReferences(JToken)
+  nameWithType: ILspServer.QueryReferences(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.FindReferences.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryReferences
+    path: src/AnyText/AnyText.Lsp/ILspServer.FindReferences.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/references</code> request from the client. This is used to retrieve the locations
+
+    of all references to a symbol in a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/references")]
+
+      Location[] QueryReferences(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (ReferenceParams)
+    return:
+      type: LspTypes.Location[]
+      description: An array of <xref href="LspTypes.Location" data-throw-if-not-resolved="false"></xref> objects containing the documents and locations of the references to a symbol.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/references")>
+
+      Function QueryReferences(arg As JToken) As Location()
+  overload: NMF.AnyText.ILspServer.QueryReferences*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/references
+- uid: NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)
+  id: QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryFoldingRanges(JToken)
+  nameWithType: ILspServer.QueryFoldingRanges(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.FoldingRanges.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryFoldingRanges
+    path: src/AnyText/AnyText.Lsp/ILspServer.FoldingRanges.cs
+    startLine: 18
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/foldingRange/full</code> request from the client. This is used to retrieve all folding ranges for a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/foldingRange")]
+
+      FoldingRange[] QueryFoldingRanges(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (FoldingRangeParams)
+    return:
+      type: LspTypes.FoldingRange[]
+      description: An array of <xref href="NMF.AnyText.FoldingRange" data-throw-if-not-resolved="false"></xref> objects, each containing details on a folding range in the document.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/foldingRange")>
+
+      Function QueryFoldingRanges(arg As JToken) As FoldingRange()
+  overload: NMF.AnyText.ILspServer.QueryFoldingRanges*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/foldingRange
+- uid: NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)
+  commentId: M:NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)
+  id: Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Formatting(TextDocumentIdentifier, FormattingOptions)
+  nameWithType: ILspServer.Formatting(TextDocumentIdentifier, FormattingOptions)
+  fullName: NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier, NMF.AnyText.FormattingOptions)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.Formatting.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Formatting
+    path: src/AnyText/AnyText.Lsp/ILspServer.Formatting.cs
+    startLine: 14
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/formatting</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/formatting")]
+
+      TextEdit[] Formatting(TextDocumentIdentifier textDocument, FormattingOptions options)
+    parameters:
+    - id: textDocument
+      type: LspTypes.TextDocumentIdentifier
+      description: The identifier of the text document to be formatted.
+    - id: options
+      type: NMF.AnyText.FormattingOptions
+      description: The formatting options provided by the client, such as indentation and spacing settings.
+    return:
+      type: LspTypes.TextEdit[]
+      description: An array of <xref href="NMF.AnyText.TextEdit" data-throw-if-not-resolved="false"></xref> objects representing the formatting changes.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/formatting")>
+
+      Function Formatting(textDocument As TextDocumentIdentifier, options As FormattingOptions) As TextEdit()
+  overload: NMF.AnyText.ILspServer.Formatting*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/formatting
+- uid: NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)
+  commentId: M:NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)
+  id: FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: FormattingRange(TextDocumentIdentifier, Range, FormattingOptions)
+  nameWithType: ILspServer.FormattingRange(TextDocumentIdentifier, Range, FormattingOptions)
+  fullName: NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier, LspTypes.Range, NMF.AnyText.FormattingOptions)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.Formatting.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: FormattingRange
+    path: src/AnyText/AnyText.Lsp/ILspServer.Formatting.cs
+    startLine: 24
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/rangeFormatting</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/rangeFormatting")]
+
+      TextEdit[] FormattingRange(TextDocumentIdentifier textDocument, Range range, FormattingOptions options)
+    parameters:
+    - id: textDocument
+      type: LspTypes.TextDocumentIdentifier
+      description: The identifier of the text document to be formatted.
+    - id: range
+      type: LspTypes.Range
+      description: The range within the document that should be formatted.
+    - id: options
+      type: NMF.AnyText.FormattingOptions
+      description: The formatting options provided by the client, such as indentation and spacing settings.
+    return:
+      type: LspTypes.TextEdit[]
+      description: An array of <xref href="NMF.AnyText.TextEdit" data-throw-if-not-resolved="false"></xref> objects representing the formatting changes within the specified range.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/rangeFormatting")>
+
+      Function FormattingRange(textDocument As TextDocumentIdentifier, range As Range, options As FormattingOptions) As TextEdit()
+  overload: NMF.AnyText.ILspServer.FormattingRange*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/rangeFormatting
+- uid: NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
+  id: QueryDefinition(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryDefinition(JToken)
+  nameWithType: ILspServer.QueryDefinition(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.GoToDefinition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryDefinition
+    path: src/AnyText/AnyText.Lsp/ILspServer.GoToDefinition.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/definition</code> request from the client. This is used to retrieve the location
+
+    of the definition of a symbol in a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/definition")]
+
+      LocationLink QueryDefinition(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (TextDocumentPositionParams)
+    return:
+      type: LspTypes.LocationLink
+      description: A <xref href="LspTypes.LocationLink" data-throw-if-not-resolved="false"></xref> object containing the document and position of the definition of a symbol.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/definition")>
+
+      Function QueryDefinition(arg As JToken) As LocationLink
+  overload: NMF.AnyText.ILspServer.QueryDefinition*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/definition
+- uid: NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)
+  id: Hover(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: Hover(JToken)
+  nameWithType: ILspServer.Hover(JToken)
+  fullName: NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.Hover.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Hover
+    path: src/AnyText/AnyText.Lsp/ILspServer.Hover.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Handles the <code>textDocument/hover</code> request from the client.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/hover")]
+
+      Hover Hover(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (TextDocumentHover)
+    return:
+      type: LspTypes.Hover
+    content.vb: >-
+      <JsonRpcMethod("textDocument/hover")>
+
+      Function Hover(arg As JToken) As Hover
+  overload: NMF.AnyText.ILspServer.Hover*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/hover
+- uid: NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)
+  id: QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QueryRenameWorkspaceEdit(JToken)
+  nameWithType: ILspServer.QueryRenameWorkspaceEdit(JToken)
+  fullName: NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.Rename.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QueryRenameWorkspaceEdit
+    path: src/AnyText/AnyText.Lsp/ILspServer.Rename.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/rename</code> request from the client. This is used to determine the locations of a symbol
+
+    in a workspace to perform a workspace-wide rename.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/rename")]
+
+      WorkspaceEdit QueryRenameWorkspaceEdit(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (RenameParams)
+    return:
+      type: LspTypes.WorkspaceEdit
+      description: A <xref href="LspTypes.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> object containing the changes to be performed by the client.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/rename")>
+
+      Function QueryRenameWorkspaceEdit(arg As JToken) As WorkspaceEdit
+  overload: NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/rename
+- uid: NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)
+  id: QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QuerySelectionRanges(JToken)
+  nameWithType: ILspServer.QuerySelectionRanges(JToken)
+  fullName: NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.SelectionRanges.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QuerySelectionRanges
+    path: src/AnyText/AnyText.Lsp/ILspServer.SelectionRanges.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/selectionRange</code> request from the client. This is used to retrieve selection ranges
+
+    at an array of given positions in a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/selectionRange")]
+
+      SelectionRange[] QuerySelectionRanges(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (SelectionRangeParams)
+    return:
+      type: LspTypes.SelectionRange[]
+      description: >-
+        An array of <xref href="NMF.AnyText.SelectionRange" data-throw-if-not-resolved="false"></xref> objects, each containing details on a selection range in the document
+            corresponding to the received positions.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/selectionRange")>
+
+      Function QuerySelectionRanges(arg As JToken) As SelectionRange()
+  overload: NMF.AnyText.ILspServer.QuerySelectionRanges*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/selectionRange
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
+  id: QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QuerySemanticTokens(JToken)
+  nameWithType: ILspServer.QuerySemanticTokens(JToken)
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QuerySemanticTokens
+    path: src/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+    startLine: 14
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/semanticTokens/full</code> request from the client. This is used to retrieve all semantic
+
+    tokens for a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/semanticTokens/full")]
+
+      SemanticTokens QuerySemanticTokens(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (SemanticTokensParams)
+    return:
+      type: LspTypes.SemanticTokens
+      description: A <xref href="LspTypes.SemanticTokens" data-throw-if-not-resolved="false"></xref> object containing the full set of semantic tokens for the document.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/semanticTokens/full")>
+
+      Function QuerySemanticTokens(arg As JToken) As SemanticTokens
+  overload: NMF.AnyText.ILspServer.QuerySemanticTokens*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/semanticTokens/full
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
+  id: QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QuerySemanticTokensDelta(JToken)
+  nameWithType: ILspServer.QuerySemanticTokensDelta(JToken)
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QuerySemanticTokensDelta
+    path: src/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+    startLine: 23
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDocument/semanticTokens/full/delta</code> request from the client. This is used to retrieve only
+
+    the changes (delta) in semantic tokens for a document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/semanticTokens/full/delta")]
+
+      SemanticTokensDelta QuerySemanticTokensDelta(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the request. (SemanticTokensDeltaParams)
+    return:
+      type: LspTypes.SemanticTokensDelta
+      description: A <xref href="LspTypes.SemanticTokensDelta" data-throw-if-not-resolved="false"></xref> object containing only the delta of semantic tokens for the document.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/semanticTokens/full/delta")>
+
+      Function QuerySemanticTokensDelta(arg As JToken) As SemanticTokensDelta
+  overload: NMF.AnyText.ILspServer.QuerySemanticTokensDelta*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/semanticTokens/full/delta
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  id: QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: QuerySemanticTokensRange(JToken)
+  nameWithType: ILspServer.QuerySemanticTokensRange(JToken)
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: QuerySemanticTokensRange
+    path: src/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs
+    startLine: 32
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: >-
+    Handles the <code>textDoocument/semanticTokens/range</code> request from the client. This is used to retrieve semantic
+
+    tokens within a specific range in the document.
+  example: []
+  syntax:
+    content: >-
+      [JsonRpcMethod("textDocument/semanticTokens/range")]
+
+      SemanticTokens QuerySemanticTokensRange(JToken arg)
+    parameters:
+    - id: arg
+      type: Newtonsoft.Json.Linq.JToken
+      description: The JSON token containing the parameters of the range request. (SemanticTokensRangeParams)
+    return:
+      type: LspTypes.SemanticTokens
+      description: A <xref href="LspTypes.SemanticTokens" data-throw-if-not-resolved="false"></xref> object containing the semantic tokens within the specified range.
+    content.vb: >-
+      <JsonRpcMethod("textDocument/semanticTokens/range")>
+
+      Function QuerySemanticTokensRange(arg As JToken) As SemanticTokens
+  overload: NMF.AnyText.ILspServer.QuerySemanticTokensRange*
+  attributes:
+  - type: StreamJsonRpc.JsonRpcMethodAttribute
+    ctor: StreamJsonRpc.JsonRpcMethodAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: textDocument/semanticTokens/range
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: NMF.AnyText.ILspServer.CodeAction*
+  commentId: Overload:NMF.AnyText.ILspServer.CodeAction
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_
+  name: CodeAction
+  nameWithType: ILspServer.CodeAction
+  fullName: NMF.AnyText.ILspServer.CodeAction
+- uid: Newtonsoft.Json.Linq.JToken
+  commentId: T:Newtonsoft.Json.Linq.JToken
+  parent: Newtonsoft.Json.Linq
+  isExternal: true
+  name: JToken
+  nameWithType: JToken
+  fullName: Newtonsoft.Json.Linq.JToken
+- uid: LspTypes.CodeAction[]
+  isExternal: true
+  name: CodeAction[]
+  nameWithType: CodeAction[]
+  fullName: LspTypes.CodeAction[]
+  nameWithType.vb: CodeAction()
+  fullName.vb: LspTypes.CodeAction()
+  name.vb: CodeAction()
+  spec.csharp:
+  - uid: LspTypes.CodeAction
+    name: CodeAction
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.CodeAction
+    name: CodeAction
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+- uid: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  commentId: M:NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  parent: NMF.AnyText.ILspServer
+  isExternal: true
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_
+  name: CodeLens(JToken)
+  nameWithType: ILspServer.CodeLens(JToken)
+  fullName: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+  spec.csharp:
+  - uid: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+    name: CodeLens
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_
+  - name: (
+  - uid: Newtonsoft.Json.Linq.JToken
+    name: JToken
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
+    name: CodeLens
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_
+  - name: (
+  - uid: Newtonsoft.Json.Linq.JToken
+    name: JToken
+    isExternal: true
+  - name: )
+- uid: NMF.AnyText.ILspServer.CodeLens*
+  commentId: Overload:NMF.AnyText.ILspServer.CodeLens
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_
+  name: CodeLens
+  nameWithType: ILspServer.CodeLens
+  fullName: NMF.AnyText.ILspServer.CodeLens
+- uid: LspTypes.CodeLens[]
+  isExternal: true
+  name: CodeLens[]
+  nameWithType: CodeLens[]
+  fullName: LspTypes.CodeLens[]
+  nameWithType.vb: CodeLens()
+  fullName.vb: LspTypes.CodeLens()
+  name.vb: CodeLens()
+  spec.csharp:
+  - uid: LspTypes.CodeLens
+    name: CodeLens
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.CodeLens
+    name: CodeLens
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NMF.AnyText.ILspServer
+  commentId: T:NMF.AnyText.ILspServer
+  parent: NMF.AnyText
+  href: NMF.AnyText.ILspServer.html
+  name: ILspServer
+  nameWithType: ILspServer
+  fullName: NMF.AnyText.ILspServer
+- uid: NMF.AnyText.ILspServer.CodeLensResolve*
+  commentId: Overload:NMF.AnyText.ILspServer.CodeLensResolve
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLensResolve_Newtonsoft_Json_Linq_JToken_
+  name: CodeLensResolve
+  nameWithType: ILspServer.CodeLensResolve
+  fullName: NMF.AnyText.ILspServer.CodeLensResolve
+- uid: LspTypes.CodeLens
+  commentId: T:LspTypes.CodeLens
+  parent: LspTypes
+  isExternal: true
+  name: CodeLens
+  nameWithType: CodeLens
+  fullName: LspTypes.CodeLens
+- uid: LspTypes
+  commentId: N:LspTypes
+  isExternal: true
+  name: LspTypes
+  nameWithType: LspTypes
+  fullName: LspTypes
+- uid: NMF.AnyText.ILspServer.DidChange*
+  commentId: Overload:NMF.AnyText.ILspServer.DidChange
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_
+  name: DidChange
+  nameWithType: ILspServer.DidChange
+  fullName: NMF.AnyText.ILspServer.DidChange
+- uid: NMF.AnyText.ILspServer.DidClose*
+  commentId: Overload:NMF.AnyText.ILspServer.DidClose
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_DidClose_Newtonsoft_Json_Linq_JToken_
+  name: DidClose
+  nameWithType: ILspServer.DidClose
+  fullName: NMF.AnyText.ILspServer.DidClose
+- uid: NMF.AnyText.ILspServer.DidOpen*
+  commentId: Overload:NMF.AnyText.ILspServer.DidOpen
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_DidOpen_Newtonsoft_Json_Linq_JToken_
+  name: DidOpen
+  nameWithType: ILspServer.DidOpen
+  fullName: NMF.AnyText.ILspServer.DidOpen
+- uid: NMF.AnyText.ILspServer.DidSave*
+  commentId: Overload:NMF.AnyText.ILspServer.DidSave
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_
+  name: DidSave
+  nameWithType: ILspServer.DidSave
+  fullName: NMF.AnyText.ILspServer.DidSave
+- uid: LspTypes.TextDocumentIdentifier
+  commentId: T:LspTypes.TextDocumentIdentifier
+  parent: LspTypes
+  isExternal: true
+  name: TextDocumentIdentifier
+  nameWithType: TextDocumentIdentifier
+  fullName: LspTypes.TextDocumentIdentifier
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.ILspServer.Exit*
+  commentId: Overload:NMF.AnyText.ILspServer.Exit
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Exit
+  name: Exit
+  nameWithType: ILspServer.Exit
+  fullName: NMF.AnyText.ILspServer.Exit
+- uid: NMF.AnyText.ILspServer.Initialize*
+  commentId: Overload:NMF.AnyText.ILspServer.Initialize
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_
+  name: Initialize
+  nameWithType: ILspServer.Initialize
+  fullName: NMF.AnyText.ILspServer.Initialize
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: LspTypes._InitializeParams_ClientInfo
+  commentId: T:LspTypes._InitializeParams_ClientInfo
+  parent: LspTypes
+  isExternal: true
+  name: _InitializeParams_ClientInfo
+  nameWithType: _InitializeParams_ClientInfo
+  fullName: LspTypes._InitializeParams_ClientInfo
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: LspTypes.ClientCapabilities
+  commentId: T:LspTypes.ClientCapabilities
+  parent: LspTypes
+  isExternal: true
+  name: ClientCapabilities
+  nameWithType: ClientCapabilities
+  fullName: LspTypes.ClientCapabilities
+- uid: LspTypes.TraceValue
+  commentId: T:LspTypes.TraceValue
+  parent: LspTypes
+  isExternal: true
+  name: TraceValue
+  nameWithType: TraceValue
+  fullName: LspTypes.TraceValue
+- uid: LspTypes.WorkspaceFolder[]
+  isExternal: true
+  name: WorkspaceFolder[]
+  nameWithType: WorkspaceFolder[]
+  fullName: LspTypes.WorkspaceFolder[]
+  nameWithType.vb: WorkspaceFolder()
+  fullName.vb: LspTypes.WorkspaceFolder()
+  name.vb: WorkspaceFolder()
+  spec.csharp:
+  - uid: LspTypes.WorkspaceFolder
+    name: WorkspaceFolder
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.WorkspaceFolder
+    name: WorkspaceFolder
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: LspTypes.InitializeResult
+  commentId: T:LspTypes.InitializeResult
+  parent: LspTypes
+  isExternal: true
+  name: InitializeResult
+  nameWithType: InitializeResult
+  fullName: LspTypes.InitializeResult
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.ILspServer.Initialized*
+  commentId: Overload:NMF.AnyText.ILspServer.Initialized
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Initialized
+  name: Initialized
+  nameWithType: ILspServer.Initialized
+  fullName: NMF.AnyText.ILspServer.Initialized
+- uid: NMF.AnyText.ILspServer.Shutdown*
+  commentId: Overload:NMF.AnyText.ILspServer.Shutdown
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Shutdown
+  name: Shutdown
+  nameWithType: ILspServer.Shutdown
+  fullName: NMF.AnyText.ILspServer.Shutdown
+- uid: NMF.AnyText.ILspServer.SetTrace*
+  commentId: Overload:NMF.AnyText.ILspServer.SetTrace
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_SetTrace_Newtonsoft_Json_Linq_JToken_
+  name: SetTrace
+  nameWithType: ILspServer.SetTrace
+  fullName: NMF.AnyText.ILspServer.SetTrace
+- uid: NMF.AnyText.ILspServer.HandleCompletion*
+  commentId: Overload:NMF.AnyText.ILspServer.HandleCompletion
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_HandleCompletion_Newtonsoft_Json_Linq_JToken_
+  name: HandleCompletion
+  nameWithType: ILspServer.HandleCompletion
+  fullName: NMF.AnyText.ILspServer.HandleCompletion
+- uid: LspTypes.CompletionList
+  commentId: T:LspTypes.CompletionList
+  parent: LspTypes
+  isExternal: true
+  name: CompletionList
+  nameWithType: CompletionList
+  fullName: LspTypes.CompletionList
+- uid: NMF.AnyText.ILspServer.ExecuteCommand*
+  commentId: Overload:NMF.AnyText.ILspServer.ExecuteCommand
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_
+  name: ExecuteCommand
+  nameWithType: ILspServer.ExecuteCommand
+  fullName: NMF.AnyText.ILspServer.ExecuteCommand
+- uid: NMF.AnyText.ILspServer.ProvideInlayHints*
+  commentId: Overload:NMF.AnyText.ILspServer.ProvideInlayHints
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ProvideInlayHints_Newtonsoft_Json_Linq_JToken_
+  name: ProvideInlayHints
+  nameWithType: ILspServer.ProvideInlayHints
+  fullName: NMF.AnyText.ILspServer.ProvideInlayHints
+- uid: NMF.AnyText.InlayClasses.InlayHint[]
+  isExternal: true
+  href: NMF.AnyText.InlayClasses.InlayHint.html
+  name: InlayHint[]
+  nameWithType: InlayHint[]
+  fullName: NMF.AnyText.InlayClasses.InlayHint[]
+  nameWithType.vb: InlayHint()
+  fullName.vb: NMF.AnyText.InlayClasses.InlayHint()
+  name.vb: InlayHint()
+  spec.csharp:
+  - uid: NMF.AnyText.InlayClasses.InlayHint
+    name: InlayHint
+    href: NMF.AnyText.InlayClasses.InlayHint.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.InlayClasses.InlayHint
+    name: InlayHint
+    href: NMF.AnyText.InlayClasses.InlayHint.html
+  - name: (
+  - name: )
+- uid: LspTypes.DocumentHighlight
+  commentId: T:LspTypes.DocumentHighlight
+  isExternal: true
+  name: DocumentHighlight
+  nameWithType: DocumentHighlight
+  fullName: LspTypes.DocumentHighlight
+- uid: NMF.AnyText.ILspServer.QueryDocumentHighlights*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryDocumentHighlights
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryDocumentHighlights_Newtonsoft_Json_Linq_JToken_
+  name: QueryDocumentHighlights
+  nameWithType: ILspServer.QueryDocumentHighlights
+  fullName: NMF.AnyText.ILspServer.QueryDocumentHighlights
+- uid: LspTypes.DocumentHighlight[]
+  isExternal: true
+  name: DocumentHighlight[]
+  nameWithType: DocumentHighlight[]
+  fullName: LspTypes.DocumentHighlight[]
+  nameWithType.vb: DocumentHighlight()
+  fullName.vb: LspTypes.DocumentHighlight()
+  name.vb: DocumentHighlight()
+  spec.csharp:
+  - uid: LspTypes.DocumentHighlight
+    name: DocumentHighlight
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.DocumentHighlight
+    name: DocumentHighlight
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NMF.AnyText.DocumentSymbol
+  commentId: T:NMF.AnyText.DocumentSymbol
+  href: NMF.AnyText.DocumentSymbol.html
+  name: DocumentSymbol
+  nameWithType: DocumentSymbol
+  fullName: NMF.AnyText.DocumentSymbol
+- uid: NMF.AnyText.ILspServer.QueryDocumentSymbols*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryDocumentSymbols
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryDocumentSymbols_Newtonsoft_Json_Linq_JToken_
+  name: QueryDocumentSymbols
+  nameWithType: ILspServer.QueryDocumentSymbols
+  fullName: NMF.AnyText.ILspServer.QueryDocumentSymbols
+- uid: LspTypes.DocumentSymbol[]
+  isExternal: true
+  name: DocumentSymbol[]
+  nameWithType: DocumentSymbol[]
+  fullName: LspTypes.DocumentSymbol[]
+  nameWithType.vb: DocumentSymbol()
+  fullName.vb: LspTypes.DocumentSymbol()
+  name.vb: DocumentSymbol()
+  spec.csharp:
+  - uid: LspTypes.DocumentSymbol
+    name: DocumentSymbol
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.DocumentSymbol
+    name: DocumentSymbol
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LspTypes.Location
+  commentId: T:LspTypes.Location
+  isExternal: true
+  name: Location
+  nameWithType: Location
+  fullName: LspTypes.Location
+- uid: NMF.AnyText.ILspServer.QueryReferences*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryReferences
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryReferences_Newtonsoft_Json_Linq_JToken_
+  name: QueryReferences
+  nameWithType: ILspServer.QueryReferences
+  fullName: NMF.AnyText.ILspServer.QueryReferences
+- uid: LspTypes.Location[]
+  isExternal: true
+  name: Location[]
+  nameWithType: Location[]
+  fullName: LspTypes.Location[]
+  nameWithType.vb: Location()
+  fullName.vb: LspTypes.Location()
+  name.vb: Location()
+  spec.csharp:
+  - uid: LspTypes.Location
+    name: Location
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.Location
+    name: Location
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NMF.AnyText.FoldingRange
+  commentId: T:NMF.AnyText.FoldingRange
+  href: NMF.AnyText.FoldingRange.html
+  name: FoldingRange
+  nameWithType: FoldingRange
+  fullName: NMF.AnyText.FoldingRange
+- uid: NMF.AnyText.ILspServer.QueryFoldingRanges*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryFoldingRanges
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryFoldingRanges_Newtonsoft_Json_Linq_JToken_
+  name: QueryFoldingRanges
+  nameWithType: ILspServer.QueryFoldingRanges
+  fullName: NMF.AnyText.ILspServer.QueryFoldingRanges
+- uid: LspTypes.FoldingRange[]
+  isExternal: true
+  name: FoldingRange[]
+  nameWithType: FoldingRange[]
+  fullName: LspTypes.FoldingRange[]
+  nameWithType.vb: FoldingRange()
+  fullName.vb: LspTypes.FoldingRange()
+  name.vb: FoldingRange()
+  spec.csharp:
+  - uid: LspTypes.FoldingRange
+    name: FoldingRange
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.FoldingRange
+    name: FoldingRange
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NMF.AnyText.TextEdit
+  commentId: T:NMF.AnyText.TextEdit
+  parent: NMF.AnyText
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit
+  nameWithType: TextEdit
+  fullName: NMF.AnyText.TextEdit
+- uid: NMF.AnyText.ILspServer.Formatting*
+  commentId: Overload:NMF.AnyText.ILspServer.Formatting
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Formatting_LspTypes_TextDocumentIdentifier_NMF_AnyText_FormattingOptions_
+  name: Formatting
+  nameWithType: ILspServer.Formatting
+  fullName: NMF.AnyText.ILspServer.Formatting
+- uid: NMF.AnyText.FormattingOptions
+  commentId: T:NMF.AnyText.FormattingOptions
+  parent: NMF.AnyText
+  href: NMF.AnyText.FormattingOptions.html
+  name: FormattingOptions
+  nameWithType: FormattingOptions
+  fullName: NMF.AnyText.FormattingOptions
+- uid: LspTypes.TextEdit[]
+  isExternal: true
+  name: TextEdit[]
+  nameWithType: TextEdit[]
+  fullName: LspTypes.TextEdit[]
+  nameWithType.vb: TextEdit()
+  fullName.vb: LspTypes.TextEdit()
+  name.vb: TextEdit()
+  spec.csharp:
+  - uid: LspTypes.TextEdit
+    name: TextEdit
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.TextEdit
+    name: TextEdit
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NMF.AnyText.ILspServer.FormattingRange*
+  commentId: Overload:NMF.AnyText.ILspServer.FormattingRange
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_FormattingRange_LspTypes_TextDocumentIdentifier_LspTypes_Range_NMF_AnyText_FormattingOptions_
+  name: FormattingRange
+  nameWithType: ILspServer.FormattingRange
+  fullName: NMF.AnyText.ILspServer.FormattingRange
+- uid: LspTypes.Range
+  commentId: T:LspTypes.Range
+  parent: LspTypes
+  isExternal: true
+  name: Range
+  nameWithType: Range
+  fullName: LspTypes.Range
+- uid: LspTypes.LocationLink
+  commentId: T:LspTypes.LocationLink
+  parent: LspTypes
+  isExternal: true
+  name: LocationLink
+  nameWithType: LocationLink
+  fullName: LspTypes.LocationLink
+- uid: NMF.AnyText.ILspServer.QueryDefinition*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryDefinition
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryDefinition_Newtonsoft_Json_Linq_JToken_
+  name: QueryDefinition
+  nameWithType: ILspServer.QueryDefinition
+  fullName: NMF.AnyText.ILspServer.QueryDefinition
+- uid: NMF.AnyText.ILspServer.Hover*
+  commentId: Overload:NMF.AnyText.ILspServer.Hover
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Hover_Newtonsoft_Json_Linq_JToken_
+  name: Hover
+  nameWithType: ILspServer.Hover
+  fullName: NMF.AnyText.ILspServer.Hover
+- uid: LspTypes.Hover
+  commentId: T:LspTypes.Hover
+  parent: LspTypes
+  isExternal: true
+  name: Hover
+  nameWithType: Hover
+  fullName: LspTypes.Hover
+- uid: LspTypes.WorkspaceEdit
+  commentId: T:LspTypes.WorkspaceEdit
+  parent: LspTypes
+  isExternal: true
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: LspTypes.WorkspaceEdit
+- uid: NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit*
+  commentId: Overload:NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QueryRenameWorkspaceEdit_Newtonsoft_Json_Linq_JToken_
+  name: QueryRenameWorkspaceEdit
+  nameWithType: ILspServer.QueryRenameWorkspaceEdit
+  fullName: NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit
+- uid: NMF.AnyText.SelectionRange
+  commentId: T:NMF.AnyText.SelectionRange
+  parent: NMF.AnyText
+  href: NMF.AnyText.SelectionRange.html
+  name: SelectionRange
+  nameWithType: SelectionRange
+  fullName: NMF.AnyText.SelectionRange
+- uid: NMF.AnyText.ILspServer.QuerySelectionRanges*
+  commentId: Overload:NMF.AnyText.ILspServer.QuerySelectionRanges
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QuerySelectionRanges_Newtonsoft_Json_Linq_JToken_
+  name: QuerySelectionRanges
+  nameWithType: ILspServer.QuerySelectionRanges
+  fullName: NMF.AnyText.ILspServer.QuerySelectionRanges
+- uid: LspTypes.SelectionRange[]
+  isExternal: true
+  name: SelectionRange[]
+  nameWithType: SelectionRange[]
+  fullName: LspTypes.SelectionRange[]
+  nameWithType.vb: SelectionRange()
+  fullName.vb: LspTypes.SelectionRange()
+  name.vb: SelectionRange()
+  spec.csharp:
+  - uid: LspTypes.SelectionRange
+    name: SelectionRange
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.SelectionRange
+    name: SelectionRange
+    isExternal: true
+  - name: (
+  - name: )
+- uid: LspTypes.SemanticTokens
+  commentId: T:LspTypes.SemanticTokens
+  parent: LspTypes
+  isExternal: true
+  name: SemanticTokens
+  nameWithType: SemanticTokens
+  fullName: LspTypes.SemanticTokens
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokens*
+  commentId: Overload:NMF.AnyText.ILspServer.QuerySemanticTokens
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QuerySemanticTokens_Newtonsoft_Json_Linq_JToken_
+  name: QuerySemanticTokens
+  nameWithType: ILspServer.QuerySemanticTokens
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokens
+- uid: LspTypes.SemanticTokensDelta
+  commentId: T:LspTypes.SemanticTokensDelta
+  parent: LspTypes
+  isExternal: true
+  name: SemanticTokensDelta
+  nameWithType: SemanticTokensDelta
+  fullName: LspTypes.SemanticTokensDelta
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokensDelta*
+  commentId: Overload:NMF.AnyText.ILspServer.QuerySemanticTokensDelta
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QuerySemanticTokensDelta_Newtonsoft_Json_Linq_JToken_
+  name: QuerySemanticTokensDelta
+  nameWithType: ILspServer.QuerySemanticTokensDelta
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokensDelta
+- uid: NMF.AnyText.ILspServer.QuerySemanticTokensRange*
+  commentId: Overload:NMF.AnyText.ILspServer.QuerySemanticTokensRange
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_QuerySemanticTokensRange_Newtonsoft_Json_Linq_JToken_
+  name: QuerySemanticTokensRange
+  nameWithType: ILspServer.QuerySemanticTokensRange
+  fullName: NMF.AnyText.ILspServer.QuerySemanticTokensRange

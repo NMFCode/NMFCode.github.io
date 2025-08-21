@@ -20,7 +20,10 @@ items:
   - NMF.Expressions.Linq.ObservableEnumerable`1.HasEventSubscriber
   - NMF.Expressions.Linq.ObservableEnumerable`1.HasSuccessors
   - NMF.Expressions.Linq.ObservableEnumerable`1.IsAttached
+  - NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize
   - NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly
+  - NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized
+  - NMF.Expressions.Linq.ObservableEnumerable`1.Item(System.Int32)
   - NMF.Expressions.Linq.ObservableEnumerable`1.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})
   - NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItem(`0,System.Int32)
   - NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItems(System.Collections.Generic.IEnumerable{`0},System.Int32)
@@ -39,6 +42,7 @@ items:
   - NMF.Expressions.Linq.ObservableEnumerable`1.Set(NMF.Expressions.INotifiable)
   - NMF.Expressions.Linq.ObservableEnumerable`1.SetDummy
   - NMF.Expressions.Linq.ObservableEnumerable`1.Successors
+  - NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot
   - NMF.Expressions.Linq.ObservableEnumerable`1.ToString
   - NMF.Expressions.Linq.ObservableEnumerable`1.Unset(NMF.Expressions.INotifiable,System.Boolean)
   - NMF.Expressions.Linq.ObservableEnumerable`1.UnsetAll
@@ -52,22 +56,22 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableEnumerable
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
   summary: Denotes an abstract base class for collection-valued DDG nodes
   example: []
   syntax:
-    content: 'public abstract class ObservableEnumerable<T> : INotifyEnumerable<T>, INotifyEnumerable, INotifiable, ICollection<T>, IEnumerable<T>, IEnumerable, INotifyCollectionChanged, IDisposable, ISuccessorList'
+    content: 'public abstract class ObservableEnumerable<T> : INotifyEnumerable<T>, INotifyEnumerable, INotifiable, ICollection<T>, IEnumerable<T>, INotifyCollectionChanged, IDisposable, ISuccessorList, IList, ICollection, IEnumerable'
     typeParameters:
     - id: T
       description: The type of elements
-    content.vb: Public MustInherit Class ObservableEnumerable(Of T) Implements INotifyEnumerable(Of T), INotifyEnumerable, INotifiable, ICollection(Of T), IEnumerable(Of T), IEnumerable, INotifyCollectionChanged, IDisposable, ISuccessorList
+    content.vb: Public MustInherit Class ObservableEnumerable(Of T) Implements INotifyEnumerable(Of T), INotifyEnumerable, INotifiable, ICollection(Of T), IEnumerable(Of T), INotifyCollectionChanged, IDisposable, ISuccessorList, IList, ICollection, IEnumerable
   inheritance:
   - System.Object
   derivedClasses:
@@ -78,10 +82,12 @@ items:
   - NMF.Expressions.INotifiable
   - System.Collections.Generic.ICollection{{T}}
   - System.Collections.Generic.IEnumerable{{T}}
-  - System.Collections.IEnumerable
   - System.Collections.Specialized.INotifyCollectionChanged
   - System.IDisposable
   - NMF.Expressions.ISuccessorList
+  - System.Collections.IList
+  - System.Collections.ICollection
+  - System.Collections.IEnumerable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -161,6 +167,7 @@ items:
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.OrderByDescending``2(System.Linq.Expressions.Expression{System.Func{{T},{TKey}}},System.Collections.Generic.IComparer{{TKey}})
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.OrderBy``2(System.Linq.Expressions.Expression{System.Func{{T},{TKey}}})
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.OrderBy``2(System.Linq.Expressions.Expression{System.Func{{T},{TKey}}},System.Collections.Generic.IComparer{{TKey}})
+  - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(System.Linq.Expressions.Expression{System.Func{{T},System.Collections.Generic.IEnumerable{{TResult}}}})
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(System.Linq.Expressions.Expression{System.Func{{T},System.Collections.Generic.IEnumerable{{TResult}}}},System.Func{{T},System.Collections.Generic.IEnumerable{{TResult}}})
   - NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.SelectMany``3(System.Linq.Expressions.Expression{System.Func{{T},System.Collections.Generic.IEnumerable{{TIntermediate}}}},System.Func{{T},System.Collections.Generic.IEnumerable{{TIntermediate}}},System.Linq.Expressions.Expression{System.Func{{T},{TIntermediate},{TResult}}},System.Func{{T},{TIntermediate},{TResult}})
@@ -192,6 +199,7 @@ items:
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{{T},System.Int32}},System.Int32,{TResult}})
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ChunkExtensions.Chunk``2(System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{{T}},System.Int32,{TResult}})
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1
+  - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Boolean)
   nameWithType.vb: ObservableEnumerable(Of T)
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T)
   name.vb: ObservableEnumerable(Of T)
@@ -209,11 +217,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnAddItem
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 21
+    startLine: 20
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -247,11 +255,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnAddItems
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 33
+    startLine: 32
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -285,19 +293,21 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 45
+    startLine: 44
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.ToString*
@@ -317,11 +327,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RaiseEvents
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -364,11 +374,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnRemoveItem
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 77
+    startLine: 76
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -402,11 +412,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnRemoveItems
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 89
+    startLine: 88
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -440,11 +450,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnReplaceItems
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 106
+    startLine: 105
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -481,11 +491,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCleared
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 122
+    startLine: 121
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -511,11 +521,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnReplaceItem
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 135
+    startLine: 134
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -552,11 +562,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnMoveItem
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 148
+    startLine: 147
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -593,11 +603,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnMoveItems
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 161
+    startLine: 160
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -634,11 +644,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: HasEventSubscriber
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 176
+    startLine: 175
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -667,11 +677,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanged
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 188
+    startLine: 187
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -701,14 +711,15 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanged
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 195
+    startLine: 194
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Occurs when the collection changes.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler CollectionChanged
@@ -733,19 +744,21 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 198
+    startLine: 197
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public abstract IEnumerator<T> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public MustOverride Function GetEnumerator() As IEnumerator(Of T)
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.GetEnumerator*
   implements:
@@ -766,14 +779,15 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Dispose
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 206
+    startLine: 205
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
   example: []
   syntax:
     content: public void Dispose()
@@ -797,22 +811,28 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 212
+    startLine: 211
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Adds an item to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual void Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to add to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overridable Sub Add(item As T)
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.Add*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Add({T})
   nameWithType.vb: ObservableEnumerable(Of T).Add(T)
@@ -831,21 +851,27 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 218
+    startLine: 217
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual void Clear()
     content.vb: Public Overridable Sub Clear()
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Clear
+  - System.Collections.IList.Clear
   nameWithType.vb: ObservableEnumerable(Of T).Clear()
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).Clear()
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly
@@ -862,24 +888,27 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsReadOnly
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 224
+    startLine: 223
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Gets a value indicating whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   example: []
   syntax:
     content: public virtual bool IsReadOnly { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Overridable ReadOnly Property IsReadOnly As Boolean
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly*
   implements:
   - System.Collections.Generic.ICollection{{T}}.IsReadOnly
+  - System.Collections.IList.IsReadOnly
   nameWithType.vb: ObservableEnumerable(Of T).IsReadOnly
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).IsReadOnly
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.Remove(`0)
@@ -896,24 +925,31 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 230
+    startLine: 229
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual bool Remove(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overridable Function Remove(item As T) As Boolean
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Remove({T})
   nameWithType.vb: ObservableEnumerable(Of T).Remove(T)
@@ -932,22 +968,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 236
+    startLine: 235
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Determines whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public virtual bool Contains(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Overridable Function Contains(item As T) As Boolean
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.Contains*
   implements:
@@ -968,24 +1007,37 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 250
+    startLine: 249
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Copies the elements of the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
     - id: array
       type: '{T}[]'
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: arrayIndex
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
   implements:
   - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
   nameWithType.vb: ObservableEnumerable(Of T).CopyTo(T(), Integer)
@@ -1005,24 +1057,27 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 262
+    startLine: 261
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
+  summary: Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual int Count { get; }
     parameters: []
     return:
       type: System.Int32
+      description: The number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overridable ReadOnly Property Count As Integer
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.Count*
   implements:
   - System.Collections.Generic.ICollection{{T}}.Count
+  - System.Collections.ICollection.Count
   nameWithType.vb: ObservableEnumerable(Of T).Count
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).Count
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.Successors
@@ -1039,11 +1094,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Successors
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 279
+    startLine: 278
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1074,11 +1129,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Dependencies
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 282
+    startLine: 281
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1109,11 +1164,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ExecutionMetaData
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 285
+    startLine: 284
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1144,11 +1199,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: HasSuccessors
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 307
+    startLine: 306
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1179,11 +1234,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsAttached
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 310
+    startLine: 309
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1214,11 +1269,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AllSuccessors
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 316
+    startLine: 315
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1232,6 +1287,137 @@ items:
   overload: NMF.Expressions.Linq.ObservableEnumerable`1.AllSuccessors*
   nameWithType.vb: ObservableEnumerable(Of T).AllSuccessors
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).AllSuccessors
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize
+  commentId: P:NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize
+  id: IsFixedSize
+  parent: NMF.Expressions.Linq.ObservableEnumerable`1
+  langs:
+  - csharp
+  - vb
+  name: IsFixedSize
+  nameWithType: ObservableEnumerable<T>.IsFixedSize
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.IsFixedSize
+  type: Property
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsFixedSize
+    path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+    startLine: 318
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  example: []
+  syntax:
+    content: public virtual bool IsFixedSize { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property IsFixedSize As Boolean
+  overload: NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize*
+  nameWithType.vb: ObservableEnumerable(Of T).IsFixedSize
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).IsFixedSize
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized
+  commentId: P:NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized
+  id: IsSynchronized
+  parent: NMF.Expressions.Linq.ObservableEnumerable`1
+  langs:
+  - csharp
+  - vb
+  name: IsSynchronized
+  nameWithType: ObservableEnumerable<T>.IsSynchronized
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.IsSynchronized
+  type: Property
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsSynchronized
+    path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+    startLine: 321
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  example: []
+  syntax:
+    content: public bool IsSynchronized { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSynchronized As Boolean
+  overload: NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized*
+  nameWithType.vb: ObservableEnumerable(Of T).IsSynchronized
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).IsSynchronized
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot
+  commentId: P:NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot
+  id: SyncRoot
+  parent: NMF.Expressions.Linq.ObservableEnumerable`1
+  langs:
+  - csharp
+  - vb
+  name: SyncRoot
+  nameWithType: ObservableEnumerable<T>.SyncRoot
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.SyncRoot
+  type: Property
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SyncRoot
+    path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+    startLine: 324
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  example: []
+  syntax:
+    content: public object SyncRoot { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public ReadOnly Property SyncRoot As Object
+  overload: NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot*
+  nameWithType.vb: ObservableEnumerable(Of T).SyncRoot
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).SyncRoot
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.Item(System.Int32)
+  commentId: P:NMF.Expressions.Linq.ObservableEnumerable`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: NMF.Expressions.Linq.ObservableEnumerable`1
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: ObservableEnumerable<T>.this[int]
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.this[int]
+  type: Property
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: this[]
+    path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
+    startLine: 327
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  example: []
+  syntax:
+    content: public virtual object this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: System.Object
+    content.vb: Public Overridable Default Property this[](index As Integer) As Object
+  overload: NMF.Expressions.Linq.ObservableEnumerable`1.Item*
+  nameWithType.vb: ObservableEnumerable(Of T).this[](Integer)
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).this[](Integer)
+  name.vb: this[](Integer)
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.Set(NMF.Expressions.INotifiable)
   commentId: M:NMF.Expressions.Linq.ObservableEnumerable`1.Set(NMF.Expressions.INotifiable)
   id: Set(NMF.Expressions.INotifiable)
@@ -1246,11 +1432,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Set
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 320
+    startLine: 331
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1282,11 +1468,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetDummy
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 341
+    startLine: 352
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1314,11 +1500,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Unset
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 352
+    startLine: 363
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1354,11 +1540,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnsetAll
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 369
+    startLine: 380
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1386,11 +1572,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetSuccessor
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 380
+    startLine: 391
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1426,11 +1612,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnAttach
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 390
+    startLine: 401
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1456,11 +1642,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnDetach
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 395
+    startLine: 406
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1486,11 +1672,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Notify
     path: src/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs
-    startLine: 398
+    startLine: 409
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1653,14 +1839,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.IEnumerable
-  commentId: T:System.Collections.IEnumerable
-  parent: System.Collections
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
-  name: IEnumerable
-  nameWithType: IEnumerable
-  fullName: System.Collections.IEnumerable
 - uid: System.Collections.Specialized.INotifyCollectionChanged
   commentId: T:System.Collections.Specialized.INotifyCollectionChanged
   parent: System.Collections.Specialized
@@ -1684,6 +1862,30 @@ references:
   name: ISuccessorList
   nameWithType: ISuccessorList
   fullName: NMF.Expressions.ISuccessorList
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -9059,6 +9261,51 @@ references:
   - name: TKey
   - name: )
   - name: )
+- uid: NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  definition: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  name: RestoreIndices<T>(INotifyEnumerable<T>)
+  nameWithType: ObservableExtensions.RestoreIndices<T>(INotifyEnumerable<T>)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices<T>(NMF.Expressions.INotifyEnumerable<T>)
+  nameWithType.vb: ObservableExtensions.RestoreIndices(Of T)(INotifyEnumerable(Of T))
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices(Of T)(NMF.Expressions.INotifyEnumerable(Of T))
+  name.vb: RestoreIndices(Of T)(INotifyEnumerable(Of T))
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{`0})
+    name: RestoreIndices
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{`0})
+    name: RestoreIndices
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: NMF.Expressions.INotifyEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(System.Linq.Expressions.Expression{System.Func{{T},System.Collections.Generic.IEnumerable{{TResult}}}})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.IEnumerable{``1}}})
   parent: NMF.Expressions.Linq.ObservableExtensions
@@ -12096,6 +12343,65 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  definition: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  name: WithUpdates<T>(IEnumerable<T>, bool)
+  nameWithType: ObservableExtensions.WithUpdates<T>(IEnumerable<T>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.WithUpdates<T>(System.Collections.Generic.IEnumerable<T>, bool)
+  nameWithType.vb: ObservableExtensions.WithUpdates(Of T)(IEnumerable(Of T), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.WithUpdates(Of T)(System.Collections.Generic.IEnumerable(Of T), Boolean)
+  name.vb: WithUpdates(Of T)(IEnumerable(Of T), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{`0},System.Boolean)
+    name: WithUpdates
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{`0},System.Boolean)
+    name: WithUpdates
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -12243,33 +12549,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections
-  commentId: N:System.Collections
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections
-  nameWithType: System.Collections
-  fullName: System.Collections
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: System.Collections.Specialized
   commentId: N:System.Collections.Specialized
   isExternal: true
@@ -12307,6 +12586,33 @@ references:
     name: Specialized
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: NMF.Expressions.Debug.DebugExtensions.ExportToDgml(NMF.Expressions.INotifiable,System.String)
   commentId: M:NMF.Expressions.Debug.DebugExtensions.ExportToDgml(NMF.Expressions.INotifiable,System.String)
   isExternal: true
@@ -19436,6 +19742,49 @@ references:
   - name: TKey
   - name: )
   - name: )
+- uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  name: RestoreIndices<T>(INotifyEnumerable<T>)
+  nameWithType: ObservableExtensions.RestoreIndices<T>(INotifyEnumerable<T>)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices<T>(NMF.Expressions.INotifyEnumerable<T>)
+  nameWithType.vb: ObservableExtensions.RestoreIndices(Of T)(INotifyEnumerable(Of T))
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices(Of T)(NMF.Expressions.INotifyEnumerable(Of T))
+  name.vb: RestoreIndices(Of T)(INotifyEnumerable(Of T))
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+    name: RestoreIndices
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
+    name: RestoreIndices
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_RestoreIndices__1_NMF_Expressions_INotifyEnumerable___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.IEnumerable{``1}}})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.SelectMany``2(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.IEnumerable{``1}}})
   isExternal: true
@@ -22423,6 +22772,64 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+  isExternal: true
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  name: WithUpdates<T>(IEnumerable<T>, bool)
+  nameWithType: ObservableExtensions.WithUpdates<T>(IEnumerable<T>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.WithUpdates<T>(System.Collections.Generic.IEnumerable<T>, bool)
+  nameWithType.vb: ObservableExtensions.WithUpdates(Of T)(IEnumerable(Of T), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.WithUpdates(Of T)(System.Collections.Generic.IEnumerable(Of T), Boolean)
+  name.vb: WithUpdates(Of T)(IEnumerable(Of T), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+    name: WithUpdates
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
+    name: WithUpdates
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: NMF.Expressions.Debug
   commentId: N:NMF.Expressions.Debug
   href: NMF.html
@@ -22847,6 +23254,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
   - name: (
   - name: )
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.Add*
   commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.Add
   href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_Add__0_
@@ -22938,6 +23352,28 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear
   - name: (
   - name: )
+- uid: System.Collections.IList.Clear
+  commentId: M:System.Collections.IList.Clear
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  name: Clear()
+  nameWithType: IList.Clear()
+  fullName: System.Collections.IList.Clear()
+  spec.csharp:
+  - uid: System.Collections.IList.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.IList.Clear
+    name: Clear
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.clear
+  - name: (
+  - name: )
 - uid: System.Collections.Generic.ICollection`1.Clear
   commentId: M:System.Collections.Generic.ICollection`1.Clear
   isExternal: true
@@ -22979,6 +23415,14 @@ references:
   fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
   nameWithType.vb: ICollection(Of T).IsReadOnly
   fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: System.Collections.IList.IsReadOnly
+  commentId: P:System.Collections.IList.IsReadOnly
+  parent: System.Collections.IList
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist.isreadonly
+  name: IsReadOnly
+  nameWithType: IList.IsReadOnly
+  fullName: System.Collections.IList.IsReadOnly
 - uid: System.Collections.Generic.ICollection`1.IsReadOnly
   commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
   isExternal: true
@@ -23106,6 +23550,34 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo*
   commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo
   href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo__0___System_Int32_
@@ -23233,6 +23705,14 @@ references:
   fullName: System.Collections.Generic.ICollection<T>.Count
   nameWithType.vb: ICollection(Of T).Count
   fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: System.Collections.ICollection.Count
+  commentId: P:System.Collections.ICollection.Count
+  parent: System.Collections.ICollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection.count
+  name: Count
+  nameWithType: ICollection.Count
+  fullName: System.Collections.ICollection.Count
 - uid: System.Collections.Generic.ICollection`1.Count
   commentId: P:System.Collections.Generic.ICollection`1.Count
   isExternal: true
@@ -23365,6 +23845,39 @@ references:
   fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.AllSuccessors
   nameWithType.vb: ObservableEnumerable(Of T).AllSuccessors
   fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).AllSuccessors
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize*
+  commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize
+  href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize
+  name: IsFixedSize
+  nameWithType: ObservableEnumerable<T>.IsFixedSize
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.IsFixedSize
+  nameWithType.vb: ObservableEnumerable(Of T).IsFixedSize
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).IsFixedSize
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized*
+  commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized
+  href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized
+  name: IsSynchronized
+  nameWithType: ObservableEnumerable<T>.IsSynchronized
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.IsSynchronized
+  nameWithType.vb: ObservableEnumerable(Of T).IsSynchronized
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).IsSynchronized
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot*
+  commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot
+  href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot
+  name: SyncRoot
+  nameWithType: ObservableEnumerable<T>.SyncRoot
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.SyncRoot
+  nameWithType.vb: ObservableEnumerable(Of T).SyncRoot
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).SyncRoot
+- uid: NMF.Expressions.Linq.ObservableEnumerable`1.Item*
+  commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.Item
+  href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_Item_System_Int32_
+  name: this
+  nameWithType: ObservableEnumerable<T>.this
+  fullName: NMF.Expressions.Linq.ObservableEnumerable<T>.this
+  nameWithType.vb: ObservableEnumerable(Of T).this[]
+  fullName.vb: NMF.Expressions.Linq.ObservableEnumerable(Of T).this[]
+  name.vb: this[]
 - uid: NMF.Expressions.Linq.ObservableEnumerable`1.Set*
   commentId: Overload:NMF.Expressions.Linq.ObservableEnumerable`1.Set
   href: NMF.Expressions.Linq.ObservableEnumerable-1.html#NMF_Expressions_Linq_ObservableEnumerable_1_Set_NMF_Expressions_INotifiable_

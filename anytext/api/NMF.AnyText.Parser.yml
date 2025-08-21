@@ -1,0 +1,2125 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Parser
+  commentId: T:NMF.AnyText.Parser
+  id: Parser
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.Parser.#ctor(NMF.AnyText.Grammars.Grammar)
+  - NMF.AnyText.Parser.#ctor(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Parser.#ctor(NMF.AnyText.Rules.Rule,System.StringComparison)
+  - NMF.AnyText.Parser.Context
+  - NMF.AnyText.Parser.Format(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition},System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Boolean,System.Boolean)
+  - NMF.AnyText.Parser.GetCodeActionInfo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition,System.Predicate{NMF.AnyText.Rules.RuleApplication})
+  - NMF.AnyText.Parser.GetDefinition(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Parser.GetDocumentHighlights(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments
+  - NMF.AnyText.Parser.GetDocumentSymbolsFromRoot
+  - NMF.AnyText.Parser.GetFoldingRangesFromRoot
+  - NMF.AnyText.Parser.GetInlayEntriesInRange(NMF.AnyText.ParseRange)
+  - NMF.AnyText.Parser.GetReferences(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition,System.String)
+  - NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition})
+  - NMF.AnyText.Parser.GetSemanticElementsFromRoot(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition})
+  - NMF.AnyText.Parser.Initialize(System.String[])
+  - NMF.AnyText.Parser.Initialize(System.String[],System.Boolean)
+  - NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition,System.String@)
+  - NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit)
+  - NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit,System.Boolean)
+  - NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})
+  - NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Parser
+  fullName: NMF.AnyText.Parser
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Parser
+    path: src/AnyText/AnyText.Core/Parser.SemanticToken.cs
+    startLine: 6
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Denotes an incremental parser system
+  example: []
+  syntax:
+    content: public class Parser
+    content.vb: Public Class Parser
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Parser.GetCodeActionInfo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition,System.Predicate{NMF.AnyText.Rules.RuleApplication})
+  commentId: M:NMF.AnyText.Parser.GetCodeActionInfo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition,System.Predicate{NMF.AnyText.Rules.RuleApplication})
+  id: GetCodeActionInfo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition,System.Predicate{NMF.AnyText.Rules.RuleApplication})
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetCodeActionInfo(ParsePosition, ParsePosition, Predicate<RuleApplication>)
+  nameWithType: Parser.GetCodeActionInfo(ParsePosition, ParsePosition, Predicate<RuleApplication>)
+  fullName: NMF.AnyText.Parser.GetCodeActionInfo(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition, System.Predicate<NMF.AnyText.Rules.RuleApplication>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.CodeAction.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetCodeActionInfo
+    path: src/AnyText/AnyText.Core/Parser.CodeAction.cs
+    startLine: 16
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Retrieves code action information within a specified range of parse positions.
+  example: []
+  syntax:
+    content: public IEnumerable<ActionInfoApplication> GetCodeActionInfo(ParsePosition start, ParsePosition end, Predicate<RuleApplication> predicate = null)
+    parameters:
+    - id: start
+      type: NMF.AnyText.ParsePosition
+      description: The starting position of the range.
+    - id: end
+      type: NMF.AnyText.ParsePosition
+      description: The ending position of the range.
+    - id: predicate
+      type: System.Predicate{NMF.AnyText.Rules.RuleApplication}
+      description: An optional predicate to filter rule applications.
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.ActionInfoApplication}
+      description: A collection of <xref href="NMF.AnyText.ActionInfo" data-throw-if-not-resolved="false"></xref> objects representing available code actions.
+    content.vb: Public Function GetCodeActionInfo(start As ParsePosition, [end] As ParsePosition, predicate As Predicate(Of RuleApplication) = Nothing) As IEnumerable(Of ActionInfoApplication)
+  overload: NMF.AnyText.Parser.GetCodeActionInfo*
+  nameWithType.vb: Parser.GetCodeActionInfo(ParsePosition, ParsePosition, Predicate(Of RuleApplication))
+  fullName.vb: NMF.AnyText.Parser.GetCodeActionInfo(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition, System.Predicate(Of NMF.AnyText.Rules.RuleApplication))
+  name.vb: GetCodeActionInfo(ParsePosition, ParsePosition, Predicate(Of RuleApplication))
+- uid: NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition,System.String@)
+  commentId: M:NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition,System.String@)
+  id: SuggestCompletions(NMF.AnyText.ParsePosition,System.String@)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: SuggestCompletions(ParsePosition, out string)
+  nameWithType: Parser.SuggestCompletions(ParsePosition, out string)
+  fullName: NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition, out string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.Completions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SuggestCompletions
+    path: src/AnyText/AnyText.Core/Parser.Completions.cs
+    startLine: 16
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Calculates completion suggestions for the given position
+  example: []
+  syntax:
+    content: public IEnumerable<CompletionEntry> SuggestCompletions(ParsePosition position, out string fragment)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the position where completions should be calculated
+    - id: fragment
+      type: System.String
+      description: the fragment of the token at the given position
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.CompletionEntry}
+      description: A collection of code completions
+    content.vb: Public Function SuggestCompletions(position As ParsePosition, fragment As String) As IEnumerable(Of CompletionEntry)
+  overload: NMF.AnyText.Parser.SuggestCompletions*
+  nameWithType.vb: Parser.SuggestCompletions(ParsePosition, String)
+  fullName.vb: NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition, String)
+  name.vb: SuggestCompletions(ParsePosition, String)
+- uid: NMF.AnyText.Parser.#ctor(NMF.AnyText.Rules.Rule,System.StringComparison)
+  commentId: M:NMF.AnyText.Parser.#ctor(NMF.AnyText.Rules.Rule,System.StringComparison)
+  id: '#ctor(NMF.AnyText.Rules.Rule,System.StringComparison)'
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Parser(Rule, StringComparison)
+  nameWithType: Parser.Parser(Rule, StringComparison)
+  fullName: NMF.AnyText.Parser.Parser(NMF.AnyText.Rules.Rule, System.StringComparison)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 24
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Creates a new parser system
+  example: []
+  syntax:
+    content: public Parser(Rule root, StringComparison stringComparison = StringComparison.OrdinalIgnoreCase)
+    parameters:
+    - id: root
+      type: NMF.AnyText.Rules.Rule
+      description: the root rule
+    - id: stringComparison
+      type: System.StringComparison
+      description: the string comparison mode
+    content.vb: Public Sub New(root As Rule, stringComparison As StringComparison = StringComparison.OrdinalIgnoreCase)
+  overload: NMF.AnyText.Parser.#ctor*
+  nameWithType.vb: Parser.New(Rule, StringComparison)
+  fullName.vb: NMF.AnyText.Parser.New(NMF.AnyText.Rules.Rule, System.StringComparison)
+  name.vb: New(Rule, StringComparison)
+- uid: NMF.AnyText.Parser.#ctor(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Parser.#ctor(NMF.AnyText.ParseContext)
+  id: '#ctor(NMF.AnyText.ParseContext)'
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Parser(ParseContext)
+  nameWithType: Parser.Parser(ParseContext)
+  fullName: NMF.AnyText.Parser.Parser(NMF.AnyText.ParseContext)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 31
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Creates a new parser system
+  example: []
+  syntax:
+    content: public Parser(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context to use
+    content.vb: Public Sub New(context As ParseContext)
+  overload: NMF.AnyText.Parser.#ctor*
+  nameWithType.vb: Parser.New(ParseContext)
+  fullName.vb: NMF.AnyText.Parser.New(NMF.AnyText.ParseContext)
+  name.vb: New(ParseContext)
+- uid: NMF.AnyText.Parser.#ctor(NMF.AnyText.Grammars.Grammar)
+  commentId: M:NMF.AnyText.Parser.#ctor(NMF.AnyText.Grammars.Grammar)
+  id: '#ctor(NMF.AnyText.Grammars.Grammar)'
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Parser(Grammar)
+  nameWithType: Parser.Parser(Grammar)
+  fullName: NMF.AnyText.Parser.Parser(NMF.AnyText.Grammars.Grammar)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 43
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Creates a new parser system
+  example: []
+  syntax:
+    content: public Parser(Grammar grammar)
+    parameters:
+    - id: grammar
+      type: NMF.AnyText.Grammars.Grammar
+      description: the underlying grammar
+    content.vb: Public Sub New(grammar As Grammar)
+  overload: NMF.AnyText.Parser.#ctor*
+  nameWithType.vb: Parser.New(Grammar)
+  fullName.vb: NMF.AnyText.Parser.New(NMF.AnyText.Grammars.Grammar)
+  name.vb: New(Grammar)
+- uid: NMF.AnyText.Parser.Context
+  commentId: P:NMF.AnyText.Parser.Context
+  id: Context
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Context
+  nameWithType: Parser.Context
+  fullName: NMF.AnyText.Parser.Context
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Context
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 48
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the parse context for this parser
+  example: []
+  syntax:
+    content: public ParseContext Context { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.ParseContext
+    content.vb: Public ReadOnly Property Context As ParseContext
+  overload: NMF.AnyText.Parser.Context*
+- uid: NMF.AnyText.Parser.Initialize(System.String[])
+  commentId: M:NMF.AnyText.Parser.Initialize(System.String[])
+  id: Initialize(System.String[])
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Initialize(string[])
+  nameWithType: Parser.Initialize(string[])
+  fullName: NMF.AnyText.Parser.Initialize(string[])
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Initialize
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 57
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Initializes the parser system
+  example: []
+  syntax:
+    content: public object Initialize(string[] input)
+    parameters:
+    - id: input
+      type: System.String[]
+      description: the initial input
+    return:
+      type: System.Object
+      description: the value parsed for the given input
+    content.vb: Public Function Initialize(input As String()) As Object
+  overload: NMF.AnyText.Parser.Initialize*
+  nameWithType.vb: Parser.Initialize(String())
+  fullName.vb: NMF.AnyText.Parser.Initialize(String())
+  name.vb: Initialize(String())
+- uid: NMF.AnyText.Parser.Initialize(System.String[],System.Boolean)
+  commentId: M:NMF.AnyText.Parser.Initialize(System.String[],System.Boolean)
+  id: Initialize(System.String[],System.Boolean)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Initialize(string[], bool)
+  nameWithType: Parser.Initialize(string[], bool)
+  fullName: NMF.AnyText.Parser.Initialize(string[], bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Initialize
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 65
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Initializes the parser system
+  example: []
+  syntax:
+    content: public object Initialize(string[] input, bool skipValidation)
+    parameters:
+    - id: input
+      type: System.String[]
+      description: the initial input
+    - id: skipValidation
+      type: System.Boolean
+      description: if set to true, the parser does not perform validation rules
+    return:
+      type: System.Object
+      description: the value parsed for the given input
+    content.vb: Public Function Initialize(input As String(), skipValidation As Boolean) As Object
+  overload: NMF.AnyText.Parser.Initialize*
+  nameWithType.vb: Parser.Initialize(String(), Boolean)
+  fullName.vb: NMF.AnyText.Parser.Initialize(String(), Boolean)
+  name.vb: Initialize(String(), Boolean)
+- uid: NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit)
+  commentId: M:NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit)
+  id: Update(NMF.AnyText.TextEdit)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Update(TextEdit)
+  nameWithType: Parser.Update(TextEdit)
+  fullName: NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Update
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 98
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Updates the parse result with the given edit
+  example: []
+  syntax:
+    content: public object Update(TextEdit edit)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.TextEdit
+      description: An edit operations
+    return:
+      type: System.Object
+      description: the updated value parsed for the given input
+    content.vb: Public Function Update(edit As TextEdit) As Object
+  overload: NMF.AnyText.Parser.Update*
+- uid: NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit,System.Boolean)
+  commentId: M:NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit,System.Boolean)
+  id: Update(NMF.AnyText.TextEdit,System.Boolean)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Update(TextEdit, bool)
+  nameWithType: Parser.Update(TextEdit, bool)
+  fullName: NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit, bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Update
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 106
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Updates the parse result with the given edit
+  example: []
+  syntax:
+    content: public object Update(TextEdit edit, bool skipValidation)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.TextEdit
+      description: An edit operations
+    - id: skipValidation
+      type: System.Boolean
+      description: if set to true, the parser does not perform validation rules
+    return:
+      type: System.Object
+      description: the updated value parsed for the given input
+    content.vb: Public Function Update(edit As TextEdit, skipValidation As Boolean) As Object
+  overload: NMF.AnyText.Parser.Update*
+  nameWithType.vb: Parser.Update(TextEdit, Boolean)
+  fullName.vb: NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit, Boolean)
+  name.vb: Update(TextEdit, Boolean)
+- uid: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})
+  commentId: M:NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})
+  id: Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Update(IEnumerable<TextEdit>)
+  nameWithType: Parser.Update(IEnumerable<TextEdit>)
+  fullName: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable<NMF.AnyText.TextEdit>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Update
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 123
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Updates the parse result with the given edits
+  example: []
+  syntax:
+    content: public object Update(IEnumerable<TextEdit> edits)
+    parameters:
+    - id: edits
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+      description: A collection of edit operations
+    return:
+      type: System.Object
+      description: the updated value parsed for the given input
+    content.vb: Public Function Update(edits As IEnumerable(Of TextEdit)) As Object
+  overload: NMF.AnyText.Parser.Update*
+  nameWithType.vb: Parser.Update(IEnumerable(Of TextEdit))
+  fullName.vb: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable(Of NMF.AnyText.TextEdit))
+  name.vb: Update(IEnumerable(Of TextEdit))
+- uid: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.Boolean)
+  commentId: M:NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.Boolean)
+  id: Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.Boolean)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Update(IEnumerable<TextEdit>, bool)
+  nameWithType: Parser.Update(IEnumerable<TextEdit>, bool)
+  fullName: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable<NMF.AnyText.TextEdit>, bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Update
+    path: src/AnyText/AnyText.Core/Parser.cs
+    startLine: 131
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Updates the parse result with the given edits
+  example: []
+  syntax:
+    content: public object Update(IEnumerable<TextEdit> edits, bool skipValidation)
+    parameters:
+    - id: edits
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+      description: A collection of edit operations
+    - id: skipValidation
+      type: System.Boolean
+      description: if set to true, the parser does not perform validation rules
+    return:
+      type: System.Object
+      description: the updated value parsed for the given input
+    content.vb: Public Function Update(edits As IEnumerable(Of TextEdit), skipValidation As Boolean) As Object
+  overload: NMF.AnyText.Parser.Update*
+  nameWithType.vb: Parser.Update(IEnumerable(Of TextEdit), Boolean)
+  fullName.vb: NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable(Of NMF.AnyText.TextEdit), Boolean)
+  name.vb: Update(IEnumerable(Of TextEdit), Boolean)
+- uid: NMF.AnyText.Parser.GetDocumentHighlights(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Parser.GetDocumentHighlights(NMF.AnyText.ParsePosition)
+  id: GetDocumentHighlights(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetDocumentHighlights(ParsePosition)
+  nameWithType: Parser.GetDocumentHighlights(ParsePosition)
+  fullName: NMF.AnyText.Parser.GetDocumentHighlights(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.DocumentHighlights.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetDocumentHighlights
+    path: src/AnyText/AnyText.Core/Parser.DocumentHighlights.cs
+    startLine: 16
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Parses the locations and kinds of document highlights for a literal at a given position
+  example: []
+  syntax:
+    content: public IEnumerable<DocumentHighlight> GetDocumentHighlights(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: The position of the literal in the document
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentHighlight}
+      description: An IEnumerable of <xref href="NMF.AnyText.DocumentHighlight" data-throw-if-not-resolved="false"></xref> objects, each containing a range between parse positions and the kind of the highlight.
+    content.vb: Public Function GetDocumentHighlights(position As ParsePosition) As IEnumerable(Of DocumentHighlight)
+  overload: NMF.AnyText.Parser.GetDocumentHighlights*
+- uid: NMF.AnyText.Parser.GetDocumentSymbolsFromRoot
+  commentId: M:NMF.AnyText.Parser.GetDocumentSymbolsFromRoot
+  id: GetDocumentSymbolsFromRoot
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetDocumentSymbolsFromRoot()
+  nameWithType: Parser.GetDocumentSymbolsFromRoot()
+  fullName: NMF.AnyText.Parser.GetDocumentSymbolsFromRoot()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.DocumentSymbol.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetDocumentSymbolsFromRoot
+    path: src/AnyText/AnyText.Core/Parser.DocumentSymbol.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Parses the document symbols starting from the root rule application
+  example: []
+  syntax:
+    content: public IEnumerable<DocumentSymbol> GetDocumentSymbolsFromRoot()
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+      description: An IEnumerable of <xref href="NMF.AnyText.DocumentSymbol" data-throw-if-not-resolved="false"></xref> objects, each containing details on a document symbol in the document.
+    content.vb: Public Function GetDocumentSymbolsFromRoot() As IEnumerable(Of DocumentSymbol)
+  overload: NMF.AnyText.Parser.GetDocumentSymbolsFromRoot*
+- uid: NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments
+  commentId: M:NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments
+  id: GetDocumentSymbolsForNonValidDocuments
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetDocumentSymbolsForNonValidDocuments()
+  nameWithType: Parser.GetDocumentSymbolsForNonValidDocuments()
+  fullName: NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.DocumentSymbol.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetDocumentSymbolsForNonValidDocuments
+    path: src/AnyText/AnyText.Core/Parser.DocumentSymbol.cs
+    startLine: 35
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Retrieves document symbols for non-valid documents.
+  example: []
+  syntax:
+    content: public IEnumerable<DocumentSymbol> GetDocumentSymbolsForNonValidDocuments()
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+      description: An IEnumerable of <xref href="NMF.AnyText.DocumentSymbol" data-throw-if-not-resolved="false"></xref> representing the symbols for non-valid documents.
+    content.vb: Public Function GetDocumentSymbolsForNonValidDocuments() As IEnumerable(Of DocumentSymbol)
+  overload: NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments*
+- uid: NMF.AnyText.Parser.GetReferences(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Parser.GetReferences(NMF.AnyText.ParsePosition)
+  id: GetReferences(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetReferences(ParsePosition)
+  nameWithType: Parser.GetReferences(ParsePosition)
+  fullName: NMF.AnyText.Parser.GetReferences(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.FindReferences.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetReferences
+    path: src/AnyText/AnyText.Core/Parser.FindReferences.cs
+    startLine: 17
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the locations for references of a symbol
+  example: []
+  syntax:
+    content: public IEnumerable<ParseRange> GetReferences(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: The position of the symbol in the document
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.ParseRange}
+      description: An IEnumerable of <xref href="NMF.AnyText.ParseRange" data-throw-if-not-resolved="false"></xref> objects, each denoting a range between parse positions.
+    content.vb: Public Function GetReferences(position As ParsePosition) As IEnumerable(Of ParseRange)
+  overload: NMF.AnyText.Parser.GetReferences*
+- uid: NMF.AnyText.Parser.GetFoldingRangesFromRoot
+  commentId: M:NMF.AnyText.Parser.GetFoldingRangesFromRoot
+  id: GetFoldingRangesFromRoot
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetFoldingRangesFromRoot()
+  nameWithType: Parser.GetFoldingRangesFromRoot()
+  fullName: NMF.AnyText.Parser.GetFoldingRangesFromRoot()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.FoldingRanges.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetFoldingRangesFromRoot
+    path: src/AnyText/AnyText.Core/Parser.FoldingRanges.cs
+    startLine: 18
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Parses folding ranges starting from the root rule application
+  example: []
+  syntax:
+    content: public IEnumerable<FoldingRange> GetFoldingRangesFromRoot()
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.FoldingRange}
+      description: An IEnumerable of <xref href="NMF.AnyText.FoldingRange" data-throw-if-not-resolved="false"></xref> objects, each containing details on a folding range in the document.
+    content.vb: Public Function GetFoldingRangesFromRoot() As IEnumerable(Of FoldingRange)
+  overload: NMF.AnyText.Parser.GetFoldingRangesFromRoot*
+- uid: NMF.AnyText.Parser.Format(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition},System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:NMF.AnyText.Parser.Format(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition},System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Boolean,System.Boolean)
+  id: Format(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition},System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Boolean,System.Boolean)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: Format(ParsePosition?, ParsePosition?, string, Dictionary<string, object>, bool, bool, bool)
+  nameWithType: Parser.Format(ParsePosition?, ParsePosition?, string, Dictionary<string, object>, bool, bool, bool)
+  fullName: NMF.AnyText.Parser.Format(NMF.AnyText.ParsePosition?, NMF.AnyText.ParsePosition?, string, System.Collections.Generic.Dictionary<string, object>, bool, bool, bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.Formatting.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Format
+    path: src/AnyText/AnyText.Core/Parser.Formatting.cs
+    startLine: 14
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Formats the current text using the parser's context and generates text edits based on the specified range of lines.
+  example: []
+  syntax:
+    content: public TextEdit[] Format(ParsePosition? start = null, ParsePosition? end = null, string indentationString = "  ", Dictionary<string, object> otherOptions = null, bool trimTrailingWhitespace = false, bool insertFinalNewline = false, bool trimFinalNewlines = false)
+    parameters:
+    - id: start
+      type: System.Nullable{NMF.AnyText.ParsePosition}
+    - id: end
+      type: System.Nullable{NMF.AnyText.ParsePosition}
+    - id: indentationString
+      type: System.String
+    - id: otherOptions
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    - id: trimTrailingWhitespace
+      type: System.Boolean
+    - id: insertFinalNewline
+      type: System.Boolean
+    - id: trimFinalNewlines
+      type: System.Boolean
+    return:
+      type: NMF.AnyText.TextEdit[]
+    content.vb: Public Function Format(start As ParsePosition? = Nothing, [end] As ParsePosition? = Nothing, indentationString As String = "  ", otherOptions As Dictionary(Of String, Object) = Nothing, trimTrailingWhitespace As Boolean = False, insertFinalNewline As Boolean = False, trimFinalNewlines As Boolean = False) As TextEdit()
+  overload: NMF.AnyText.Parser.Format*
+  nameWithType.vb: Parser.Format(ParsePosition?, ParsePosition?, String, Dictionary(Of String, Object), Boolean, Boolean, Boolean)
+  fullName.vb: NMF.AnyText.Parser.Format(NMF.AnyText.ParsePosition?, NMF.AnyText.ParsePosition?, String, System.Collections.Generic.Dictionary(Of String, Object), Boolean, Boolean, Boolean)
+  name.vb: Format(ParsePosition?, ParsePosition?, String, Dictionary(Of String, Object), Boolean, Boolean, Boolean)
+- uid: NMF.AnyText.Parser.GetDefinition(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Parser.GetDefinition(NMF.AnyText.ParsePosition)
+  id: GetDefinition(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetDefinition(ParsePosition)
+  nameWithType: Parser.GetDefinition(ParsePosition)
+  fullName: NMF.AnyText.Parser.GetDefinition(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.GoToDefinition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetDefinition
+    path: src/AnyText/AnyText.Core/Parser.GoToDefinition.cs
+    startLine: 18
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the rule application for the definition of a symbol
+  example: []
+  syntax:
+    content: public RuleApplication GetDefinition(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: The position of the symbol in the document
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: The rule application of the symbol definition
+    content.vb: Public Function GetDefinition(position As ParsePosition) As RuleApplication
+  overload: NMF.AnyText.Parser.GetDefinition*
+- uid: NMF.AnyText.Parser.GetInlayEntriesInRange(NMF.AnyText.ParseRange)
+  commentId: M:NMF.AnyText.Parser.GetInlayEntriesInRange(NMF.AnyText.ParseRange)
+  id: GetInlayEntriesInRange(NMF.AnyText.ParseRange)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetInlayEntriesInRange(ParseRange)
+  nameWithType: Parser.GetInlayEntriesInRange(ParseRange)
+  fullName: NMF.AnyText.Parser.GetInlayEntriesInRange(NMF.AnyText.ParseRange)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.Inlay.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetInlayEntriesInRange
+    path: src/AnyText/AnyText.Core/Parser.Inlay.cs
+    startLine: 15
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Parses the document symbols starting from the root rule application
+  example: []
+  syntax:
+    content: public IEnumerable<InlayEntry> GetInlayEntriesInRange(ParseRange range)
+    parameters:
+    - id: range
+      type: NMF.AnyText.ParseRange
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.InlayEntry}
+      description: An IEnumerable of <xref href="NMF.AnyText.DocumentSymbol" data-throw-if-not-resolved="false"></xref> objects, each containing details on a document symbol in the document.
+    content.vb: Public Function GetInlayEntriesInRange(range As ParseRange) As IEnumerable(Of InlayEntry)
+  overload: NMF.AnyText.Parser.GetInlayEntriesInRange*
+- uid: NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition,System.String)
+  commentId: M:NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition,System.String)
+  id: GetRenameTextEdits(NMF.AnyText.ParsePosition,System.String)
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetRenameTextEdits(ParsePosition, string)
+  nameWithType: Parser.GetRenameTextEdits(ParsePosition, string)
+  fullName: NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition, string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.Rename.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetRenameTextEdits
+    path: src/AnyText/AnyText.Core/Parser.Rename.cs
+    startLine: 18
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the text edits for a rename operation of a symbol
+  example: []
+  syntax:
+    content: public IEnumerable<TextEdit> GetRenameTextEdits(ParsePosition position, string newName)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: The position of the symbol in the document
+    - id: newName
+      type: System.String
+      description: The new name of the symbol
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+      description: An IEnumerable of <xref href="NMF.AnyText.TextEdit" data-throw-if-not-resolved="false"></xref> objects, each containing details on a text edit to be performed.
+    content.vb: Public Function GetRenameTextEdits(position As ParsePosition, newName As String) As IEnumerable(Of TextEdit)
+  overload: NMF.AnyText.Parser.GetRenameTextEdits*
+  nameWithType.vb: Parser.GetRenameTextEdits(ParsePosition, String)
+  fullName.vb: NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition, String)
+  name.vb: GetRenameTextEdits(ParsePosition, String)
+- uid: NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition})
+  commentId: M:NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition})
+  id: GetSelectionRanges(System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition})
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetSelectionRanges(IEnumerable<ParsePosition>)
+  nameWithType: Parser.GetSelectionRanges(IEnumerable<ParsePosition>)
+  fullName: NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable<NMF.AnyText.ParsePosition>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.SelectionRanges.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetSelectionRanges
+    path: src/AnyText/AnyText.Core/Parser.SelectionRanges.cs
+    startLine: 17
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Parses the selection range for given positions
+  example: []
+  syntax:
+    content: public IEnumerable<SelectionRange> GetSelectionRanges(IEnumerable<ParsePosition> positions)
+    parameters:
+    - id: positions
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition}
+      description: The positions in the document
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.SelectionRange}
+      description: An IEnumerable of <xref href="NMF.AnyText.SelectionRange" data-throw-if-not-resolved="false"></xref> objects, each containing details on a selection range in the document.
+    content.vb: Public Function GetSelectionRanges(positions As IEnumerable(Of ParsePosition)) As IEnumerable(Of SelectionRange)
+  overload: NMF.AnyText.Parser.GetSelectionRanges*
+  nameWithType.vb: Parser.GetSelectionRanges(IEnumerable(Of ParsePosition))
+  fullName.vb: NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable(Of NMF.AnyText.ParsePosition))
+  name.vb: GetSelectionRanges(IEnumerable(Of ParsePosition))
+- uid: NMF.AnyText.Parser.GetSemanticElementsFromRoot(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition})
+  commentId: M:NMF.AnyText.Parser.GetSemanticElementsFromRoot(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition})
+  id: GetSemanticElementsFromRoot(System.Nullable{NMF.AnyText.ParsePosition},System.Nullable{NMF.AnyText.ParsePosition})
+  parent: NMF.AnyText.Parser
+  langs:
+  - csharp
+  - vb
+  name: GetSemanticElementsFromRoot(ParsePosition?, ParsePosition?)
+  nameWithType: Parser.GetSemanticElementsFromRoot(ParsePosition?, ParsePosition?)
+  fullName: NMF.AnyText.Parser.GetSemanticElementsFromRoot(NMF.AnyText.ParsePosition?, NMF.AnyText.ParsePosition?)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Parser.SemanticToken.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetSemanticElementsFromRoot
+    path: src/AnyText/AnyText.Core/Parser.SemanticToken.cs
+    startLine: 23
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Retrieves semantic elements from the root application with delta encoding for Language Server Protocol (LSP).
+  example: []
+  syntax:
+    content: public IEnumerable<uint> GetSemanticElementsFromRoot(ParsePosition? start = null, ParsePosition? end = null)
+    parameters:
+    - id: start
+      type: System.Nullable{NMF.AnyText.ParsePosition}
+      description: >-
+        An optional <xref href="NMF.AnyText.ParsePosition" data-throw-if-not-resolved="false"></xref> specifying the starting range of tokens to include.
+
+        If null, all tokens from the beginning are considered.
+    - id: end
+      type: System.Nullable{NMF.AnyText.ParsePosition}
+      description: >-
+        An optional <xref href="NMF.AnyText.ParsePosition" data-throw-if-not-resolved="false"></xref> specifying the ending range of tokens to include.
+
+        If null, all tokens to the end are considered.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.UInt32}
+      description: >-
+        A list of semantic tokens represented as unsigned integers,
+
+        including delta-encoded line and character positions, length, token type, and modifiers.
+    content.vb: Public Function GetSemanticElementsFromRoot(start As ParsePosition? = Nothing, [end] As ParsePosition? = Nothing) As IEnumerable(Of UInteger)
+  overload: NMF.AnyText.Parser.GetSemanticElementsFromRoot*
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.ActionInfo
+  commentId: T:NMF.AnyText.ActionInfo
+  parent: NMF.AnyText
+  href: NMF.AnyText.ActionInfo.html
+  name: ActionInfo
+  nameWithType: ActionInfo
+  fullName: NMF.AnyText.ActionInfo
+- uid: NMF.AnyText.Parser.GetCodeActionInfo*
+  commentId: Overload:NMF.AnyText.Parser.GetCodeActionInfo
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetCodeActionInfo_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_System_Predicate_NMF_AnyText_Rules_RuleApplication__
+  name: GetCodeActionInfo
+  nameWithType: Parser.GetCodeActionInfo
+  fullName: NMF.AnyText.Parser.GetCodeActionInfo
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+- uid: System.Predicate{NMF.AnyText.Rules.RuleApplication}
+  commentId: T:System.Predicate{NMF.AnyText.Rules.RuleApplication}
+  parent: System
+  definition: System.Predicate`1
+  href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  name: Predicate<RuleApplication>
+  nameWithType: Predicate<RuleApplication>
+  fullName: System.Predicate<NMF.AnyText.Rules.RuleApplication>
+  nameWithType.vb: Predicate(Of RuleApplication)
+  fullName.vb: System.Predicate(Of NMF.AnyText.Rules.RuleApplication)
+  name.vb: Predicate(Of RuleApplication)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.ActionInfoApplication}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.ActionInfoApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<ActionInfoApplication>
+  nameWithType: IEnumerable<ActionInfoApplication>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.ActionInfoApplication>
+  nameWithType.vb: IEnumerable(Of ActionInfoApplication)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.ActionInfoApplication)
+  name.vb: IEnumerable(Of ActionInfoApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.ActionInfoApplication
+    name: ActionInfoApplication
+    href: NMF.AnyText.ActionInfoApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.ActionInfoApplication
+    name: ActionInfoApplication
+    href: NMF.AnyText.ActionInfoApplication.html
+  - name: )
+- uid: System.Predicate`1
+  commentId: T:System.Predicate`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  name: Predicate<T>
+  nameWithType: Predicate<T>
+  fullName: System.Predicate<T>
+  nameWithType.vb: Predicate(Of T)
+  fullName.vb: System.Predicate(Of T)
+  name.vb: Predicate(Of T)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.Parser.SuggestCompletions*
+  commentId: Overload:NMF.AnyText.Parser.SuggestCompletions
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_SuggestCompletions_NMF_AnyText_ParsePosition_System_String__
+  name: SuggestCompletions
+  nameWithType: Parser.SuggestCompletions
+  fullName: NMF.AnyText.Parser.SuggestCompletions
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.CompletionEntry}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.CompletionEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<CompletionEntry>
+  nameWithType: IEnumerable<CompletionEntry>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.CompletionEntry>
+  nameWithType.vb: IEnumerable(Of CompletionEntry)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.CompletionEntry)
+  name.vb: IEnumerable(Of CompletionEntry)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.CompletionEntry
+    name: CompletionEntry
+    href: NMF.AnyText.CompletionEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.CompletionEntry
+    name: CompletionEntry
+    href: NMF.AnyText.CompletionEntry.html
+  - name: )
+- uid: NMF.AnyText.Parser.#ctor*
+  commentId: Overload:NMF.AnyText.Parser.#ctor
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser__ctor_NMF_AnyText_Rules_Rule_System_StringComparison_
+  name: Parser
+  nameWithType: Parser.Parser
+  fullName: NMF.AnyText.Parser.Parser
+  nameWithType.vb: Parser.New
+  fullName.vb: NMF.AnyText.Parser.New
+  name.vb: New
+- uid: NMF.AnyText.Rules.Rule
+  commentId: T:NMF.AnyText.Rules.Rule
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.Rule.html
+  name: Rule
+  nameWithType: Rule
+  fullName: NMF.AnyText.Rules.Rule
+- uid: System.StringComparison
+  commentId: T:System.StringComparison
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.stringcomparison
+  name: StringComparison
+  nameWithType: StringComparison
+  fullName: System.StringComparison
+- uid: NMF.AnyText.Rules
+  commentId: N:NMF.AnyText.Rules
+  href: NMF.html
+  name: NMF.AnyText.Rules
+  nameWithType: NMF.AnyText.Rules
+  fullName: NMF.AnyText.Rules
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+- uid: NMF.AnyText.ParseContext
+  commentId: T:NMF.AnyText.ParseContext
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParseContext.html
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: NMF.AnyText.ParseContext
+- uid: NMF.AnyText.Grammars.Grammar
+  commentId: T:NMF.AnyText.Grammars.Grammar
+  parent: NMF.AnyText.Grammars
+  href: NMF.AnyText.Grammars.Grammar.html
+  name: Grammar
+  nameWithType: Grammar
+  fullName: NMF.AnyText.Grammars.Grammar
+- uid: NMF.AnyText.Grammars
+  commentId: N:NMF.AnyText.Grammars
+  href: NMF.html
+  name: NMF.AnyText.Grammars
+  nameWithType: NMF.AnyText.Grammars
+  fullName: NMF.AnyText.Grammars
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Grammars
+    name: Grammars
+    href: NMF.AnyText.Grammars.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Grammars
+    name: Grammars
+    href: NMF.AnyText.Grammars.html
+- uid: NMF.AnyText.Parser.Context*
+  commentId: Overload:NMF.AnyText.Parser.Context
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_Context
+  name: Context
+  nameWithType: Parser.Context
+  fullName: NMF.AnyText.Parser.Context
+- uid: NMF.AnyText.Parser.Initialize*
+  commentId: Overload:NMF.AnyText.Parser.Initialize
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_Initialize_System_String___
+  name: Initialize
+  nameWithType: Parser.Initialize
+  fullName: NMF.AnyText.Parser.Initialize
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.Parser.Update*
+  commentId: Overload:NMF.AnyText.Parser.Update
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_Update_NMF_AnyText_TextEdit_
+  name: Update
+  nameWithType: Parser.Update
+  fullName: NMF.AnyText.Parser.Update
+- uid: NMF.AnyText.TextEdit
+  commentId: T:NMF.AnyText.TextEdit
+  parent: NMF.AnyText
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit
+  nameWithType: TextEdit
+  fullName: NMF.AnyText.TextEdit
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TextEdit>
+  nameWithType: IEnumerable<TextEdit>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.TextEdit>
+  nameWithType.vb: IEnumerable(Of TextEdit)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.TextEdit)
+  name.vb: IEnumerable(Of TextEdit)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: )
+- uid: NMF.AnyText.DocumentHighlight
+  commentId: T:NMF.AnyText.DocumentHighlight
+  href: NMF.AnyText.DocumentHighlight.html
+  name: DocumentHighlight
+  nameWithType: DocumentHighlight
+  fullName: NMF.AnyText.DocumentHighlight
+- uid: NMF.AnyText.Parser.GetDocumentHighlights*
+  commentId: Overload:NMF.AnyText.Parser.GetDocumentHighlights
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetDocumentHighlights_NMF_AnyText_ParsePosition_
+  name: GetDocumentHighlights
+  nameWithType: Parser.GetDocumentHighlights
+  fullName: NMF.AnyText.Parser.GetDocumentHighlights
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentHighlight}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentHighlight}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DocumentHighlight>
+  nameWithType: IEnumerable<DocumentHighlight>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.DocumentHighlight>
+  nameWithType.vb: IEnumerable(Of DocumentHighlight)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.DocumentHighlight)
+  name.vb: IEnumerable(Of DocumentHighlight)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.DocumentHighlight
+    name: DocumentHighlight
+    href: NMF.AnyText.DocumentHighlight.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.DocumentHighlight
+    name: DocumentHighlight
+    href: NMF.AnyText.DocumentHighlight.html
+  - name: )
+- uid: NMF.AnyText.DocumentSymbol
+  commentId: T:NMF.AnyText.DocumentSymbol
+  href: NMF.AnyText.DocumentSymbol.html
+  name: DocumentSymbol
+  nameWithType: DocumentSymbol
+  fullName: NMF.AnyText.DocumentSymbol
+- uid: NMF.AnyText.Parser.GetDocumentSymbolsFromRoot*
+  commentId: Overload:NMF.AnyText.Parser.GetDocumentSymbolsFromRoot
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetDocumentSymbolsFromRoot
+  name: GetDocumentSymbolsFromRoot
+  nameWithType: Parser.GetDocumentSymbolsFromRoot
+  fullName: NMF.AnyText.Parser.GetDocumentSymbolsFromRoot
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DocumentSymbol>
+  nameWithType: IEnumerable<DocumentSymbol>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.DocumentSymbol>
+  nameWithType.vb: IEnumerable(Of DocumentSymbol)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.DocumentSymbol)
+  name.vb: IEnumerable(Of DocumentSymbol)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: )
+- uid: NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments*
+  commentId: Overload:NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetDocumentSymbolsForNonValidDocuments
+  name: GetDocumentSymbolsForNonValidDocuments
+  nameWithType: Parser.GetDocumentSymbolsForNonValidDocuments
+  fullName: NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments
+- uid: NMF.AnyText.ParseRange
+  commentId: T:NMF.AnyText.ParseRange
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParseRange.html
+  name: ParseRange
+  nameWithType: ParseRange
+  fullName: NMF.AnyText.ParseRange
+- uid: NMF.AnyText.Parser.GetReferences*
+  commentId: Overload:NMF.AnyText.Parser.GetReferences
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetReferences_NMF_AnyText_ParsePosition_
+  name: GetReferences
+  nameWithType: Parser.GetReferences
+  fullName: NMF.AnyText.Parser.GetReferences
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.ParseRange}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.ParseRange}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<ParseRange>
+  nameWithType: IEnumerable<ParseRange>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.ParseRange>
+  nameWithType.vb: IEnumerable(Of ParseRange)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.ParseRange)
+  name.vb: IEnumerable(Of ParseRange)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.ParseRange
+    name: ParseRange
+    href: NMF.AnyText.ParseRange.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.ParseRange
+    name: ParseRange
+    href: NMF.AnyText.ParseRange.html
+  - name: )
+- uid: NMF.AnyText.FoldingRange
+  commentId: T:NMF.AnyText.FoldingRange
+  href: NMF.AnyText.FoldingRange.html
+  name: FoldingRange
+  nameWithType: FoldingRange
+  fullName: NMF.AnyText.FoldingRange
+- uid: NMF.AnyText.Parser.GetFoldingRangesFromRoot*
+  commentId: Overload:NMF.AnyText.Parser.GetFoldingRangesFromRoot
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetFoldingRangesFromRoot
+  name: GetFoldingRangesFromRoot
+  nameWithType: Parser.GetFoldingRangesFromRoot
+  fullName: NMF.AnyText.Parser.GetFoldingRangesFromRoot
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.FoldingRange}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.FoldingRange}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<FoldingRange>
+  nameWithType: IEnumerable<FoldingRange>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.FoldingRange>
+  nameWithType.vb: IEnumerable(Of FoldingRange)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.FoldingRange)
+  name.vb: IEnumerable(Of FoldingRange)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.FoldingRange
+    name: FoldingRange
+    href: NMF.AnyText.FoldingRange.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.FoldingRange
+    name: FoldingRange
+    href: NMF.AnyText.FoldingRange.html
+  - name: )
+- uid: NMF.AnyText.Parser.Format*
+  commentId: Overload:NMF.AnyText.Parser.Format
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_Format_System_Nullable_NMF_AnyText_ParsePosition__System_Nullable_NMF_AnyText_ParsePosition__System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Boolean_System_Boolean_System_Boolean_
+  name: Format
+  nameWithType: Parser.Format
+  fullName: NMF.AnyText.Parser.Format
+- uid: System.Nullable{NMF.AnyText.ParsePosition}
+  commentId: T:System.Nullable{NMF.AnyText.ParsePosition}
+  parent: System
+  definition: System.Nullable`1
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition?
+  nameWithType: ParsePosition?
+  fullName: NMF.AnyText.ParsePosition?
+  spec.csharp:
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: '?'
+  spec.vb:
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: '?'
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.AnyText.TextEdit[]
+  isExternal: true
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit[]
+  nameWithType: TextEdit[]
+  fullName: NMF.AnyText.TextEdit[]
+  nameWithType.vb: TextEdit()
+  fullName.vb: NMF.AnyText.TextEdit()
+  name.vb: TextEdit()
+  spec.csharp:
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: (
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: NMF.AnyText.Parser.GetDefinition*
+  commentId: Overload:NMF.AnyText.Parser.GetDefinition
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetDefinition_NMF_AnyText_ParsePosition_
+  name: GetDefinition
+  nameWithType: Parser.GetDefinition
+  fullName: NMF.AnyText.Parser.GetDefinition
+- uid: NMF.AnyText.Rules.RuleApplication
+  commentId: T:NMF.AnyText.Rules.RuleApplication
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.RuleApplication.html
+  name: RuleApplication
+  nameWithType: RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication
+- uid: NMF.AnyText.Parser.GetInlayEntriesInRange*
+  commentId: Overload:NMF.AnyText.Parser.GetInlayEntriesInRange
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetInlayEntriesInRange_NMF_AnyText_ParseRange_
+  name: GetInlayEntriesInRange
+  nameWithType: Parser.GetInlayEntriesInRange
+  fullName: NMF.AnyText.Parser.GetInlayEntriesInRange
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.InlayEntry}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.InlayEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<InlayEntry>
+  nameWithType: IEnumerable<InlayEntry>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.InlayEntry>
+  nameWithType.vb: IEnumerable(Of InlayEntry)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.InlayEntry)
+  name.vb: IEnumerable(Of InlayEntry)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.InlayEntry
+    name: InlayEntry
+    href: NMF.AnyText.InlayEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.InlayEntry
+    name: InlayEntry
+    href: NMF.AnyText.InlayEntry.html
+  - name: )
+- uid: NMF.AnyText.Parser.GetRenameTextEdits*
+  commentId: Overload:NMF.AnyText.Parser.GetRenameTextEdits
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetRenameTextEdits_NMF_AnyText_ParsePosition_System_String_
+  name: GetRenameTextEdits
+  nameWithType: Parser.GetRenameTextEdits
+  fullName: NMF.AnyText.Parser.GetRenameTextEdits
+- uid: NMF.AnyText.SelectionRange
+  commentId: T:NMF.AnyText.SelectionRange
+  parent: NMF.AnyText
+  href: NMF.AnyText.SelectionRange.html
+  name: SelectionRange
+  nameWithType: SelectionRange
+  fullName: NMF.AnyText.SelectionRange
+- uid: NMF.AnyText.Parser.GetSelectionRanges*
+  commentId: Overload:NMF.AnyText.Parser.GetSelectionRanges
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetSelectionRanges_System_Collections_Generic_IEnumerable_NMF_AnyText_ParsePosition__
+  name: GetSelectionRanges
+  nameWithType: Parser.GetSelectionRanges
+  fullName: NMF.AnyText.Parser.GetSelectionRanges
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<ParsePosition>
+  nameWithType: IEnumerable<ParsePosition>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.ParsePosition>
+  nameWithType.vb: IEnumerable(Of ParsePosition)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.ParsePosition)
+  name.vb: IEnumerable(Of ParsePosition)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.SelectionRange}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.SelectionRange}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<SelectionRange>
+  nameWithType: IEnumerable<SelectionRange>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.SelectionRange>
+  nameWithType.vb: IEnumerable(Of SelectionRange)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.SelectionRange)
+  name.vb: IEnumerable(Of SelectionRange)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.SelectionRange
+    name: SelectionRange
+    href: NMF.AnyText.SelectionRange.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.SelectionRange
+    name: SelectionRange
+    href: NMF.AnyText.SelectionRange.html
+  - name: )
+- uid: NMF.AnyText.Parser.GetSemanticElementsFromRoot*
+  commentId: Overload:NMF.AnyText.Parser.GetSemanticElementsFromRoot
+  href: NMF.AnyText.Parser.html#NMF_AnyText_Parser_GetSemanticElementsFromRoot_System_Nullable_NMF_AnyText_ParsePosition__System_Nullable_NMF_AnyText_ParsePosition__
+  name: GetSemanticElementsFromRoot
+  nameWithType: Parser.GetSemanticElementsFromRoot
+  fullName: NMF.AnyText.Parser.GetSemanticElementsFromRoot
+- uid: System.Collections.Generic.IEnumerable{System.UInt32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.UInt32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<uint>
+  nameWithType: IEnumerable<uint>
+  fullName: System.Collections.Generic.IEnumerable<uint>
+  nameWithType.vb: IEnumerable(Of UInteger)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of UInteger)
+  name.vb: IEnumerable(Of UInteger)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )

@@ -20,14 +20,16 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EcoreInterop
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Denotes a static helper class for Ecore interoperability
+  example: []
   syntax:
     content: public static class EcoreInterop
     content.vb: Public Module EcoreInterop
@@ -55,14 +57,16 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Repository
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Gets the repository with Ecore Interop types
+  example: []
   syntax:
     content: public static IModelRepository Repository { get; }
     parameters: []
@@ -84,21 +88,25 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LoadPackageFromFile
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 48
+    startLine: 55
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Loads an Ecore package from the given file
+  example: []
   syntax:
     content: public static EPackage LoadPackageFromFile(string path)
     parameters:
     - id: path
       type: System.String
+      description: the file path
     return:
       type: NMF.Interop.Ecore.EPackage
+      description: The Ecore package
     content.vb: Public Shared Function LoadPackageFromFile(path As String) As EPackage
   overload: NMF.Interop.Ecore.EcoreInterop.LoadPackageFromFile*
   nameWithType.vb: EcoreInterop.LoadPackageFromFile(String)
@@ -118,21 +126,25 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LoadPackageFromUri
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 54
+    startLine: 66
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Loads an Ecore package from the given URI
+  example: []
   syntax:
     content: public static EPackage LoadPackageFromUri(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the URI
     return:
       type: NMF.Interop.Ecore.EPackage
+      description: The Ecore package
     content.vb: Public Shared Function LoadPackageFromUri(uri As Uri) As EPackage
   overload: NMF.Interop.Ecore.EcoreInterop.LoadPackageFromUri*
 - uid: NMF.Interop.Ecore.EcoreInterop.Transform2Meta(NMF.Interop.Ecore.EPackage,System.Action{NMF.Interop.Ecore.IEPackage,NMF.Models.Meta.INamespace})
@@ -149,23 +161,28 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform2Meta
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 64
+    startLine: 82
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Transforms the given Ecore package to NMeta
+  example: []
   syntax:
     content: public static INamespace Transform2Meta(EPackage package, Action<IEPackage, INamespace> additionalPackageRegistry = null)
     parameters:
     - id: package
       type: NMF.Interop.Ecore.EPackage
+      description: the Ecore package
     - id: additionalPackageRegistry
       type: System.Action{NMF.Interop.Ecore.IEPackage,NMF.Models.Meta.INamespace}
+      description: a callback when new packages are found
     return:
       type: NMF.Models.Meta.INamespace
+      description: An NMeta namespace
     content.vb: Public Shared Function Transform2Meta(package As EPackage, additionalPackageRegistry As Action(Of IEPackage, INamespace) = Nothing) As INamespace
   overload: NMF.Interop.Ecore.EcoreInterop.Transform2Meta*
   nameWithType.vb: EcoreInterop.Transform2Meta(EPackage, Action(Of IEPackage, INamespace))
@@ -185,21 +202,25 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Facade.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform2Meta
     path: src/Interop/EcoreInterop/Facade.cs
-    startLine: 89
+    startLine: 111
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Transforms the given Ecore packages to NMeta
+  example: []
   syntax:
     content: public static IEnumerable<INamespace> Transform2Meta(IEnumerable<EPackage> packages)
     parameters:
     - id: packages
       type: System.Collections.Generic.IEnumerable{NMF.Interop.Ecore.EPackage}
+      description: the Ecore packages
     return:
       type: System.Collections.Generic.IEnumerable{NMF.Models.Meta.INamespace}
+      description: An NMeta namespace
     content.vb: Public Shared Function Transform2Meta(packages As IEnumerable(Of EPackage)) As IEnumerable(Of INamespace)
   overload: NMF.Interop.Ecore.EcoreInterop.Transform2Meta*
   nameWithType.vb: EcoreInterop.Transform2Meta(IEnumerable(Of EPackage))

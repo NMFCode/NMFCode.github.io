@@ -17,18 +17,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableList
     path: src/Collections/Collections/ObjectModel/ObservableList.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes a base class for an observable list
+  example: []
   syntax:
     content: 'public class ObservableList<T> : ObservableCollectionExtended<T>, IReadOnlyList<T>, IReadOnlyCollection<T>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<T>, IList<T>, ICollectionExpression<T>, IEnumerableExpression<T>, IEnumerableExpression, ICollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Class ObservableList(Of T) Inherits ObservableCollectionExtended(Of T) Implements IReadOnlyList(Of T), IReadOnlyCollection(Of T), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of T), IList(Of T), ICollectionExpression(Of T), IEnumerableExpression(Of T), IEnumerableExpression, ICollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
@@ -82,6 +85,8 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
   nameWithType.vb: ObservableList(Of T)
   fullName.vb: NMF.Collections.ObjectModel.ObservableList(Of T)
   name.vb: ObservableList(Of T)
@@ -99,7 +104,7 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AsNotifiable
     path: src/Collections/Collections/ObjectModel/ObservableList.cs
@@ -134,19 +139,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Collections/Collections/ObjectModel/ObservableList.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: NMF.Collections.ObjectModel.ObservableList`1.ToString*
@@ -401,7 +408,7 @@ references:
   - name: T
   - name: )
 - uid: NMF.Expressions.ICollectionExpression{{T}}
-  commentId: T:NMF.Expressions.ICollectionExpression{`0}
+  commentId: T:NMF.Expressions.ICollectionExpression{``0}
   parent: NMF.Expressions
   definition: NMF.Expressions.ICollectionExpression`1
   name: ICollectionExpression<T>
@@ -425,7 +432,7 @@ references:
   - name: T
   - name: )
 - uid: NMF.Expressions.IEnumerableExpression{{T}}
-  commentId: T:NMF.Expressions.IEnumerableExpression{`0}
+  commentId: T:NMF.Expressions.IEnumerableExpression{``0}
   parent: NMF.Expressions
   definition: NMF.Expressions.IEnumerableExpression`1
   name: IEnumerableExpression<T>
@@ -1326,6 +1333,49 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  parent: NMF.Collections.CollectionExtensions
+  definition: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
   - name: )
 - uid: System
   commentId: N:System
@@ -2359,6 +2409,76 @@ references:
   fullName: System.Collections.ObjectModel.Collection<T>.Items
   nameWithType.vb: Collection(Of T).Items
   fullName.vb: System.Collections.ObjectModel.Collection(Of T).Items
+- uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NMF.Collections.CollectionExtensions
+  commentId: T:NMF.Collections.CollectionExtensions
+  parent: NMF.Collections
+  href: NMF.Collections.CollectionExtensions.html
+  name: CollectionExtensions
+  nameWithType: CollectionExtensions
+  fullName: NMF.Collections.CollectionExtensions
+- uid: NMF.Collections
+  commentId: N:NMF.Collections
+  href: NMF.html
+  name: NMF.Collections
+  nameWithType: NMF.Collections
+  fullName: NMF.Collections
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
 - uid: NMF.Collections.ObjectModel.ObservableList`1.AsNotifiable*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableList`1.AsNotifiable
   href: NMF.Collections.ObjectModel.ObservableList-1.html#NMF_Collections_ObjectModel_ObservableList_1_AsNotifiable

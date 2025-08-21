@@ -9,6 +9,7 @@ items:
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.AddToCollection(System.Object,System.Object,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.ConvertFromString(System.String)
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.ConvertToString(System.Object)
+  - NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.ElementName
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.GetValue(System.Object,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.Xmi.XmiArtificialIdAttribute.IdentificationMode
@@ -35,11 +36,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: XmiArtificialIdAttribute
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 9
+    startLine: 7
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -74,11 +75,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 14
+    startLine: 12
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -105,11 +106,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Instance
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 20
+    startLine: 18
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -136,11 +137,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ShallCreateInstance
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 23
+    startLine: 21
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -169,11 +170,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ElementName
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 29
+    startLine: 27
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -202,11 +203,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Namespace
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 35
+    startLine: 33
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -235,11 +236,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NamespacePrefix
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 41
+    startLine: 39
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -268,11 +269,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ShouldSerializeValue
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 50
+    startLine: 48
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -311,11 +312,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsReadOnly
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 56
+    startLine: 54
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -344,18 +345,18 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetValue
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 62
+    startLine: 60
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
   summary: Gets the value of this property for the given input object
   example: []
   syntax:
-    content: public object GetValue(object input, XmlSerializationContext context)
+    content: public virtual object GetValue(object input, XmlSerializationContext context)
     parameters:
     - id: input
       type: System.Object
@@ -366,7 +367,7 @@ items:
     return:
       type: System.Object
       description: ''
-    content.vb: Public Function GetValue(input As Object, context As XmlSerializationContext) As Object
+    content.vb: Public Overridable Function GetValue(input As Object, context As XmlSerializationContext) As Object
   overload: NMF.Serialization.Xmi.XmiArtificialIdAttribute.GetValue*
   implements:
   - NMF.Serialization.IPropertySerializationInfo.GetValue(System.Object,NMF.Serialization.XmlSerializationContext)
@@ -387,11 +388,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetValue
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 75
+    startLine: 73
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -430,11 +431,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsIdentifier
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 88
+    startLine: 86
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -463,11 +464,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IdentificationMode
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 97
+    startLine: 95
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -496,11 +497,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsStringConvertible
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 103
+    startLine: 101
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -529,11 +530,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ConvertFromString
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 109
+    startLine: 107
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -569,11 +570,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ConvertToString
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 115
+    startLine: 113
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -609,11 +610,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddToCollection
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 121
+    startLine: 119
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -652,11 +653,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Initialize
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 127
+    startLine: 125
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -692,11 +693,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Opposite
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 137
+    startLine: 135
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -725,11 +726,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: PropertyMinType
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 146
+    startLine: 144
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -758,11 +759,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequiresInitialization
     path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
-    startLine: 155
+    startLine: 153
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization.Xmi
@@ -777,6 +778,39 @@ items:
   overload: NMF.Serialization.Xmi.XmiArtificialIdAttribute.RequiresInitialization*
   implements:
   - NMF.Serialization.IPropertySerializationInfo.RequiresInitialization
+- uid: NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
+  commentId: P:NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
+  id: DefaultValue
+  parent: NMF.Serialization.Xmi.XmiArtificialIdAttribute
+  langs:
+  - csharp
+  - vb
+  name: DefaultValue
+  nameWithType: XmiArtificialIdAttribute.DefaultValue
+  fullName: NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
+  type: Property
+  source:
+    remote:
+      path: Models/Serialization/XMI/XmiArtificialIdAttribute.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DefaultValue
+    path: src/Models/Serialization/XMI/XmiArtificialIdAttribute.cs
+    startLine: 156
+  assemblies:
+  - NMF.Serialization
+  namespace: NMF.Serialization.Xmi
+  summary: Gets the default value
+  example: []
+  syntax:
+    content: public object DefaultValue { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public ReadOnly Property DefaultValue As Object
+  overload: NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue*
+  implements:
+  - NMF.Serialization.IPropertySerializationInfo.DefaultValue
 references:
 - uid: NMF.Serialization.Xmi
   commentId: N:NMF.Serialization.Xmi
@@ -1618,3 +1652,16 @@ references:
   name: RequiresInitialization
   nameWithType: IPropertySerializationInfo.RequiresInitialization
   fullName: NMF.Serialization.IPropertySerializationInfo.RequiresInitialization
+- uid: NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue*
+  commentId: Overload:NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
+  href: NMF.Serialization.Xmi.XmiArtificialIdAttribute.html#NMF_Serialization_Xmi_XmiArtificialIdAttribute_DefaultValue
+  name: DefaultValue
+  nameWithType: XmiArtificialIdAttribute.DefaultValue
+  fullName: NMF.Serialization.Xmi.XmiArtificialIdAttribute.DefaultValue
+- uid: NMF.Serialization.IPropertySerializationInfo.DefaultValue
+  commentId: P:NMF.Serialization.IPropertySerializationInfo.DefaultValue
+  parent: NMF.Serialization.IPropertySerializationInfo
+  href: NMF.Serialization.IPropertySerializationInfo.html#NMF_Serialization_IPropertySerializationInfo_DefaultValue
+  name: DefaultValue
+  nameWithType: IPropertySerializationInfo.DefaultValue
+  fullName: NMF.Serialization.IPropertySerializationInfo.DefaultValue

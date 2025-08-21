@@ -15,8 +15,6 @@ items:
     name: IModelElement
   - uid: NMF.Models.IModelElementExtension
     name: IModelElementExtension
-  - uid: NMF.Models.IModelValidationLog
-    name: IModelValidationLog
   - uid: NMF.Models.IdAttribute
     name: IdAttribute
   - uid: NMF.Models.IsoDateTimeConverter
@@ -470,6 +468,8 @@ items:
 - uid: NMF.Models.Repository
   name: NMF.Models.Repository
   items:
+  - uid: NMF.Models.Repository.ExtensionBasedSerializer
+    name: ExtensionBasedSerializer
   - uid: NMF.Models.Repository.FileLocator
     name: FileLocator
   - uid: NMF.Models.Repository.FileMapLocator
@@ -511,10 +511,18 @@ items:
 - uid: NMF.Serialization
   name: NMF.Serialization
   items:
+  - uid: NMF.Serialization.AlternativeNamespaceAttribute
+    name: AlternativeNamespaceAttribute
+  - uid: NMF.Serialization.ConverterExceptionEventArgs
+    name: ConverterExceptionEventArgs
   - uid: NMF.Serialization.IPropertySerializationInfo
     name: IPropertySerializationInfo
   - uid: NMF.Serialization.ITypeSerializationInfo
     name: ITypeSerializationInfo
+  - uid: NMF.Serialization.Serializer
+    name: Serializer
+  - uid: NMF.Serialization.SerializerTypeCollection
+    name: SerializerTypeCollection
   - uid: NMF.Serialization.TypeConversion
     name: TypeConversion
   - uid: NMF.Serialization.UnknownAttributeEventArgs
@@ -563,12 +571,17 @@ items:
     name: XmlSerializer
   - uid: NMF.Serialization.XmlStringTypeConverter
     name: XmlStringTypeConverter
-  - uid: NMF.Serialization.XmlTypeCollection
-    name: XmlTypeCollection
   - uid: NMF.Serialization.XmlTypeConverterAttribute
     name: XmlTypeConverterAttribute
   - uid: NMF.Serialization.XmlTypeSerializationInfo
     name: XmlTypeSerializationInfo
+- uid: NMF.Serialization.Json
+  name: NMF.Serialization.Json
+  items:
+  - uid: NMF.Serialization.Json.JsonSerializer
+    name: JsonSerializer
+  - uid: NMF.Serialization.Json.Utf8JsonStreamReader
+    name: Utf8JsonStreamReader
 - uid: NMF.Serialization.Xmi
   name: NMF.Serialization.Xmi
   items:

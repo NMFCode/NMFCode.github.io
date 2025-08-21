@@ -1,0 +1,816 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Matcher
+  commentId: T:NMF.AnyText.Matcher
+  id: Matcher
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.Matcher.#ctor(NMF.AnyText.Rules.CommentRule[])
+  - NMF.AnyText.Matcher.Apply(NMF.AnyText.TextEdit)
+  - NMF.AnyText.Matcher.GetErrorsExactlyAt(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Matcher.IsWhiteSpaceTo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Matcher.Match(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Matcher.NextTokenPosition(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Matcher.Reset
+  - NMF.AnyText.Matcher.TrailingComments
+  langs:
+  - csharp
+  - vb
+  name: Matcher
+  nameWithType: Matcher
+  fullName: NMF.AnyText.Matcher
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Matcher
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 14
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Denotes a class that matches text using an incremental packrat parser
+  example: []
+  syntax:
+    content: public class Matcher
+    content.vb: Public Class Matcher
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Matcher.#ctor(NMF.AnyText.Rules.CommentRule[])
+  commentId: M:NMF.AnyText.Matcher.#ctor(NMF.AnyText.Rules.CommentRule[])
+  id: '#ctor(NMF.AnyText.Rules.CommentRule[])'
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: Matcher(params CommentRule[])
+  nameWithType: Matcher.Matcher(params CommentRule[])
+  fullName: NMF.AnyText.Matcher.Matcher(params NMF.AnyText.Rules.CommentRule[])
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public Matcher(params CommentRule[] comments)
+    parameters:
+    - id: comments
+      type: NMF.AnyText.Rules.CommentRule[]
+      description: the comment rules
+    content.vb: Public Sub New(ParamArray comments As CommentRule())
+  overload: NMF.AnyText.Matcher.#ctor*
+  nameWithType.vb: Matcher.New(ParamArray CommentRule())
+  fullName.vb: NMF.AnyText.Matcher.New(ParamArray NMF.AnyText.Rules.CommentRule())
+  name.vb: New(ParamArray CommentRule())
+- uid: NMF.AnyText.Matcher.Reset
+  commentId: M:NMF.AnyText.Matcher.Reset
+  id: Reset
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: Matcher.Reset()
+  fullName: NMF.AnyText.Matcher.Reset()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Reset
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 41
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Resets the memoization table
+  example: []
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: NMF.AnyText.Matcher.Reset*
+- uid: NMF.AnyText.Matcher.NextTokenPosition(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Matcher.NextTokenPosition(NMF.AnyText.ParsePosition)
+  id: NextTokenPosition(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: NextTokenPosition(ParsePosition)
+  nameWithType: Matcher.NextTokenPosition(ParsePosition)
+  fullName: NMF.AnyText.Matcher.NextTokenPosition(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: NextTokenPosition
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 52
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the position of the next token, starting from the given position
+  example: []
+  syntax:
+    content: public ParsePosition NextTokenPosition(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the position where to look for the next token
+    return:
+      type: NMF.AnyText.ParsePosition
+      description: the position of the next token position
+    content.vb: Public Function NextTokenPosition(position As ParsePosition) As ParsePosition
+  overload: NMF.AnyText.Matcher.NextTokenPosition*
+- uid: NMF.AnyText.Matcher.IsWhiteSpaceTo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Matcher.IsWhiteSpaceTo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: IsWhiteSpaceTo(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: IsWhiteSpaceTo(ParsePosition, ParsePosition)
+  nameWithType: Matcher.IsWhiteSpaceTo(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.Matcher.IsWhiteSpaceTo(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsWhiteSpaceTo
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 82
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Determines whether the input between the given position and the target position only consists of white space
+  example: []
+  syntax:
+    content: public bool IsWhiteSpaceTo(ParsePosition position, ParsePosition targetPosition)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the start position
+    - id: targetPosition
+      type: NMF.AnyText.ParsePosition
+      description: the target position
+    return:
+      type: System.Boolean
+      description: true, if there is only white spaces between the given position and the target position, otherwise false
+    content.vb: Public Function IsWhiteSpaceTo(position As ParsePosition, targetPosition As ParsePosition) As Boolean
+  overload: NMF.AnyText.Matcher.IsWhiteSpaceTo*
+- uid: NMF.AnyText.Matcher.TrailingComments
+  commentId: P:NMF.AnyText.Matcher.TrailingComments
+  id: TrailingComments
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: TrailingComments
+  nameWithType: Matcher.TrailingComments
+  fullName: NMF.AnyText.Matcher.TrailingComments
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: TrailingComments
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 118
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets a collection of comments found after the last rule application
+  example: []
+  syntax:
+    content: public IEnumerable<RuleApplication> TrailingComments { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+    content.vb: Public ReadOnly Property TrailingComments As IEnumerable(Of RuleApplication)
+  overload: NMF.AnyText.Matcher.TrailingComments*
+- uid: NMF.AnyText.Matcher.GetErrorsExactlyAt(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Matcher.GetErrorsExactlyAt(NMF.AnyText.ParsePosition)
+  id: GetErrorsExactlyAt(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: GetErrorsExactlyAt(ParsePosition)
+  nameWithType: Matcher.GetErrorsExactlyAt(ParsePosition)
+  fullName: NMF.AnyText.Matcher.GetErrorsExactlyAt(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetErrorsExactlyAt
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 125
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets a collection of failed rule applications exactly at the given position
+  example: []
+  syntax:
+    content: public IEnumerable<RuleApplication> GetErrorsExactlyAt(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the position
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+      description: a collection of rule applications
+    content.vb: Public Function GetErrorsExactlyAt(position As ParsePosition) As IEnumerable(Of RuleApplication)
+  overload: NMF.AnyText.Matcher.GetErrorsExactlyAt*
+- uid: NMF.AnyText.Matcher.Match(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Matcher.Match(NMF.AnyText.ParseContext)
+  id: Match(NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: Match(ParseContext)
+  nameWithType: Matcher.Match(ParseContext)
+  fullName: NMF.AnyText.Matcher.Match(NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Match
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 377
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Matches the provided rule with the given parse context
+  example: []
+  syntax:
+    content: public RuleApplication Match(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: The context in which the text is parsed, including the current input
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: A rule application for the entire text
+    content.vb: Public Function Match(context As ParseContext) As RuleApplication
+  overload: NMF.AnyText.Matcher.Match*
+- uid: NMF.AnyText.Matcher.Apply(NMF.AnyText.TextEdit)
+  commentId: M:NMF.AnyText.Matcher.Apply(NMF.AnyText.TextEdit)
+  id: Apply(NMF.AnyText.TextEdit)
+  parent: NMF.AnyText.Matcher
+  langs:
+  - csharp
+  - vb
+  name: Apply(TextEdit)
+  nameWithType: Matcher.Apply(TextEdit)
+  fullName: NMF.AnyText.Matcher.Apply(NMF.AnyText.TextEdit)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Matcher.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Apply
+    path: src/AnyText/AnyText.Core/Matcher.cs
+    startLine: 395
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Removes any memoization based on the given text edit and updates the memo table
+  example: []
+  syntax:
+    content: public void Apply(TextEdit edit)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.TextEdit
+      description: The change in the input text
+    content.vb: Public Sub Apply(edit As TextEdit)
+  overload: NMF.AnyText.Matcher.Apply*
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.Matcher.#ctor*
+  commentId: Overload:NMF.AnyText.Matcher.#ctor
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher__ctor_NMF_AnyText_Rules_CommentRule___
+  name: Matcher
+  nameWithType: Matcher.Matcher
+  fullName: NMF.AnyText.Matcher.Matcher
+  nameWithType.vb: Matcher.New
+  fullName.vb: NMF.AnyText.Matcher.New
+  name.vb: New
+- uid: NMF.AnyText.Rules.CommentRule[]
+  isExternal: true
+  href: NMF.AnyText.Rules.CommentRule.html
+  name: CommentRule[]
+  nameWithType: CommentRule[]
+  fullName: NMF.AnyText.Rules.CommentRule[]
+  nameWithType.vb: CommentRule()
+  fullName.vb: NMF.AnyText.Rules.CommentRule()
+  name.vb: CommentRule()
+  spec.csharp:
+  - uid: NMF.AnyText.Rules.CommentRule
+    name: CommentRule
+    href: NMF.AnyText.Rules.CommentRule.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.Rules.CommentRule
+    name: CommentRule
+    href: NMF.AnyText.Rules.CommentRule.html
+  - name: (
+  - name: )
+- uid: NMF.AnyText.Matcher.Reset*
+  commentId: Overload:NMF.AnyText.Matcher.Reset
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_Reset
+  name: Reset
+  nameWithType: Matcher.Reset
+  fullName: NMF.AnyText.Matcher.Reset
+- uid: NMF.AnyText.Matcher.NextTokenPosition*
+  commentId: Overload:NMF.AnyText.Matcher.NextTokenPosition
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_NextTokenPosition_NMF_AnyText_ParsePosition_
+  name: NextTokenPosition
+  nameWithType: Matcher.NextTokenPosition
+  fullName: NMF.AnyText.Matcher.NextTokenPosition
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+- uid: NMF.AnyText.Matcher.IsWhiteSpaceTo*
+  commentId: Overload:NMF.AnyText.Matcher.IsWhiteSpaceTo
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_IsWhiteSpaceTo_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: IsWhiteSpaceTo
+  nameWithType: Matcher.IsWhiteSpaceTo
+  fullName: NMF.AnyText.Matcher.IsWhiteSpaceTo
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.Matcher.TrailingComments*
+  commentId: Overload:NMF.AnyText.Matcher.TrailingComments
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_TrailingComments
+  name: TrailingComments
+  nameWithType: Matcher.TrailingComments
+  fullName: NMF.AnyText.Matcher.TrailingComments
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<RuleApplication>
+  nameWithType: IEnumerable<RuleApplication>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.RuleApplication>
+  nameWithType.vb: IEnumerable(Of RuleApplication)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.RuleApplication)
+  name.vb: IEnumerable(Of RuleApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.Matcher.GetErrorsExactlyAt*
+  commentId: Overload:NMF.AnyText.Matcher.GetErrorsExactlyAt
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_GetErrorsExactlyAt_NMF_AnyText_ParsePosition_
+  name: GetErrorsExactlyAt
+  nameWithType: Matcher.GetErrorsExactlyAt
+  fullName: NMF.AnyText.Matcher.GetErrorsExactlyAt
+- uid: NMF.AnyText.Matcher.Match*
+  commentId: Overload:NMF.AnyText.Matcher.Match
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_Match_NMF_AnyText_ParseContext_
+  name: Match
+  nameWithType: Matcher.Match
+  fullName: NMF.AnyText.Matcher.Match
+- uid: NMF.AnyText.ParseContext
+  commentId: T:NMF.AnyText.ParseContext
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParseContext.html
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: NMF.AnyText.ParseContext
+- uid: NMF.AnyText.Rules.RuleApplication
+  commentId: T:NMF.AnyText.Rules.RuleApplication
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.RuleApplication.html
+  name: RuleApplication
+  nameWithType: RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication
+- uid: NMF.AnyText.Rules
+  commentId: N:NMF.AnyText.Rules
+  href: NMF.html
+  name: NMF.AnyText.Rules
+  nameWithType: NMF.AnyText.Rules
+  fullName: NMF.AnyText.Rules
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+- uid: NMF.AnyText.Matcher.Apply*
+  commentId: Overload:NMF.AnyText.Matcher.Apply
+  href: NMF.AnyText.Matcher.html#NMF_AnyText_Matcher_Apply_NMF_AnyText_TextEdit_
+  name: Apply
+  nameWithType: Matcher.Apply
+  fullName: NMF.AnyText.Matcher.Apply
+- uid: NMF.AnyText.TextEdit
+  commentId: T:NMF.AnyText.TextEdit
+  parent: NMF.AnyText
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit
+  nameWithType: TextEdit
+  fullName: NMF.AnyText.TextEdit

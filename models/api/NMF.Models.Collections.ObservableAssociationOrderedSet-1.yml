@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableAssociationOrderedSet
     path: src/Models/Models/Collections/AssociationOrderedSet.cs
-    startLine: 54
+    startLine: 50
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -118,22 +118,25 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Collections/AssociationOrderedSet.cs
-    startLine: 57
+    startLine: 53
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As T) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Add({T})
   overload: NMF.Models.Collections.ObservableAssociationOrderedSet`1.Add*
@@ -153,20 +156,25 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Models/Models/Collections/AssociationOrderedSet.cs
-    startLine: 64
+    startLine: 60
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Clear
   overload: NMF.Models.Collections.ObservableAssociationOrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: ObservableAssociationOrderedSet(Of T).Clear()
   fullName.vb: NMF.Models.Collections.ObservableAssociationOrderedSet(Of T).Clear()
 - uid: NMF.Models.Collections.ObservableAssociationOrderedSet`1.Remove(`0,System.Int32)
@@ -183,24 +191,28 @@ items:
   source:
     remote:
       path: Models/Models/Collections/AssociationOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Collections/AssociationOrderedSet.cs
-    startLine: 77
+    startLine: 73
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As T, index As Integer) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Remove({T},System.Int32)
   overload: NMF.Models.Collections.ObservableAssociationOrderedSet`1.Remove*
@@ -3322,6 +3334,13 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Clear
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Clear
   parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}

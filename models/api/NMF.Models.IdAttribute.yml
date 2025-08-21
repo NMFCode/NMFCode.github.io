@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/IdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IdAttribute
     path: src/Models/Models/Attributes/IdAttribute.cs
@@ -26,6 +26,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Marks a property as an id
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Property)]
@@ -101,14 +103,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/IdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsId
     path: src/Models/Models/Attributes/IdAttribute.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: true, if the property is an id, otherwise false
+  example: []
   syntax:
     content: public bool IsId { get; set; }
     parameters: []
@@ -130,19 +134,22 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/IdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/IdAttribute.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public IdAttribute(bool isId)
     parameters:
     - id: isId
       type: System.Boolean
+      description: true, if the property is an id, otherwise false
     content.vb: Public Sub New(isId As Boolean)
   overload: NMF.Models.IdAttribute.#ctor*
   nameWithType.vb: IdAttribute.New(Boolean)
@@ -162,14 +169,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/IdAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/IdAttribute.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public IdAttribute()
     content.vb: Public Sub New()

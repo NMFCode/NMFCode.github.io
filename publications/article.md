@@ -1,6 +1,13 @@
 Journal Articles
 ---
 
+### 2025
+
+G. Hinkel and B. Igler: **[An internal DSL for graphical modeling tools based on GLSP](https://doi.org/10.5381/jot.2025.24.2.a11)** in _J. Object Technol._, vol. 24, no. 2, pp. 2, 2025
+**DOI:** [10.5381/JOT.2025.24.2.A11](https://dx.doi.org/10.5381/JOT.2025.24.2.A11)  
+
+
+
 ### 2022
 
 G. Hinkel, A. García-Domínguez, R. Schöne, A. Boronat, M. Tisi, T. Calvar, F. Jouault, J. Marton, T. Nyíri, J. Antal, M. Elekes, and G. Szárnyas: **[A cross-technology benchmark for incremental graph queries](https://doi.org/10.1007/s10270-021-00927-5)** in _Software and Systems Modeling_, vol. 21, no. 2, pp. 755-804, 2022

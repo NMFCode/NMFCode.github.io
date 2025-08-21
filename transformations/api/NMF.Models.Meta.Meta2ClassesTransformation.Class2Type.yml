@@ -9,6 +9,8 @@ items:
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddOperationsOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddReferencesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,System.Boolean,NMF.Transformations.Core.ITransformationContext)
+  - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IAttribute,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
+  - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,System.Boolean,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateAbstractGetClassMethod(NMF.Models.Meta.IClass,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateCallOperation(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateChildren(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
@@ -20,6 +22,7 @@ items:
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateGetExpressionForReference(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateGetModelElementForReference(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateGetRelativePathForNonIdentifiedChild(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateOutput(NMF.Models.Meta.IClass,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateOverriddenGetClassMethod(NMF.Models.Meta.IClass,NMF.Models.Meta.IClass,NMF.Transformations.Core.ITransformationContext,System.CodeDom.CodeMemberField,System.Boolean)
   - NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateReferencesProperty(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
@@ -41,7 +44,7 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Class2Type
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
@@ -63,7 +66,6 @@ items:
   - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}
   inheritedMembers:
   - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.ResolveMultipleInheritanceMembers(System.CodeDom.CodeTypeDeclaration,System.Collections.Generic.HashSet{System.CodeDom.CodeTypeMember},System.CodeDom.CodeConstructor)
-  - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
   - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{{TProp},System.CodeDom.CodeMemberProperty},System.Func{NMF.Models.Meta.IClass,{TProp}})
   - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.RequireGenerateProperties``1(NMF.Transformations.TransformationRuleBase{{TProp},System.CodeDom.CodeMemberProperty},System.Func{NMF.Models.Meta.IClass,System.Collections.Generic.IEnumerable{{TProp}}})
   - NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.RequireGenerateMethod``1(NMF.Transformations.TransformationRuleBase{{TMeth},System.CodeDom.CodeMemberMethod},System.Func{NMF.Models.Meta.IClass,{TMeth}})
@@ -244,7 +246,7 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetName
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
@@ -280,7 +282,7 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateOutput
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
@@ -319,7 +321,7 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ShouldContainMembers
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
@@ -358,11 +360,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RegisterDependencies
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 173
+    startLine: 161
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -387,11 +389,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 208
+    startLine: 195
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -426,11 +428,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetInterfaceType
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 495
+    startLine: 479
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -464,11 +466,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateOverriddenGetClassMethod
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 521
+    startLine: 507
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -514,11 +516,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateClassInstanceProperty
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 574
+    startLine: 560
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -564,11 +566,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateAbstractGetClassMethod
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 608
+    startLine: 594
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -602,11 +604,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSeparatePublicInterface
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 669
+    startLine: 655
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -627,6 +629,48 @@ items:
     content.vb: Protected Overrides Function CreateSeparatePublicInterface(input As IClass, generatedType As CodeTypeDeclaration) As CodeTypeDeclaration
   overridden: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateSeparatePublicInterface(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration)
   overload: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateSeparatePublicInterface*
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  id: CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  parent: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type
+  langs:
+  - csharp
+  - vb
+  name: CreateInterfaceMembers(IClass, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  nameWithType: Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers(IClass, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
+  type: Method
+  source:
+    remote:
+      path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateInterfaceMembers
+    path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+    startLine: 678
+  assemblies:
+  - NMF.Models.MetaTransformation
+  namespace: NMF.Models.Meta
+  summary: Generates the interface members for the given type
+  example: []
+  syntax:
+    content: protected override void CreateInterfaceMembers(IClass input, CodeTypeDeclaration generatedType, CodeTypeDeclaration interfaceDecl, ITransformationContext context)
+    parameters:
+    - id: input
+      type: NMF.Models.Meta.IClass
+      description: The input for which the interface members need to be generated
+    - id: generatedType
+      type: System.CodeDom.CodeTypeDeclaration
+      description: The generated type
+    - id: interfaceDecl
+      type: System.CodeDom.CodeTypeDeclaration
+      description: The interface declaration
+    - id: context
+      type: NMF.Transformations.Core.ITransformationContext
+      description: The transformation context
+    content.vb: Protected Overrides Sub CreateInterfaceMembers(input As IClass, generatedType As CodeTypeDeclaration, interfaceDecl As CodeTypeDeclaration, context As ITransformationContext)
+  overridden: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  overload: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers*
 - uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
   commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
   id: AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
@@ -641,11 +685,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddImplementationBaseClass
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 694
+    startLine: 724
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -674,11 +718,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateReferencesProperty
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 706
+    startLine: 736
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -715,11 +759,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ImplementIdentifier
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 748
+    startLine: 778
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -753,11 +797,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetModelElementForReference
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 832
+    startLine: 893
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -794,11 +838,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetAttributeValue
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 864
+    startLine: 925
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -835,11 +879,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetCollectionForFeature
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 918
+    startLine: 979
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -876,11 +920,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetFeature
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 962
+    startLine: 1023
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -917,11 +961,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateCallOperation
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 994
+    startLine: 1067
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -958,11 +1002,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetExpressionForReference
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1069
+    startLine: 1141
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -999,11 +1043,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetCompositionName
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1099
+    startLine: 1171
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1040,11 +1084,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetExpressionForAttribute
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1138
+    startLine: 1210
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1081,11 +1125,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateGetRelativePathForNonIdentifiedChild
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1189
+    startLine: 1261
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1122,11 +1166,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateChildren
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1218
+    startLine: 1290
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1163,11 +1207,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddReferencesOfClass
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1250
+    startLine: 1322
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1205,6 +1249,62 @@ items:
   nameWithType.vb: Meta2ClassesTransformation.Class2Type.AddReferencesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IReference, CodeMemberProperty, ITransformationContext, T), T, Boolean, ITransformationContext)
   fullName.vb: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddReferencesOfClass(Of T)(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func(Of T, NMF.Models.Meta.IReference, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T), T, Boolean, NMF.Transformations.Core.ITransformationContext)
   name.vb: AddReferencesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IReference, CodeMemberProperty, ITransformationContext, T), T, Boolean, ITransformationContext)
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,System.Boolean,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,System.Boolean,NMF.Transformations.Core.ITransformationContext)
+  id: AddRefinedReferencesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,System.Boolean,NMF.Transformations.Core.ITransformationContext)
+  parent: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type
+  langs:
+  - csharp
+  - vb
+  name: AddRefinedReferencesOfClass<T>(IClass, CodeTypeDeclaration, Func<T, IReference, CodeMemberProperty, ITransformationContext, T>, T, bool, ITransformationContext)
+  nameWithType: Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass<T>(IClass, CodeTypeDeclaration, Func<T, IReference, CodeMemberProperty, ITransformationContext, T>, T, bool, ITransformationContext)
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass<T>(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func<T, NMF.Models.Meta.IReference, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T>, T, bool, NMF.Transformations.Core.ITransformationContext)
+  type: Method
+  source:
+    remote:
+      path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddRefinedReferencesOfClass
+    path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+    startLine: 1353
+  assemblies:
+  - NMF.Models.MetaTransformation
+  namespace: NMF.Models.Meta
+  summary: Iterates all references of the given class
+  example: []
+  syntax:
+    content: protected T AddRefinedReferencesOfClass<T>(IClass input, CodeTypeDeclaration typeDeclaration, Func<T, IReference, CodeMemberProperty, ITransformationContext, T> action, T initial, bool containmentsOnly, ITransformationContext context)
+    parameters:
+    - id: input
+      type: NMF.Models.Meta.IClass
+      description: The start class
+    - id: typeDeclaration
+      type: System.CodeDom.CodeTypeDeclaration
+      description: The type declaration in the context of which the references should be added
+    - id: action
+      type: System.Func{{T},NMF.Models.Meta.IReference,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,{T}}
+      description: the action that should be performed for each reference
+    - id: initial
+      type: '{T}'
+      description: an initial result object
+    - id: containmentsOnly
+      type: System.Boolean
+      description: if true, only containment references are considered
+    - id: context
+      type: NMF.Transformations.Core.ITransformationContext
+      description: The context in which the references should be visited
+    typeParameters:
+    - id: T
+      description: The type of the result
+    return:
+      type: '{T}'
+      description: the result object after is has been applied for all references
+    content.vb: Protected Function AddRefinedReferencesOfClass(Of T)(input As IClass, typeDeclaration As CodeTypeDeclaration, action As Func(Of T, IReference, CodeMemberProperty, ITransformationContext, T), initial As T, containmentsOnly As Boolean, context As ITransformationContext) As T
+  overload: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass*
+  nameWithType.vb: Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IReference, CodeMemberProperty, ITransformationContext, T), T, Boolean, ITransformationContext)
+  fullName.vb: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass(Of T)(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func(Of T, NMF.Models.Meta.IReference, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T), T, Boolean, NMF.Transformations.Core.ITransformationContext)
+  name.vb: AddRefinedReferencesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IReference, CodeMemberProperty, ITransformationContext, T), T, Boolean, ITransformationContext)
 - uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddOperationsOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
   commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddOperationsOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
   id: AddOperationsOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
@@ -1219,11 +1319,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddOperationsOfClass
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1280
+    startLine: 1384
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1272,11 +1372,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AddAttributesOfClass
     path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
-    startLine: 1307
+    startLine: 1411
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -1311,6 +1411,59 @@ items:
   nameWithType.vb: Meta2ClassesTransformation.Class2Type.AddAttributesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IAttribute, CodeMemberProperty, ITransformationContext, T), T, ITransformationContext)
   fullName.vb: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddAttributesOfClass(Of T)(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func(Of T, NMF.Models.Meta.IAttribute, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T), T, NMF.Transformations.Core.ITransformationContext)
   name.vb: AddAttributesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IAttribute, CodeMemberProperty, ITransformationContext, T), T, ITransformationContext)
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IAttribute,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IAttribute,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
+  id: AddRefinedAttributesOfClass``1(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.Func{``0,NMF.Models.Meta.IAttribute,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,``0},``0,NMF.Transformations.Core.ITransformationContext)
+  parent: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type
+  langs:
+  - csharp
+  - vb
+  name: AddRefinedAttributesOfClass<T>(IClass, CodeTypeDeclaration, Func<T, IAttribute, CodeMemberProperty, ITransformationContext, T>, T, ITransformationContext)
+  nameWithType: Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass<T>(IClass, CodeTypeDeclaration, Func<T, IAttribute, CodeMemberProperty, ITransformationContext, T>, T, ITransformationContext)
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass<T>(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func<T, NMF.Models.Meta.IAttribute, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T>, T, NMF.Transformations.Core.ITransformationContext)
+  type: Method
+  source:
+    remote:
+      path: Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddRefinedAttributesOfClass
+    path: src/Transformations/Models.MetaTransformation/Meta/Class2Type.cs
+    startLine: 1438
+  assemblies:
+  - NMF.Models.MetaTransformation
+  namespace: NMF.Models.Meta
+  summary: Iterates the attributes of the given class
+  example: []
+  syntax:
+    content: protected T AddRefinedAttributesOfClass<T>(IClass input, CodeTypeDeclaration typeDeclaration, Func<T, IAttribute, CodeMemberProperty, ITransformationContext, T> action, T initial, ITransformationContext context)
+    parameters:
+    - id: input
+      type: NMF.Models.Meta.IClass
+      description: The class whose attributes should be iterated
+    - id: typeDeclaration
+      type: System.CodeDom.CodeTypeDeclaration
+      description: The generated type declaration for the input
+    - id: action
+      type: System.Func{{T},NMF.Models.Meta.IAttribute,System.CodeDom.CodeMemberProperty,NMF.Transformations.Core.ITransformationContext,{T}}
+      description: The action that should be performed for each attribute
+    - id: initial
+      type: '{T}'
+      description: The initial result
+    - id: context
+      type: NMF.Transformations.Core.ITransformationContext
+      description: The context in which the attributes should be iterated
+    typeParameters:
+    - id: T
+      description: The result type
+    return:
+      type: '{T}'
+      description: The result after all attributes have been processed
+    content.vb: Protected Function AddRefinedAttributesOfClass(Of T)(input As IClass, typeDeclaration As CodeTypeDeclaration, action As Func(Of T, IAttribute, CodeMemberProperty, ITransformationContext, T), initial As T, context As ITransformationContext) As T
+  overload: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass*
+  nameWithType.vb: Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IAttribute, CodeMemberProperty, ITransformationContext, T), T, ITransformationContext)
+  fullName.vb: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass(Of T)(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.Func(Of T, NMF.Models.Meta.IAttribute, System.CodeDom.CodeMemberProperty, NMF.Transformations.Core.ITransformationContext, T), T, NMF.Transformations.Core.ITransformationContext)
+  name.vb: AddRefinedAttributesOfClass(Of T)(IClass, CodeTypeDeclaration, Func(Of T, IAttribute, CodeMemberProperty, ITransformationContext, T), T, ITransformationContext)
 references:
 - uid: NMF.Models.Meta
   commentId: N:NMF.Models.Meta
@@ -1561,48 +1714,6 @@ references:
     name: CodeConstructor
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor
-  - name: )
-- uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  commentId: M:NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  parent: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}
-  definition: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  name: CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  nameWithType: ClassGenerator<IClass>.CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName: NMF.CodeGen.ClassGenerator<NMF.Models.Meta.IClass>.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
-  nameWithType.vb: ClassGenerator(Of IClass).CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName.vb: NMF.CodeGen.ClassGenerator(Of NMF.Models.Meta.IClass).CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
-  spec.csharp:
-  - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-    name: CreateInterfaceMembers
-    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  - name: (
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: ','
-  - name: " "
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: )
-  spec.vb:
-  - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-    name: CreateInterfaceMembers
-    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  - name: (
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: ','
-  - name: " "
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
   - name: )
 - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{{TProp},System.CodeDom.CodeMemberProperty},System.Func{NMF.Models.Meta.IClass,{TProp}})
   commentId: M:NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{NMF.Models.Meta.IClass,``0})
@@ -16306,47 +16417,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor
   - name: )
-- uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  commentId: M:NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-  isExternal: true
-  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  name: CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  nameWithType: ClassGenerator<T>.CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName: NMF.CodeGen.ClassGenerator<T>.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
-  nameWithType.vb: ClassGenerator(Of T).CreateInterfaceMembers(CodeTypeDeclaration, CodeTypeDeclaration)
-  fullName.vb: NMF.CodeGen.ClassGenerator(Of T).CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration)
-  spec.csharp:
-  - uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-    name: CreateInterfaceMembers
-    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  - name: (
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: ','
-  - name: " "
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: )
-  spec.vb:
-  - uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)
-    name: CreateInterfaceMembers
-    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_
-  - name: (
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: ','
-  - name: " "
-  - uid: System.CodeDom.CodeTypeDeclaration
-    name: CodeTypeDeclaration
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
-  - name: )
 - uid: NMF.CodeGen.ClassGenerator`1.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{`0,``0})
   commentId: M:NMF.CodeGen.ClassGenerator`1.RequireGenerateProperty``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeMemberProperty},System.Func{`0,``0})
   isExternal: true
@@ -30443,6 +30513,125 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
   - name: )
+- uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  parent: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}
+  definition: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  name: CreateInterfaceMembers(IClass, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  nameWithType: ClassGenerator<IClass>.CreateInterfaceMembers(IClass, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName: NMF.CodeGen.ClassGenerator<NMF.Models.Meta.IClass>.CreateInterfaceMembers(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
+  nameWithType.vb: ClassGenerator(Of IClass).CreateInterfaceMembers(IClass, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName.vb: NMF.CodeGen.ClassGenerator(Of NMF.Models.Meta.IClass).CreateInterfaceMembers(NMF.Models.Meta.IClass, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
+  spec.csharp:
+  - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+    name: CreateInterfaceMembers
+    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  - name: (
+  - uid: NMF.Models.Meta.IClass
+    name: IClass
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: NMF.Transformations.Core.ITransformationContext
+    name: ITransformationContext
+  - name: )
+  spec.vb:
+  - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.CreateInterfaceMembers(NMF.Models.Meta.IClass,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+    name: CreateInterfaceMembers
+    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  - name: (
+  - uid: NMF.Models.Meta.IClass
+    name: IClass
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: NMF.Transformations.Core.ITransformationContext
+    name: ITransformationContext
+  - name: )
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers*
+  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers
+  href: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.html#NMF_Models_Meta_Meta2ClassesTransformation_Class2Type_CreateInterfaceMembers_NMF_Models_Meta_IClass_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  name: CreateInterfaceMembers
+  nameWithType: Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.CreateInterfaceMembers
+- uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+  isExternal: true
+  href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  name: CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  nameWithType: ClassGenerator<T>.CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName: NMF.CodeGen.ClassGenerator<T>.CreateInterfaceMembers(T, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
+  nameWithType.vb: ClassGenerator(Of T).CreateInterfaceMembers(T, CodeTypeDeclaration, CodeTypeDeclaration, ITransformationContext)
+  fullName.vb: NMF.CodeGen.ClassGenerator(Of T).CreateInterfaceMembers(T, System.CodeDom.CodeTypeDeclaration, System.CodeDom.CodeTypeDeclaration, NMF.Transformations.Core.ITransformationContext)
+  spec.csharp:
+  - uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+    name: CreateInterfaceMembers
+    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: NMF.Transformations.Core.ITransformationContext
+    name: ITransformationContext
+  - name: )
+  spec.vb:
+  - uid: NMF.CodeGen.ClassGenerator`1.CreateInterfaceMembers(`0,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,NMF.Transformations.Core.ITransformationContext)
+    name: CreateInterfaceMembers
+    href: NMF.CodeGen.ClassGenerator-1.html#NMF_CodeGen_ClassGenerator_1_CreateInterfaceMembers__0_System_CodeDom_CodeTypeDeclaration_System_CodeDom_CodeTypeDeclaration_NMF_Transformations_Core_ITransformationContext_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: System.CodeDom.CodeTypeDeclaration
+    name: CodeTypeDeclaration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration
+  - name: ','
+  - name: " "
+  - uid: NMF.Transformations.Core.ITransformationContext
+    name: ITransformationContext
+  - name: )
 - uid: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
   commentId: M:NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}.AddImplementationBaseClass(System.CodeDom.CodeTypeDeclaration)
   parent: NMF.CodeGen.ClassGenerator{NMF.Models.Meta.IClass}
@@ -30711,6 +30900,12 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass*
+  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass
+  href: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.html#NMF_Models_Meta_Meta2ClassesTransformation_Class2Type_AddRefinedReferencesOfClass__1_NMF_Models_Meta_IClass_System_CodeDom_CodeTypeDeclaration_System_Func___0_NMF_Models_Meta_IReference_System_CodeDom_CodeMemberProperty_NMF_Transformations_Core_ITransformationContext___0____0_System_Boolean_NMF_Transformations_Core_ITransformationContext_
+  name: AddRefinedReferencesOfClass
+  nameWithType: Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedReferencesOfClass
 - uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddOperationsOfClass*
   commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddOperationsOfClass
   href: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.html#NMF_Models_Meta_Meta2ClassesTransformation_Class2Type_AddOperationsOfClass__1_NMF_Models_Meta_IClass_System_CodeDom_CodeTypeDeclaration_System_Func___0_NMF_Models_Meta_IOperation_NMF_Transformations_Core_ITransformationContext___0____0_NMF_Transformations_Core_ITransformationContext_
@@ -30883,3 +31078,9 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass*
+  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass
+  href: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.html#NMF_Models_Meta_Meta2ClassesTransformation_Class2Type_AddRefinedAttributesOfClass__1_NMF_Models_Meta_IClass_System_CodeDom_CodeTypeDeclaration_System_Func___0_NMF_Models_Meta_IAttribute_System_CodeDom_CodeMemberProperty_NMF_Transformations_Core_ITransformationContext___0____0_NMF_Transformations_Core_ITransformationContext_
+  name: AddRefinedAttributesOfClass
+  nameWithType: Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Class2Type.AddRefinedAttributesOfClass

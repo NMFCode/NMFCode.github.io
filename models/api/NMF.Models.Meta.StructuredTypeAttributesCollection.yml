@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeAttributesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: StructuredTypeAttributesCollection
     path: src/Models/Models/Meta/StructuredTypeAttributesCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Attributes reference
+  example: []
   syntax:
     content: 'public class StructuredTypeAttributesCollection : ObservableOppositeList<IStructuredType, IAttribute>, IReadOnlyList<IAttribute>, IReadOnlyCollection<IAttribute>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IAttribute>, IList<IAttribute>, ICollectionExpression<IAttribute>, IEnumerableExpression<IAttribute>, IEnumerableExpression, ICollection<IAttribute>, IEnumerable<IAttribute>, IEnumerable'
     content.vb: Public Class StructuredTypeAttributesCollection Inherits ObservableOppositeList(Of IStructuredType, IAttribute) Implements IReadOnlyList(Of IAttribute), IReadOnlyCollection(Of IAttribute), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IAttribute), IList(Of IAttribute), ICollectionExpression(Of IAttribute), IEnumerableExpression(Of IAttribute), IEnumerableExpression, ICollection(Of IAttribute), IEnumerable(Of IAttribute), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeAttributesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/StructuredTypeAttributesCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public StructuredTypeAttributesCollection(IStructuredType parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IStructuredType
+      description: the parent StructuredType
     content.vb: Public Sub New(parent As IStructuredType)
   overload: NMF.Models.Meta.StructuredTypeAttributesCollection.#ctor*
   nameWithType.vb: StructuredTypeAttributesCollection.New(IStructuredType)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeAttributesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/StructuredTypeAttributesCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IAttribute item, IStructuredType parent)
+    content: protected override void SetOpposite(IAttribute item, IStructuredType newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IAttribute
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IStructuredType
-    content.vb: Protected Overrides Sub SetOpposite(item As IAttribute, parent As IStructuredType)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IAttribute, newParent As IStructuredType)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IStructuredType,NMF.Models.Meta.IAttribute}.SetOpposite(NMF.Models.Meta.IAttribute,NMF.Models.Meta.IStructuredType)
   overload: NMF.Models.Meta.StructuredTypeAttributesCollection.SetOpposite*
 references:

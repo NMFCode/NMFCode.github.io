@@ -30,11 +30,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ITypedElement
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -61,12 +61,12 @@ items:
   - NMF.Models.Meta.IMetaElement.Name
   - NMF.Models.Meta.IMetaElement.Summary
   - NMF.Models.Meta.IMetaElement.Remarks
-  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.NameChanged
-  - NMF.Models.Meta.IMetaElement.SummaryChanging
+  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.SummaryChanged
-  - NMF.Models.Meta.IMetaElement.RemarksChanging
+  - NMF.Models.Meta.IMetaElement.SummaryChanging
   - NMF.Models.Meta.IMetaElement.RemarksChanged
+  - NMF.Models.Meta.IMetaElement.RemarksChanging
   - NMF.Models.IModelElement.Delete
   - NMF.Models.IModelElement.Deleted
   - NMF.Models.IModelElement.Deleting
@@ -74,6 +74,7 @@ items:
   - NMF.Models.IModelElement.ToIdentifierString
   - NMF.Models.IModelElement.RelativeUri
   - NMF.Models.IModelElement.AbsoluteUri
+  - NMF.Models.IModelElement.Resolve(System.String)
   - NMF.Models.IModelElement.Resolve(System.Uri)
   - NMF.Models.IModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
   - NMF.Models.IModelElement.Model
@@ -84,6 +85,8 @@ items:
   - NMF.Models.IModelElement.Extensions
   - NMF.Models.IModelElement.GetExtension``1
   - NMF.Models.IModelElement.GetClass
+  - NMF.Models.IModelElement.IdentifierString
+  - NMF.Models.IModelElement.ClassName
   - NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   - NMF.Models.IModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
   - NMF.Models.IModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
@@ -134,11 +137,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsOrdered
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -146,6 +149,8 @@ items:
   example: []
   syntax:
     content: >-
+      [TypeConverter(typeof(LowercaseBooleanConverter))]
+
       [XmlAttribute(true)]
 
       bool IsOrdered { get; set; }
@@ -153,11 +158,18 @@ items:
     return:
       type: System.Boolean
     content.vb: >-
+      <TypeConverter(GetType(LowercaseBooleanConverter))>
+
       <XmlAttribute(True)>
 
       Property IsOrdered As Boolean
   overload: NMF.Models.Meta.ITypedElement.IsOrdered*
   attributes:
+  - type: System.ComponentModel.TypeConverterAttribute
+    ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: NMF.Models.LowercaseBooleanConverter
   - type: NMF.Serialization.XmlAttributeAttribute
     ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
     arguments:
@@ -177,11 +189,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsUnique
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -189,6 +201,8 @@ items:
   example: []
   syntax:
     content: >-
+      [TypeConverter(typeof(LowercaseBooleanConverter))]
+
       [XmlAttribute(true)]
 
       bool IsUnique { get; set; }
@@ -196,11 +210,18 @@ items:
     return:
       type: System.Boolean
     content.vb: >-
+      <TypeConverter(GetType(LowercaseBooleanConverter))>
+
       <XmlAttribute(True)>
 
       Property IsUnique As Boolean
   overload: NMF.Models.Meta.ITypedElement.IsUnique*
   attributes:
+  - type: System.ComponentModel.TypeConverterAttribute
+    ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: NMF.Models.LowercaseBooleanConverter
   - type: NMF.Serialization.XmlAttributeAttribute
     ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
     arguments:
@@ -220,11 +241,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LowerBound
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 68
+    startLine: 71
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -263,11 +284,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UpperBound
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 80
+    startLine: 83
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -306,11 +327,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Type
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 92
+    startLine: 95
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -335,35 +356,6 @@ items:
     arguments:
     - type: System.Boolean
       value: true
-- uid: NMF.Models.Meta.ITypedElement.IsOrderedChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanging
-  id: IsOrderedChanging
-  parent: NMF.Models.Meta.ITypedElement
-  langs:
-  - csharp
-  - vb
-  name: IsOrderedChanging
-  nameWithType: ITypedElement.IsOrderedChanging
-  fullName: NMF.Models.Meta.ITypedElement.IsOrderedChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/ITypedElement.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: IsOrderedChanging
-    path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 103
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the IsOrdered property changes its value
-  example: []
-  syntax:
-    content: event EventHandler<ValueChangedEventArgs> IsOrderedChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event IsOrderedChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.ITypedElement.IsOrderedChanged
   commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanged
   id: IsOrderedChanged
@@ -378,11 +370,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsOrderedChanged
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 108
+    startLine: 106
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -393,35 +385,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event IsOrderedChanged As EventHandler(Of ValueChangedEventArgs)
-- uid: NMF.Models.Meta.ITypedElement.IsUniqueChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanging
-  id: IsUniqueChanging
+- uid: NMF.Models.Meta.ITypedElement.IsOrderedChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanging
+  id: IsOrderedChanging
   parent: NMF.Models.Meta.ITypedElement
   langs:
   - csharp
   - vb
-  name: IsUniqueChanging
-  nameWithType: ITypedElement.IsUniqueChanging
-  fullName: NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  name: IsOrderedChanging
+  nameWithType: ITypedElement.IsOrderedChanging
+  fullName: NMF.Models.Meta.ITypedElement.IsOrderedChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: IsUniqueChanging
+    id: IsOrderedChanging
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 113
+    startLine: 111
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the IsUnique property changes its value
+  summary: Gets fired before the IsOrdered property changes its value
   example: []
   syntax:
-    content: event EventHandler<ValueChangedEventArgs> IsUniqueChanging
+    content: event EventHandler<ValueChangedEventArgs> IsOrderedChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event IsUniqueChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Event IsOrderedChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.ITypedElement.IsUniqueChanged
   commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanged
   id: IsUniqueChanged
@@ -436,11 +428,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsUniqueChanged
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 118
+    startLine: 116
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -451,35 +443,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event IsUniqueChanged As EventHandler(Of ValueChangedEventArgs)
-- uid: NMF.Models.Meta.ITypedElement.LowerBoundChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanging
-  id: LowerBoundChanging
+- uid: NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  id: IsUniqueChanging
   parent: NMF.Models.Meta.ITypedElement
   langs:
   - csharp
   - vb
-  name: LowerBoundChanging
-  nameWithType: ITypedElement.LowerBoundChanging
-  fullName: NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  name: IsUniqueChanging
+  nameWithType: ITypedElement.IsUniqueChanging
+  fullName: NMF.Models.Meta.ITypedElement.IsUniqueChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: LowerBoundChanging
+    id: IsUniqueChanging
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 123
+    startLine: 121
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the LowerBound property changes its value
+  summary: Gets fired before the IsUnique property changes its value
   example: []
   syntax:
-    content: event EventHandler<ValueChangedEventArgs> LowerBoundChanging
+    content: event EventHandler<ValueChangedEventArgs> IsUniqueChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event LowerBoundChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Event IsUniqueChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.ITypedElement.LowerBoundChanged
   commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanged
   id: LowerBoundChanged
@@ -494,11 +486,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LowerBoundChanged
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 128
+    startLine: 126
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -509,35 +501,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event LowerBoundChanged As EventHandler(Of ValueChangedEventArgs)
-- uid: NMF.Models.Meta.ITypedElement.UpperBoundChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanging
-  id: UpperBoundChanging
+- uid: NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  id: LowerBoundChanging
   parent: NMF.Models.Meta.ITypedElement
   langs:
   - csharp
   - vb
-  name: UpperBoundChanging
-  nameWithType: ITypedElement.UpperBoundChanging
-  fullName: NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  name: LowerBoundChanging
+  nameWithType: ITypedElement.LowerBoundChanging
+  fullName: NMF.Models.Meta.ITypedElement.LowerBoundChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: UpperBoundChanging
+    id: LowerBoundChanging
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 133
+    startLine: 131
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the UpperBound property changes its value
+  summary: Gets fired before the LowerBound property changes its value
   example: []
   syntax:
-    content: event EventHandler<ValueChangedEventArgs> UpperBoundChanging
+    content: event EventHandler<ValueChangedEventArgs> LowerBoundChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event UpperBoundChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Event LowerBoundChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.ITypedElement.UpperBoundChanged
   commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanged
   id: UpperBoundChanged
@@ -552,11 +544,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UpperBoundChanged
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 138
+    startLine: 136
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -567,6 +559,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event UpperBoundChanged As EventHandler(Of ValueChangedEventArgs)
+- uid: NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  id: UpperBoundChanging
+  parent: NMF.Models.Meta.ITypedElement
+  langs:
+  - csharp
+  - vb
+  name: UpperBoundChanging
+  nameWithType: ITypedElement.UpperBoundChanging
+  fullName: NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  type: Event
+  source:
+    remote:
+      path: Models/Models/Meta/ITypedElement.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: UpperBoundChanging
+    path: src/Models/Models/Meta/ITypedElement.cs
+    startLine: 141
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Gets fired before the UpperBound property changes its value
+  example: []
+  syntax:
+    content: event EventHandler<ValueChangedEventArgs> UpperBoundChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Event UpperBoundChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.ITypedElement.TypeChanging
   commentId: E:NMF.Models.Meta.ITypedElement.TypeChanging
   id: TypeChanging
@@ -581,11 +602,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TypeChanging
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 143
+    startLine: 146
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -610,11 +631,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ITypedElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TypeChanged
     path: src/Models/Models/Meta/ITypedElement.cs
-    startLine: 148
+    startLine: 151
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -677,13 +698,6 @@ references:
   name: Remarks
   nameWithType: IMetaElement.Remarks
   fullName: NMF.Models.Meta.IMetaElement.Remarks
-- uid: NMF.Models.Meta.IMetaElement.NameChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
-  parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
-  name: NameChanging
-  nameWithType: IMetaElement.NameChanging
-  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.NameChanged
   commentId: E:NMF.Models.Meta.IMetaElement.NameChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -691,13 +705,13 @@ references:
   name: NameChanged
   nameWithType: IMetaElement.NameChanged
   fullName: NMF.Models.Meta.IMetaElement.NameChanged
-- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
+- uid: NMF.Models.Meta.IMetaElement.NameChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
-  name: SummaryChanging
-  nameWithType: IMetaElement.SummaryChanging
-  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
+  name: NameChanging
+  nameWithType: IMetaElement.NameChanging
+  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.SummaryChanged
   commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -705,13 +719,13 @@ references:
   name: SummaryChanged
   nameWithType: IMetaElement.SummaryChanged
   fullName: NMF.Models.Meta.IMetaElement.SummaryChanged
-- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
-  name: RemarksChanging
-  nameWithType: IMetaElement.RemarksChanging
-  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
+  name: SummaryChanging
+  nameWithType: IMetaElement.SummaryChanging
+  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
 - uid: NMF.Models.Meta.IMetaElement.RemarksChanged
   commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -719,6 +733,13 @@ references:
   name: RemarksChanged
   nameWithType: IMetaElement.RemarksChanged
   fullName: NMF.Models.Meta.IMetaElement.RemarksChanged
+- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+  parent: NMF.Models.Meta.IMetaElement
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
+  name: RemarksChanging
+  nameWithType: IMetaElement.RemarksChanging
+  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
 - uid: NMF.Models.IModelElement.Delete
   commentId: M:NMF.Models.IModelElement.Delete
   parent: NMF.Models.IModelElement
@@ -792,6 +813,37 @@ references:
   name: AbsoluteUri
   nameWithType: IModelElement.AbsoluteUri
   fullName: NMF.Models.IModelElement.AbsoluteUri
+- uid: NMF.Models.IModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.IModelElement.Resolve(System.String)
+  parent: NMF.Models.IModelElement
+  isExternal: true
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  name: Resolve(string)
+  nameWithType: IModelElement.Resolve(string)
+  fullName: NMF.Models.IModelElement.Resolve(string)
+  nameWithType.vb: IModelElement.Resolve(String)
+  fullName.vb: NMF.Models.IModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: NMF.Models.IModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.IModelElement.Resolve(System.Uri)
   parent: NMF.Models.IModelElement
@@ -954,6 +1006,20 @@ references:
     href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_GetClass
   - name: (
   - name: )
+- uid: NMF.Models.IModelElement.IdentifierString
+  commentId: P:NMF.Models.IModelElement.IdentifierString
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: IModelElement.IdentifierString
+  fullName: NMF.Models.IModelElement.IdentifierString
+- uid: NMF.Models.IModelElement.ClassName
+  commentId: P:NMF.Models.IModelElement.ClassName
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_ClassName
+  name: ClassName
+  nameWithType: IModelElement.ClassName
+  fullName: NMF.Models.IModelElement.ClassName
 - uid: NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   commentId: M:NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   parent: NMF.Models.IModelElement

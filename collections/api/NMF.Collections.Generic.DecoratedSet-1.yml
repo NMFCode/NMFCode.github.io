@@ -34,11 +34,11 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DecoratedSet
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
@@ -88,11 +88,11 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Items
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
@@ -121,11 +121,11 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
@@ -152,22 +152,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public virtual bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overridable Function Add(item As T) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.Add*
   implements:
@@ -188,22 +191,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ExceptWith
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 34
+    startLine: 33
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all elements in the specified collection from the current set.
   example: []
   syntax:
     content: public void ExceptWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection of items to remove from the set.
     content.vb: Public Sub ExceptWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.DecoratedSet`1.ExceptWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.ExceptWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).ExceptWith(IEnumerable(Of T))
@@ -223,22 +232,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IntersectWith
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 49
+    startLine: 48
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains only elements that are also in a specified collection.
   example: []
   syntax:
     content: public void IntersectWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub IntersectWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.DecoratedSet`1.IntersectWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IntersectWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).IntersectWith(IEnumerable(Of T))
@@ -258,24 +273,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSubsetOf
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 68
+    startLine: 67
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a proper (strict) subset of a specified collection.
   example: []
   syntax:
     content: public bool IsProperSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a proper subset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsProperSubsetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.IsProperSubsetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).IsProperSubsetOf(IEnumerable(Of T))
@@ -295,24 +317,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSupersetOf
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 74
+    startLine: 73
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a proper (strict) superset of a specified collection.
   example: []
   syntax:
     content: public bool IsProperSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a proper superset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsProperSupersetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.IsProperSupersetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).IsProperSupersetOf(IEnumerable(Of T))
@@ -332,24 +361,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSubsetOf
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 80
+    startLine: 79
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether a set is a subset of a specified collection.
   example: []
   syntax:
     content: public bool IsSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a subset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsSubsetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.IsSubsetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsSubsetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).IsSubsetOf(IEnumerable(Of T))
@@ -369,24 +405,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSupersetOf
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 86
+    startLine: 85
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a superset of a specified collection.
   example: []
   syntax:
     content: public bool IsSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a superset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsSupersetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.IsSupersetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsSupersetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).IsSupersetOf(IEnumerable(Of T))
@@ -406,24 +449,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Overlaps
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 92
+    startLine: 91
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set overlaps with the specified collection.
   example: []
   syntax:
     content: public bool Overlaps(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set and <code class="paramref">other</code> share at least one common element; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Overlaps(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.Overlaps*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.Overlaps(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).Overlaps(IEnumerable(Of T))
@@ -443,24 +493,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetEquals
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 98
+    startLine: 97
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set and the specified collection contain the same elements.
   example: []
   syntax:
     content: public bool SetEquals(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is equal to <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function SetEquals(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.SetEquals*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.SetEquals(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).SetEquals(IEnumerable(Of T))
@@ -480,22 +537,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SymmetricExceptWith
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 104
+    startLine: 103
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.
   example: []
   syntax:
     content: public void SymmetricExceptWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub SymmetricExceptWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.DecoratedSet`1.SymmetricExceptWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).SymmetricExceptWith(IEnumerable(Of T))
@@ -515,22 +578,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnionWith
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 130
+    startLine: 129
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
   example: []
   syntax:
     content: public void UnionWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub UnionWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.DecoratedSet`1.UnionWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.UnionWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: DecoratedSet(Of T).UnionWith(IEnumerable(Of T))
@@ -550,19 +619,24 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 147
+    startLine: 146
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual void Clear()
     content.vb: Public Overridable Sub Clear()
   overload: NMF.Collections.Generic.DecoratedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Clear
   nameWithType.vb: DecoratedSet(Of T).Clear()
@@ -581,22 +655,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 153
+    startLine: 152
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public bool Contains(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Contains(item As T) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.Contains*
   implements:
@@ -617,24 +694,37 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 159
+    startLine: 158
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Copies the elements of the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
     - id: array
       type: '{T}[]'
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: arrayIndex
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
   overload: NMF.Collections.Generic.DecoratedSet`1.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
   implements:
   - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
   nameWithType.vb: DecoratedSet(Of T).CopyTo(T(), Integer)
@@ -654,20 +744,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 165
+    startLine: 164
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int Count { get; }
     parameters: []
     return:
       type: System.Int32
+      description: The number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Count As Integer
   overload: NMF.Collections.Generic.DecoratedSet`1.Count*
   implements:
@@ -689,24 +781,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 176
+    startLine: 175
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual bool Remove(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overridable Function Remove(item As T) As Boolean
   overload: NMF.Collections.Generic.DecoratedSet`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Remove({T})
   nameWithType.vb: DecoratedSet(Of T).Remove(T)
@@ -725,19 +824,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/DecoratedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Collections/Collections/Generic/DecoratedSet.cs
-    startLine: 182
+    startLine: 181
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public virtual IEnumerator<T> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public Overridable Function GetEnumerator() As IEnumerator(Of T)
   overload: NMF.Collections.Generic.DecoratedSet`1.GetEnumerator*
   implements:
@@ -1425,6 +1526,13 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.Generic.DecoratedSet`1.ExceptWith*
   commentId: Overload:NMF.Collections.Generic.DecoratedSet`1.ExceptWith
   href: NMF.Collections.Generic.DecoratedSet-1.html#NMF_Collections_Generic_DecoratedSet_1_ExceptWith_System_Collections_Generic_IEnumerable__0__
@@ -2315,6 +2423,13 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.DecoratedSet`1.Clear*
   commentId: Overload:NMF.Collections.Generic.DecoratedSet`1.Clear
   href: NMF.Collections.Generic.DecoratedSet-1.html#NMF_Collections_Generic_DecoratedSet_1_Clear
@@ -2429,6 +2544,28 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: NMF.Collections.Generic.DecoratedSet`1.CopyTo*
   commentId: Overload:NMF.Collections.Generic.DecoratedSet`1.CopyTo
   href: NMF.Collections.Generic.DecoratedSet-1.html#NMF_Collections_Generic_DecoratedSet_1_CopyTo__0___System_Int32_

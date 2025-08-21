@@ -11,6 +11,7 @@ items:
   - NMF.Models.Collections.CompositionOrderedSet`1.Insert(System.Int32,`0)
   - NMF.Models.Collections.CompositionOrderedSet`1.Parent
   - NMF.Models.Collections.CompositionOrderedSet`1.Remove(`0,System.Int32)
+  - NMF.Models.Collections.CompositionOrderedSet`1.Replace(System.Int32,`0,`0)
   langs:
   - csharp
   - vb
@@ -21,11 +22,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CompositionOrderedSet
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 16
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -56,7 +57,6 @@ items:
   - NMF.Collections.Generic.OrderedSet{{T}}.IndexOf({T})
   - NMF.Collections.Generic.OrderedSet{{T}}.RemoveAt(System.Int32)
   - NMF.Collections.Generic.OrderedSet{{T}}.Item(System.Int32)
-  - NMF.Collections.Generic.OrderedSet{{T}}.Replace(System.Int32,{T},{T})
   - NMF.Collections.Generic.OrderedSet{{T}}.AsReadOnly
   - NMF.Collections.Generic.DecoratedSet{{T}}.Items
   - NMF.Collections.Generic.DecoratedSet{{T}}.ExceptWith(System.Collections.Generic.IEnumerable{{T}})
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 21
+    startLine: 18
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -129,11 +129,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 28
+    startLine: 25
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -168,27 +168,72 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 36
+    startLine: 33
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As T) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Add({T})
   overload: NMF.Models.Collections.CompositionOrderedSet`1.Add*
   nameWithType.vb: CompositionOrderedSet(Of T).Add(T)
   fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Add(T)
+- uid: NMF.Models.Collections.CompositionOrderedSet`1.Replace(System.Int32,`0,`0)
+  commentId: M:NMF.Models.Collections.CompositionOrderedSet`1.Replace(System.Int32,`0,`0)
+  id: Replace(System.Int32,`0,`0)
+  parent: NMF.Models.Collections.CompositionOrderedSet`1
+  langs:
+  - csharp
+  - vb
+  name: Replace(int, T, T)
+  nameWithType: CompositionOrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Models.Collections.CompositionOrderedSet<T>.Replace(int, T, T)
+  type: Method
+  source:
+    remote:
+      path: Models/Models/Collections/CompositionOrderedSet.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Replace
+    path: src/Models/Models/Collections/CompositionOrderedSet.cs
+    startLine: 48
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Collections
+  summary: Replaces the item at the given arrayIndex
+  example: []
+  syntax:
+    content: protected override void Replace(int index, T oldValue, T newValue)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The arrayIndex on which the item is replaced
+    - id: oldValue
+      type: '{T}'
+      description: The old value
+    - id: newValue
+      type: '{T}'
+      description: The new value
+    content.vb: Protected Overrides Sub Replace(index As Integer, oldValue As T, newValue As T)
+  overridden: NMF.Collections.Generic.OrderedSet{{T}}.Replace(System.Int32,{T},{T})
+  overload: NMF.Models.Collections.CompositionOrderedSet`1.Replace*
+  nameWithType.vb: CompositionOrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
 - uid: NMF.Models.Collections.CompositionOrderedSet`1.Insert(System.Int32,`0)
   commentId: M:NMF.Models.Collections.CompositionOrderedSet`1.Insert(System.Int32,`0)
   id: Insert(System.Int32,`0)
@@ -203,25 +248,35 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 51
+    startLine: 65
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public override void Insert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overrides Sub Insert(index As Integer, item As T)
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Insert(System.Int32,{T})
   overload: NMF.Models.Collections.CompositionOrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: CompositionOrderedSet(Of T).Insert(Integer, T)
   fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Insert(Integer, T)
   name.vb: Insert(Integer, T)
@@ -239,24 +294,28 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 63
+    startLine: 77
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As T, index As Integer) As Boolean
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Remove({T},System.Int32)
   overload: NMF.Models.Collections.CompositionOrderedSet`1.Remove*
@@ -277,20 +336,25 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 112
+    startLine: 126
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.Generic.OrderedSet{{T}}.Clear
   overload: NMF.Models.Collections.CompositionOrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: CompositionOrderedSet(Of T).Clear()
   fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Clear()
 references:
@@ -664,47 +728,6 @@ references:
     name: Integer
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: NMF.Collections.Generic.OrderedSet{{T}}.Replace(System.Int32,{T},{T})
-  commentId: M:NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
-  parent: NMF.Collections.Generic.OrderedSet{{T}}
-  definition: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: Replace(int, T, T)
-  nameWithType: OrderedSet<T>.Replace(int, T, T)
-  fullName: NMF.Collections.Generic.OrderedSet<T>.Replace(int, T, T)
-  nameWithType.vb: OrderedSet(Of T).Replace(Integer, T, T)
-  fullName.vb: NMF.Collections.Generic.OrderedSet(Of T).Replace(Integer, T, T)
-  name.vb: Replace(Integer, T, T)
-  spec.csharp:
-  - uid: NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
   - name: )
 - uid: NMF.Collections.Generic.OrderedSet{{T}}.AsReadOnly
   commentId: M:NMF.Collections.Generic.OrderedSet{`0}.AsReadOnly
@@ -1774,46 +1797,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
-  commentId: M:NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: Replace(int, T, T)
-  nameWithType: OrderedSet<T>.Replace(int, T, T)
-  fullName: NMF.Collections.Generic.OrderedSet<T>.Replace(int, T, T)
-  nameWithType.vb: OrderedSet(Of T).Replace(Integer, T, T)
-  fullName.vb: NMF.Collections.Generic.OrderedSet(Of T).Replace(Integer, T, T)
-  name.vb: Replace(Integer, T, T)
-  spec.csharp:
-  - uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
 - uid: NMF.Collections.Generic.OrderedSet`1.AsReadOnly
   commentId: M:NMF.Collections.Generic.OrderedSet`1.AsReadOnly
   name: AsReadOnly()
@@ -2384,6 +2367,120 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: NMF.Collections.Generic.OrderedSet{{T}}.Replace(System.Int32,{T},{T})
+  commentId: M:NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
+  parent: NMF.Collections.Generic.OrderedSet{{T}}
+  definition: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: Replace(int, T, T)
+  nameWithType: OrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Collections.Generic.OrderedSet<T>.Replace(int, T, T)
+  nameWithType.vb: OrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Collections.Generic.OrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.Generic.OrderedSet{`0}.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Models.Collections.CompositionOrderedSet`1.Replace*
+  commentId: Overload:NMF.Models.Collections.CompositionOrderedSet`1.Replace
+  href: NMF.Models.Collections.CompositionOrderedSet-1.html#NMF_Models_Collections_CompositionOrderedSet_1_Replace_System_Int32__0__0_
+  name: Replace
+  nameWithType: CompositionOrderedSet<T>.Replace
+  fullName: NMF.Models.Collections.CompositionOrderedSet<T>.Replace
+  nameWithType.vb: CompositionOrderedSet(Of T).Replace
+  fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Replace
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
+  commentId: M:NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: Replace(int, T, T)
+  nameWithType: OrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Collections.Generic.OrderedSet<T>.Replace(int, T, T)
+  nameWithType.vb: OrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Collections.Generic.OrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.Generic.OrderedSet`1.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.OrderedSet{{T}}.Insert(System.Int32,{T})
   commentId: M:NMF.Collections.Generic.OrderedSet{`0}.Insert(System.Int32,`0)
   parent: NMF.Collections.Generic.OrderedSet{{T}}
@@ -2427,17 +2524,6 @@ references:
   fullName: NMF.Models.Collections.CompositionOrderedSet<T>.Insert
   nameWithType.vb: CompositionOrderedSet(Of T).Insert
   fullName.vb: NMF.Models.Collections.CompositionOrderedSet(Of T).Insert
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: NMF.Collections.Generic.OrderedSet`1.Insert(System.Int32,`0)
   commentId: M:NMF.Collections.Generic.OrderedSet`1.Insert(System.Int32,`0)
   isExternal: true

@@ -7,7 +7,9 @@ items:
   children:
   - NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor(System.Uri)
   - NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor(System.Uri,System.String)
+  - NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor(System.Uri,System.String,System.Exception)
   - NMF.Models.Repository.UnresolvedModelElementEventArgs.HintPath
+  - NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
   - NMF.Models.Repository.UnresolvedModelElementEventArgs.ModelElement
   - NMF.Models.Repository.UnresolvedModelElementEventArgs.Uri
   langs:
@@ -20,11 +22,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnresolvedModelElementEventArgs
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 10
+    startLine: 7
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -59,11 +61,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 16
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -94,11 +96,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 23
+    startLine: 20
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -118,6 +120,47 @@ items:
   nameWithType.vb: UnresolvedModelElementEventArgs.New(Uri, String)
   fullName.vb: NMF.Models.Repository.UnresolvedModelElementEventArgs.New(System.Uri, String)
   name.vb: New(Uri, String)
+- uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor(System.Uri,System.String,System.Exception)
+  commentId: M:NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor(System.Uri,System.String,System.Exception)
+  id: '#ctor(System.Uri,System.String,System.Exception)'
+  parent: NMF.Models.Repository.UnresolvedModelElementEventArgs
+  langs:
+  - csharp
+  - vb
+  name: UnresolvedModelElementEventArgs(Uri, string, Exception)
+  nameWithType: UnresolvedModelElementEventArgs.UnresolvedModelElementEventArgs(Uri, string, Exception)
+  fullName: NMF.Models.Repository.UnresolvedModelElementEventArgs.UnresolvedModelElementEventArgs(System.Uri, string, System.Exception)
+  type: Constructor
+  source:
+    remote:
+      path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
+    startLine: 35
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public UnresolvedModelElementEventArgs(Uri uri, string hintPath, Exception loadException)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: The uri that could not be resolved
+    - id: hintPath
+      type: System.String
+      description: A hint path, if available
+    - id: loadException
+      type: System.Exception
+      description: Exception that happened during model loading, if any
+    content.vb: Public Sub New(uri As Uri, hintPath As String, loadException As Exception)
+  overload: NMF.Models.Repository.UnresolvedModelElementEventArgs.#ctor*
+  nameWithType.vb: UnresolvedModelElementEventArgs.New(Uri, String, Exception)
+  fullName.vb: NMF.Models.Repository.UnresolvedModelElementEventArgs.New(System.Uri, String, System.Exception)
+  name.vb: New(Uri, String, Exception)
 - uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.Uri
   commentId: P:NMF.Models.Repository.UnresolvedModelElementEventArgs.Uri
   id: Uri
@@ -132,11 +175,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Uri
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 34
+    startLine: 44
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -163,11 +206,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: HintPath
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 39
+    startLine: 49
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -180,6 +223,37 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property HintPath As String
   overload: NMF.Models.Repository.UnresolvedModelElementEventArgs.HintPath*
+- uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
+  commentId: P:NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
+  id: LoadException
+  parent: NMF.Models.Repository.UnresolvedModelElementEventArgs
+  langs:
+  - csharp
+  - vb
+  name: LoadException
+  nameWithType: UnresolvedModelElementEventArgs.LoadException
+  fullName: NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
+  type: Property
+  source:
+    remote:
+      path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: LoadException
+    path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
+    startLine: 54
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Repository
+  summary: Exception while model was loaded, if any
+  example: []
+  syntax:
+    content: public Exception LoadException { get; }
+    parameters: []
+    return:
+      type: System.Exception
+    content.vb: Public ReadOnly Property LoadException As Exception
+  overload: NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException*
 - uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.ModelElement
   commentId: P:NMF.Models.Repository.UnresolvedModelElementEventArgs.ModelElement
   id: ModelElement
@@ -194,11 +268,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelElement
     path: src/Models/Models/Repository/UnresolvedModelElementEventArgs.cs
-    startLine: 44
+    startLine: 59
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -523,6 +597,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.Uri*
   commentId: Overload:NMF.Models.Repository.UnresolvedModelElementEventArgs.Uri
   href: NMF.Models.Repository.UnresolvedModelElementEventArgs.html#NMF_Models_Repository_UnresolvedModelElementEventArgs_Uri
@@ -535,6 +617,12 @@ references:
   name: HintPath
   nameWithType: UnresolvedModelElementEventArgs.HintPath
   fullName: NMF.Models.Repository.UnresolvedModelElementEventArgs.HintPath
+- uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException*
+  commentId: Overload:NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
+  href: NMF.Models.Repository.UnresolvedModelElementEventArgs.html#NMF_Models_Repository_UnresolvedModelElementEventArgs_LoadException
+  name: LoadException
+  nameWithType: UnresolvedModelElementEventArgs.LoadException
+  fullName: NMF.Models.Repository.UnresolvedModelElementEventArgs.LoadException
 - uid: NMF.Models.Repository.UnresolvedModelElementEventArgs.ModelElement*
   commentId: Overload:NMF.Models.Repository.UnresolvedModelElementEventArgs.ModelElement
   href: NMF.Models.Repository.UnresolvedModelElementEventArgs.html#NMF_Models_Repository_UnresolvedModelElementEventArgs_ModelElement

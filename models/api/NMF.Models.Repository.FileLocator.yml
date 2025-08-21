@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FileLocator
     path: src/Models/Models/Repository/FileLocator.cs
@@ -27,6 +27,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a locator based on the file system
+  example: []
   syntax:
     content: 'public class FileLocator : IModelLocator'
     content.vb: Public Class FileLocator Implements IModelLocator
@@ -56,14 +58,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Instance
     path: src/Models/Models/Repository/FileLocator.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets the singleton instance of the file locator
+  example: []
   syntax:
     content: public static FileLocator Instance { get; }
     parameters: []
@@ -85,22 +89,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CanLocate
     path: src/Models/Models/Repository/FileLocator.cs
-    startLine: 14
+    startLine: 18
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Determines whether the given locator is able to locate the given URI
   example: []
   syntax:
     content: public bool CanLocate(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the URI to locate
     return:
       type: System.Boolean
+      description: true, if the URI can be located, otherwise false
     content.vb: Public Function CanLocate(uri As Uri) As Boolean
   overload: NMF.Models.Repository.FileLocator.CanLocate*
   implements:
@@ -119,22 +126,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRepositoryUri
     path: src/Models/Models/Repository/FileLocator.cs
-    startLine: 19
+    startLine: 24
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Calculates the repository URI for the given URI
   example: []
   syntax:
     content: public Uri GetRepositoryUri(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the input URI
     return:
       type: System.Uri
+      description: the URI as used for a repository
     content.vb: Public Function GetRepositoryUri(uri As Uri) As Uri
   overload: NMF.Models.Repository.FileLocator.GetRepositoryUri*
   implements:
@@ -153,22 +163,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/FileLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Open
     path: src/Models/Models/Repository/FileLocator.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Opens the given URI
   example: []
   syntax:
     content: public Stream Open(Uri repositoryId)
     parameters:
     - id: repositoryId
       type: System.Uri
+      description: the URI as used in the repository
     return:
       type: System.IO.Stream
+      description: A stream
     content.vb: Public Function Open(repositoryId As Uri) As Stream
   overload: NMF.Models.Repository.FileLocator.Open*
   implements:

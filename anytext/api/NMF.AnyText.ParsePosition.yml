@@ -1,0 +1,1051 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  id: ParsePosition
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.ParsePosition.#ctor(System.Int32,System.Int32)
+  - NMF.AnyText.ParsePosition.Col
+  - NMF.AnyText.ParsePosition.CompareTo(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.ParsePosition.Line
+  - NMF.AnyText.ParsePosition.Proceed(System.Int32)
+  - NMF.AnyText.ParsePosition.op_Addition(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePositionDelta)
+  - NMF.AnyText.ParsePosition.op_GreaterThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  - NMF.AnyText.ParsePosition.op_GreaterThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  - NMF.AnyText.ParsePosition.op_LessThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  - NMF.AnyText.ParsePosition.op_LessThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  - NMF.AnyText.ParsePosition.op_Subtraction(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  langs:
+  - csharp
+  - vb
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+  type: Struct
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ParsePosition
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Denotes a position of a parser
+  example: []
+  syntax:
+    content: 'public record struct ParsePosition : IComparable<ParsePosition>, IEquatable<ParsePosition>'
+    content.vb: Public Structure ParsePosition Implements IComparable(Of ParsePosition), IEquatable(Of ParsePosition)
+  implements:
+  - System.IComparable{NMF.AnyText.ParsePosition}
+  - System.IEquatable{NMF.AnyText.ParsePosition}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: NMF.AnyText.ParsePosition.#ctor(System.Int32,System.Int32)
+  commentId: M:NMF.AnyText.ParsePosition.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: ParsePosition(int, int)
+  nameWithType: ParsePosition.ParsePosition(int, int)
+  fullName: NMF.AnyText.ParsePosition.ParsePosition(int, int)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Denotes a position of a parser
+  example: []
+  syntax:
+    content: public ParsePosition(int Line, int Col)
+    parameters:
+    - id: Line
+      type: System.Int32
+      description: The line of the position
+    - id: Col
+      type: System.Int32
+      description: The column of the position
+    content.vb: Public Sub New(Line As Integer, Col As Integer)
+  overload: NMF.AnyText.ParsePosition.#ctor*
+  nameWithType.vb: ParsePosition.New(Integer, Integer)
+  fullName.vb: NMF.AnyText.ParsePosition.New(Integer, Integer)
+  name.vb: New(Integer, Integer)
+- uid: NMF.AnyText.ParsePosition.Line
+  commentId: P:NMF.AnyText.ParsePosition.Line
+  id: Line
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: Line
+  nameWithType: ParsePosition.Line
+  fullName: NMF.AnyText.ParsePosition.Line
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Line
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: The line of the position
+  example: []
+  syntax:
+    content: public int Line { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Line As Integer
+  overload: NMF.AnyText.ParsePosition.Line*
+- uid: NMF.AnyText.ParsePosition.Col
+  commentId: P:NMF.AnyText.ParsePosition.Col
+  id: Col
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: Col
+  nameWithType: ParsePosition.Col
+  fullName: NMF.AnyText.ParsePosition.Col
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Col
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: The column of the position
+  example: []
+  syntax:
+    content: public int Col { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Col As Integer
+  overload: NMF.AnyText.ParsePosition.Col*
+- uid: NMF.AnyText.ParsePosition.Proceed(System.Int32)
+  commentId: M:NMF.AnyText.ParsePosition.Proceed(System.Int32)
+  id: Proceed(System.Int32)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: Proceed(int)
+  nameWithType: ParsePosition.Proceed(int)
+  fullName: NMF.AnyText.ParsePosition.Proceed(int)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Proceed
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Proceeds the position by the given number of characters
+  example: []
+  syntax:
+    content: public ParsePosition Proceed(int chars)
+    parameters:
+    - id: chars
+      type: System.Int32
+      description: the numbers of characters to proceed
+    return:
+      type: NMF.AnyText.ParsePosition
+      description: The updated parser position
+    content.vb: Public Function Proceed(chars As Integer) As ParsePosition
+  overload: NMF.AnyText.ParsePosition.Proceed*
+  nameWithType.vb: ParsePosition.Proceed(Integer)
+  fullName.vb: NMF.AnyText.ParsePosition.Proceed(Integer)
+  name.vb: Proceed(Integer)
+- uid: NMF.AnyText.ParsePosition.CompareTo(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.CompareTo(NMF.AnyText.ParsePosition)
+  id: CompareTo(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: CompareTo(ParsePosition)
+  nameWithType: ParsePosition.CompareTo(ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.CompareTo(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CompareTo
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 26
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+  example: []
+  syntax:
+    content: public int CompareTo(ParsePosition other)
+    parameters:
+    - id: other
+      type: NMF.AnyText.ParsePosition
+      description: An object to compare with this instance.
+    return:
+      type: System.Int32
+      description: >-
+        A value that indicates the relative order of the objects being compared. The return value has these meanings:  
+
+         <table><thead><tr><th class="term"> Value</th><th class="description"> Meaning</th></tr></thead><tbody><tr><td class="term"> Less than zero</td><td class="description"> This instance precedes <code class="paramref">other</code> in the sort order.</td></tr><tr><td class="term"> Zero</td><td class="description"> This instance occurs in the same position in the sort order as <code class="paramref">other</code>.</td></tr><tr><td class="term"> Greater than zero</td><td class="description"> This instance follows <code class="paramref">other</code> in the sort order.</td></tr></tbody></table>
+    content.vb: Public Function CompareTo(other As ParsePosition) As Integer
+  overload: NMF.AnyText.ParsePosition.CompareTo*
+  implements:
+  - System.IComparable{NMF.AnyText.ParsePosition}.CompareTo(NMF.AnyText.ParsePosition)
+- uid: NMF.AnyText.ParsePosition.op_LessThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.op_LessThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: op_LessThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator <(ParsePosition, ParsePosition)
+  nameWithType: ParsePosition.operator <(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.operator <(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_LessThan
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 39
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Decides which of the two positions is smaller
+  example: []
+  syntax:
+    content: public static bool operator <(ParsePosition pos1, ParsePosition pos2)
+    parameters:
+    - id: pos1
+      type: NMF.AnyText.ParsePosition
+      description: the first position
+    - id: pos2
+      type: NMF.AnyText.ParsePosition
+      description: the second position
+    return:
+      type: System.Boolean
+      description: true, if the first position is smaller, otherwise false
+    content.vb: Public Shared Operator <(pos1 As ParsePosition, pos2 As ParsePosition) As Boolean
+  overload: NMF.AnyText.ParsePosition.op_LessThan*
+  nameWithType.vb: ParsePosition.<(ParsePosition, ParsePosition)
+  fullName.vb: NMF.AnyText.ParsePosition.<(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  name.vb: <(ParsePosition, ParsePosition)
+- uid: NMF.AnyText.ParsePosition.op_GreaterThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.op_GreaterThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: op_GreaterThan(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator >(ParsePosition, ParsePosition)
+  nameWithType: ParsePosition.operator >(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.operator >(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_GreaterThan
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 50
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Decides which of the two positions is greater
+  example: []
+  syntax:
+    content: public static bool operator >(ParsePosition pos1, ParsePosition pos2)
+    parameters:
+    - id: pos1
+      type: NMF.AnyText.ParsePosition
+      description: the first position
+    - id: pos2
+      type: NMF.AnyText.ParsePosition
+      description: the second position
+    return:
+      type: System.Boolean
+      description: true, if the first position is greater, otherwise false
+    content.vb: Public Shared Operator >(pos1 As ParsePosition, pos2 As ParsePosition) As Boolean
+  overload: NMF.AnyText.ParsePosition.op_GreaterThan*
+  nameWithType.vb: ParsePosition.>(ParsePosition, ParsePosition)
+  fullName.vb: NMF.AnyText.ParsePosition.>(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  name.vb: '>(ParsePosition, ParsePosition)'
+- uid: NMF.AnyText.ParsePosition.op_LessThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.op_LessThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: op_LessThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator <=(ParsePosition, ParsePosition)
+  nameWithType: ParsePosition.operator <=(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.operator <=(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_LessThanOrEqual
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 61
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Decides which of the two positions is smaller or equal
+  example: []
+  syntax:
+    content: public static bool operator <=(ParsePosition pos1, ParsePosition pos2)
+    parameters:
+    - id: pos1
+      type: NMF.AnyText.ParsePosition
+      description: the first position
+    - id: pos2
+      type: NMF.AnyText.ParsePosition
+      description: the second position
+    return:
+      type: System.Boolean
+      description: true, if the first position is smaller or equal, otherwise false
+    content.vb: Public Shared Operator <=(pos1 As ParsePosition, pos2 As ParsePosition) As Boolean
+  overload: NMF.AnyText.ParsePosition.op_LessThanOrEqual*
+  nameWithType.vb: ParsePosition.<=(ParsePosition, ParsePosition)
+  fullName.vb: NMF.AnyText.ParsePosition.<=(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  name.vb: <=(ParsePosition, ParsePosition)
+- uid: NMF.AnyText.ParsePosition.op_GreaterThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.op_GreaterThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: op_GreaterThanOrEqual(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator >=(ParsePosition, ParsePosition)
+  nameWithType: ParsePosition.operator >=(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.operator >=(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_GreaterThanOrEqual
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 72
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Decides which of the two positions is greater or equal
+  example: []
+  syntax:
+    content: public static bool operator >=(ParsePosition pos1, ParsePosition pos2)
+    parameters:
+    - id: pos1
+      type: NMF.AnyText.ParsePosition
+      description: the first position
+    - id: pos2
+      type: NMF.AnyText.ParsePosition
+      description: the second position
+    return:
+      type: System.Boolean
+      description: true, if the first position is greater or equal, otherwise false
+    content.vb: Public Shared Operator >=(pos1 As ParsePosition, pos2 As ParsePosition) As Boolean
+  overload: NMF.AnyText.ParsePosition.op_GreaterThanOrEqual*
+  nameWithType.vb: ParsePosition.>=(ParsePosition, ParsePosition)
+  fullName.vb: NMF.AnyText.ParsePosition.>=(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  name.vb: '>=(ParsePosition, ParsePosition)'
+- uid: NMF.AnyText.ParsePosition.op_Subtraction(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.ParsePosition.op_Subtraction(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  id: op_Subtraction(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator -(ParsePosition, ParsePosition)
+  nameWithType: ParsePosition.operator -(ParsePosition, ParsePosition)
+  fullName: NMF.AnyText.ParsePosition.operator -(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_Subtraction
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 83
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Subtracts two parse positions
+  example: []
+  syntax:
+    content: public static ParsePositionDelta operator -(ParsePosition to, ParsePosition from)
+    parameters:
+    - id: to
+      type: NMF.AnyText.ParsePosition
+      description: the forward position
+    - id: from
+      type: NMF.AnyText.ParsePosition
+      description: the backward position
+    return:
+      type: NMF.AnyText.ParsePositionDelta
+      description: The delta between the given positions
+    content.vb: Public Shared Operator -([to] As ParsePosition, from As ParsePosition) As ParsePositionDelta
+  overload: NMF.AnyText.ParsePosition.op_Subtraction*
+  nameWithType.vb: ParsePosition.-(ParsePosition, ParsePosition)
+  fullName.vb: NMF.AnyText.ParsePosition.-(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePosition)
+  name.vb: -(ParsePosition, ParsePosition)
+- uid: NMF.AnyText.ParsePosition.op_Addition(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePositionDelta)
+  commentId: M:NMF.AnyText.ParsePosition.op_Addition(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePositionDelta)
+  id: op_Addition(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePositionDelta)
+  parent: NMF.AnyText.ParsePosition
+  langs:
+  - csharp
+  - vb
+  name: operator +(ParsePosition, ParsePositionDelta)
+  nameWithType: ParsePosition.operator +(ParsePosition, ParsePositionDelta)
+  fullName: NMF.AnyText.ParsePosition.operator +(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePositionDelta)
+  type: Operator
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParsePosition.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: op_Addition
+    path: src/AnyText/AnyText.Core/ParsePosition.cs
+    startLine: 98
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Adds the given delta to the current position
+  example: []
+  syntax:
+    content: public static ParsePosition operator +(ParsePosition pos, ParsePositionDelta delta)
+    parameters:
+    - id: pos
+      type: NMF.AnyText.ParsePosition
+      description: the origin position
+    - id: delta
+      type: NMF.AnyText.ParsePositionDelta
+      description: the position delta
+    return:
+      type: NMF.AnyText.ParsePosition
+      description: the updated position
+    content.vb: Public Shared Operator +(pos As ParsePosition, delta As ParsePositionDelta) As ParsePosition
+  overload: NMF.AnyText.ParsePosition.op_Addition*
+  nameWithType.vb: ParsePosition.+(ParsePosition, ParsePositionDelta)
+  fullName.vb: NMF.AnyText.ParsePosition.+(NMF.AnyText.ParsePosition, NMF.AnyText.ParsePositionDelta)
+  name.vb: +(ParsePosition, ParsePositionDelta)
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: System.IComparable{NMF.AnyText.ParsePosition}
+  commentId: T:System.IComparable{NMF.AnyText.ParsePosition}
+  parent: System
+  definition: System.IComparable`1
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<ParsePosition>
+  nameWithType: IComparable<ParsePosition>
+  fullName: System.IComparable<NMF.AnyText.ParsePosition>
+  nameWithType.vb: IComparable(Of ParsePosition)
+  fullName.vb: System.IComparable(Of NMF.AnyText.ParsePosition)
+  name.vb: IComparable(Of ParsePosition)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+- uid: System.IEquatable{NMF.AnyText.ParsePosition}
+  commentId: T:System.IEquatable{NMF.AnyText.ParsePosition}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ParsePosition>
+  nameWithType: IEquatable<ParsePosition>
+  fullName: System.IEquatable<NMF.AnyText.ParsePosition>
+  nameWithType.vb: IEquatable(Of ParsePosition)
+  fullName.vb: System.IEquatable(Of NMF.AnyText.ParsePosition)
+  name.vb: IEquatable(Of ParsePosition)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NMF.AnyText.ParsePosition.#ctor*
+  commentId: Overload:NMF.AnyText.ParsePosition.#ctor
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition__ctor_System_Int32_System_Int32_
+  name: ParsePosition
+  nameWithType: ParsePosition.ParsePosition
+  fullName: NMF.AnyText.ParsePosition.ParsePosition
+  nameWithType.vb: ParsePosition.New
+  fullName.vb: NMF.AnyText.ParsePosition.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NMF.AnyText.ParsePosition.Line*
+  commentId: Overload:NMF.AnyText.ParsePosition.Line
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_Line
+  name: Line
+  nameWithType: ParsePosition.Line
+  fullName: NMF.AnyText.ParsePosition.Line
+- uid: NMF.AnyText.ParsePosition.Col*
+  commentId: Overload:NMF.AnyText.ParsePosition.Col
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_Col
+  name: Col
+  nameWithType: ParsePosition.Col
+  fullName: NMF.AnyText.ParsePosition.Col
+- uid: NMF.AnyText.ParsePosition.Proceed*
+  commentId: Overload:NMF.AnyText.ParsePosition.Proceed
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_Proceed_System_Int32_
+  name: Proceed
+  nameWithType: ParsePosition.Proceed
+  fullName: NMF.AnyText.ParsePosition.Proceed
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+- uid: NMF.AnyText.ParsePosition.CompareTo*
+  commentId: Overload:NMF.AnyText.ParsePosition.CompareTo
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_CompareTo_NMF_AnyText_ParsePosition_
+  name: CompareTo
+  nameWithType: ParsePosition.CompareTo
+  fullName: NMF.AnyText.ParsePosition.CompareTo
+- uid: System.IComparable{NMF.AnyText.ParsePosition}.CompareTo(NMF.AnyText.ParsePosition)
+  commentId: M:System.IComparable{NMF.AnyText.ParsePosition}.CompareTo(NMF.AnyText.ParsePosition)
+  parent: System.IComparable{NMF.AnyText.ParsePosition}
+  definition: System.IComparable`1.CompareTo(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  name: CompareTo(ParsePosition)
+  nameWithType: IComparable<ParsePosition>.CompareTo(ParsePosition)
+  fullName: System.IComparable<NMF.AnyText.ParsePosition>.CompareTo(NMF.AnyText.ParsePosition)
+  nameWithType.vb: IComparable(Of ParsePosition).CompareTo(ParsePosition)
+  fullName.vb: System.IComparable(Of NMF.AnyText.ParsePosition).CompareTo(NMF.AnyText.ParsePosition)
+  spec.csharp:
+  - uid: System.IComparable{NMF.AnyText.ParsePosition}.CompareTo(NMF.AnyText.ParsePosition)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+  spec.vb:
+  - uid: System.IComparable{NMF.AnyText.ParsePosition}.CompareTo(NMF.AnyText.ParsePosition)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+- uid: System.IComparable`1.CompareTo(`0)
+  commentId: M:System.IComparable`1.CompareTo(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  name: CompareTo(T)
+  nameWithType: IComparable<T>.CompareTo(T)
+  fullName: System.IComparable<T>.CompareTo(T)
+  nameWithType.vb: IComparable(Of T).CompareTo(T)
+  fullName.vb: System.IComparable(Of T).CompareTo(T)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - name: T
+  - name: )
+- uid: NMF.AnyText.ParsePosition.op_LessThan*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_LessThan
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_LessThan_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: operator <
+  nameWithType: ParsePosition.operator <
+  fullName: NMF.AnyText.ParsePosition.operator <
+  nameWithType.vb: ParsePosition.<
+  fullName.vb: NMF.AnyText.ParsePosition.<
+  name.vb: <
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_LessThan*
+    name: <
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_LessThan_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.ParsePosition.op_GreaterThan*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_GreaterThan
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_GreaterThan_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: operator >
+  nameWithType: ParsePosition.operator >
+  fullName: NMF.AnyText.ParsePosition.operator >
+  nameWithType.vb: ParsePosition.>
+  fullName.vb: NMF.AnyText.ParsePosition.>
+  name.vb: '>'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_GreaterThan*
+    name: '>'
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_GreaterThan_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+- uid: NMF.AnyText.ParsePosition.op_LessThanOrEqual*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_LessThanOrEqual
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_LessThanOrEqual_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: operator <=
+  nameWithType: ParsePosition.operator <=
+  fullName: NMF.AnyText.ParsePosition.operator <=
+  nameWithType.vb: ParsePosition.<=
+  fullName.vb: NMF.AnyText.ParsePosition.<=
+  name.vb: <=
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_LessThanOrEqual*
+    name: <=
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_LessThanOrEqual_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+- uid: NMF.AnyText.ParsePosition.op_GreaterThanOrEqual*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_GreaterThanOrEqual
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_GreaterThanOrEqual_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: operator >=
+  nameWithType: ParsePosition.operator >=
+  fullName: NMF.AnyText.ParsePosition.operator >=
+  nameWithType.vb: ParsePosition.>=
+  fullName.vb: NMF.AnyText.ParsePosition.>=
+  name.vb: '>='
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_GreaterThanOrEqual*
+    name: '>='
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_GreaterThanOrEqual_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+- uid: NMF.AnyText.ParsePosition.op_Subtraction*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_Subtraction
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_Subtraction_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+  name: operator -
+  nameWithType: ParsePosition.operator -
+  fullName: NMF.AnyText.ParsePosition.operator -
+  nameWithType.vb: ParsePosition.-
+  fullName.vb: NMF.AnyText.ParsePosition.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_Subtraction*
+    name: '-'
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_Subtraction_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePosition_
+- uid: NMF.AnyText.ParsePositionDelta
+  commentId: T:NMF.AnyText.ParsePositionDelta
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePositionDelta.html
+  name: ParsePositionDelta
+  nameWithType: ParsePositionDelta
+  fullName: NMF.AnyText.ParsePositionDelta
+- uid: NMF.AnyText.ParsePosition.op_Addition*
+  commentId: Overload:NMF.AnyText.ParsePosition.op_Addition
+  href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_Addition_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePositionDelta_
+  name: operator +
+  nameWithType: ParsePosition.operator +
+  fullName: NMF.AnyText.ParsePosition.operator +
+  nameWithType.vb: ParsePosition.+
+  fullName.vb: NMF.AnyText.ParsePosition.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition.op_Addition*
+    name: +
+    href: NMF.AnyText.ParsePosition.html#NMF_AnyText_ParsePosition_op_Addition_NMF_AnyText_ParsePosition_NMF_AnyText_ParsePositionDelta_

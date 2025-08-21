@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableReadOnlyOrderedSet
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
@@ -30,10 +30,13 @@ items:
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an observable readonly ordered set view
+  example: []
   syntax:
     content: 'public class ObservableReadOnlyOrderedSet<T> : ReadOnlyOrderedSet<T>, IList, ICollection, IOrderedSet<T>, IList<T>, ISet<T>, ICollection<T>, INotifyCollectionChanged, INotifyCollectionChanging, IEnumerableExpression<T>, IEnumerable<T>, IEnumerableExpression, IEnumerable'
     typeParameters:
     - id: T
+      description: the element type
     content.vb: Public Class ObservableReadOnlyOrderedSet(Of T) Inherits ReadOnlyOrderedSet(Of T) Implements IList, ICollection, IOrderedSet(Of T), IList(Of T), ISet(Of T), ICollection(Of T), INotifyCollectionChanged, INotifyCollectionChanging, IEnumerableExpression(Of T), IEnumerable(Of T), IEnumerableExpression, IEnumerable
   inheritance:
   - System.Object
@@ -89,6 +92,8 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
   nameWithType.vb: ObservableReadOnlyOrderedSet(Of T)
   fullName.vb: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet(Of T)
   name.vb: ObservableReadOnlyOrderedSet(Of T)
@@ -106,19 +111,22 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ObservableReadOnlyOrderedSet(ObservableOrderedSet<T> parent)
     parameters:
     - id: parent
       type: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}
+      description: the collection for which the view should be created
     content.vb: Public Sub New(parent As ObservableOrderedSet(Of T))
   overload: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.#ctor*
   nameWithType.vb: ObservableReadOnlyOrderedSet(Of T).New(ObservableOrderedSet(Of T))
@@ -138,19 +146,22 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 34
+    startLine: 42
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets called when an attempt is made to change the collection
+  example: []
   syntax:
     content: protected virtual void OnCollectionChanging(NotifyCollectionChangedEventArgs e)
     parameters:
     - id: e
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: the event args
     content.vb: Protected Overridable Sub OnCollectionChanging(e As NotifyCollectionChangedEventArgs)
   overload: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.OnCollectionChanging*
   nameWithType.vb: ObservableReadOnlyOrderedSet(Of T).OnCollectionChanging(NotifyCollectionChangedEventArgs)
@@ -169,19 +180,22 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 39
+    startLine: 51
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets called when the collection was changed
+  example: []
   syntax:
     content: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     parameters:
     - id: e
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: the event args
     content.vb: Protected Overridable Sub OnCollectionChanged(e As NotifyCollectionChangedEventArgs)
   overload: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.OnCollectionChanged*
   nameWithType.vb: ObservableReadOnlyOrderedSet(Of T).OnCollectionChanged(NotifyCollectionChangedEventArgs)
@@ -200,14 +214,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 44
+    startLine: 57
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Occurs when the collection changes.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler CollectionChanged
@@ -232,14 +247,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 46
+    startLine: 60
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets raised when an attempt is made to change a given collection
   example: []
   syntax:
     content: public event EventHandler<NotifyCollectionChangedEventArgs> CollectionChanging
@@ -264,11 +280,11 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AsNotifiable
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 50
+    startLine: 65
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
@@ -299,19 +315,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Collections/Collections/ObjectModel/ObservableReadOnlyOrderedSet.cs
-    startLine: 61
+    startLine: 77
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.ToString*
@@ -532,7 +550,7 @@ references:
   nameWithType: INotifyCollectionChanging
   fullName: NMF.Collections.ObjectModel.INotifyCollectionChanging
 - uid: NMF.Expressions.IEnumerableExpression{{T}}
-  commentId: T:NMF.Expressions.IEnumerableExpression{`0}
+  commentId: T:NMF.Expressions.IEnumerableExpression{``0}
   parent: NMF.Expressions
   definition: NMF.Expressions.IEnumerableExpression`1
   name: IEnumerableExpression<T>
@@ -1720,6 +1738,49 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Expressions.IEnumerableExpression{`0}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  parent: NMF.Collections.CollectionExtensions
+  definition: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
   - name: )
 - uid: System
   commentId: N:System
@@ -2946,6 +3007,76 @@ references:
   fullName: NMF.Collections.Generic.ReadOnlyOrderedSet<T>.SyncRoot
   nameWithType.vb: ReadOnlyOrderedSet(Of T).SyncRoot
   fullName.vb: NMF.Collections.Generic.ReadOnlyOrderedSet(Of T).SyncRoot
+- uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NMF.Collections.CollectionExtensions
+  commentId: T:NMF.Collections.CollectionExtensions
+  parent: NMF.Collections
+  href: NMF.Collections.CollectionExtensions.html
+  name: CollectionExtensions
+  nameWithType: CollectionExtensions
+  fullName: NMF.Collections.CollectionExtensions
+- uid: NMF.Collections
+  commentId: N:NMF.Collections
+  href: NMF.html
+  name: NMF.Collections
+  nameWithType: NMF.Collections
+  fullName: NMF.Collections
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
 - uid: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet`1.#ctor
   href: NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet-1.html#NMF_Collections_ObjectModel_ObservableReadOnlyOrderedSet_1__ctor_NMF_Collections_ObjectModel_ObservableOrderedSet__0__

@@ -1,0 +1,654 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Rules.RecursiveContinuation
+  commentId: T:NMF.AnyText.Rules.RecursiveContinuation
+  id: RecursiveContinuation
+  parent: NMF.AnyText.Rules
+  children:
+  - NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
+  - NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+  - NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
+  langs:
+  - csharp
+  - vb
+  name: RecursiveContinuation
+  nameWithType: RecursiveContinuation
+  fullName: NMF.AnyText.Rules.RecursiveContinuation
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: RecursiveContinuation
+    path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+    startLine: 11
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Denotes a recursive continuation
+  example: []
+  syntax:
+    content: public abstract class RecursiveContinuation
+    content.vb: Public MustInherit Class RecursiveContinuation
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
+  commentId: M:NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
+  id: '#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})'
+  parent: NMF.AnyText.Rules.RecursiveContinuation
+  langs:
+  - csharp
+  - vb
+  name: RecursiveContinuation(IEnumerable<Rule>)
+  nameWithType: RecursiveContinuation.RecursiveContinuation(IEnumerable<Rule>)
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.RecursiveContinuation(System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.Rule>)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+    startLine: 18
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Creates a new continuation
+  example: []
+  syntax:
+    content: protected RecursiveContinuation(IEnumerable<Rule> affectedRules)
+    parameters:
+    - id: affectedRules
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
+      description: the rules that need to be invalidated when performing the recursion
+    content.vb: Protected Sub New(affectedRules As IEnumerable(Of Rule))
+  overload: NMF.AnyText.Rules.RecursiveContinuation.#ctor*
+  nameWithType.vb: RecursiveContinuation.New(IEnumerable(Of Rule))
+  fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.New(System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.Rule))
+  name.vb: New(IEnumerable(Of Rule))
+- uid: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+  commentId: P:NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+  id: AffectedRules
+  parent: NMF.AnyText.Rules.RecursiveContinuation
+  langs:
+  - csharp
+  - vb
+  name: AffectedRules
+  nameWithType: RecursiveContinuation.AffectedRules
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AffectedRules
+    path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+    startLine: 26
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the rules needed to invalidate before executing the recursion
+  example: []
+  syntax:
+    content: public List<Rule> AffectedRules { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
+    content.vb: Public ReadOnly Property AffectedRules As List(Of Rule)
+  overload: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules*
+- uid: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
+  commentId: M:NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
+  id: ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
+  parent: NMF.AnyText.Rules.RecursiveContinuation
+  langs:
+  - csharp
+  - vb
+  name: ResolveRecursion(RuleApplication, ParseContext, RecursionContext, ref ParsePosition)
+  nameWithType: RecursiveContinuation.ResolveRecursion(RuleApplication, ParseContext, RecursionContext, ref ParsePosition)
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, NMF.AnyText.RecursionContext, ref NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ResolveRecursion
+    path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
+    startLine: 36
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Grows the given base rule application
+  example: []
+  syntax:
+    content: public virtual RuleApplication ResolveRecursion(RuleApplication baseApplication, ParseContext parseContext, RecursionContext recursionContext, ref ParsePosition position)
+    parameters:
+    - id: baseApplication
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the base rule application
+    - id: parseContext
+      type: NMF.AnyText.ParseContext
+      description: the parse context in which the continuation is done
+    - id: recursionContext
+      type: NMF.AnyText.RecursionContext
+      description: the recursion context in which the continuation is executed
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the position of the parser
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the grown rule application
+    content.vb: Public Overridable Function ResolveRecursion(baseApplication As RuleApplication, parseContext As ParseContext, recursionContext As RecursionContext, position As ParsePosition) As RuleApplication
+  overload: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion*
+  nameWithType.vb: RecursiveContinuation.ResolveRecursion(RuleApplication, ParseContext, RecursionContext, ParsePosition)
+  fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, NMF.AnyText.RecursionContext, NMF.AnyText.ParsePosition)
+  name.vb: ResolveRecursion(RuleApplication, ParseContext, RecursionContext, ParsePosition)
+references:
+- uid: NMF.AnyText.Rules
+  commentId: N:NMF.AnyText.Rules
+  href: NMF.html
+  name: NMF.AnyText.Rules
+  nameWithType: NMF.AnyText.Rules
+  fullName: NMF.AnyText.Rules
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.Rules.RecursiveContinuation.#ctor*
+  commentId: Overload:NMF.AnyText.Rules.RecursiveContinuation.#ctor
+  href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation__ctor_System_Collections_Generic_IEnumerable_NMF_AnyText_Rules_Rule__
+  name: RecursiveContinuation
+  nameWithType: RecursiveContinuation.RecursiveContinuation
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.RecursiveContinuation
+  nameWithType.vb: RecursiveContinuation.New
+  fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Rule>
+  nameWithType: IEnumerable<Rule>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.Rule>
+  nameWithType.vb: IEnumerable(Of Rule)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.Rule)
+  name.vb: IEnumerable(Of Rule)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules*
+  commentId: Overload:NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+  href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation_AffectedRules
+  name: AffectedRules
+  nameWithType: RecursiveContinuation.AffectedRules
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
+- uid: System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
+  commentId: T:System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Rule>
+  nameWithType: List<Rule>
+  fullName: System.Collections.Generic.List<NMF.AnyText.Rules.Rule>
+  nameWithType.vb: List(Of Rule)
+  fullName.vb: System.Collections.Generic.List(Of NMF.AnyText.Rules.Rule)
+  name.vb: List(Of Rule)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion*
+  commentId: Overload:NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion
+  href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation_ResolveRecursion_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_RecursionContext_NMF_AnyText_ParsePosition__
+  name: ResolveRecursion
+  nameWithType: RecursiveContinuation.ResolveRecursion
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion
+- uid: NMF.AnyText.Rules.RuleApplication
+  commentId: T:NMF.AnyText.Rules.RuleApplication
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.RuleApplication.html
+  name: RuleApplication
+  nameWithType: RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication
+- uid: NMF.AnyText.ParseContext
+  commentId: T:NMF.AnyText.ParseContext
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParseContext.html
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: NMF.AnyText.ParseContext
+- uid: NMF.AnyText.RecursionContext
+  commentId: T:NMF.AnyText.RecursionContext
+  parent: NMF.AnyText
+  href: NMF.AnyText.RecursionContext.html
+  name: RecursionContext
+  nameWithType: RecursionContext
+  fullName: NMF.AnyText.RecursionContext
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html

@@ -11,6 +11,7 @@ items:
   - NMF.Models.Collections.ObservableCompositionOrderedSet`1.Insert(System.Int32,`0)
   - NMF.Models.Collections.ObservableCompositionOrderedSet`1.Parent
   - NMF.Models.Collections.ObservableCompositionOrderedSet`1.Remove(`0,System.Int32)
+  - NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace(System.Int32,`0,`0)
   langs:
   - csharp
   - vb
@@ -21,11 +22,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableCompositionOrderedSet
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 136
+    startLine: 150
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -74,7 +75,6 @@ items:
   - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.SilentInsert(System.Int32,{T})
   - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.SilentClear
   - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.SilentRemove({T},System.Int32)
-  - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Replace(System.Int32,{T},{T})
   - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.SilentReplace(System.Int32,{T},{T})
   - NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.ToString
   - NMF.Collections.Generic.OrderedSet{{T}}.Remove({T})
@@ -120,11 +120,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 141
+    startLine: 155
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -153,11 +153,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 148
+    startLine: 162
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -192,20 +192,25 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 156
+    startLine: 170
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Clear
   overload: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: ObservableCompositionOrderedSet(Of T).Clear()
   fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Clear()
 - uid: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Add(`0)
@@ -222,27 +227,72 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 183
+    startLine: 197
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As T) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Add({T})
   overload: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Add*
   nameWithType.vb: ObservableCompositionOrderedSet(Of T).Add(T)
   fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Add(T)
+- uid: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace(System.Int32,`0,`0)
+  commentId: M:NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace(System.Int32,`0,`0)
+  id: Replace(System.Int32,`0,`0)
+  parent: NMF.Models.Collections.ObservableCompositionOrderedSet`1
+  langs:
+  - csharp
+  - vb
+  name: Replace(int, T, T)
+  nameWithType: ObservableCompositionOrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Models.Collections.ObservableCompositionOrderedSet<T>.Replace(int, T, T)
+  type: Method
+  source:
+    remote:
+      path: Models/Models/Collections/CompositionOrderedSet.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Replace
+    path: src/Models/Models/Collections/CompositionOrderedSet.cs
+    startLine: 220
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Collections
+  summary: Replaces the item at the given arrayIndex
+  example: []
+  syntax:
+    content: protected override void Replace(int index, T oldValue, T newValue)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The arrayIndex on which the item is replaced
+    - id: oldValue
+      type: '{T}'
+      description: The old value
+    - id: newValue
+      type: '{T}'
+      description: The new value
+    content.vb: Protected Overrides Sub Replace(index As Integer, oldValue As T, newValue As T)
+  overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Replace(System.Int32,{T},{T})
+  overload: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace*
+  nameWithType.vb: ObservableCompositionOrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
 - uid: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Insert(System.Int32,`0)
   commentId: M:NMF.Models.Collections.ObservableCompositionOrderedSet`1.Insert(System.Int32,`0)
   id: Insert(System.Int32,`0)
@@ -257,25 +307,35 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 215
+    startLine: 250
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public override void Insert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overrides Sub Insert(index As Integer, item As T)
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Insert(System.Int32,{T})
   overload: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: ObservableCompositionOrderedSet(Of T).Insert(Integer, T)
   fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Insert(Integer, T)
   name.vb: Insert(Integer, T)
@@ -293,24 +353,28 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Collections/CompositionOrderedSet.cs
-    startLine: 235
+    startLine: 270
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As T, index As Integer) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Remove({T},System.Int32)
   overload: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Remove*
@@ -1008,47 +1072,6 @@ references:
     name: Integer
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Replace(System.Int32,{T},{T})
-  commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
-  parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}
-  definition: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: Replace(int, T, T)
-  nameWithType: ObservableOrderedSet<T>.Replace(int, T, T)
-  fullName: NMF.Collections.ObjectModel.ObservableOrderedSet<T>.Replace(int, T, T)
-  nameWithType.vb: ObservableOrderedSet(Of T).Replace(Integer, T, T)
-  fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T).Replace(Integer, T, T)
-  name.vb: Replace(Integer, T, T)
-  spec.csharp:
-  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
   - name: )
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.SilentReplace(System.Int32,{T},{T})
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.SilentReplace(System.Int32,`0,`0)
@@ -2639,46 +2662,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
-  commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: Replace(int, T, T)
-  nameWithType: ObservableOrderedSet<T>.Replace(int, T, T)
-  fullName: NMF.Collections.ObjectModel.ObservableOrderedSet<T>.Replace(int, T, T)
-  nameWithType.vb: ObservableOrderedSet(Of T).Replace(Integer, T, T)
-  fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T).Replace(Integer, T, T)
-  name.vb: Replace(Integer, T, T)
-  spec.csharp:
-  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
-  spec.vb:
-  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
-    name: Replace
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentReplace(System.Int32,`0,`0)
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet`1.SilentReplace(System.Int32,`0,`0)
   isExternal: true
@@ -3347,6 +3330,13 @@ references:
   nameWithType.vb: ObservableCompositionOrderedSet(Of T).New
   fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).New
   name.vb: New
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Clear
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Clear
   parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}
@@ -3460,6 +3450,113 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Replace(System.Int32,{T},{T})
+  commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
+  parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}
+  definition: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: Replace(int, T, T)
+  nameWithType: ObservableOrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Collections.ObjectModel.ObservableOrderedSet<T>.Replace(int, T, T)
+  nameWithType.vb: ObservableOrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
+  spec.csharp:
+  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace*
+  commentId: Overload:NMF.Models.Collections.ObservableCompositionOrderedSet`1.Replace
+  href: NMF.Models.Collections.ObservableCompositionOrderedSet-1.html#NMF_Models_Collections_ObservableCompositionOrderedSet_1_Replace_System_Int32__0__0_
+  name: Replace
+  nameWithType: ObservableCompositionOrderedSet<T>.Replace
+  fullName: NMF.Models.Collections.ObservableCompositionOrderedSet<T>.Replace
+  nameWithType.vb: ObservableCompositionOrderedSet(Of T).Replace
+  fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Replace
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
+  commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: Replace(int, T, T)
+  nameWithType: ObservableOrderedSet<T>.Replace(int, T, T)
+  fullName: NMF.Collections.ObjectModel.ObservableOrderedSet<T>.Replace(int, T, T)
+  nameWithType.vb: ObservableOrderedSet(Of T).Replace(Integer, T, T)
+  fullName.vb: NMF.Collections.ObjectModel.ObservableOrderedSet(Of T).Replace(Integer, T, T)
+  name.vb: Replace(Integer, T, T)
+  spec.csharp:
+  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Replace(System.Int32,`0,`0)
+    name: Replace
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}.Insert(System.Int32,{T})
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`0}.Insert(System.Int32,`0)
   parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{T}}
@@ -3503,17 +3600,6 @@ references:
   fullName: NMF.Models.Collections.ObservableCompositionOrderedSet<T>.Insert
   nameWithType.vb: ObservableCompositionOrderedSet(Of T).Insert
   fullName.vb: NMF.Models.Collections.ObservableCompositionOrderedSet(Of T).Insert
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet`1.Insert(System.Int32,`0)
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet`1.Insert(System.Int32,`0)
   isExternal: true

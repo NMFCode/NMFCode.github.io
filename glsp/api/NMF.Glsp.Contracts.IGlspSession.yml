@@ -1,0 +1,909 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Glsp.Contracts.IGlspSession
+  commentId: T:NMF.Glsp.Contracts.IGlspSession
+  id: IGlspSession
+  parent: NMF.Glsp.Contracts
+  children:
+  - NMF.Glsp.Contracts.IGlspSession.CanRedo
+  - NMF.Glsp.Contracts.IGlspSession.CanUndo
+  - NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)
+  - NMF.Glsp.Contracts.IGlspSession.IsDirty
+  - NMF.Glsp.Contracts.IGlspSession.Language
+  - NMF.Glsp.Contracts.IGlspSession.Redo
+  - NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)
+  - NMF.Glsp.Contracts.IGlspSession.Root
+  - NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)
+  - NMF.Glsp.Contracts.IGlspSession.SelectedElements
+  - NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  - NMF.Glsp.Contracts.IGlspSession.Synchronize
+  - NMF.Glsp.Contracts.IGlspSession.Trace
+  - NMF.Glsp.Contracts.IGlspSession.Undo
+  langs:
+  - csharp
+  - vb
+  name: IGlspSession
+  nameWithType: IGlspSession
+  fullName: NMF.Glsp.Contracts.IGlspSession
+  type: Interface
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IGlspSession
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 12
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Denotes a session with a client
+  example: []
+  syntax:
+    content: public interface IGlspSession
+    content.vb: Public Interface IGlspSession
+- uid: NMF.Glsp.Contracts.IGlspSession.Root
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.Root
+  id: Root
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: IGlspSession.Root
+  fullName: NMF.Glsp.Contracts.IGlspSession.Root
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Root
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 17
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: The root of the graph
+  example: []
+  syntax:
+    content: GGraph Root { get; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Graph.GGraph
+    content.vb: ReadOnly Property Root As GGraph
+  overload: NMF.Glsp.Contracts.IGlspSession.Root*
+- uid: NMF.Glsp.Contracts.IGlspSession.Language
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.Language
+  id: Language
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Language
+  nameWithType: IGlspSession.Language
+  fullName: NMF.Glsp.Contracts.IGlspSession.Language
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Language
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 22
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Gets the graphical language used in this session
+  example: []
+  syntax:
+    content: GraphicalLanguage Language { get; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Language.GraphicalLanguage
+    content.vb: ReadOnly Property Language As GraphicalLanguage
+  overload: NMF.Glsp.Contracts.IGlspSession.Language*
+- uid: NMF.Glsp.Contracts.IGlspSession.Trace
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.Trace
+  id: Trace
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Trace
+  nameWithType: IGlspSession.Trace
+  fullName: NMF.Glsp.Contracts.IGlspSession.Trace
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Trace
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 27
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Gets the trace to trace skeletons created for semantic objects
+  example: []
+  syntax:
+    content: ISkeletonTrace Trace { get; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Processing.ISkeletonTrace
+    content.vb: ReadOnly Property Trace As ISkeletonTrace
+  overload: NMF.Glsp.Contracts.IGlspSession.Trace*
+- uid: NMF.Glsp.Contracts.IGlspSession.SelectedElements
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.SelectedElements
+  id: SelectedElements
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: SelectedElements
+  nameWithType: IGlspSession.SelectedElements
+  fullName: NMF.Glsp.Contracts.IGlspSession.SelectedElements
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SelectedElements
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 32
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: The selected elements
+  example: []
+  syntax:
+    content: GElement[] SelectedElements { get; set; }
+    parameters: []
+    return:
+      type: NMF.Glsp.Graph.GElement[]
+    content.vb: Property SelectedElements As GElement()
+  overload: NMF.Glsp.Contracts.IGlspSession.SelectedElements*
+- uid: NMF.Glsp.Contracts.IGlspSession.IsDirty
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.IsDirty
+  id: IsDirty
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: IsDirty
+  nameWithType: IGlspSession.IsDirty
+  fullName: NMF.Glsp.Contracts.IGlspSession.IsDirty
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsDirty
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 37
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: True, if the client session contains unsaved changes, otherwise false
+  example: []
+  syntax:
+    content: bool IsDirty { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsDirty As Boolean
+  overload: NMF.Glsp.Contracts.IGlspSession.IsDirty*
+- uid: NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  id: SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: SendToClient(BaseAction)
+  nameWithType: IGlspSession.SendToClient(BaseAction)
+  fullName: NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SendToClient
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 43
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Send the given action to the client
+  example: []
+  syntax:
+    content: void SendToClient(BaseAction action)
+    parameters:
+    - id: action
+      type: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+      description: The action to send
+    content.vb: Sub SendToClient(action As BaseAction)
+  overload: NMF.Glsp.Contracts.IGlspSession.SendToClient*
+- uid: NMF.Glsp.Contracts.IGlspSession.Synchronize
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.Synchronize
+  id: Synchronize
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Synchronize()
+  nameWithType: IGlspSession.Synchronize()
+  fullName: NMF.Glsp.Contracts.IGlspSession.Synchronize()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Synchronize
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 48
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Sends the entire graph to the client
+  example: []
+  syntax:
+    content: void Synchronize()
+    content.vb: Sub Synchronize()
+  overload: NMF.Glsp.Contracts.IGlspSession.Synchronize*
+- uid: NMF.Glsp.Contracts.IGlspSession.CanUndo
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.CanUndo
+  id: CanUndo
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: CanUndo
+  nameWithType: IGlspSession.CanUndo
+  fullName: NMF.Glsp.Contracts.IGlspSession.CanUndo
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CanUndo
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 53
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: True, if there is a transaction to undo, otherwise false
+  example: []
+  syntax:
+    content: bool CanUndo { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property CanUndo As Boolean
+  overload: NMF.Glsp.Contracts.IGlspSession.CanUndo*
+- uid: NMF.Glsp.Contracts.IGlspSession.CanRedo
+  commentId: P:NMF.Glsp.Contracts.IGlspSession.CanRedo
+  id: CanRedo
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: CanRedo
+  nameWithType: IGlspSession.CanRedo
+  fullName: NMF.Glsp.Contracts.IGlspSession.CanRedo
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CanRedo
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 58
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: True, if there is a transaction to redo, otherwise false
+  example: []
+  syntax:
+    content: bool CanRedo { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property CanRedo As Boolean
+  overload: NMF.Glsp.Contracts.IGlspSession.CanRedo*
+- uid: NMF.Glsp.Contracts.IGlspSession.Undo
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.Undo
+  id: Undo
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Undo()
+  nameWithType: IGlspSession.Undo()
+  fullName: NMF.Glsp.Contracts.IGlspSession.Undo()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Undo
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 63
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Undo the last transaction
+  example: []
+  syntax:
+    content: void Undo()
+    content.vb: Sub Undo()
+  overload: NMF.Glsp.Contracts.IGlspSession.Undo*
+- uid: NMF.Glsp.Contracts.IGlspSession.Redo
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.Redo
+  id: Redo
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Redo()
+  nameWithType: IGlspSession.Redo()
+  fullName: NMF.Glsp.Contracts.IGlspSession.Redo()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Redo
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 68
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Redo the last transaction
+  example: []
+  syntax:
+    content: void Redo()
+    content.vb: Sub Redo()
+  overload: NMF.Glsp.Contracts.IGlspSession.Redo*
+- uid: NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)
+  id: InitializeAsync(System.Uri)
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: InitializeAsync(Uri)
+  nameWithType: IGlspSession.InitializeAsync(Uri)
+  fullName: NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: InitializeAsync
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 74
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Initializes the client for the given source model URI
+  example: []
+  syntax:
+    content: Task InitializeAsync(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function InitializeAsync(uri As Uri) As Task
+  overload: NMF.Glsp.Contracts.IGlspSession.InitializeAsync*
+- uid: NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)
+  id: Save(System.Uri)
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: Save(Uri)
+  nameWithType: IGlspSession.Save(Uri)
+  fullName: NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Save
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 80
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Saves the content at the given URI
+  example: []
+  syntax:
+    content: void Save(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: the URI where to save the session content or null, if the model should be saved at the default location
+    content.vb: Sub Save(uri As Uri)
+  overload: NMF.Glsp.Contracts.IGlspSession.Save*
+- uid: NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)
+  commentId: M:NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)
+  id: RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)
+  parent: NMF.Glsp.Contracts.IGlspSession
+  langs:
+  - csharp
+  - vb
+  name: RequestAsync(RequestAction)
+  nameWithType: IGlspSession.RequestAsync(RequestAction)
+  fullName: NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: RequestAsync
+    path: src/Glsp/Glsp/Contracts/IGlspSession.cs
+    startLine: 87
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Sends a request to the client and waits for the response
+  example: []
+  syntax:
+    content: Task<ResponseAction> RequestAsync(RequestAction request)
+    parameters:
+    - id: request
+      type: NMF.Glsp.Protocol.BaseProtocol.RequestAction
+      description: The request to the client
+    return:
+      type: System.Threading.Tasks.Task{NMF.Glsp.Protocol.BaseProtocol.ResponseAction}
+      description: A task that completes when the client returns a response
+    content.vb: Function RequestAsync(request As RequestAction) As Task(Of ResponseAction)
+  overload: NMF.Glsp.Contracts.IGlspSession.RequestAsync*
+references:
+- uid: NMF.Glsp.Contracts
+  commentId: N:NMF.Glsp.Contracts
+  href: NMF.html
+  name: NMF.Glsp.Contracts
+  nameWithType: NMF.Glsp.Contracts
+  fullName: NMF.Glsp.Contracts
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+- uid: NMF.Glsp.Contracts.IGlspSession.Root*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Root
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Root
+  name: Root
+  nameWithType: IGlspSession.Root
+  fullName: NMF.Glsp.Contracts.IGlspSession.Root
+- uid: NMF.Glsp.Graph.GGraph
+  commentId: T:NMF.Glsp.Graph.GGraph
+  parent: NMF.Glsp.Graph
+  href: NMF.Glsp.Graph.GGraph.html
+  name: GGraph
+  nameWithType: GGraph
+  fullName: NMF.Glsp.Graph.GGraph
+- uid: NMF.Glsp.Graph
+  commentId: N:NMF.Glsp.Graph
+  href: NMF.html
+  name: NMF.Glsp.Graph
+  nameWithType: NMF.Glsp.Graph
+  fullName: NMF.Glsp.Graph
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Graph
+    name: Graph
+    href: NMF.Glsp.Graph.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Graph
+    name: Graph
+    href: NMF.Glsp.Graph.html
+- uid: NMF.Glsp.Contracts.IGlspSession.Language*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Language
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Language
+  name: Language
+  nameWithType: IGlspSession.Language
+  fullName: NMF.Glsp.Contracts.IGlspSession.Language
+- uid: NMF.Glsp.Language.GraphicalLanguage
+  commentId: T:NMF.Glsp.Language.GraphicalLanguage
+  parent: NMF.Glsp.Language
+  href: NMF.Glsp.Language.GraphicalLanguage.html
+  name: GraphicalLanguage
+  nameWithType: GraphicalLanguage
+  fullName: NMF.Glsp.Language.GraphicalLanguage
+- uid: NMF.Glsp.Language
+  commentId: N:NMF.Glsp.Language
+  href: NMF.html
+  name: NMF.Glsp.Language
+  nameWithType: NMF.Glsp.Language
+  fullName: NMF.Glsp.Language
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Language
+    name: Language
+    href: NMF.Glsp.Language.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Language
+    name: Language
+    href: NMF.Glsp.Language.html
+- uid: NMF.Glsp.Contracts.IGlspSession.Trace*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Trace
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Trace
+  name: Trace
+  nameWithType: IGlspSession.Trace
+  fullName: NMF.Glsp.Contracts.IGlspSession.Trace
+- uid: NMF.Glsp.Processing.ISkeletonTrace
+  commentId: T:NMF.Glsp.Processing.ISkeletonTrace
+  parent: NMF.Glsp.Processing
+  href: NMF.Glsp.Processing.ISkeletonTrace.html
+  name: ISkeletonTrace
+  nameWithType: ISkeletonTrace
+  fullName: NMF.Glsp.Processing.ISkeletonTrace
+- uid: NMF.Glsp.Processing
+  commentId: N:NMF.Glsp.Processing
+  href: NMF.html
+  name: NMF.Glsp.Processing
+  nameWithType: NMF.Glsp.Processing
+  fullName: NMF.Glsp.Processing
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Processing
+    name: Processing
+    href: NMF.Glsp.Processing.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Processing
+    name: Processing
+    href: NMF.Glsp.Processing.html
+- uid: NMF.Glsp.Contracts.IGlspSession.SelectedElements*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.SelectedElements
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_SelectedElements
+  name: SelectedElements
+  nameWithType: IGlspSession.SelectedElements
+  fullName: NMF.Glsp.Contracts.IGlspSession.SelectedElements
+- uid: NMF.Glsp.Graph.GElement[]
+  isExternal: true
+  href: NMF.Glsp.Graph.GElement.html
+  name: GElement[]
+  nameWithType: GElement[]
+  fullName: NMF.Glsp.Graph.GElement[]
+  nameWithType.vb: GElement()
+  fullName.vb: NMF.Glsp.Graph.GElement()
+  name.vb: GElement()
+  spec.csharp:
+  - uid: NMF.Glsp.Graph.GElement
+    name: GElement
+    href: NMF.Glsp.Graph.GElement.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.Glsp.Graph.GElement
+    name: GElement
+    href: NMF.Glsp.Graph.GElement.html
+  - name: (
+  - name: )
+- uid: NMF.Glsp.Contracts.IGlspSession.IsDirty*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.IsDirty
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_IsDirty
+  name: IsDirty
+  nameWithType: IGlspSession.IsDirty
+  fullName: NMF.Glsp.Contracts.IGlspSession.IsDirty
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.Glsp.Contracts.IGlspSession.SendToClient*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.SendToClient
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_SendToClient_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  name: SendToClient
+  nameWithType: IGlspSession.SendToClient
+  fullName: NMF.Glsp.Contracts.IGlspSession.SendToClient
+- uid: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  commentId: T:NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  parent: NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.Glsp.Protocol.BaseProtocol.BaseAction.html
+  name: BaseAction
+  nameWithType: BaseAction
+  fullName: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+- uid: NMF.Glsp.Protocol.BaseProtocol
+  commentId: N:NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.html
+  name: NMF.Glsp.Protocol.BaseProtocol
+  nameWithType: NMF.Glsp.Protocol.BaseProtocol
+  fullName: NMF.Glsp.Protocol.BaseProtocol
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+- uid: NMF.Glsp.Contracts.IGlspSession.Synchronize*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Synchronize
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Synchronize
+  name: Synchronize
+  nameWithType: IGlspSession.Synchronize
+  fullName: NMF.Glsp.Contracts.IGlspSession.Synchronize
+- uid: NMF.Glsp.Contracts.IGlspSession.CanUndo*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.CanUndo
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_CanUndo
+  name: CanUndo
+  nameWithType: IGlspSession.CanUndo
+  fullName: NMF.Glsp.Contracts.IGlspSession.CanUndo
+- uid: NMF.Glsp.Contracts.IGlspSession.CanRedo*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.CanRedo
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_CanRedo
+  name: CanRedo
+  nameWithType: IGlspSession.CanRedo
+  fullName: NMF.Glsp.Contracts.IGlspSession.CanRedo
+- uid: NMF.Glsp.Contracts.IGlspSession.Undo*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Undo
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Undo
+  name: Undo
+  nameWithType: IGlspSession.Undo
+  fullName: NMF.Glsp.Contracts.IGlspSession.Undo
+- uid: NMF.Glsp.Contracts.IGlspSession.Redo*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Redo
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Redo
+  name: Redo
+  nameWithType: IGlspSession.Redo
+  fullName: NMF.Glsp.Contracts.IGlspSession.Redo
+- uid: NMF.Glsp.Contracts.IGlspSession.InitializeAsync*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.InitializeAsync
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_InitializeAsync_System_Uri_
+  name: InitializeAsync
+  nameWithType: IGlspSession.InitializeAsync
+  fullName: NMF.Glsp.Contracts.IGlspSession.InitializeAsync
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NMF.Glsp.Contracts.IGlspSession.Save*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.Save
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_Save_System_Uri_
+  name: Save
+  nameWithType: IGlspSession.Save
+  fullName: NMF.Glsp.Contracts.IGlspSession.Save
+- uid: NMF.Glsp.Contracts.IGlspSession.RequestAsync*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspSession.RequestAsync
+  href: NMF.Glsp.Contracts.IGlspSession.html#NMF_Glsp_Contracts_IGlspSession_RequestAsync_NMF_Glsp_Protocol_BaseProtocol_RequestAction_
+  name: RequestAsync
+  nameWithType: IGlspSession.RequestAsync
+  fullName: NMF.Glsp.Contracts.IGlspSession.RequestAsync
+- uid: NMF.Glsp.Protocol.BaseProtocol.RequestAction
+  commentId: T:NMF.Glsp.Protocol.BaseProtocol.RequestAction
+  parent: NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.Glsp.Protocol.BaseProtocol.RequestAction.html
+  name: RequestAction
+  nameWithType: RequestAction
+  fullName: NMF.Glsp.Protocol.BaseProtocol.RequestAction
+- uid: System.Threading.Tasks.Task{NMF.Glsp.Protocol.BaseProtocol.ResponseAction}
+  commentId: T:System.Threading.Tasks.Task{NMF.Glsp.Protocol.BaseProtocol.ResponseAction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ResponseAction>
+  nameWithType: Task<ResponseAction>
+  fullName: System.Threading.Tasks.Task<NMF.Glsp.Protocol.BaseProtocol.ResponseAction>
+  nameWithType.vb: Task(Of ResponseAction)
+  fullName.vb: System.Threading.Tasks.Task(Of NMF.Glsp.Protocol.BaseProtocol.ResponseAction)
+  name.vb: Task(Of ResponseAction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ResponseAction
+    name: ResponseAction
+    href: NMF.Glsp.Protocol.BaseProtocol.ResponseAction.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ResponseAction
+    name: ResponseAction
+    href: NMF.Glsp.Protocol.BaseProtocol.ResponseAction.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )

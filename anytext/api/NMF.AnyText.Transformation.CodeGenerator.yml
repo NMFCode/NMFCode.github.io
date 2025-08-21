@@ -1,0 +1,609 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Transformation.CodeGenerator
+  commentId: T:NMF.AnyText.Transformation.CodeGenerator
+  id: CodeGenerator
+  parent: NMF.AnyText.Transformation
+  children:
+  - NMF.AnyText.Transformation.CodeGenerator.Compile(NMF.AnyText.Metamodel.IGrammar,NMF.AnyText.Transformation.CodeGeneratorSettings)
+  - NMF.AnyText.Transformation.CodeGenerator.CreateNamespace(NMF.AnyText.Metamodel.IGrammar,System.Collections.Generic.IEnumerable{System.String})
+  langs:
+  - csharp
+  - vb
+  name: CodeGenerator
+  nameWithType: CodeGenerator
+  fullName: NMF.AnyText.Transformation.CodeGenerator
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CodeGenerator
+    path: src/AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+    startLine: 17
+  assemblies:
+  - NMF.AnyText.Generator
+  namespace: NMF.AnyText.Transformation
+  summary: Facade class for the Metamodel code generator
+  example: []
+  syntax:
+    content: public static class CodeGenerator
+    content.vb: Public Module CodeGenerator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace(NMF.AnyText.Metamodel.IGrammar,System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:NMF.AnyText.Transformation.CodeGenerator.CreateNamespace(NMF.AnyText.Metamodel.IGrammar,System.Collections.Generic.IEnumerable{System.String})
+  id: CreateNamespace(NMF.AnyText.Metamodel.IGrammar,System.Collections.Generic.IEnumerable{System.String})
+  parent: NMF.AnyText.Transformation.CodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: CreateNamespace(IGrammar, IEnumerable<string>)
+  nameWithType: CodeGenerator.CreateNamespace(IGrammar, IEnumerable<string>)
+  fullName: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace(NMF.AnyText.Metamodel.IGrammar, System.Collections.Generic.IEnumerable<string>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateNamespace
+    path: src/AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+    startLine: 33
+  assemblies:
+  - NMF.AnyText.Generator
+  namespace: NMF.AnyText.Transformation
+  summary: Creates a namespace for the given grammar model
+  example: []
+  syntax:
+    content: public static INamespace CreateNamespace(IGrammar grammar, IEnumerable<string> potentialIdentifiers = null)
+    parameters:
+    - id: grammar
+      type: NMF.AnyText.Metamodel.IGrammar
+      description: the grammar model
+    - id: potentialIdentifiers
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: A collection of potential parameter names or null to the default
+    return:
+      type: NMF.Models.Meta.INamespace
+      description: the metamodel extracted from the grammar
+    content.vb: Public Shared Function CreateNamespace(grammar As IGrammar, potentialIdentifiers As IEnumerable(Of String) = Nothing) As INamespace
+  overload: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace*
+  nameWithType.vb: CodeGenerator.CreateNamespace(IGrammar, IEnumerable(Of String))
+  fullName.vb: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace(NMF.AnyText.Metamodel.IGrammar, System.Collections.Generic.IEnumerable(Of String))
+  name.vb: CreateNamespace(IGrammar, IEnumerable(Of String))
+- uid: NMF.AnyText.Transformation.CodeGenerator.Compile(NMF.AnyText.Metamodel.IGrammar,NMF.AnyText.Transformation.CodeGeneratorSettings)
+  commentId: M:NMF.AnyText.Transformation.CodeGenerator.Compile(NMF.AnyText.Metamodel.IGrammar,NMF.AnyText.Transformation.CodeGeneratorSettings)
+  id: Compile(NMF.AnyText.Metamodel.IGrammar,NMF.AnyText.Transformation.CodeGeneratorSettings)
+  parent: NMF.AnyText.Transformation.CodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: Compile(IGrammar, CodeGeneratorSettings)
+  nameWithType: CodeGenerator.Compile(IGrammar, CodeGeneratorSettings)
+  fullName: NMF.AnyText.Transformation.CodeGenerator.Compile(NMF.AnyText.Metamodel.IGrammar, NMF.AnyText.Transformation.CodeGeneratorSettings)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Compile
+    path: src/AnyText/AnyText.Generator/Transformation/CodeGenerator.cs
+    startLine: 45
+  assemblies:
+  - NMF.AnyText.Generator
+  namespace: NMF.AnyText.Transformation
+  summary: Compiles the given grammar into a code model
+  example: []
+  syntax:
+    content: public static CodeCompileUnit Compile(IGrammar grammar, CodeGeneratorSettings settings)
+    parameters:
+    - id: grammar
+      type: NMF.AnyText.Metamodel.IGrammar
+      description: the grammar model that should be compiled
+    - id: settings
+      type: NMF.AnyText.Transformation.CodeGeneratorSettings
+      description: code generator settings
+    return:
+      type: System.CodeDom.CodeCompileUnit
+      description: A code model with the generated code
+    content.vb: Public Shared Function Compile(grammar As IGrammar, settings As CodeGeneratorSettings) As CodeCompileUnit
+  overload: NMF.AnyText.Transformation.CodeGenerator.Compile*
+references:
+- uid: NMF.AnyText.Transformation
+  commentId: N:NMF.AnyText.Transformation
+  href: NMF.html
+  name: NMF.AnyText.Transformation
+  nameWithType: NMF.AnyText.Transformation
+  fullName: NMF.AnyText.Transformation
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Transformation
+    name: Transformation
+    href: NMF.AnyText.Transformation.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Transformation
+    name: Transformation
+    href: NMF.AnyText.Transformation.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace*
+  commentId: Overload:NMF.AnyText.Transformation.CodeGenerator.CreateNamespace
+  href: NMF.AnyText.Transformation.CodeGenerator.html#NMF_AnyText_Transformation_CodeGenerator_CreateNamespace_NMF_AnyText_Metamodel_IGrammar_System_Collections_Generic_IEnumerable_System_String__
+  name: CreateNamespace
+  nameWithType: CodeGenerator.CreateNamespace
+  fullName: NMF.AnyText.Transformation.CodeGenerator.CreateNamespace
+- uid: NMF.AnyText.Metamodel.IGrammar
+  commentId: T:NMF.AnyText.Metamodel.IGrammar
+  parent: NMF.AnyText.Metamodel
+  href: NMF.AnyText.Metamodel.IGrammar.html
+  name: IGrammar
+  nameWithType: IGrammar
+  fullName: NMF.AnyText.Metamodel.IGrammar
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.Meta.INamespace
+  commentId: T:NMF.Models.Meta.INamespace
+  parent: NMF.Models.Meta
+  name: INamespace
+  nameWithType: INamespace
+  fullName: NMF.Models.Meta.INamespace
+- uid: NMF.AnyText.Metamodel
+  commentId: N:NMF.AnyText.Metamodel
+  href: NMF.html
+  name: NMF.AnyText.Metamodel
+  nameWithType: NMF.AnyText.Metamodel
+  fullName: NMF.AnyText.Metamodel
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Metamodel
+    name: Metamodel
+    href: NMF.AnyText.Metamodel.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Metamodel
+    name: Metamodel
+    href: NMF.AnyText.Metamodel.html
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.Models.Meta
+  commentId: N:NMF.Models.Meta
+  name: NMF.Models.Meta
+  nameWithType: NMF.Models.Meta
+  fullName: NMF.Models.Meta
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+- uid: NMF.AnyText.Transformation.CodeGenerator.Compile*
+  commentId: Overload:NMF.AnyText.Transformation.CodeGenerator.Compile
+  href: NMF.AnyText.Transformation.CodeGenerator.html#NMF_AnyText_Transformation_CodeGenerator_Compile_NMF_AnyText_Metamodel_IGrammar_NMF_AnyText_Transformation_CodeGeneratorSettings_
+  name: Compile
+  nameWithType: CodeGenerator.Compile
+  fullName: NMF.AnyText.Transformation.CodeGenerator.Compile
+- uid: NMF.AnyText.Transformation.CodeGeneratorSettings
+  commentId: T:NMF.AnyText.Transformation.CodeGeneratorSettings
+  parent: NMF.AnyText.Transformation
+  href: NMF.AnyText.Transformation.CodeGeneratorSettings.html
+  name: CodeGeneratorSettings
+  nameWithType: CodeGeneratorSettings
+  fullName: NMF.AnyText.Transformation.CodeGeneratorSettings
+- uid: System.CodeDom.CodeCompileUnit
+  commentId: T:System.CodeDom.CodeCompileUnit
+  parent: System.CodeDom
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.codedom.codecompileunit
+  name: CodeCompileUnit
+  nameWithType: CodeCompileUnit
+  fullName: System.CodeDom.CodeCompileUnit
+- uid: System.CodeDom
+  commentId: N:System.CodeDom
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.CodeDom
+  nameWithType: System.CodeDom
+  fullName: System.CodeDom
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.CodeDom
+    name: CodeDom
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.CodeDom
+    name: CodeDom
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.codedom

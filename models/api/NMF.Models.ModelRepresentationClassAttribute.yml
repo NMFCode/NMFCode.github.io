@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/ModelRepresentationClassAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelRepresentationClassAttribute
     path: src/Models/Models/ModelRepresentationClassAttribute.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Declares that the given type represents a type from the metamodel
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Class|AttributeTargets.Enum|AttributeTargets.Interface)]
@@ -100,19 +102,22 @@ items:
   source:
     remote:
       path: Models/Models/ModelRepresentationClassAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/ModelRepresentationClassAttribute.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Declares that the given type represents a type from the metamodel
+  example: []
   syntax:
     content: public ModelRepresentationClassAttribute(string uriString)
     parameters:
     - id: uriString
       type: System.String
+      description: The URI of the type represented
     content.vb: Public Sub New(uriString As String)
   overload: NMF.Models.ModelRepresentationClassAttribute.#ctor*
   nameWithType.vb: ModelRepresentationClassAttribute.New(String)
@@ -132,14 +137,16 @@ items:
   source:
     remote:
       path: Models/Models/ModelRepresentationClassAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UriString
     path: src/Models/Models/ModelRepresentationClassAttribute.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Gets the URI of the type represented by this class
+  example: []
   syntax:
     content: public string UriString { get; }
     parameters: []

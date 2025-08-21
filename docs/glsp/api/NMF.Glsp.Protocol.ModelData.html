@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace NMF.Glsp.Protocol.ModelData </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace NMF.Glsp.Protocol.ModelData ">
+    
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NMF.Glsp.Protocol.ModelData">
+
+  <h1 id="NMF_Glsp_Protocol_ModelData" data-uid="NMF.Glsp.Protocol.ModelData" class="text-break">Namespace NMF.Glsp.Protocol.ModelData</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.ExportSvgAction.html">ExportSvgAction</a></h4>
+      <section><p>The client sends an ExportSvgAction to indicate that the diagram, which represents the current model state,
+should be exported in SVG format. The action only provides the diagram SVG as plain string. The expected
+result of executing an ExportSvgAction is a new file in SVG-format on the underlying filesystem. However,
+other details like the target destination, concrete file name, file extension etc. are not specified in the
+protocol. So it is the responsibility of the action handler to process this information accordingly and
+export the result to the underlying filesystem.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.ModelEditModes.html">ModelEditModes</a></h4>
+      <section><p>Container for edit modes</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.RequestExportSvgAction.html">RequestExportSvgAction</a></h4>
+      <section><p>A RequestExportSvgAction is sent by the client (or the server) to initiate the SVG export of the current diagram.
+The handler of this action is expected to retrieve the diagram SVG and should send an ExportSvgAction as response.
+Typically the ExportSvgAction is handled directly on client side.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.RequestModelAction.html">RequestModelAction</a></h4>
+      <section><p>Sent from the client to the server in order to request a graphical model. Usually this is the first message
+that is sent from the client to the server, so it is also used to initiate the communication. The response
+is a SetModelAction or an UpdateModelAction.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.SaveModelAction.html">SaveModelAction</a></h4>
+      <section><p>Sent from the client to the server in order to persist the current model state back to the
+source model. A new fileUri can be defined to save the model to a new destination different
+from its original source model.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.SetDirtyAction.html">SetDirtyAction</a></h4>
+      <section><p>The server sends a SetDirtyStateAction to indicate to the client that the current model state on the server
+does not correspond to the persisted model state of the source model. A client may ignore such an action or
+use it to indicate to the user the dirty state.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.SetEditModeAction.html">SetEditModeAction</a></h4>
+      <section><p>Sent from the client to the server to set the model into a specific editor mode, allowing the
+server to react to certain requests differently depending on the mode. A client may also listen
+to this action to prevent certain user interactions preemptively.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.SetModelAction.html">SetModelAction</a></h4>
+      <section><p>ent from the server to the client in order to set the model. If a model is already present, it is replaced.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.SourceModelChangedAction.html">SourceModelChangedAction</a></h4>
+      <section><p>Sent from the server to the client in order to indicate that the source model has changed.
+The source model denotes the data source from which the diagram has been originally derived
+(such as a file, a database, etc.). Typically clients would react to such an action by asking
+the user whether she wants to reload the diagram or ignore the changes and continue editing.
+If the editor has no changes (i.e. is not dirty), clients may also choose to directly refresh
+the editor by sending a RequestModelAction.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.ModelData.UpdateModelAction.html">UpdateModelAction</a></h4>
+      <section><p>Sent from the server to the client in order to update the model. If no model is present yet, this behaves
+the same as a SetModelAction. The transition from the old model to the new one can be animated.</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1521 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Glsp.Server.GlspServer
+  commentId: T:NMF.Glsp.Server.GlspServer
+  id: GlspServer
+  parent: NMF.Glsp.Server
+  children:
+  - NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,NMF.Glsp.Contracts.IClientSessionProvider[])
+  - NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider})
+  - NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  - NMF.Glsp.Server.GlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  - NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  - NMF.Glsp.Server.GlspServer.Process
+  - NMF.Glsp.Server.GlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  - NMF.Glsp.Server.GlspServer.ShutdownAsync
+  langs:
+  - csharp
+  - vb
+  name: GlspServer
+  nameWithType: GlspServer
+  fullName: NMF.Glsp.Server.GlspServer
+  type: Class
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GlspServer
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 15
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Denotes the default implementation of a GLSP server
+  example: []
+  syntax:
+    content: 'public class GlspServer : IGlspServer'
+    content.vb: Public Class GlspServer Implements IGlspServer
+  inheritance:
+  - System.Object
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.Glsp.Server.GlspServer.Process
+  commentId: E:NMF.Glsp.Server.GlspServer.Process
+  id: Process
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: Process
+  nameWithType: GlspServer.Process
+  fullName: NMF.Glsp.Server.GlspServer.Process
+  type: Event
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Process
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 22
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Gets raised when the client should process an action message
+  example: []
+  syntax:
+    content: public event EventHandler<ActionMessage> Process
+    return:
+      type: System.EventHandler{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+    content.vb: Public Event Process As EventHandler(Of ActionMessage)
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.Process
+- uid: NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,NMF.Glsp.Contracts.IClientSessionProvider[])
+  commentId: M:NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,NMF.Glsp.Contracts.IClientSessionProvider[])
+  id: '#ctor(NMF.Models.Services.IModelServer,NMF.Glsp.Contracts.IClientSessionProvider[])'
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: GlspServer(IModelServer, params IClientSessionProvider[])
+  nameWithType: GlspServer.GlspServer(IModelServer, params IClientSessionProvider[])
+  fullName: NMF.Glsp.Server.GlspServer.GlspServer(NMF.Models.Services.IModelServer, params NMF.Glsp.Contracts.IClientSessionProvider[])
+  type: Constructor
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 29
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public GlspServer(IModelServer modelServer, params IClientSessionProvider[] sessionProviders)
+    parameters:
+    - id: modelServer
+      type: NMF.Models.Services.IModelServer
+      description: the model server that should be used to serve requests
+    - id: sessionProviders
+      type: NMF.Glsp.Contracts.IClientSessionProvider[]
+      description: A collection of session providers
+    content.vb: Public Sub New(modelServer As IModelServer, ParamArray sessionProviders As IClientSessionProvider())
+  overload: NMF.Glsp.Server.GlspServer.#ctor*
+  nameWithType.vb: GlspServer.New(IModelServer, ParamArray IClientSessionProvider())
+  fullName.vb: NMF.Glsp.Server.GlspServer.New(NMF.Models.Services.IModelServer, ParamArray NMF.Glsp.Contracts.IClientSessionProvider())
+  name.vb: New(IModelServer, ParamArray IClientSessionProvider())
+- uid: NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider})
+  commentId: M:NMF.Glsp.Server.GlspServer.#ctor(NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider})
+  id: '#ctor(NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider})'
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: GlspServer(IModelServer, IEnumerable<IClientSessionProvider>)
+  nameWithType: GlspServer.GlspServer(IModelServer, IEnumerable<IClientSessionProvider>)
+  fullName: NMF.Glsp.Server.GlspServer.GlspServer(NMF.Models.Services.IModelServer, System.Collections.Generic.IEnumerable<NMF.Glsp.Contracts.IClientSessionProvider>)
+  type: Constructor
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 39
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public GlspServer(IModelServer modelServer, IEnumerable<IClientSessionProvider> sessionProviders)
+    parameters:
+    - id: modelServer
+      type: NMF.Models.Services.IModelServer
+      description: the model server that should be used to serve requests
+    - id: sessionProviders
+      type: System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider}
+      description: A collection of session providers
+    content.vb: Public Sub New(modelServer As IModelServer, sessionProviders As IEnumerable(Of IClientSessionProvider))
+  overload: NMF.Glsp.Server.GlspServer.#ctor*
+  nameWithType.vb: GlspServer.New(IModelServer, IEnumerable(Of IClientSessionProvider))
+  fullName.vb: NMF.Glsp.Server.GlspServer.New(NMF.Models.Services.IModelServer, System.Collections.Generic.IEnumerable(Of NMF.Glsp.Contracts.IClientSessionProvider))
+  name.vb: New(IModelServer, IEnumerable(Of IClientSessionProvider))
+- uid: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  id: DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: DisposeClientSessionAsync(string, IDictionary<string, object>)
+  nameWithType: GlspServer.DisposeClientSessionAsync(string, IDictionary<string, object>)
+  fullName: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync(string, System.Collections.Generic.IDictionary<string, object>)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DisposeClientSessionAsync
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 46
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: >-
+    Sends a `disposeClientSession` request to the server. This request has to be sent at the end of client session lifecycle
+
+    e.g. when an editor widget is closed.
+  example: []
+  syntax:
+    content: public Task DisposeClientSessionAsync(string clientSessionId, IDictionary<string, object> args = null)
+    parameters:
+    - id: clientSessionId
+      type: System.String
+      description: Unique identifier of the client session that should be disposed.
+    - id: args
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+      description: Additional custom arguments.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A promise that resolves if the disposal was successful
+    content.vb: Public Function DisposeClientSessionAsync(clientSessionId As String, args As IDictionary(Of String, Object) = Nothing) As Task
+  overload: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync*
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  nameWithType.vb: GlspServer.DisposeClientSessionAsync(String, IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync(String, System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: DisposeClientSessionAsync(String, IDictionary(Of String, Object))
+- uid: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  id: InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: InitializeClientSessionAsync(string, string, string[], IDictionary<string, object>)
+  nameWithType: GlspServer.InitializeClientSessionAsync(string, string, string[], IDictionary<string, object>)
+  fullName: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync(string, string, string[], System.Collections.Generic.IDictionary<string, object>)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: InitializeClientSessionAsync
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 56
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: >-
+    Send an `initializeClientSession` request to the server. One client application may open several session.
+
+    Each individual diagram on the client side counts as one session and has to provide
+
+    a unique clientId.
+  example: []
+  syntax:
+    content: public Task InitializeClientSessionAsync(string clientSessionId, string diagramType, string[] clientActionKinds = null, IDictionary<string, object> args = null)
+    parameters:
+    - id: clientSessionId
+      type: System.String
+      description: Unique identifier for the new client session
+    - id: diagramType
+      type: System.String
+      description: Unique identifier of the diagram type for which the session should be configured.
+    - id: clientActionKinds
+      type: System.String[]
+      description: >-
+        The set of action kinds that can be handled by the client.
+             Used by the server to know which dispatched actions should be forwarded to the client.
+    - id: args
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+      description: Additional custom arguments.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A promise that resolves if the initialization was successful
+    content.vb: Public Function InitializeClientSessionAsync(clientSessionId As String, diagramType As String, clientActionKinds As String() = Nothing, args As IDictionary(Of String, Object) = Nothing) As Task
+  overload: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync*
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  nameWithType.vb: GlspServer.InitializeClientSessionAsync(String, String, String(), IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync(String, String, String(), System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: InitializeClientSessionAsync(String, String, String(), IDictionary(Of String, Object))
+- uid: NMF.Glsp.Server.GlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  commentId: M:NMF.Glsp.Server.GlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  id: ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: ProcessAsync(string, BaseAction)
+  nameWithType: GlspServer.ProcessAsync(string, BaseAction)
+  fullName: NMF.Glsp.Server.GlspServer.ProcessAsync(string, NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ProcessAsync
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 78
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Send an action message to the server.
+  example: []
+  syntax:
+    content: public Task ProcessAsync(string clientId, BaseAction action)
+    parameters:
+    - id: clientId
+      type: System.String
+      description: the client ID
+    - id: action
+      type: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+      description: The message
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ProcessAsync(clientId As String, action As BaseAction) As Task
+  overload: NMF.Glsp.Server.GlspServer.ProcessAsync*
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  nameWithType.vb: GlspServer.ProcessAsync(String, BaseAction)
+  fullName.vb: NMF.Glsp.Server.GlspServer.ProcessAsync(String, NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  name.vb: ProcessAsync(String, BaseAction)
+- uid: NMF.Glsp.Server.GlspServer.ShutdownAsync
+  commentId: M:NMF.Glsp.Server.GlspServer.ShutdownAsync
+  id: ShutdownAsync
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: ShutdownAsync()
+  nameWithType: GlspServer.ShutdownAsync()
+  fullName: NMF.Glsp.Server.GlspServer.ShutdownAsync()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ShutdownAsync
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 91
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: Send a `shutdown` notification to the server.
+  example: []
+  syntax:
+    content: public Task ShutdownAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ShutdownAsync() As Task
+  overload: NMF.Glsp.Server.GlspServer.ShutdownAsync*
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.ShutdownAsync
+- uid: NMF.Glsp.Server.GlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Server.GlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  id: InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Server.GlspServer
+  langs:
+  - csharp
+  - vb
+  name: InitializeAsync(string, string, IDictionary<string, object>)
+  nameWithType: GlspServer.InitializeAsync(string, string, IDictionary<string, object>)
+  fullName: NMF.Glsp.Server.GlspServer.InitializeAsync(string, string, System.Collections.Generic.IDictionary<string, object>)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Server/GlspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: InitializeAsync
+    path: src/Glsp/Glsp/Server/GlspServer.cs
+    startLine: 102
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Server
+  summary: >-
+    Send an `initialize` request to the server. The server needs to be initialized in order to accept and
+
+    process other requests and notifications. The {@link InitializeResult} ist cached and can be retrieved
+
+    via the {@link GLSPClient.initializeResult} property.
+
+    Only the first method invocation actually sends a request to the server. Subsequent invocations simply
+
+    return the cached result.
+  example: []
+  syntax:
+    content: public Task<InitializeResult> InitializeAsync(string applicationId, string protocolVersion, IDictionary<string, object> args = null)
+    parameters:
+    - id: applicationId
+      type: System.String
+      description: ''
+    - id: protocolVersion
+      type: System.String
+      description: ''
+    - id: args
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{NMF.Glsp.Protocol.Lifecycle.InitializeResult}
+      description: A promise of the {@link InitializeResult}.
+    content.vb: Public Function InitializeAsync(applicationId As String, protocolVersion As String, args As IDictionary(Of String, Object) = Nothing) As Task(Of InitializeResult)
+  overload: NMF.Glsp.Server.GlspServer.InitializeAsync*
+  implements:
+  - NMF.Glsp.Contracts.IGlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  nameWithType.vb: GlspServer.InitializeAsync(String, String, IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Server.GlspServer.InitializeAsync(String, String, System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: InitializeAsync(String, String, IDictionary(Of String, Object))
+references:
+- uid: NMF.Glsp.Server
+  commentId: N:NMF.Glsp.Server
+  href: NMF.html
+  name: NMF.Glsp.Server
+  nameWithType: NMF.Glsp.Server
+  fullName: NMF.Glsp.Server
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Server
+    name: Server
+    href: NMF.Glsp.Server.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Server
+    name: Server
+    href: NMF.Glsp.Server.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NMF.Glsp.Contracts.IGlspServer
+  commentId: T:NMF.Glsp.Contracts.IGlspServer
+  parent: NMF.Glsp.Contracts
+  href: NMF.Glsp.Contracts.IGlspServer.html
+  name: IGlspServer
+  nameWithType: IGlspServer
+  fullName: NMF.Glsp.Contracts.IGlspServer
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.Glsp.Contracts
+  commentId: N:NMF.Glsp.Contracts
+  href: NMF.html
+  name: NMF.Glsp.Contracts
+  nameWithType: NMF.Glsp.Contracts
+  fullName: NMF.Glsp.Contracts
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+- uid: NMF.Glsp.Contracts.IGlspServer.Process
+  commentId: E:NMF.Glsp.Contracts.IGlspServer.Process
+  parent: NMF.Glsp.Contracts.IGlspServer
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_Process
+  name: Process
+  nameWithType: IGlspServer.Process
+  fullName: NMF.Glsp.Contracts.IGlspServer.Process
+- uid: System.EventHandler{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+  commentId: T:System.EventHandler{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<ActionMessage>
+  nameWithType: EventHandler<ActionMessage>
+  fullName: System.EventHandler<NMF.Glsp.Protocol.BaseProtocol.ActionMessage>
+  nameWithType.vb: EventHandler(Of ActionMessage)
+  fullName.vb: System.EventHandler(Of NMF.Glsp.Protocol.BaseProtocol.ActionMessage)
+  name.vb: EventHandler(Of ActionMessage)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ActionMessage
+    name: ActionMessage
+    href: NMF.Glsp.Protocol.BaseProtocol.ActionMessage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ActionMessage
+    name: ActionMessage
+    href: NMF.Glsp.Protocol.BaseProtocol.ActionMessage.html
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
+- uid: NMF.Glsp.Server.GlspServer.#ctor*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.#ctor
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer__ctor_NMF_Models_Services_IModelServer_NMF_Glsp_Contracts_IClientSessionProvider___
+  name: GlspServer
+  nameWithType: GlspServer.GlspServer
+  fullName: NMF.Glsp.Server.GlspServer.GlspServer
+  nameWithType.vb: GlspServer.New
+  fullName.vb: NMF.Glsp.Server.GlspServer.New
+  name.vb: New
+- uid: NMF.Models.Services.IModelServer
+  commentId: T:NMF.Models.Services.IModelServer
+  parent: NMF.Models.Services
+  name: IModelServer
+  nameWithType: IModelServer
+  fullName: NMF.Models.Services.IModelServer
+- uid: NMF.Glsp.Contracts.IClientSessionProvider[]
+  isExternal: true
+  href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  name: IClientSessionProvider[]
+  nameWithType: IClientSessionProvider[]
+  fullName: NMF.Glsp.Contracts.IClientSessionProvider[]
+  nameWithType.vb: IClientSessionProvider()
+  fullName.vb: NMF.Glsp.Contracts.IClientSessionProvider()
+  name.vb: IClientSessionProvider()
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider
+    name: IClientSessionProvider
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider
+    name: IClientSessionProvider
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  - name: (
+  - name: )
+- uid: NMF.Models.Services
+  commentId: N:NMF.Models.Services
+  name: NMF.Models.Services
+  nameWithType: NMF.Models.Services
+  fullName: NMF.Models.Services
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+- uid: System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.Glsp.Contracts.IClientSessionProvider}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IClientSessionProvider>
+  nameWithType: IEnumerable<IClientSessionProvider>
+  fullName: System.Collections.Generic.IEnumerable<NMF.Glsp.Contracts.IClientSessionProvider>
+  nameWithType.vb: IEnumerable(Of IClientSessionProvider)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.Glsp.Contracts.IClientSessionProvider)
+  name.vb: IEnumerable(Of IClientSessionProvider)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider
+    name: IClientSessionProvider
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Contracts.IClientSessionProvider
+    name: IClientSessionProvider
+    href: NMF.Glsp.Contracts.IClientSessionProvider.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer_DisposeClientSessionAsync_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: DisposeClientSessionAsync
+  nameWithType: GlspServer.DisposeClientSessionAsync
+  fullName: NMF.Glsp.Server.GlspServer.DisposeClientSessionAsync
+- uid: NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Contracts.IGlspServer
+  isExternal: true
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_DisposeClientSessionAsync_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: DisposeClientSessionAsync(string, IDictionary<string, object>)
+  nameWithType: IGlspServer.DisposeClientSessionAsync(string, IDictionary<string, object>)
+  fullName: NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(string, System.Collections.Generic.IDictionary<string, object>)
+  nameWithType.vb: IGlspServer.DisposeClientSessionAsync(String, IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(String, System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: DisposeClientSessionAsync(String, IDictionary(Of String, Object))
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: DisposeClientSessionAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_DisposeClientSessionAsync_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IGlspServer.DisposeClientSessionAsync(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: DisposeClientSessionAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_DisposeClientSessionAsync_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, object>
+  nameWithType: IDictionary<string, object>
+  fullName: System.Collections.Generic.IDictionary<string, object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer_InitializeClientSessionAsync_System_String_System_String_System_String___System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: InitializeClientSessionAsync
+  nameWithType: GlspServer.InitializeClientSessionAsync
+  fullName: NMF.Glsp.Server.GlspServer.InitializeClientSessionAsync
+- uid: NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Contracts.IGlspServer
+  isExternal: true
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeClientSessionAsync_System_String_System_String_System_String___System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: InitializeClientSessionAsync(string, string, string[], IDictionary<string, object>)
+  nameWithType: IGlspServer.InitializeClientSessionAsync(string, string, string[], IDictionary<string, object>)
+  fullName: NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(string, string, string[], System.Collections.Generic.IDictionary<string, object>)
+  nameWithType.vb: IGlspServer.InitializeClientSessionAsync(String, String, String(), IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(String, String, String(), System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: InitializeClientSessionAsync(String, String, String(), IDictionary(Of String, Object))
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: InitializeClientSessionAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeClientSessionAsync_System_String_System_String_System_String___System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IGlspServer.InitializeClientSessionAsync(System.String,System.String,System.String[],System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: InitializeClientSessionAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeClientSessionAsync_System_String_System_String_System_String___System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: NMF.Glsp.Server.GlspServer.ProcessAsync*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.ProcessAsync
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer_ProcessAsync_System_String_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  name: ProcessAsync
+  nameWithType: GlspServer.ProcessAsync
+  fullName: NMF.Glsp.Server.GlspServer.ProcessAsync
+- uid: NMF.Glsp.Contracts.IGlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  commentId: M:NMF.Glsp.Contracts.IGlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  parent: NMF.Glsp.Contracts.IGlspServer
+  isExternal: true
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ProcessAsync_System_String_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  name: ProcessAsync(string, BaseAction)
+  nameWithType: IGlspServer.ProcessAsync(string, BaseAction)
+  fullName: NMF.Glsp.Contracts.IGlspServer.ProcessAsync(string, NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  nameWithType.vb: IGlspServer.ProcessAsync(String, BaseAction)
+  fullName.vb: NMF.Glsp.Contracts.IGlspServer.ProcessAsync(String, NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  name.vb: ProcessAsync(String, BaseAction)
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IGlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+    name: ProcessAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ProcessAsync_System_String_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+    name: BaseAction
+    href: NMF.Glsp.Protocol.BaseProtocol.BaseAction.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IGlspServer.ProcessAsync(System.String,NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+    name: ProcessAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ProcessAsync_System_String_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+    name: BaseAction
+    href: NMF.Glsp.Protocol.BaseProtocol.BaseAction.html
+  - name: )
+- uid: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  commentId: T:NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  parent: NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.Glsp.Protocol.BaseProtocol.BaseAction.html
+  name: BaseAction
+  nameWithType: BaseAction
+  fullName: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+- uid: NMF.Glsp.Protocol.BaseProtocol
+  commentId: N:NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.html
+  name: NMF.Glsp.Protocol.BaseProtocol
+  nameWithType: NMF.Glsp.Protocol.BaseProtocol
+  fullName: NMF.Glsp.Protocol.BaseProtocol
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+- uid: NMF.Glsp.Server.GlspServer.ShutdownAsync*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.ShutdownAsync
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer_ShutdownAsync
+  name: ShutdownAsync
+  nameWithType: GlspServer.ShutdownAsync
+  fullName: NMF.Glsp.Server.GlspServer.ShutdownAsync
+- uid: NMF.Glsp.Contracts.IGlspServer.ShutdownAsync
+  commentId: M:NMF.Glsp.Contracts.IGlspServer.ShutdownAsync
+  parent: NMF.Glsp.Contracts.IGlspServer
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ShutdownAsync
+  name: ShutdownAsync()
+  nameWithType: IGlspServer.ShutdownAsync()
+  fullName: NMF.Glsp.Contracts.IGlspServer.ShutdownAsync()
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IGlspServer.ShutdownAsync
+    name: ShutdownAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ShutdownAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IGlspServer.ShutdownAsync
+    name: ShutdownAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_ShutdownAsync
+  - name: (
+  - name: )
+- uid: NMF.Glsp.Server.GlspServer.InitializeAsync*
+  commentId: Overload:NMF.Glsp.Server.GlspServer.InitializeAsync
+  href: NMF.Glsp.Server.GlspServer.html#NMF_Glsp_Server_GlspServer_InitializeAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: InitializeAsync
+  nameWithType: GlspServer.InitializeAsync
+  fullName: NMF.Glsp.Server.GlspServer.InitializeAsync
+- uid: NMF.Glsp.Contracts.IGlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  commentId: M:NMF.Glsp.Contracts.IGlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+  parent: NMF.Glsp.Contracts.IGlspServer
+  isExternal: true
+  href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  name: InitializeAsync(string, string, IDictionary<string, object>)
+  nameWithType: IGlspServer.InitializeAsync(string, string, IDictionary<string, object>)
+  fullName: NMF.Glsp.Contracts.IGlspServer.InitializeAsync(string, string, System.Collections.Generic.IDictionary<string, object>)
+  nameWithType.vb: IGlspServer.InitializeAsync(String, String, IDictionary(Of String, Object))
+  fullName.vb: NMF.Glsp.Contracts.IGlspServer.InitializeAsync(String, String, System.Collections.Generic.IDictionary(Of String, Object))
+  name.vb: InitializeAsync(String, String, IDictionary(Of String, Object))
+  spec.csharp:
+  - uid: NMF.Glsp.Contracts.IGlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: InitializeAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Contracts.IGlspServer.InitializeAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})
+    name: InitializeAsync
+    href: NMF.Glsp.Contracts.IGlspServer.html#NMF_Glsp_Contracts_IGlspServer_InitializeAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_Object__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{NMF.Glsp.Protocol.Lifecycle.InitializeResult}
+  commentId: T:System.Threading.Tasks.Task{NMF.Glsp.Protocol.Lifecycle.InitializeResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<InitializeResult>
+  nameWithType: Task<InitializeResult>
+  fullName: System.Threading.Tasks.Task<NMF.Glsp.Protocol.Lifecycle.InitializeResult>
+  nameWithType.vb: Task(Of InitializeResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NMF.Glsp.Protocol.Lifecycle.InitializeResult)
+  name.vb: Task(Of InitializeResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.Lifecycle.InitializeResult
+    name: InitializeResult
+    href: NMF.Glsp.Protocol.Lifecycle.InitializeResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.Lifecycle.InitializeResult
+    name: InitializeResult
+    href: NMF.Glsp.Protocol.Lifecycle.InitializeResult.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )

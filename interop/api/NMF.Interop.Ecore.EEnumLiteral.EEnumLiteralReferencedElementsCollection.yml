@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EEnumLiteralReferencedElementsCollection
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
@@ -36,13 +36,15 @@ items:
   summary: The collection class to to represent the children of the EEnumLiteral class
   example: []
   syntax:
-    content: 'public class EEnumLiteral.EEnumLiteralReferencedElementsCollection : ReferenceCollection, INotifyCollectionChanged, IDisposable, ICollectionExpression<IModelElement>, IEnumerableExpression<IModelElement>, IEnumerableExpression, ICollection<IModelElement>, IEnumerable<IModelElement>, IEnumerable'
-    content.vb: Public Class EEnumLiteral.EEnumLiteralReferencedElementsCollection Inherits ReferenceCollection Implements INotifyCollectionChanged, IDisposable, ICollectionExpression(Of IModelElement), IEnumerableExpression(Of IModelElement), IEnumerableExpression, ICollection(Of IModelElement), IEnumerable(Of IModelElement), IEnumerable
+    content: 'public class EEnumLiteral.EEnumLiteralReferencedElementsCollection : ReferenceCollection, INotifyCollectionChanged, IList, ICollection, IDisposable, ICollectionExpression<IModelElement>, IEnumerableExpression<IModelElement>, IEnumerableExpression, ICollection<IModelElement>, IEnumerable<IModelElement>, IEnumerable'
+    content.vb: Public Class EEnumLiteral.EEnumLiteralReferencedElementsCollection Inherits ReferenceCollection Implements INotifyCollectionChanged, IList, ICollection, IDisposable, ICollectionExpression(Of IModelElement), IEnumerableExpression(Of IModelElement), IEnumerableExpression, ICollection(Of IModelElement), IEnumerable(Of IModelElement), IEnumerable
   inheritance:
   - System.Object
   - NMF.Models.Collections.ReferenceCollection
   implements:
   - System.Collections.Specialized.INotifyCollectionChanged
+  - System.Collections.IList
+  - System.Collections.ICollection
   - System.IDisposable
   - NMF.Expressions.ICollectionExpression{NMF.Models.IModelElement}
   - NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
@@ -56,6 +58,7 @@ items:
   - NMF.Models.Collections.ReferenceCollection.AsNotifiable
   - NMF.Models.Collections.ReferenceCollection.PropagateCollectionChanges(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   - NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
   - NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   - NMF.Models.Collections.ReferenceCollection.Dispose
   - NMF.Models.Collections.ReferenceCollection.Dispose(System.Boolean)
@@ -80,7 +83,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
@@ -114,7 +117,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
@@ -148,14 +151,15 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AttachCore
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 489
+    startLine: 490
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Attaches the collection
   example: []
   syntax:
     content: protected override void AttachCore()
@@ -176,14 +180,15 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DetachCore
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 494
+    startLine: 496
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Detaches the collection
   example: []
   syntax:
     content: protected override void DetachCore()
@@ -204,11 +209,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 503
+    startLine: 505
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -239,11 +244,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 519
+    startLine: 521
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -270,11 +275,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 529
+    startLine: 531
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -308,11 +313,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 543
+    startLine: 545
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -349,11 +354,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 557
+    startLine: 559
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -387,11 +392,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EEnumLiteral.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Interop/EcoreInterop/Model/EEnumLiteral.cs
-    startLine: 571
+    startLine: 573
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -463,6 +468,22 @@ references:
   name: INotifyCollectionChanged
   nameWithType: INotifyCollectionChanged
   fullName: System.Collections.Specialized.INotifyCollectionChanged
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.icollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -704,6 +725,43 @@ references:
   - name: " "
   - uid: NMF.Expressions.ValueChangedEventArgs
     name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+  commentId: M:NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+  parent: NMF.Models.Collections.ReferenceCollection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: PropagateValueChanges(object, BubbledChangeEventArgs)
+  nameWithType: ReferenceCollection.PropagateValueChanges(object, BubbledChangeEventArgs)
+  fullName: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(object, NMF.Models.BubbledChangeEventArgs)
+  nameWithType.vb: ReferenceCollection.PropagateValueChanges(Object, BubbledChangeEventArgs)
+  fullName.vb: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(Object, NMF.Models.BubbledChangeEventArgs)
+  name.vb: PropagateValueChanges(Object, BubbledChangeEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+    name: PropagateValueChanges
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.Collections.ReferenceCollection.PropagateValueChanges(System.Object,NMF.Models.BubbledChangeEventArgs)
+    name: PropagateValueChanges
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
   - name: )
 - uid: NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
   commentId: M:NMF.Models.Collections.ReferenceCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)
@@ -1062,6 +1120,33 @@ references:
     name: Specialized
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.specialized
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: NMF.Expressions.ICollectionExpression`1
   commentId: T:NMF.Expressions.ICollectionExpression`1
   name: ICollectionExpression<T>
@@ -1216,33 +1301,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections
-  commentId: N:System.Collections
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections
-  nameWithType: System.Collections
-  fullName: System.Collections
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: NMF.Interop.Ecore.EEnumLiteral.EEnumLiteralReferencedElementsCollection.#ctor*
   commentId: Overload:NMF.Interop.Ecore.EEnumLiteral.EEnumLiteralReferencedElementsCollection.#ctor
   href: NMF.Interop.Ecore.EEnumLiteral.EEnumLiteralReferencedElementsCollection.html#NMF_Interop_Ecore_EEnumLiteral_EEnumLiteralReferencedElementsCollection__ctor_NMF_Interop_Ecore_EEnumLiteral_

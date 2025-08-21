@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EClassEStructuralFeaturesCollection
     path: src/Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Denotes a collection type for features of classes
+  example: []
   syntax:
     content: 'public class EClassEStructuralFeaturesCollection : ObservableOppositeOrderedSet<IEClass, IEStructuralFeature>, INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression<IEStructuralFeature>, IListExpression<IEStructuralFeature>, ISetExpression<IEStructuralFeature>, ICollectionExpression<IEStructuralFeature>, IEnumerableExpression<IEStructuralFeature>, IOrderedSet<IEStructuralFeature>, IList<IEStructuralFeature>, ISet<IEStructuralFeature>, ICollection<IEStructuralFeature>, IEnumerable<IEStructuralFeature>, ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable'
     content.vb: Public Class EClassEStructuralFeaturesCollection Inherits ObservableOppositeOrderedSet(Of IEClass, IEStructuralFeature) Implements INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression(Of IEStructuralFeature), IListExpression(Of IEStructuralFeature), ISetExpression(Of IEStructuralFeature), ICollectionExpression(Of IEStructuralFeature), IEnumerableExpression(Of IEStructuralFeature), IOrderedSet(Of IEStructuralFeature), IList(Of IEStructuralFeature), ISet(Of IEStructuralFeature), ICollection(Of IEStructuralFeature), IEnumerable(Of IEStructuralFeature), ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable
@@ -121,19 +123,22 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-    startLine: 36
+    startLine: 42
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public EClassEStructuralFeaturesCollection(IEClass parent)
     parameters:
     - id: parent
       type: NMF.Interop.Ecore.IEClass
+      description: the parent element
     content.vb: Public Sub New(parent As IEClass)
   overload: NMF.Interop.Ecore.EClassEStructuralFeaturesCollection.#ctor*
   nameWithType.vb: EClassEStructuralFeaturesCollection.New(IEClass)
@@ -153,20 +158,22 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Interop/EcoreInterop/Model/EClassEStructuralFeaturesCollection.cs
-    startLine: 49
+    startLine: 56
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Sets the opposite value
   example: []
   syntax:
     content: protected override void SetOpposite(IEStructuralFeature item, IEClass parent)
     parameters:
     - id: item
       type: NMF.Interop.Ecore.IEStructuralFeature
+      description: The item to set the opposite
     - id: parent
       type: NMF.Interop.Ecore.IEClass
     content.vb: Protected Overrides Sub SetOpposite(item As IEStructuralFeature, parent As IEClass)

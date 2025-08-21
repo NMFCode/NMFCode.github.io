@@ -18,6 +18,7 @@ items:
   - NMF.Models.Dynamic.DynamicModelElement.GetModelElementForReference(System.String,System.Int32)
   - NMF.Models.Dynamic.DynamicModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
   - NMF.Models.Dynamic.DynamicModelElement.IsIdentified
+  - NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
   - NMF.Models.Dynamic.DynamicModelElement.SetFeature(System.String,System.Object)
   - NMF.Models.Dynamic.DynamicModelElement.ToIdentifierString
   langs:
@@ -30,7 +31,7 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DynamicModelElement
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
@@ -71,8 +72,10 @@ items:
   - NMF.Models.ModelElement.EnforceModels
   - NMF.Models.ModelElement.PreferIdentifiers
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -80,7 +83,6 @@ items:
   - NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
   - NMF.Models.ModelElement.Extensions
   - NMF.Models.ModelElement.GetExtension``1
-  - NMF.Models.ModelElement.ReferencedElements
   - NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
   - NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
   - NMF.Models.ModelElement.Delete
@@ -127,7 +129,7 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
@@ -162,7 +164,7 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
@@ -200,7 +202,7 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
@@ -232,7 +234,7 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Children
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
@@ -250,6 +252,38 @@ items:
     content.vb: Public Overrides ReadOnly Property Children As IEnumerableExpression(Of IModelElement)
   overridden: NMF.Models.ModelElement.Children
   overload: NMF.Models.Dynamic.DynamicModelElement.Children*
+- uid: NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
+  commentId: P:NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
+  id: ReferencedElements
+  parent: NMF.Models.Dynamic.DynamicModelElement
+  langs:
+  - csharp
+  - vb
+  name: ReferencedElements
+  nameWithType: DynamicModelElement.ReferencedElements
+  fullName: NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
+  type: Property
+  source:
+    remote:
+      path: Models/Models.Dynamic/DynamicModelElement.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ReferencedElements
+    path: src/Models/Models.Dynamic/DynamicModelElement.cs
+    startLine: 208
+  assemblies:
+  - NMF.Models.Dynamic
+  namespace: NMF.Models.Dynamic
+  summary: Gets a collection of model elements referenced from this element.
+  example: []
+  syntax:
+    content: public override IEnumerableExpression<IModelElement> ReferencedElements { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+    content.vb: Public Overrides ReadOnly Property ReferencedElements As IEnumerableExpression(Of IModelElement)
+  overridden: NMF.Models.ModelElement.ReferencedElements
+  overload: NMF.Models.Dynamic.DynamicModelElement.ReferencedElements*
 - uid: NMF.Models.Dynamic.DynamicModelElement.IsIdentified
   commentId: P:NMF.Models.Dynamic.DynamicModelElement.IsIdentified
   id: IsIdentified
@@ -264,11 +298,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsIdentified
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 222
+    startLine: 217
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -296,11 +330,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToIdentifierString
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 225
+    startLine: 220
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -327,11 +361,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateUriWithFragment
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 233
+    startLine: 228
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -372,11 +406,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 255
+    startLine: 250
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -414,11 +448,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 266
+    startLine: 261
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -453,11 +487,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCompositionName
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 272
+    startLine: 267
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -492,11 +526,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForAttribute
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 292
+    startLine: 287
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -531,11 +565,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForReference
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 298
+    startLine: 293
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -570,11 +604,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 304
+    startLine: 299
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -612,11 +646,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForNonIdentifiedChild
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 315
+    startLine: 310
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -648,11 +682,11 @@ items:
   source:
     remote:
       path: Models/Models.Dynamic/DynamicModelElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Models/Models.Dynamic/DynamicModelElement.cs
-    startLine: 337
+    startLine: 332
   assemblies:
   - NMF.Models.Dynamic
   namespace: NMF.Models.Dynamic
@@ -1145,40 +1179,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
@@ -1377,13 +1436,6 @@ references:
   - name: )
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.ReferencedElements
-  commentId: P:NMF.Models.ModelElement.ReferencedElements
-  parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ReferencedElements
-  name: ReferencedElements
-  nameWithType: ModelElement.ReferencedElements
-  fullName: NMF.Models.ModelElement.ReferencedElements
 - uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
   commentId: M:NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
   parent: NMF.Models.ModelElement
@@ -2562,6 +2614,19 @@ references:
   - name: .
   - uid: NMF.Expressions
     name: Expressions
+- uid: NMF.Models.ModelElement.ReferencedElements
+  commentId: P:NMF.Models.ModelElement.ReferencedElements
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ReferencedElements
+  name: ReferencedElements
+  nameWithType: ModelElement.ReferencedElements
+  fullName: NMF.Models.ModelElement.ReferencedElements
+- uid: NMF.Models.Dynamic.DynamicModelElement.ReferencedElements*
+  commentId: Overload:NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
+  href: NMF.Models.Dynamic.DynamicModelElement.html#NMF_Models_Dynamic_DynamicModelElement_ReferencedElements
+  name: ReferencedElements
+  nameWithType: DynamicModelElement.ReferencedElements
+  fullName: NMF.Models.Dynamic.DynamicModelElement.ReferencedElements
 - uid: NMF.Models.ModelElement.IsIdentified
   commentId: P:NMF.Models.ModelElement.IsIdentified
   parent: NMF.Models.ModelElement

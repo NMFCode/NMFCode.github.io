@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EPackage
     path: src/Interop/EcoreInterop/Model/EPackage.cs
@@ -118,8 +118,10 @@ items:
   - NMF.Models.ModelElement.EnforceModels
   - NMF.Models.ModelElement.PreferIdentifiers
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -185,14 +187,16 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 70
+    startLine: 73
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public EPackage()
     content.vb: Public Sub New()
@@ -214,11 +218,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsURI
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 83
+    startLine: 86
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -268,11 +272,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsPrefix
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 109
+    startLine: 112
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -322,11 +326,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EFactoryInstance
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 135
+    startLine: 138
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -385,11 +389,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EClassifiers
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 172
+    startLine: 175
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -455,11 +459,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ESubpackages
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 189
+    startLine: 192
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -525,11 +529,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ESuperPackage
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 206
+    startLine: 209
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -588,11 +592,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Children
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 225
+    startLine: 228
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -622,11 +626,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferencedElements
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 236
+    startLine: 239
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -656,11 +660,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 247
+    startLine: 250
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -687,11 +691,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsURIChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 262
+    startLine: 265
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -718,11 +722,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsURIChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 267
+    startLine: 270
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -749,11 +753,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsPrefixChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 272
+    startLine: 275
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -780,11 +784,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NsPrefixChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 277
+    startLine: 280
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -811,11 +815,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EFactoryInstanceChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 282
+    startLine: 285
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -842,11 +846,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EFactoryInstanceChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 287
+    startLine: 290
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -873,11 +877,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ESuperPackageChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 292
+    startLine: 295
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -904,11 +908,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ESuperPackageChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 297
+    startLine: 300
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -935,11 +939,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnNsURIChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 303
+    startLine: 306
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -967,11 +971,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnNsURIChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 316
+    startLine: 319
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -999,11 +1003,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnNsPrefixChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 329
+    startLine: 332
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1031,11 +1035,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnNsPrefixChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 342
+    startLine: 345
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1063,11 +1067,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnEFactoryInstanceChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 355
+    startLine: 358
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1095,11 +1099,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnEFactoryInstanceChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 368
+    startLine: 371
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1127,11 +1131,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnESuperPackageChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 431
+    startLine: 434
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1159,11 +1163,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnParentChanging
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 445
+    startLine: 448
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1195,11 +1199,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnESuperPackageChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 458
+    startLine: 461
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1227,11 +1231,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnParentChanged
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 472
+    startLine: 475
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1263,11 +1267,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForNonIdentifiedChild
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 495
+    startLine: 498
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1299,11 +1303,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 516
+    startLine: 519
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1341,11 +1345,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 549
+    startLine: 552
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1383,11 +1387,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 567
+    startLine: 570
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1422,11 +1426,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 585
+    startLine: 588
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1461,11 +1465,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForAttribute
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 615
+    startLine: 618
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1500,11 +1504,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForReference
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 633
+    startLine: 636
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -1539,11 +1543,11 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EPackage.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Interop/EcoreInterop/Model/EPackage.cs
-    startLine: 649
+    startLine: 652
   assemblies:
   - NMF.EcoreInterop
   namespace: NMF.Interop.Ecore
@@ -2096,37 +2100,57 @@ references:
     name: ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.eventargs
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)

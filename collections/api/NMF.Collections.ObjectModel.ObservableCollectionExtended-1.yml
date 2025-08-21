@@ -26,18 +26,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableCollectionExtended
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an abstract extension of observable collections
+  example: []
   syntax:
     content: 'public abstract class ObservableCollectionExtended<T> : Collection<T>, IList<T>, ICollection<T>, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IList, ICollection, IEnumerable, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public MustInherit Class ObservableCollectionExtended(Of T) Inherits Collection(Of T) Implements IList(Of T), ICollection(Of T), IReadOnlyList(Of T), IReadOnlyCollection(Of T), IEnumerable(Of T), IList, ICollection, IEnumerable, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged
   inheritance:
   - System.Object
@@ -93,14 +96,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets raised when an attempt is made to change a given collection
   example: []
   syntax:
     content: public event EventHandler<NotifyCollectionChangedEventArgs> CollectionChanging
@@ -125,14 +129,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Occurs when the collection changes.
   example: []
   syntax:
     content: public event NotifyCollectionChangedEventHandler CollectionChanged
@@ -157,14 +162,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: PropertyChanged
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 14
+    startLine: 20
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Occurs when a property value changes.
   example: []
   syntax:
     content: public event PropertyChangedEventHandler PropertyChanged
@@ -189,19 +195,22 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanging
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 16
+    startLine: 26
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets called when an attempt is made to change the collection
+  example: []
   syntax:
     content: protected virtual void OnCollectionChanging(NotifyCollectionChangedEventArgs e)
     parameters:
     - id: e
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: the event args
     content.vb: Protected Overridable Sub OnCollectionChanging(e As NotifyCollectionChangedEventArgs)
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.OnCollectionChanging*
   nameWithType.vb: ObservableCollectionExtended(Of T).OnCollectionChanging(NotifyCollectionChangedEventArgs)
@@ -220,21 +229,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnCollectionChanged
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 21
+    startLine: 36
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets called when the collection was changed
+  example: []
   syntax:
     content: protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e, bool countAffected)
     parameters:
     - id: e
       type: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+      description: the event args
     - id: countAffected
       type: System.Boolean
+      description: True, if the Count is also affected, otherwise False
     content.vb: Protected Overridable Sub OnCollectionChanged(e As NotifyCollectionChangedEventArgs, countAffected As Boolean)
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.OnCollectionChanged*
   nameWithType.vb: ObservableCollectionExtended(Of T).OnCollectionChanged(NotifyCollectionChangedEventArgs, Boolean)
@@ -254,18 +267,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireEvents
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 31
+    startLine: 50
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Determines whether events are required
+  example: []
   syntax:
     content: protected bool RequireEvents()
     return:
       type: System.Boolean
+      description: True, if there is any subscriber to CollectionChanged, CollectionChanging or PropertyChanged events
     content.vb: Protected Function RequireEvents() As Boolean
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.RequireEvents*
   nameWithType.vb: ObservableCollectionExtended(Of T).RequireEvents()
@@ -284,14 +300,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClearItems
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 36
+    startLine: 56
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all elements from the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void ClearItems()
@@ -314,25 +331,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: InsertItem
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 51
+    startLine: 72
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts an element into the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: protected override void InsertItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub InsertItem(index As Integer, item As T)
   overridden: System.Collections.ObjectModel.Collection{{T}}.InsertItem(System.Int32,{T})
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.InsertItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCollectionExtended(Of T).InsertItem(Integer, T)
   fullName.vb: NMF.Collections.ObjectModel.ObservableCollectionExtended(Of T).InsertItem(Integer, T)
   name.vb: InsertItem(Integer, T)
@@ -350,21 +374,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: MoveItem
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 66
+    startLine: 92
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Moves a given item
+  example: []
   syntax:
     content: public virtual void MoveItem(int oldIndex, int newIndex)
     parameters:
     - id: oldIndex
       type: System.Int32
+      description: the old index
     - id: newIndex
       type: System.Int32
+      description: the new index
     content.vb: Public Overridable Sub MoveItem(oldIndex As Integer, newIndex As Integer)
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.MoveItem*
   nameWithType.vb: ObservableCollectionExtended(Of T).MoveItem(Integer, Integer)
@@ -384,23 +412,29 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveItem
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 84
+    startLine: 111
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the element at the specified index of the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void RemoveItem(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to remove.
     content.vb: Protected Overrides Sub RemoveItem(index As Integer)
   overridden: System.Collections.ObjectModel.Collection{{T}}.RemoveItem(System.Int32)
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.RemoveItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is equal to or greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCollectionExtended(Of T).RemoveItem(Integer)
   fullName.vb: NMF.Collections.ObjectModel.ObservableCollectionExtended(Of T).RemoveItem(Integer)
   name.vb: RemoveItem(Integer)
@@ -418,25 +452,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetItem
     path: src/Collections/Collections/ObjectModel/ObservableCollectionExtended.cs
-    startLine: 100
+    startLine: 128
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the element at the specified index.
   example: []
   syntax:
     content: protected override void SetItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to replace.
     - id: item
       type: '{T}'
+      description: The new value for the element at the specified index. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub SetItem(index As Integer, item As T)
   overridden: System.Collections.ObjectModel.Collection{{T}}.SetItem(System.Int32,{T})
   overload: NMF.Collections.ObjectModel.ObservableCollectionExtended`1.SetItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCollectionExtended(Of T).SetItem(Integer, T)
   fullName.vb: NMF.Collections.ObjectModel.ObservableCollectionExtended(Of T).SetItem(Integer, T)
   name.vb: SetItem(Integer, T)
@@ -2084,6 +2125,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1.clearitems
   - name: (
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: System.Collections.ObjectModel.Collection{{T}}.InsertItem(System.Int32,{T})
   commentId: M:System.Collections.ObjectModel.Collection{`0}.InsertItem(System.Int32,`0)
   parent: System.Collections.ObjectModel.Collection{{T}}

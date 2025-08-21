@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IParameter
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -54,25 +54,25 @@ items:
   - NMF.Models.Meta.ITypedElement.LowerBound
   - NMF.Models.Meta.ITypedElement.UpperBound
   - NMF.Models.Meta.ITypedElement.Type
-  - NMF.Models.Meta.ITypedElement.IsOrderedChanging
   - NMF.Models.Meta.ITypedElement.IsOrderedChanged
-  - NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  - NMF.Models.Meta.ITypedElement.IsOrderedChanging
   - NMF.Models.Meta.ITypedElement.IsUniqueChanged
-  - NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  - NMF.Models.Meta.ITypedElement.IsUniqueChanging
   - NMF.Models.Meta.ITypedElement.LowerBoundChanged
-  - NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  - NMF.Models.Meta.ITypedElement.LowerBoundChanging
   - NMF.Models.Meta.ITypedElement.UpperBoundChanged
+  - NMF.Models.Meta.ITypedElement.UpperBoundChanging
   - NMF.Models.Meta.ITypedElement.TypeChanging
   - NMF.Models.Meta.ITypedElement.TypeChanged
   - NMF.Models.Meta.IMetaElement.Name
   - NMF.Models.Meta.IMetaElement.Summary
   - NMF.Models.Meta.IMetaElement.Remarks
-  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.NameChanged
-  - NMF.Models.Meta.IMetaElement.SummaryChanging
+  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.SummaryChanged
-  - NMF.Models.Meta.IMetaElement.RemarksChanging
+  - NMF.Models.Meta.IMetaElement.SummaryChanging
   - NMF.Models.Meta.IMetaElement.RemarksChanged
+  - NMF.Models.Meta.IMetaElement.RemarksChanging
   - NMF.Models.IModelElement.Delete
   - NMF.Models.IModelElement.Deleted
   - NMF.Models.IModelElement.Deleting
@@ -80,6 +80,7 @@ items:
   - NMF.Models.IModelElement.ToIdentifierString
   - NMF.Models.IModelElement.RelativeUri
   - NMF.Models.IModelElement.AbsoluteUri
+  - NMF.Models.IModelElement.Resolve(System.String)
   - NMF.Models.IModelElement.Resolve(System.Uri)
   - NMF.Models.IModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
   - NMF.Models.IModelElement.Model
@@ -90,6 +91,8 @@ items:
   - NMF.Models.IModelElement.Extensions
   - NMF.Models.IModelElement.GetExtension``1
   - NMF.Models.IModelElement.GetClass
+  - NMF.Models.IModelElement.IdentifierString
+  - NMF.Models.IModelElement.ClassName
   - NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   - NMF.Models.IModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
   - NMF.Models.IModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
@@ -140,11 +143,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Direction
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -183,11 +186,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Operation
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -230,35 +233,6 @@ items:
     arguments:
     - type: System.String
       value: Parameters
-- uid: NMF.Models.Meta.IParameter.DirectionChanging
-  commentId: E:NMF.Models.Meta.IParameter.DirectionChanging
-  id: DirectionChanging
-  parent: NMF.Models.Meta.IParameter
-  langs:
-  - csharp
-  - vb
-  name: DirectionChanging
-  nameWithType: IParameter.DirectionChanging
-  fullName: NMF.Models.Meta.IParameter.DirectionChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/IParameter.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: DirectionChanging
-    path: src/Models/Models/Meta/IParameter.cs
-    startLine: 70
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the Direction property changes its value
-  example: []
-  syntax:
-    content: event EventHandler<ValueChangedEventArgs> DirectionChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event DirectionChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.IParameter.DirectionChanged
   commentId: E:NMF.Models.Meta.IParameter.DirectionChanged
   id: DirectionChanged
@@ -273,11 +247,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DirectionChanged
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 75
+    startLine: 71
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -288,6 +262,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event DirectionChanged As EventHandler(Of ValueChangedEventArgs)
+- uid: NMF.Models.Meta.IParameter.DirectionChanging
+  commentId: E:NMF.Models.Meta.IParameter.DirectionChanging
+  id: DirectionChanging
+  parent: NMF.Models.Meta.IParameter
+  langs:
+  - csharp
+  - vb
+  name: DirectionChanging
+  nameWithType: IParameter.DirectionChanging
+  fullName: NMF.Models.Meta.IParameter.DirectionChanging
+  type: Event
+  source:
+    remote:
+      path: Models/Models/Meta/IParameter.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DirectionChanging
+    path: src/Models/Models/Meta/IParameter.cs
+    startLine: 76
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Gets fired before the Direction property changes its value
+  example: []
+  syntax:
+    content: event EventHandler<ValueChangedEventArgs> DirectionChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Event DirectionChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.IParameter.OperationChanging
   commentId: E:NMF.Models.Meta.IParameter.OperationChanging
   id: OperationChanging
@@ -302,11 +305,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationChanging
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -331,11 +334,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IParameter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationChanged
     path: src/Models/Models/Meta/IParameter.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -412,13 +415,6 @@ references:
   name: Type
   nameWithType: ITypedElement.Type
   fullName: NMF.Models.Meta.ITypedElement.Type
-- uid: NMF.Models.Meta.ITypedElement.IsOrderedChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanging
-  parent: NMF.Models.Meta.ITypedElement
-  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_IsOrderedChanging
-  name: IsOrderedChanging
-  nameWithType: ITypedElement.IsOrderedChanging
-  fullName: NMF.Models.Meta.ITypedElement.IsOrderedChanging
 - uid: NMF.Models.Meta.ITypedElement.IsOrderedChanged
   commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanged
   parent: NMF.Models.Meta.ITypedElement
@@ -426,13 +422,13 @@ references:
   name: IsOrderedChanged
   nameWithType: ITypedElement.IsOrderedChanged
   fullName: NMF.Models.Meta.ITypedElement.IsOrderedChanged
-- uid: NMF.Models.Meta.ITypedElement.IsUniqueChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanging
+- uid: NMF.Models.Meta.ITypedElement.IsOrderedChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.IsOrderedChanging
   parent: NMF.Models.Meta.ITypedElement
-  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_IsUniqueChanging
-  name: IsUniqueChanging
-  nameWithType: ITypedElement.IsUniqueChanging
-  fullName: NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_IsOrderedChanging
+  name: IsOrderedChanging
+  nameWithType: ITypedElement.IsOrderedChanging
+  fullName: NMF.Models.Meta.ITypedElement.IsOrderedChanging
 - uid: NMF.Models.Meta.ITypedElement.IsUniqueChanged
   commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanged
   parent: NMF.Models.Meta.ITypedElement
@@ -440,13 +436,13 @@ references:
   name: IsUniqueChanged
   nameWithType: ITypedElement.IsUniqueChanged
   fullName: NMF.Models.Meta.ITypedElement.IsUniqueChanged
-- uid: NMF.Models.Meta.ITypedElement.LowerBoundChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanging
+- uid: NMF.Models.Meta.ITypedElement.IsUniqueChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.IsUniqueChanging
   parent: NMF.Models.Meta.ITypedElement
-  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_LowerBoundChanging
-  name: LowerBoundChanging
-  nameWithType: ITypedElement.LowerBoundChanging
-  fullName: NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_IsUniqueChanging
+  name: IsUniqueChanging
+  nameWithType: ITypedElement.IsUniqueChanging
+  fullName: NMF.Models.Meta.ITypedElement.IsUniqueChanging
 - uid: NMF.Models.Meta.ITypedElement.LowerBoundChanged
   commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanged
   parent: NMF.Models.Meta.ITypedElement
@@ -454,13 +450,13 @@ references:
   name: LowerBoundChanged
   nameWithType: ITypedElement.LowerBoundChanged
   fullName: NMF.Models.Meta.ITypedElement.LowerBoundChanged
-- uid: NMF.Models.Meta.ITypedElement.UpperBoundChanging
-  commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanging
+- uid: NMF.Models.Meta.ITypedElement.LowerBoundChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.LowerBoundChanging
   parent: NMF.Models.Meta.ITypedElement
-  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_UpperBoundChanging
-  name: UpperBoundChanging
-  nameWithType: ITypedElement.UpperBoundChanging
-  fullName: NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_LowerBoundChanging
+  name: LowerBoundChanging
+  nameWithType: ITypedElement.LowerBoundChanging
+  fullName: NMF.Models.Meta.ITypedElement.LowerBoundChanging
 - uid: NMF.Models.Meta.ITypedElement.UpperBoundChanged
   commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanged
   parent: NMF.Models.Meta.ITypedElement
@@ -468,6 +464,13 @@ references:
   name: UpperBoundChanged
   nameWithType: ITypedElement.UpperBoundChanged
   fullName: NMF.Models.Meta.ITypedElement.UpperBoundChanged
+- uid: NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  commentId: E:NMF.Models.Meta.ITypedElement.UpperBoundChanging
+  parent: NMF.Models.Meta.ITypedElement
+  href: NMF.Models.Meta.ITypedElement.html#NMF_Models_Meta_ITypedElement_UpperBoundChanging
+  name: UpperBoundChanging
+  nameWithType: ITypedElement.UpperBoundChanging
+  fullName: NMF.Models.Meta.ITypedElement.UpperBoundChanging
 - uid: NMF.Models.Meta.ITypedElement.TypeChanging
   commentId: E:NMF.Models.Meta.ITypedElement.TypeChanging
   parent: NMF.Models.Meta.ITypedElement
@@ -503,13 +506,6 @@ references:
   name: Remarks
   nameWithType: IMetaElement.Remarks
   fullName: NMF.Models.Meta.IMetaElement.Remarks
-- uid: NMF.Models.Meta.IMetaElement.NameChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
-  parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
-  name: NameChanging
-  nameWithType: IMetaElement.NameChanging
-  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.NameChanged
   commentId: E:NMF.Models.Meta.IMetaElement.NameChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -517,13 +513,13 @@ references:
   name: NameChanged
   nameWithType: IMetaElement.NameChanged
   fullName: NMF.Models.Meta.IMetaElement.NameChanged
-- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
+- uid: NMF.Models.Meta.IMetaElement.NameChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
-  name: SummaryChanging
-  nameWithType: IMetaElement.SummaryChanging
-  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
+  name: NameChanging
+  nameWithType: IMetaElement.NameChanging
+  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.SummaryChanged
   commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -531,13 +527,13 @@ references:
   name: SummaryChanged
   nameWithType: IMetaElement.SummaryChanged
   fullName: NMF.Models.Meta.IMetaElement.SummaryChanged
-- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
-  name: RemarksChanging
-  nameWithType: IMetaElement.RemarksChanging
-  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
+  name: SummaryChanging
+  nameWithType: IMetaElement.SummaryChanging
+  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
 - uid: NMF.Models.Meta.IMetaElement.RemarksChanged
   commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -545,6 +541,13 @@ references:
   name: RemarksChanged
   nameWithType: IMetaElement.RemarksChanged
   fullName: NMF.Models.Meta.IMetaElement.RemarksChanged
+- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+  parent: NMF.Models.Meta.IMetaElement
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
+  name: RemarksChanging
+  nameWithType: IMetaElement.RemarksChanging
+  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
 - uid: NMF.Models.IModelElement.Delete
   commentId: M:NMF.Models.IModelElement.Delete
   parent: NMF.Models.IModelElement
@@ -618,6 +621,37 @@ references:
   name: AbsoluteUri
   nameWithType: IModelElement.AbsoluteUri
   fullName: NMF.Models.IModelElement.AbsoluteUri
+- uid: NMF.Models.IModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.IModelElement.Resolve(System.String)
+  parent: NMF.Models.IModelElement
+  isExternal: true
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  name: Resolve(string)
+  nameWithType: IModelElement.Resolve(string)
+  fullName: NMF.Models.IModelElement.Resolve(string)
+  nameWithType.vb: IModelElement.Resolve(String)
+  fullName.vb: NMF.Models.IModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: NMF.Models.IModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.IModelElement.Resolve(System.Uri)
   parent: NMF.Models.IModelElement
@@ -780,6 +814,20 @@ references:
     href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_GetClass
   - name: (
   - name: )
+- uid: NMF.Models.IModelElement.IdentifierString
+  commentId: P:NMF.Models.IModelElement.IdentifierString
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: IModelElement.IdentifierString
+  fullName: NMF.Models.IModelElement.IdentifierString
+- uid: NMF.Models.IModelElement.ClassName
+  commentId: P:NMF.Models.IModelElement.ClassName
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_ClassName
+  name: ClassName
+  nameWithType: IModelElement.ClassName
+  fullName: NMF.Models.IModelElement.ClassName
 - uid: NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   commentId: M:NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   parent: NMF.Models.IModelElement

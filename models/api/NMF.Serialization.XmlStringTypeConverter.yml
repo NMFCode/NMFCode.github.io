@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: Models/Serialization/XML/XmlStringTypeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: XmlStringTypeConverter
     path: src/Models/Serialization/XML/XmlStringTypeConverter.cs
-    startLine: 10
+    startLine: 8
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization
@@ -91,24 +91,28 @@ items:
   source:
     remote:
       path: Models/Serialization/XML/XmlStringTypeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CanConvertFrom
     path: src/Models/Serialization/XML/XmlStringTypeConverter.cs
-    startLine: 13
+    startLine: 11
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization
+  summary: Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
   example: []
   syntax:
     content: public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
     parameters:
     - id: context
       type: System.ComponentModel.ITypeDescriptorContext
+      description: An <xref href="System.ComponentModel.ITypeDescriptorContext" data-throw-if-not-resolved="false"></xref> that provides a format context.
     - id: sourceType
       type: System.Type
+      description: A <xref href="System.Type" data-throw-if-not-resolved="false"></xref> that represents the type you want to convert from.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if this converter can perform the conversion; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Overrides Function CanConvertFrom(context As ITypeDescriptorContext, sourceType As Type) As Boolean
   overridden: System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)
   overload: NMF.Serialization.XmlStringTypeConverter.CanConvertFrom*
@@ -126,24 +130,28 @@ items:
   source:
     remote:
       path: Models/Serialization/XML/XmlStringTypeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CanConvertTo
     path: src/Models/Serialization/XML/XmlStringTypeConverter.cs
-    startLine: 19
+    startLine: 17
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization
+  summary: Returns whether this converter can convert the object to the specified type, using the specified context.
   example: []
   syntax:
     content: public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
     parameters:
     - id: context
       type: System.ComponentModel.ITypeDescriptorContext
+      description: An <xref href="System.ComponentModel.ITypeDescriptorContext" data-throw-if-not-resolved="false"></xref> that provides a format context.
     - id: destinationType
       type: System.Type
+      description: A <xref href="System.Type" data-throw-if-not-resolved="false"></xref> that represents the type you want to convert to.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if this converter can perform the conversion; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Overrides Function CanConvertTo(context As ITypeDescriptorContext, destinationType As Type) As Boolean
   overridden: System.ComponentModel.TypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)
   overload: NMF.Serialization.XmlStringTypeConverter.CanConvertTo*
@@ -161,29 +169,38 @@ items:
   source:
     remote:
       path: Models/Serialization/XML/XmlStringTypeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ConvertFrom
     path: src/Models/Serialization/XML/XmlStringTypeConverter.cs
-    startLine: 25
+    startLine: 23
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization
+  summary: Converts the given object to the type of this converter, using the specified context and culture information.
   example: []
   syntax:
     content: public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
     parameters:
     - id: context
       type: System.ComponentModel.ITypeDescriptorContext
+      description: An <xref href="System.ComponentModel.ITypeDescriptorContext" data-throw-if-not-resolved="false"></xref> that provides a format context.
     - id: culture
       type: System.Globalization.CultureInfo
+      description: The <xref href="System.Globalization.CultureInfo" data-throw-if-not-resolved="false"></xref> to use as the current culture.
     - id: value
       type: System.Object
+      description: The <xref href="System.Object" data-throw-if-not-resolved="false"></xref> to convert.
     return:
       type: System.Object
+      description: An <xref href="System.Object" data-throw-if-not-resolved="false"></xref> that represents the converted value.
     content.vb: Public Overrides Function ConvertFrom(context As ITypeDescriptorContext, culture As CultureInfo, value As Object) As Object
   overridden: System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)
   overload: NMF.Serialization.XmlStringTypeConverter.ConvertFrom*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The conversion cannot be performed.
   nameWithType.vb: XmlStringTypeConverter.ConvertFrom(ITypeDescriptorContext, CultureInfo, Object)
   fullName.vb: NMF.Serialization.XmlStringTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo, Object)
   name.vb: ConvertFrom(ITypeDescriptorContext, CultureInfo, Object)
@@ -201,31 +218,44 @@ items:
   source:
     remote:
       path: Models/Serialization/XML/XmlStringTypeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ConvertTo
     path: src/Models/Serialization/XML/XmlStringTypeConverter.cs
-    startLine: 32
+    startLine: 30
   assemblies:
   - NMF.Serialization
   namespace: NMF.Serialization
+  summary: Converts the given value object to the specified type, using the specified context and culture information.
   example: []
   syntax:
     content: public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
     parameters:
     - id: context
       type: System.ComponentModel.ITypeDescriptorContext
+      description: An <xref href="System.ComponentModel.ITypeDescriptorContext" data-throw-if-not-resolved="false"></xref> that provides a format context.
     - id: culture
       type: System.Globalization.CultureInfo
+      description: A <xref href="System.Globalization.CultureInfo" data-throw-if-not-resolved="false"></xref>. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> is passed, the current culture is assumed.
     - id: value
       type: System.Object
+      description: The <xref href="System.Object" data-throw-if-not-resolved="false"></xref> to convert.
     - id: destinationType
       type: System.Type
+      description: The <xref href="System.Type" data-throw-if-not-resolved="false"></xref> to convert the <code class="paramref">value</code> parameter to.
     return:
       type: System.Object
+      description: An <xref href="System.Object" data-throw-if-not-resolved="false"></xref> that represents the converted value.
     content.vb: Public Overrides Function ConvertTo(context As ITypeDescriptorContext, culture As CultureInfo, value As Object, destinationType As Type) As Object
   overridden: System.ComponentModel.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   overload: NMF.Serialization.XmlStringTypeConverter.ConvertTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: The <code class="paramref">destinationType</code> parameter is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The conversion cannot be performed.
   nameWithType.vb: XmlStringTypeConverter.ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type)
   fullName.vb: NMF.Serialization.XmlStringTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo, Object, System.Type)
   name.vb: ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type)
@@ -1764,6 +1794,22 @@ references:
     name: ComponentModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System.ComponentModel.ITypeDescriptorContext
+  commentId: T:System.ComponentModel.ITypeDescriptorContext
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.itypedescriptorcontext
+  name: ITypeDescriptorContext
+  nameWithType: ITypeDescriptorContext
+  fullName: System.ComponentModel.ITypeDescriptorContext
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
 - uid: System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)
   commentId: M:System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)
   parent: System.ComponentModel.TypeConverter
@@ -1812,22 +1858,6 @@ references:
   name: CanConvertFrom
   nameWithType: XmlStringTypeConverter.CanConvertFrom
   fullName: NMF.Serialization.XmlStringTypeConverter.CanConvertFrom
-- uid: System.ComponentModel.ITypeDescriptorContext
-  commentId: T:System.ComponentModel.ITypeDescriptorContext
-  parent: System.ComponentModel
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.itypedescriptorcontext
-  name: ITypeDescriptorContext
-  nameWithType: ITypeDescriptorContext
-  fullName: System.ComponentModel.ITypeDescriptorContext
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -1887,6 +1917,21 @@ references:
   name: CanConvertTo
   nameWithType: XmlStringTypeConverter.CanConvertTo
   fullName: NMF.Serialization.XmlStringTypeConverter.CanConvertTo
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)
   commentId: M:System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)
   parent: System.ComponentModel.TypeConverter
@@ -1950,14 +1995,6 @@ references:
   name: ConvertFrom
   nameWithType: XmlStringTypeConverter.ConvertFrom
   fullName: NMF.Serialization.XmlStringTypeConverter.ConvertFrom
-- uid: System.Globalization.CultureInfo
-  commentId: T:System.Globalization.CultureInfo
-  parent: System.Globalization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
-  name: CultureInfo
-  nameWithType: CultureInfo
-  fullName: System.Globalization.CultureInfo
 - uid: System.Globalization
   commentId: N:System.Globalization
   isExternal: true
@@ -1985,6 +2022,13 @@ references:
     name: Globalization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.globalization
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: System.ComponentModel.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   commentId: M:System.ComponentModel.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   parent: System.ComponentModel.TypeConverter

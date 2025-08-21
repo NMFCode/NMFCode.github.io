@@ -1,0 +1,2286 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Rules.RuleApplication
+  commentId: T:NMF.AnyText.Rules.RuleApplication
+  id: RuleApplication
+  parent: NMF.AnyText.Rules
+  children:
+  - NMF.AnyText.Rules.RuleApplication.#ctor(NMF.AnyText.Rules.Rule,NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta)
+  - NMF.AnyText.Rules.RuleApplication.Activate(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol(NMF.AnyText.ParseContext,System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol},System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol})
+  - NMF.AnyText.Rules.RuleApplication.ApplyTo(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.RuleApplication.Children
+  - NMF.AnyText.Rules.RuleApplication.CodeLenses(System.Predicate{NMF.AnyText.CodeLensApplication})
+  - NMF.AnyText.Rules.RuleApplication.Comments
+  - NMF.AnyText.Rules.RuleApplication.ContextElement
+  - NMF.AnyText.Rules.RuleApplication.CreateParseErrors
+  - NMF.AnyText.Rules.RuleApplication.CurrentPosition
+  - NMF.AnyText.Rules.RuleApplication.Deactivate(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+  - NMF.AnyText.Rules.RuleApplication.ExaminedTo
+  - NMF.AnyText.Rules.RuleApplication.FindChildAt(NMF.AnyText.ParsePosition,NMF.AnyText.Rules.Rule)
+  - NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral
+  - NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition
+  - NMF.AnyText.Rules.RuleApplication.GetIdentifier
+  - NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral
+  - NMF.AnyText.Rules.RuleApplication.GetLiteralAt(NMF.AnyText.ParsePosition)
+  - NMF.AnyText.Rules.RuleApplication.GetValue(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.RuleApplication.IsActive
+  - NMF.AnyText.Rules.RuleApplication.IsPositive
+  - NMF.AnyText.Rules.RuleApplication.IterateLiterals(System.Action{NMF.AnyText.Rules.LiteralRuleApplication})
+  - NMF.AnyText.Rules.RuleApplication.IterateLiterals``1(System.Action{NMF.AnyText.Rules.LiteralRuleApplication,``0},``0)
+  - NMF.AnyText.Rules.RuleApplication.Length
+  - NMF.AnyText.Rules.RuleApplication.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
+  - NMF.AnyText.Rules.RuleApplication.Parent
+  - NMF.AnyText.Rules.RuleApplication.PotentialError
+  - NMF.AnyText.Rules.RuleApplication.Rule
+  - NMF.AnyText.Rules.RuleApplication.ScopeLength
+  - NMF.AnyText.Rules.RuleApplication.SemanticElement
+  - NMF.AnyText.Rules.RuleApplication.Validate(NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.RuleApplication.Write(NMF.AnyText.PrettyPrinting.PrettyPrintWriter,NMF.AnyText.ParseContext)
+  langs:
+  - csharp
+  - vb
+  name: RuleApplication
+  nameWithType: RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: RuleApplication
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 17
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Denotes the application of a rule
+  example: []
+  syntax:
+    content: public abstract class RuleApplication
+    content.vb: Public MustInherit Class RuleApplication
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NMF.AnyText.Rules.LiteralRuleApplication
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Rules.RuleApplication.Children
+  commentId: P:NMF.AnyText.Rules.RuleApplication.Children
+  id: Children
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: RuleApplication.Children
+  fullName: NMF.AnyText.Rules.RuleApplication.Children
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Children
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 31
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the child rule applications
+  example: []
+  syntax:
+    content: public virtual IEnumerable<RuleApplication> Children { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+    content.vb: Public Overridable ReadOnly Property Children As IEnumerable(Of RuleApplication)
+  overload: NMF.AnyText.Rules.RuleApplication.Children*
+- uid: NMF.AnyText.Rules.RuleApplication.#ctor(NMF.AnyText.Rules.Rule,NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.#ctor(NMF.AnyText.Rules.Rule,NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta)
+  id: '#ctor(NMF.AnyText.Rules.Rule,NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta)'
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: RuleApplication(Rule, ParsePositionDelta, ParsePositionDelta)
+  nameWithType: RuleApplication.RuleApplication(Rule, ParsePositionDelta, ParsePositionDelta)
+  fullName: NMF.AnyText.Rules.RuleApplication.RuleApplication(NMF.AnyText.Rules.Rule, NMF.AnyText.ParsePositionDelta, NMF.AnyText.ParsePositionDelta)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 47
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: protected RuleApplication(Rule rule, ParsePositionDelta length, ParsePositionDelta examinedTo)
+    parameters:
+    - id: rule
+      type: NMF.AnyText.Rules.Rule
+      description: the rule that was matched
+    - id: length
+      type: NMF.AnyText.ParsePositionDelta
+      description: the length of the rule application
+    - id: examinedTo
+      type: NMF.AnyText.ParsePositionDelta
+      description: the amount of text that was analyzed to come to the conclusion of this rule application
+    content.vb: Protected Sub New(rule As Rule, length As ParsePositionDelta, examinedTo As ParsePositionDelta)
+  overload: NMF.AnyText.Rules.RuleApplication.#ctor*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: ''
+  nameWithType.vb: RuleApplication.New(Rule, ParsePositionDelta, ParsePositionDelta)
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.New(NMF.AnyText.Rules.Rule, NMF.AnyText.ParsePositionDelta, NMF.AnyText.ParsePositionDelta)
+  name.vb: New(Rule, ParsePositionDelta, ParsePositionDelta)
+- uid: NMF.AnyText.Rules.RuleApplication.IsPositive
+  commentId: P:NMF.AnyText.Rules.RuleApplication.IsPositive
+  id: IsPositive
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: IsPositive
+  nameWithType: RuleApplication.IsPositive
+  fullName: NMF.AnyText.Rules.RuleApplication.IsPositive
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsPositive
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 64
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: True, if the rule application was successful, otherwise false
+  example: []
+  syntax:
+    content: public virtual bool IsPositive { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property IsPositive As Boolean
+  overload: NMF.AnyText.Rules.RuleApplication.IsPositive*
+- uid: NMF.AnyText.Rules.RuleApplication.ContextElement
+  commentId: P:NMF.AnyText.Rules.RuleApplication.ContextElement
+  id: ContextElement
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: ContextElement
+  nameWithType: RuleApplication.ContextElement
+  fullName: NMF.AnyText.Rules.RuleApplication.ContextElement
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ContextElement
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 69
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the element that denotes the context for this rule application
+  example: []
+  syntax:
+    content: public virtual object ContextElement { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Overridable ReadOnly Property ContextElement As Object
+  overload: NMF.AnyText.Rules.RuleApplication.ContextElement*
+- uid: NMF.AnyText.Rules.RuleApplication.SemanticElement
+  commentId: P:NMF.AnyText.Rules.RuleApplication.SemanticElement
+  id: SemanticElement
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: SemanticElement
+  nameWithType: RuleApplication.SemanticElement
+  fullName: NMF.AnyText.Rules.RuleApplication.SemanticElement
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SemanticElement
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 74
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the semantic element of the rule application
+  example: []
+  syntax:
+    content: public virtual object SemanticElement { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Overridable ReadOnly Property SemanticElement As Object
+  overload: NMF.AnyText.Rules.RuleApplication.SemanticElement*
+- uid: NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+  commentId: P:NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+  id: DiagnosticItems
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: DiagnosticItems
+  nameWithType: RuleApplication.DiagnosticItems
+  fullName: NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DiagnosticItems
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 93
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets a collection of diagnostic items related to this rule application
+  example: []
+  syntax:
+    content: public IEnumerable<DiagnosticItem> DiagnosticItems { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DiagnosticItem}
+    content.vb: Public ReadOnly Property DiagnosticItems As IEnumerable(Of DiagnosticItem)
+  overload: NMF.AnyText.Rules.RuleApplication.DiagnosticItems*
+- uid: NMF.AnyText.Rules.RuleApplication.FindChildAt(NMF.AnyText.ParsePosition,NMF.AnyText.Rules.Rule)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.FindChildAt(NMF.AnyText.ParsePosition,NMF.AnyText.Rules.Rule)
+  id: FindChildAt(NMF.AnyText.ParsePosition,NMF.AnyText.Rules.Rule)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: FindChildAt(ParsePosition, Rule)
+  nameWithType: RuleApplication.FindChildAt(ParsePosition, Rule)
+  fullName: NMF.AnyText.Rules.RuleApplication.FindChildAt(NMF.AnyText.ParsePosition, NMF.AnyText.Rules.Rule)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: FindChildAt
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 101
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the child rule application at the given position
+  example: []
+  syntax:
+    content: public virtual RuleApplication FindChildAt(ParsePosition position, Rule rule)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: The position
+    - id: rule
+      type: NMF.AnyText.Rules.Rule
+      description: The expected rule of the child
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: The child at the given position or null
+    content.vb: Public Overridable Function FindChildAt(position As ParsePosition, rule As Rule) As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.FindChildAt*
+- uid: NMF.AnyText.Rules.RuleApplication.Validate(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.Validate(NMF.AnyText.ParseContext)
+  id: Validate(NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Validate(ParseContext)
+  nameWithType: RuleApplication.Validate(ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.Validate(NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Validate
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 107
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Validates the rule semantically
+  example: []
+  syntax:
+    content: public virtual void Validate(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context in which the rule is validated
+    content.vb: Public Overridable Sub Validate(context As ParseContext)
+  overload: NMF.AnyText.Rules.RuleApplication.Validate*
+- uid: NMF.AnyText.Rules.RuleApplication.GetValue(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetValue(NMF.AnyText.ParseContext)
+  id: GetValue(NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetValue(ParseContext)
+  nameWithType: RuleApplication.GetValue(ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.GetValue(NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetValue
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 116
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the parsed newPosition under the given context
+  example: []
+  syntax:
+    content: public abstract object GetValue(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context
+    return:
+      type: System.Object
+      description: the parsed newPosition
+    content.vb: Public MustOverride Function GetValue(context As ParseContext) As Object
+  overload: NMF.AnyText.Rules.RuleApplication.GetValue*
+- uid: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol(NMF.AnyText.ParseContext,System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol},System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol})
+  commentId: M:NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol(NMF.AnyText.ParseContext,System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol},System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol})
+  id: AddDocumentSymbol(NMF.AnyText.ParseContext,System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol},System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol})
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: AddDocumentSymbol(ParseContext, ICollection<DocumentSymbol>, IEnumerable<DocumentSymbol>)
+  nameWithType: RuleApplication.AddDocumentSymbol(ParseContext, ICollection<DocumentSymbol>, IEnumerable<DocumentSymbol>)
+  fullName: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol(NMF.AnyText.ParseContext, System.Collections.Generic.ICollection<NMF.AnyText.DocumentSymbol>, System.Collections.Generic.IEnumerable<NMF.AnyText.DocumentSymbol>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddDocumentSymbol
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 130
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Adds a document symbol to a list
+  example: []
+  syntax:
+    content: public virtual void AddDocumentSymbol(ParseContext context, ICollection<DocumentSymbol> result, IEnumerable<DocumentSymbol> children)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context
+    - id: result
+      type: System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol}
+      description: the list to add the document symbol to
+    - id: children
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+      description: the children symbols of the document symbol
+    content.vb: Public Overridable Sub AddDocumentSymbol(context As ParseContext, result As ICollection(Of DocumentSymbol), children As IEnumerable(Of DocumentSymbol))
+  overload: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol*
+  nameWithType.vb: RuleApplication.AddDocumentSymbol(ParseContext, ICollection(Of DocumentSymbol), IEnumerable(Of DocumentSymbol))
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol(NMF.AnyText.ParseContext, System.Collections.Generic.ICollection(Of NMF.AnyText.DocumentSymbol), System.Collections.Generic.IEnumerable(Of NMF.AnyText.DocumentSymbol))
+  name.vb: AddDocumentSymbol(ParseContext, ICollection(Of DocumentSymbol), IEnumerable(Of DocumentSymbol))
+- uid: NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition
+  id: GetFirstReferenceOrDefinition
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetFirstReferenceOrDefinition()
+  nameWithType: RuleApplication.GetFirstReferenceOrDefinition()
+  fullName: NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetFirstReferenceOrDefinition
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 192
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the first reference or definition rule in the upward parse tree starting from this rule application
+  example: []
+  syntax:
+    content: public RuleApplication GetFirstReferenceOrDefinition()
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: The rule application of the reference or definition rule
+    content.vb: Public Function GetFirstReferenceOrDefinition() As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition*
+- uid: NMF.AnyText.Rules.RuleApplication.GetIdentifier
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetIdentifier
+  id: GetIdentifier
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetIdentifier()
+  nameWithType: RuleApplication.GetIdentifier()
+  fullName: NMF.AnyText.Rules.RuleApplication.GetIdentifier()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetIdentifier
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 205
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the first contained rule application that represents an identifier
+  example: []
+  syntax:
+    content: public virtual RuleApplication GetIdentifier()
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: The rule application for the literal rule representing the identifier
+    content.vb: Public Overridable Function GetIdentifier() As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.GetIdentifier*
+- uid: NMF.AnyText.Rules.RuleApplication.Rule
+  commentId: P:NMF.AnyText.Rules.RuleApplication.Rule
+  id: Rule
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Rule
+  nameWithType: RuleApplication.Rule
+  fullName: NMF.AnyText.Rules.RuleApplication.Rule
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Rule
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 244
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: The rule that was matched
+  example: []
+  syntax:
+    content: public Rule Rule { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.Rules.Rule
+    content.vb: Public ReadOnly Property Rule As Rule
+  overload: NMF.AnyText.Rules.RuleApplication.Rule*
+- uid: NMF.AnyText.Rules.RuleApplication.Comments
+  commentId: P:NMF.AnyText.Rules.RuleApplication.Comments
+  id: Comments
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Comments
+  nameWithType: RuleApplication.Comments
+  fullName: NMF.AnyText.Rules.RuleApplication.Comments
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Comments
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 249
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets a collection of comments for this rule application
+  example: []
+  syntax:
+    content: public List<RuleApplication> Comments { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+    content.vb: Public Property Comments As List(Of RuleApplication)
+  overload: NMF.AnyText.Rules.RuleApplication.Comments*
+- uid: NMF.AnyText.Rules.RuleApplication.Length
+  commentId: P:NMF.AnyText.Rules.RuleApplication.Length
+  id: Length
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: RuleApplication.Length
+  fullName: NMF.AnyText.Rules.RuleApplication.Length
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Length
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 254
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: the length of the rule application
+  example: []
+  syntax:
+    content: public ParsePositionDelta Length { get; protected set; }
+    parameters: []
+    return:
+      type: NMF.AnyText.ParsePositionDelta
+    content.vb: Public Property Length As ParsePositionDelta
+  overload: NMF.AnyText.Rules.RuleApplication.Length*
+- uid: NMF.AnyText.Rules.RuleApplication.ExaminedTo
+  commentId: P:NMF.AnyText.Rules.RuleApplication.ExaminedTo
+  id: ExaminedTo
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: ExaminedTo
+  nameWithType: RuleApplication.ExaminedTo
+  fullName: NMF.AnyText.Rules.RuleApplication.ExaminedTo
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ExaminedTo
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 259
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: the amount of text that was analyzed to come to the conclusion of this rule application
+  example: []
+  syntax:
+    content: public ParsePositionDelta ExaminedTo { get; protected set; }
+    parameters: []
+    return:
+      type: NMF.AnyText.ParsePositionDelta
+    content.vb: Public Property ExaminedTo As ParsePositionDelta
+  overload: NMF.AnyText.Rules.RuleApplication.ExaminedTo*
+- uid: NMF.AnyText.Rules.RuleApplication.ScopeLength
+  commentId: P:NMF.AnyText.Rules.RuleApplication.ScopeLength
+  id: ScopeLength
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: ScopeLength
+  nameWithType: RuleApplication.ScopeLength
+  fullName: NMF.AnyText.Rules.RuleApplication.ScopeLength
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ScopeLength
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 265
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: the amount of characters that influence the current rule application
+  remarks: for positive rule applications, this is the length, for negative rule applications it is the examination length
+  example: []
+  syntax:
+    content: public ParsePositionDelta ScopeLength { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.ParsePositionDelta
+    content.vb: Public ReadOnly Property ScopeLength As ParsePositionDelta
+  overload: NMF.AnyText.Rules.RuleApplication.ScopeLength*
+- uid: NMF.AnyText.Rules.RuleApplication.IsActive
+  commentId: P:NMF.AnyText.Rules.RuleApplication.IsActive
+  id: IsActive
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: RuleApplication.IsActive
+  fullName: NMF.AnyText.Rules.RuleApplication.IsActive
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsActive
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 270
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: True, if the rule application is part of the current parse tree
+  example: []
+  syntax:
+    content: public bool IsActive { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: NMF.AnyText.Rules.RuleApplication.IsActive*
+- uid: NMF.AnyText.Rules.RuleApplication.CurrentPosition
+  commentId: P:NMF.AnyText.Rules.RuleApplication.CurrentPosition
+  id: CurrentPosition
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: CurrentPosition
+  nameWithType: RuleApplication.CurrentPosition
+  fullName: NMF.AnyText.Rules.RuleApplication.CurrentPosition
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CurrentPosition
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 275
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the last position of this rule application
+  example: []
+  syntax:
+    content: public ParsePosition CurrentPosition { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.ParsePosition
+    content.vb: Public ReadOnly Property CurrentPosition As ParsePosition
+  overload: NMF.AnyText.Rules.RuleApplication.CurrentPosition*
+- uid: NMF.AnyText.Rules.RuleApplication.Activate(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.Activate(NMF.AnyText.ParseContext)
+  id: Activate(NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Activate(ParseContext)
+  nameWithType: RuleApplication.Activate(ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.Activate(NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Activate
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 302
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Activates the rule application, i.e. marks it as part of the current parse tree
+  example: []
+  syntax:
+    content: public virtual void Activate(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the context in which the parse tree exists
+    content.vb: Public Overridable Sub Activate(context As ParseContext)
+  overload: NMF.AnyText.Rules.RuleApplication.Activate*
+- uid: NMF.AnyText.Rules.RuleApplication.Deactivate(NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.Deactivate(NMF.AnyText.ParseContext)
+  id: Deactivate(NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Deactivate(ParseContext)
+  nameWithType: RuleApplication.Deactivate(ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.Deactivate(NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Deactivate
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 315
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Deactivates the rule application, i.e. unmarks it as part of the parse tree
+  example: []
+  syntax:
+    content: public virtual void Deactivate(ParseContext context)
+    parameters:
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the context in which the parse tree exists
+    content.vb: Public Overridable Sub Deactivate(context As ParseContext)
+  overload: NMF.AnyText.Rules.RuleApplication.Deactivate*
+- uid: NMF.AnyText.Rules.RuleApplication.Parent
+  commentId: P:NMF.AnyText.Rules.RuleApplication.Parent
+  id: Parent
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: RuleApplication.Parent
+  fullName: NMF.AnyText.Rules.RuleApplication.Parent
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Parent
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 327
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the parent rule application in the parse tree
+  example: []
+  syntax:
+    content: public RuleApplication Parent { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+    content.vb: Public Property Parent As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.Parent*
+- uid: NMF.AnyText.Rules.RuleApplication.CreateParseErrors
+  commentId: M:NMF.AnyText.Rules.RuleApplication.CreateParseErrors
+  id: CreateParseErrors
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: CreateParseErrors()
+  nameWithType: RuleApplication.CreateParseErrors()
+  fullName: NMF.AnyText.Rules.RuleApplication.CreateParseErrors()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateParseErrors
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 333
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets a collection of parse errors represented by this rule application
+  example: []
+  syntax:
+    content: public virtual IEnumerable<DiagnosticItem> CreateParseErrors()
+    return:
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.DiagnosticItem}
+      description: A collection of parse errors
+    content.vb: Public Overridable Function CreateParseErrors() As IEnumerable(Of DiagnosticItem)
+  overload: NMF.AnyText.Rules.RuleApplication.CreateParseErrors*
+- uid: NMF.AnyText.Rules.RuleApplication.PotentialError
+  commentId: P:NMF.AnyText.Rules.RuleApplication.PotentialError
+  id: PotentialError
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: PotentialError
+  nameWithType: RuleApplication.PotentialError
+  fullName: NMF.AnyText.Rules.RuleApplication.PotentialError
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: PotentialError
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 338
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Denotes a potential error to improve error reporting
+  example: []
+  syntax:
+    content: public virtual RuleApplication PotentialError { get; }
+    parameters: []
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+    content.vb: Public Overridable ReadOnly Property PotentialError As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.PotentialError*
+- uid: NMF.AnyText.Rules.RuleApplication.CodeLenses(System.Predicate{NMF.AnyText.CodeLensApplication})
+  commentId: M:NMF.AnyText.Rules.RuleApplication.CodeLenses(System.Predicate{NMF.AnyText.CodeLensApplication})
+  id: CodeLenses(System.Predicate{NMF.AnyText.CodeLensApplication})
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: CodeLenses(Predicate<CodeLensApplication>)
+  nameWithType: RuleApplication.CodeLenses(Predicate<CodeLensApplication>)
+  fullName: NMF.AnyText.Rules.RuleApplication.CodeLenses(System.Predicate<NMF.AnyText.CodeLensApplication>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CodeLenses
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 345
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Calculates the code lenses matching the given predicate
+  example: []
+  syntax:
+    content: public ICollection<CodeLensApplication> CodeLenses(Predicate<CodeLensApplication> predicate = null)
+    parameters:
+    - id: predicate
+      type: System.Predicate{NMF.AnyText.CodeLensApplication}
+      description: A predicate to filter code lenses or null
+    return:
+      type: System.Collections.Generic.ICollection{NMF.AnyText.CodeLensApplication}
+      description: A collection of code lenses
+    content.vb: Public Function CodeLenses(predicate As Predicate(Of CodeLensApplication) = Nothing) As ICollection(Of CodeLensApplication)
+  overload: NMF.AnyText.Rules.RuleApplication.CodeLenses*
+  nameWithType.vb: RuleApplication.CodeLenses(Predicate(Of CodeLensApplication))
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.CodeLenses(System.Predicate(Of NMF.AnyText.CodeLensApplication))
+  name.vb: CodeLenses(Predicate(Of CodeLensApplication))
+- uid: NMF.AnyText.Rules.RuleApplication.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
+  id: OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: OnValueChange(RuleApplication, ParseContext, RuleApplication)
+  nameWithType: RuleApplication.OnValueChange(RuleApplication, ParseContext, RuleApplication)
+  fullName: NMF.AnyText.Rules.RuleApplication.OnValueChange(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, NMF.AnyText.Rules.RuleApplication)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnValueChange
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 372
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets called when the newPosition of the given rule application changes
+  example: []
+  syntax:
+    content: protected virtual void OnValueChange(RuleApplication changedChild, ParseContext context, RuleApplication oldValueApplication)
+    parameters:
+    - id: changedChild
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the changed rule application (either this or a child in the parse tree)
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context
+    - id: oldValueApplication
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the rule application with the old value
+    content.vb: Protected Overridable Sub OnValueChange(changedChild As RuleApplication, context As ParseContext, oldValueApplication As RuleApplication)
+  overload: NMF.AnyText.Rules.RuleApplication.OnValueChange*
+- uid: NMF.AnyText.Rules.RuleApplication.ApplyTo(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.ApplyTo(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  id: ApplyTo(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: ApplyTo(RuleApplication, ParseContext)
+  nameWithType: RuleApplication.ApplyTo(RuleApplication, ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.ApplyTo(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ApplyTo
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 386
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Applies the structure of the current rule application to the given other rule application
+  example: []
+  syntax:
+    content: public abstract RuleApplication ApplyTo(RuleApplication other, ParseContext context)
+    parameters:
+    - id: other
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the rule application to which the rule should be applied
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the merged rule application
+    content.vb: Public MustOverride Function ApplyTo(other As RuleApplication, context As ParseContext) As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.ApplyTo*
+- uid: NMF.AnyText.Rules.RuleApplication.GetLiteralAt(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetLiteralAt(NMF.AnyText.ParsePosition)
+  id: GetLiteralAt(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetLiteralAt(ParsePosition)
+  nameWithType: RuleApplication.GetLiteralAt(ParsePosition)
+  fullName: NMF.AnyText.Rules.RuleApplication.GetLiteralAt(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetLiteralAt
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 393
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Gets the literal at the given position
+  example: []
+  syntax:
+    content: public abstract RuleApplication GetLiteralAt(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the position
+    return:
+      type: NMF.AnyText.Rules.RuleApplication
+      description: the literal rule application or null, if there is no literal there
+    content.vb: Public MustOverride Function GetLiteralAt(position As ParsePosition) As RuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.GetLiteralAt*
+- uid: NMF.AnyText.Rules.RuleApplication.IterateLiterals(System.Action{NMF.AnyText.Rules.LiteralRuleApplication})
+  commentId: M:NMF.AnyText.Rules.RuleApplication.IterateLiterals(System.Action{NMF.AnyText.Rules.LiteralRuleApplication})
+  id: IterateLiterals(System.Action{NMF.AnyText.Rules.LiteralRuleApplication})
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: IterateLiterals(Action<LiteralRuleApplication>)
+  nameWithType: RuleApplication.IterateLiterals(Action<LiteralRuleApplication>)
+  fullName: NMF.AnyText.Rules.RuleApplication.IterateLiterals(System.Action<NMF.AnyText.Rules.LiteralRuleApplication>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IterateLiterals
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 399
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Iterate over all literals
+  example: []
+  syntax:
+    content: public abstract void IterateLiterals(Action<LiteralRuleApplication> action)
+    parameters:
+    - id: action
+      type: System.Action{NMF.AnyText.Rules.LiteralRuleApplication}
+      description: the action that should be performed for all literals
+    content.vb: Public MustOverride Sub IterateLiterals(action As Action(Of LiteralRuleApplication))
+  overload: NMF.AnyText.Rules.RuleApplication.IterateLiterals*
+  nameWithType.vb: RuleApplication.IterateLiterals(Action(Of LiteralRuleApplication))
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.IterateLiterals(System.Action(Of NMF.AnyText.Rules.LiteralRuleApplication))
+  name.vb: IterateLiterals(Action(Of LiteralRuleApplication))
+- uid: NMF.AnyText.Rules.RuleApplication.IterateLiterals``1(System.Action{NMF.AnyText.Rules.LiteralRuleApplication,``0},``0)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.IterateLiterals``1(System.Action{NMF.AnyText.Rules.LiteralRuleApplication,``0},``0)
+  id: IterateLiterals``1(System.Action{NMF.AnyText.Rules.LiteralRuleApplication,``0},``0)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: IterateLiterals<T>(Action<LiteralRuleApplication, T>, T)
+  nameWithType: RuleApplication.IterateLiterals<T>(Action<LiteralRuleApplication, T>, T)
+  fullName: NMF.AnyText.Rules.RuleApplication.IterateLiterals<T>(System.Action<NMF.AnyText.Rules.LiteralRuleApplication, T>, T)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IterateLiterals
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 407
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Iterate over all literals
+  example: []
+  syntax:
+    content: public abstract void IterateLiterals<T>(Action<LiteralRuleApplication, T> action, T parameter)
+    parameters:
+    - id: action
+      type: System.Action{NMF.AnyText.Rules.LiteralRuleApplication,{T}}
+      description: the action that should be performed for all literals
+    - id: parameter
+      type: '{T}'
+      description: the parameter
+    typeParameters:
+    - id: T
+      description: the parameter type
+    content.vb: Public MustOverride Sub IterateLiterals(Of T)(action As Action(Of LiteralRuleApplication, T), parameter As T)
+  overload: NMF.AnyText.Rules.RuleApplication.IterateLiterals*
+  nameWithType.vb: RuleApplication.IterateLiterals(Of T)(Action(Of LiteralRuleApplication, T), T)
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.IterateLiterals(Of T)(System.Action(Of NMF.AnyText.Rules.LiteralRuleApplication, T), T)
+  name.vb: IterateLiterals(Of T)(Action(Of LiteralRuleApplication, T), T)
+- uid: NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral
+  id: GetFirstInnerLiteral
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetFirstInnerLiteral()
+  nameWithType: RuleApplication.GetFirstInnerLiteral()
+  fullName: NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetFirstInnerLiteral
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 414
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Calculates the first literal within this rule application
+  example: []
+  syntax:
+    content: public abstract LiteralRuleApplication GetFirstInnerLiteral()
+    return:
+      type: NMF.AnyText.Rules.LiteralRuleApplication
+      description: the first literal rule application or null
+    content.vb: Public MustOverride Function GetFirstInnerLiteral() As LiteralRuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral*
+- uid: NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral
+  commentId: M:NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral
+  id: GetLastInnerLiteral
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: GetLastInnerLiteral()
+  nameWithType: RuleApplication.GetLastInnerLiteral()
+  fullName: NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetLastInnerLiteral
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 420
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Calculates the last literal within this rule application
+  example: []
+  syntax:
+    content: public abstract LiteralRuleApplication GetLastInnerLiteral()
+    return:
+      type: NMF.AnyText.Rules.LiteralRuleApplication
+      description: the last literal rule application or null
+    content.vb: Public MustOverride Function GetLastInnerLiteral() As LiteralRuleApplication
+  overload: NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral*
+- uid: NMF.AnyText.Rules.RuleApplication.Write(NMF.AnyText.PrettyPrinting.PrettyPrintWriter,NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.RuleApplication.Write(NMF.AnyText.PrettyPrinting.PrettyPrintWriter,NMF.AnyText.ParseContext)
+  id: Write(NMF.AnyText.PrettyPrinting.PrettyPrintWriter,NMF.AnyText.ParseContext)
+  parent: NMF.AnyText.Rules.RuleApplication
+  langs:
+  - csharp
+  - vb
+  name: Write(PrettyPrintWriter, ParseContext)
+  nameWithType: RuleApplication.Write(PrettyPrintWriter, ParseContext)
+  fullName: NMF.AnyText.Rules.RuleApplication.Write(NMF.AnyText.PrettyPrinting.PrettyPrintWriter, NMF.AnyText.ParseContext)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/RuleApplication.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Write
+    path: src/AnyText/AnyText.Core/Rules/RuleApplication.cs
+    startLine: 428
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Writes the given rule application to the provided text writer
+  example: []
+  syntax:
+    content: public abstract void Write(PrettyPrintWriter writer, ParseContext context)
+    parameters:
+    - id: writer
+      type: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+      description: the writer to which the rule application should be written
+    - id: context
+      type: NMF.AnyText.ParseContext
+      description: the parse context
+    content.vb: Public MustOverride Sub Write(writer As PrettyPrintWriter, context As ParseContext)
+  overload: NMF.AnyText.Rules.RuleApplication.Write*
+references:
+- uid: NMF.AnyText.Rules
+  commentId: N:NMF.AnyText.Rules
+  href: NMF.html
+  name: NMF.AnyText.Rules
+  nameWithType: NMF.AnyText.Rules
+  fullName: NMF.AnyText.Rules
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Rules
+    name: Rules
+    href: NMF.AnyText.Rules.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.Rules.RuleApplication.Children*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Children
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Children
+  name: Children
+  nameWithType: RuleApplication.Children
+  fullName: NMF.AnyText.Rules.RuleApplication.Children
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.RuleApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<RuleApplication>
+  nameWithType: IEnumerable<RuleApplication>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.RuleApplication>
+  nameWithType.vb: IEnumerable(Of RuleApplication)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.RuleApplication)
+  name.vb: IEnumerable(Of RuleApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: NMF.AnyText.Rules.RuleApplication.#ctor*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.#ctor
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication__ctor_NMF_AnyText_Rules_Rule_NMF_AnyText_ParsePositionDelta_NMF_AnyText_ParsePositionDelta_
+  name: RuleApplication
+  nameWithType: RuleApplication.RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication.RuleApplication
+  nameWithType.vb: RuleApplication.New
+  fullName.vb: NMF.AnyText.Rules.RuleApplication.New
+  name.vb: New
+- uid: NMF.AnyText.Rules.Rule
+  commentId: T:NMF.AnyText.Rules.Rule
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.Rule.html
+  name: Rule
+  nameWithType: Rule
+  fullName: NMF.AnyText.Rules.Rule
+- uid: NMF.AnyText.ParsePositionDelta
+  commentId: T:NMF.AnyText.ParsePositionDelta
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePositionDelta.html
+  name: ParsePositionDelta
+  nameWithType: ParsePositionDelta
+  fullName: NMF.AnyText.ParsePositionDelta
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: NMF.AnyText.Rules.RuleApplication.IsPositive*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.IsPositive
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_IsPositive
+  name: IsPositive
+  nameWithType: RuleApplication.IsPositive
+  fullName: NMF.AnyText.Rules.RuleApplication.IsPositive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.Rules.RuleApplication.ContextElement*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.ContextElement
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_ContextElement
+  name: ContextElement
+  nameWithType: RuleApplication.ContextElement
+  fullName: NMF.AnyText.Rules.RuleApplication.ContextElement
+- uid: NMF.AnyText.Rules.RuleApplication.SemanticElement*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.SemanticElement
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_SemanticElement
+  name: SemanticElement
+  nameWithType: RuleApplication.SemanticElement
+  fullName: NMF.AnyText.Rules.RuleApplication.SemanticElement
+- uid: NMF.AnyText.Rules.RuleApplication.DiagnosticItems*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_DiagnosticItems
+  name: DiagnosticItems
+  nameWithType: RuleApplication.DiagnosticItems
+  fullName: NMF.AnyText.Rules.RuleApplication.DiagnosticItems
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.DiagnosticItem}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.DiagnosticItem}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DiagnosticItem>
+  nameWithType: IEnumerable<DiagnosticItem>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.DiagnosticItem>
+  nameWithType.vb: IEnumerable(Of DiagnosticItem)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.DiagnosticItem)
+  name.vb: IEnumerable(Of DiagnosticItem)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.DiagnosticItem
+    name: DiagnosticItem
+    href: NMF.AnyText.DiagnosticItem.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.DiagnosticItem
+    name: DiagnosticItem
+    href: NMF.AnyText.DiagnosticItem.html
+  - name: )
+- uid: NMF.AnyText.Rules.RuleApplication.FindChildAt*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.FindChildAt
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_FindChildAt_NMF_AnyText_ParsePosition_NMF_AnyText_Rules_Rule_
+  name: FindChildAt
+  nameWithType: RuleApplication.FindChildAt
+  fullName: NMF.AnyText.Rules.RuleApplication.FindChildAt
+- uid: NMF.AnyText.ParsePosition
+  commentId: T:NMF.AnyText.ParsePosition
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParsePosition.html
+  name: ParsePosition
+  nameWithType: ParsePosition
+  fullName: NMF.AnyText.ParsePosition
+- uid: NMF.AnyText.Rules.RuleApplication
+  commentId: T:NMF.AnyText.Rules.RuleApplication
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.RuleApplication.html
+  name: RuleApplication
+  nameWithType: RuleApplication
+  fullName: NMF.AnyText.Rules.RuleApplication
+- uid: NMF.AnyText.Rules.RuleApplication.Validate*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Validate
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Validate_NMF_AnyText_ParseContext_
+  name: Validate
+  nameWithType: RuleApplication.Validate
+  fullName: NMF.AnyText.Rules.RuleApplication.Validate
+- uid: NMF.AnyText.ParseContext
+  commentId: T:NMF.AnyText.ParseContext
+  parent: NMF.AnyText
+  href: NMF.AnyText.ParseContext.html
+  name: ParseContext
+  nameWithType: ParseContext
+  fullName: NMF.AnyText.ParseContext
+- uid: NMF.AnyText.Rules.RuleApplication.GetValue*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetValue
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetValue_NMF_AnyText_ParseContext_
+  name: GetValue
+  nameWithType: RuleApplication.GetValue
+  fullName: NMF.AnyText.Rules.RuleApplication.GetValue
+- uid: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_AddDocumentSymbol_NMF_AnyText_ParseContext_System_Collections_Generic_ICollection_NMF_AnyText_DocumentSymbol__System_Collections_Generic_IEnumerable_NMF_AnyText_DocumentSymbol__
+  name: AddDocumentSymbol
+  nameWithType: RuleApplication.AddDocumentSymbol
+  fullName: NMF.AnyText.Rules.RuleApplication.AddDocumentSymbol
+- uid: System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol}
+  commentId: T:System.Collections.Generic.ICollection{NMF.AnyText.DocumentSymbol}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<DocumentSymbol>
+  nameWithType: ICollection<DocumentSymbol>
+  fullName: System.Collections.Generic.ICollection<NMF.AnyText.DocumentSymbol>
+  nameWithType.vb: ICollection(Of DocumentSymbol)
+  fullName.vb: System.Collections.Generic.ICollection(Of NMF.AnyText.DocumentSymbol)
+  name.vb: ICollection(Of DocumentSymbol)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.DocumentSymbol}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DocumentSymbol>
+  nameWithType: IEnumerable<DocumentSymbol>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.DocumentSymbol>
+  nameWithType.vb: IEnumerable(Of DocumentSymbol)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.DocumentSymbol)
+  name.vb: IEnumerable(Of DocumentSymbol)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.DocumentSymbol
+    name: DocumentSymbol
+    href: NMF.AnyText.DocumentSymbol.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetFirstReferenceOrDefinition
+  name: GetFirstReferenceOrDefinition
+  nameWithType: RuleApplication.GetFirstReferenceOrDefinition
+  fullName: NMF.AnyText.Rules.RuleApplication.GetFirstReferenceOrDefinition
+- uid: NMF.AnyText.Rules.RuleApplication.GetIdentifier*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetIdentifier
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetIdentifier
+  name: GetIdentifier
+  nameWithType: RuleApplication.GetIdentifier
+  fullName: NMF.AnyText.Rules.RuleApplication.GetIdentifier
+- uid: NMF.AnyText.Rules.RuleApplication.Rule*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Rule
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Rule
+  name: Rule
+  nameWithType: RuleApplication.Rule
+  fullName: NMF.AnyText.Rules.RuleApplication.Rule
+- uid: NMF.AnyText.Rules.RuleApplication.Comments*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Comments
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Comments
+  name: Comments
+  nameWithType: RuleApplication.Comments
+  fullName: NMF.AnyText.Rules.RuleApplication.Comments
+- uid: System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+  commentId: T:System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<RuleApplication>
+  nameWithType: List<RuleApplication>
+  fullName: System.Collections.Generic.List<NMF.AnyText.Rules.RuleApplication>
+  nameWithType.vb: List(Of RuleApplication)
+  fullName.vb: System.Collections.Generic.List(Of NMF.AnyText.Rules.RuleApplication)
+  name.vb: List(Of RuleApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.Rules.RuleApplication.Length*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Length
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Length
+  name: Length
+  nameWithType: RuleApplication.Length
+  fullName: NMF.AnyText.Rules.RuleApplication.Length
+- uid: NMF.AnyText.Rules.RuleApplication.ExaminedTo*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.ExaminedTo
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_ExaminedTo
+  name: ExaminedTo
+  nameWithType: RuleApplication.ExaminedTo
+  fullName: NMF.AnyText.Rules.RuleApplication.ExaminedTo
+- uid: NMF.AnyText.Rules.RuleApplication.ScopeLength*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.ScopeLength
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_ScopeLength
+  name: ScopeLength
+  nameWithType: RuleApplication.ScopeLength
+  fullName: NMF.AnyText.Rules.RuleApplication.ScopeLength
+- uid: NMF.AnyText.Rules.RuleApplication.IsActive*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.IsActive
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_IsActive
+  name: IsActive
+  nameWithType: RuleApplication.IsActive
+  fullName: NMF.AnyText.Rules.RuleApplication.IsActive
+- uid: NMF.AnyText.Rules.RuleApplication.CurrentPosition*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.CurrentPosition
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_CurrentPosition
+  name: CurrentPosition
+  nameWithType: RuleApplication.CurrentPosition
+  fullName: NMF.AnyText.Rules.RuleApplication.CurrentPosition
+- uid: NMF.AnyText.Rules.RuleApplication.Activate*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Activate
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Activate_NMF_AnyText_ParseContext_
+  name: Activate
+  nameWithType: RuleApplication.Activate
+  fullName: NMF.AnyText.Rules.RuleApplication.Activate
+- uid: NMF.AnyText.Rules.RuleApplication.Deactivate*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Deactivate
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Deactivate_NMF_AnyText_ParseContext_
+  name: Deactivate
+  nameWithType: RuleApplication.Deactivate
+  fullName: NMF.AnyText.Rules.RuleApplication.Deactivate
+- uid: NMF.AnyText.Rules.RuleApplication.Parent*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Parent
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Parent
+  name: Parent
+  nameWithType: RuleApplication.Parent
+  fullName: NMF.AnyText.Rules.RuleApplication.Parent
+- uid: NMF.AnyText.Rules.RuleApplication.CreateParseErrors*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.CreateParseErrors
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_CreateParseErrors
+  name: CreateParseErrors
+  nameWithType: RuleApplication.CreateParseErrors
+  fullName: NMF.AnyText.Rules.RuleApplication.CreateParseErrors
+- uid: NMF.AnyText.Rules.RuleApplication.PotentialError*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.PotentialError
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_PotentialError
+  name: PotentialError
+  nameWithType: RuleApplication.PotentialError
+  fullName: NMF.AnyText.Rules.RuleApplication.PotentialError
+- uid: NMF.AnyText.Rules.RuleApplication.CodeLenses*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.CodeLenses
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_CodeLenses_System_Predicate_NMF_AnyText_CodeLensApplication__
+  name: CodeLenses
+  nameWithType: RuleApplication.CodeLenses
+  fullName: NMF.AnyText.Rules.RuleApplication.CodeLenses
+- uid: System.Predicate{NMF.AnyText.CodeLensApplication}
+  commentId: T:System.Predicate{NMF.AnyText.CodeLensApplication}
+  parent: System
+  definition: System.Predicate`1
+  href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  name: Predicate<CodeLensApplication>
+  nameWithType: Predicate<CodeLensApplication>
+  fullName: System.Predicate<NMF.AnyText.CodeLensApplication>
+  nameWithType.vb: Predicate(Of CodeLensApplication)
+  fullName.vb: System.Predicate(Of NMF.AnyText.CodeLensApplication)
+  name.vb: Predicate(Of CodeLensApplication)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: <
+  - uid: NMF.AnyText.CodeLensApplication
+    name: CodeLensApplication
+    href: NMF.AnyText.CodeLensApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.CodeLensApplication
+    name: CodeLensApplication
+    href: NMF.AnyText.CodeLensApplication.html
+  - name: )
+- uid: System.Collections.Generic.ICollection{NMF.AnyText.CodeLensApplication}
+  commentId: T:System.Collections.Generic.ICollection{NMF.AnyText.CodeLensApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<CodeLensApplication>
+  nameWithType: ICollection<CodeLensApplication>
+  fullName: System.Collections.Generic.ICollection<NMF.AnyText.CodeLensApplication>
+  nameWithType.vb: ICollection(Of CodeLensApplication)
+  fullName.vb: System.Collections.Generic.ICollection(Of NMF.AnyText.CodeLensApplication)
+  name.vb: ICollection(Of CodeLensApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: NMF.AnyText.CodeLensApplication
+    name: CodeLensApplication
+    href: NMF.AnyText.CodeLensApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.CodeLensApplication
+    name: CodeLensApplication
+    href: NMF.AnyText.CodeLensApplication.html
+  - name: )
+- uid: System.Predicate`1
+  commentId: T:System.Predicate`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  name: Predicate<T>
+  nameWithType: Predicate<T>
+  fullName: System.Predicate<T>
+  nameWithType.vb: Predicate(Of T)
+  fullName.vb: System.Predicate(Of T)
+  name.vb: Predicate(Of T)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.predicate-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.Rules.RuleApplication.OnValueChange*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.OnValueChange
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_OnValueChange_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_Rules_RuleApplication_
+  name: OnValueChange
+  nameWithType: RuleApplication.OnValueChange
+  fullName: NMF.AnyText.Rules.RuleApplication.OnValueChange
+- uid: NMF.AnyText.Rules.RuleApplication.ApplyTo*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.ApplyTo
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_ApplyTo_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
+  name: ApplyTo
+  nameWithType: RuleApplication.ApplyTo
+  fullName: NMF.AnyText.Rules.RuleApplication.ApplyTo
+- uid: NMF.AnyText.Rules.RuleApplication.GetLiteralAt*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetLiteralAt
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetLiteralAt_NMF_AnyText_ParsePosition_
+  name: GetLiteralAt
+  nameWithType: RuleApplication.GetLiteralAt
+  fullName: NMF.AnyText.Rules.RuleApplication.GetLiteralAt
+- uid: NMF.AnyText.Rules.RuleApplication.IterateLiterals*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.IterateLiterals
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_IterateLiterals_System_Action_NMF_AnyText_Rules_LiteralRuleApplication__
+  name: IterateLiterals
+  nameWithType: RuleApplication.IterateLiterals
+  fullName: NMF.AnyText.Rules.RuleApplication.IterateLiterals
+- uid: System.Action{NMF.AnyText.Rules.LiteralRuleApplication}
+  commentId: T:System.Action{NMF.AnyText.Rules.LiteralRuleApplication}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<LiteralRuleApplication>
+  nameWithType: Action<LiteralRuleApplication>
+  fullName: System.Action<NMF.AnyText.Rules.LiteralRuleApplication>
+  nameWithType.vb: Action(Of LiteralRuleApplication)
+  fullName.vb: System.Action(Of NMF.AnyText.Rules.LiteralRuleApplication)
+  name.vb: Action(Of LiteralRuleApplication)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: NMF.AnyText.Rules.LiteralRuleApplication
+    name: LiteralRuleApplication
+    href: NMF.AnyText.Rules.LiteralRuleApplication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.LiteralRuleApplication
+    name: LiteralRuleApplication
+    href: NMF.AnyText.Rules.LiteralRuleApplication.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{NMF.AnyText.Rules.LiteralRuleApplication,{T}}
+  commentId: T:System.Action{NMF.AnyText.Rules.LiteralRuleApplication,``0}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<LiteralRuleApplication, T>
+  nameWithType: Action<LiteralRuleApplication, T>
+  fullName: System.Action<NMF.AnyText.Rules.LiteralRuleApplication, T>
+  nameWithType.vb: Action(Of LiteralRuleApplication, T)
+  fullName.vb: System.Action(Of NMF.AnyText.Rules.LiteralRuleApplication, T)
+  name.vb: Action(Of LiteralRuleApplication, T)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: NMF.AnyText.Rules.LiteralRuleApplication
+    name: LiteralRuleApplication
+    href: NMF.AnyText.Rules.LiteralRuleApplication.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.LiteralRuleApplication
+    name: LiteralRuleApplication
+    href: NMF.AnyText.Rules.LiteralRuleApplication.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetFirstInnerLiteral
+  name: GetFirstInnerLiteral
+  nameWithType: RuleApplication.GetFirstInnerLiteral
+  fullName: NMF.AnyText.Rules.RuleApplication.GetFirstInnerLiteral
+- uid: NMF.AnyText.Rules.LiteralRuleApplication
+  commentId: T:NMF.AnyText.Rules.LiteralRuleApplication
+  parent: NMF.AnyText.Rules
+  href: NMF.AnyText.Rules.LiteralRuleApplication.html
+  name: LiteralRuleApplication
+  nameWithType: LiteralRuleApplication
+  fullName: NMF.AnyText.Rules.LiteralRuleApplication
+- uid: NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_GetLastInnerLiteral
+  name: GetLastInnerLiteral
+  nameWithType: RuleApplication.GetLastInnerLiteral
+  fullName: NMF.AnyText.Rules.RuleApplication.GetLastInnerLiteral
+- uid: NMF.AnyText.Rules.RuleApplication.Write*
+  commentId: Overload:NMF.AnyText.Rules.RuleApplication.Write
+  href: NMF.AnyText.Rules.RuleApplication.html#NMF_AnyText_Rules_RuleApplication_Write_NMF_AnyText_PrettyPrinting_PrettyPrintWriter_NMF_AnyText_ParseContext_
+  name: Write
+  nameWithType: RuleApplication.Write
+  fullName: NMF.AnyText.Rules.RuleApplication.Write
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  commentId: T:NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  parent: NMF.AnyText.PrettyPrinting
+  href: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.html
+  name: PrettyPrintWriter
+  nameWithType: PrettyPrintWriter
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+- uid: NMF.AnyText.PrettyPrinting
+  commentId: N:NMF.AnyText.PrettyPrinting
+  href: NMF.html
+  name: NMF.AnyText.PrettyPrinting
+  nameWithType: NMF.AnyText.PrettyPrinting
+  fullName: NMF.AnyText.PrettyPrinting
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.PrettyPrinting
+    name: PrettyPrinting
+    href: NMF.AnyText.PrettyPrinting.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.PrettyPrinting
+    name: PrettyPrinting
+    href: NMF.AnyText.PrettyPrinting.html

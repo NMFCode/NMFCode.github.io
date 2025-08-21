@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/OperationParametersCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationParametersCollection
     path: src/Models/Models/Meta/OperationParametersCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Parameters reference
+  example: []
   syntax:
     content: 'public class OperationParametersCollection : ObservableOppositeList<IOperation, IParameter>, IReadOnlyList<IParameter>, IReadOnlyCollection<IParameter>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IParameter>, IList<IParameter>, ICollectionExpression<IParameter>, IEnumerableExpression<IParameter>, IEnumerableExpression, ICollection<IParameter>, IEnumerable<IParameter>, IEnumerable'
     content.vb: Public Class OperationParametersCollection Inherits ObservableOppositeList(Of IOperation, IParameter) Implements IReadOnlyList(Of IParameter), IReadOnlyCollection(Of IParameter), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IParameter), IList(Of IParameter), ICollectionExpression(Of IParameter), IEnumerableExpression(Of IParameter), IEnumerableExpression, ICollection(Of IParameter), IEnumerable(Of IParameter), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/OperationParametersCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/OperationParametersCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public OperationParametersCollection(IOperation parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IOperation
+      description: the parent Operation
     content.vb: Public Sub New(parent As IOperation)
   overload: NMF.Models.Meta.OperationParametersCollection.#ctor*
   nameWithType.vb: OperationParametersCollection.New(IOperation)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/OperationParametersCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/OperationParametersCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IParameter item, IOperation parent)
+    content: protected override void SetOpposite(IParameter item, IOperation newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IParameter
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IOperation
-    content.vb: Protected Overrides Sub SetOpposite(item As IParameter, parent As IOperation)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IParameter, newParent As IOperation)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IOperation,NMF.Models.Meta.IParameter}.SetOpposite(NMF.Models.Meta.IParameter,NMF.Models.Meta.IOperation)
   overload: NMF.Models.Meta.OperationParametersCollection.SetOpposite*
 references:

@@ -7,6 +7,7 @@ items:
   children:
   - NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.#ctor(NMF.Models.Repository.ModelRepository)
   - NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.Add(System.Uri,NMF.Models.Model)
+  - NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
   - NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.RegisterChangeHandlers
   - NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.UnregisterChangeHandlers
   langs:
@@ -19,14 +20,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelRepository.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelRepositoryModelCollection
     path: src/Models/Models/Repository/ModelRepository.cs
-    startLine: 330
+    startLine: 389
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a class to store models in the repository
+  example: []
   syntax:
     content: 'protected class ModelRepository.ModelRepositoryModelCollection : ModelCollection, IDictionary<Uri, Model>, ICollection<KeyValuePair<Uri, Model>>, IEnumerable<KeyValuePair<Uri, Model>>, IEnumerable'
     content.vb: Protected Class ModelRepository.ModelRepositoryModelCollection Inherits ModelCollection Implements IDictionary(Of Uri, Model), ICollection(Of KeyValuePair(Of Uri, Model)), IEnumerable(Of KeyValuePair(Of Uri, Model)), IEnumerable
@@ -75,24 +78,59 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelRepository.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/ModelRepository.cs
-    startLine: 332
+    startLine: 395
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ModelRepositoryModelCollection(ModelRepository repo)
     parameters:
     - id: repo
       type: NMF.Models.Repository.ModelRepository
+      description: the parent repository
     content.vb: Public Sub New(repo As ModelRepository)
   overload: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.#ctor*
   nameWithType.vb: ModelRepository.ModelRepositoryModelCollection.New(ModelRepository)
   fullName.vb: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.New(NMF.Models.Repository.ModelRepository)
   name.vb: New(ModelRepository)
+- uid: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  commentId: P:NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  id: AllowOverride
+  parent: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection
+  langs:
+  - csharp
+  - vb
+  name: AllowOverride
+  nameWithType: ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  fullName: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  type: Property
+  source:
+    remote:
+      path: Models/Models/Repository/ModelRepository.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AllowOverride
+    path: src/Models/Models/Repository/ModelRepository.cs
+    startLine: 398
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Repository
+  summary: true, if elements in the model collection may be overridden, otherwise false
+  example: []
+  syntax:
+    content: protected override bool AllowOverride { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides ReadOnly Property AllowOverride As Boolean
+  overridden: NMF.Models.Repository.ModelCollection.AllowOverride
+  overload: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride*
 - uid: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.Add(System.Uri,NMF.Models.Model)
   commentId: M:NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.Add(System.Uri,NMF.Models.Model)
   id: Add(System.Uri,NMF.Models.Model)
@@ -107,25 +145,38 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelRepository.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Repository/ModelRepository.cs
-    startLine: 334
+    startLine: 401
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Adds an element with the provided key and value to the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Add(Uri key, Model value)
     parameters:
     - id: key
       type: System.Uri
+      description: The object to use as the key of the element to add.
     - id: value
       type: NMF.Models.Model
+      description: The object to use as the value of the element to add.
     content.vb: Public Overrides Sub Add(key As Uri, value As Model)
   overridden: NMF.Models.Repository.ModelCollection.Add(System.Uri,NMF.Models.Model)
   overload: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.Add*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: An element with the same key already exists in the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> is read-only.
 - uid: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.RegisterChangeHandlers
   commentId: M:NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.RegisterChangeHandlers
   id: RegisterChangeHandlers
@@ -140,14 +191,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelRepository.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RegisterChangeHandlers
     path: src/Models/Models/Repository/ModelRepository.cs
-    startLine: 344
+    startLine: 414
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Registers the change handlers for all models
+  example: []
   syntax:
     content: public void RegisterChangeHandlers()
     content.vb: Public Sub RegisterChangeHandlers()
@@ -166,14 +219,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelRepository.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnregisterChangeHandlers
     path: src/Models/Models/Repository/ModelRepository.cs
-    startLine: 352
+    startLine: 425
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Unregisters the change handlers for all models
+  example: []
   syntax:
     content: public void UnregisterChangeHandlers()
     content.vb: Public Sub UnregisterChangeHandlers()
@@ -1231,6 +1286,51 @@ references:
   name: ModelRepository
   nameWithType: ModelRepository
   fullName: NMF.Models.Repository.ModelRepository
+- uid: NMF.Models.Repository.ModelCollection.AllowOverride
+  commentId: P:NMF.Models.Repository.ModelCollection.AllowOverride
+  parent: NMF.Models.Repository.ModelCollection
+  href: NMF.Models.Repository.ModelCollection.html#NMF_Models_Repository_ModelCollection_AllowOverride
+  name: AllowOverride
+  nameWithType: ModelCollection.AllowOverride
+  fullName: NMF.Models.Repository.ModelCollection.AllowOverride
+- uid: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride*
+  commentId: Overload:NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  href: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.html#NMF_Models_Repository_ModelRepository_ModelRepositoryModelCollection_AllowOverride
+  name: AllowOverride
+  nameWithType: ModelRepository.ModelRepositoryModelCollection.AllowOverride
+  fullName: NMF.Models.Repository.ModelRepository.ModelRepositoryModelCollection.AllowOverride
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Models.Repository.ModelCollection.Add(System.Uri,NMF.Models.Model)
   commentId: M:NMF.Models.Repository.ModelCollection.Add(System.Uri,NMF.Models.Model)
   parent: NMF.Models.Repository.ModelCollection

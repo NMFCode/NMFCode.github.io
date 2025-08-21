@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CustomCollection&lt;T&gt; ">
     
-    
+    <meta name="description" content="Denotes the base class for a custom collection">
       <link rel="shortcut icon" href="../../favicon.ico">
       <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../../styles/docfx.css">
@@ -71,7 +71,8 @@
 
 
   <h1 id="NMF_Collections_ObjectModel_CustomCollection_1" data-uid="NMF.Collections.ObjectModel.CustomCollection`1" class="text-break">Class CustomCollection&lt;T&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Denotes the base class for a custom collection</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -128,26 +129,31 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The element type</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="NMF_Collections_ObjectModel_CustomCollection_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The idea behind this class is that developers turn an IEnumerableExpression into a ICollectionExpression by implementing Add, Remove and Clear</p>
+</div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1__ctor_NMF_Expressions_IEnumerableExpression__0__.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.%23ctor(NMF.Expressions.IEnumerableExpression%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1__ctor_NMF_Expressions_IEnumerableExpression__0__.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.%23ctor(NMF.Expressions.IEnumerableExpression%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L17">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L27">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1__ctor_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.#ctor*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1__ctor_NMF_Expressions_IEnumerableExpression__0__" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.#ctor(NMF.Expressions.IEnumerableExpression{`0})">CustomCollection(IEnumerableExpression&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new instance</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CustomCollection(IEnumerableExpression&lt;T&gt; inner)</code></pre>
+    <pre><code class="lang-csharp hljs">protected CustomCollection(IEnumerableExpression&lt;T&gt; inner)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -162,7 +168,24 @@
       <tr>
         <td><a class="xref" href="../../expressions/api/NMF.Expressions.IEnumerableExpression-1.html">IEnumerableExpression</a>&lt;T&gt;</td>
         <td><span class="parametername">inner</span></td>
-        <td></td>
+        <td><p>The inner collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if the inner collection is null</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -170,14 +193,15 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Count.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Count.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L24">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L35">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Count_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Count*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Count" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -194,20 +218,22 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
+        <td><p>The number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Inner.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Inner%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Inner.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Inner%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L15">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L20">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Inner_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Inner*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Inner" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Inner">Inner</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the inner collection</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -230,14 +256,15 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_IsReadOnly.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_IsReadOnly.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L32">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L44">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_IsReadOnly_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.IsReadOnly*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_IsReadOnly" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.IsReadOnly">IsReadOnly</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -254,7 +281,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -262,14 +290,15 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Add__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Add(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Add__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Add(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L40">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L53">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Add_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Add*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Add__0_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Add(`0)">Add(T)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an item to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -288,16 +317,33 @@
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">item</span></td>
-        <td></td>
+        <td><p>The object to add to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_AsNotifiable.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.AsNotifiable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_AsNotifiable.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.AsNotifiable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L42">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L56">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_AsNotifiable_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.AsNotifiable*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_AsNotifiable" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.AsNotifiable">AsNotifiable()</h4>
@@ -326,29 +372,47 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Clear.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Clear.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L47">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L62">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Clear_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Clear*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Clear" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Clear">Clear()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes all items from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void Clear()</code></pre>
   </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Contains__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Contains(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Contains__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Contains(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L49">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L65">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Contains_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Contains*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Contains__0_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Contains(`0)">Contains(T)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> contains a specific value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -367,7 +431,8 @@
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">item</span></td>
-        <td></td>
+        <td><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -382,20 +447,22 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L54">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L71">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_CopyTo_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.CopyTo*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_CopyTo__0___System_Int32_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.CopyTo(`0[],System.Int32)">CopyTo(T[], int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -414,25 +481,54 @@
       <tr>
         <td>T[]</td>
         <td><span class="parametername">array</span></td>
-        <td></td>
+        <td><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">arrayIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p><code class="paramref">arrayIndex</code> is less than 0.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The number of elements in the source <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_GetEnumerator.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_GetEnumerator.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L63">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L81">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_GetEnumerator_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.GetEnumerator*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_GetEnumerator" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -449,20 +545,22 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</td>
-        <td></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Remove__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Remove(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1_Remove__0_.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601.Remove(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L68">View Source</a>
+    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L87">View Source</a>
   </span>
   <a id="NMF_Collections_ObjectModel_CustomCollection_1_Remove_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Remove*"></a>
   <h4 id="NMF_Collections_ObjectModel_CustomCollection_1_Remove__0_" data-uid="NMF.Collections.ObjectModel.CustomCollection`1.Remove(`0)">Remove(T)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes the first occurrence of a specific object from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -481,7 +579,8 @@
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">item</span></td>
-        <td></td>
+        <td><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -496,7 +595,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -519,6 +635,10 @@
   <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
   </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__">CollectionExtensions.IgnoreUpdates&lt;T&gt;(IEnumerableExpression&lt;T&gt;)</a>
+  </div>
 
 </article>
           </div>
@@ -528,10 +648,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NMFCode/NMF/new/master/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Collections_ObjectModel_CustomCollection_1.md&amp;value=---%0Auid%3A%20NMF.Collections.ObjectModel.CustomCollection%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/master/Collections/Collections/ObjectModel/CustomCollection.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NMFCode/NMF/blob/main/Collections/Collections/ObjectModel/CustomCollection.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

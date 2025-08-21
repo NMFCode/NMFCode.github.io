@@ -36,7 +36,7 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationCall
     path: src/Models/Models/Changes/OperationCall.cs
@@ -98,8 +98,10 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -172,11 +174,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/ApplyChanges.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Apply
     path: src/Models/Models/Changes/ApplyChanges.cs
-    startLine: 278
+    startLine: 273
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -203,11 +205,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/InvertChanges.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Invert
     path: src/Models/Models/Changes/InvertChanges.cs
-    startLine: 318
+    startLine: 314
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -237,14 +239,16 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 66
+    startLine: 69
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public OperationCall()
     content.vb: Public Sub New()
@@ -266,11 +270,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Operation
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 76
+    startLine: 79
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -320,11 +324,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetElement
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 112
+    startLine: 115
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -374,11 +378,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Arguments
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 148
+    startLine: 151
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -428,11 +432,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferencedElements
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 165
+    startLine: 168
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -462,11 +466,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 176
+    startLine: 179
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -493,11 +497,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationChanging
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 191
+    startLine: 194
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -524,11 +528,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OperationChanged
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 196
+    startLine: 199
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -555,11 +559,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetElementChanging
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 201
+    startLine: 204
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -586,11 +590,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetElementChanged
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 206
+    startLine: 209
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -617,11 +621,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnOperationChanging
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 217
+    startLine: 220
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -649,11 +653,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnOperationChanged
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 230
+    startLine: 233
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -681,11 +685,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnTargetElementChanging
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 258
+    startLine: 261
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -713,11 +717,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnTargetElementChanged
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 271
+    startLine: 274
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -745,11 +749,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 321
+    startLine: 324
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -787,11 +791,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 350
+    startLine: 353
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -826,11 +830,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 364
+    startLine: 367
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -865,11 +869,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForReference
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 384
+    startLine: 387
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -904,11 +908,11 @@ items:
   source:
     remote:
       path: Models/Models/Changes/OperationCall.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Models/Models/Changes/OperationCall.cs
-    startLine: 400
+    startLine: 403
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Changes
@@ -1502,40 +1506,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)

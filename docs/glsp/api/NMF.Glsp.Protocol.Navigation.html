@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace NMF.Glsp.Protocol.Navigation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace NMF.Glsp.Protocol.Navigation ">
+    
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NMF.Glsp.Protocol.Navigation">
+
+  <h1 id="NMF_Glsp_Protocol_Navigation" data-uid="NMF.Glsp.Protocol.Navigation" class="text-break">Namespace NMF.Glsp.Protocol.Navigation</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.NavigateToExternalTargetAction.html">NavigateToExternalTargetAction</a></h4>
+      <section><p>If a navigation target cannot be resolved or the resolved target is something that is not part of our source
+model, e.g., a separate documentation file, a NavigateToExternalTargetAction may be sent. Since the target
+it outside of the model scope such an action would be typically handled by an integration layer (such as
+the surrounding IDE).</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.NavigateToTargetAction.html">NavigateToTargetAction</a></h4>
+      <section><p>Action that triggers the navigation to a particular navigation target. This may be used by the client internally or
+may be sent from the server.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.NavigationTarget.html">NavigationTarget</a></h4>
+      <section><p>A NavigationTarget identifies the object we want to navigate to via its uri and may further provide a label to display
+for the client. Additionally, generic arguments may be used to to encode any domain- or navigation type-specific information.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.RequestNavigationTargetsAction.html">RequestNavigationTargetsAction</a></h4>
+      <section><p>Action that is usually sent from the client to the server to request navigation targets for a specific navigation
+type such as documentation or implementation in the given editor context.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.ResolveNavigationTargetAction.html">ResolveNavigationTargetAction</a></h4>
+      <section><p>If a client cannot navigate to a target directly, a ResolveNavigationTargetAction may be sent to the server
+to resolve the navigation target to one or more model elements. This may be useful in cases where the
+resolution of each target is expensive or the client architecture requires an indirection.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.SetNavigationTargetsAction.html">SetNavigationTargetsAction</a></h4>
+      <section><p>Response action from the server following a RequestNavigationTargetsAction. It contains all available navigation targets
+for the queried target type in the provided editor context. The server may also provide additional information using the
+arguments, e.g., warnings, that can be interpreted by the client.</p>
+</section>
+      <h4><a class="xref" href="NMF.Glsp.Protocol.Navigation.SetResolvedNavigationTargetAction.html">SetResolvedNavigationTargetAction</a></h4>
+      <section><p>An action sent from the server in response to a ResolveNavigationTargetAction. The response contains the
+resolved element ids for the given target and may contain additional information in the args property.</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

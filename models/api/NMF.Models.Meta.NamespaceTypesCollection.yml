@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceTypesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NamespaceTypesCollection
     path: src/Models/Models/Meta/NamespaceTypesCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Types reference
+  example: []
   syntax:
     content: 'public class NamespaceTypesCollection : ObservableOppositeList<INamespace, IType>, IReadOnlyList<IType>, IReadOnlyCollection<IType>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IType>, IList<IType>, ICollectionExpression<IType>, IEnumerableExpression<IType>, IEnumerableExpression, ICollection<IType>, IEnumerable<IType>, IEnumerable'
     content.vb: Public Class NamespaceTypesCollection Inherits ObservableOppositeList(Of INamespace, IType) Implements IReadOnlyList(Of IType), IReadOnlyCollection(Of IType), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IType), IList(Of IType), ICollectionExpression(Of IType), IEnumerableExpression(Of IType), IEnumerableExpression, ICollection(Of IType), IEnumerable(Of IType), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceTypesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/NamespaceTypesCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public NamespaceTypesCollection(INamespace parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.INamespace
+      description: the parent Namespace
     content.vb: Public Sub New(parent As INamespace)
   overload: NMF.Models.Meta.NamespaceTypesCollection.#ctor*
   nameWithType.vb: NamespaceTypesCollection.New(INamespace)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceTypesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/NamespaceTypesCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IType item, INamespace parent)
+    content: protected override void SetOpposite(IType item, INamespace newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IType
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.INamespace
-    content.vb: Protected Overrides Sub SetOpposite(item As IType, parent As INamespace)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IType, newParent As INamespace)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.INamespace,NMF.Models.Meta.IType}.SetOpposite(NMF.Models.Meta.IType,NMF.Models.Meta.INamespace)
   overload: NMF.Models.Meta.NamespaceTypesCollection.SetOpposite*
 references:

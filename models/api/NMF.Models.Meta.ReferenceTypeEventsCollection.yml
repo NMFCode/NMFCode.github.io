@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeEventsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferenceTypeEventsCollection
     path: src/Models/Models/Meta/ReferenceTypeEventsCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Events reference
+  example: []
   syntax:
     content: 'public class ReferenceTypeEventsCollection : ObservableOppositeList<IReferenceType, IEvent>, IReadOnlyList<IEvent>, IReadOnlyCollection<IEvent>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IEvent>, IList<IEvent>, ICollectionExpression<IEvent>, IEnumerableExpression<IEvent>, IEnumerableExpression, ICollection<IEvent>, IEnumerable<IEvent>, IEnumerable'
     content.vb: Public Class ReferenceTypeEventsCollection Inherits ObservableOppositeList(Of IReferenceType, IEvent) Implements IReadOnlyList(Of IEvent), IReadOnlyCollection(Of IEvent), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IEvent), IList(Of IEvent), ICollectionExpression(Of IEvent), IEnumerableExpression(Of IEvent), IEnumerableExpression, ICollection(Of IEvent), IEnumerable(Of IEvent), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeEventsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/ReferenceTypeEventsCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ReferenceTypeEventsCollection(IReferenceType parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IReferenceType
+      description: the parent ReferenceType
     content.vb: Public Sub New(parent As IReferenceType)
   overload: NMF.Models.Meta.ReferenceTypeEventsCollection.#ctor*
   nameWithType.vb: ReferenceTypeEventsCollection.New(IReferenceType)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeEventsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/ReferenceTypeEventsCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IEvent item, IReferenceType parent)
+    content: protected override void SetOpposite(IEvent item, IReferenceType newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IEvent
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IReferenceType
-    content.vb: Protected Overrides Sub SetOpposite(item As IEvent, parent As IReferenceType)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IEvent, newParent As IReferenceType)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IReferenceType,NMF.Models.Meta.IEvent}.SetOpposite(NMF.Models.Meta.IEvent,NMF.Models.Meta.IReferenceType)
   overload: NMF.Models.Meta.ReferenceTypeEventsCollection.SetOpposite*
 references:

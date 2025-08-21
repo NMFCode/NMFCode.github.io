@@ -8,6 +8,7 @@ items:
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateBagInterfaceType(System.CodeDom.CodeTypeReference)
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateListInterfaceType(System.CodeDom.CodeTypeReference)
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOrderedSetInterfaceType(System.CodeDom.CodeTypeReference)
+  - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput(NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext)
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateSetInterfaceType(System.CodeDom.CodeTypeReference)
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.RegisterDependencies
   - NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform(NMF.Models.Meta.IOperation,System.CodeDom.CodeMemberMethod,NMF.Transformations.Core.ITransformationContext)
@@ -21,11 +22,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Operation2Method
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 22
+    startLine: 20
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -197,6 +198,46 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput(NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext)
+  commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput(NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext)
+  id: CreateOutput(NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext)
+  parent: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method
+  langs:
+  - csharp
+  - vb
+  name: CreateOutput(IOperation, ITransformationContext)
+  nameWithType: Meta2ClassesTransformation.Operation2Method.CreateOutput(IOperation, ITransformationContext)
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput(NMF.Models.Meta.IOperation, NMF.Transformations.Core.ITransformationContext)
+  type: Method
+  source:
+    remote:
+      path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateOutput
+    path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
+    startLine: 23
+  assemblies:
+  - NMF.Models.MetaTransformation
+  namespace: NMF.Models.Meta
+  summary: Creates the output of this transformation rule
+  remarks: At this point, not all of the computations have created their output and thus, the trace is not complete. Use the OutputDelayLevel-feature to have the trace contain all elements created in earlier levels
+  example: []
+  syntax:
+    content: public override CodeMemberMethod CreateOutput(IOperation input, ITransformationContext context)
+    parameters:
+    - id: input
+      type: NMF.Models.Meta.IOperation
+      description: The input of the transformation rule
+    - id: context
+      type: NMF.Transformations.Core.ITransformationContext
+      description: The context (and trace!) object
+    return:
+      type: System.CodeDom.CodeMemberMethod
+      description: The output for this transformation under this input
+    content.vb: Public Overrides Function CreateOutput(input As IOperation, context As ITransformationContext) As CodeMemberMethod
+  overridden: NMF.Transformations.TransformationRule{NMF.Models.Meta.IOperation,System.CodeDom.CodeMemberMethod}.CreateOutput(NMF.Models.Meta.IOperation,NMF.Transformations.Core.ITransformationContext)
+  overload: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput*
 - uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform(NMF.Models.Meta.IOperation,System.CodeDom.CodeMemberMethod,NMF.Transformations.Core.ITransformationContext)
   commentId: M:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform(NMF.Models.Meta.IOperation,System.CodeDom.CodeMemberMethod,NMF.Transformations.Core.ITransformationContext)
   id: Transform(NMF.Models.Meta.IOperation,System.CodeDom.CodeMemberMethod,NMF.Transformations.Core.ITransformationContext)
@@ -211,11 +252,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 30
+    startLine: 38
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -250,11 +291,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateListInterfaceType
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 269
+    startLine: 308
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -285,11 +326,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateBagInterfaceType
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 279
+    startLine: 318
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -320,11 +361,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateSetInterfaceType
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 289
+    startLine: 328
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -355,11 +396,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateOrderedSetInterfaceType
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 299
+    startLine: 338
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -390,11 +431,11 @@ items:
   source:
     remote:
       path: Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RegisterDependencies
     path: src/Transformations/Models.MetaTransformation/Meta/Operation2Method.cs
-    startLine: 308
+    startLine: 347
   assemblies:
   - NMF.Models.MetaTransformation
   namespace: NMF.Models.Meta
@@ -27073,18 +27114,25 @@ references:
     href: NMF.Transformations.GeneralTransformationRule-1.html#NMF_Transformations_GeneralTransformationRule_1_ToString
   - name: (
   - name: )
-- uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform*
-  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform
-  href: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.html#NMF_Models_Meta_Meta2ClassesTransformation_Operation2Method_Transform_NMF_Models_Meta_IOperation_System_CodeDom_CodeMemberMethod_NMF_Transformations_Core_ITransformationContext_
-  name: Transform
-  nameWithType: Meta2ClassesTransformation.Operation2Method.Transform
-  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput*
+  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput
+  href: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.html#NMF_Models_Meta_Meta2ClassesTransformation_Operation2Method_CreateOutput_NMF_Models_Meta_IOperation_NMF_Transformations_Core_ITransformationContext_
+  name: CreateOutput
+  nameWithType: Meta2ClassesTransformation.Operation2Method.CreateOutput
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateOutput
 - uid: NMF.Models.Meta.IOperation
   commentId: T:NMF.Models.Meta.IOperation
   parent: NMF.Models.Meta
   name: IOperation
   nameWithType: IOperation
   fullName: NMF.Models.Meta.IOperation
+- uid: NMF.Transformations.Core.ITransformationContext
+  commentId: T:NMF.Transformations.Core.ITransformationContext
+  parent: NMF.Transformations.Core
+  href: NMF.Transformations.Core.ITransformationContext.html
+  name: ITransformationContext
+  nameWithType: ITransformationContext
+  fullName: NMF.Transformations.Core.ITransformationContext
 - uid: System.CodeDom.CodeMemberMethod
   commentId: T:System.CodeDom.CodeMemberMethod
   parent: System.CodeDom
@@ -27093,13 +27141,6 @@ references:
   name: CodeMemberMethod
   nameWithType: CodeMemberMethod
   fullName: System.CodeDom.CodeMemberMethod
-- uid: NMF.Transformations.Core.ITransformationContext
-  commentId: T:NMF.Transformations.Core.ITransformationContext
-  parent: NMF.Transformations.Core
-  href: NMF.Transformations.Core.ITransformationContext.html
-  name: ITransformationContext
-  nameWithType: ITransformationContext
-  fullName: NMF.Transformations.Core.ITransformationContext
 - uid: System.CodeDom
   commentId: N:System.CodeDom
   isExternal: true
@@ -27127,6 +27168,12 @@ references:
     name: CodeDom
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.codedom
+- uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform*
+  commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform
+  href: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.html#NMF_Models_Meta_Meta2ClassesTransformation_Operation2Method_Transform_NMF_Models_Meta_IOperation_System_CodeDom_CodeMemberMethod_NMF_Transformations_Core_ITransformationContext_
+  name: Transform
+  nameWithType: Meta2ClassesTransformation.Operation2Method.Transform
+  fullName: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.Transform
 - uid: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateListInterfaceType*
   commentId: Overload:NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.CreateListInterfaceType
   href: NMF.Models.Meta.Meta2ClassesTransformation.Operation2Method.html#NMF_Models_Meta_Meta2ClassesTransformation_Operation2Method_CreateListInterfaceType_System_CodeDom_CodeTypeReference_

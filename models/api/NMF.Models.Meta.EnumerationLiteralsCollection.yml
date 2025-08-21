@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/EnumerationLiteralsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EnumerationLiteralsCollection
     path: src/Models/Models/Meta/EnumerationLiteralsCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Literals reference
+  example: []
   syntax:
     content: 'public class EnumerationLiteralsCollection : ObservableOppositeList<IEnumeration, ILiteral>, IReadOnlyList<ILiteral>, IReadOnlyCollection<ILiteral>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<ILiteral>, IList<ILiteral>, ICollectionExpression<ILiteral>, IEnumerableExpression<ILiteral>, IEnumerableExpression, ICollection<ILiteral>, IEnumerable<ILiteral>, IEnumerable'
     content.vb: Public Class EnumerationLiteralsCollection Inherits ObservableOppositeList(Of IEnumeration, ILiteral) Implements IReadOnlyList(Of ILiteral), IReadOnlyCollection(Of ILiteral), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of ILiteral), IList(Of ILiteral), ICollectionExpression(Of ILiteral), IEnumerableExpression(Of ILiteral), IEnumerableExpression, ICollection(Of ILiteral), IEnumerable(Of ILiteral), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/EnumerationLiteralsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/EnumerationLiteralsCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public EnumerationLiteralsCollection(IEnumeration parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IEnumeration
+      description: the parent Enumeration
     content.vb: Public Sub New(parent As IEnumeration)
   overload: NMF.Models.Meta.EnumerationLiteralsCollection.#ctor*
   nameWithType.vb: EnumerationLiteralsCollection.New(IEnumeration)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/EnumerationLiteralsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/EnumerationLiteralsCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(ILiteral item, IEnumeration parent)
+    content: protected override void SetOpposite(ILiteral item, IEnumeration newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.ILiteral
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IEnumeration
-    content.vb: Protected Overrides Sub SetOpposite(item As ILiteral, parent As IEnumeration)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As ILiteral, newParent As IEnumeration)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IEnumeration,NMF.Models.Meta.ILiteral}.SetOpposite(NMF.Models.Meta.ILiteral,NMF.Models.Meta.IEnumeration)
   overload: NMF.Models.Meta.EnumerationLiteralsCollection.SetOpposite*
 references:

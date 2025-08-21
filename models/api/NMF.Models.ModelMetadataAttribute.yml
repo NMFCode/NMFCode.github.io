@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Models/Models/ModelMetadataAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelMetadataAttribute
     path: src/Models/Models/ModelMetadataAttribute.cs
@@ -26,6 +26,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Declares that the assembly includes code for a given metamodel
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
@@ -105,14 +107,16 @@ items:
   source:
     remote:
       path: Models/Models/ModelMetadataAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelUri
     path: src/Models/Models/ModelMetadataAttribute.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: The model uri
+  example: []
   syntax:
     content: public Uri ModelUri { get; }
     parameters: []
@@ -134,14 +138,16 @@ items:
   source:
     remote:
       path: Models/Models/ModelMetadataAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ResourceName
     path: src/Models/Models/ModelMetadataAttribute.cs
-    startLine: 12
+    startLine: 18
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: the name of the resource
+  example: []
   syntax:
     content: public string ResourceName { get; }
     parameters: []
@@ -163,21 +169,25 @@ items:
   source:
     remote:
       path: Models/Models/ModelMetadataAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/ModelMetadataAttribute.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Defines that the assembly contains a model at the given embedded resource name
+  example: []
   syntax:
     content: public ModelMetadataAttribute(string modelUri, string resourceName)
     parameters:
     - id: modelUri
       type: System.String
+      description: The URI of the model
     - id: resourceName
       type: System.String
+      description: The resource name or name suffix
     content.vb: Public Sub New(modelUri As String, resourceName As String)
   overload: NMF.Models.ModelMetadataAttribute.#ctor*
   nameWithType.vb: ModelMetadataAttribute.New(String, String)

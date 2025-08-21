@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableCompositionList
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 174
+    startLine: 172
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -103,11 +103,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 179
+    startLine: 177
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -136,11 +136,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 187
+    startLine: 185
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -175,14 +175,15 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClearItems
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 195
+    startLine: 193
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes all elements from the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void ClearItems()
@@ -205,25 +206,32 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: InsertItem
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 250
+    startLine: 248
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Inserts an element into the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: protected override void InsertItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub InsertItem(index As Integer, item As T)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{T}}.InsertItem(System.Int32,{T})
   overload: NMF.Models.Collections.ObservableCompositionList`1.InsertItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCompositionList(Of T).InsertItem(Integer, T)
   fullName.vb: NMF.Models.Collections.ObservableCompositionList(Of T).InsertItem(Integer, T)
   name.vb: InsertItem(Integer, T)
@@ -241,23 +249,29 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveItem
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 278
+    startLine: 276
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Removes the element at the specified index of the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void RemoveItem(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to remove.
     content.vb: Protected Overrides Sub RemoveItem(index As Integer)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{T}}.RemoveItem(System.Int32)
   overload: NMF.Models.Collections.ObservableCompositionList`1.RemoveItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is equal to or greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCompositionList(Of T).RemoveItem(Integer)
   fullName.vb: NMF.Models.Collections.ObservableCompositionList(Of T).RemoveItem(Integer)
   name.vb: RemoveItem(Integer)
@@ -275,25 +289,32 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionList.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetItem
     path: src/Models/Models/Collections/CompositionList.cs
-    startLine: 317
+    startLine: 315
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Replaces the element at the specified index.
   example: []
   syntax:
     content: protected override void SetItem(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to replace.
     - id: item
       type: '{T}'
+      description: The new value for the element at the specified index. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub SetItem(index As Integer, item As T)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{T}}.SetItem(System.Int32,{T})
   overload: NMF.Models.Collections.ObservableCompositionList`1.SetItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableCompositionList(Of T).SetItem(Integer, T)
   fullName.vb: NMF.Models.Collections.ObservableCompositionList(Of T).SetItem(Integer, T)
   name.vb: SetItem(Integer, T)
@@ -2462,6 +2483,13 @@ references:
     name: ClearItems
   - name: (
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Collections.ObjectModel.ObservableCollectionExtended{{T}}.InsertItem(System.Int32,{T})
   commentId: M:NMF.Collections.ObjectModel.ObservableCollectionExtended{`0}.InsertItem(System.Int32,`0)
   parent: NMF.Collections.ObjectModel.ObservableCollectionExtended{{T}}

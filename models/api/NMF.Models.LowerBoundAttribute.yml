@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/LowerBoundAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LowerBoundAttribute
     path: src/Models/Models/Attributes/LowerBoundAttribute.cs
@@ -25,6 +25,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Denotes the lower bound for a given collection
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Property|AttributeTargets.Parameter|AttributeTargets.ReturnValue)]
@@ -100,14 +102,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/LowerBoundAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LowerBound
     path: src/Models/Models/Attributes/LowerBoundAttribute.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Gets the assigned lower bound
+  example: []
   syntax:
     content: public int LowerBound { get; set; }
     parameters: []
@@ -129,19 +133,22 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/LowerBoundAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/LowerBoundAttribute.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public LowerBoundAttribute(int lowerBound)
     parameters:
     - id: lowerBound
       type: System.Int32
+      description: the lower bound
     content.vb: Public Sub New(lowerBound As Integer)
   overload: NMF.Models.LowerBoundAttribute.#ctor*
   nameWithType.vb: LowerBoundAttribute.New(Integer)

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/OppositeAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OppositeAttribute
     path: src/Models/Models/Attributes/OppositeAttribute.cs
@@ -25,6 +25,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Specifies the opposite of a given property
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Property)]
@@ -100,14 +102,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/OppositeAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Property
     path: src/Models/Models/Attributes/OppositeAttribute.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: The opposite property
+  example: []
   syntax:
     content: public PropertyInfo Property { get; }
     parameters: []
@@ -129,23 +133,31 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/OppositeAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/OppositeAttribute.cs
-    startLine: 13
+    startLine: 22
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public OppositeAttribute(Type oppositeType, string propertyName)
     parameters:
     - id: oppositeType
       type: System.Type
+      description: the type where the opposite property is defined
     - id: propertyName
       type: System.String
+      description: the name of the opposite property
     content.vb: Public Sub New(oppositeType As Type, propertyName As String)
   overload: NMF.Models.OppositeAttribute.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if either oppositeType or propertyName is null
   nameWithType.vb: OppositeAttribute.New(Type, String)
   fullName.vb: NMF.Models.OppositeAttribute.New(System.Type, String)
   name.vb: New(Type, String)
@@ -2007,6 +2019,13 @@ references:
     name: Reflection
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Models.OppositeAttribute.#ctor*
   commentId: Overload:NMF.Models.OppositeAttribute.#ctor
   href: NMF.Models.OppositeAttribute.html#NMF_Models_OppositeAttribute__ctor_System_Type_System_String_

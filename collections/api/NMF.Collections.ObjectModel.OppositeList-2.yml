@@ -22,19 +22,23 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OppositeList
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 104
+    startLine: 150
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes the abstract base class for a list with opposites
+  example: []
   syntax:
     content: 'public abstract class OppositeList<TParent, TCollected> : Collection<TCollected>, IList<TCollected>, ICollection<TCollected>, IReadOnlyList<TCollected>, IReadOnlyCollection<TCollected>, IEnumerable<TCollected>, IList, ICollection, IEnumerable'
     typeParameters:
     - id: TParent
+      description: the type of the parent element
     - id: TCollected
+      description: the type of collection items
     content.vb: Public MustInherit Class OppositeList(Of TParent, TCollected) Inherits Collection(Of TCollected) Implements IList(Of TCollected), ICollection(Of TCollected), IReadOnlyList(Of TCollected), IReadOnlyCollection(Of TCollected), IEnumerable(Of TCollected), IList, ICollection, IEnumerable
   inheritance:
   - System.Object
@@ -85,14 +89,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 106
+    startLine: 155
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets the parent element
+  example: []
   syntax:
     content: public TParent Parent { get; }
     parameters: []
@@ -116,21 +122,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 108
+    startLine: 162
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Sets the opposite of the given item
+  example: []
   syntax:
     content: protected abstract void SetOpposite(TCollected item, TParent newParent)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: the item
     - id: newParent
       type: '{TParent}'
+      description: the new parent or null, if the item is removed from the collection
     content.vb: Protected MustOverride Sub SetOpposite(item As TCollected, newParent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeList`2.SetOpposite*
   nameWithType.vb: OppositeList(Of TParent, TCollected).SetOpposite(TCollected, TParent)
@@ -149,21 +159,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 110
+    startLine: 169
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: protected OppositeList(TParent parent)
     parameters:
     - id: parent
       type: '{TParent}'
+      description: the parent model element
     content.vb: Protected Sub New(parent As TParent)
   overload: NMF.Collections.ObjectModel.OppositeList`2.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if parent is null
   nameWithType.vb: OppositeList(Of TParent, TCollected).New(TParent)
   fullName.vb: NMF.Collections.ObjectModel.OppositeList(Of TParent, TCollected).New(TParent)
   name.vb: New(TParent)
@@ -181,14 +198,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClearItems
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 117
+    startLine: 177
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all elements from the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void ClearItems()
@@ -211,25 +229,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: InsertItem
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 127
+    startLine: 188
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts an element into the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: protected override void InsertItem(int index, TCollected item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{TCollected}'
+      description: The object to insert. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub InsertItem(index As Integer, item As TCollected)
   overridden: System.Collections.ObjectModel.Collection{{TCollected}}.InsertItem(System.Int32,{TCollected})
   overload: NMF.Collections.ObjectModel.OppositeList`2.InsertItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: OppositeList(Of TParent, TCollected).InsertItem(Integer, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.OppositeList(Of TParent, TCollected).InsertItem(Integer, TCollected)
   name.vb: InsertItem(Integer, TCollected)
@@ -247,23 +272,29 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveItem
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 133
+    startLine: 195
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the element at the specified index of the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void RemoveItem(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to remove.
     content.vb: Protected Overrides Sub RemoveItem(index As Integer)
   overridden: System.Collections.ObjectModel.Collection{{TCollected}}.RemoveItem(System.Int32)
   overload: NMF.Collections.ObjectModel.OppositeList`2.RemoveItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is equal to or greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: OppositeList(Of TParent, TCollected).RemoveItem(Integer)
   fullName.vb: NMF.Collections.ObjectModel.OppositeList(Of TParent, TCollected).RemoveItem(Integer)
   name.vb: RemoveItem(Integer)
@@ -281,25 +312,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/OppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetItem
     path: src/Collections/Collections/ObjectModel/OppositeCollection.cs
-    startLine: 139
+    startLine: 202
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the element at the specified index.
   example: []
   syntax:
     content: protected override void SetItem(int index, TCollected item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to replace.
     - id: item
       type: '{TCollected}'
+      description: The new value for the element at the specified index. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub SetItem(index As Integer, item As TCollected)
   overridden: System.Collections.ObjectModel.Collection{{TCollected}}.SetItem(System.Int32,{TCollected})
   overload: NMF.Collections.ObjectModel.OppositeList`2.SetItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: OppositeList(Of TParent, TCollected).SetItem(Integer, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.OppositeList(Of TParent, TCollected).SetItem(Integer, TCollected)
   name.vb: SetItem(Integer, TCollected)
@@ -1696,6 +1734,13 @@ references:
   name: TCollected
   nameWithType: TCollected
   fullName: TCollected
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.ObjectModel.OppositeList`2.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.OppositeList`2.#ctor
   href: NMF.Collections.ObjectModel.OppositeList-2.html#NMF_Collections_ObjectModel_OppositeList_2__ctor__0_
@@ -1760,6 +1805,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1.clearitems
   - name: (
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: System.Collections.ObjectModel.Collection{{TCollected}}.InsertItem(System.Int32,{TCollected})
   commentId: M:System.Collections.ObjectModel.Collection{`1}.InsertItem(System.Int32,`1)
   parent: System.Collections.ObjectModel.Collection{{TCollected}}

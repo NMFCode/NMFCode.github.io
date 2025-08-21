@@ -37,11 +37,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: MetaElement
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -106,8 +106,10 @@ items:
   - NMF.Models.ModelElement.EnforceModels
   - NMF.Models.ModelElement.PreferIdentifiers
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -187,11 +189,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Name
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 71
+    startLine: 75
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -239,11 +241,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Summary
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 98
+    startLine: 103
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -284,11 +286,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remarks
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 124
+    startLine: 129
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -329,11 +331,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 150
+    startLine: 155
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -360,11 +362,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsIdentified
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 165
+    startLine: 170
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -380,37 +382,6 @@ items:
   overload: NMF.Models.Meta.MetaElement.IsIdentified*
   implements:
   - NMF.Models.IModelElement.IsIdentified
-- uid: NMF.Models.Meta.MetaElement.NameChanging
-  commentId: E:NMF.Models.Meta.MetaElement.NameChanging
-  id: NameChanging
-  parent: NMF.Models.Meta.MetaElement
-  langs:
-  - csharp
-  - vb
-  name: NameChanging
-  nameWithType: MetaElement.NameChanging
-  fullName: NMF.Models.Meta.MetaElement.NameChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/MetaElement.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: NameChanging
-    path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 176
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the Name property changes its value
-  example: []
-  syntax:
-    content: public event EventHandler<ValueChangedEventArgs> NameChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event NameChanging As EventHandler(Of ValueChangedEventArgs)
-  implements:
-  - NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.MetaElement.NameChanged
   commentId: E:NMF.Models.Meta.MetaElement.NameChanged
   id: NameChanged
@@ -425,7 +396,7 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NameChanged
     path: src/Models/Models/Meta/MetaElement.cs
@@ -442,37 +413,37 @@ items:
     content.vb: Public Event NameChanged As EventHandler(Of ValueChangedEventArgs)
   implements:
   - NMF.Models.Meta.IMetaElement.NameChanged
-- uid: NMF.Models.Meta.MetaElement.SummaryChanging
-  commentId: E:NMF.Models.Meta.MetaElement.SummaryChanging
-  id: SummaryChanging
+- uid: NMF.Models.Meta.MetaElement.NameChanging
+  commentId: E:NMF.Models.Meta.MetaElement.NameChanging
+  id: NameChanging
   parent: NMF.Models.Meta.MetaElement
   langs:
   - csharp
   - vb
-  name: SummaryChanging
-  nameWithType: MetaElement.SummaryChanging
-  fullName: NMF.Models.Meta.MetaElement.SummaryChanging
+  name: NameChanging
+  nameWithType: MetaElement.NameChanging
+  fullName: NMF.Models.Meta.MetaElement.NameChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: SummaryChanging
+    id: NameChanging
     path: src/Models/Models/Meta/MetaElement.cs
     startLine: 186
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the Summary property changes its value
+  summary: Gets fired before the Name property changes its value
   example: []
   syntax:
-    content: public event EventHandler<ValueChangedEventArgs> SummaryChanging
+    content: public event EventHandler<ValueChangedEventArgs> NameChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event SummaryChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Public Event NameChanging As EventHandler(Of ValueChangedEventArgs)
   implements:
-  - NMF.Models.Meta.IMetaElement.SummaryChanging
+  - NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.MetaElement.SummaryChanged
   commentId: E:NMF.Models.Meta.MetaElement.SummaryChanged
   id: SummaryChanged
@@ -487,7 +458,7 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SummaryChanged
     path: src/Models/Models/Meta/MetaElement.cs
@@ -504,37 +475,37 @@ items:
     content.vb: Public Event SummaryChanged As EventHandler(Of ValueChangedEventArgs)
   implements:
   - NMF.Models.Meta.IMetaElement.SummaryChanged
-- uid: NMF.Models.Meta.MetaElement.RemarksChanging
-  commentId: E:NMF.Models.Meta.MetaElement.RemarksChanging
-  id: RemarksChanging
+- uid: NMF.Models.Meta.MetaElement.SummaryChanging
+  commentId: E:NMF.Models.Meta.MetaElement.SummaryChanging
+  id: SummaryChanging
   parent: NMF.Models.Meta.MetaElement
   langs:
   - csharp
   - vb
-  name: RemarksChanging
-  nameWithType: MetaElement.RemarksChanging
-  fullName: NMF.Models.Meta.MetaElement.RemarksChanging
+  name: SummaryChanging
+  nameWithType: MetaElement.SummaryChanging
+  fullName: NMF.Models.Meta.MetaElement.SummaryChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: RemarksChanging
+    id: SummaryChanging
     path: src/Models/Models/Meta/MetaElement.cs
     startLine: 196
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the Remarks property changes its value
+  summary: Gets fired before the Summary property changes its value
   example: []
   syntax:
-    content: public event EventHandler<ValueChangedEventArgs> RemarksChanging
+    content: public event EventHandler<ValueChangedEventArgs> SummaryChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event RemarksChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Public Event SummaryChanging As EventHandler(Of ValueChangedEventArgs)
   implements:
-  - NMF.Models.Meta.IMetaElement.RemarksChanging
+  - NMF.Models.Meta.IMetaElement.SummaryChanging
 - uid: NMF.Models.Meta.MetaElement.RemarksChanged
   commentId: E:NMF.Models.Meta.MetaElement.RemarksChanged
   id: RemarksChanged
@@ -549,7 +520,7 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemarksChanged
     path: src/Models/Models/Meta/MetaElement.cs
@@ -566,38 +537,37 @@ items:
     content.vb: Public Event RemarksChanged As EventHandler(Of ValueChangedEventArgs)
   implements:
   - NMF.Models.Meta.IMetaElement.RemarksChanged
-- uid: NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.MetaElement.RemarksChanging
+  commentId: E:NMF.Models.Meta.MetaElement.RemarksChanging
+  id: RemarksChanging
   parent: NMF.Models.Meta.MetaElement
   langs:
   - csharp
   - vb
-  name: OnNameChanging(ValueChangedEventArgs)
-  nameWithType: MetaElement.OnNameChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  type: Method
+  name: RemarksChanging
+  nameWithType: MetaElement.RemarksChanging
+  fullName: NMF.Models.Meta.MetaElement.RemarksChanging
+  type: Event
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnNameChanging
+    id: RemarksChanging
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 212
+    startLine: 206
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the NameChanging event
+  summary: Gets fired before the Remarks property changes its value
   example: []
   syntax:
-    content: protected virtual void OnNameChanging(ValueChangedEventArgs eventArgs)
-    parameters:
-    - id: eventArgs
-      type: NMF.Expressions.ValueChangedEventArgs
-      description: The event data
-    content.vb: Protected Overridable Sub OnNameChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.MetaElement.OnNameChanging*
+    content: public event EventHandler<ValueChangedEventArgs> RemarksChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Public Event RemarksChanging As EventHandler(Of ValueChangedEventArgs)
+  implements:
+  - NMF.Models.Meta.IMetaElement.RemarksChanging
 - uid: NMF.Models.Meta.MetaElement.OnNameChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.MetaElement.OnNameChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnNameChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -612,11 +582,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnNameChanged
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 225
+    startLine: 217
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -630,38 +600,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnNameChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.MetaElement.OnNameChanged*
-- uid: NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
   parent: NMF.Models.Meta.MetaElement
   langs:
   - csharp
   - vb
-  name: OnSummaryChanging(ValueChangedEventArgs)
-  nameWithType: MetaElement.OnSummaryChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
+  name: OnNameChanging(ValueChangedEventArgs)
+  nameWithType: MetaElement.OnNameChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.MetaElement.OnNameChanging(NMF.Expressions.ValueChangedEventArgs)
   type: Method
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnSummaryChanging
+    id: OnNameChanging
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 243
+    startLine: 230
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the SummaryChanging event
+  summary: Raises the NameChanging event
   example: []
   syntax:
-    content: protected virtual void OnSummaryChanging(ValueChangedEventArgs eventArgs)
+    content: protected virtual void OnNameChanging(ValueChangedEventArgs eventArgs)
     parameters:
     - id: eventArgs
       type: NMF.Expressions.ValueChangedEventArgs
       description: The event data
-    content.vb: Protected Overridable Sub OnSummaryChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.MetaElement.OnSummaryChanging*
+    content.vb: Protected Overridable Sub OnNameChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.MetaElement.OnNameChanging*
 - uid: NMF.Models.Meta.MetaElement.OnSummaryChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.MetaElement.OnSummaryChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnSummaryChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -676,11 +646,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnSummaryChanged
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 256
+    startLine: 248
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -694,38 +664,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnSummaryChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.MetaElement.OnSummaryChanged*
-- uid: NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
   parent: NMF.Models.Meta.MetaElement
   langs:
   - csharp
   - vb
-  name: OnRemarksChanging(ValueChangedEventArgs)
-  nameWithType: MetaElement.OnRemarksChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+  name: OnSummaryChanging(ValueChangedEventArgs)
+  nameWithType: MetaElement.OnSummaryChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.MetaElement.OnSummaryChanging(NMF.Expressions.ValueChangedEventArgs)
   type: Method
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnRemarksChanging
+    id: OnSummaryChanging
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 274
+    startLine: 261
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the RemarksChanging event
+  summary: Raises the SummaryChanging event
   example: []
   syntax:
-    content: protected virtual void OnRemarksChanging(ValueChangedEventArgs eventArgs)
+    content: protected virtual void OnSummaryChanging(ValueChangedEventArgs eventArgs)
     parameters:
     - id: eventArgs
       type: NMF.Expressions.ValueChangedEventArgs
       description: The event data
-    content.vb: Protected Overridable Sub OnRemarksChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.MetaElement.OnRemarksChanging*
+    content.vb: Protected Overridable Sub OnSummaryChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.MetaElement.OnSummaryChanging*
 - uid: NMF.Models.Meta.MetaElement.OnRemarksChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.MetaElement.OnRemarksChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnRemarksChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -740,11 +710,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnRemarksChanged
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 287
+    startLine: 279
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -758,6 +728,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnRemarksChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.MetaElement.OnRemarksChanged*
+- uid: NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.Meta.MetaElement
+  langs:
+  - csharp
+  - vb
+  name: OnRemarksChanging(ValueChangedEventArgs)
+  nameWithType: MetaElement.OnRemarksChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.MetaElement.OnRemarksChanging(NMF.Expressions.ValueChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: Models/Models/Meta/MetaElement.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnRemarksChanging
+    path: src/Models/Models/Meta/MetaElement.cs
+    startLine: 292
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Raises the RemarksChanging event
+  example: []
+  syntax:
+    content: protected virtual void OnRemarksChanging(ValueChangedEventArgs eventArgs)
+    parameters:
+    - id: eventArgs
+      type: NMF.Expressions.ValueChangedEventArgs
+      description: The event data
+    content.vb: Protected Overridable Sub OnRemarksChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.MetaElement.OnRemarksChanging*
 - uid: NMF.Models.Meta.MetaElement.GetAttributeValue(System.String,System.Int32)
   commentId: M:NMF.Models.Meta.MetaElement.GetAttributeValue(System.String,System.Int32)
   id: GetAttributeValue(System.String,System.Int32)
@@ -772,11 +774,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 302
+    startLine: 307
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -814,11 +816,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 324
+    startLine: 329
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -853,11 +855,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForAttribute
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 349
+    startLine: 354
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -892,11 +894,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 369
+    startLine: 374
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -925,11 +927,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/MetaElement.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToIdentifierString
     path: src/Models/Models/Meta/MetaElement.cs
-    startLine: 382
+    startLine: 387
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -1484,40 +1486,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
@@ -2997,13 +3024,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: NMF.Models.Meta.IMetaElement.NameChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
+- uid: NMF.Models.Meta.IMetaElement.NameChanged
+  commentId: E:NMF.Models.Meta.IMetaElement.NameChanged
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
-  name: NameChanging
-  nameWithType: IMetaElement.NameChanging
-  fullName: NMF.Models.Meta.IMetaElement.NameChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanged
+  name: NameChanged
+  nameWithType: IMetaElement.NameChanged
+  fullName: NMF.Models.Meta.IMetaElement.NameChanged
 - uid: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
   commentId: T:System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
   parent: System
@@ -3063,20 +3090,13 @@ references:
   - name: " "
   - name: TEventArgs
   - name: )
-- uid: NMF.Models.Meta.IMetaElement.NameChanged
-  commentId: E:NMF.Models.Meta.IMetaElement.NameChanged
+- uid: NMF.Models.Meta.IMetaElement.NameChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanged
-  name: NameChanged
-  nameWithType: IMetaElement.NameChanged
-  fullName: NMF.Models.Meta.IMetaElement.NameChanged
-- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
-  parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
-  name: SummaryChanging
-  nameWithType: IMetaElement.SummaryChanging
-  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
+  name: NameChanging
+  nameWithType: IMetaElement.NameChanging
+  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.SummaryChanged
   commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -3084,13 +3104,13 @@ references:
   name: SummaryChanged
   nameWithType: IMetaElement.SummaryChanged
   fullName: NMF.Models.Meta.IMetaElement.SummaryChanged
-- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
-  name: RemarksChanging
-  nameWithType: IMetaElement.RemarksChanging
-  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
+  name: SummaryChanging
+  nameWithType: IMetaElement.SummaryChanging
+  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
 - uid: NMF.Models.Meta.IMetaElement.RemarksChanged
   commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -3098,12 +3118,19 @@ references:
   name: RemarksChanged
   nameWithType: IMetaElement.RemarksChanged
   fullName: NMF.Models.Meta.IMetaElement.RemarksChanged
-- uid: NMF.Models.Meta.MetaElement.OnNameChanging*
-  commentId: Overload:NMF.Models.Meta.MetaElement.OnNameChanging
-  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnNameChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnNameChanging
-  nameWithType: MetaElement.OnNameChanging
-  fullName: NMF.Models.Meta.MetaElement.OnNameChanging
+- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+  parent: NMF.Models.Meta.IMetaElement
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
+  name: RemarksChanging
+  nameWithType: IMetaElement.RemarksChanging
+  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
+- uid: NMF.Models.Meta.MetaElement.OnNameChanged*
+  commentId: Overload:NMF.Models.Meta.MetaElement.OnNameChanged
+  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnNameChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnNameChanged
+  nameWithType: MetaElement.OnNameChanged
+  fullName: NMF.Models.Meta.MetaElement.OnNameChanged
 - uid: NMF.Expressions.ValueChangedEventArgs
   commentId: T:NMF.Expressions.ValueChangedEventArgs
   parent: NMF.Expressions
@@ -3127,36 +3154,36 @@ references:
   - name: .
   - uid: NMF.Expressions
     name: Expressions
-- uid: NMF.Models.Meta.MetaElement.OnNameChanged*
-  commentId: Overload:NMF.Models.Meta.MetaElement.OnNameChanged
-  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnNameChanged_NMF_Expressions_ValueChangedEventArgs_
-  name: OnNameChanged
-  nameWithType: MetaElement.OnNameChanged
-  fullName: NMF.Models.Meta.MetaElement.OnNameChanged
-- uid: NMF.Models.Meta.MetaElement.OnSummaryChanging*
-  commentId: Overload:NMF.Models.Meta.MetaElement.OnSummaryChanging
-  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnSummaryChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnSummaryChanging
-  nameWithType: MetaElement.OnSummaryChanging
-  fullName: NMF.Models.Meta.MetaElement.OnSummaryChanging
+- uid: NMF.Models.Meta.MetaElement.OnNameChanging*
+  commentId: Overload:NMF.Models.Meta.MetaElement.OnNameChanging
+  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnNameChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnNameChanging
+  nameWithType: MetaElement.OnNameChanging
+  fullName: NMF.Models.Meta.MetaElement.OnNameChanging
 - uid: NMF.Models.Meta.MetaElement.OnSummaryChanged*
   commentId: Overload:NMF.Models.Meta.MetaElement.OnSummaryChanged
   href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnSummaryChanged_NMF_Expressions_ValueChangedEventArgs_
   name: OnSummaryChanged
   nameWithType: MetaElement.OnSummaryChanged
   fullName: NMF.Models.Meta.MetaElement.OnSummaryChanged
-- uid: NMF.Models.Meta.MetaElement.OnRemarksChanging*
-  commentId: Overload:NMF.Models.Meta.MetaElement.OnRemarksChanging
-  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnRemarksChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnRemarksChanging
-  nameWithType: MetaElement.OnRemarksChanging
-  fullName: NMF.Models.Meta.MetaElement.OnRemarksChanging
+- uid: NMF.Models.Meta.MetaElement.OnSummaryChanging*
+  commentId: Overload:NMF.Models.Meta.MetaElement.OnSummaryChanging
+  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnSummaryChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSummaryChanging
+  nameWithType: MetaElement.OnSummaryChanging
+  fullName: NMF.Models.Meta.MetaElement.OnSummaryChanging
 - uid: NMF.Models.Meta.MetaElement.OnRemarksChanged*
   commentId: Overload:NMF.Models.Meta.MetaElement.OnRemarksChanged
   href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnRemarksChanged_NMF_Expressions_ValueChangedEventArgs_
   name: OnRemarksChanged
   nameWithType: MetaElement.OnRemarksChanged
   fullName: NMF.Models.Meta.MetaElement.OnRemarksChanged
+- uid: NMF.Models.Meta.MetaElement.OnRemarksChanging*
+  commentId: Overload:NMF.Models.Meta.MetaElement.OnRemarksChanging
+  href: NMF.Models.Meta.MetaElement.html#NMF_Models_Meta_MetaElement_OnRemarksChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnRemarksChanging
+  nameWithType: MetaElement.OnRemarksChanging
+  fullName: NMF.Models.Meta.MetaElement.OnRemarksChanging
 - uid: NMF.Models.ModelElement.GetAttributeValue(System.String,System.Int32)
   commentId: M:NMF.Models.ModelElement.GetAttributeValue(System.String,System.Int32)
   parent: NMF.Models.ModelElement

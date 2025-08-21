@@ -1,0 +1,4568 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Interop.Legacy.Cmof.Class
+  commentId: T:NMF.Interop.Legacy.Cmof.Class
+  id: Class
+  parent: NMF.Interop.Legacy.Cmof
+  children:
+  - NMF.Interop.Legacy.Cmof.Class.#ctor
+  - NMF.Interop.Legacy.Cmof.Class.Children
+  - NMF.Interop.Legacy.Cmof.Class.ClassInstance
+  - NMF.Interop.Legacy.Cmof.Class.GetAttributeValue(System.String,System.Int32)
+  - NMF.Interop.Legacy.Cmof.Class.GetClass
+  - NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature(System.String)
+  - NMF.Interop.Legacy.Cmof.Class.GetCompositionName(System.Object)
+  - NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute(System.String)
+  - NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference(System.String,System.Int32)
+  - NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  - NMF.Interop.Legacy.Cmof.Class.IsAbstract
+  - NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+  - NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+  - NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+  - NMF.Interop.Legacy.Cmof.Class.SetFeature(System.String,System.Object)
+  - NMF.Interop.Legacy.Cmof.Class.SuperClass
+  langs:
+  - csharp
+  - vb
+  name: Class
+  nameWithType: Class
+  fullName: NMF.Interop.Legacy.Cmof.Class
+  type: Class
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Class
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 40
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: " Class is a kind of classifier whose features are attributes and operations. Attributes of a class are represented by instances of Property that are owned by the class. Some of these attributes may represent the navigable ends of binary associations.\r\nA class is a type that has objects as its instances."
+  example: []
+  syntax:
+    content: >-
+      [AlternativeNamespace("http://schema.omg.org/spec/mof/2.0/emof.xmi")]
+
+      [XmlNamespace("http://schema.omg.org/spec/MOF/2.0/cmof.xml")]
+
+      [XmlNamespacePrefix("cmof")]
+
+      [ModelRepresentationClass("http://schema.omg.org/spec/MOF/2.0/cmof.xml#//Class")]
+
+      public class Class : Classifier, IClass, IClassifier, IType, IPackageableElement, INamespace, INamedElement, IElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+    content.vb: >-
+      <AlternativeNamespace("http://schema.omg.org/spec/mof/2.0/emof.xmi")>
+
+      <XmlNamespace("http://schema.omg.org/spec/MOF/2.0/cmof.xml")>
+
+      <XmlNamespacePrefix("cmof")>
+
+      <ModelRepresentationClass("http://schema.omg.org/spec/MOF/2.0/cmof.xml#//Class")>
+
+      Public Class [Class] Inherits Classifier Implements IClass, IClassifier, IType, IPackageableElement, INamespace, INamedElement, IElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+  inheritance:
+  - System.Object
+  - NMF.Models.ModelElement
+  - NMF.Interop.Legacy.Cmof.Element
+  - NMF.Interop.Legacy.Cmof.NamedElement
+  - NMF.Interop.Legacy.Cmof.Namespace
+  - NMF.Interop.Legacy.Cmof.Classifier
+  implements:
+  - NMF.Interop.Legacy.Cmof.IClass
+  - NMF.Interop.Legacy.Cmof.IClassifier
+  - NMF.Interop.Legacy.Cmof.IType
+  - NMF.Interop.Legacy.Cmof.IPackageableElement
+  - NMF.Interop.Legacy.Cmof.INamespace
+  - NMF.Interop.Legacy.Cmof.INamedElement
+  - NMF.Interop.Legacy.Cmof.IElement
+  - NMF.Models.IModelElement
+  - System.ComponentModel.INotifyPropertyChanged
+  - System.ComponentModel.INotifyPropertyChanging
+  inheritedMembers:
+  - NMF.Interop.Legacy.Cmof.Classifier.General
+  - NMF.Interop.Legacy.Cmof.Classifier.Package
+  - NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.Classifier.AllFeatures
+  - NMF.Interop.Legacy.Cmof.Classifier.GetGenerals
+  - NMF.Interop.Legacy.Cmof.Classifier.Parents
+  - NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers
+  - NMF.Interop.Legacy.Cmof.Classifier.AllParents
+  - NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+  - NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+  - NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.INamedElement})
+  - NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+  - NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+  - NMF.Interop.Legacy.Cmof.Classifier.IsInstance(System.Object)
+  - NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  - NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  - NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(System.String)
+  - NMF.Interop.Legacy.Cmof.Namespace.OwnedRule
+  - NMF.Interop.Legacy.Cmof.Namespace.ElementImport
+  - NMF.Interop.Legacy.Cmof.Namespace.PackageImport
+  - NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers
+  - NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+  - NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  - NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  - NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable
+  - NMF.Interop.Legacy.Cmof.NamedElement.Visibility
+  - NMF.Interop.Legacy.Cmof.NamedElement.Name
+  - NMF.Interop.Legacy.Cmof.NamedElement.IsIdentified
+  - NMF.Interop.Legacy.Cmof.NamedElement.No_name(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces
+  - NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement,NMF.Interop.Legacy.Cmof.INamespace)
+  - NMF.Interop.Legacy.Cmof.NamedElement.Separator
+  - NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName
+  - NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString
+  - NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  - NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  - NMF.Interop.Legacy.Cmof.Element.OwnedComment
+  - NMF.Interop.Legacy.Cmof.Element.Not_own_self(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.Element.Has_owner(System.Object,System.Object)
+  - NMF.Interop.Legacy.Cmof.Element.AllOwnedElements
+  - NMF.Interop.Legacy.Cmof.Element.MustBeOwned
+  - NMF.Interop.Legacy.Cmof.Element.GetMetaClass
+  - NMF.Interop.Legacy.Cmof.Element.Container
+  - NMF.Interop.Legacy.Cmof.Element.Equals(System.Object)
+  - NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+  - NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty,System.Object)
+  - NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+  - NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+  - NMF.Interop.Legacy.Cmof.Element.Delete
+  - NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation,NMF.Interop.Legacy.Cmof.IArgument)
+  - NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass,System.Boolean)
+  - NMF.Interop.Legacy.Cmof.Element.Verify(System.Boolean)
+  - NMF.Models.ModelElement.Model
+  - NMF.Models.ModelElement.Freeze
+  - NMF.Models.ModelElement.Lock
+  - NMF.Models.ModelElement.IsFrozen
+  - NMF.Models.ModelElement.IsLocked
+  - NMF.Models.ModelElement.Unlock
+  - NMF.Models.ModelElement.TryUnlock
+  - NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  - NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.Parent
+  - NMF.Models.ModelElement.RelativeUri
+  - NMF.Models.ModelElement.AbsoluteUri
+  - NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  - NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.EnforceModels
+  - NMF.Models.ModelElement.PreferIdentifiers
+  - NMF.Models.ModelElement.ToString
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.Resolve(System.Uri)
+  - NMF.Models.ModelElement.Resolve(System.String)
+  - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  - NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  - NMF.Models.ModelElement.Extensions
+  - NMF.Models.ModelElement.GetExtension``1
+  - NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  - NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  - NMF.Models.ModelElement.PropertyChanged
+  - NMF.Models.ModelElement.PropertyChanging
+  - NMF.Models.ModelElement.Deleted
+  - NMF.Models.ModelElement.Deleting
+  - NMF.Models.ModelElement.UriChanged
+  - NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  - NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  - NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  - NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  - NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  - NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  - NMF.Models.ModelElement.BubbledChange
+  - NMF.Models.ModelElement.ParentChanged
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: NMF.Serialization.AlternativeNamespaceAttribute
+    ctor: NMF.Serialization.AlternativeNamespaceAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://schema.omg.org/spec/mof/2.0/emof.xmi
+  - type: NMF.Serialization.XmlNamespaceAttribute
+    ctor: NMF.Serialization.XmlNamespaceAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://schema.omg.org/spec/MOF/2.0/cmof.xml
+  - type: NMF.Serialization.XmlNamespacePrefixAttribute
+    ctor: NMF.Serialization.XmlNamespacePrefixAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cmof
+  - type: NMF.Models.ModelRepresentationClassAttribute
+    ctor: NMF.Models.ModelRepresentationClassAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://schema.omg.org/spec/MOF/2.0/cmof.xml#//Class
+- uid: NMF.Interop.Legacy.Cmof.Class.#ctor
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.#ctor
+  id: '#ctor'
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: Class()
+  nameWithType: Class.Class()
+  fullName: NMF.Interop.Legacy.Cmof.Class.Class()
+  type: Constructor
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 84
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public Class()
+    content.vb: Public Sub New()
+  overload: NMF.Interop.Legacy.Cmof.Class.#ctor*
+  nameWithType.vb: Class.New()
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.New()
+  name.vb: New()
+- uid: NMF.Interop.Legacy.Cmof.Class.IsAbstract
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.IsAbstract
+  id: IsAbstract
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: IsAbstract
+  nameWithType: Class.IsAbstract
+  fullName: NMF.Interop.Legacy.Cmof.Class.IsAbstract
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsAbstract
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 100
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: True when a class is abstract. The default value is false.
+  example: []
+  syntax:
+    content: >-
+      [TypeConverter(typeof(LowercaseBooleanConverter))]
+
+      [XmlElementName("isAbstract")]
+
+      [XmlAttribute(true)]
+
+      public bool IsAbstract { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <TypeConverter(GetType(LowercaseBooleanConverter))>
+
+      <XmlElementName("isAbstract")>
+
+      <XmlAttribute(True)>
+
+      Public Property IsAbstract As Boolean
+  overload: NMF.Interop.Legacy.Cmof.Class.IsAbstract*
+  implements:
+  - NMF.Interop.Legacy.Cmof.IClass.IsAbstract
+  attributes:
+  - type: System.ComponentModel.TypeConverterAttribute
+    ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: NMF.Models.LowercaseBooleanConverter
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: isAbstract
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
+- uid: NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+  id: OwnedAttribute
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: OwnedAttribute
+  nameWithType: Class.OwnedAttribute
+  fullName: NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OwnedAttribute
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 130
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: " The attributes (i.e. the properties) owned by the class. This is an ordered association. Subsets Classifier::attribute and Namespace::ownedMember.\r\nThe attributes owned by a class. These do not include the inherited attributes. Attributes are represented by instances of Property."
+  example: []
+  syntax:
+    content: >-
+      [Browsable(false)]
+
+      [XmlElementName("ownedAttribute")]
+
+      [XmlAttribute(false)]
+
+      [Containment]
+
+      [XmlOpposite("class")]
+
+      public IOrderedSetExpression<IProperty> OwnedAttribute { get; }
+    parameters: []
+    return:
+      type: NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IProperty}
+    content.vb: >-
+      <Browsable(False)>
+
+      <XmlElementName("ownedAttribute")>
+
+      <XmlAttribute(False)>
+
+      <Containment>
+
+      <XmlOpposite("class")>
+
+      Public ReadOnly Property OwnedAttribute As IOrderedSetExpression(Of IProperty)
+  overload: NMF.Interop.Legacy.Cmof.Class.OwnedAttribute*
+  implements:
+  - NMF.Interop.Legacy.Cmof.IClass.OwnedAttribute
+  attributes:
+  - type: System.ComponentModel.BrowsableAttribute
+    ctor: System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ownedAttribute
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Models.ContainmentAttribute
+    ctor: NMF.Models.ContainmentAttribute.#ctor
+    arguments: []
+  - type: NMF.Serialization.XmlOppositeAttribute
+    ctor: NMF.Serialization.XmlOppositeAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: class
+- uid: NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+  id: OwnedOperation
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: OwnedOperation
+  nameWithType: Class.OwnedOperation
+  fullName: NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OwnedOperation
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 149
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: " The operations owned by the class. This is an ordered association. Subsets Classifier::feature and Namespace::ownedMember.\r\nThe operations owned by a class. These do not include the inherited operations."
+  example: []
+  syntax:
+    content: >-
+      [Browsable(false)]
+
+      [XmlElementName("ownedOperation")]
+
+      [XmlAttribute(false)]
+
+      [Containment]
+
+      [XmlOpposite("class")]
+
+      public IOrderedSetExpression<IOperation> OwnedOperation { get; }
+    parameters: []
+    return:
+      type: NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IOperation}
+    content.vb: >-
+      <Browsable(False)>
+
+      <XmlElementName("ownedOperation")>
+
+      <XmlAttribute(False)>
+
+      <Containment>
+
+      <XmlOpposite("class")>
+
+      Public ReadOnly Property OwnedOperation As IOrderedSetExpression(Of IOperation)
+  overload: NMF.Interop.Legacy.Cmof.Class.OwnedOperation*
+  implements:
+  - NMF.Interop.Legacy.Cmof.IClass.OwnedOperation
+  attributes:
+  - type: System.ComponentModel.BrowsableAttribute
+    ctor: System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ownedOperation
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Models.ContainmentAttribute
+    ctor: NMF.Models.ContainmentAttribute.#ctor
+    arguments: []
+  - type: NMF.Serialization.XmlOppositeAttribute
+    ctor: NMF.Serialization.XmlOppositeAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: class
+- uid: NMF.Interop.Legacy.Cmof.Class.SuperClass
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.SuperClass
+  id: SuperClass
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: SuperClass
+  nameWithType: Class.SuperClass
+  fullName: NMF.Interop.Legacy.Cmof.Class.SuperClass
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SuperClass
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 168
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: " This gives the superclasses of a class. It redefines Classifier::general.\r\nThe immediate superclasses of a class, from which the class inherits."
+  example: []
+  syntax:
+    content: >-
+      [XmlElementName("superClass")]
+
+      [XmlAttribute(true)]
+
+      public ISetExpression<IClass> SuperClass { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.ISetExpression{NMF.Interop.Legacy.Cmof.IClass}
+    content.vb: >-
+      <XmlElementName("superClass")>
+
+      <XmlAttribute(True)>
+
+      Public ReadOnly Property SuperClass As ISetExpression(Of IClass)
+  overload: NMF.Interop.Legacy.Cmof.Class.SuperClass*
+  implements:
+  - NMF.Interop.Legacy.Cmof.IClass.SuperClass
+  attributes:
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: superClass
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
+- uid: NMF.Interop.Legacy.Cmof.Class.Children
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.Children
+  id: Children
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: Class.Children
+  fullName: NMF.Interop.Legacy.Cmof.Class.Children
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Children
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 187
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the child model elements of this model element
+  example: []
+  syntax:
+    content: public override IEnumerableExpression<IModelElement> Children { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+    content.vb: Public Overrides ReadOnly Property Children As IEnumerableExpression(Of IModelElement)
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.Children
+  overload: NMF.Interop.Legacy.Cmof.Class.Children*
+  implements:
+  - NMF.Models.IModelElement.Children
+- uid: NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+  id: ReferencedElements
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: ReferencedElements
+  nameWithType: Class.ReferencedElements
+  fullName: NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ReferencedElements
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 198
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the referenced model elements of this model element
+  example: []
+  syntax:
+    content: public override IEnumerableExpression<IModelElement> ReferencedElements { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+    content.vb: Public Overrides ReadOnly Property ReferencedElements As IEnumerableExpression(Of IModelElement)
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.ReferencedElements
+  overload: NMF.Interop.Legacy.Cmof.Class.ReferencedElements*
+  implements:
+  - NMF.Models.IModelElement.ReferencedElements
+- uid: NMF.Interop.Legacy.Cmof.Class.ClassInstance
+  commentId: P:NMF.Interop.Legacy.Cmof.Class.ClassInstance
+  id: ClassInstance
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: ClassInstance
+  nameWithType: Class.ClassInstance
+  fullName: NMF.Interop.Legacy.Cmof.Class.ClassInstance
+  type: Property
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ClassInstance
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 209
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the Class model for this type
+  example: []
+  syntax:
+    content: public static IClass ClassInstance { get; }
+    parameters: []
+    return:
+      type: NMF.Models.Meta.IClass
+    content.vb: Public Shared ReadOnly Property ClassInstance As IClass
+  overload: NMF.Interop.Legacy.Cmof.Class.ClassInstance*
+- uid: NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  id: GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePathForNonIdentifiedChild(IModelElement)
+  nameWithType: Class.GetRelativePathForNonIdentifiedChild(IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetRelativePathForNonIdentifiedChild
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 306
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the relative URI fragment for the given child model element
+  example: []
+  syntax:
+    content: protected override string GetRelativePathForNonIdentifiedChild(IModelElement element)
+    parameters:
+    - id: element
+      type: NMF.Models.IModelElement
+      description: The element that should be looked for
+    return:
+      type: System.String
+      description: A fragment of the relative URI
+    content.vb: Protected Overrides Function GetRelativePathForNonIdentifiedChild(element As IModelElement) As String
+  overridden: NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild*
+- uid: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference(System.String,System.Int32)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference(System.String,System.Int32)
+  id: GetModelElementForReference(System.String,System.Int32)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetModelElementForReference(string, int)
+  nameWithType: Class.GetModelElementForReference(string, int)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference(string, int)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetModelElementForReference
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 327
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Resolves the given URI to a child model element
+  example: []
+  syntax:
+    content: protected override IModelElement GetModelElementForReference(string reference, int index)
+    parameters:
+    - id: reference
+      type: System.String
+      description: The requested reference name
+    - id: index
+      type: System.Int32
+      description: The index of this reference
+    return:
+      type: NMF.Models.IModelElement
+      description: The model element or null if it could not be found
+    content.vb: Protected Overrides Function GetModelElementForReference(reference As String, index As Integer) As IModelElement
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(System.String,System.Int32)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference*
+  nameWithType.vb: Class.GetModelElementForReference(String, Integer)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference(String, Integer)
+  name.vb: GetModelElementForReference(String, Integer)
+- uid: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue(System.String,System.Int32)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetAttributeValue(System.String,System.Int32)
+  id: GetAttributeValue(System.String,System.Int32)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetAttributeValue(string, int)
+  nameWithType: Class.GetAttributeValue(string, int)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue(string, int)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetAttributeValue
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 360
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Resolves the given attribute name
+  example: []
+  syntax:
+    content: protected override object GetAttributeValue(string attribute, int index)
+    parameters:
+    - id: attribute
+      type: System.String
+      description: The requested attribute name
+    - id: index
+      type: System.Int32
+      description: The index of this attribute
+    return:
+      type: System.Object
+      description: The attribute value or null if it could not be found
+    content.vb: Protected Overrides Function GetAttributeValue(attribute As String, index As Integer) As Object
+  overridden: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(System.String,System.Int32)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue*
+  nameWithType.vb: Class.GetAttributeValue(String, Integer)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue(String, Integer)
+  name.vb: GetAttributeValue(String, Integer)
+- uid: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature(System.String)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature(System.String)
+  id: GetCollectionForFeature(System.String)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetCollectionForFeature(string)
+  nameWithType: Class.GetCollectionForFeature(string)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature(string)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetCollectionForFeature
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 374
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the Model element collection for the given feature
+  example: []
+  syntax:
+    content: protected override IList GetCollectionForFeature(string feature)
+    parameters:
+    - id: feature
+      type: System.String
+      description: The requested feature
+    return:
+      type: System.Collections.IList
+      description: A non-generic list of elements
+    content.vb: Protected Overrides Function GetCollectionForFeature(feature As String) As IList
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(System.String)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature*
+  nameWithType.vb: Class.GetCollectionForFeature(String)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature(String)
+  name.vb: GetCollectionForFeature(String)
+- uid: NMF.Interop.Legacy.Cmof.Class.SetFeature(System.String,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.SetFeature(System.String,System.Object)
+  id: SetFeature(System.String,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: SetFeature(string, object)
+  nameWithType: Class.SetFeature(string, object)
+  fullName: NMF.Interop.Legacy.Cmof.Class.SetFeature(string, object)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SetFeature
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 396
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Sets a value to the given feature
+  example: []
+  syntax:
+    content: protected override void SetFeature(string feature, object value)
+    parameters:
+    - id: feature
+      type: System.String
+      description: The requested feature
+    - id: value
+      type: System.Object
+      description: The value that should be set to that feature
+    content.vb: Protected Overrides Sub SetFeature(feature As String, value As Object)
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(System.String,System.Object)
+  overload: NMF.Interop.Legacy.Cmof.Class.SetFeature*
+  nameWithType.vb: Class.SetFeature(String, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.SetFeature(String, Object)
+  name.vb: SetFeature(String, Object)
+- uid: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute(System.String)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute(System.String)
+  id: GetExpressionForAttribute(System.String)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetExpressionForAttribute(string)
+  nameWithType: Class.GetExpressionForAttribute(string)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute(string)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetExpressionForAttribute
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 411
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the property expression for the given attribute
+  example: []
+  syntax:
+    content: protected override INotifyExpression<object> GetExpressionForAttribute(string attribute)
+    parameters:
+    - id: attribute
+      type: System.String
+      description: The requested attribute in upper case
+    return:
+      type: NMF.Expressions.INotifyExpression{System.Object}
+      description: An incremental property expression
+    content.vb: Protected Overrides Function GetExpressionForAttribute(attribute As String) As INotifyExpression(Of Object)
+  overridden: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(System.String)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute*
+  nameWithType.vb: Class.GetExpressionForAttribute(String)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute(String)
+  name.vb: GetExpressionForAttribute(String)
+- uid: NMF.Interop.Legacy.Cmof.Class.GetCompositionName(System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetCompositionName(System.Object)
+  id: GetCompositionName(System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetCompositionName(object)
+  nameWithType: Class.GetCompositionName(object)
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetCompositionName(object)
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetCompositionName
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 425
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the property name for the given container
+  example: []
+  syntax:
+    content: protected override string GetCompositionName(object container)
+    parameters:
+    - id: container
+      type: System.Object
+      description: The container object
+    return:
+      type: System.String
+      description: The name of the respective container reference
+    content.vb: Protected Overrides Function GetCompositionName(container As Object) As String
+  overridden: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(System.Object)
+  overload: NMF.Interop.Legacy.Cmof.Class.GetCompositionName*
+  nameWithType.vb: Class.GetCompositionName(Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.GetCompositionName(Object)
+  name.vb: GetCompositionName(Object)
+- uid: NMF.Interop.Legacy.Cmof.Class.GetClass
+  commentId: M:NMF.Interop.Legacy.Cmof.Class.GetClass
+  id: GetClass
+  parent: NMF.Interop.Legacy.Cmof.Class
+  langs:
+  - csharp
+  - vb
+  name: GetClass()
+  nameWithType: Class.GetClass()
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetClass()
+  type: Method
+  source:
+    remote:
+      path: Interop/UMLInterop/Legacy/Cmof20/Class.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetClass
+    path: src/Interop/UMLInterop/Legacy/Cmof20/Class.cs
+    startLine: 441
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Legacy.Cmof
+  summary: Gets the Class for this model element
+  example: []
+  syntax:
+    content: public override IClass GetClass()
+    return:
+      type: NMF.Models.Meta.IClass
+    content.vb: Public Overrides Function GetClass() As IClass
+  overridden: NMF.Interop.Legacy.Cmof.Classifier.GetClass
+  overload: NMF.Interop.Legacy.Cmof.Class.GetClass*
+  implements:
+  - NMF.Models.IModelElement.GetClass
+references:
+- uid: NMF.Interop.Legacy.Cmof
+  commentId: N:NMF.Interop.Legacy.Cmof
+  href: NMF.html
+  name: NMF.Interop.Legacy.Cmof
+  nameWithType: NMF.Interop.Legacy.Cmof
+  fullName: NMF.Interop.Legacy.Cmof
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Interop
+    name: Interop
+    href: NMF.Interop.html
+  - name: .
+  - uid: NMF.Interop.Legacy
+    name: Legacy
+    href: NMF.Interop.Legacy.html
+  - name: .
+  - uid: NMF.Interop.Legacy.Cmof
+    name: Cmof
+    href: NMF.Interop.Legacy.Cmof.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Interop
+    name: Interop
+    href: NMF.Interop.html
+  - name: .
+  - uid: NMF.Interop.Legacy
+    name: Legacy
+    href: NMF.Interop.Legacy.html
+  - name: .
+  - uid: NMF.Interop.Legacy.Cmof
+    name: Cmof
+    href: NMF.Interop.Legacy.Cmof.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NMF.Models.ModelElement
+  commentId: T:NMF.Models.ModelElement
+  parent: NMF.Models
+  name: ModelElement
+  nameWithType: ModelElement
+  fullName: NMF.Models.ModelElement
+- uid: NMF.Interop.Legacy.Cmof.Element
+  commentId: T:NMF.Interop.Legacy.Cmof.Element
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.Element.html
+  name: Element
+  nameWithType: Element
+  fullName: NMF.Interop.Legacy.Cmof.Element
+- uid: NMF.Interop.Legacy.Cmof.NamedElement
+  commentId: T:NMF.Interop.Legacy.Cmof.NamedElement
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html
+  name: NamedElement
+  nameWithType: NamedElement
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement
+- uid: NMF.Interop.Legacy.Cmof.Namespace
+  commentId: T:NMF.Interop.Legacy.Cmof.Namespace
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.Namespace.html
+  name: Namespace
+  nameWithType: Namespace
+  fullName: NMF.Interop.Legacy.Cmof.Namespace
+- uid: NMF.Interop.Legacy.Cmof.Classifier
+  commentId: T:NMF.Interop.Legacy.Cmof.Classifier
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.Classifier.html
+  name: Classifier
+  nameWithType: Classifier
+  fullName: NMF.Interop.Legacy.Cmof.Classifier
+- uid: NMF.Interop.Legacy.Cmof.IClass
+  commentId: T:NMF.Interop.Legacy.Cmof.IClass
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.IClass.html
+  name: IClass
+  nameWithType: IClass
+  fullName: NMF.Interop.Legacy.Cmof.IClass
+- uid: NMF.Interop.Legacy.Cmof.IClassifier
+  commentId: T:NMF.Interop.Legacy.Cmof.IClassifier
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.IClassifier.html
+  name: IClassifier
+  nameWithType: IClassifier
+  fullName: NMF.Interop.Legacy.Cmof.IClassifier
+- uid: NMF.Interop.Legacy.Cmof.IType
+  commentId: T:NMF.Interop.Legacy.Cmof.IType
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.IType.html
+  name: IType
+  nameWithType: IType
+  fullName: NMF.Interop.Legacy.Cmof.IType
+- uid: NMF.Interop.Legacy.Cmof.IPackageableElement
+  commentId: T:NMF.Interop.Legacy.Cmof.IPackageableElement
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.IPackageableElement.html
+  name: IPackageableElement
+  nameWithType: IPackageableElement
+  fullName: NMF.Interop.Legacy.Cmof.IPackageableElement
+- uid: NMF.Interop.Legacy.Cmof.INamespace
+  commentId: T:NMF.Interop.Legacy.Cmof.INamespace
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.INamespace.html
+  name: INamespace
+  nameWithType: INamespace
+  fullName: NMF.Interop.Legacy.Cmof.INamespace
+- uid: NMF.Interop.Legacy.Cmof.INamedElement
+  commentId: T:NMF.Interop.Legacy.Cmof.INamedElement
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  name: INamedElement
+  nameWithType: INamedElement
+  fullName: NMF.Interop.Legacy.Cmof.INamedElement
+- uid: NMF.Interop.Legacy.Cmof.IElement
+  commentId: T:NMF.Interop.Legacy.Cmof.IElement
+  parent: NMF.Interop.Legacy.Cmof
+  href: NMF.Interop.Legacy.Cmof.IElement.html
+  name: IElement
+  nameWithType: IElement
+  fullName: NMF.Interop.Legacy.Cmof.IElement
+- uid: NMF.Models.IModelElement
+  commentId: T:NMF.Models.IModelElement
+  parent: NMF.Models
+  name: IModelElement
+  nameWithType: IModelElement
+  fullName: NMF.Models.IModelElement
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.ComponentModel.INotifyPropertyChanging
+  commentId: T:System.ComponentModel.INotifyPropertyChanging
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging
+  name: INotifyPropertyChanging
+  nameWithType: INotifyPropertyChanging
+  fullName: System.ComponentModel.INotifyPropertyChanging
+- uid: NMF.Interop.Legacy.Cmof.Classifier.General
+  commentId: P:NMF.Interop.Legacy.Cmof.Classifier.General
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_General
+  name: General
+  nameWithType: Classifier.General
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.General
+- uid: NMF.Interop.Legacy.Cmof.Classifier.Package
+  commentId: P:NMF.Interop.Legacy.Cmof.Classifier.Package
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Package
+  name: Package
+  nameWithType: Classifier.Package
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.Package
+- uid: NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_No_cycles_in_generalization_System_Object_System_Object_
+  name: No_cycles_in_generalization(object, object)
+  nameWithType: Classifier.No_cycles_in_generalization(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(object, object)
+  nameWithType.vb: Classifier.No_cycles_in_generalization(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(Object, Object)
+  name.vb: No_cycles_in_generalization(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(System.Object,System.Object)
+    name: No_cycles_in_generalization
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_No_cycles_in_generalization_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.No_cycles_in_generalization(System.Object,System.Object)
+    name: No_cycles_in_generalization
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_No_cycles_in_generalization_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Specialize_type_System_Object_System_Object_
+  name: Specialize_type(object, object)
+  nameWithType: Classifier.Specialize_type(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(object, object)
+  nameWithType.vb: Classifier.Specialize_type(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(Object, Object)
+  name.vb: Specialize_type(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(System.Object,System.Object)
+    name: Specialize_type
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Specialize_type_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Specialize_type(System.Object,System.Object)
+    name: Specialize_type
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Specialize_type_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.AllFeatures
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.AllFeatures
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllFeatures
+  name: AllFeatures()
+  nameWithType: Classifier.AllFeatures()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.AllFeatures()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.AllFeatures
+    name: AllFeatures
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllFeatures
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.AllFeatures
+    name: AllFeatures
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllFeatures
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetGenerals
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetGenerals
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetGenerals
+  name: GetGenerals()
+  nameWithType: Classifier.GetGenerals()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetGenerals()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetGenerals
+    name: GetGenerals
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetGenerals
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetGenerals
+    name: GetGenerals
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetGenerals
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.Parents
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.Parents
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Parents
+  name: Parents()
+  nameWithType: Classifier.Parents()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.Parents()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Parents
+    name: Parents
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Parents
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Parents
+    name: Parents
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Parents
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetInheritedMembers
+  name: GetInheritedMembers()
+  nameWithType: Classifier.GetInheritedMembers()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers
+    name: GetInheritedMembers
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetInheritedMembers
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetInheritedMembers
+    name: GetInheritedMembers
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetInheritedMembers
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.AllParents
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.AllParents
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllParents
+  name: AllParents()
+  nameWithType: Classifier.AllParents()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.AllParents()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.AllParents
+    name: AllParents
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllParents
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.AllParents
+    name: AllParents
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_AllParents
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_InheritableMembers_NMF_Interop_Legacy_Cmof_IClassifier_
+  name: InheritableMembers(IClassifier)
+  nameWithType: Classifier.InheritableMembers(IClassifier)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+    name: InheritableMembers
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_InheritableMembers_NMF_Interop_Legacy_Cmof_IClassifier_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClassifier
+    name: IClassifier
+    href: NMF.Interop.Legacy.Cmof.IClassifier.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.InheritableMembers(NMF.Interop.Legacy.Cmof.IClassifier)
+    name: InheritableMembers
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_InheritableMembers_NMF_Interop_Legacy_Cmof_IClassifier_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClassifier
+    name: IClassifier
+    href: NMF.Interop.Legacy.Cmof.IClassifier.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_HasVisibilityOf_NMF_Interop_Legacy_Cmof_INamedElement_
+  name: HasVisibilityOf(INamedElement)
+  nameWithType: Classifier.HasVisibilityOf(INamedElement)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+    name: HasVisibilityOf
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_HasVisibilityOf_NMF_Interop_Legacy_Cmof_INamedElement_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.HasVisibilityOf(NMF.Interop.Legacy.Cmof.INamedElement)
+    name: HasVisibilityOf
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_HasVisibilityOf_NMF_Interop_Legacy_Cmof_INamedElement_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.INamedElement})
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.INamedElement})
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Inherit_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_INamedElement__
+  name: Inherit(IEnumerable<INamedElement>)
+  nameWithType: Classifier.Inherit(IEnumerable<INamedElement>)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable<NMF.Interop.Legacy.Cmof.INamedElement>)
+  nameWithType.vb: Classifier.Inherit(IEnumerable(Of INamedElement))
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable(Of NMF.Interop.Legacy.Cmof.INamedElement))
+  name.vb: Inherit(IEnumerable(Of INamedElement))
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.INamedElement})
+    name: Inherit
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Inherit_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_INamedElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.Inherit(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.INamedElement})
+    name: Inherit
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Inherit_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_INamedElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: )
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_MaySpecializeType_NMF_Interop_Legacy_Cmof_IClassifier_
+  name: MaySpecializeType(IClassifier)
+  nameWithType: Classifier.MaySpecializeType(IClassifier)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+    name: MaySpecializeType
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_MaySpecializeType_NMF_Interop_Legacy_Cmof_IClassifier_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClassifier
+    name: IClassifier
+    href: NMF.Interop.Legacy.Cmof.IClassifier.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.MaySpecializeType(NMF.Interop.Legacy.Cmof.IClassifier)
+    name: MaySpecializeType
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_MaySpecializeType_NMF_Interop_Legacy_Cmof_IClassifier_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClassifier
+    name: IClassifier
+    href: NMF.Interop.Legacy.Cmof.IClassifier.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_ConformsTo_NMF_Interop_Legacy_Cmof_IType_
+  name: ConformsTo(IType)
+  nameWithType: Classifier.ConformsTo(IType)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+    name: ConformsTo
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_ConformsTo_NMF_Interop_Legacy_Cmof_IType_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IType
+    name: IType
+    href: NMF.Interop.Legacy.Cmof.IType.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.ConformsTo(NMF.Interop.Legacy.Cmof.IType)
+    name: ConformsTo
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_ConformsTo_NMF_Interop_Legacy_Cmof_IType_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IType
+    name: IType
+    href: NMF.Interop.Legacy.Cmof.IType.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.IsInstance(System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.IsInstance(System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_IsInstance_System_Object_
+  name: IsInstance(object)
+  nameWithType: Classifier.IsInstance(object)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.IsInstance(object)
+  nameWithType.vb: Classifier.IsInstance(Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.IsInstance(Object)
+  name.vb: IsInstance(Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.IsInstance(System.Object)
+    name: IsInstance
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_IsInstance_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.IsInstance(System.Object)
+    name: IsInstance
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_IsInstance_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanging_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  name: OnParentChanging(IModelElement, IModelElement)
+  nameWithType: Classifier.OnParentChanging(IModelElement, IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanging
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanging_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanging
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanging_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanged_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  name: OnParentChanged(IModelElement, IModelElement)
+  nameWithType: Classifier.OnParentChanged(IModelElement, IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanged
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanged_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanged
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_OnParentChanged_NMF_Models_IModelElement_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(System.String)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(System.String)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetExpressionForReference_System_String_
+  name: GetExpressionForReference(string)
+  nameWithType: Classifier.GetExpressionForReference(string)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(string)
+  nameWithType.vb: Classifier.GetExpressionForReference(String)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(String)
+  name.vb: GetExpressionForReference(String)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(System.String)
+    name: GetExpressionForReference
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetExpressionForReference_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetExpressionForReference(System.String)
+    name: GetExpressionForReference
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetExpressionForReference_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.OwnedRule
+  commentId: P:NMF.Interop.Legacy.Cmof.Namespace.OwnedRule
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_OwnedRule
+  name: OwnedRule
+  nameWithType: Namespace.OwnedRule
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.OwnedRule
+- uid: NMF.Interop.Legacy.Cmof.Namespace.ElementImport
+  commentId: P:NMF.Interop.Legacy.Cmof.Namespace.ElementImport
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ElementImport
+  name: ElementImport
+  nameWithType: Namespace.ElementImport
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.ElementImport
+- uid: NMF.Interop.Legacy.Cmof.Namespace.PackageImport
+  commentId: P:NMF.Interop.Legacy.Cmof.Namespace.PackageImport
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_PackageImport
+  name: PackageImport
+  nameWithType: Namespace.PackageImport
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.PackageImport
+- uid: NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_Members_are_distinguishable_System_Object_System_Object_
+  name: Members_are_distinguishable(object, object)
+  nameWithType: Namespace.Members_are_distinguishable(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(object, object)
+  nameWithType.vb: Namespace.Members_are_distinguishable(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(Object, Object)
+  name.vb: Members_are_distinguishable(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(System.Object,System.Object)
+    name: Members_are_distinguishable
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_Members_are_distinguishable_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.Members_are_distinguishable(System.Object,System.Object)
+    name: Members_are_distinguishable
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_Members_are_distinguishable_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetImportedMembers
+  name: GetImportedMembers()
+  nameWithType: Namespace.GetImportedMembers()
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers
+    name: GetImportedMembers
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetImportedMembers
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetImportedMembers
+    name: GetImportedMembers
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetImportedMembers
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetNamesOfMember_NMF_Interop_Legacy_Cmof_INamedElement_
+  name: GetNamesOfMember(INamedElement)
+  nameWithType: Namespace.GetNamesOfMember(INamedElement)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+    name: GetNamesOfMember
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetNamesOfMember_NMF_Interop_Legacy_Cmof_INamedElement_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetNamesOfMember(NMF.Interop.Legacy.Cmof.INamedElement)
+    name: GetNamesOfMember
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetNamesOfMember_NMF_Interop_Legacy_Cmof_INamedElement_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ImportMembers_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  name: ImportMembers(IEnumerable<IPackageableElement>)
+  nameWithType: Namespace.ImportMembers(IEnumerable<IPackageableElement>)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable<NMF.Interop.Legacy.Cmof.IPackageableElement>)
+  nameWithType.vb: Namespace.ImportMembers(IEnumerable(Of IPackageableElement))
+  fullName.vb: NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable(Of NMF.Interop.Legacy.Cmof.IPackageableElement))
+  name.vb: ImportMembers(IEnumerable(Of IPackageableElement))
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+    name: ImportMembers
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ImportMembers_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.IPackageableElement
+    name: IPackageableElement
+    href: NMF.Interop.Legacy.Cmof.IPackageableElement.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.ImportMembers(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+    name: ImportMembers
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ImportMembers_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IPackageableElement
+    name: IPackageableElement
+    href: NMF.Interop.Legacy.Cmof.IPackageableElement.html
+  - name: )
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ExcludeCollisions_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  name: ExcludeCollisions(IEnumerable<IPackageableElement>)
+  nameWithType: Namespace.ExcludeCollisions(IEnumerable<IPackageableElement>)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable<NMF.Interop.Legacy.Cmof.IPackageableElement>)
+  nameWithType.vb: Namespace.ExcludeCollisions(IEnumerable(Of IPackageableElement))
+  fullName.vb: NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable(Of NMF.Interop.Legacy.Cmof.IPackageableElement))
+  name.vb: ExcludeCollisions(IEnumerable(Of IPackageableElement))
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+    name: ExcludeCollisions
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ExcludeCollisions_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.IPackageableElement
+    name: IPackageableElement
+    href: NMF.Interop.Legacy.Cmof.IPackageableElement.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.ExcludeCollisions(System.Collections.Generic.IEnumerable{NMF.Interop.Legacy.Cmof.IPackageableElement})
+    name: ExcludeCollisions
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_ExcludeCollisions_System_Collections_Generic_IEnumerable_NMF_Interop_Legacy_Cmof_IPackageableElement__
+  - name: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IPackageableElement
+    name: IPackageableElement
+    href: NMF.Interop.Legacy.Cmof.IPackageableElement.html
+  - name: )
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_MembersAreDistinguishable
+  name: MembersAreDistinguishable()
+  nameWithType: Namespace.MembersAreDistinguishable()
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable
+    name: MembersAreDistinguishable
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_MembersAreDistinguishable
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.MembersAreDistinguishable
+    name: MembersAreDistinguishable
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_MembersAreDistinguishable
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.Visibility
+  commentId: P:NMF.Interop.Legacy.Cmof.NamedElement.Visibility
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Visibility
+  name: Visibility
+  nameWithType: NamedElement.Visibility
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.Visibility
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.Name
+  commentId: P:NMF.Interop.Legacy.Cmof.NamedElement.Name
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Name
+  name: Name
+  nameWithType: NamedElement.Name
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.Name
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.IsIdentified
+  commentId: P:NMF.Interop.Legacy.Cmof.NamedElement.IsIdentified
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_IsIdentified
+  name: IsIdentified
+  nameWithType: NamedElement.IsIdentified
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.IsIdentified
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.No_name(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.No_name(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_No_name_System_Object_System_Object_
+  name: No_name(object, object)
+  nameWithType: NamedElement.No_name(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.No_name(object, object)
+  nameWithType.vb: NamedElement.No_name(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.No_name(Object, Object)
+  name.vb: No_name(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.No_name(System.Object,System.Object)
+    name: No_name
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_No_name_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.No_name(System.Object,System.Object)
+    name: No_name
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_No_name_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Qualified_name_System_Object_System_Object_
+  name: Qualified_name(object, object)
+  nameWithType: NamedElement.Qualified_name(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(object, object)
+  nameWithType.vb: NamedElement.Qualified_name(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(Object, Object)
+  name.vb: Qualified_name(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(System.Object,System.Object)
+    name: Qualified_name
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Qualified_name_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Qualified_name(System.Object,System.Object)
+    name: Qualified_name
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Qualified_name_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Visibility_needs_ownership_System_Object_System_Object_
+  name: Visibility_needs_ownership(object, object)
+  nameWithType: NamedElement.Visibility_needs_ownership(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(object, object)
+  nameWithType.vb: NamedElement.Visibility_needs_ownership(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(Object, Object)
+  name.vb: Visibility_needs_ownership(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(System.Object,System.Object)
+    name: Visibility_needs_ownership
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Visibility_needs_ownership_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Visibility_needs_ownership(System.Object,System.Object)
+    name: Visibility_needs_ownership
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Visibility_needs_ownership_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_AllNamespaces
+  name: AllNamespaces()
+  nameWithType: NamedElement.AllNamespaces()
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces
+    name: AllNamespaces
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_AllNamespaces
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.AllNamespaces
+    name: AllNamespaces
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_AllNamespaces
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement,NMF.Interop.Legacy.Cmof.INamespace)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement,NMF.Interop.Legacy.Cmof.INamespace)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_IsDistinguishableFrom_NMF_Interop_Legacy_Cmof_INamedElement_NMF_Interop_Legacy_Cmof_INamespace_
+  name: IsDistinguishableFrom(INamedElement, INamespace)
+  nameWithType: NamedElement.IsDistinguishableFrom(INamedElement, INamespace)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement, NMF.Interop.Legacy.Cmof.INamespace)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement,NMF.Interop.Legacy.Cmof.INamespace)
+    name: IsDistinguishableFrom
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_IsDistinguishableFrom_NMF_Interop_Legacy_Cmof_INamedElement_NMF_Interop_Legacy_Cmof_INamespace_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.INamespace
+    name: INamespace
+    href: NMF.Interop.Legacy.Cmof.INamespace.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.IsDistinguishableFrom(NMF.Interop.Legacy.Cmof.INamedElement,NMF.Interop.Legacy.Cmof.INamespace)
+    name: IsDistinguishableFrom
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_IsDistinguishableFrom_NMF_Interop_Legacy_Cmof_INamedElement_NMF_Interop_Legacy_Cmof_INamespace_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.INamedElement
+    name: INamedElement
+    href: NMF.Interop.Legacy.Cmof.INamedElement.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.INamespace
+    name: INamespace
+    href: NMF.Interop.Legacy.Cmof.INamespace.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.Separator
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.Separator
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Separator
+  name: Separator()
+  nameWithType: NamedElement.Separator()
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.Separator()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Separator
+    name: Separator
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Separator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.Separator
+    name: Separator
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_Separator
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_QualifiedName
+  name: QualifiedName()
+  nameWithType: NamedElement.QualifiedName()
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName
+    name: QualifiedName
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_QualifiedName
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.QualifiedName
+    name: QualifiedName
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_QualifiedName
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_ToIdentifierString
+  name: ToIdentifierString()
+  nameWithType: NamedElement.ToIdentifierString()
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString
+    name: ToIdentifierString
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_ToIdentifierString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.ToIdentifierString
+    name: ToIdentifierString
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_ToIdentifierString
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_CreateUriWithFragment_System_String_System_Boolean_NMF_Models_IModelElement_
+  name: CreateUriWithFragment(string, bool, IModelElement)
+  nameWithType: NamedElement.CreateUriWithFragment(string, bool, IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(string, bool, NMF.Models.IModelElement)
+  nameWithType.vb: NamedElement.CreateUriWithFragment(String, Boolean, IModelElement)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(String, Boolean, NMF.Models.IModelElement)
+  name.vb: CreateUriWithFragment(String, Boolean, IModelElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+    name: CreateUriWithFragment
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_CreateUriWithFragment_System_String_System_Boolean_NMF_Models_IModelElement_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+    name: CreateUriWithFragment
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_CreateUriWithFragment_System_String_System_Boolean_NMF_Models_IModelElement_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_PropagateNewModel_NMF_Models_Model_NMF_Models_Model_NMF_Models_IModelElement_
+  name: PropagateNewModel(Model, Model, IModelElement)
+  nameWithType: NamedElement.PropagateNewModel(Model, Model, IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model, NMF.Models.Model, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+    name: PropagateNewModel
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_PropagateNewModel_NMF_Models_Model_NMF_Models_Model_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+    name: PropagateNewModel
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_PropagateNewModel_NMF_Models_Model_NMF_Models_Model_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.OwnedComment
+  commentId: P:NMF.Interop.Legacy.Cmof.Element.OwnedComment
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_OwnedComment
+  name: OwnedComment
+  nameWithType: Element.OwnedComment
+  fullName: NMF.Interop.Legacy.Cmof.Element.OwnedComment
+- uid: NMF.Interop.Legacy.Cmof.Element.Not_own_self(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Not_own_self(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Not_own_self_System_Object_System_Object_
+  name: Not_own_self(object, object)
+  nameWithType: Element.Not_own_self(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Not_own_self(object, object)
+  nameWithType.vb: Element.Not_own_self(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.Not_own_self(Object, Object)
+  name.vb: Not_own_self(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Not_own_self(System.Object,System.Object)
+    name: Not_own_self
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Not_own_self_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Not_own_self(System.Object,System.Object)
+    name: Not_own_self
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Not_own_self_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Has_owner(System.Object,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Has_owner(System.Object,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Has_owner_System_Object_System_Object_
+  name: Has_owner(object, object)
+  nameWithType: Element.Has_owner(object, object)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Has_owner(object, object)
+  nameWithType.vb: Element.Has_owner(Object, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.Has_owner(Object, Object)
+  name.vb: Has_owner(Object, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Has_owner(System.Object,System.Object)
+    name: Has_owner
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Has_owner_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Has_owner(System.Object,System.Object)
+    name: Has_owner
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Has_owner_System_Object_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.AllOwnedElements
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.AllOwnedElements
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_AllOwnedElements
+  name: AllOwnedElements()
+  nameWithType: Element.AllOwnedElements()
+  fullName: NMF.Interop.Legacy.Cmof.Element.AllOwnedElements()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.AllOwnedElements
+    name: AllOwnedElements
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_AllOwnedElements
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.AllOwnedElements
+    name: AllOwnedElements
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_AllOwnedElements
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.MustBeOwned
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.MustBeOwned
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_MustBeOwned
+  name: MustBeOwned()
+  nameWithType: Element.MustBeOwned()
+  fullName: NMF.Interop.Legacy.Cmof.Element.MustBeOwned()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.MustBeOwned
+    name: MustBeOwned
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_MustBeOwned
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.MustBeOwned
+    name: MustBeOwned
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_MustBeOwned
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.GetMetaClass
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.GetMetaClass
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_GetMetaClass
+  name: GetMetaClass()
+  nameWithType: Element.GetMetaClass()
+  fullName: NMF.Interop.Legacy.Cmof.Element.GetMetaClass()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.GetMetaClass
+    name: GetMetaClass
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_GetMetaClass
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.GetMetaClass
+    name: GetMetaClass
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_GetMetaClass
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Container
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Container
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Container
+  name: Container()
+  nameWithType: Element.Container()
+  fullName: NMF.Interop.Legacy.Cmof.Element.Container()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Container
+    name: Container
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Container
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Container
+    name: Container
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Container
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Equals(System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Equals(System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Equals_System_Object_
+  name: Equals(object)
+  nameWithType: Element.Equals(object)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Equals(object)
+  nameWithType.vb: Element.Equals(Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Equals(System.Object)
+    name: Equals
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Equals(System.Object)
+    name: Equals
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Get_NMF_Interop_Legacy_Cmof_IProperty_
+  name: Get(IProperty)
+  nameWithType: Element.Get(IProperty)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+    name: Get
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Get_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Get(NMF.Interop.Legacy.Cmof.IProperty)
+    name: Get
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Get_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Set_NMF_Interop_Legacy_Cmof_IProperty_System_Object_
+  name: Set(IProperty, object)
+  nameWithType: Element.Set(IProperty, object)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty, object)
+  nameWithType.vb: Element.Set(IProperty, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty, Object)
+  name.vb: Set(IProperty, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty,System.Object)
+    name: Set
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Set_NMF_Interop_Legacy_Cmof_IProperty_System_Object_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Set(NMF.Interop.Legacy.Cmof.IProperty,System.Object)
+    name: Set
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Set_NMF_Interop_Legacy_Cmof_IProperty_System_Object_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsSet_NMF_Interop_Legacy_Cmof_IProperty_
+  name: IsSet(IProperty)
+  nameWithType: Element.IsSet(IProperty)
+  fullName: NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+    name: IsSet
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsSet_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.IsSet(NMF.Interop.Legacy.Cmof.IProperty)
+    name: IsSet
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsSet_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Unset_NMF_Interop_Legacy_Cmof_IProperty_
+  name: Unset(IProperty)
+  nameWithType: Element.Unset(IProperty)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+    name: Unset
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Unset_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Unset(NMF.Interop.Legacy.Cmof.IProperty)
+    name: Unset
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Unset_NMF_Interop_Legacy_Cmof_IProperty_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Delete
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Delete
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Delete
+  name: Delete()
+  nameWithType: Element.Delete()
+  fullName: NMF.Interop.Legacy.Cmof.Element.Delete()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Delete
+    name: Delete
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Delete
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Delete
+    name: Delete
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Delete
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation,NMF.Interop.Legacy.Cmof.IArgument)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation,NMF.Interop.Legacy.Cmof.IArgument)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Invoke_NMF_Interop_Legacy_Cmof_IOperation_NMF_Interop_Legacy_Cmof_IArgument_
+  name: Invoke(IOperation, IArgument)
+  nameWithType: Element.Invoke(IOperation, IArgument)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation, NMF.Interop.Legacy.Cmof.IArgument)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation,NMF.Interop.Legacy.Cmof.IArgument)
+    name: Invoke
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Invoke_NMF_Interop_Legacy_Cmof_IOperation_NMF_Interop_Legacy_Cmof_IArgument_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IOperation
+    name: IOperation
+    href: NMF.Interop.Legacy.Cmof.IOperation.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IArgument
+    name: IArgument
+    href: NMF.Interop.Legacy.Cmof.IArgument.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Invoke(NMF.Interop.Legacy.Cmof.IOperation,NMF.Interop.Legacy.Cmof.IArgument)
+    name: Invoke
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Invoke_NMF_Interop_Legacy_Cmof_IOperation_NMF_Interop_Legacy_Cmof_IArgument_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IOperation
+    name: IOperation
+    href: NMF.Interop.Legacy.Cmof.IOperation.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IArgument
+    name: IArgument
+    href: NMF.Interop.Legacy.Cmof.IArgument.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass,System.Boolean)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass,System.Boolean)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsInstanceOfType_NMF_Interop_Legacy_Cmof_IClass_System_Boolean_
+  name: IsInstanceOfType(IClass, bool)
+  nameWithType: Element.IsInstanceOfType(IClass, bool)
+  fullName: NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass, bool)
+  nameWithType.vb: Element.IsInstanceOfType(IClass, Boolean)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass, Boolean)
+  name.vb: IsInstanceOfType(IClass, Boolean)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass,System.Boolean)
+    name: IsInstanceOfType
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsInstanceOfType_NMF_Interop_Legacy_Cmof_IClass_System_Boolean_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClass
+    name: IClass
+    href: NMF.Interop.Legacy.Cmof.IClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.IsInstanceOfType(NMF.Interop.Legacy.Cmof.IClass,System.Boolean)
+    name: IsInstanceOfType
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_IsInstanceOfType_NMF_Interop_Legacy_Cmof_IClass_System_Boolean_
+  - name: (
+  - uid: NMF.Interop.Legacy.Cmof.IClass
+    name: IClass
+    href: NMF.Interop.Legacy.Cmof.IClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Element.Verify(System.Boolean)
+  commentId: M:NMF.Interop.Legacy.Cmof.Element.Verify(System.Boolean)
+  parent: NMF.Interop.Legacy.Cmof.Element
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Verify_System_Boolean_
+  name: Verify(bool)
+  nameWithType: Element.Verify(bool)
+  fullName: NMF.Interop.Legacy.Cmof.Element.Verify(bool)
+  nameWithType.vb: Element.Verify(Boolean)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Element.Verify(Boolean)
+  name.vb: Verify(Boolean)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Verify(System.Boolean)
+    name: Verify
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Verify_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Element.Verify(System.Boolean)
+    name: Verify
+    href: NMF.Interop.Legacy.Cmof.Element.html#NMF_Interop_Legacy_Cmof_Element_Verify_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.Models.ModelElement.Model
+  commentId: P:NMF.Models.ModelElement.Model
+  parent: NMF.Models.ModelElement
+  name: Model
+  nameWithType: ModelElement.Model
+  fullName: NMF.Models.ModelElement.Model
+- uid: NMF.Models.ModelElement.Freeze
+  commentId: M:NMF.Models.ModelElement.Freeze
+  parent: NMF.Models.ModelElement
+  name: Freeze()
+  nameWithType: ModelElement.Freeze()
+  fullName: NMF.Models.ModelElement.Freeze()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Freeze
+    name: Freeze
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Freeze
+    name: Freeze
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.Lock
+  commentId: M:NMF.Models.ModelElement.Lock
+  parent: NMF.Models.ModelElement
+  name: Lock()
+  nameWithType: ModelElement.Lock()
+  fullName: NMF.Models.ModelElement.Lock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Lock
+    name: Lock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Lock
+    name: Lock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.IsFrozen
+  commentId: P:NMF.Models.ModelElement.IsFrozen
+  parent: NMF.Models.ModelElement
+  name: IsFrozen
+  nameWithType: ModelElement.IsFrozen
+  fullName: NMF.Models.ModelElement.IsFrozen
+- uid: NMF.Models.ModelElement.IsLocked
+  commentId: P:NMF.Models.ModelElement.IsLocked
+  parent: NMF.Models.ModelElement
+  name: IsLocked
+  nameWithType: ModelElement.IsLocked
+  fullName: NMF.Models.ModelElement.IsLocked
+- uid: NMF.Models.ModelElement.Unlock
+  commentId: M:NMF.Models.ModelElement.Unlock
+  parent: NMF.Models.ModelElement
+  name: Unlock()
+  nameWithType: ModelElement.Unlock()
+  fullName: NMF.Models.ModelElement.Unlock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Unlock
+    name: Unlock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Unlock
+    name: Unlock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.TryUnlock
+  commentId: M:NMF.Models.ModelElement.TryUnlock
+  parent: NMF.Models.ModelElement
+  name: TryUnlock()
+  nameWithType: ModelElement.TryUnlock()
+  fullName: NMF.Models.ModelElement.TryUnlock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.TryUnlock
+    name: TryUnlock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.TryUnlock
+    name: TryUnlock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  commentId: M:NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetContainerReference(IModelElement, out int)
+  nameWithType: ModelElement.GetContainerReference(IModelElement, out int)
+  fullName: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement, out int)
+  nameWithType.vb: ModelElement.GetContainerReference(IModelElement, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement, Integer)
+  name.vb: GetContainerReference(IModelElement, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+    name: GetContainerReference
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+    name: GetContainerReference
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: OnChildCreated(IModelElement)
+  nameWithType: ModelElement.OnChildCreated(IModelElement)
+  fullName: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+    name: OnChildCreated
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+    name: OnChildCreated
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.Parent
+  commentId: P:NMF.Models.ModelElement.Parent
+  parent: NMF.Models.ModelElement
+  name: Parent
+  nameWithType: ModelElement.Parent
+  fullName: NMF.Models.ModelElement.Parent
+- uid: NMF.Models.ModelElement.RelativeUri
+  commentId: P:NMF.Models.ModelElement.RelativeUri
+  parent: NMF.Models.ModelElement
+  name: RelativeUri
+  nameWithType: ModelElement.RelativeUri
+  fullName: NMF.Models.ModelElement.RelativeUri
+- uid: NMF.Models.ModelElement.AbsoluteUri
+  commentId: P:NMF.Models.ModelElement.AbsoluteUri
+  parent: NMF.Models.ModelElement
+  name: AbsoluteUri
+  nameWithType: ModelElement.AbsoluteUri
+  fullName: NMF.Models.ModelElement.AbsoluteUri
+- uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  commentId: M:NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateUriFromGlobalIdentifier(string, bool)
+  nameWithType: ModelElement.CreateUriFromGlobalIdentifier(string, bool)
+  fullName: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(string, bool)
+  nameWithType.vb: ModelElement.CreateUriFromGlobalIdentifier(String, Boolean)
+  fullName.vb: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(String, Boolean)
+  name.vb: CreateUriFromGlobalIdentifier(String, Boolean)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+    name: CreateUriFromGlobalIdentifier
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+    name: CreateUriFromGlobalIdentifier
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: PropagateNewId(ValueChangedEventArgs)
+  nameWithType: ModelElement.PropagateNewId(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+    name: PropagateNewId
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+    name: PropagateNewId
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.EnforceModels
+  commentId: P:NMF.Models.ModelElement.EnforceModels
+  parent: NMF.Models.ModelElement
+  name: EnforceModels
+  nameWithType: ModelElement.EnforceModels
+  fullName: NMF.Models.ModelElement.EnforceModels
+- uid: NMF.Models.ModelElement.PreferIdentifiers
+  commentId: P:NMF.Models.ModelElement.PreferIdentifiers
+  parent: NMF.Models.ModelElement
+  name: PreferIdentifiers
+  nameWithType: ModelElement.PreferIdentifiers
+  fullName: NMF.Models.ModelElement.PreferIdentifiers
+- uid: NMF.Models.ModelElement.ToString
+  commentId: M:NMF.Models.ModelElement.ToString
+  parent: NMF.Models.ModelElement
+  name: ToString()
+  nameWithType: ModelElement.ToString()
+  fullName: NMF.Models.ModelElement.ToString()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.ToString
+    name: ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.ToString
+    name: ToString
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
+  parent: NMF.Models.ModelElement
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
+  parent: NMF.Models.ModelElement
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnKeyChanged
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnKeyChanged
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.Resolve(System.Uri)
+  commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Resolve(Uri)
+  nameWithType: ModelElement.Resolve(Uri)
+  fullName: NMF.Models.ModelElement.Resolve(System.Uri)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Resolve(System.Uri)
+    name: Resolve
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Resolve(System.Uri)
+    name: Resolve
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+- uid: NMF.Models.ModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.ModelElement.Resolve(System.String)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Resolve(string)
+  nameWithType: ModelElement.Resolve(string)
+  fullName: NMF.Models.ModelElement.Resolve(string)
+  nameWithType.vb: ModelElement.Resolve(String)
+  fullName.vb: NMF.Models.ModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Resolve(System.String)
+    name: Resolve
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Resolve(System.String)
+    name: Resolve
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: GetRelativePathForChild(IModelElement)
+  nameWithType: ModelElement.GetRelativePathForChild(IModelElement)
+  fullName: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+    name: GetRelativePathForChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+    name: GetRelativePathForChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  commentId: M:NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetModelElementForPathSegment(string)
+  nameWithType: ModelElement.GetModelElementForPathSegment(string)
+  fullName: NMF.Models.ModelElement.GetModelElementForPathSegment(string)
+  nameWithType.vb: ModelElement.GetModelElementForPathSegment(String)
+  fullName.vb: NMF.Models.ModelElement.GetModelElementForPathSegment(String)
+  name.vb: GetModelElementForPathSegment(String)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+    name: GetModelElementForPathSegment
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+    name: GetModelElementForPathSegment
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  commentId: M:NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: CallOperation(IOperation, object[])
+  nameWithType: ModelElement.CallOperation(IOperation, object[])
+  fullName: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation, object[])
+  nameWithType.vb: ModelElement.CallOperation(IOperation, Object())
+  fullName.vb: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation, Object())
+  name.vb: CallOperation(IOperation, Object())
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+    name: CallOperation
+  - name: (
+  - uid: NMF.Models.Meta.IOperation
+    name: IOperation
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+    name: CallOperation
+  - name: (
+  - uid: NMF.Models.Meta.IOperation
+    name: IOperation
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.Extensions
+  commentId: P:NMF.Models.ModelElement.Extensions
+  parent: NMF.Models.ModelElement
+  name: Extensions
+  nameWithType: ModelElement.Extensions
+  fullName: NMF.Models.ModelElement.Extensions
+- uid: NMF.Models.ModelElement.GetExtension``1
+  commentId: M:NMF.Models.ModelElement.GetExtension``1
+  parent: NMF.Models.ModelElement
+  name: GetExtension<T>()
+  nameWithType: ModelElement.GetExtension<T>()
+  fullName: NMF.Models.ModelElement.GetExtension<T>()
+  nameWithType.vb: ModelElement.GetExtension(Of T)()
+  fullName.vb: NMF.Models.ModelElement.GetExtension(Of T)()
+  name.vb: GetExtension(Of T)()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetExtension``1
+    name: GetExtension
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetExtension``1
+    name: GetExtension
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnPropertyChanged(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnPropertyChanged(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnPropertyChanged(string, NMF.Expressions.ValueChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnPropertyChanged(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnPropertyChanged(String, NMF.Expressions.ValueChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnPropertyChanged(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanged
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanged
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnPropertyChanging(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnPropertyChanging(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnPropertyChanging(string, NMF.Expressions.ValueChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnPropertyChanging(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnPropertyChanging(String, NMF.Expressions.ValueChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnPropertyChanging(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanging
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanging
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnDeleting(UriChangedEventArgs)
+  nameWithType: ModelElement.OnDeleting(UriChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+    name: OnDeleting
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+    name: OnDeleting
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnDeleted(UriChangedEventArgs)
+  nameWithType: ModelElement.OnDeleted(UriChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+    name: OnDeleted
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+    name: OnDeleted
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.PropertyChanged
+  commentId: E:NMF.Models.ModelElement.PropertyChanged
+  parent: NMF.Models.ModelElement
+  name: PropertyChanged
+  nameWithType: ModelElement.PropertyChanged
+  fullName: NMF.Models.ModelElement.PropertyChanged
+- uid: NMF.Models.ModelElement.PropertyChanging
+  commentId: E:NMF.Models.ModelElement.PropertyChanging
+  parent: NMF.Models.ModelElement
+  name: PropertyChanging
+  nameWithType: ModelElement.PropertyChanging
+  fullName: NMF.Models.ModelElement.PropertyChanging
+- uid: NMF.Models.ModelElement.Deleted
+  commentId: E:NMF.Models.ModelElement.Deleted
+  parent: NMF.Models.ModelElement
+  name: Deleted
+  nameWithType: ModelElement.Deleted
+  fullName: NMF.Models.ModelElement.Deleted
+- uid: NMF.Models.ModelElement.Deleting
+  commentId: E:NMF.Models.ModelElement.Deleting
+  parent: NMF.Models.ModelElement
+  name: Deleting
+  nameWithType: ModelElement.Deleting
+  fullName: NMF.Models.ModelElement.Deleting
+- uid: NMF.Models.ModelElement.UriChanged
+  commentId: E:NMF.Models.ModelElement.UriChanged
+  parent: NMF.Models.ModelElement
+  name: UriChanged
+  nameWithType: ModelElement.UriChanged
+  fullName: NMF.Models.ModelElement.UriChanged
+- uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  commentId: M:NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetReferencedElement(IReference, int)
+  nameWithType: ModelElement.GetReferencedElement(IReference, int)
+  fullName: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference, int)
+  nameWithType.vb: ModelElement.GetReferencedElement(IReference, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference, Integer)
+  name.vb: GetReferencedElement(IReference, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+    name: GetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+    name: GetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: SetReferencedElement(IReference, IModelElement)
+  nameWithType: ModelElement.SetReferencedElement(IReference, IModelElement)
+  fullName: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+    name: SetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+    name: SetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  commentId: M:NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  parent: NMF.Models.ModelElement
+  name: GetReferencedElements(IReference)
+  nameWithType: ModelElement.GetReferencedElements(IReference)
+  fullName: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+    name: GetReferencedElements
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+    name: GetReferencedElements
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: )
+- uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  commentId: M:NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetAttributeValue(IAttribute, int)
+  nameWithType: ModelElement.GetAttributeValue(IAttribute, int)
+  fullName: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute, int)
+  nameWithType.vb: ModelElement.GetAttributeValue(IAttribute, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute, Integer)
+  name.vb: GetAttributeValue(IAttribute, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+    name: GetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+    name: GetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  commentId: M:NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: SetAttributeValue(IAttribute, object)
+  nameWithType: ModelElement.SetAttributeValue(IAttribute, object)
+  fullName: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute, object)
+  nameWithType.vb: ModelElement.SetAttributeValue(IAttribute, Object)
+  fullName.vb: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute, Object)
+  name.vb: SetAttributeValue(IAttribute, Object)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+    name: SetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+    name: SetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  commentId: M:NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  parent: NMF.Models.ModelElement
+  name: GetAttributeValues(IAttribute)
+  nameWithType: ModelElement.GetAttributeValues(IAttribute)
+  fullName: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+    name: GetAttributeValues
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+    name: GetAttributeValues
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: )
+- uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnCollectionChanged(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnCollectionChanged(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnCollectionChanged(string, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnCollectionChanged(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnCollectionChanged(String, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnCollectionChanged(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanged
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanged
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnCollectionChanging(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnCollectionChanging(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnCollectionChanging(string, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnCollectionChanging(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnCollectionChanging(String, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnCollectionChanging(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanging
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanging
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnBubbledChange(BubbledChangeEventArgs)
+  nameWithType: ModelElement.OnBubbledChange(BubbledChangeEventArgs)
+  fullName: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+    name: OnBubbledChange
+  - name: (
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+    name: OnBubbledChange
+  - name: (
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.BubbledChange
+  commentId: E:NMF.Models.ModelElement.BubbledChange
+  parent: NMF.Models.ModelElement
+  name: BubbledChange
+  nameWithType: ModelElement.BubbledChange
+  fullName: NMF.Models.ModelElement.BubbledChange
+- uid: NMF.Models.ModelElement.ParentChanged
+  commentId: E:NMF.Models.ModelElement.ParentChanged
+  parent: NMF.Models.ModelElement
+  name: ParentChanged
+  nameWithType: ModelElement.ParentChanged
+  fullName: NMF.Models.ModelElement.ParentChanged
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.Models
+  commentId: N:NMF.Models
+  name: NMF.Models
+  nameWithType: NMF.Models
+  fullName: NMF.Models
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: NMF.Interop.Legacy.Cmof.Class.#ctor*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.#ctor
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class__ctor
+  name: Class
+  nameWithType: Class.Class
+  fullName: NMF.Interop.Legacy.Cmof.Class.Class
+  nameWithType.vb: Class.New
+  fullName.vb: NMF.Interop.Legacy.Cmof.Class.New
+  name.vb: New
+- uid: NMF.Interop.Legacy.Cmof.Class.IsAbstract*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.IsAbstract
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_IsAbstract
+  name: IsAbstract
+  nameWithType: Class.IsAbstract
+  fullName: NMF.Interop.Legacy.Cmof.Class.IsAbstract
+- uid: NMF.Interop.Legacy.Cmof.IClass.IsAbstract
+  commentId: P:NMF.Interop.Legacy.Cmof.IClass.IsAbstract
+  parent: NMF.Interop.Legacy.Cmof.IClass
+  href: NMF.Interop.Legacy.Cmof.IClass.html#NMF_Interop_Legacy_Cmof_IClass_IsAbstract
+  name: IsAbstract
+  nameWithType: IClass.IsAbstract
+  fullName: NMF.Interop.Legacy.Cmof.IClass.IsAbstract
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.Interop.Legacy.Cmof.Class.OwnedAttribute*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_OwnedAttribute
+  name: OwnedAttribute
+  nameWithType: Class.OwnedAttribute
+  fullName: NMF.Interop.Legacy.Cmof.Class.OwnedAttribute
+- uid: NMF.Interop.Legacy.Cmof.IClass.OwnedAttribute
+  commentId: P:NMF.Interop.Legacy.Cmof.IClass.OwnedAttribute
+  parent: NMF.Interop.Legacy.Cmof.IClass
+  href: NMF.Interop.Legacy.Cmof.IClass.html#NMF_Interop_Legacy_Cmof_IClass_OwnedAttribute
+  name: OwnedAttribute
+  nameWithType: IClass.OwnedAttribute
+  fullName: NMF.Interop.Legacy.Cmof.IClass.OwnedAttribute
+- uid: NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IProperty}
+  commentId: T:NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IProperty}
+  parent: NMF.Collections.Generic
+  definition: NMF.Collections.Generic.IOrderedSetExpression`1
+  href: NMF.Interop.Legacy.Cmof.IProperty.html
+  name: IOrderedSetExpression<IProperty>
+  nameWithType: IOrderedSetExpression<IProperty>
+  fullName: NMF.Collections.Generic.IOrderedSetExpression<NMF.Interop.Legacy.Cmof.IProperty>
+  nameWithType.vb: IOrderedSetExpression(Of IProperty)
+  fullName.vb: NMF.Collections.Generic.IOrderedSetExpression(Of NMF.Interop.Legacy.Cmof.IProperty)
+  name.vb: IOrderedSetExpression(Of IProperty)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IProperty
+    name: IProperty
+    href: NMF.Interop.Legacy.Cmof.IProperty.html
+  - name: )
+- uid: NMF.Collections.Generic.IOrderedSetExpression`1
+  commentId: T:NMF.Collections.Generic.IOrderedSetExpression`1
+  name: IOrderedSetExpression<T>
+  nameWithType: IOrderedSetExpression<T>
+  fullName: NMF.Collections.Generic.IOrderedSetExpression<T>
+  nameWithType.vb: IOrderedSetExpression(Of T)
+  fullName.vb: NMF.Collections.Generic.IOrderedSetExpression(Of T)
+  name.vb: IOrderedSetExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Collections.Generic
+  commentId: N:NMF.Collections.Generic
+  name: NMF.Collections.Generic
+  nameWithType: NMF.Collections.Generic
+  fullName: NMF.Collections.Generic
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+  - name: .
+  - uid: NMF.Collections.Generic
+    name: Generic
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+  - name: .
+  - uid: NMF.Collections.Generic
+    name: Generic
+- uid: NMF.Interop.Legacy.Cmof.Class.OwnedOperation*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_OwnedOperation
+  name: OwnedOperation
+  nameWithType: Class.OwnedOperation
+  fullName: NMF.Interop.Legacy.Cmof.Class.OwnedOperation
+- uid: NMF.Interop.Legacy.Cmof.IClass.OwnedOperation
+  commentId: P:NMF.Interop.Legacy.Cmof.IClass.OwnedOperation
+  parent: NMF.Interop.Legacy.Cmof.IClass
+  href: NMF.Interop.Legacy.Cmof.IClass.html#NMF_Interop_Legacy_Cmof_IClass_OwnedOperation
+  name: OwnedOperation
+  nameWithType: IClass.OwnedOperation
+  fullName: NMF.Interop.Legacy.Cmof.IClass.OwnedOperation
+- uid: NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IOperation}
+  commentId: T:NMF.Collections.Generic.IOrderedSetExpression{NMF.Interop.Legacy.Cmof.IOperation}
+  parent: NMF.Collections.Generic
+  definition: NMF.Collections.Generic.IOrderedSetExpression`1
+  href: NMF.Interop.Legacy.Cmof.IOperation.html
+  name: IOrderedSetExpression<IOperation>
+  nameWithType: IOrderedSetExpression<IOperation>
+  fullName: NMF.Collections.Generic.IOrderedSetExpression<NMF.Interop.Legacy.Cmof.IOperation>
+  nameWithType.vb: IOrderedSetExpression(Of IOperation)
+  fullName.vb: NMF.Collections.Generic.IOrderedSetExpression(Of NMF.Interop.Legacy.Cmof.IOperation)
+  name.vb: IOrderedSetExpression(Of IOperation)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.IOperation
+    name: IOperation
+    href: NMF.Interop.Legacy.Cmof.IOperation.html
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IOperation
+    name: IOperation
+    href: NMF.Interop.Legacy.Cmof.IOperation.html
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.SuperClass*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.SuperClass
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_SuperClass
+  name: SuperClass
+  nameWithType: Class.SuperClass
+  fullName: NMF.Interop.Legacy.Cmof.Class.SuperClass
+- uid: NMF.Interop.Legacy.Cmof.IClass.SuperClass
+  commentId: P:NMF.Interop.Legacy.Cmof.IClass.SuperClass
+  parent: NMF.Interop.Legacy.Cmof.IClass
+  href: NMF.Interop.Legacy.Cmof.IClass.html#NMF_Interop_Legacy_Cmof_IClass_SuperClass
+  name: SuperClass
+  nameWithType: IClass.SuperClass
+  fullName: NMF.Interop.Legacy.Cmof.IClass.SuperClass
+- uid: NMF.Expressions.ISetExpression{NMF.Interop.Legacy.Cmof.IClass}
+  commentId: T:NMF.Expressions.ISetExpression{NMF.Interop.Legacy.Cmof.IClass}
+  parent: NMF.Expressions
+  definition: NMF.Expressions.ISetExpression`1
+  href: NMF.Interop.Legacy.Cmof.IClass.html
+  name: ISetExpression<IClass>
+  nameWithType: ISetExpression<IClass>
+  fullName: NMF.Expressions.ISetExpression<NMF.Interop.Legacy.Cmof.IClass>
+  nameWithType.vb: ISetExpression(Of IClass)
+  fullName.vb: NMF.Expressions.ISetExpression(Of NMF.Interop.Legacy.Cmof.IClass)
+  name.vb: ISetExpression(Of IClass)
+  spec.csharp:
+  - uid: NMF.Expressions.ISetExpression`1
+    name: ISetExpression
+  - name: <
+  - uid: NMF.Interop.Legacy.Cmof.IClass
+    name: IClass
+    href: NMF.Interop.Legacy.Cmof.IClass.html
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.ISetExpression`1
+    name: ISetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Interop.Legacy.Cmof.IClass
+    name: IClass
+    href: NMF.Interop.Legacy.Cmof.IClass.html
+  - name: )
+- uid: NMF.Expressions.ISetExpression`1
+  commentId: T:NMF.Expressions.ISetExpression`1
+  name: ISetExpression<T>
+  nameWithType: ISetExpression<T>
+  fullName: NMF.Expressions.ISetExpression<T>
+  nameWithType.vb: ISetExpression(Of T)
+  fullName.vb: NMF.Expressions.ISetExpression(Of T)
+  name.vb: ISetExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Expressions.ISetExpression`1
+    name: ISetExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.ISetExpression`1
+    name: ISetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Expressions
+  commentId: N:NMF.Expressions
+  name: NMF.Expressions
+  nameWithType: NMF.Expressions
+  fullName: NMF.Expressions
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Expressions
+    name: Expressions
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Expressions
+    name: Expressions
+- uid: NMF.Interop.Legacy.Cmof.Classifier.Children
+  commentId: P:NMF.Interop.Legacy.Cmof.Classifier.Children
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_Children
+  name: Children
+  nameWithType: Classifier.Children
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.Children
+- uid: NMF.Interop.Legacy.Cmof.Class.Children*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.Children
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_Children
+  name: Children
+  nameWithType: Class.Children
+  fullName: NMF.Interop.Legacy.Cmof.Class.Children
+- uid: NMF.Models.IModelElement.Children
+  commentId: P:NMF.Models.IModelElement.Children
+  parent: NMF.Models.IModelElement
+  name: Children
+  nameWithType: IModelElement.Children
+  fullName: NMF.Models.IModelElement.Children
+- uid: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+  commentId: T:NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+  parent: NMF.Expressions
+  definition: NMF.Expressions.IEnumerableExpression`1
+  name: IEnumerableExpression<IModelElement>
+  nameWithType: IEnumerableExpression<IModelElement>
+  fullName: NMF.Expressions.IEnumerableExpression<NMF.Models.IModelElement>
+  nameWithType.vb: IEnumerableExpression(Of IModelElement)
+  fullName.vb: NMF.Expressions.IEnumerableExpression(Of NMF.Models.IModelElement)
+  name.vb: IEnumerableExpression(Of IModelElement)
+  spec.csharp:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Expressions.IEnumerableExpression`1
+  commentId: T:NMF.Expressions.IEnumerableExpression`1
+  name: IEnumerableExpression<T>
+  nameWithType: IEnumerableExpression<T>
+  fullName: NMF.Expressions.IEnumerableExpression<T>
+  nameWithType.vb: IEnumerableExpression(Of T)
+  fullName.vb: NMF.Expressions.IEnumerableExpression(Of T)
+  name.vb: IEnumerableExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Classifier.ReferencedElements
+  commentId: P:NMF.Interop.Legacy.Cmof.Classifier.ReferencedElements
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_ReferencedElements
+  name: ReferencedElements
+  nameWithType: Classifier.ReferencedElements
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.ReferencedElements
+- uid: NMF.Interop.Legacy.Cmof.Class.ReferencedElements*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_ReferencedElements
+  name: ReferencedElements
+  nameWithType: Class.ReferencedElements
+  fullName: NMF.Interop.Legacy.Cmof.Class.ReferencedElements
+- uid: NMF.Models.IModelElement.ReferencedElements
+  commentId: P:NMF.Models.IModelElement.ReferencedElements
+  parent: NMF.Models.IModelElement
+  name: ReferencedElements
+  nameWithType: IModelElement.ReferencedElements
+  fullName: NMF.Models.IModelElement.ReferencedElements
+- uid: NMF.Interop.Legacy.Cmof.Class.ClassInstance*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.ClassInstance
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_ClassInstance
+  name: ClassInstance
+  nameWithType: Class.ClassInstance
+  fullName: NMF.Interop.Legacy.Cmof.Class.ClassInstance
+- uid: NMF.Models.Meta.IClass
+  commentId: T:NMF.Models.Meta.IClass
+  parent: NMF.Models.Meta
+  name: IClass
+  nameWithType: IClass
+  fullName: NMF.Models.Meta.IClass
+- uid: NMF.Models.Meta
+  commentId: N:NMF.Models.Meta
+  name: NMF.Models.Meta
+  nameWithType: NMF.Models.Meta
+  fullName: NMF.Models.Meta
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+- uid: NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetRelativePathForNonIdentifiedChild_NMF_Models_IModelElement_
+  name: GetRelativePathForNonIdentifiedChild(IModelElement)
+  nameWithType: Namespace.GetRelativePathForNonIdentifiedChild(IModelElement)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+    name: GetRelativePathForNonIdentifiedChild
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetRelativePathForNonIdentifiedChild_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+    name: GetRelativePathForNonIdentifiedChild
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetRelativePathForNonIdentifiedChild_NMF_Models_IModelElement_
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetRelativePathForNonIdentifiedChild_NMF_Models_IModelElement_
+  name: GetRelativePathForNonIdentifiedChild
+  nameWithType: Class.GetRelativePathForNonIdentifiedChild
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetRelativePathForNonIdentifiedChild
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(System.String,System.Int32)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(System.String,System.Int32)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetModelElementForReference_System_String_System_Int32_
+  name: GetModelElementForReference(string, int)
+  nameWithType: Classifier.GetModelElementForReference(string, int)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(string, int)
+  nameWithType.vb: Classifier.GetModelElementForReference(String, Integer)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(String, Integer)
+  name.vb: GetModelElementForReference(String, Integer)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(System.String,System.Int32)
+    name: GetModelElementForReference
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetModelElementForReference_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetModelElementForReference(System.String,System.Int32)
+    name: GetModelElementForReference
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetModelElementForReference_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetModelElementForReference_System_String_System_Int32_
+  name: GetModelElementForReference
+  nameWithType: Class.GetModelElementForReference
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetModelElementForReference
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(System.String,System.Int32)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(System.String,System.Int32)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetAttributeValue_System_String_System_Int32_
+  name: GetAttributeValue(string, int)
+  nameWithType: NamedElement.GetAttributeValue(string, int)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(string, int)
+  nameWithType.vb: NamedElement.GetAttributeValue(String, Integer)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(String, Integer)
+  name.vb: GetAttributeValue(String, Integer)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(System.String,System.Int32)
+    name: GetAttributeValue
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetAttributeValue_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.GetAttributeValue(System.String,System.Int32)
+    name: GetAttributeValue
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetAttributeValue_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetAttributeValue
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetAttributeValue_System_String_System_Int32_
+  name: GetAttributeValue
+  nameWithType: Class.GetAttributeValue
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetAttributeValue
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(System.String)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(System.String)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetCollectionForFeature_System_String_
+  name: GetCollectionForFeature(string)
+  nameWithType: Classifier.GetCollectionForFeature(string)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(string)
+  nameWithType.vb: Classifier.GetCollectionForFeature(String)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(String)
+  name.vb: GetCollectionForFeature(String)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(System.String)
+    name: GetCollectionForFeature
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetCollectionForFeature_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetCollectionForFeature(System.String)
+    name: GetCollectionForFeature
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetCollectionForFeature_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetCollectionForFeature_System_String_
+  name: GetCollectionForFeature
+  nameWithType: Class.GetCollectionForFeature
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetCollectionForFeature
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(System.String,System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.SetFeature(System.String,System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_SetFeature_System_String_System_Object_
+  name: SetFeature(string, object)
+  nameWithType: Classifier.SetFeature(string, object)
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(string, object)
+  nameWithType.vb: Classifier.SetFeature(String, Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(String, Object)
+  name.vb: SetFeature(String, Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(System.String,System.Object)
+    name: SetFeature
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_SetFeature_System_String_System_Object_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.SetFeature(System.String,System.Object)
+    name: SetFeature
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_SetFeature_System_String_System_Object_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.SetFeature*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.SetFeature
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_SetFeature_System_String_System_Object_
+  name: SetFeature
+  nameWithType: Class.SetFeature
+  fullName: NMF.Interop.Legacy.Cmof.Class.SetFeature
+- uid: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(System.String)
+  commentId: M:NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(System.String)
+  parent: NMF.Interop.Legacy.Cmof.NamedElement
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetExpressionForAttribute_System_String_
+  name: GetExpressionForAttribute(string)
+  nameWithType: NamedElement.GetExpressionForAttribute(string)
+  fullName: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(string)
+  nameWithType.vb: NamedElement.GetExpressionForAttribute(String)
+  fullName.vb: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(String)
+  name.vb: GetExpressionForAttribute(String)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(System.String)
+    name: GetExpressionForAttribute
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetExpressionForAttribute_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.NamedElement.GetExpressionForAttribute(System.String)
+    name: GetExpressionForAttribute
+    href: NMF.Interop.Legacy.Cmof.NamedElement.html#NMF_Interop_Legacy_Cmof_NamedElement_GetExpressionForAttribute_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetExpressionForAttribute_System_String_
+  name: GetExpressionForAttribute
+  nameWithType: Class.GetExpressionForAttribute
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetExpressionForAttribute
+- uid: NMF.Expressions.INotifyExpression{System.Object}
+  commentId: T:NMF.Expressions.INotifyExpression{System.Object}
+  parent: NMF.Expressions
+  definition: NMF.Expressions.INotifyExpression`1
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: INotifyExpression<object>
+  nameWithType: INotifyExpression<object>
+  fullName: NMF.Expressions.INotifyExpression<object>
+  nameWithType.vb: INotifyExpression(Of Object)
+  fullName.vb: NMF.Expressions.INotifyExpression(Of Object)
+  name.vb: INotifyExpression(Of Object)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Expressions.INotifyExpression`1
+  commentId: T:NMF.Expressions.INotifyExpression`1
+  name: INotifyExpression<T>
+  nameWithType: INotifyExpression<T>
+  fullName: NMF.Expressions.INotifyExpression<T>
+  nameWithType.vb: INotifyExpression(Of T)
+  fullName.vb: NMF.Expressions.INotifyExpression(Of T)
+  name.vb: INotifyExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(System.Object)
+  commentId: M:NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(System.Object)
+  parent: NMF.Interop.Legacy.Cmof.Namespace
+  isExternal: true
+  href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetCompositionName_System_Object_
+  name: GetCompositionName(object)
+  nameWithType: Namespace.GetCompositionName(object)
+  fullName: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(object)
+  nameWithType.vb: Namespace.GetCompositionName(Object)
+  fullName.vb: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(Object)
+  name.vb: GetCompositionName(Object)
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(System.Object)
+    name: GetCompositionName
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetCompositionName_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Namespace.GetCompositionName(System.Object)
+    name: GetCompositionName
+    href: NMF.Interop.Legacy.Cmof.Namespace.html#NMF_Interop_Legacy_Cmof_Namespace_GetCompositionName_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetCompositionName*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetCompositionName
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetCompositionName_System_Object_
+  name: GetCompositionName
+  nameWithType: Class.GetCompositionName
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetCompositionName
+- uid: NMF.Interop.Legacy.Cmof.Classifier.GetClass
+  commentId: M:NMF.Interop.Legacy.Cmof.Classifier.GetClass
+  parent: NMF.Interop.Legacy.Cmof.Classifier
+  href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetClass
+  name: GetClass()
+  nameWithType: Classifier.GetClass()
+  fullName: NMF.Interop.Legacy.Cmof.Classifier.GetClass()
+  spec.csharp:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetClass
+    name: GetClass
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetClass
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Interop.Legacy.Cmof.Classifier.GetClass
+    name: GetClass
+    href: NMF.Interop.Legacy.Cmof.Classifier.html#NMF_Interop_Legacy_Cmof_Classifier_GetClass
+  - name: (
+  - name: )
+- uid: NMF.Interop.Legacy.Cmof.Class.GetClass*
+  commentId: Overload:NMF.Interop.Legacy.Cmof.Class.GetClass
+  href: NMF.Interop.Legacy.Cmof.Class.html#NMF_Interop_Legacy_Cmof_Class_GetClass
+  name: GetClass
+  nameWithType: Class.GetClass
+  fullName: NMF.Interop.Legacy.Cmof.Class.GetClass
+- uid: NMF.Models.IModelElement.GetClass
+  commentId: M:NMF.Models.IModelElement.GetClass
+  parent: NMF.Models.IModelElement
+  name: GetClass()
+  nameWithType: IModelElement.GetClass()
+  fullName: NMF.Models.IModelElement.GetClass()
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.GetClass
+    name: GetClass
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.GetClass
+    name: GetClass
+  - name: (
+  - name: )

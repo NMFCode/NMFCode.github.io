@@ -23,19 +23,23 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableOppositeList
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 300
+    startLine: 371
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes the abstract base class for an observable opposite list
+  example: []
   syntax:
     content: 'public abstract class ObservableOppositeList<TParent, TCollected> : ObservableList<TCollected>, IReadOnlyList<TCollected>, IReadOnlyCollection<TCollected>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<TCollected>, IList<TCollected>, ICollectionExpression<TCollected>, IEnumerableExpression<TCollected>, IEnumerableExpression, ICollection<TCollected>, IEnumerable<TCollected>, IEnumerable'
     typeParameters:
     - id: TParent
+      description: the parent element
     - id: TCollected
+      description: the type of collected elements
     content.vb: Public MustInherit Class ObservableOppositeList(Of TParent, TCollected) Inherits ObservableList(Of TCollected) Implements IReadOnlyList(Of TCollected), IReadOnlyCollection(Of TCollected), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of TCollected), IList(Of TCollected), ICollectionExpression(Of TCollected), IEnumerableExpression(Of TCollected), IEnumerableExpression, ICollection(Of TCollected), IEnumerable(Of TCollected), IEnumerable
   inheritance:
   - System.Object
@@ -85,6 +89,8 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - NMF.Expressions.IEnumerableExpression{`1}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeList(Of TParent, TCollected)
   name.vb: ObservableOppositeList(Of TParent, TCollected)
@@ -102,14 +108,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 302
+    startLine: 376
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets the parent element
+  example: []
   syntax:
     content: public TParent Parent { get; }
     parameters: []
@@ -133,21 +141,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 304
+    startLine: 383
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Sets the opposite element
+  example: []
   syntax:
     content: protected abstract void SetOpposite(TCollected item, TParent newParent)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The item for which the opposite should be set
     - id: newParent
       type: '{TParent}'
+      description: The new parent or null, if the item is removed
     content.vb: Protected MustOverride Sub SetOpposite(item As TCollected, newParent As TParent)
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.SetOpposite*
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected).SetOpposite(TCollected, TParent)
@@ -166,21 +178,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 308
+    startLine: 392
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: protected ObservableOppositeList(TParent parent)
     parameters:
     - id: parent
       type: '{TParent}'
+      description: the parent element
     content.vb: Protected Sub New(parent As TParent)
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if the parent element is null
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected).New(TParent)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeList(Of TParent, TCollected).New(TParent)
   name.vb: New(TParent)
@@ -198,14 +217,15 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClearItems
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 315
+    startLine: 400
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all elements from the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void ClearItems()
@@ -228,25 +248,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: InsertItem
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 361
+    startLine: 447
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts an element into the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: protected override void InsertItem(int index, TCollected item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{TCollected}'
+      description: The object to insert. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub InsertItem(index As Integer, item As TCollected)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{TCollected}}.InsertItem(System.Int32,{TCollected})
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.InsertItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected).InsertItem(Integer, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeList(Of TParent, TCollected).InsertItem(Integer, TCollected)
   name.vb: InsertItem(Integer, TCollected)
@@ -264,23 +291,29 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveItem
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 399
+    startLine: 486
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the element at the specified index of the <xref href="System.Collections.ObjectModel.Collection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override void RemoveItem(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to remove.
     content.vb: Protected Overrides Sub RemoveItem(index As Integer)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{TCollected}}.RemoveItem(System.Int32)
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.RemoveItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is equal to or greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected).RemoveItem(Integer)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeList(Of TParent, TCollected).RemoveItem(Integer)
   name.vb: RemoveItem(Integer)
@@ -298,25 +331,32 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetItem
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 438
+    startLine: 526
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the element at the specified index.
   example: []
   syntax:
     content: protected override void SetItem(int index, TCollected item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to replace.
     - id: item
       type: '{TCollected}'
+      description: The new value for the element at the specified index. The value can be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> for reference types.
     content.vb: Protected Overrides Sub SetItem(index As Integer, item As TCollected)
   overridden: NMF.Collections.ObjectModel.ObservableCollectionExtended{{TCollected}}.SetItem(System.Int32,{TCollected})
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.SetItem*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "   <code class=\"paramref\">index</code> is less than zero.  \r\n\r\n-or-  \r\n\r\n<code class=\"paramref\">index</code> is greater than <xref href=\"System.Collections.ObjectModel.Collection%601.Count\" data-throw-if-not-resolved=\"false\"></xref>."
   nameWithType.vb: ObservableOppositeList(Of TParent, TCollected).SetItem(Integer, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeList(Of TParent, TCollected).SetItem(Integer, TCollected)
   name.vb: SetItem(Integer, TCollected)
@@ -334,19 +374,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 478
+    startLine: 567
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: NMF.Collections.ObjectModel.ObservableList{{TCollected}}.ToString
   overload: NMF.Collections.ObjectModel.ObservableOppositeList`2.ToString*
@@ -1449,6 +1491,49 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: NMF.Expressions.IEnumerableExpression{`1}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  parent: NMF.Collections.CollectionExtensions
+  definition: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<TCollected>(IEnumerableExpression<TCollected>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<TCollected>(IEnumerableExpression<TCollected>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<TCollected>(NMF.Expressions.IEnumerableExpression<TCollected>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of TCollected)(IEnumerableExpression(Of TCollected))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of TCollected)(NMF.Expressions.IEnumerableExpression(Of TCollected))
+  name.vb: IgnoreUpdates(Of TCollected)(IEnumerableExpression(Of TCollected))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`1})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: TCollected
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: TCollected
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`1})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCollected
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCollected
+  - name: )
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -2404,6 +2489,76 @@ references:
   fullName: System.Collections.ObjectModel.Collection<T>.Items
   nameWithType.vb: Collection(Of T).Items
   fullName.vb: System.Collections.ObjectModel.Collection(Of T).Items
+- uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NMF.Collections.CollectionExtensions
+  commentId: T:NMF.Collections.CollectionExtensions
+  parent: NMF.Collections
+  href: NMF.Collections.CollectionExtensions.html
+  name: CollectionExtensions
+  nameWithType: CollectionExtensions
+  fullName: NMF.Collections.CollectionExtensions
+- uid: NMF.Collections
+  commentId: N:NMF.Collections
+  href: NMF.html
+  name: NMF.Collections
+  nameWithType: NMF.Collections
+  fullName: NMF.Collections
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
 - uid: NMF.Collections.ObjectModel.ObservableOppositeList`2.Parent*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableOppositeList`2.Parent
   href: NMF.Collections.ObjectModel.ObservableOppositeList-2.html#NMF_Collections_ObjectModel_ObservableOppositeList_2_Parent
@@ -2440,6 +2595,13 @@ references:
   name: TCollected
   nameWithType: TCollected
   fullName: TCollected
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.ObjectModel.ObservableOppositeList`2.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableOppositeList`2.#ctor
   href: NMF.Collections.ObjectModel.ObservableOppositeList-2.html#NMF_Collections_ObjectModel_ObservableOppositeList_2__ctor__0_
@@ -2499,6 +2661,13 @@ references:
     href: NMF.Collections.ObjectModel.ObservableCollectionExtended-1.html#NMF_Collections_ObjectModel_ObservableCollectionExtended_1_ClearItems
   - name: (
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Collections.ObjectModel.ObservableCollectionExtended{{TCollected}}.InsertItem(System.Int32,{TCollected})
   commentId: M:NMF.Collections.ObjectModel.ObservableCollectionExtended{`1}.InsertItem(System.Int32,`1)
   parent: NMF.Collections.ObjectModel.ObservableCollectionExtended{{TCollected}}

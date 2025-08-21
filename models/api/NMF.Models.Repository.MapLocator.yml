@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: MapLocator
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 11
+    startLine: 9
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -63,11 +63,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Mappings
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
@@ -94,19 +94,19 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 21
+    startLine: 19
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
   summary: Creates a new instance
   example: []
   syntax:
-    content: public MapLocator()
-    content.vb: Public Sub New()
+    content: protected MapLocator()
+    content.vb: Protected Sub New()
   overload: NMF.Models.Repository.MapLocator.#ctor*
   nameWithType.vb: MapLocator.New()
   fullName.vb: NMF.Models.Repository.MapLocator.New()
@@ -125,23 +125,23 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 30
+    startLine: 28
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
   summary: Creates a new instance
   example: []
   syntax:
-    content: public MapLocator(IDictionary<Uri, string> mappings)
+    content: protected MapLocator(IDictionary<Uri, string> mappings)
     parameters:
     - id: mappings
       type: System.Collections.Generic.IDictionary{System.Uri,System.String}
       description: The mappings
-    content.vb: Public Sub New(mappings As IDictionary(Of Uri, String))
+    content.vb: Protected Sub New(mappings As IDictionary(Of Uri, String))
   overload: NMF.Models.Repository.MapLocator.#ctor*
   nameWithType.vb: MapLocator.New(IDictionary(Of Uri, String))
   fullName.vb: NMF.Models.Repository.MapLocator.New(System.Collections.Generic.IDictionary(Of System.Uri, String))
@@ -160,22 +160,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CanLocate
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 36
+    startLine: 34
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Determines whether the given locator is able to locate the given URI
   example: []
   syntax:
     content: public bool CanLocate(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the URI to locate
     return:
       type: System.Boolean
+      description: true, if the URI can be located, otherwise false
     content.vb: Public Function CanLocate(uri As Uri) As Boolean
   overload: NMF.Models.Repository.MapLocator.CanLocate*
   implements:
@@ -194,22 +197,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRepositoryUri
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 42
+    startLine: 40
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Calculates the repository URI for the given URI
   example: []
   syntax:
     content: public Uri GetRepositoryUri(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the input URI
     return:
       type: System.Uri
+      description: the URI as used for a repository
     content.vb: Public Function GetRepositoryUri(uri As Uri) As Uri
   overload: NMF.Models.Repository.MapLocator.GetRepositoryUri*
   implements:
@@ -228,22 +234,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/MapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Open
     path: src/Models/Models/Repository/MapLocator.cs
-    startLine: 53
+    startLine: 51
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Opens the given URI
   example: []
   syntax:
     content: public abstract Stream Open(Uri repositoryId)
     parameters:
     - id: repositoryId
       type: System.Uri
+      description: the URI as used in the repository
     return:
       type: System.IO.Stream
+      description: A stream
     content.vb: Public MustOverride Function Open(repositoryId As Uri) As Stream
   overload: NMF.Models.Repository.MapLocator.Open*
   implements:

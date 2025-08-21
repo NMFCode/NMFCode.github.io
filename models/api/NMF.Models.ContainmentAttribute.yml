@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/ContainmentAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ContainmentAttribute
     path: src/Models/Models/Attributes/ContainmentAttribute.cs
@@ -26,6 +26,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Marks a reference as a containment
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Property)]
@@ -101,14 +103,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/ContainmentAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsContainment
     path: src/Models/Models/Attributes/ContainmentAttribute.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Indicates whether the reference is a containment
+  example: []
   syntax:
     content: public bool IsContainment { get; set; }
     parameters: []
@@ -130,19 +134,22 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/ContainmentAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/ContainmentAttribute.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ContainmentAttribute(bool isContainment)
     parameters:
     - id: isContainment
       type: System.Boolean
+      description: true, if the reference is a containment, otherwise false
     content.vb: Public Sub New(isContainment As Boolean)
   overload: NMF.Models.ContainmentAttribute.#ctor*
   nameWithType.vb: ContainmentAttribute.New(Boolean)
@@ -162,14 +169,16 @@ items:
   source:
     remote:
       path: Models/Models/Attributes/ContainmentAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Attributes/ContainmentAttribute.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ContainmentAttribute()
     content.vb: Public Sub New()

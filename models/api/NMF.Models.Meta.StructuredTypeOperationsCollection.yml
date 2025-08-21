@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeOperationsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: StructuredTypeOperationsCollection
     path: src/Models/Models/Meta/StructuredTypeOperationsCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the Operations reference
+  example: []
   syntax:
     content: 'public class StructuredTypeOperationsCollection : ObservableOppositeList<IStructuredType, IOperation>, IReadOnlyList<IOperation>, IReadOnlyCollection<IOperation>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IOperation>, IList<IOperation>, ICollectionExpression<IOperation>, IEnumerableExpression<IOperation>, IEnumerableExpression, ICollection<IOperation>, IEnumerable<IOperation>, IEnumerable'
     content.vb: Public Class StructuredTypeOperationsCollection Inherits ObservableOppositeList(Of IStructuredType, IOperation) Implements IReadOnlyList(Of IOperation), IReadOnlyCollection(Of IOperation), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IOperation), IList(Of IOperation), ICollectionExpression(Of IOperation), IEnumerableExpression(Of IOperation), IEnumerableExpression, ICollection(Of IOperation), IEnumerable(Of IOperation), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeOperationsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/StructuredTypeOperationsCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public StructuredTypeOperationsCollection(IStructuredType parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IStructuredType
+      description: the parent StructuredType
     content.vb: Public Sub New(parent As IStructuredType)
   overload: NMF.Models.Meta.StructuredTypeOperationsCollection.#ctor*
   nameWithType.vb: StructuredTypeOperationsCollection.New(IStructuredType)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/StructuredTypeOperationsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/StructuredTypeOperationsCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IOperation item, IStructuredType parent)
+    content: protected override void SetOpposite(IOperation item, IStructuredType newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IOperation
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IStructuredType
-    content.vb: Protected Overrides Sub SetOpposite(item As IOperation, parent As IStructuredType)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IOperation, newParent As IStructuredType)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IStructuredType,NMF.Models.Meta.IOperation}.SetOpposite(NMF.Models.Meta.IOperation,NMF.Models.Meta.IStructuredType)
   overload: NMF.Models.Meta.StructuredTypeOperationsCollection.SetOpposite*
 references:

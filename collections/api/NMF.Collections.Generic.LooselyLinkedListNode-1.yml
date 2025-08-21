@@ -21,18 +21,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: LooselyLinkedListNode
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 247
+    startLine: 263
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Denotes a node in a loosely linked list
+  example: []
   syntax:
     content: public class LooselyLinkedListNode<T>
     typeParameters:
     - id: T
+      description: The type of elements
     content.vb: Public Class LooselyLinkedListNode(Of T)
   inheritance:
   - System.Object
@@ -61,19 +64,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 249
+    startLine: 269
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public LooselyLinkedListNode(T value)
     parameters:
     - id: value
       type: '{T}'
+      description: The value represented by this node
     content.vb: Public Sub New(value As T)
   overload: NMF.Collections.Generic.LooselyLinkedListNode`1.#ctor*
   nameWithType.vb: LooselyLinkedListNode(Of T).New(T)
@@ -93,14 +99,16 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Value
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 254
+    startLine: 277
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets the value of this node
+  example: []
   syntax:
     content: public T Value { get; set; }
     parameters: []
@@ -124,14 +132,16 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Next
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 256
+    startLine: 282
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets the next node
+  example: []
   syntax:
     content: public LooselyLinkedListNode<T> Next { get; set; }
     parameters: []
@@ -155,14 +165,16 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FromHere
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 258
+    startLine: 287
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets a collection with all values starting at the current node
+  example: []
   syntax:
     content: public IEnumerable<T> FromHere { get; }
     parameters: []
@@ -186,18 +198,24 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CutNext
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 271
+    startLine: 304
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the next element
+  example: []
   syntax:
     content: public void CutNext()
     content.vb: Public Sub CutNext()
   overload: NMF.Collections.Generic.LooselyLinkedListNode`1.CutNext*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if there is no next element
   nameWithType.vb: LooselyLinkedListNode(Of T).CutNext()
   fullName.vb: NMF.Collections.Generic.LooselyLinkedListNode(Of T).CutNext()
 - uid: NMF.Collections.Generic.LooselyLinkedListNode`1.CreateDummyFor(NMF.Collections.Generic.LooselyLinkedListNode{`0})
@@ -214,21 +232,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/LooselyLinkedListNode.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateDummyFor
     path: src/Collections/Collections/Generic/LooselyLinkedListNode.cs
-    startLine: 278
+    startLine: 316
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Creates a dummy node for the given node
+  example: []
   syntax:
     content: public static LooselyLinkedListNode<T> CreateDummyFor(LooselyLinkedListNode<T> node)
     parameters:
     - id: node
       type: NMF.Collections.Generic.LooselyLinkedListNode`1
+      description: The node for which to create a dummy node
     return:
       type: NMF.Collections.Generic.LooselyLinkedListNode`1
+      description: A new node whose next pointer points to the given node
     content.vb: Public Shared Function CreateDummyFor(node As LooselyLinkedListNode(Of T)) As LooselyLinkedListNode(Of T)
   overload: NMF.Collections.Generic.LooselyLinkedListNode`1.CreateDummyFor*
   nameWithType.vb: LooselyLinkedListNode(Of T).CreateDummyFor(LooselyLinkedListNode(Of T))
@@ -665,6 +687,13 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NMF.Collections.Generic.LooselyLinkedListNode`1.CutNext*
   commentId: Overload:NMF.Collections.Generic.LooselyLinkedListNode`1.CutNext
   href: NMF.Collections.Generic.LooselyLinkedListNode-1.html#NMF_Collections_Generic_LooselyLinkedListNode_1_CutNext

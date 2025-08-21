@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ExplicitIdSerializer
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 13
+    startLine: 11
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
@@ -37,6 +37,7 @@ items:
     content.vb: Public Class ExplicitIdSerializer Inherits ModelSerializer Implements IModelSerializer
   inheritance:
   - System.Object
+  - NMF.Serialization.Serializer
   - NMF.Serialization.XmlSerializer
   - NMF.Serialization.Xmi.XmiSerializer
   - NMF.Models.Repository.Serialization.ModelSerializer
@@ -67,11 +68,6 @@ items:
   - NMF.Serialization.Xmi.XmiSerializer.OverrideIdentifiedObject(System.Object,System.Xml.XmlReader,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.Xmi.XmiSerializer.HandleUnknownAttribute(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.Xmi.XmiSerializer.InitializeTypeSerializationInfo(System.Type,NMF.Serialization.ITypeSerializationInfo)
-  - NMF.Serialization.XmlSerializer.Settings
-  - NMF.Serialization.XmlSerializer.KnownTypes
-  - NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-  - NMF.Serialization.XmlSerializer.GetTypeInfo(System.String,System.String)
-  - NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
   - NMF.Serialization.XmlSerializer.Serialize(System.Object,System.String,System.Boolean)
   - NMF.Serialization.XmlSerializer.Serialize(System.Object,System.IO.Stream,System.Boolean)
   - NMF.Serialization.XmlSerializer.Serialize(System.Object,System.IO.TextWriter)
@@ -92,17 +88,27 @@ items:
   - NMF.Serialization.XmlSerializer.InitializeProperty(System.Xml.XmlReader,NMF.Serialization.IPropertySerializationInfo,System.Object,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.XmlSerializer.InitializePropertyFromText(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
   - NMF.Serialization.XmlSerializer.Initialize(System.Xml.XmlReader,System.Object,NMF.Serialization.XmlSerializationContext)
-  - NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-  - NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
   - NMF.Serialization.XmlSerializer.HandleUnknownElement(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-  - NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-  - NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-  - NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-  - NMF.Serialization.XmlSerializer.UnknownElement
-  - NMF.Serialization.XmlSerializer.UnknownAttribute
-  - NMF.Serialization.XmlSerializer.UnknownType
-  - NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
-  - NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type,System.Boolean)
+  - NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
+  - NMF.Serialization.Serializer.Settings
+  - NMF.Serialization.Serializer.KnownTypes
+  - NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo,System.String)
+  - NMF.Serialization.Serializer.GetTypeInfo(System.String,System.String)
+  - NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+  - NMF.Serialization.Serializer.ConvertString(System.String,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlSerializationContext)
+  - NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+  - NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
+  - NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+  - NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+  - NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+  - NMF.Serialization.Serializer.UnknownElement
+  - NMF.Serialization.Serializer.UnknownAttribute
+  - NMF.Serialization.Serializer.UnknownType
+  - NMF.Serialization.Serializer.ConverterException
+  - NMF.Serialization.Serializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+  - NMF.Serialization.Serializer.GetSerializationInfo(System.Type,System.Boolean)
+  - NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+  - NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -128,14 +134,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ExplicitIdSerializer()
     content.vb: Public Sub New()
@@ -157,19 +165,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 19
+    startLine: 24
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ExplicitIdSerializer(XmlSerializationSettings settings)
     parameters:
     - id: settings
       type: NMF.Serialization.XmlSerializationSettings
+      description: the serializer settings
     content.vb: Public Sub New(settings As XmlSerializationSettings)
   overload: NMF.Models.Repository.Serialization.ExplicitIdSerializer.#ctor*
   nameWithType.vb: ExplicitIdSerializer.New(XmlSerializationSettings)
@@ -189,19 +200,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 23
+    startLine: 32
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ExplicitIdSerializer(XmlSerializer parent)
     parameters:
     - id: parent
       type: NMF.Serialization.XmlSerializer
+      description: the parent serializer
     content.vb: Public Sub New(parent As XmlSerializer)
   overload: NMF.Models.Repository.Serialization.ExplicitIdSerializer.#ctor*
   nameWithType.vb: ExplicitIdSerializer.New(XmlSerializer)
@@ -221,21 +235,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 27
+    startLine: 41
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ExplicitIdSerializer(XmlSerializationSettings settings, IEnumerable<Type> knownTypes)
     parameters:
     - id: settings
       type: NMF.Serialization.XmlSerializationSettings
+      description: the serializer settings
     - id: knownTypes
       type: System.Collections.Generic.IEnumerable{System.Type}
+      description: a collection of known types
     content.vb: Public Sub New(settings As XmlSerializationSettings, knownTypes As IEnumerable(Of Type))
   overload: NMF.Models.Repository.Serialization.ExplicitIdSerializer.#ctor*
   nameWithType.vb: ExplicitIdSerializer.New(XmlSerializationSettings, IEnumerable(Of Type))
@@ -255,11 +273,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 32
+    startLine: 46
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
@@ -303,11 +321,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: WriteIdentifiedObject
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 42
+    startLine: 56
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
@@ -354,11 +372,11 @@ items:
   source:
     remote:
       path: Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IdAttribute
     path: src/Models/Models/Repository/Serialization/ExplicitIdSerializer.cs
-    startLine: 48
+    startLine: 62
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository.Serialization
@@ -422,6 +440,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: NMF.Serialization.Serializer
+  commentId: T:NMF.Serialization.Serializer
+  parent: NMF.Serialization
+  href: NMF.Serialization.Serializer.html
+  name: Serializer
+  nameWithType: Serializer
+  fullName: NMF.Serialization.Serializer
 - uid: NMF.Serialization.XmlSerializer
   commentId: T:NMF.Serialization.XmlSerializer
   parent: NMF.Serialization
@@ -1414,116 +1439,6 @@ references:
     name: ITypeSerializationInfo
     href: NMF.Serialization.ITypeSerializationInfo.html
   - name: )
-- uid: NMF.Serialization.XmlSerializer.Settings
-  commentId: P:NMF.Serialization.XmlSerializer.Settings
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_Settings
-  name: Settings
-  nameWithType: XmlSerializer.Settings
-  fullName: NMF.Serialization.XmlSerializer.Settings
-- uid: NMF.Serialization.XmlSerializer.KnownTypes
-  commentId: P:NMF.Serialization.XmlSerializer.KnownTypes
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_KnownTypes
-  name: KnownTypes
-  nameWithType: XmlSerializer.KnownTypes
-  fullName: NMF.Serialization.XmlSerializer.KnownTypes
-- uid: NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-  commentId: M:NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_
-  name: RegisterNamespace(ITypeSerializationInfo)
-  nameWithType: XmlSerializer.RegisterNamespace(ITypeSerializationInfo)
-  fullName: NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-    name: RegisterNamespace
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_
-  - name: (
-  - uid: NMF.Serialization.ITypeSerializationInfo
-    name: ITypeSerializationInfo
-    href: NMF.Serialization.ITypeSerializationInfo.html
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo)
-    name: RegisterNamespace
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_
-  - name: (
-  - uid: NMF.Serialization.ITypeSerializationInfo
-    name: ITypeSerializationInfo
-    href: NMF.Serialization.ITypeSerializationInfo.html
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.GetTypeInfo(System.String,System.String)
-  commentId: M:NMF.Serialization.XmlSerializer.GetTypeInfo(System.String,System.String)
-  parent: NMF.Serialization.XmlSerializer
-  isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetTypeInfo_System_String_System_String_
-  name: GetTypeInfo(string, string)
-  nameWithType: XmlSerializer.GetTypeInfo(string, string)
-  fullName: NMF.Serialization.XmlSerializer.GetTypeInfo(string, string)
-  nameWithType.vb: XmlSerializer.GetTypeInfo(String, String)
-  fullName.vb: NMF.Serialization.XmlSerializer.GetTypeInfo(String, String)
-  name.vb: GetTypeInfo(String, String)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.GetTypeInfo(System.String,System.String)
-    name: GetTypeInfo
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetTypeInfo_System_String_System_String_
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.GetTypeInfo(System.String,System.String)
-    name: GetTypeInfo
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetTypeInfo_System_String_System_String_
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
-  commentId: M:NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
-  parent: NMF.Serialization.XmlSerializer
-  isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_CreateTypeSerializationInfoFor_System_Type_
-  name: CreateTypeSerializationInfoFor(Type)
-  nameWithType: XmlSerializer.CreateTypeSerializationInfoFor(Type)
-  fullName: NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
-    name: CreateTypeSerializationInfoFor
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_CreateTypeSerializationInfoFor_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.CreateTypeSerializationInfoFor(System.Type)
-    name: CreateTypeSerializationInfoFor
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_CreateTypeSerializationInfoFor_System_Type_
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
 - uid: NMF.Serialization.XmlSerializer.Serialize(System.Object,System.String,System.Boolean)
   commentId: M:NMF.Serialization.XmlSerializer.Serialize(System.Object,System.String,System.Boolean)
   parent: NMF.Serialization.XmlSerializer
@@ -2492,122 +2407,6 @@ references:
     name: XmlSerializationContext
     href: NMF.Serialization.XmlSerializationContext.html
   - name: )
-- uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-  commentId: M:NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-  parent: NMF.Serialization.XmlSerializer
-  isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
-  name: InitializeAttributeProperties(XmlReader, object, ITypeSerializationInfo, XmlSerializationContext)
-  nameWithType: XmlSerializer.InitializeAttributeProperties(XmlReader, object, ITypeSerializationInfo, XmlSerializationContext)
-  fullName: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader, object, NMF.Serialization.ITypeSerializationInfo, NMF.Serialization.XmlSerializationContext)
-  nameWithType.vb: XmlSerializer.InitializeAttributeProperties(XmlReader, Object, ITypeSerializationInfo, XmlSerializationContext)
-  fullName.vb: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader, Object, NMF.Serialization.ITypeSerializationInfo, NMF.Serialization.XmlSerializationContext)
-  name.vb: InitializeAttributeProperties(XmlReader, Object, ITypeSerializationInfo, XmlSerializationContext)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-    name: InitializeAttributeProperties
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
-  - name: (
-  - uid: System.Xml.XmlReader
-    name: XmlReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.xml.xmlreader
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: NMF.Serialization.ITypeSerializationInfo
-    name: ITypeSerializationInfo
-    href: NMF.Serialization.ITypeSerializationInfo.html
-  - name: ','
-  - name: " "
-  - uid: NMF.Serialization.XmlSerializationContext
-    name: XmlSerializationContext
-    href: NMF.Serialization.XmlSerializationContext.html
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
-    name: InitializeAttributeProperties
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
-  - name: (
-  - uid: System.Xml.XmlReader
-    name: XmlReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.xml.xmlreader
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: NMF.Serialization.ITypeSerializationInfo
-    name: ITypeSerializationInfo
-    href: NMF.Serialization.ITypeSerializationInfo.html
-  - name: ','
-  - name: " "
-  - uid: NMF.Serialization.XmlSerializationContext
-    name: XmlSerializationContext
-    href: NMF.Serialization.XmlSerializationContext.html
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
-  commentId: M:NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
-  parent: NMF.Serialization.XmlSerializer
-  isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
-  name: HandleUnknownType(IPropertySerializationInfo, string, string)
-  nameWithType: XmlSerializer.HandleUnknownType(IPropertySerializationInfo, string, string)
-  fullName: NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo, string, string)
-  nameWithType.vb: XmlSerializer.HandleUnknownType(IPropertySerializationInfo, String, String)
-  fullName.vb: NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo, String, String)
-  name.vb: HandleUnknownType(IPropertySerializationInfo, String, String)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
-    name: HandleUnknownType
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
-  - name: (
-  - uid: NMF.Serialization.IPropertySerializationInfo
-    name: IPropertySerializationInfo
-    href: NMF.Serialization.IPropertySerializationInfo.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
-    name: HandleUnknownType
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
-  - name: (
-  - uid: NMF.Serialization.IPropertySerializationInfo
-    name: IPropertySerializationInfo
-    href: NMF.Serialization.IPropertySerializationInfo.html
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
 - uid: NMF.Serialization.XmlSerializer.HandleUnknownElement(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
   commentId: M:NMF.Serialization.XmlSerializer.HandleUnknownElement(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
   parent: NMF.Serialization.XmlSerializer
@@ -2671,117 +2470,442 @@ references:
     name: XmlSerializationContext
     href: NMF.Serialization.XmlSerializationContext.html
   - name: )
-- uid: NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-  commentId: M:NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
-  name: OnUnknownElement(UnknownElementEventArgs)
-  nameWithType: XmlSerializer.OnUnknownElement(UnknownElementEventArgs)
-  fullName: NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-    name: OnUnknownElement
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownElementEventArgs
-    name: UnknownElementEventArgs
-    href: NMF.Serialization.UnknownElementEventArgs.html
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
-    name: OnUnknownElement
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownElementEventArgs
-    name: UnknownElementEventArgs
-    href: NMF.Serialization.UnknownElementEventArgs.html
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-  commentId: M:NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
-  name: OnUnknownAttribute(UnknownAttributeEventArgs)
-  nameWithType: XmlSerializer.OnUnknownAttribute(UnknownAttributeEventArgs)
-  fullName: NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-    name: OnUnknownAttribute
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownAttributeEventArgs
-    name: UnknownAttributeEventArgs
-    href: NMF.Serialization.UnknownAttributeEventArgs.html
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
-    name: OnUnknownAttribute
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownAttributeEventArgs
-    name: UnknownAttributeEventArgs
-    href: NMF.Serialization.UnknownAttributeEventArgs.html
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-  commentId: M:NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
-  name: OnUnknownType(UnknownTypeEventArgs)
-  nameWithType: XmlSerializer.OnUnknownType(UnknownTypeEventArgs)
-  fullName: NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-  spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-    name: OnUnknownType
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownTypeEventArgs
-    name: UnknownTypeEventArgs
-    href: NMF.Serialization.UnknownTypeEventArgs.html
-  - name: )
-  spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
-    name: OnUnknownType
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
-  - name: (
-  - uid: NMF.Serialization.UnknownTypeEventArgs
-    name: UnknownTypeEventArgs
-    href: NMF.Serialization.UnknownTypeEventArgs.html
-  - name: )
-- uid: NMF.Serialization.XmlSerializer.UnknownElement
-  commentId: E:NMF.Serialization.XmlSerializer.UnknownElement
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_UnknownElement
-  name: UnknownElement
-  nameWithType: XmlSerializer.UnknownElement
-  fullName: NMF.Serialization.XmlSerializer.UnknownElement
-- uid: NMF.Serialization.XmlSerializer.UnknownAttribute
-  commentId: E:NMF.Serialization.XmlSerializer.UnknownAttribute
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_UnknownAttribute
-  name: UnknownAttribute
-  nameWithType: XmlSerializer.UnknownAttribute
-  fullName: NMF.Serialization.XmlSerializer.UnknownAttribute
-- uid: NMF.Serialization.XmlSerializer.UnknownType
-  commentId: E:NMF.Serialization.XmlSerializer.UnknownType
-  parent: NMF.Serialization.XmlSerializer
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_UnknownType
-  name: UnknownType
-  nameWithType: XmlSerializer.UnknownType
-  fullName: NMF.Serialization.XmlSerializer.UnknownType
-- uid: NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
-  commentId: M:NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+- uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
+  commentId: M:NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
   parent: NMF.Serialization.XmlSerializer
   isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
+  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
+  name: InitializeAttributeProperties(XmlReader, object, ITypeSerializationInfo, XmlSerializationContext)
+  nameWithType: XmlSerializer.InitializeAttributeProperties(XmlReader, object, ITypeSerializationInfo, XmlSerializationContext)
+  fullName: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader, object, NMF.Serialization.ITypeSerializationInfo, NMF.Serialization.XmlSerializationContext)
+  nameWithType.vb: XmlSerializer.InitializeAttributeProperties(XmlReader, Object, ITypeSerializationInfo, XmlSerializationContext)
+  fullName.vb: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader, Object, NMF.Serialization.ITypeSerializationInfo, NMF.Serialization.XmlSerializationContext)
+  name.vb: InitializeAttributeProperties(XmlReader, Object, ITypeSerializationInfo, XmlSerializationContext)
+  spec.csharp:
+  - uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
+    name: InitializeAttributeProperties
+    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.xmlreader
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.ITypeSerializationInfo
+    name: ITypeSerializationInfo
+    href: NMF.Serialization.ITypeSerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.XmlSerializer.InitializeAttributeProperties(System.Xml.XmlReader,System.Object,NMF.Serialization.ITypeSerializationInfo,NMF.Serialization.XmlSerializationContext)
+    name: InitializeAttributeProperties
+    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_InitializeAttributeProperties_System_Xml_XmlReader_System_Object_NMF_Serialization_ITypeSerializationInfo_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.xmlreader
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.ITypeSerializationInfo
+    name: ITypeSerializationInfo
+    href: NMF.Serialization.ITypeSerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+- uid: NMF.Serialization.Serializer.Settings
+  commentId: P:NMF.Serialization.Serializer.Settings
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_Settings
+  name: Settings
+  nameWithType: Serializer.Settings
+  fullName: NMF.Serialization.Serializer.Settings
+- uid: NMF.Serialization.Serializer.KnownTypes
+  commentId: P:NMF.Serialization.Serializer.KnownTypes
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_KnownTypes
+  name: KnownTypes
+  nameWithType: Serializer.KnownTypes
+  fullName: NMF.Serialization.Serializer.KnownTypes
+- uid: NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo,System.String)
+  commentId: M:NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo,System.String)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_System_String_
+  name: RegisterNamespace(ITypeSerializationInfo, string)
+  nameWithType: Serializer.RegisterNamespace(ITypeSerializationInfo, string)
+  fullName: NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo, string)
+  nameWithType.vb: Serializer.RegisterNamespace(ITypeSerializationInfo, String)
+  fullName.vb: NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo, String)
+  name.vb: RegisterNamespace(ITypeSerializationInfo, String)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo,System.String)
+    name: RegisterNamespace
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_System_String_
+  - name: (
+  - uid: NMF.Serialization.ITypeSerializationInfo
+    name: ITypeSerializationInfo
+    href: NMF.Serialization.ITypeSerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.RegisterNamespace(NMF.Serialization.ITypeSerializationInfo,System.String)
+    name: RegisterNamespace
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_RegisterNamespace_NMF_Serialization_ITypeSerializationInfo_System_String_
+  - name: (
+  - uid: NMF.Serialization.ITypeSerializationInfo
+    name: ITypeSerializationInfo
+    href: NMF.Serialization.ITypeSerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Serialization.Serializer.GetTypeInfo(System.String,System.String)
+  commentId: M:NMF.Serialization.Serializer.GetTypeInfo(System.String,System.String)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetTypeInfo_System_String_System_String_
+  name: GetTypeInfo(string, string)
+  nameWithType: Serializer.GetTypeInfo(string, string)
+  fullName: NMF.Serialization.Serializer.GetTypeInfo(string, string)
+  nameWithType.vb: Serializer.GetTypeInfo(String, String)
+  fullName.vb: NMF.Serialization.Serializer.GetTypeInfo(String, String)
+  name.vb: GetTypeInfo(String, String)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.GetTypeInfo(System.String,System.String)
+    name: GetTypeInfo
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetTypeInfo_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.GetTypeInfo(System.String,System.String)
+    name: GetTypeInfo
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetTypeInfo_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+  commentId: M:NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateTypeSerializationInfoFor_System_Type_
+  name: CreateTypeSerializationInfoFor(Type)
+  nameWithType: Serializer.CreateTypeSerializationInfoFor(Type)
+  fullName: NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+    name: CreateTypeSerializationInfoFor
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateTypeSerializationInfoFor_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.CreateTypeSerializationInfoFor(System.Type)
+    name: CreateTypeSerializationInfoFor
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateTypeSerializationInfoFor_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: NMF.Serialization.Serializer.ConvertString(System.String,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlSerializationContext)
+  commentId: M:NMF.Serialization.Serializer.ConvertString(System.String,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlSerializationContext)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConvertString_System_String_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlSerializationContext_
+  name: ConvertString(string, IPropertySerializationInfo, XmlSerializationContext)
+  nameWithType: Serializer.ConvertString(string, IPropertySerializationInfo, XmlSerializationContext)
+  fullName: NMF.Serialization.Serializer.ConvertString(string, NMF.Serialization.IPropertySerializationInfo, NMF.Serialization.XmlSerializationContext)
+  nameWithType.vb: Serializer.ConvertString(String, IPropertySerializationInfo, XmlSerializationContext)
+  fullName.vb: NMF.Serialization.Serializer.ConvertString(String, NMF.Serialization.IPropertySerializationInfo, NMF.Serialization.XmlSerializationContext)
+  name.vb: ConvertString(String, IPropertySerializationInfo, XmlSerializationContext)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.ConvertString(System.String,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlSerializationContext)
+    name: ConvertString
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConvertString_System_String_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.ConvertString(System.String,NMF.Serialization.IPropertySerializationInfo,NMF.Serialization.XmlSerializationContext)
+    name: ConvertString
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConvertString_System_String_NMF_Serialization_IPropertySerializationInfo_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+- uid: NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+  commentId: M:NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnConverterException_NMF_Serialization_ConverterExceptionEventArgs_
+  name: OnConverterException(ConverterExceptionEventArgs)
+  nameWithType: Serializer.OnConverterException(ConverterExceptionEventArgs)
+  fullName: NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+    name: OnConverterException
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnConverterException_NMF_Serialization_ConverterExceptionEventArgs_
+  - name: (
+  - uid: NMF.Serialization.ConverterExceptionEventArgs
+    name: ConverterExceptionEventArgs
+    href: NMF.Serialization.ConverterExceptionEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.OnConverterException(NMF.Serialization.ConverterExceptionEventArgs)
+    name: OnConverterException
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnConverterException_NMF_Serialization_ConverterExceptionEventArgs_
+  - name: (
+  - uid: NMF.Serialization.ConverterExceptionEventArgs
+    name: ConverterExceptionEventArgs
+    href: NMF.Serialization.ConverterExceptionEventArgs.html
+  - name: )
+- uid: NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
+  commentId: M:NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
+  name: HandleUnknownType(IPropertySerializationInfo, string, string)
+  nameWithType: Serializer.HandleUnknownType(IPropertySerializationInfo, string, string)
+  fullName: NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo, string, string)
+  nameWithType.vb: Serializer.HandleUnknownType(IPropertySerializationInfo, String, String)
+  fullName.vb: NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo, String, String)
+  name.vb: HandleUnknownType(IPropertySerializationInfo, String, String)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
+    name: HandleUnknownType
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.HandleUnknownType(NMF.Serialization.IPropertySerializationInfo,System.String,System.String)
+    name: HandleUnknownType
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_HandleUnknownType_NMF_Serialization_IPropertySerializationInfo_System_String_System_String_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+  commentId: M:NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
+  name: OnUnknownElement(UnknownElementEventArgs)
+  nameWithType: Serializer.OnUnknownElement(UnknownElementEventArgs)
+  fullName: NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+    name: OnUnknownElement
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownElementEventArgs
+    name: UnknownElementEventArgs
+    href: NMF.Serialization.UnknownElementEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.OnUnknownElement(NMF.Serialization.UnknownElementEventArgs)
+    name: OnUnknownElement
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownElement_NMF_Serialization_UnknownElementEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownElementEventArgs
+    name: UnknownElementEventArgs
+    href: NMF.Serialization.UnknownElementEventArgs.html
+  - name: )
+- uid: NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+  commentId: M:NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
+  name: OnUnknownAttribute(UnknownAttributeEventArgs)
+  nameWithType: Serializer.OnUnknownAttribute(UnknownAttributeEventArgs)
+  fullName: NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+    name: OnUnknownAttribute
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownAttributeEventArgs
+    name: UnknownAttributeEventArgs
+    href: NMF.Serialization.UnknownAttributeEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.OnUnknownAttribute(NMF.Serialization.UnknownAttributeEventArgs)
+    name: OnUnknownAttribute
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownAttribute_NMF_Serialization_UnknownAttributeEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownAttributeEventArgs
+    name: UnknownAttributeEventArgs
+    href: NMF.Serialization.UnknownAttributeEventArgs.html
+  - name: )
+- uid: NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+  commentId: M:NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
+  name: OnUnknownType(UnknownTypeEventArgs)
+  nameWithType: Serializer.OnUnknownType(UnknownTypeEventArgs)
+  fullName: NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+    name: OnUnknownType
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownTypeEventArgs
+    name: UnknownTypeEventArgs
+    href: NMF.Serialization.UnknownTypeEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.OnUnknownType(NMF.Serialization.UnknownTypeEventArgs)
+    name: OnUnknownType
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_OnUnknownType_NMF_Serialization_UnknownTypeEventArgs_
+  - name: (
+  - uid: NMF.Serialization.UnknownTypeEventArgs
+    name: UnknownTypeEventArgs
+    href: NMF.Serialization.UnknownTypeEventArgs.html
+  - name: )
+- uid: NMF.Serialization.Serializer.UnknownElement
+  commentId: E:NMF.Serialization.Serializer.UnknownElement
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownElement
+  name: UnknownElement
+  nameWithType: Serializer.UnknownElement
+  fullName: NMF.Serialization.Serializer.UnknownElement
+- uid: NMF.Serialization.Serializer.UnknownAttribute
+  commentId: E:NMF.Serialization.Serializer.UnknownAttribute
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownAttribute
+  name: UnknownAttribute
+  nameWithType: Serializer.UnknownAttribute
+  fullName: NMF.Serialization.Serializer.UnknownAttribute
+- uid: NMF.Serialization.Serializer.UnknownType
+  commentId: E:NMF.Serialization.Serializer.UnknownType
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_UnknownType
+  name: UnknownType
+  nameWithType: Serializer.UnknownType
+  fullName: NMF.Serialization.Serializer.UnknownType
+- uid: NMF.Serialization.Serializer.ConverterException
+  commentId: E:NMF.Serialization.Serializer.ConverterException
+  parent: NMF.Serialization.Serializer
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_ConverterException
+  name: ConverterException
+  nameWithType: Serializer.ConverterException
+  fullName: NMF.Serialization.Serializer.ConverterException
+- uid: NMF.Serialization.Serializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+  commentId: M:NMF.Serialization.Serializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
   name: GetSerializationInfoForInstance(object, bool)
-  nameWithType: XmlSerializer.GetSerializationInfoForInstance(object, bool)
-  fullName: NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(object, bool)
-  nameWithType.vb: XmlSerializer.GetSerializationInfoForInstance(Object, Boolean)
-  fullName.vb: NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(Object, Boolean)
+  nameWithType: Serializer.GetSerializationInfoForInstance(object, bool)
+  fullName: NMF.Serialization.Serializer.GetSerializationInfoForInstance(object, bool)
+  nameWithType.vb: Serializer.GetSerializationInfoForInstance(Object, Boolean)
+  fullName.vb: NMF.Serialization.Serializer.GetSerializationInfoForInstance(Object, Boolean)
   name.vb: GetSerializationInfoForInstance(Object, Boolean)
   spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+  - uid: NMF.Serialization.Serializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
     name: GetSerializationInfoForInstance
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
   - name: (
   - uid: System.Object
     name: object
@@ -2795,9 +2919,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
+  - uid: NMF.Serialization.Serializer.GetSerializationInfoForInstance(System.Object,System.Boolean)
     name: GetSerializationInfoForInstance
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfoForInstance_System_Object_System_Boolean_
   - name: (
   - uid: System.Object
     name: Object
@@ -2810,21 +2934,21 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type,System.Boolean)
-  commentId: M:NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type,System.Boolean)
-  parent: NMF.Serialization.XmlSerializer
+- uid: NMF.Serialization.Serializer.GetSerializationInfo(System.Type,System.Boolean)
+  commentId: M:NMF.Serialization.Serializer.GetSerializationInfo(System.Type,System.Boolean)
+  parent: NMF.Serialization.Serializer
   isExternal: true
-  href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfo_System_Type_System_Boolean_
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfo_System_Type_System_Boolean_
   name: GetSerializationInfo(Type, bool)
-  nameWithType: XmlSerializer.GetSerializationInfo(Type, bool)
-  fullName: NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type, bool)
-  nameWithType.vb: XmlSerializer.GetSerializationInfo(Type, Boolean)
-  fullName.vb: NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type, Boolean)
+  nameWithType: Serializer.GetSerializationInfo(Type, bool)
+  fullName: NMF.Serialization.Serializer.GetSerializationInfo(System.Type, bool)
+  nameWithType.vb: Serializer.GetSerializationInfo(Type, Boolean)
+  fullName.vb: NMF.Serialization.Serializer.GetSerializationInfo(System.Type, Boolean)
   name.vb: GetSerializationInfo(Type, Boolean)
   spec.csharp:
-  - uid: NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type,System.Boolean)
+  - uid: NMF.Serialization.Serializer.GetSerializationInfo(System.Type,System.Boolean)
     name: GetSerializationInfo
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfo_System_Type_System_Boolean_
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfo_System_Type_System_Boolean_
   - name: (
   - uid: System.Type
     name: Type
@@ -2838,9 +2962,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: NMF.Serialization.XmlSerializer.GetSerializationInfo(System.Type,System.Boolean)
+  - uid: NMF.Serialization.Serializer.GetSerializationInfo(System.Type,System.Boolean)
     name: GetSerializationInfo
-    href: NMF.Serialization.XmlSerializer.html#NMF_Serialization_XmlSerializer_GetSerializationInfo_System_Type_System_Boolean_
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_GetSerializationInfo_System_Type_System_Boolean_
   - name: (
   - uid: System.Type
     name: Type
@@ -2852,6 +2976,132 @@ references:
     name: Boolean
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+  commentId: M:NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateAddToPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  name: CreateAddToPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)
+  nameWithType: Serializer.CreateAddToPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)
+  fullName: NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo, object, string, NMF.Serialization.XmlSerializationContext)
+  nameWithType.vb: Serializer.CreateAddToPropertyDelay(IPropertySerializationInfo, Object, String, XmlSerializationContext)
+  fullName.vb: NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo, Object, String, NMF.Serialization.XmlSerializationContext)
+  name.vb: CreateAddToPropertyDelay(IPropertySerializationInfo, Object, String, XmlSerializationContext)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+    name: CreateAddToPropertyDelay
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateAddToPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.CreateAddToPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+    name: CreateAddToPropertyDelay
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateAddToPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+- uid: NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+  commentId: M:NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+  parent: NMF.Serialization.Serializer
+  isExternal: true
+  href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateSetPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  name: CreateSetPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)
+  nameWithType: Serializer.CreateSetPropertyDelay(IPropertySerializationInfo, object, string, XmlSerializationContext)
+  fullName: NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo, object, string, NMF.Serialization.XmlSerializationContext)
+  nameWithType.vb: Serializer.CreateSetPropertyDelay(IPropertySerializationInfo, Object, String, XmlSerializationContext)
+  fullName.vb: NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo, Object, String, NMF.Serialization.XmlSerializationContext)
+  name.vb: CreateSetPropertyDelay(IPropertySerializationInfo, Object, String, XmlSerializationContext)
+  spec.csharp:
+  - uid: NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+    name: CreateSetPropertyDelay
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateSetPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
+  - name: )
+  spec.vb:
+  - uid: NMF.Serialization.Serializer.CreateSetPropertyDelay(NMF.Serialization.IPropertySerializationInfo,System.Object,System.String,NMF.Serialization.XmlSerializationContext)
+    name: CreateSetPropertyDelay
+    href: NMF.Serialization.Serializer.html#NMF_Serialization_Serializer_CreateSetPropertyDelay_NMF_Serialization_IPropertySerializationInfo_System_Object_System_String_NMF_Serialization_XmlSerializationContext_
+  - name: (
+  - uid: NMF.Serialization.IPropertySerializationInfo
+    name: IPropertySerializationInfo
+    href: NMF.Serialization.IPropertySerializationInfo.html
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Serialization.XmlSerializationContext
+    name: XmlSerializationContext
+    href: NMF.Serialization.XmlSerializationContext.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)

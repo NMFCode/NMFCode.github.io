@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NamespaceChildNamespacesCollection
     path: src/Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the ChildNamespaces reference
+  example: []
   syntax:
     content: 'public class NamespaceChildNamespacesCollection : ObservableOppositeList<INamespace, INamespace>, IReadOnlyList<INamespace>, IReadOnlyCollection<INamespace>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<INamespace>, IList<INamespace>, ICollectionExpression<INamespace>, IEnumerableExpression<INamespace>, IEnumerableExpression, ICollection<INamespace>, IEnumerable<INamespace>, IEnumerable'
     content.vb: Public Class NamespaceChildNamespacesCollection Inherits ObservableOppositeList(Of INamespace, INamespace) Implements IReadOnlyList(Of INamespace), IReadOnlyCollection(Of INamespace), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of INamespace), IList(Of INamespace), ICollectionExpression(Of INamespace), IEnumerableExpression(Of INamespace), IEnumerableExpression, ICollection(Of INamespace), IEnumerable(Of INamespace), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public NamespaceChildNamespacesCollection(INamespace parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.INamespace
+      description: the parent Namespace
     content.vb: Public Sub New(parent As INamespace)
   overload: NMF.Models.Meta.NamespaceChildNamespacesCollection.#ctor*
   nameWithType.vb: NamespaceChildNamespacesCollection.New(INamespace)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/NamespaceChildNamespacesCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(INamespace item, INamespace parent)
+    content: protected override void SetOpposite(INamespace item, INamespace newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.INamespace
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.INamespace
-    content.vb: Protected Overrides Sub SetOpposite(item As INamespace, parent As INamespace)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As INamespace, newParent As INamespace)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.INamespace,NMF.Models.Meta.INamespace}.SetOpposite(NMF.Models.Meta.INamespace,NMF.Models.Meta.INamespace)
   overload: NMF.Models.Meta.NamespaceChildNamespacesCollection.SetOpposite*
 references:

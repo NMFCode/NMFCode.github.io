@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ApplyParametersVisitor.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ApplyParametersVisitor
     path: src/Expressions/Expressions/ApplyParametersVisitor.cs
-    startLine: 11
+    startLine: 9
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -68,11 +68,11 @@ items:
   - NMF.Expressions.ExpressionVisitorBase.VisitUnary(System.Linq.Expressions.UnaryExpression)
   - System.Linq.Expressions.ExpressionVisitor.Visit(System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.Expression})
   - System.Linq.Expressions.ExpressionVisitor.Visit(System.Linq.Expressions.Expression)
-  - System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
-  - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
   - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.String)
+  - System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
   - System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
   - System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+  - System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ApplyParametersVisitor.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Expressions/ApplyParametersVisitor.cs
-    startLine: 19
+    startLine: 17
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -131,22 +131,25 @@ items:
   source:
     remote:
       path: Expressions/Expressions/ApplyParametersVisitor.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: VisitParameter
     path: src/Expressions/Expressions/ApplyParametersVisitor.cs
-    startLine: 25
+    startLine: 23
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Visits the <xref href="System.Linq.Expressions.ParameterExpression" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected override Expression VisitParameter(ParameterExpression node)
     parameters:
     - id: node
       type: System.Linq.Expressions.ParameterExpression
+      description: The expression to visit.
     return:
       type: System.Linq.Expressions.Expression
+      description: The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.
     content.vb: Protected Overrides Function VisitParameter(node As ParameterExpression) As Expression
   overridden: NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)
   overload: NMF.Expressions.ApplyParametersVisitor.VisitParameter*
@@ -1163,6 +1166,174 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression
   - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  parent: System.Linq.Expressions.ExpressionVisitor
+  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
+  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  parent: System.Linq.Expressions.ExpressionVisitor
+  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  name: VisitAndConvert<T>(T, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  name.vb: VisitAndConvert(Of T)(T, String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
+  parent: System.Linq.Expressions.ExpressionVisitor
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
+  name: VisitDynamic(DynamicExpression)
+  nameWithType: ExpressionVisitor.VisitDynamic(DynamicExpression)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
+    name: VisitDynamic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
+  - name: (
+  - uid: System.Linq.Expressions.DynamicExpression
+    name: DynamicExpression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.dynamicexpression
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
+    name: VisitDynamic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
+  - name: (
+  - uid: System.Linq.Expressions.DynamicExpression
+    name: DynamicExpression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.dynamicexpression
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+  parent: System.Linq.Expressions.ExpressionVisitor
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
+  name: VisitMemberBinding(MemberBinding)
+  nameWithType: ExpressionVisitor.VisitMemberBinding(MemberBinding)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+    name: VisitMemberBinding
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
+  - name: (
+  - uid: System.Linq.Expressions.MemberBinding
+    name: MemberBinding
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberbinding
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
+    name: VisitMemberBinding
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
+  - name: (
+  - uid: System.Linq.Expressions.MemberBinding
+    name: MemberBinding
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberbinding
+  - name: )
 - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.Func{{T},{T}})
   commentId: M:System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
   parent: System.Linq.Expressions.ExpressionVisitor
@@ -1237,174 +1408,6 @@ references:
   - name: " "
   - name: T
   - name: )
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1({T},System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  parent: System.Linq.Expressions.ExpressionVisitor
-  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  name: VisitAndConvert<T>(T, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  name.vb: VisitAndConvert(Of T)(T, String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{{T}},System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  parent: System.Linq.Expressions.ExpressionVisitor
-  definition: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
-  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
-  parent: System.Linq.Expressions.ExpressionVisitor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
-  name: VisitDynamic(DynamicExpression)
-  nameWithType: ExpressionVisitor.VisitDynamic(DynamicExpression)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
-    name: VisitDynamic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
-  - name: (
-  - uid: System.Linq.Expressions.DynamicExpression
-    name: DynamicExpression
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.dynamicexpression
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitDynamic(System.Linq.Expressions.DynamicExpression)
-    name: VisitDynamic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdynamic
-  - name: (
-  - uid: System.Linq.Expressions.DynamicExpression
-    name: DynamicExpression
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.dynamicexpression
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
-  parent: System.Linq.Expressions.ExpressionVisitor
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
-  name: VisitMemberBinding(MemberBinding)
-  nameWithType: ExpressionVisitor.VisitMemberBinding(MemberBinding)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
-    name: VisitMemberBinding
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
-  - name: (
-  - uid: System.Linq.Expressions.MemberBinding
-    name: MemberBinding
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberbinding
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitMemberBinding(System.Linq.Expressions.MemberBinding)
-    name: VisitMemberBinding
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberbinding
-  - name: (
-  - uid: System.Linq.Expressions.MemberBinding
-    name: MemberBinding
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberbinding
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -1756,6 +1759,112 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
+  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  name: VisitAndConvert<T>(T, string)
+  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
+  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
+  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
+  name.vb: VisitAndConvert(Of T)(T, String)
+  spec.csharp:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
+    name: VisitAndConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
   commentId: M:System.Linq.Expressions.ExpressionVisitor.Visit``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.Func{``0,``0})
   isExternal: true
@@ -1829,112 +1938,6 @@ references:
   - name: " "
   - name: T
   - name: )
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  name: VisitAndConvert<T>(T, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(T, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(T, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(T, String)
-  name.vb: VisitAndConvert(Of T)(T, String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(``0,System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(-0-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  commentId: M:System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  name: VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  nameWithType: ExpressionVisitor.VisitAndConvert<T>(ReadOnlyCollection<T>, string)
-  fullName: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert<T>(System.Collections.ObjectModel.ReadOnlyCollection<T>, string)
-  nameWithType.vb: ExpressionVisitor.VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  fullName.vb: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert(Of T)(System.Collections.ObjectModel.ReadOnlyCollection(Of T), String)
-  name.vb: VisitAndConvert(Of T)(ReadOnlyCollection(Of T), String)
-  spec.csharp:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  spec.vb:
-  - uid: System.Linq.Expressions.ExpressionVisitor.VisitAndConvert``1(System.Collections.ObjectModel.ReadOnlyCollection{``0},System.String)
-    name: VisitAndConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitandconvert#system-linq-expressions-expressionvisitor-visitandconvert-1(system-collections-objectmodel-readonlycollection((-0))-system-string)
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
-    name: ReadOnlyCollection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: NMF.Expressions.Linq.ExpressionExtensions.AsOne``1(``0)
   commentId: M:NMF.Expressions.Linq.ExpressionExtensions.AsOne``1(``0)
@@ -2131,6 +2134,14 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Linq.Expressions.ParameterExpression
+  commentId: T:System.Linq.Expressions.ParameterExpression
+  parent: System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression
+  name: ParameterExpression
+  nameWithType: ParameterExpression
+  fullName: System.Linq.Expressions.ParameterExpression
 - uid: NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)
   commentId: M:NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)
   parent: NMF.Expressions.ExpressionVisitorBase
@@ -2165,14 +2176,6 @@ references:
   name: VisitParameter
   nameWithType: ApplyParametersVisitor.VisitParameter
   fullName: NMF.Expressions.ApplyParametersVisitor.VisitParameter
-- uid: System.Linq.Expressions.ParameterExpression
-  commentId: T:System.Linq.Expressions.ParameterExpression
-  parent: System.Linq.Expressions
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression
-  name: ParameterExpression
-  nameWithType: ParameterExpression
-  fullName: System.Linq.Expressions.ParameterExpression
 - uid: System.Linq.Expressions.Expression
   commentId: T:System.Linq.Expressions.Expression
   parent: System.Linq.Expressions

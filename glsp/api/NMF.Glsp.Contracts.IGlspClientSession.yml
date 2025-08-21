@@ -1,0 +1,358 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Glsp.Contracts.IGlspClientSession
+  commentId: T:NMF.Glsp.Contracts.IGlspClientSession
+  id: IGlspClientSession
+  parent: NMF.Glsp.Contracts
+  children:
+  - NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync
+  - NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync(System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage},System.String)
+  - NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  langs:
+  - csharp
+  - vb
+  name: IGlspClientSession
+  nameWithType: IGlspClientSession
+  fullName: NMF.Glsp.Contracts.IGlspClientSession
+  type: Interface
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspClientSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IGlspClientSession
+    path: src/Glsp/Glsp/Contracts/IGlspClientSession.cs
+    startLine: 9
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Denotes a GLSP session
+  example: []
+  syntax:
+    content: public interface IGlspClientSession
+    content.vb: Public Interface IGlspClientSession
+- uid: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync(System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage},System.String)
+  commentId: M:NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync(System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage},System.String)
+  id: InitializeAsync(System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage},System.String)
+  parent: NMF.Glsp.Contracts.IGlspClientSession
+  langs:
+  - csharp
+  - vb
+  name: InitializeAsync(Action<ActionMessage>, string)
+  nameWithType: IGlspClientSession.InitializeAsync(Action<ActionMessage>, string)
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync(System.Action<NMF.Glsp.Protocol.BaseProtocol.ActionMessage>, string)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspClientSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: InitializeAsync
+    path: src/Glsp/Glsp/Contracts/IGlspClientSession.cs
+    startLine: 17
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Initializes the GLSP session
+  example: []
+  syntax:
+    content: Task InitializeAsync(Action<ActionMessage> messageHandler, string clientId)
+    parameters:
+    - id: messageHandler
+      type: System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+      description: A method that can be used to handle outgoing messages
+    - id: clientId
+      type: System.String
+      description: The Client id
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task to support asynchronous operations
+    content.vb: Function InitializeAsync(messageHandler As Action(Of ActionMessage), clientId As String) As Task
+  overload: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync*
+  nameWithType.vb: IGlspClientSession.InitializeAsync(Action(Of ActionMessage), String)
+  fullName.vb: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync(System.Action(Of NMF.Glsp.Protocol.BaseProtocol.ActionMessage), String)
+  name.vb: InitializeAsync(Action(Of ActionMessage), String)
+- uid: NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  commentId: M:NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  id: ProcessAsync(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  parent: NMF.Glsp.Contracts.IGlspClientSession
+  langs:
+  - csharp
+  - vb
+  name: ProcessAsync(BaseAction)
+  nameWithType: IGlspClientSession.ProcessAsync(BaseAction)
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync(NMF.Glsp.Protocol.BaseProtocol.BaseAction)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspClientSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ProcessAsync
+    path: src/Glsp/Glsp/Contracts/IGlspClientSession.cs
+    startLine: 24
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Processes the provided action asynchronously
+  example: []
+  syntax:
+    content: Task ProcessAsync(BaseAction action)
+    parameters:
+    - id: action
+      type: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+      description: The action that needs to be processed
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task to support asynchronous operations
+    content.vb: Function ProcessAsync(action As BaseAction) As Task
+  overload: NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync*
+- uid: NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync
+  commentId: M:NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync
+  id: DisposeAsync
+  parent: NMF.Glsp.Contracts.IGlspClientSession
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: IGlspClientSession.DisposeAsync()
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Contracts/IGlspClientSession.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DisposeAsync
+    path: src/Glsp/Glsp/Contracts/IGlspClientSession.cs
+    startLine: 30
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Contracts
+  summary: Disposes the resources used by this client session
+  example: []
+  syntax:
+    content: Task DisposeAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task to support asynchronous operations
+    content.vb: Function DisposeAsync() As Task
+  overload: NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync*
+references:
+- uid: NMF.Glsp.Contracts
+  commentId: N:NMF.Glsp.Contracts
+  href: NMF.html
+  name: NMF.Glsp.Contracts
+  nameWithType: NMF.Glsp.Contracts
+  fullName: NMF.Glsp.Contracts
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Contracts
+    name: Contracts
+    href: NMF.Glsp.Contracts.html
+- uid: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync
+  href: NMF.Glsp.Contracts.IGlspClientSession.html#NMF_Glsp_Contracts_IGlspClientSession_InitializeAsync_System_Action_NMF_Glsp_Protocol_BaseProtocol_ActionMessage__System_String_
+  name: InitializeAsync
+  nameWithType: IGlspClientSession.InitializeAsync
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.InitializeAsync
+- uid: System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+  commentId: T:System.Action{NMF.Glsp.Protocol.BaseProtocol.ActionMessage}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ActionMessage>
+  nameWithType: Action<ActionMessage>
+  fullName: System.Action<NMF.Glsp.Protocol.BaseProtocol.ActionMessage>
+  nameWithType.vb: Action(Of ActionMessage)
+  fullName.vb: System.Action(Of NMF.Glsp.Protocol.BaseProtocol.ActionMessage)
+  name.vb: Action(Of ActionMessage)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ActionMessage
+    name: ActionMessage
+    href: NMF.Glsp.Protocol.BaseProtocol.ActionMessage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Protocol.BaseProtocol.ActionMessage
+    name: ActionMessage
+    href: NMF.Glsp.Protocol.BaseProtocol.ActionMessage.html
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync
+  href: NMF.Glsp.Contracts.IGlspClientSession.html#NMF_Glsp_Contracts_IGlspClientSession_ProcessAsync_NMF_Glsp_Protocol_BaseProtocol_BaseAction_
+  name: ProcessAsync
+  nameWithType: IGlspClientSession.ProcessAsync
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.ProcessAsync
+- uid: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  commentId: T:NMF.Glsp.Protocol.BaseProtocol.BaseAction
+  parent: NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.Glsp.Protocol.BaseProtocol.BaseAction.html
+  name: BaseAction
+  nameWithType: BaseAction
+  fullName: NMF.Glsp.Protocol.BaseProtocol.BaseAction
+- uid: NMF.Glsp.Protocol.BaseProtocol
+  commentId: N:NMF.Glsp.Protocol.BaseProtocol
+  href: NMF.html
+  name: NMF.Glsp.Protocol.BaseProtocol
+  nameWithType: NMF.Glsp.Protocol.BaseProtocol
+  fullName: NMF.Glsp.Protocol.BaseProtocol
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Protocol
+    name: Protocol
+    href: NMF.Glsp.Protocol.html
+  - name: .
+  - uid: NMF.Glsp.Protocol.BaseProtocol
+    name: BaseProtocol
+    href: NMF.Glsp.Protocol.BaseProtocol.html
+- uid: NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync*
+  commentId: Overload:NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync
+  href: NMF.Glsp.Contracts.IGlspClientSession.html#NMF_Glsp_Contracts_IGlspClientSession_DisposeAsync
+  name: DisposeAsync
+  nameWithType: IGlspClientSession.DisposeAsync
+  fullName: NMF.Glsp.Contracts.IGlspClientSession.DisposeAsync

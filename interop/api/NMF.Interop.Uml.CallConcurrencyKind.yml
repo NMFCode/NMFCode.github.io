@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Interop.Uml.CallConcurrencyKind
+  commentId: T:NMF.Interop.Uml.CallConcurrencyKind
+  id: CallConcurrencyKind
+  parent: NMF.Interop.Uml
+  children:
+  - NMF.Interop.Uml.CallConcurrencyKind.Concurrent
+  - NMF.Interop.Uml.CallConcurrencyKind.Guarded
+  - NMF.Interop.Uml.CallConcurrencyKind.Sequential
+  langs:
+  - csharp
+  - vb
+  name: CallConcurrencyKind
+  nameWithType: CallConcurrencyKind
+  fullName: NMF.Interop.Uml.CallConcurrencyKind
+  type: Enum
+  source:
+    remote:
+      path: Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CallConcurrencyKind
+    path: src/Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+    startLine: 41
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Uml
+  summary: " CallConcurrencyKind is an Enumeration used to specify the semantics of concurrent calls to a BehavioralFeature.\r\n&lt;p&gt;From package UML::Classification.&lt;/p&gt;"
+  example: []
+  syntax:
+    content: >-
+      [TypeConverter(typeof(CallConcurrencyKindConverter))]
+
+      [ModelRepresentationClass("http://www.eclipse.org/uml2/5.0.0/UML#//CallConcurrencyKind")]
+
+      public enum CallConcurrencyKind
+    content.vb: >-
+      <TypeConverter(GetType(CallConcurrencyKindConverter))>
+
+      <ModelRepresentationClass("http://www.eclipse.org/uml2/5.0.0/UML#//CallConcurrencyKind")>
+
+      Public Enum CallConcurrencyKind
+  attributes:
+  - type: System.ComponentModel.TypeConverterAttribute
+    ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: NMF.Interop.Uml.CallConcurrencyKindConverter
+  - type: NMF.Models.ModelRepresentationClassAttribute
+    ctor: NMF.Models.ModelRepresentationClassAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://www.eclipse.org/uml2/5.0.0/UML#//CallConcurrencyKind
+- uid: NMF.Interop.Uml.CallConcurrencyKind.Sequential
+  commentId: F:NMF.Interop.Uml.CallConcurrencyKind.Sequential
+  id: Sequential
+  parent: NMF.Interop.Uml.CallConcurrencyKind
+  langs:
+  - csharp
+  - vb
+  name: Sequential
+  nameWithType: CallConcurrencyKind.Sequential
+  fullName: NMF.Interop.Uml.CallConcurrencyKind.Sequential
+  type: Field
+  source:
+    remote:
+      path: Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Sequential
+    path: src/Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+    startLine: 49
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Uml
+  summary: No concurrency management mechanism is associated with the BehavioralFeature and, therefore, concurrency conflicts may occur. Instances that invoke a BehavioralFeature need to coordinate so that only one invocation to a target on any BehavioralFeature occurs at once.
+  example: []
+  syntax:
+    content: Sequential = 0
+    return:
+      type: NMF.Interop.Uml.CallConcurrencyKind
+- uid: NMF.Interop.Uml.CallConcurrencyKind.Guarded
+  commentId: F:NMF.Interop.Uml.CallConcurrencyKind.Guarded
+  id: Guarded
+  parent: NMF.Interop.Uml.CallConcurrencyKind
+  langs:
+  - csharp
+  - vb
+  name: Guarded
+  nameWithType: CallConcurrencyKind.Guarded
+  fullName: NMF.Interop.Uml.CallConcurrencyKind.Guarded
+  type: Field
+  source:
+    remote:
+      path: Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Guarded
+    path: src/Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+    startLine: 54
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Uml
+  summary: Multiple invocations of a BehavioralFeature that overlap in time may occur to one instance, but only one is allowed to commence. The others are blocked until the performance of the currently executing BehavioralFeature is complete. It is the responsibility of the system designer to ensure that deadlocks do not occur due to simultaneous blocking.
+  example: []
+  syntax:
+    content: Guarded = 1
+    return:
+      type: NMF.Interop.Uml.CallConcurrencyKind
+- uid: NMF.Interop.Uml.CallConcurrencyKind.Concurrent
+  commentId: F:NMF.Interop.Uml.CallConcurrencyKind.Concurrent
+  id: Concurrent
+  parent: NMF.Interop.Uml.CallConcurrencyKind
+  langs:
+  - csharp
+  - vb
+  name: Concurrent
+  nameWithType: CallConcurrencyKind.Concurrent
+  fullName: NMF.Interop.Uml.CallConcurrencyKind.Concurrent
+  type: Field
+  source:
+    remote:
+      path: Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Concurrent
+    path: src/Interop/UMLInterop/Uml/CallConcurrencyKind.cs
+    startLine: 59
+  assemblies:
+  - NMF.UMLInterop
+  namespace: NMF.Interop.Uml
+  summary: Multiple invocations of a BehavioralFeature that overlap in time may occur to one instance and all of them may proceed concurrently.
+  example: []
+  syntax:
+    content: Concurrent = 2
+    return:
+      type: NMF.Interop.Uml.CallConcurrencyKind
+references:
+- uid: NMF.Interop.Uml
+  commentId: N:NMF.Interop.Uml
+  href: NMF.html
+  name: NMF.Interop.Uml
+  nameWithType: NMF.Interop.Uml
+  fullName: NMF.Interop.Uml
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Interop
+    name: Interop
+    href: NMF.Interop.html
+  - name: .
+  - uid: NMF.Interop.Uml
+    name: Uml
+    href: NMF.Interop.Uml.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Interop
+    name: Interop
+    href: NMF.Interop.html
+  - name: .
+  - uid: NMF.Interop.Uml
+    name: Uml
+    href: NMF.Interop.Uml.html
+- uid: NMF.Interop.Uml.CallConcurrencyKind
+  commentId: T:NMF.Interop.Uml.CallConcurrencyKind
+  parent: NMF.Interop.Uml
+  href: NMF.Interop.Uml.CallConcurrencyKind.html
+  name: CallConcurrencyKind
+  nameWithType: CallConcurrencyKind
+  fullName: NMF.Interop.Uml.CallConcurrencyKind

@@ -20,14 +20,16 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ParameterDependencyAttribute
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: Declares that the method will access a given property of the given named parameter
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Method)]
@@ -105,14 +107,16 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parameter
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: The name of the parameter with the dependency
+  example: []
   syntax:
     content: public string Parameter { get; }
     parameters: []
@@ -134,14 +138,16 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Member
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 11
+    startLine: 18
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: The member that is accessed
+  example: []
   syntax:
     content: public string Member { get; set; }
     parameters: []
@@ -163,14 +169,16 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsNestedMember
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 12
+    startLine: 23
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: True, if all nested properties should also be watched for, otherwise False
+  example: []
   syntax:
     content: public bool IsNestedMember { get; }
     parameters: []
@@ -192,21 +200,25 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 14
+    startLine: 30
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: Declares that the method will access a given property of the given named parameter
+  example: []
   syntax:
     content: public ParameterDependencyAttribute(string parameter, string member)
     parameters:
     - id: parameter
       type: System.String
+      description: The name of the parameter with the dependency
     - id: member
       type: System.String
+      description: The member that is accessed
     content.vb: Public Sub New(parameter As String, member As String)
   overload: NMF.Expressions.ParameterDependencyAttribute.#ctor*
   nameWithType.vb: ParameterDependencyAttribute.New(String, String)
@@ -226,23 +238,28 @@ items:
   source:
     remote:
       path: Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Models.Expressions/ParameterDependencyAttribute.cs
-    startLine: 16
+    startLine: 38
   assemblies:
   - NMF.Expressions.Models
   namespace: NMF.Expressions
+  summary: Declares that the method will access a given property of the given named parameter
+  example: []
   syntax:
     content: public ParameterDependencyAttribute(string parameter, string member, bool isNested)
     parameters:
     - id: parameter
       type: System.String
+      description: The name of the parameter with the dependency
     - id: member
       type: System.String
+      description: The member that is accessed
     - id: isNested
       type: System.Boolean
+      description: True, if all nested properties should also be watched for, otherwise False
     content.vb: Public Sub New(parameter As String, member As String, isNested As Boolean)
   overload: NMF.Expressions.ParameterDependencyAttribute.#ctor*
   nameWithType.vb: ParameterDependencyAttribute.New(String, String, Boolean)

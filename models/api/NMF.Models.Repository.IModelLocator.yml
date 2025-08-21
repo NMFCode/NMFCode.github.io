@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IModelLocator
     path: src/Models/Models/Repository/IModelLocator.cs
@@ -26,6 +26,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes an interface for a component that can locate models
+  example: []
   syntax:
     content: public interface IModelLocator
     content.vb: Public Interface IModelLocator
@@ -43,21 +45,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CanLocate
     path: src/Models/Models/Repository/IModelLocator.cs
-    startLine: 10
+    startLine: 15
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Determines whether the given locator is able to locate the given URI
+  example: []
   syntax:
     content: bool CanLocate(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the URI to locate
     return:
       type: System.Boolean
+      description: true, if the URI can be located, otherwise false
     content.vb: Function CanLocate(uri As Uri) As Boolean
   overload: NMF.Models.Repository.IModelLocator.CanLocate*
 - uid: NMF.Models.Repository.IModelLocator.GetRepositoryUri(System.Uri)
@@ -74,21 +80,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRepositoryUri
     path: src/Models/Models/Repository/IModelLocator.cs
-    startLine: 12
+    startLine: 22
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Calculates the repository URI for the given URI
+  example: []
   syntax:
     content: Uri GetRepositoryUri(Uri uri)
     parameters:
     - id: uri
       type: System.Uri
+      description: the input URI
     return:
       type: System.Uri
+      description: the URI as used for a repository
     content.vb: Function GetRepositoryUri(uri As Uri) As Uri
   overload: NMF.Models.Repository.IModelLocator.GetRepositoryUri*
 - uid: NMF.Models.Repository.IModelLocator.Open(System.Uri)
@@ -105,21 +115,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/IModelLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Open
     path: src/Models/Models/Repository/IModelLocator.cs
-    startLine: 14
+    startLine: 29
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Opens the given URI
+  example: []
   syntax:
     content: Stream Open(Uri repositoryId)
     parameters:
     - id: repositoryId
       type: System.Uri
+      description: the URI as used in the repository
     return:
       type: System.IO.Stream
+      description: A stream
     content.vb: Function Open(repositoryId As Uri) As Stream
   overload: NMF.Models.Repository.IModelLocator.Open*
 references:

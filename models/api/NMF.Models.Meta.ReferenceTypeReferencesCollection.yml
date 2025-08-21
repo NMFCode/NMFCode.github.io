@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferenceTypeReferencesCollection
     path: src/Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the References reference
+  example: []
   syntax:
     content: 'public class ReferenceTypeReferencesCollection : ObservableOppositeList<IReferenceType, IReference>, IReadOnlyList<IReference>, IReadOnlyCollection<IReference>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IReference>, IList<IReference>, ICollectionExpression<IReference>, IEnumerableExpression<IReference>, IEnumerableExpression, ICollection<IReference>, IEnumerable<IReference>, IEnumerable'
     content.vb: Public Class ReferenceTypeReferencesCollection Inherits ObservableOppositeList(Of IReferenceType, IReference) Implements IReadOnlyList(Of IReference), IReadOnlyCollection(Of IReference), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IReference), IList(Of IReference), ICollectionExpression(Of IReference), IEnumerableExpression(Of IReference), IEnumerableExpression, ICollection(Of IReference), IEnumerable(Of IReference), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ReferenceTypeReferencesCollection(IReferenceType parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IReferenceType
+      description: the parent ReferenceType
     content.vb: Public Sub New(parent As IReferenceType)
   overload: NMF.Models.Meta.ReferenceTypeReferencesCollection.#ctor*
   nameWithType.vb: ReferenceTypeReferencesCollection.New(IReferenceType)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/ReferenceTypeReferencesCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IReference item, IReferenceType parent)
+    content: protected override void SetOpposite(IReference item, IReferenceType newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IReference
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IReferenceType
-    content.vb: Protected Overrides Sub SetOpposite(item As IReference, parent As IReferenceType)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IReference, newParent As IReferenceType)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IReferenceType,NMF.Models.Meta.IReference}.SetOpposite(NMF.Models.Meta.IReference,NMF.Models.Meta.IReferenceType)
   overload: NMF.Models.Meta.ReferenceTypeReferencesCollection.SetOpposite*
 references:

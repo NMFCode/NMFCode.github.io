@@ -5,6 +5,7 @@ items:
   id: ObservableProxyAttribute
   parent: NMF.Expressions
   children:
+  - NMF.Expressions.ObservableProxyAttribute.#ctor(System.String,System.Boolean)
   - NMF.Expressions.ObservableProxyAttribute.#ctor(System.Type,System.String,System.Boolean)
   - NMF.Expressions.ObservableProxyAttribute.IsRecursive
   langs:
@@ -17,7 +18,7 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ObservableProxyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableProxyAttribute
     path: src/Expressions/Expressions/Public/ObservableProxyAttribute.cs
@@ -107,7 +108,7 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ObservableProxyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsRecursive
     path: src/Expressions/Expressions/Public/ObservableProxyAttribute.cs
@@ -124,6 +125,44 @@ items:
       type: System.Boolean
     content.vb: Public Property IsRecursive As Boolean
   overload: NMF.Expressions.ObservableProxyAttribute.IsRecursive*
+- uid: NMF.Expressions.ObservableProxyAttribute.#ctor(System.String,System.Boolean)
+  commentId: M:NMF.Expressions.ObservableProxyAttribute.#ctor(System.String,System.Boolean)
+  id: '#ctor(System.String,System.Boolean)'
+  parent: NMF.Expressions.ObservableProxyAttribute
+  langs:
+  - csharp
+  - vb
+  name: ObservableProxyAttribute(string, bool)
+  nameWithType: ObservableProxyAttribute.ObservableProxyAttribute(string, bool)
+  fullName: NMF.Expressions.ObservableProxyAttribute.ObservableProxyAttribute(string, bool)
+  type: Constructor
+  source:
+    remote:
+      path: Expressions/Expressions/Public/ObservableProxyAttribute.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Expressions/Expressions/Public/ObservableProxyAttribute.cs
+    startLine: 20
+  assemblies:
+  - NMF.Expressions
+  namespace: NMF.Expressions
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public ObservableProxyAttribute(string methodName, bool isRecursive = false)
+    parameters:
+    - id: methodName
+      type: System.String
+      description: The name of the incrementalized method
+    - id: isRecursive
+      type: System.Boolean
+      description: True, if the incrementalized method is recursive, otherwise False
+    content.vb: Public Sub New(methodName As String, isRecursive As Boolean = False)
+  overload: NMF.Expressions.ObservableProxyAttribute.#ctor*
+  nameWithType.vb: ObservableProxyAttribute.New(String, Boolean)
+  fullName.vb: NMF.Expressions.ObservableProxyAttribute.New(String, Boolean)
+  name.vb: New(String, Boolean)
 - uid: NMF.Expressions.ObservableProxyAttribute.#ctor(System.Type,System.String,System.Boolean)
   commentId: M:NMF.Expressions.ObservableProxyAttribute.#ctor(System.Type,System.String,System.Boolean)
   id: '#ctor(System.Type,System.String,System.Boolean)'
@@ -138,11 +177,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ObservableProxyAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Expressions/Public/ObservableProxyAttribute.cs
-    startLine: 21
+    startLine: 32
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -2168,21 +2207,13 @@ references:
   name.vb: Boolean
 - uid: NMF.Expressions.ObservableProxyAttribute.#ctor*
   commentId: Overload:NMF.Expressions.ObservableProxyAttribute.#ctor
-  href: NMF.Expressions.ObservableProxyAttribute.html#NMF_Expressions_ObservableProxyAttribute__ctor_System_Type_System_String_System_Boolean_
+  href: NMF.Expressions.ObservableProxyAttribute.html#NMF_Expressions_ObservableProxyAttribute__ctor_System_String_System_Boolean_
   name: ObservableProxyAttribute
   nameWithType: ObservableProxyAttribute.ObservableProxyAttribute
   fullName: NMF.Expressions.ObservableProxyAttribute.ObservableProxyAttribute
   nameWithType.vb: ObservableProxyAttribute.New
   fullName.vb: NMF.Expressions.ObservableProxyAttribute.New
   name.vb: New
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -2194,3 +2225,11 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

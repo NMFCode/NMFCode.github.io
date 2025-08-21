@@ -34,11 +34,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AnnotationEntry
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -93,8 +93,10 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -164,14 +166,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 69
+    startLine: 73
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public AnnotationEntry()
     content.vb: Public Sub New()
@@ -193,11 +197,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Source
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 82
+    startLine: 86
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -238,11 +242,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Details
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 108
+    startLine: 112
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -283,11 +287,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Annotations
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 123
+    startLine: 127
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -344,11 +348,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Children
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 139
+    startLine: 143
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -378,11 +382,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReferencedElements
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 150
+    startLine: 154
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -412,11 +416,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 161
+    startLine: 165
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -429,37 +433,6 @@ items:
       type: NMF.Models.Meta.IClass
     content.vb: Public Shared ReadOnly Property ClassInstance As IClass
   overload: NMF.Models.Meta.AnnotationEntry.ClassInstance*
-- uid: NMF.Models.Meta.AnnotationEntry.SourceChanging
-  commentId: E:NMF.Models.Meta.AnnotationEntry.SourceChanging
-  id: SourceChanging
-  parent: NMF.Models.Meta.AnnotationEntry
-  langs:
-  - csharp
-  - vb
-  name: SourceChanging
-  nameWithType: AnnotationEntry.SourceChanging
-  fullName: NMF.Models.Meta.AnnotationEntry.SourceChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: SourceChanging
-    path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 176
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the Source property changes its value
-  example: []
-  syntax:
-    content: public event EventHandler<ValueChangedEventArgs> SourceChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event SourceChanging As EventHandler(Of ValueChangedEventArgs)
-  implements:
-  - NMF.Models.Meta.IAnnotationEntry.SourceChanging
 - uid: NMF.Models.Meta.AnnotationEntry.SourceChanged
   commentId: E:NMF.Models.Meta.AnnotationEntry.SourceChanged
   id: SourceChanged
@@ -474,11 +447,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SourceChanged
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 181
+    startLine: 180
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -491,38 +464,37 @@ items:
     content.vb: Public Event SourceChanged As EventHandler(Of ValueChangedEventArgs)
   implements:
   - NMF.Models.Meta.IAnnotationEntry.SourceChanged
-- uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.AnnotationEntry.SourceChanging
+  commentId: E:NMF.Models.Meta.AnnotationEntry.SourceChanging
+  id: SourceChanging
   parent: NMF.Models.Meta.AnnotationEntry
   langs:
   - csharp
   - vb
-  name: OnSourceChanging(ValueChangedEventArgs)
-  nameWithType: AnnotationEntry.OnSourceChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
-  type: Method
+  name: SourceChanging
+  nameWithType: AnnotationEntry.SourceChanging
+  fullName: NMF.Models.Meta.AnnotationEntry.SourceChanging
+  type: Event
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnSourceChanging
+    id: SourceChanging
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 192
+    startLine: 185
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the SourceChanging event
+  summary: Gets fired before the Source property changes its value
   example: []
   syntax:
-    content: protected virtual void OnSourceChanging(ValueChangedEventArgs eventArgs)
-    parameters:
-    - id: eventArgs
-      type: NMF.Expressions.ValueChangedEventArgs
-      description: The event data
-    content.vb: Protected Overridable Sub OnSourceChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.AnnotationEntry.OnSourceChanging*
+    content: public event EventHandler<ValueChangedEventArgs> SourceChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Public Event SourceChanging As EventHandler(Of ValueChangedEventArgs)
+  implements:
+  - NMF.Models.Meta.IAnnotationEntry.SourceChanging
 - uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.AnnotationEntry.OnSourceChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnSourceChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -537,11 +509,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnSourceChanged
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 205
+    startLine: 196
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -555,6 +527,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnSourceChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.AnnotationEntry.OnSourceChanged*
+- uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.Meta.AnnotationEntry
+  langs:
+  - csharp
+  - vb
+  name: OnSourceChanging(ValueChangedEventArgs)
+  nameWithType: AnnotationEntry.OnSourceChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.AnnotationEntry.OnSourceChanging(NMF.Expressions.ValueChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: Models/Models/Meta/AnnotationEntry.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnSourceChanging
+    path: src/Models/Models/Meta/AnnotationEntry.cs
+    startLine: 209
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Raises the SourceChanging event
+  example: []
+  syntax:
+    content: protected virtual void OnSourceChanging(ValueChangedEventArgs eventArgs)
+    parameters:
+    - id: eventArgs
+      type: NMF.Expressions.ValueChangedEventArgs
+      description: The event data
+    content.vb: Protected Overridable Sub OnSourceChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.AnnotationEntry.OnSourceChanging*
 - uid: NMF.Models.Meta.AnnotationEntry.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
   commentId: M:NMF.Models.Meta.AnnotationEntry.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
   id: GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
@@ -569,11 +573,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetRelativePathForNonIdentifiedChild
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 269
+    startLine: 273
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -605,11 +609,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetModelElementForReference
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 285
+    startLine: 289
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -647,11 +651,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 307
+    startLine: 311
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -689,11 +693,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCollectionForFeature
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 332
+    startLine: 336
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -728,11 +732,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 350
+    startLine: 354
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -767,11 +771,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExpressionForAttribute
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 365
+    startLine: 369
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -806,11 +810,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetCompositionName
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 379
+    startLine: 383
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -845,11 +849,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/AnnotationEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Models/Models/Meta/AnnotationEntry.cs
-    startLine: 391
+    startLine: 395
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -1422,40 +1426,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
@@ -3011,13 +3040,13 @@ references:
   name: IClass
   nameWithType: IClass
   fullName: NMF.Models.Meta.IClass
-- uid: NMF.Models.Meta.IAnnotationEntry.SourceChanging
-  commentId: E:NMF.Models.Meta.IAnnotationEntry.SourceChanging
+- uid: NMF.Models.Meta.IAnnotationEntry.SourceChanged
+  commentId: E:NMF.Models.Meta.IAnnotationEntry.SourceChanged
   parent: NMF.Models.Meta.IAnnotationEntry
-  href: NMF.Models.Meta.IAnnotationEntry.html#NMF_Models_Meta_IAnnotationEntry_SourceChanging
-  name: SourceChanging
-  nameWithType: IAnnotationEntry.SourceChanging
-  fullName: NMF.Models.Meta.IAnnotationEntry.SourceChanging
+  href: NMF.Models.Meta.IAnnotationEntry.html#NMF_Models_Meta_IAnnotationEntry_SourceChanged
+  name: SourceChanged
+  nameWithType: IAnnotationEntry.SourceChanged
+  fullName: NMF.Models.Meta.IAnnotationEntry.SourceChanged
 - uid: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
   commentId: T:System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
   parent: System
@@ -3077,31 +3106,31 @@ references:
   - name: " "
   - name: TEventArgs
   - name: )
-- uid: NMF.Models.Meta.IAnnotationEntry.SourceChanged
-  commentId: E:NMF.Models.Meta.IAnnotationEntry.SourceChanged
+- uid: NMF.Models.Meta.IAnnotationEntry.SourceChanging
+  commentId: E:NMF.Models.Meta.IAnnotationEntry.SourceChanging
   parent: NMF.Models.Meta.IAnnotationEntry
-  href: NMF.Models.Meta.IAnnotationEntry.html#NMF_Models_Meta_IAnnotationEntry_SourceChanged
-  name: SourceChanged
-  nameWithType: IAnnotationEntry.SourceChanged
-  fullName: NMF.Models.Meta.IAnnotationEntry.SourceChanged
-- uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanging*
-  commentId: Overload:NMF.Models.Meta.AnnotationEntry.OnSourceChanging
-  href: NMF.Models.Meta.AnnotationEntry.html#NMF_Models_Meta_AnnotationEntry_OnSourceChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnSourceChanging
-  nameWithType: AnnotationEntry.OnSourceChanging
-  fullName: NMF.Models.Meta.AnnotationEntry.OnSourceChanging
-- uid: NMF.Expressions.ValueChangedEventArgs
-  commentId: T:NMF.Expressions.ValueChangedEventArgs
-  parent: NMF.Expressions
-  name: ValueChangedEventArgs
-  nameWithType: ValueChangedEventArgs
-  fullName: NMF.Expressions.ValueChangedEventArgs
+  href: NMF.Models.Meta.IAnnotationEntry.html#NMF_Models_Meta_IAnnotationEntry_SourceChanging
+  name: SourceChanging
+  nameWithType: IAnnotationEntry.SourceChanging
+  fullName: NMF.Models.Meta.IAnnotationEntry.SourceChanging
 - uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanged*
   commentId: Overload:NMF.Models.Meta.AnnotationEntry.OnSourceChanged
   href: NMF.Models.Meta.AnnotationEntry.html#NMF_Models_Meta_AnnotationEntry_OnSourceChanged_NMF_Expressions_ValueChangedEventArgs_
   name: OnSourceChanged
   nameWithType: AnnotationEntry.OnSourceChanged
   fullName: NMF.Models.Meta.AnnotationEntry.OnSourceChanged
+- uid: NMF.Expressions.ValueChangedEventArgs
+  commentId: T:NMF.Expressions.ValueChangedEventArgs
+  parent: NMF.Expressions
+  name: ValueChangedEventArgs
+  nameWithType: ValueChangedEventArgs
+  fullName: NMF.Expressions.ValueChangedEventArgs
+- uid: NMF.Models.Meta.AnnotationEntry.OnSourceChanging*
+  commentId: Overload:NMF.Models.Meta.AnnotationEntry.OnSourceChanging
+  href: NMF.Models.Meta.AnnotationEntry.html#NMF_Models_Meta_AnnotationEntry_OnSourceChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSourceChanging
+  nameWithType: AnnotationEntry.OnSourceChanging
+  fullName: NMF.Models.Meta.AnnotationEntry.OnSourceChanging
 - uid: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
   commentId: M:NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
   parent: NMF.Models.ModelElement

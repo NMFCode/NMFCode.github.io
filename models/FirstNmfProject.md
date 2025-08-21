@@ -8,9 +8,11 @@ From this class diagram, we use the EMF Editor to create the corresponding Ecore
 
 Now we change to our model directory in the terminal and execute our Ecore2Code command there to generate the corresponding classes for our project. 
 As for the command itself, it copies the ecore file and creates a new file with the extension .nmf (which we define ourselves) and adapts this file so that it works for NMF. Next, the command generates the corresponding C# classes from it.
+
 ```bash
 Ecore2Code -f -n NMFDemo -o metaModel -m company.nmf company.ecore 
 ```
+
 For further information, find an explanation of the command-line parameters here:
 [Link to the code generation statement](./Ecore2Code.md)
 
@@ -35,6 +37,7 @@ The My.company file is an XMI file generated using the EMF Editor, it only descr
 </aside>
 
 Next, we need to define our generated company.nmf file as an EmbeddedResource in the .csproj file, which should look like this:
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -57,6 +60,7 @@ Next, we need to define our generated company.nmf file as an EmbeddedResource in
 ```
 
 To be able to access different models of our UML Diagram Company, we need to register the company.nmf, for this we first create a directory modelRegistry with a file ModelRegistry.cs, the file should have the following content (`modelRegistry/ModelRegistry.cs`):
+
 ```csharp
 using NMF;
 
@@ -64,6 +68,7 @@ using NMF;
 ```
 
 Once these steps have been completed, we can load our passed example (My.company) into the code (`Program.cs`):
+
 ```csharp
 using NMF.Models.Repository;
 using NMFDemo.Company;
@@ -83,4 +88,3 @@ class Program
 ```
 
 The first thing we do is load our ModelRepository (which allows us to load our passed Use Cases or XMI files into the code), after which we obtain the model by specifying the path of the XMI file. Now we have the opportunity to access individual nodes in this tree structure of the XMI file and assign a type to them from the classes previously generated.
-

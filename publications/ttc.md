@@ -1,6 +1,16 @@
 Transformtion Tool Contest
 ---
 
+### 2024
+
+G. Hinkel: **[Modeling a Warehouse system using refinements and decomposition: A
+contribution to the MULTI Warehouse challenge](https://doi.org/10.1145/3652620.3688209)** in _Proceedings of the ACM/IEEE 27th International Conference on Model
+Driven Engineering Languages and Systems, MODELS Companion 2024,
+Linz, Austria, September 22-27, 2024_, pp. 770-779, 2024
+**DOI:** [10.1145/3652620.3688209](https://dx.doi.org/10.1145/3652620.3688209)  
+
+
+
 ### 2023
 
 G. Hinkel: **[Two NMF Solutions to the TTC2023 Incremental Class to Relational

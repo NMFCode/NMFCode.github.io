@@ -47,18 +47,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReadOnlyOrderedSet
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Denotes a readonly ordered set view
+  example: []
   syntax:
     content: 'public class ReadOnlyOrderedSet<T> : IList, ICollection, IOrderedSet<T>, IList<T>, ISet<T>, ICollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Class ReadOnlyOrderedSet(Of T) Implements IList, ICollection, IOrderedSet(Of T), IList(Of T), ISet(Of T), ICollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
@@ -98,21 +101,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ReadOnlyOrderedSet(OrderedSet<T> parent)
     parameters:
     - id: parent
       type: NMF.Collections.Generic.OrderedSet{{T}}
+      description: The ordered set of which to create a view
     content.vb: Public Sub New(parent As OrderedSet(Of T))
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if parent is null
   nameWithType.vb: ReadOnlyOrderedSet(Of T).New(OrderedSet(Of T))
   fullName.vb: NMF.Collections.Generic.ReadOnlyOrderedSet(Of T).New(NMF.Collections.Generic.OrderedSet(Of T))
   name.vb: New(OrderedSet(Of T))
@@ -130,22 +140,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 21
+    startLine: 29
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Function Add(item As T) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Add*
   implements:
@@ -166,22 +179,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ExceptWith
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 26
+    startLine: 35
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all elements in the specified collection from the current set.
   example: []
   syntax:
     content: public void ExceptWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection of items to remove from the set.
     content.vb: Public Sub ExceptWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.ExceptWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.ExceptWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).ExceptWith(IEnumerable(Of T))
@@ -201,22 +220,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IntersectWith
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 31
+    startLine: 41
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains only elements that are also in a specified collection.
   example: []
   syntax:
     content: public void IntersectWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub IntersectWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IntersectWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IntersectWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).IntersectWith(IEnumerable(Of T))
@@ -236,24 +261,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSubsetOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 36
+    startLine: 47
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a proper (strict) subset of a specified collection.
   example: []
   syntax:
     content: public bool IsProperSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a proper subset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsProperSubsetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsProperSubsetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsProperSubsetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).IsProperSubsetOf(IEnumerable(Of T))
@@ -273,24 +305,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSupersetOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 41
+    startLine: 53
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a proper (strict) superset of a specified collection.
   example: []
   syntax:
     content: public bool IsProperSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a proper superset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsProperSupersetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsProperSupersetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsProperSupersetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).IsProperSupersetOf(IEnumerable(Of T))
@@ -310,24 +349,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSubsetOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 46
+    startLine: 59
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether a set is a subset of a specified collection.
   example: []
   syntax:
     content: public bool IsSubsetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a subset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsSubsetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsSubsetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsSubsetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).IsSubsetOf(IEnumerable(Of T))
@@ -347,24 +393,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSupersetOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 51
+    startLine: 65
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set is a superset of a specified collection.
   example: []
   syntax:
     content: public bool IsSupersetOf(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is a superset of <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function IsSupersetOf(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsSupersetOf*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.IsSupersetOf(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).IsSupersetOf(IEnumerable(Of T))
@@ -384,24 +437,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Overlaps
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 56
+    startLine: 71
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set overlaps with the specified collection.
   example: []
   syntax:
     content: public bool Overlaps(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set and <code class="paramref">other</code> share at least one common element; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Overlaps(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Overlaps*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.Overlaps(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Overlaps(IEnumerable(Of T))
@@ -421,24 +481,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetEquals
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 61
+    startLine: 77
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the current set and the specified collection contain the same elements.
   example: []
   syntax:
     content: public bool SetEquals(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current set is equal to <code class="paramref">other</code>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function SetEquals(other As IEnumerable(Of T)) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.SetEquals*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.SetEquals(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).SetEquals(IEnumerable(Of T))
@@ -458,22 +525,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SymmetricExceptWith
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 66
+    startLine: 83
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.
   example: []
   syntax:
     content: public void SymmetricExceptWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub SymmetricExceptWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.SymmetricExceptWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.SymmetricExceptWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).SymmetricExceptWith(IEnumerable(Of T))
@@ -493,22 +566,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: UnionWith
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 71
+    startLine: 89
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
   example: []
   syntax:
     content: public void UnionWith(IEnumerable<T> other)
     parameters:
     - id: other
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The collection to compare to the current set.
     content.vb: Public Sub UnionWith(other As IEnumerable(Of T))
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.UnionWith*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">other</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.ISet{{T}}.UnionWith(System.Collections.Generic.IEnumerable{{T}})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).UnionWith(IEnumerable(Of T))
@@ -528,19 +607,24 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 81
+    startLine: 100
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all items from the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.IList.Clear
   - System.Collections.Generic.ICollection{{T}}.Clear
@@ -560,22 +644,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 86
+    startLine: 106
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public bool Contains(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Contains(item As T) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Contains*
   implements:
@@ -596,24 +683,37 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 91
+    startLine: 112
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Copies the elements of the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
     - id: array
       type: '{T}[]'
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: arrayIndex
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
   implements:
   - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).CopyTo(T(), Integer)
@@ -633,20 +733,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 96
+    startLine: 118
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets the number of elements contained in the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int Count { get; }
     parameters: []
     return:
       type: System.Int32
+      description: The number of elements contained in the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Count As Integer
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Count*
   implements:
@@ -668,20 +770,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsReadOnly
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 101
+    startLine: 124
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets a value indicating whether the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.
   example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public ReadOnly Property IsReadOnly As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsReadOnly*
   implements:
@@ -703,24 +807,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 106
+    startLine: 130
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public bool Remove(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function Remove(item As T) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Remove({T})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Remove(T)
@@ -739,19 +850,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 111
+    startLine: 136
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public IEnumerator<T> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.GetEnumerator*
   implements:
@@ -772,22 +885,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IndexOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 121
+    startLine: 147
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines the index of a specific item in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int IndexOf(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Int32
+      description: The index of <code class="paramref">item</code> if found in the list; otherwise, -1.
     content.vb: Public Function IndexOf(item As T) As Integer
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IndexOf*
   implements:
@@ -808,24 +924,34 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 126
+    startLine: 153
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public void Insert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub Insert(index As Integer, item As T)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Insert(Integer, T)
@@ -845,22 +971,36 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveAt
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 131
+    startLine: 159
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> item at the specified index.
   example: []
   syntax:
     content: public void RemoveAt(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the item to remove.
     content.vb: Public Sub RemoveAt(index As Integer)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.RemoveAt*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.  
+
+       -or-  
+
+       The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
   implements:
   - System.Collections.IList.RemoveAt(System.Int32)
   - System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
@@ -881,24 +1021,34 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: this[]
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 136
+    startLine: 165
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets or sets the element at the specified index.
   example: []
   syntax:
     content: public T this[int index] { get; set; }
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to get or set.
     return:
       type: '{T}'
+      description: The element at the specified index.
     content.vb: Public Default Property this[](index As Integer) As T
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Item*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The property is set and the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Item(System.Int32)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).this[](Integer)
@@ -918,24 +1068,36 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 148
+    startLine: 178
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Adds an item to the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int Add(object value)
     parameters:
     - id: value
       type: System.Object
+      description: The object to add to the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Int32
+      description: The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection.
     content.vb: Public Function Add(value As Object) As Integer
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Add*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.  
+
+       -or-  
+
+       The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
   implements:
   - System.Collections.IList.Add(System.Object)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Add(Object)
@@ -955,22 +1117,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 153
+    startLine: 184
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public bool Contains(object value)
     parameters:
     - id: value
       type: System.Object
+      description: The object to locate in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Object" data-throw-if-not-resolved="false"></xref> is found in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Contains(value As Object) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Contains*
   implements:
@@ -992,22 +1157,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IndexOf
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 158
+    startLine: 190
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines the index of a specific item in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int IndexOf(object value)
     parameters:
     - id: value
       type: System.Object
+      description: The object to locate in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Int32
+      description: The index of <code class="paramref">value</code> if found in the list; otherwise, -1.
     content.vb: Public Function IndexOf(value As Object) As Integer
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IndexOf*
   implements:
@@ -1029,24 +1197,42 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 163
+    startLine: 196
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Inserts an item to the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public void Insert(int index, object value)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">value</code> should be inserted.
     - id: value
       type: System.Object
+      description: The object to insert into the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub Insert(index As Integer, value As Object)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.  
+
+       -or-  
+
+       The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
+  - type: System.NullReferenceException
+    commentId: T:System.NullReferenceException
+    description: <code class="paramref">value</code> is null reference in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
   implements:
   - System.Collections.IList.Insert(System.Int32,System.Object)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Insert(Integer, Object)
@@ -1066,20 +1252,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsFixedSize
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 168
+    startLine: 202
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets a value indicating whether the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
   example: []
   syntax:
     content: public bool IsFixedSize { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public ReadOnly Property IsFixedSize As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsFixedSize*
   implements:
@@ -1100,22 +1288,33 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 173
+    startLine: 208
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Remove(object value)
     parameters:
     - id: value
       type: System.Object
+      description: The object to remove from the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub Remove(value As Object)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.  
+
+       -or-  
+
+       The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
   implements:
   - System.Collections.IList.Remove(System.Object)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).Remove(Object)
@@ -1135,24 +1334,37 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 190
+    startLine: 226
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Copies the elements of the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(Array array, int index)
     parameters:
     - id: array
       type: System.Array
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: index
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As Array, index As Integer)
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is less than zero.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "   <code class=\"paramref\">array</code> is multidimensional.  \r\n\r\n-or-  \r\n\r\nThe number of elements in the source <xref href=\"System.Collections.ICollection\" data-throw-if-not-resolved=\"false\"></xref> is greater than the available space from <code class=\"paramref\">index</code> to the end of the destination <code class=\"paramref\">array</code>.  \r\n\r\n-or-  \r\n\r\nThe type of the source <xref href=\"System.Collections.ICollection\" data-throw-if-not-resolved=\"false\"></xref> cannot be cast automatically to the type of the destination <code class=\"paramref\">array</code>."
   implements:
   - System.Collections.ICollection.CopyTo(System.Array,System.Int32)
   nameWithType.vb: ReadOnlyOrderedSet(Of T).CopyTo(Array, Integer)
@@ -1172,20 +1384,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSynchronized
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 195
+    startLine: 232
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets a value indicating whether access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> is synchronized (thread safe).
   example: []
   syntax:
     content: public bool IsSynchronized { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref> is synchronized (thread safe); otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public ReadOnly Property IsSynchronized As Boolean
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsSynchronized*
   implements:
@@ -1206,20 +1420,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SyncRoot
     path: src/Collections/Collections/Generic/ReadOnlyOrderedSet.cs
-    startLine: 200
+    startLine: 238
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets an object that can be used to synchronize access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public object SyncRoot { get; }
     parameters: []
     return:
       type: System.Object
+      description: An object that can be used to synchronize access to the <xref href="System.Collections.ICollection" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property SyncRoot As Object
   overload: NMF.Collections.Generic.ReadOnlyOrderedSet`1.SyncRoot*
   implements:
@@ -1862,6 +2078,13 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.Generic.ReadOnlyOrderedSet`1.#ctor*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyOrderedSet`1.#ctor
   href: NMF.Collections.Generic.ReadOnlyOrderedSet-1.html#NMF_Collections_Generic_ReadOnlyOrderedSet_1__ctor_NMF_Collections_Generic_OrderedSet__0__
@@ -2893,6 +3116,13 @@ references:
   - name: T
   - name: )
   - name: )
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.ReadOnlyOrderedSet`1.Clear*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyOrderedSet`1.Clear
   href: NMF.Collections.Generic.ReadOnlyOrderedSet-1.html#NMF_Collections_Generic_ReadOnlyOrderedSet_1_Clear
@@ -3029,6 +3259,28 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: NMF.Collections.Generic.ReadOnlyOrderedSet`1.CopyTo*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyOrderedSet`1.CopyTo
   href: NMF.Collections.Generic.ReadOnlyOrderedSet-1.html#NMF_Collections_Generic_ReadOnlyOrderedSet_1_CopyTo__0___System_Int32_
@@ -3807,6 +4059,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.NullReferenceException
+  commentId: T:System.NullReferenceException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullreferenceexception
+  name: NullReferenceException
+  nameWithType: NullReferenceException
+  fullName: System.NullReferenceException
 - uid: System.Collections.IList.Insert(System.Int32,System.Object)
   commentId: M:System.Collections.IList.Insert(System.Int32,System.Object)
   parent: System.Collections.IList
@@ -3946,14 +4205,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: System.Array
-  commentId: T:System.Array
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.array
-  name: Array
-  nameWithType: Array
-  fullName: System.Array
 - uid: NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsSynchronized*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyOrderedSet`1.IsSynchronized
   href: NMF.Collections.Generic.ReadOnlyOrderedSet-1.html#NMF_Collections_Generic_ReadOnlyOrderedSet_1_IsSynchronized

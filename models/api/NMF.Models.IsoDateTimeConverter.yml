@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: Models/Models/IsoDateTimeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsoDateTimeConverter
     path: src/Models/Models/IsoDateTimeConverter.cs
-    startLine: 13
+    startLine: 9
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -92,31 +92,41 @@ items:
   source:
     remote:
       path: Models/Models/IsoDateTimeConverter.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ConvertTo
     path: src/Models/Models/IsoDateTimeConverter.cs
-    startLine: 16
+    startLine: 12
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Converts the given value object to a <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> using the arguments.
   example: []
   syntax:
     content: public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
     parameters:
     - id: context
       type: System.ComponentModel.ITypeDescriptorContext
+      description: An <xref href="System.ComponentModel.ITypeDescriptorContext" data-throw-if-not-resolved="false"></xref> that provides a format context.
     - id: culture
       type: System.Globalization.CultureInfo
+      description: An optional <xref href="System.Globalization.CultureInfo" data-throw-if-not-resolved="false"></xref>. If not supplied, the current culture is assumed.
     - id: value
       type: System.Object
+      description: The <xref href="System.Object" data-throw-if-not-resolved="false"></xref> to convert.
     - id: destinationType
       type: System.Type
+      description: The <xref href="System.Type" data-throw-if-not-resolved="false"></xref> to convert the value to.
     return:
       type: System.Object
+      description: An <xref href="System.Object" data-throw-if-not-resolved="false"></xref> that represents the converted <code class="paramref">value</code>.
     content.vb: Public Overrides Function ConvertTo(context As ITypeDescriptorContext, culture As CultureInfo, value As Object, destinationType As Type) As Object
   overridden: System.ComponentModel.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   overload: NMF.Models.IsoDateTimeConverter.ConvertTo*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The conversion cannot be performed.
   nameWithType.vb: IsoDateTimeConverter.ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type)
   fullName.vb: NMF.Models.IsoDateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo, Object, System.Type)
   name.vb: ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type)
@@ -1804,6 +1814,48 @@ references:
     name: ComponentModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.ComponentModel.ITypeDescriptorContext
+  commentId: T:System.ComponentModel.ITypeDescriptorContext
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.itypedescriptorcontext
+  name: ITypeDescriptorContext
+  nameWithType: ITypeDescriptorContext
+  fullName: System.ComponentModel.ITypeDescriptorContext
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: System.ComponentModel.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   commentId: M:System.ComponentModel.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
   parent: System.ComponentModel.DateTimeConverter
@@ -1879,30 +1931,6 @@ references:
   name: ConvertTo
   nameWithType: IsoDateTimeConverter.ConvertTo
   fullName: NMF.Models.IsoDateTimeConverter.ConvertTo
-- uid: System.ComponentModel.ITypeDescriptorContext
-  commentId: T:System.ComponentModel.ITypeDescriptorContext
-  parent: System.ComponentModel
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.itypedescriptorcontext
-  name: ITypeDescriptorContext
-  nameWithType: ITypeDescriptorContext
-  fullName: System.ComponentModel.ITypeDescriptorContext
-- uid: System.Globalization.CultureInfo
-  commentId: T:System.Globalization.CultureInfo
-  parent: System.Globalization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
-  name: CultureInfo
-  nameWithType: CultureInfo
-  fullName: System.Globalization.CultureInfo
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
 - uid: System.Globalization
   commentId: N:System.Globalization
   isExternal: true

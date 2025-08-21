@@ -27,19 +27,33 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SerializationInformation
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
   summary: The SerializationInformation extension
   example: []
   syntax:
-    content: 'public class SerializationInformation : ModelElementExtension<IMetaElement, SerializationInformation>, IModelElementExtension, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging'
-    content.vb: Public Class SerializationInformation Inherits ModelElementExtension(Of IMetaElement, SerializationInformation) Implements IModelElementExtension, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+    content: >-
+      [XmlNamespace("http://nmf.codeplex.com/nmeta/")]
+
+      [XmlNamespacePrefix("nmeta")]
+
+      [ModelRepresentationClass("http://nmf.codeplex.com/nmeta/#//SerializationInformation")]
+
+      public class SerializationInformation : ModelElementExtension<IMetaElement, SerializationInformation>, IModelElementExtension, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+    content.vb: >-
+      <XmlNamespace("http://nmf.codeplex.com/nmeta/")>
+
+      <XmlNamespacePrefix("nmeta")>
+
+      <ModelRepresentationClass("http://nmf.codeplex.com/nmeta/#//SerializationInformation")>
+
+      Public Class SerializationInformation Inherits ModelElementExtension(Of IMetaElement, SerializationInformation) Implements IModelElementExtension, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
   inheritance:
   - System.Object
   - NMF.Models.ModelElement
@@ -76,8 +90,10 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.KeyChanged
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -126,6 +142,22 @@ items:
   - NMF.Models.IModelElement.NMF.Models.ModelExtensions.AncestorTree
   - NMF.Models.IModelElement.NMF.Models.ModelExtensions.Ancestors
   - NMF.Models.IModelElement.NMF.Models.ModelExtensions.Descendants
+  attributes:
+  - type: NMF.Serialization.XmlNamespaceAttribute
+    ctor: NMF.Serialization.XmlNamespaceAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://nmf.codeplex.com/nmeta/
+  - type: NMF.Serialization.XmlNamespacePrefixAttribute
+    ctor: NMF.Serialization.XmlNamespacePrefixAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nmeta
+  - type: NMF.Models.ModelRepresentationClassAttribute
+    ctor: NMF.Models.ModelRepresentationClassAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://nmf.codeplex.com/nmeta/#//SerializationInformation
 - uid: NMF.Models.Meta.SerializationInformation.SerializationName
   commentId: P:NMF.Models.Meta.SerializationInformation.SerializationName
   id: SerializationName
@@ -140,11 +172,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SerializationName
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 59
+    startLine: 65
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -183,11 +215,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsDefault
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 85
+    startLine: 91
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -195,61 +227,32 @@ items:
   example: []
   syntax:
     content: >-
-      [XmlAttribute(true)]
-
       [TypeConverter(typeof(LowercaseBooleanConverter))]
+
+      [XmlAttribute(true)]
 
       public bool IsDefault { get; set; }
     parameters: []
     return:
       type: System.Boolean
     content.vb: >-
-      <XmlAttribute(True)>
-
       <TypeConverter(GetType(LowercaseBooleanConverter))>
+
+      <XmlAttribute(True)>
 
       Public Property IsDefault As Boolean
   overload: NMF.Models.Meta.SerializationInformation.IsDefault*
   attributes:
-  - type: NMF.Serialization.XmlAttributeAttribute
-    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
-    arguments:
-    - type: System.Boolean
-      value: true
   - type: System.ComponentModel.TypeConverterAttribute
     ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
     arguments:
     - type: System.Type
       value: NMF.Models.LowercaseBooleanConverter
-- uid: NMF.Models.Meta.SerializationInformation.SerializationNameChanging
-  commentId: E:NMF.Models.Meta.SerializationInformation.SerializationNameChanging
-  id: SerializationNameChanging
-  parent: NMF.Models.Meta.SerializationInformation
-  langs:
-  - csharp
-  - vb
-  name: SerializationNameChanging
-  nameWithType: SerializationInformation.SerializationNameChanging
-  fullName: NMF.Models.Meta.SerializationInformation.SerializationNameChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: SerializationNameChanging
-    path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 112
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the SerializationName property changes its value
-  example: []
-  syntax:
-    content: public event EventHandler<ValueChangedEventArgs> SerializationNameChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event SerializationNameChanging As EventHandler(Of ValueChangedEventArgs)
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
 - uid: NMF.Models.Meta.SerializationInformation.SerializationNameChanged
   commentId: E:NMF.Models.Meta.SerializationInformation.SerializationNameChanged
   id: SerializationNameChanged
@@ -264,11 +267,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SerializationNameChanged
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 117
+    startLine: 118
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -279,35 +282,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Public Event SerializationNameChanged As EventHandler(Of ValueChangedEventArgs)
-- uid: NMF.Models.Meta.SerializationInformation.IsDefaultChanging
-  commentId: E:NMF.Models.Meta.SerializationInformation.IsDefaultChanging
-  id: IsDefaultChanging
+- uid: NMF.Models.Meta.SerializationInformation.SerializationNameChanging
+  commentId: E:NMF.Models.Meta.SerializationInformation.SerializationNameChanging
+  id: SerializationNameChanging
   parent: NMF.Models.Meta.SerializationInformation
   langs:
   - csharp
   - vb
-  name: IsDefaultChanging
-  nameWithType: SerializationInformation.IsDefaultChanging
-  fullName: NMF.Models.Meta.SerializationInformation.IsDefaultChanging
+  name: SerializationNameChanging
+  nameWithType: SerializationInformation.SerializationNameChanging
+  fullName: NMF.Models.Meta.SerializationInformation.SerializationNameChanging
   type: Event
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: IsDefaultChanging
+    id: SerializationNameChanging
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 122
+    startLine: 123
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Gets fired before the IsDefault property changes its value
+  summary: Gets fired before the SerializationName property changes its value
   example: []
   syntax:
-    content: public event EventHandler<ValueChangedEventArgs> IsDefaultChanging
+    content: public event EventHandler<ValueChangedEventArgs> SerializationNameChanging
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Public Event IsDefaultChanging As EventHandler(Of ValueChangedEventArgs)
+    content.vb: Public Event SerializationNameChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.SerializationInformation.IsDefaultChanged
   commentId: E:NMF.Models.Meta.SerializationInformation.IsDefaultChanged
   id: IsDefaultChanged
@@ -322,11 +325,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsDefaultChanged
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -337,38 +340,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Public Event IsDefaultChanged As EventHandler(Of ValueChangedEventArgs)
-- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.SerializationInformation.IsDefaultChanging
+  commentId: E:NMF.Models.Meta.SerializationInformation.IsDefaultChanging
+  id: IsDefaultChanging
   parent: NMF.Models.Meta.SerializationInformation
   langs:
   - csharp
   - vb
-  name: OnSerializationNameChanging(ValueChangedEventArgs)
-  nameWithType: SerializationInformation.OnSerializationNameChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
-  type: Method
+  name: IsDefaultChanging
+  nameWithType: SerializationInformation.IsDefaultChanging
+  fullName: NMF.Models.Meta.SerializationInformation.IsDefaultChanging
+  type: Event
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnSerializationNameChanging
+    id: IsDefaultChanging
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 138
+    startLine: 133
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the SerializationNameChanging event
+  summary: Gets fired before the IsDefault property changes its value
   example: []
   syntax:
-    content: protected virtual void OnSerializationNameChanging(ValueChangedEventArgs eventArgs)
-    parameters:
-    - id: eventArgs
-      type: NMF.Expressions.ValueChangedEventArgs
-      description: The event data
-    content.vb: Protected Overridable Sub OnSerializationNameChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging*
+    content: public event EventHandler<ValueChangedEventArgs> IsDefaultChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Public Event IsDefaultChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnSerializationNameChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -383,11 +383,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnSerializationNameChanged
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 151
+    startLine: 144
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -401,38 +401,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnSerializationNameChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged*
-- uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
-  commentId: M:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
-  id: OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
   parent: NMF.Models.Meta.SerializationInformation
   langs:
   - csharp
   - vb
-  name: OnIsDefaultChanging(ValueChangedEventArgs)
-  nameWithType: SerializationInformation.OnIsDefaultChanging(ValueChangedEventArgs)
-  fullName: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+  name: OnSerializationNameChanging(ValueChangedEventArgs)
+  nameWithType: SerializationInformation.OnSerializationNameChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging(NMF.Expressions.ValueChangedEventArgs)
   type: Method
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: OnIsDefaultChanging
+    id: OnSerializationNameChanging
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 169
+    startLine: 157
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
-  summary: Raises the IsDefaultChanging event
+  summary: Raises the SerializationNameChanging event
   example: []
   syntax:
-    content: protected virtual void OnIsDefaultChanging(ValueChangedEventArgs eventArgs)
+    content: protected virtual void OnSerializationNameChanging(ValueChangedEventArgs eventArgs)
     parameters:
     - id: eventArgs
       type: NMF.Expressions.ValueChangedEventArgs
       description: The event data
-    content.vb: Protected Overridable Sub OnIsDefaultChanging(eventArgs As ValueChangedEventArgs)
-  overload: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging*
+    content.vb: Protected Overridable Sub OnSerializationNameChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging*
 - uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged(NMF.Expressions.ValueChangedEventArgs)
   commentId: M:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged(NMF.Expressions.ValueChangedEventArgs)
   id: OnIsDefaultChanged(NMF.Expressions.ValueChangedEventArgs)
@@ -447,11 +447,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnIsDefaultChanged
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 182
+    startLine: 175
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -465,6 +465,38 @@ items:
       description: The event data
     content.vb: Protected Overridable Sub OnIsDefaultChanged(eventArgs As ValueChangedEventArgs)
   overload: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged*
+- uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.Meta.SerializationInformation
+  langs:
+  - csharp
+  - vb
+  name: OnIsDefaultChanging(ValueChangedEventArgs)
+  nameWithType: SerializationInformation.OnIsDefaultChanging(ValueChangedEventArgs)
+  fullName: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging(NMF.Expressions.ValueChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: Models/Models/Meta/SerializationInformation.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnIsDefaultChanging
+    path: src/Models/Models/Meta/SerializationInformation.cs
+    startLine: 188
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Raises the IsDefaultChanging event
+  example: []
+  syntax:
+    content: protected virtual void OnIsDefaultChanging(ValueChangedEventArgs eventArgs)
+    parameters:
+    - id: eventArgs
+      type: NMF.Expressions.ValueChangedEventArgs
+      description: The event data
+    content.vb: Protected Overridable Sub OnIsDefaultChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging*
 - uid: NMF.Models.Meta.SerializationInformation.FromMetaElement(NMF.Models.Meta.IMetaElement)
   commentId: M:NMF.Models.Meta.SerializationInformation.FromMetaElement(NMF.Models.Meta.IMetaElement)
   id: FromMetaElement(NMF.Models.Meta.IMetaElement)
@@ -479,11 +511,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FromMetaElement
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 196
+    startLine: 202
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -514,11 +546,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/SerializationInformation.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetExtension
     path: src/Models/Models/Meta/SerializationInformation.cs
-    startLine: 215
+    startLine: 221
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -1163,40 +1195,65 @@ references:
     href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.KeyChanged
-  commentId: E:NMF.Models.ModelElement.KeyChanged
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_KeyChanged
-  name: KeyChanged
-  nameWithType: ModelElement.KeyChanged
-  fullName: NMF.Models.ModelElement.KeyChanged
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_ClassName
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
     name: OnKeyChanged
-    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_System_EventArgs_
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_OnKeyChanged_NMF_Expressions_ValueChangedEventArgs_
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+    href: NMF.Models.ModelElement.html#NMF_Models_ModelElement_UpdateRegisteredIdentifier_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
@@ -2831,12 +2888,12 @@ references:
   - name: " "
   - name: TEventArgs
   - name: )
-- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging*
-  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging
-  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnSerializationNameChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnSerializationNameChanging
-  nameWithType: SerializationInformation.OnSerializationNameChanging
-  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging
+- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged*
+  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged
+  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnSerializationNameChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSerializationNameChanged
+  nameWithType: SerializationInformation.OnSerializationNameChanged
+  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged
 - uid: NMF.Expressions.ValueChangedEventArgs
   commentId: T:NMF.Expressions.ValueChangedEventArgs
   parent: NMF.Expressions
@@ -2860,24 +2917,24 @@ references:
   - name: .
   - uid: NMF.Expressions
     name: Expressions
-- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged*
-  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged
-  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnSerializationNameChanged_NMF_Expressions_ValueChangedEventArgs_
-  name: OnSerializationNameChanged
-  nameWithType: SerializationInformation.OnSerializationNameChanged
-  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanged
-- uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging*
-  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging
-  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnIsDefaultChanging_NMF_Expressions_ValueChangedEventArgs_
-  name: OnIsDefaultChanging
-  nameWithType: SerializationInformation.OnIsDefaultChanging
-  fullName: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging
+- uid: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging*
+  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging
+  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnSerializationNameChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSerializationNameChanging
+  nameWithType: SerializationInformation.OnSerializationNameChanging
+  fullName: NMF.Models.Meta.SerializationInformation.OnSerializationNameChanging
 - uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged*
   commentId: Overload:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged
   href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnIsDefaultChanged_NMF_Expressions_ValueChangedEventArgs_
   name: OnIsDefaultChanged
   nameWithType: SerializationInformation.OnIsDefaultChanged
   fullName: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanged
+- uid: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging*
+  commentId: Overload:NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging
+  href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_OnIsDefaultChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnIsDefaultChanging
+  nameWithType: SerializationInformation.OnIsDefaultChanging
+  fullName: NMF.Models.Meta.SerializationInformation.OnIsDefaultChanging
 - uid: NMF.Models.Meta.SerializationInformation.FromMetaElement*
   commentId: Overload:NMF.Models.Meta.SerializationInformation.FromMetaElement
   href: NMF.Models.Meta.SerializationInformation.html#NMF_Models_Meta_SerializationInformation_FromMetaElement_NMF_Models_Meta_IMetaElement_

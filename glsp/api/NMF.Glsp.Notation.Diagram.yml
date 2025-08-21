@@ -1,0 +1,3302 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.Glsp.Notation.Diagram
+  commentId: T:NMF.Glsp.Notation.Diagram
+  id: Diagram
+  parent: NMF.Glsp.Notation
+  children:
+  - NMF.Glsp.Notation.Diagram.#ctor
+  - NMF.Glsp.Notation.Diagram.Children
+  - NMF.Glsp.Notation.Diagram.ClassInstance
+  - NMF.Glsp.Notation.Diagram.DiagramType
+  - NMF.Glsp.Notation.Diagram.DiagramTypeChanged
+  - NMF.Glsp.Notation.Diagram.DiagramTypeChanging
+  - NMF.Glsp.Notation.Diagram.Elements
+  - NMF.Glsp.Notation.Diagram.GetAttributeValue(System.String,System.Int32)
+  - NMF.Glsp.Notation.Diagram.GetClass
+  - NMF.Glsp.Notation.Diagram.GetCollectionForFeature(System.String)
+  - NMF.Glsp.Notation.Diagram.GetCompositionName(System.Object)
+  - NMF.Glsp.Notation.Diagram.GetExpressionForAttribute(System.String)
+  - NMF.Glsp.Notation.Diagram.GetModelElementForReference(System.String,System.Int32)
+  - NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  - NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.Diagram.ReferencedElements
+  - NMF.Glsp.Notation.Diagram.SetFeature(System.String,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: Diagram
+  nameWithType: Diagram
+  fullName: NMF.Glsp.Notation.Diagram
+  type: Class
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Diagram
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 37
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: The default implementation of the Diagram class
+  example: []
+  syntax:
+    content: >-
+      [XmlNamespace("http://www.eclipse.org/glsp/notation")]
+
+      [XmlNamespacePrefix("notation")]
+
+      [ModelRepresentationClass("http://www.eclipse.org/glsp/notation#//Diagram")]
+
+      public class Diagram : NotationElement, IDiagram, INotationElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+    content.vb: >-
+      <XmlNamespace("http://www.eclipse.org/glsp/notation")>
+
+      <XmlNamespacePrefix("notation")>
+
+      <ModelRepresentationClass("http://www.eclipse.org/glsp/notation#//Diagram")>
+
+      Public Class Diagram Inherits NotationElement Implements IDiagram, INotationElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging
+  inheritance:
+  - System.Object
+  - NMF.Models.ModelElement
+  - NMF.Glsp.Notation.NotationElement
+  implements:
+  - NMF.Glsp.Notation.IDiagram
+  - NMF.Glsp.Notation.INotationElement
+  - NMF.Models.IModelElement
+  - System.ComponentModel.INotifyPropertyChanged
+  - System.ComponentModel.INotifyPropertyChanging
+  inheritedMembers:
+  - NMF.Glsp.Notation.NotationElement.Id
+  - NMF.Glsp.Notation.NotationElement.SemanticElement
+  - NMF.Glsp.Notation.NotationElement.IdChanging
+  - NMF.Glsp.Notation.NotationElement.IdChanged
+  - NMF.Glsp.Notation.NotationElement.SemanticElementChanging
+  - NMF.Glsp.Notation.NotationElement.SemanticElementChanged
+  - NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Glsp.Notation.NotationElement.GetExpressionForReference(System.String)
+  - NMF.Models.ModelElement.Model
+  - NMF.Models.ModelElement.Freeze
+  - NMF.Models.ModelElement.Lock
+  - NMF.Models.ModelElement.IsFrozen
+  - NMF.Models.ModelElement.IsLocked
+  - NMF.Models.ModelElement.Unlock
+  - NMF.Models.ModelElement.TryUnlock
+  - NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  - NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.Parent
+  - NMF.Models.ModelElement.RelativeUri
+  - NMF.Models.ModelElement.AbsoluteUri
+  - NMF.Models.ModelElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  - NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.EnforceModels
+  - NMF.Models.ModelElement.PreferIdentifiers
+  - NMF.Models.ModelElement.IsIdentified
+  - NMF.Models.ModelElement.ToIdentifierString
+  - NMF.Models.ModelElement.ToString
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  - NMF.Models.ModelElement.Resolve(System.Uri)
+  - NMF.Models.ModelElement.Resolve(System.String)
+  - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  - NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  - NMF.Models.ModelElement.Extensions
+  - NMF.Models.ModelElement.GetExtension``1
+  - NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.Delete
+  - NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  - NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  - NMF.Models.ModelElement.PropertyChanged
+  - NMF.Models.ModelElement.PropertyChanging
+  - NMF.Models.ModelElement.Deleted
+  - NMF.Models.ModelElement.Deleting
+  - NMF.Models.ModelElement.UriChanged
+  - NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  - NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  - NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  - NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  - NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  - NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  - NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  - NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  - NMF.Models.ModelElement.BubbledChange
+  - NMF.Models.ModelElement.ParentChanged
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: NMF.Serialization.XmlNamespaceAttribute
+    ctor: NMF.Serialization.XmlNamespaceAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://www.eclipse.org/glsp/notation
+  - type: NMF.Serialization.XmlNamespacePrefixAttribute
+    ctor: NMF.Serialization.XmlNamespacePrefixAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: notation
+  - type: NMF.Models.ModelRepresentationClassAttribute
+    ctor: NMF.Models.ModelRepresentationClassAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: http://www.eclipse.org/glsp/notation#//Diagram
+- uid: NMF.Glsp.Notation.Diagram.#ctor
+  commentId: M:NMF.Glsp.Notation.Diagram.#ctor
+  id: '#ctor'
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: Diagram()
+  nameWithType: Diagram.Diagram()
+  fullName: NMF.Glsp.Notation.Diagram.Diagram()
+  type: Constructor
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 64
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public Diagram()
+    content.vb: Public Sub New()
+  overload: NMF.Glsp.Notation.Diagram.#ctor*
+  nameWithType.vb: Diagram.New()
+  fullName.vb: NMF.Glsp.Notation.Diagram.New()
+  name.vb: New()
+- uid: NMF.Glsp.Notation.Diagram.DiagramType
+  commentId: P:NMF.Glsp.Notation.Diagram.DiagramType
+  id: DiagramType
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: DiagramType
+  nameWithType: Diagram.DiagramType
+  fullName: NMF.Glsp.Notation.Diagram.DiagramType
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DiagramType
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 74
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: The diagramType property
+  example: []
+  syntax:
+    content: >-
+      [XmlElementName("diagramType")]
+
+      [XmlAttribute(true)]
+
+      public string DiagramType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <XmlElementName("diagramType")>
+
+      <XmlAttribute(True)>
+
+      Public Property DiagramType As String
+  overload: NMF.Glsp.Notation.Diagram.DiagramType*
+  implements:
+  - NMF.Glsp.Notation.IDiagram.DiagramType
+  attributes:
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: diagramType
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: true
+- uid: NMF.Glsp.Notation.Diagram.Elements
+  commentId: P:NMF.Glsp.Notation.Diagram.Elements
+  id: Elements
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: Elements
+  nameWithType: Diagram.Elements
+  fullName: NMF.Glsp.Notation.Diagram.Elements
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Elements
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 102
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: The elements property
+  example: []
+  syntax:
+    content: >-
+      [Browsable(false)]
+
+      [XmlElementName("elements")]
+
+      [XmlAttribute(false)]
+
+      [Containment]
+
+      public IOrderedSetExpression<INotationElement> Elements { get; }
+    parameters: []
+    return:
+      type: NMF.Collections.Generic.IOrderedSetExpression{NMF.Glsp.Notation.INotationElement}
+    content.vb: >-
+      <Browsable(False)>
+
+      <XmlElementName("elements")>
+
+      <XmlAttribute(False)>
+
+      <Containment>
+
+      Public ReadOnly Property Elements As IOrderedSetExpression(Of INotationElement)
+  overload: NMF.Glsp.Notation.Diagram.Elements*
+  implements:
+  - NMF.Glsp.Notation.IDiagram.Elements
+  attributes:
+  - type: System.ComponentModel.BrowsableAttribute
+    ctor: System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Serialization.XmlElementNameAttribute
+    ctor: NMF.Serialization.XmlElementNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: elements
+  - type: NMF.Serialization.XmlAttributeAttribute
+    ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
+    arguments:
+    - type: System.Boolean
+      value: false
+  - type: NMF.Models.ContainmentAttribute
+    ctor: NMF.Models.ContainmentAttribute.#ctor
+    arguments: []
+- uid: NMF.Glsp.Notation.Diagram.Children
+  commentId: P:NMF.Glsp.Notation.Diagram.Children
+  id: Children
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: Diagram.Children
+  fullName: NMF.Glsp.Notation.Diagram.Children
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Children
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 119
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the child model elements of this model element
+  example: []
+  syntax:
+    content: public override IEnumerableExpression<IModelElement> Children { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+    content.vb: Public Overrides ReadOnly Property Children As IEnumerableExpression(Of IModelElement)
+  overridden: NMF.Models.ModelElement.Children
+  overload: NMF.Glsp.Notation.Diagram.Children*
+  implements:
+  - NMF.Models.IModelElement.Children
+- uid: NMF.Glsp.Notation.Diagram.ReferencedElements
+  commentId: P:NMF.Glsp.Notation.Diagram.ReferencedElements
+  id: ReferencedElements
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: ReferencedElements
+  nameWithType: Diagram.ReferencedElements
+  fullName: NMF.Glsp.Notation.Diagram.ReferencedElements
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ReferencedElements
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 130
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the referenced model elements of this model element
+  example: []
+  syntax:
+    content: public override IEnumerableExpression<IModelElement> ReferencedElements { get; }
+    parameters: []
+    return:
+      type: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+    content.vb: Public Overrides ReadOnly Property ReferencedElements As IEnumerableExpression(Of IModelElement)
+  overridden: NMF.Glsp.Notation.NotationElement.ReferencedElements
+  overload: NMF.Glsp.Notation.Diagram.ReferencedElements*
+  implements:
+  - NMF.Models.IModelElement.ReferencedElements
+- uid: NMF.Glsp.Notation.Diagram.ClassInstance
+  commentId: P:NMF.Glsp.Notation.Diagram.ClassInstance
+  id: ClassInstance
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: ClassInstance
+  nameWithType: Diagram.ClassInstance
+  fullName: NMF.Glsp.Notation.Diagram.ClassInstance
+  type: Property
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ClassInstance
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 141
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the Class model for this type
+  example: []
+  syntax:
+    content: public static IClass ClassInstance { get; }
+    parameters: []
+    return:
+      type: NMF.Models.Meta.IClass
+    content.vb: Public Shared ReadOnly Property ClassInstance As IClass
+  overload: NMF.Glsp.Notation.Diagram.ClassInstance*
+- uid: NMF.Glsp.Notation.Diagram.DiagramTypeChanging
+  commentId: E:NMF.Glsp.Notation.Diagram.DiagramTypeChanging
+  id: DiagramTypeChanging
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: DiagramTypeChanging
+  nameWithType: Diagram.DiagramTypeChanging
+  fullName: NMF.Glsp.Notation.Diagram.DiagramTypeChanging
+  type: Event
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DiagramTypeChanging
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 156
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets fired before the DiagramType property changes its value
+  example: []
+  syntax:
+    content: public event EventHandler<ValueChangedEventArgs> DiagramTypeChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Public Event DiagramTypeChanging As EventHandler(Of ValueChangedEventArgs)
+  implements:
+  - NMF.Glsp.Notation.IDiagram.DiagramTypeChanging
+- uid: NMF.Glsp.Notation.Diagram.DiagramTypeChanged
+  commentId: E:NMF.Glsp.Notation.Diagram.DiagramTypeChanged
+  id: DiagramTypeChanged
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: DiagramTypeChanged
+  nameWithType: Diagram.DiagramTypeChanged
+  fullName: NMF.Glsp.Notation.Diagram.DiagramTypeChanged
+  type: Event
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: DiagramTypeChanged
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 161
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets fired when the DiagramType property changed its value
+  example: []
+  syntax:
+    content: public event EventHandler<ValueChangedEventArgs> DiagramTypeChanged
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Public Event DiagramTypeChanged As EventHandler(Of ValueChangedEventArgs)
+  implements:
+  - NMF.Glsp.Notation.IDiagram.DiagramTypeChanged
+- uid: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging(NMF.Expressions.ValueChangedEventArgs)
+  id: OnDiagramTypeChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: OnDiagramTypeChanging(ValueChangedEventArgs)
+  nameWithType: Diagram.OnDiagramTypeChanging(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging(NMF.Expressions.ValueChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnDiagramTypeChanging
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 172
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Raises the DiagramTypeChanging event
+  example: []
+  syntax:
+    content: protected virtual void OnDiagramTypeChanging(ValueChangedEventArgs eventArgs)
+    parameters:
+    - id: eventArgs
+      type: NMF.Expressions.ValueChangedEventArgs
+      description: The event data
+    content.vb: Protected Overridable Sub OnDiagramTypeChanging(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging*
+- uid: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged(NMF.Expressions.ValueChangedEventArgs)
+  id: OnDiagramTypeChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: OnDiagramTypeChanged(ValueChangedEventArgs)
+  nameWithType: Diagram.OnDiagramTypeChanged(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged(NMF.Expressions.ValueChangedEventArgs)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnDiagramTypeChanged
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 185
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Raises the DiagramTypeChanged event
+  example: []
+  syntax:
+    content: protected virtual void OnDiagramTypeChanged(ValueChangedEventArgs eventArgs)
+    parameters:
+    - id: eventArgs
+      type: NMF.Expressions.ValueChangedEventArgs
+      description: The event data
+    content.vb: Protected Overridable Sub OnDiagramTypeChanged(eventArgs As ValueChangedEventArgs)
+  overload: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged*
+- uid: NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  id: GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePathForNonIdentifiedChild(IModelElement)
+  nameWithType: Diagram.GetRelativePathForNonIdentifiedChild(IModelElement)
+  fullName: NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetRelativePathForNonIdentifiedChild
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 224
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the relative URI fragment for the given child model element
+  example: []
+  syntax:
+    content: protected override string GetRelativePathForNonIdentifiedChild(IModelElement element)
+    parameters:
+    - id: element
+      type: NMF.Models.IModelElement
+      description: The element that should be looked for
+    return:
+      type: System.String
+      description: A fragment of the relative URI
+    content.vb: Protected Overrides Function GetRelativePathForNonIdentifiedChild(element As IModelElement) As String
+  overridden: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  overload: NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild*
+- uid: NMF.Glsp.Notation.Diagram.GetModelElementForReference(System.String,System.Int32)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetModelElementForReference(System.String,System.Int32)
+  id: GetModelElementForReference(System.String,System.Int32)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetModelElementForReference(string, int)
+  nameWithType: Diagram.GetModelElementForReference(string, int)
+  fullName: NMF.Glsp.Notation.Diagram.GetModelElementForReference(string, int)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetModelElementForReference
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 240
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Resolves the given URI to a child model element
+  example: []
+  syntax:
+    content: protected override IModelElement GetModelElementForReference(string reference, int index)
+    parameters:
+    - id: reference
+      type: System.String
+      description: The requested reference name
+    - id: index
+      type: System.Int32
+      description: The index of this reference
+    return:
+      type: NMF.Models.IModelElement
+      description: The model element or null if it could not be found
+    content.vb: Protected Overrides Function GetModelElementForReference(reference As String, index As Integer) As IModelElement
+  overridden: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(System.String,System.Int32)
+  overload: NMF.Glsp.Notation.Diagram.GetModelElementForReference*
+  nameWithType.vb: Diagram.GetModelElementForReference(String, Integer)
+  fullName.vb: NMF.Glsp.Notation.Diagram.GetModelElementForReference(String, Integer)
+  name.vb: GetModelElementForReference(String, Integer)
+- uid: NMF.Glsp.Notation.Diagram.GetAttributeValue(System.String,System.Int32)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetAttributeValue(System.String,System.Int32)
+  id: GetAttributeValue(System.String,System.Int32)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetAttributeValue(string, int)
+  nameWithType: Diagram.GetAttributeValue(string, int)
+  fullName: NMF.Glsp.Notation.Diagram.GetAttributeValue(string, int)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetAttributeValue
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 262
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Resolves the given attribute name
+  example: []
+  syntax:
+    content: protected override object GetAttributeValue(string attribute, int index)
+    parameters:
+    - id: attribute
+      type: System.String
+      description: The requested attribute name
+    - id: index
+      type: System.Int32
+      description: The index of this attribute
+    return:
+      type: System.Object
+      description: The attribute value or null if it could not be found
+    content.vb: Protected Overrides Function GetAttributeValue(attribute As String, index As Integer) As Object
+  overridden: NMF.Glsp.Notation.NotationElement.GetAttributeValue(System.String,System.Int32)
+  overload: NMF.Glsp.Notation.Diagram.GetAttributeValue*
+  nameWithType.vb: Diagram.GetAttributeValue(String, Integer)
+  fullName.vb: NMF.Glsp.Notation.Diagram.GetAttributeValue(String, Integer)
+  name.vb: GetAttributeValue(String, Integer)
+- uid: NMF.Glsp.Notation.Diagram.GetCollectionForFeature(System.String)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetCollectionForFeature(System.String)
+  id: GetCollectionForFeature(System.String)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetCollectionForFeature(string)
+  nameWithType: Diagram.GetCollectionForFeature(string)
+  fullName: NMF.Glsp.Notation.Diagram.GetCollectionForFeature(string)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetCollectionForFeature
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 276
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the Model element collection for the given feature
+  example: []
+  syntax:
+    content: protected override IList GetCollectionForFeature(string feature)
+    parameters:
+    - id: feature
+      type: System.String
+      description: The requested feature
+    return:
+      type: System.Collections.IList
+      description: A non-generic list of elements
+    content.vb: Protected Overrides Function GetCollectionForFeature(feature As String) As IList
+  overridden: NMF.Models.ModelElement.GetCollectionForFeature(System.String)
+  overload: NMF.Glsp.Notation.Diagram.GetCollectionForFeature*
+  nameWithType.vb: Diagram.GetCollectionForFeature(String)
+  fullName.vb: NMF.Glsp.Notation.Diagram.GetCollectionForFeature(String)
+  name.vb: GetCollectionForFeature(String)
+- uid: NMF.Glsp.Notation.Diagram.SetFeature(System.String,System.Object)
+  commentId: M:NMF.Glsp.Notation.Diagram.SetFeature(System.String,System.Object)
+  id: SetFeature(System.String,System.Object)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: SetFeature(string, object)
+  nameWithType: Diagram.SetFeature(string, object)
+  fullName: NMF.Glsp.Notation.Diagram.SetFeature(string, object)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SetFeature
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 290
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Sets a value to the given feature
+  example: []
+  syntax:
+    content: protected override void SetFeature(string feature, object value)
+    parameters:
+    - id: feature
+      type: System.String
+      description: The requested feature
+    - id: value
+      type: System.Object
+      description: The value that should be set to that feature
+    content.vb: Protected Overrides Sub SetFeature(feature As String, value As Object)
+  overridden: NMF.Glsp.Notation.NotationElement.SetFeature(System.String,System.Object)
+  overload: NMF.Glsp.Notation.Diagram.SetFeature*
+  nameWithType.vb: Diagram.SetFeature(String, Object)
+  fullName.vb: NMF.Glsp.Notation.Diagram.SetFeature(String, Object)
+  name.vb: SetFeature(String, Object)
+- uid: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute(System.String)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetExpressionForAttribute(System.String)
+  id: GetExpressionForAttribute(System.String)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetExpressionForAttribute(string)
+  nameWithType: Diagram.GetExpressionForAttribute(string)
+  fullName: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute(string)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetExpressionForAttribute
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 305
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the property expression for the given attribute
+  example: []
+  syntax:
+    content: protected override INotifyExpression<object> GetExpressionForAttribute(string attribute)
+    parameters:
+    - id: attribute
+      type: System.String
+      description: The requested attribute in upper case
+    return:
+      type: NMF.Expressions.INotifyExpression{System.Object}
+      description: An incremental property expression
+    content.vb: Protected Overrides Function GetExpressionForAttribute(attribute As String) As INotifyExpression(Of Object)
+  overridden: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(System.String)
+  overload: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute*
+  nameWithType.vb: Diagram.GetExpressionForAttribute(String)
+  fullName.vb: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute(String)
+  name.vb: GetExpressionForAttribute(String)
+- uid: NMF.Glsp.Notation.Diagram.GetCompositionName(System.Object)
+  commentId: M:NMF.Glsp.Notation.Diagram.GetCompositionName(System.Object)
+  id: GetCompositionName(System.Object)
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetCompositionName(object)
+  nameWithType: Diagram.GetCompositionName(object)
+  fullName: NMF.Glsp.Notation.Diagram.GetCompositionName(object)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetCompositionName
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 319
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the property name for the given container
+  example: []
+  syntax:
+    content: protected override string GetCompositionName(object container)
+    parameters:
+    - id: container
+      type: System.Object
+      description: The container object
+    return:
+      type: System.String
+      description: The name of the respective container reference
+    content.vb: Protected Overrides Function GetCompositionName(container As Object) As String
+  overridden: NMF.Models.ModelElement.GetCompositionName(System.Object)
+  overload: NMF.Glsp.Notation.Diagram.GetCompositionName*
+  nameWithType.vb: Diagram.GetCompositionName(Object)
+  fullName.vb: NMF.Glsp.Notation.Diagram.GetCompositionName(Object)
+  name.vb: GetCompositionName(Object)
+- uid: NMF.Glsp.Notation.Diagram.GetClass
+  commentId: M:NMF.Glsp.Notation.Diagram.GetClass
+  id: GetClass
+  parent: NMF.Glsp.Notation.Diagram
+  langs:
+  - csharp
+  - vb
+  name: GetClass()
+  nameWithType: Diagram.GetClass()
+  fullName: NMF.Glsp.Notation.Diagram.GetClass()
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Notation/Diagram.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GetClass
+    path: src/Glsp/Glsp/Notation/Diagram.cs
+    startLine: 331
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Notation
+  summary: Gets the Class for this model element
+  example: []
+  syntax:
+    content: public override IClass GetClass()
+    return:
+      type: NMF.Models.Meta.IClass
+    content.vb: Public Overrides Function GetClass() As IClass
+  overridden: NMF.Glsp.Notation.NotationElement.GetClass
+  overload: NMF.Glsp.Notation.Diagram.GetClass*
+  implements:
+  - NMF.Models.IModelElement.GetClass
+references:
+- uid: NMF.Glsp.Notation
+  commentId: N:NMF.Glsp.Notation
+  href: NMF.html
+  name: NMF.Glsp.Notation
+  nameWithType: NMF.Glsp.Notation
+  fullName: NMF.Glsp.Notation
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Notation
+    name: Notation
+    href: NMF.Glsp.Notation.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Glsp
+    name: Glsp
+    href: NMF.Glsp.html
+  - name: .
+  - uid: NMF.Glsp.Notation
+    name: Notation
+    href: NMF.Glsp.Notation.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NMF.Models.ModelElement
+  commentId: T:NMF.Models.ModelElement
+  parent: NMF.Models
+  name: ModelElement
+  nameWithType: ModelElement
+  fullName: NMF.Models.ModelElement
+- uid: NMF.Glsp.Notation.NotationElement
+  commentId: T:NMF.Glsp.Notation.NotationElement
+  parent: NMF.Glsp.Notation
+  href: NMF.Glsp.Notation.NotationElement.html
+  name: NotationElement
+  nameWithType: NotationElement
+  fullName: NMF.Glsp.Notation.NotationElement
+- uid: NMF.Glsp.Notation.IDiagram
+  commentId: T:NMF.Glsp.Notation.IDiagram
+  parent: NMF.Glsp.Notation
+  href: NMF.Glsp.Notation.IDiagram.html
+  name: IDiagram
+  nameWithType: IDiagram
+  fullName: NMF.Glsp.Notation.IDiagram
+- uid: NMF.Glsp.Notation.INotationElement
+  commentId: T:NMF.Glsp.Notation.INotationElement
+  parent: NMF.Glsp.Notation
+  href: NMF.Glsp.Notation.INotationElement.html
+  name: INotationElement
+  nameWithType: INotationElement
+  fullName: NMF.Glsp.Notation.INotationElement
+- uid: NMF.Models.IModelElement
+  commentId: T:NMF.Models.IModelElement
+  parent: NMF.Models
+  name: IModelElement
+  nameWithType: IModelElement
+  fullName: NMF.Models.IModelElement
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.ComponentModel.INotifyPropertyChanging
+  commentId: T:System.ComponentModel.INotifyPropertyChanging
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging
+  name: INotifyPropertyChanging
+  nameWithType: INotifyPropertyChanging
+  fullName: System.ComponentModel.INotifyPropertyChanging
+- uid: NMF.Glsp.Notation.NotationElement.Id
+  commentId: P:NMF.Glsp.Notation.NotationElement.Id
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_Id
+  name: Id
+  nameWithType: NotationElement.Id
+  fullName: NMF.Glsp.Notation.NotationElement.Id
+- uid: NMF.Glsp.Notation.NotationElement.SemanticElement
+  commentId: P:NMF.Glsp.Notation.NotationElement.SemanticElement
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SemanticElement
+  name: SemanticElement
+  nameWithType: NotationElement.SemanticElement
+  fullName: NMF.Glsp.Notation.NotationElement.SemanticElement
+- uid: NMF.Glsp.Notation.NotationElement.IdChanging
+  commentId: E:NMF.Glsp.Notation.NotationElement.IdChanging
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_IdChanging
+  name: IdChanging
+  nameWithType: NotationElement.IdChanging
+  fullName: NMF.Glsp.Notation.NotationElement.IdChanging
+- uid: NMF.Glsp.Notation.NotationElement.IdChanged
+  commentId: E:NMF.Glsp.Notation.NotationElement.IdChanged
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_IdChanged
+  name: IdChanged
+  nameWithType: NotationElement.IdChanged
+  fullName: NMF.Glsp.Notation.NotationElement.IdChanged
+- uid: NMF.Glsp.Notation.NotationElement.SemanticElementChanging
+  commentId: E:NMF.Glsp.Notation.NotationElement.SemanticElementChanging
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SemanticElementChanging
+  name: SemanticElementChanging
+  nameWithType: NotationElement.SemanticElementChanging
+  fullName: NMF.Glsp.Notation.NotationElement.SemanticElementChanging
+- uid: NMF.Glsp.Notation.NotationElement.SemanticElementChanged
+  commentId: E:NMF.Glsp.Notation.NotationElement.SemanticElementChanged
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SemanticElementChanged
+  name: SemanticElementChanged
+  nameWithType: NotationElement.SemanticElementChanged
+  fullName: NMF.Glsp.Notation.NotationElement.SemanticElementChanged
+- uid: NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnIdChanging(ValueChangedEventArgs)
+  nameWithType: NotationElement.OnIdChanging(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+    name: OnIdChanging
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanging_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.OnIdChanging(NMF.Expressions.ValueChangedEventArgs)
+    name: OnIdChanging
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanging_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnIdChanged(ValueChangedEventArgs)
+  nameWithType: NotationElement.OnIdChanged(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnIdChanged
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanged_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.OnIdChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnIdChanged
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnIdChanged_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSemanticElementChanging(ValueChangedEventArgs)
+  nameWithType: NotationElement.OnSemanticElementChanging(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+    name: OnSemanticElementChanging
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanging_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanging(NMF.Expressions.ValueChangedEventArgs)
+    name: OnSemanticElementChanging
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanging_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnSemanticElementChanged(ValueChangedEventArgs)
+  nameWithType: NotationElement.OnSemanticElementChanged(ValueChangedEventArgs)
+  fullName: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnSemanticElementChanged
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanged_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.OnSemanticElementChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnSemanticElementChanged
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_OnSemanticElementChanged_NMF_Expressions_ValueChangedEventArgs_
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Glsp.Notation.NotationElement.GetExpressionForReference(System.String)
+  commentId: M:NMF.Glsp.Notation.NotationElement.GetExpressionForReference(System.String)
+  parent: NMF.Glsp.Notation.NotationElement
+  isExternal: true
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForReference_System_String_
+  name: GetExpressionForReference(string)
+  nameWithType: NotationElement.GetExpressionForReference(string)
+  fullName: NMF.Glsp.Notation.NotationElement.GetExpressionForReference(string)
+  nameWithType.vb: NotationElement.GetExpressionForReference(String)
+  fullName.vb: NMF.Glsp.Notation.NotationElement.GetExpressionForReference(String)
+  name.vb: GetExpressionForReference(String)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.GetExpressionForReference(System.String)
+    name: GetExpressionForReference
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForReference_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.GetExpressionForReference(System.String)
+    name: GetExpressionForReference
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForReference_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.ModelElement.Model
+  commentId: P:NMF.Models.ModelElement.Model
+  parent: NMF.Models.ModelElement
+  name: Model
+  nameWithType: ModelElement.Model
+  fullName: NMF.Models.ModelElement.Model
+- uid: NMF.Models.ModelElement.Freeze
+  commentId: M:NMF.Models.ModelElement.Freeze
+  parent: NMF.Models.ModelElement
+  name: Freeze()
+  nameWithType: ModelElement.Freeze()
+  fullName: NMF.Models.ModelElement.Freeze()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Freeze
+    name: Freeze
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Freeze
+    name: Freeze
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.Lock
+  commentId: M:NMF.Models.ModelElement.Lock
+  parent: NMF.Models.ModelElement
+  name: Lock()
+  nameWithType: ModelElement.Lock()
+  fullName: NMF.Models.ModelElement.Lock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Lock
+    name: Lock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Lock
+    name: Lock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.IsFrozen
+  commentId: P:NMF.Models.ModelElement.IsFrozen
+  parent: NMF.Models.ModelElement
+  name: IsFrozen
+  nameWithType: ModelElement.IsFrozen
+  fullName: NMF.Models.ModelElement.IsFrozen
+- uid: NMF.Models.ModelElement.IsLocked
+  commentId: P:NMF.Models.ModelElement.IsLocked
+  parent: NMF.Models.ModelElement
+  name: IsLocked
+  nameWithType: ModelElement.IsLocked
+  fullName: NMF.Models.ModelElement.IsLocked
+- uid: NMF.Models.ModelElement.Unlock
+  commentId: M:NMF.Models.ModelElement.Unlock
+  parent: NMF.Models.ModelElement
+  name: Unlock()
+  nameWithType: ModelElement.Unlock()
+  fullName: NMF.Models.ModelElement.Unlock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Unlock
+    name: Unlock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Unlock
+    name: Unlock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.TryUnlock
+  commentId: M:NMF.Models.ModelElement.TryUnlock
+  parent: NMF.Models.ModelElement
+  name: TryUnlock()
+  nameWithType: ModelElement.TryUnlock()
+  fullName: NMF.Models.ModelElement.TryUnlock()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.TryUnlock
+    name: TryUnlock
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.TryUnlock
+    name: TryUnlock
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  commentId: M:NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetContainerReference(IModelElement, out int)
+  nameWithType: ModelElement.GetContainerReference(IModelElement, out int)
+  fullName: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement, out int)
+  nameWithType.vb: ModelElement.GetContainerReference(IModelElement, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement, Integer)
+  name.vb: GetContainerReference(IModelElement, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+    name: GetContainerReference
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
+    name: GetContainerReference
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: PropagateNewModel(Model, Model, IModelElement)
+  nameWithType: ModelElement.PropagateNewModel(Model, Model, IModelElement)
+  fullName: NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model, NMF.Models.Model, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+    name: PropagateNewModel
+  - name: (
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.PropagateNewModel(NMF.Models.Model,NMF.Models.Model,NMF.Models.IModelElement)
+    name: PropagateNewModel
+  - name: (
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.Model
+    name: Model
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: OnChildCreated(IModelElement)
+  nameWithType: ModelElement.OnChildCreated(IModelElement)
+  fullName: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+    name: OnChildCreated
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnChildCreated(NMF.Models.IModelElement)
+    name: OnChildCreated
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: OnParentChanging(IModelElement, IModelElement)
+  nameWithType: ModelElement.OnParentChanging(IModelElement, IModelElement)
+  fullName: NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanging
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnParentChanging(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanging
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: OnParentChanged(IModelElement, IModelElement)
+  nameWithType: ModelElement.OnParentChanged(IModelElement, IModelElement)
+  fullName: NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanged
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnParentChanged(NMF.Models.IModelElement,NMF.Models.IModelElement)
+    name: OnParentChanged
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.Parent
+  commentId: P:NMF.Models.ModelElement.Parent
+  parent: NMF.Models.ModelElement
+  name: Parent
+  nameWithType: ModelElement.Parent
+  fullName: NMF.Models.ModelElement.Parent
+- uid: NMF.Models.ModelElement.RelativeUri
+  commentId: P:NMF.Models.ModelElement.RelativeUri
+  parent: NMF.Models.ModelElement
+  name: RelativeUri
+  nameWithType: ModelElement.RelativeUri
+  fullName: NMF.Models.ModelElement.RelativeUri
+- uid: NMF.Models.ModelElement.AbsoluteUri
+  commentId: P:NMF.Models.ModelElement.AbsoluteUri
+  parent: NMF.Models.ModelElement
+  name: AbsoluteUri
+  nameWithType: ModelElement.AbsoluteUri
+  fullName: NMF.Models.ModelElement.AbsoluteUri
+- uid: NMF.Models.ModelElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateUriWithFragment(string, bool, IModelElement)
+  nameWithType: ModelElement.CreateUriWithFragment(string, bool, IModelElement)
+  fullName: NMF.Models.ModelElement.CreateUriWithFragment(string, bool, NMF.Models.IModelElement)
+  nameWithType.vb: ModelElement.CreateUriWithFragment(String, Boolean, IModelElement)
+  fullName.vb: NMF.Models.ModelElement.CreateUriWithFragment(String, Boolean, NMF.Models.IModelElement)
+  name.vb: CreateUriWithFragment(String, Boolean, IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+    name: CreateUriWithFragment
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.CreateUriWithFragment(System.String,System.Boolean,NMF.Models.IModelElement)
+    name: CreateUriWithFragment
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  commentId: M:NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateUriFromGlobalIdentifier(string, bool)
+  nameWithType: ModelElement.CreateUriFromGlobalIdentifier(string, bool)
+  fullName: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(string, bool)
+  nameWithType.vb: ModelElement.CreateUriFromGlobalIdentifier(String, Boolean)
+  fullName.vb: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(String, Boolean)
+  name.vb: CreateUriFromGlobalIdentifier(String, Boolean)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+    name: CreateUriFromGlobalIdentifier
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.CreateUriFromGlobalIdentifier(System.String,System.Boolean)
+    name: CreateUriFromGlobalIdentifier
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: PropagateNewId(ValueChangedEventArgs)
+  nameWithType: ModelElement.PropagateNewId(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+    name: PropagateNewId
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.PropagateNewId(NMF.Expressions.ValueChangedEventArgs)
+    name: PropagateNewId
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.EnforceModels
+  commentId: P:NMF.Models.ModelElement.EnforceModels
+  parent: NMF.Models.ModelElement
+  name: EnforceModels
+  nameWithType: ModelElement.EnforceModels
+  fullName: NMF.Models.ModelElement.EnforceModels
+- uid: NMF.Models.ModelElement.PreferIdentifiers
+  commentId: P:NMF.Models.ModelElement.PreferIdentifiers
+  parent: NMF.Models.ModelElement
+  name: PreferIdentifiers
+  nameWithType: ModelElement.PreferIdentifiers
+  fullName: NMF.Models.ModelElement.PreferIdentifiers
+- uid: NMF.Models.ModelElement.IsIdentified
+  commentId: P:NMF.Models.ModelElement.IsIdentified
+  parent: NMF.Models.ModelElement
+  name: IsIdentified
+  nameWithType: ModelElement.IsIdentified
+  fullName: NMF.Models.ModelElement.IsIdentified
+- uid: NMF.Models.ModelElement.ToIdentifierString
+  commentId: M:NMF.Models.ModelElement.ToIdentifierString
+  parent: NMF.Models.ModelElement
+  name: ToIdentifierString()
+  nameWithType: ModelElement.ToIdentifierString()
+  fullName: NMF.Models.ModelElement.ToIdentifierString()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.ToIdentifierString
+    name: ToIdentifierString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.ToIdentifierString
+    name: ToIdentifierString
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.ToString
+  commentId: M:NMF.Models.ModelElement.ToString
+  parent: NMF.Models.ModelElement
+  name: ToString()
+  nameWithType: ModelElement.ToString()
+  fullName: NMF.Models.ModelElement.ToString()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.ToString
+    name: ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.ToString
+    name: ToString
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
+  parent: NMF.Models.ModelElement
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
+  parent: NMF.Models.ModelElement
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnKeyChanged(ValueChangedEventArgs)
+  nameWithType: ModelElement.OnKeyChanged(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnKeyChanged
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnKeyChanged(NMF.Expressions.ValueChangedEventArgs)
+    name: OnKeyChanged
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
+  - name: (
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.Resolve(System.Uri)
+  commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Resolve(Uri)
+  nameWithType: ModelElement.Resolve(Uri)
+  fullName: NMF.Models.ModelElement.Resolve(System.Uri)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Resolve(System.Uri)
+    name: Resolve
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Resolve(System.Uri)
+    name: Resolve
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+- uid: NMF.Models.ModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.ModelElement.Resolve(System.String)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Resolve(string)
+  nameWithType: ModelElement.Resolve(string)
+  fullName: NMF.Models.ModelElement.Resolve(string)
+  nameWithType.vb: ModelElement.Resolve(String)
+  fullName.vb: NMF.Models.ModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Resolve(System.String)
+    name: Resolve
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Resolve(System.String)
+    name: Resolve
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: GetRelativePathForChild(IModelElement)
+  nameWithType: ModelElement.GetRelativePathForChild(IModelElement)
+  fullName: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+    name: GetRelativePathForChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
+    name: GetRelativePathForChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  commentId: M:NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetModelElementForPathSegment(string)
+  nameWithType: ModelElement.GetModelElementForPathSegment(string)
+  fullName: NMF.Models.ModelElement.GetModelElementForPathSegment(string)
+  nameWithType.vb: ModelElement.GetModelElementForPathSegment(String)
+  fullName.vb: NMF.Models.ModelElement.GetModelElementForPathSegment(String)
+  name.vb: GetModelElementForPathSegment(String)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+    name: GetModelElementForPathSegment
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetModelElementForPathSegment(System.String)
+    name: GetModelElementForPathSegment
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  commentId: M:NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: CallOperation(IOperation, object[])
+  nameWithType: ModelElement.CallOperation(IOperation, object[])
+  fullName: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation, object[])
+  nameWithType.vb: ModelElement.CallOperation(IOperation, Object())
+  fullName.vb: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation, Object())
+  name.vb: CallOperation(IOperation, Object())
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+    name: CallOperation
+  - name: (
+  - uid: NMF.Models.Meta.IOperation
+    name: IOperation
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
+    name: CallOperation
+  - name: (
+  - uid: NMF.Models.Meta.IOperation
+    name: IOperation
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.Extensions
+  commentId: P:NMF.Models.ModelElement.Extensions
+  parent: NMF.Models.ModelElement
+  name: Extensions
+  nameWithType: ModelElement.Extensions
+  fullName: NMF.Models.ModelElement.Extensions
+- uid: NMF.Models.ModelElement.GetExtension``1
+  commentId: M:NMF.Models.ModelElement.GetExtension``1
+  parent: NMF.Models.ModelElement
+  name: GetExtension<T>()
+  nameWithType: ModelElement.GetExtension<T>()
+  fullName: NMF.Models.ModelElement.GetExtension<T>()
+  nameWithType.vb: ModelElement.GetExtension(Of T)()
+  fullName.vb: NMF.Models.ModelElement.GetExtension(Of T)()
+  name.vb: GetExtension(Of T)()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetExtension``1
+    name: GetExtension
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetExtension``1
+    name: GetExtension
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnPropertyChanged(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnPropertyChanged(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnPropertyChanged(string, NMF.Expressions.ValueChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnPropertyChanged(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnPropertyChanged(String, NMF.Expressions.ValueChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnPropertyChanged(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanged
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnPropertyChanged(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanged
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnPropertyChanging(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnPropertyChanging(string, ValueChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnPropertyChanging(string, NMF.Expressions.ValueChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnPropertyChanging(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnPropertyChanging(String, NMF.Expressions.ValueChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnPropertyChanging(String, ValueChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanging
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnPropertyChanging(System.String,NMF.Expressions.ValueChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnPropertyChanging
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.Delete
+  commentId: M:NMF.Models.ModelElement.Delete
+  parent: NMF.Models.ModelElement
+  name: Delete()
+  nameWithType: ModelElement.Delete()
+  fullName: NMF.Models.ModelElement.Delete()
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.Delete
+    name: Delete
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.Delete
+    name: Delete
+  - name: (
+  - name: )
+- uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnDeleting(UriChangedEventArgs)
+  nameWithType: ModelElement.OnDeleting(UriChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+    name: OnDeleting
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnDeleting(NMF.Models.UriChangedEventArgs)
+    name: OnDeleting
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnDeleted(UriChangedEventArgs)
+  nameWithType: ModelElement.OnDeleted(UriChangedEventArgs)
+  fullName: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+    name: OnDeleted
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnDeleted(NMF.Models.UriChangedEventArgs)
+    name: OnDeleted
+  - name: (
+  - uid: NMF.Models.UriChangedEventArgs
+    name: UriChangedEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.PropertyChanged
+  commentId: E:NMF.Models.ModelElement.PropertyChanged
+  parent: NMF.Models.ModelElement
+  name: PropertyChanged
+  nameWithType: ModelElement.PropertyChanged
+  fullName: NMF.Models.ModelElement.PropertyChanged
+- uid: NMF.Models.ModelElement.PropertyChanging
+  commentId: E:NMF.Models.ModelElement.PropertyChanging
+  parent: NMF.Models.ModelElement
+  name: PropertyChanging
+  nameWithType: ModelElement.PropertyChanging
+  fullName: NMF.Models.ModelElement.PropertyChanging
+- uid: NMF.Models.ModelElement.Deleted
+  commentId: E:NMF.Models.ModelElement.Deleted
+  parent: NMF.Models.ModelElement
+  name: Deleted
+  nameWithType: ModelElement.Deleted
+  fullName: NMF.Models.ModelElement.Deleted
+- uid: NMF.Models.ModelElement.Deleting
+  commentId: E:NMF.Models.ModelElement.Deleting
+  parent: NMF.Models.ModelElement
+  name: Deleting
+  nameWithType: ModelElement.Deleting
+  fullName: NMF.Models.ModelElement.Deleting
+- uid: NMF.Models.ModelElement.UriChanged
+  commentId: E:NMF.Models.ModelElement.UriChanged
+  parent: NMF.Models.ModelElement
+  name: UriChanged
+  nameWithType: ModelElement.UriChanged
+  fullName: NMF.Models.ModelElement.UriChanged
+- uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  commentId: M:NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetReferencedElement(IReference, int)
+  nameWithType: ModelElement.GetReferencedElement(IReference, int)
+  fullName: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference, int)
+  nameWithType.vb: ModelElement.GetReferencedElement(IReference, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference, Integer)
+  name.vb: GetReferencedElement(IReference, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+    name: GetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetReferencedElement(NMF.Models.Meta.IReference,System.Int32)
+    name: GetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: SetReferencedElement(IReference, IModelElement)
+  nameWithType: ModelElement.SetReferencedElement(IReference, IModelElement)
+  fullName: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference, NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+    name: SetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.SetReferencedElement(NMF.Models.Meta.IReference,NMF.Models.IModelElement)
+    name: SetReferencedElement
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  commentId: M:NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  parent: NMF.Models.ModelElement
+  name: GetReferencedElements(IReference)
+  nameWithType: ModelElement.GetReferencedElements(IReference)
+  fullName: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+    name: GetReferencedElements
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetReferencedElements(NMF.Models.Meta.IReference)
+    name: GetReferencedElements
+  - name: (
+  - uid: NMF.Models.Meta.IReference
+    name: IReference
+  - name: )
+- uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  commentId: M:NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetAttributeValue(IAttribute, int)
+  nameWithType: ModelElement.GetAttributeValue(IAttribute, int)
+  fullName: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute, int)
+  nameWithType.vb: ModelElement.GetAttributeValue(IAttribute, Integer)
+  fullName.vb: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute, Integer)
+  name.vb: GetAttributeValue(IAttribute, Integer)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+    name: GetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
+    name: GetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  commentId: M:NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: SetAttributeValue(IAttribute, object)
+  nameWithType: ModelElement.SetAttributeValue(IAttribute, object)
+  fullName: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute, object)
+  nameWithType.vb: ModelElement.SetAttributeValue(IAttribute, Object)
+  fullName.vb: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute, Object)
+  name.vb: SetAttributeValue(IAttribute, Object)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+    name: SetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.SetAttributeValue(NMF.Models.Meta.IAttribute,System.Object)
+    name: SetAttributeValue
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  commentId: M:NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  parent: NMF.Models.ModelElement
+  name: GetAttributeValues(IAttribute)
+  nameWithType: ModelElement.GetAttributeValues(IAttribute)
+  fullName: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+    name: GetAttributeValues
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
+    name: GetAttributeValues
+  - name: (
+  - uid: NMF.Models.Meta.IAttribute
+    name: IAttribute
+  - name: )
+- uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnCollectionChanged(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnCollectionChanged(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnCollectionChanged(string, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnCollectionChanged(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnCollectionChanged(String, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnCollectionChanged(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanged
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnCollectionChanged(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanged
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  commentId: M:NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: OnCollectionChanging(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  nameWithType: ModelElement.OnCollectionChanging(string, NotifyCollectionChangedEventArgs, Lazy<ITypedElement>)
+  fullName: NMF.Models.ModelElement.OnCollectionChanging(string, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy<NMF.Models.Meta.ITypedElement>)
+  nameWithType.vb: ModelElement.OnCollectionChanging(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  fullName.vb: NMF.Models.ModelElement.OnCollectionChanging(String, System.Collections.Specialized.NotifyCollectionChangedEventArgs, System.Lazy(Of NMF.Models.Meta.ITypedElement))
+  name.vb: OnCollectionChanging(String, NotifyCollectionChangedEventArgs, Lazy(Of ITypedElement))
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanging
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: <
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnCollectionChanging(System.String,System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Lazy{NMF.Models.Meta.ITypedElement})
+    name: OnCollectionChanging
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Specialized.NotifyCollectionChangedEventArgs
+    name: NotifyCollectionChangedEventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs
+  - name: ','
+  - name: " "
+  - uid: System.Lazy`1
+    name: Lazy
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.lazy-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.Meta.ITypedElement
+    name: ITypedElement
+  - name: )
+  - name: )
+- uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  commentId: M:NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  parent: NMF.Models.ModelElement
+  name: OnBubbledChange(BubbledChangeEventArgs)
+  nameWithType: ModelElement.OnBubbledChange(BubbledChangeEventArgs)
+  fullName: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+    name: OnBubbledChange
+  - name: (
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.OnBubbledChange(NMF.Models.BubbledChangeEventArgs)
+    name: OnBubbledChange
+  - name: (
+  - uid: NMF.Models.BubbledChangeEventArgs
+    name: BubbledChangeEventArgs
+  - name: )
+- uid: NMF.Models.ModelElement.BubbledChange
+  commentId: E:NMF.Models.ModelElement.BubbledChange
+  parent: NMF.Models.ModelElement
+  name: BubbledChange
+  nameWithType: ModelElement.BubbledChange
+  fullName: NMF.Models.ModelElement.BubbledChange
+- uid: NMF.Models.ModelElement.ParentChanged
+  commentId: E:NMF.Models.ModelElement.ParentChanged
+  parent: NMF.Models.ModelElement
+  name: ParentChanged
+  nameWithType: ModelElement.ParentChanged
+  fullName: NMF.Models.ModelElement.ParentChanged
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.Models
+  commentId: N:NMF.Models
+  name: NMF.Models
+  nameWithType: NMF.Models
+  fullName: NMF.Models
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: NMF.Glsp.Notation.Diagram.#ctor*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.#ctor
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram__ctor
+  name: Diagram
+  nameWithType: Diagram.Diagram
+  fullName: NMF.Glsp.Notation.Diagram.Diagram
+  nameWithType.vb: Diagram.New
+  fullName.vb: NMF.Glsp.Notation.Diagram.New
+  name.vb: New
+- uid: NMF.Glsp.Notation.Diagram.DiagramType*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.DiagramType
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_DiagramType
+  name: DiagramType
+  nameWithType: Diagram.DiagramType
+  fullName: NMF.Glsp.Notation.Diagram.DiagramType
+- uid: NMF.Glsp.Notation.IDiagram.DiagramType
+  commentId: P:NMF.Glsp.Notation.IDiagram.DiagramType
+  parent: NMF.Glsp.Notation.IDiagram
+  href: NMF.Glsp.Notation.IDiagram.html#NMF_Glsp_Notation_IDiagram_DiagramType
+  name: DiagramType
+  nameWithType: IDiagram.DiagramType
+  fullName: NMF.Glsp.Notation.IDiagram.DiagramType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NMF.Glsp.Notation.Diagram.Elements*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.Elements
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_Elements
+  name: Elements
+  nameWithType: Diagram.Elements
+  fullName: NMF.Glsp.Notation.Diagram.Elements
+- uid: NMF.Glsp.Notation.IDiagram.Elements
+  commentId: P:NMF.Glsp.Notation.IDiagram.Elements
+  parent: NMF.Glsp.Notation.IDiagram
+  href: NMF.Glsp.Notation.IDiagram.html#NMF_Glsp_Notation_IDiagram_Elements
+  name: Elements
+  nameWithType: IDiagram.Elements
+  fullName: NMF.Glsp.Notation.IDiagram.Elements
+- uid: NMF.Collections.Generic.IOrderedSetExpression{NMF.Glsp.Notation.INotationElement}
+  commentId: T:NMF.Collections.Generic.IOrderedSetExpression{NMF.Glsp.Notation.INotationElement}
+  parent: NMF.Collections.Generic
+  definition: NMF.Collections.Generic.IOrderedSetExpression`1
+  href: NMF.Glsp.Notation.INotationElement.html
+  name: IOrderedSetExpression<INotationElement>
+  nameWithType: IOrderedSetExpression<INotationElement>
+  fullName: NMF.Collections.Generic.IOrderedSetExpression<NMF.Glsp.Notation.INotationElement>
+  nameWithType.vb: IOrderedSetExpression(Of INotationElement)
+  fullName.vb: NMF.Collections.Generic.IOrderedSetExpression(Of NMF.Glsp.Notation.INotationElement)
+  name.vb: IOrderedSetExpression(Of INotationElement)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: <
+  - uid: NMF.Glsp.Notation.INotationElement
+    name: INotationElement
+    href: NMF.Glsp.Notation.INotationElement.html
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Glsp.Notation.INotationElement
+    name: INotationElement
+    href: NMF.Glsp.Notation.INotationElement.html
+  - name: )
+- uid: NMF.Collections.Generic.IOrderedSetExpression`1
+  commentId: T:NMF.Collections.Generic.IOrderedSetExpression`1
+  name: IOrderedSetExpression<T>
+  nameWithType: IOrderedSetExpression<T>
+  fullName: NMF.Collections.Generic.IOrderedSetExpression<T>
+  nameWithType.vb: IOrderedSetExpression(Of T)
+  fullName.vb: NMF.Collections.Generic.IOrderedSetExpression(Of T)
+  name.vb: IOrderedSetExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Collections.Generic.IOrderedSetExpression`1
+    name: IOrderedSetExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Collections.Generic
+  commentId: N:NMF.Collections.Generic
+  name: NMF.Collections.Generic
+  nameWithType: NMF.Collections.Generic
+  fullName: NMF.Collections.Generic
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+  - name: .
+  - uid: NMF.Collections.Generic
+    name: Generic
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+  - name: .
+  - uid: NMF.Collections.Generic
+    name: Generic
+- uid: NMF.Models.ModelElement.Children
+  commentId: P:NMF.Models.ModelElement.Children
+  parent: NMF.Models.ModelElement
+  name: Children
+  nameWithType: ModelElement.Children
+  fullName: NMF.Models.ModelElement.Children
+- uid: NMF.Glsp.Notation.Diagram.Children*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.Children
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_Children
+  name: Children
+  nameWithType: Diagram.Children
+  fullName: NMF.Glsp.Notation.Diagram.Children
+- uid: NMF.Models.IModelElement.Children
+  commentId: P:NMF.Models.IModelElement.Children
+  parent: NMF.Models.IModelElement
+  name: Children
+  nameWithType: IModelElement.Children
+  fullName: NMF.Models.IModelElement.Children
+- uid: NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+  commentId: T:NMF.Expressions.IEnumerableExpression{NMF.Models.IModelElement}
+  parent: NMF.Expressions
+  definition: NMF.Expressions.IEnumerableExpression`1
+  name: IEnumerableExpression<IModelElement>
+  nameWithType: IEnumerableExpression<IModelElement>
+  fullName: NMF.Expressions.IEnumerableExpression<NMF.Models.IModelElement>
+  nameWithType.vb: IEnumerableExpression(Of IModelElement)
+  fullName.vb: NMF.Expressions.IEnumerableExpression(Of NMF.Models.IModelElement)
+  name.vb: IEnumerableExpression(Of IModelElement)
+  spec.csharp:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Expressions.IEnumerableExpression`1
+  commentId: T:NMF.Expressions.IEnumerableExpression`1
+  name: IEnumerableExpression<T>
+  nameWithType: IEnumerableExpression<T>
+  fullName: NMF.Expressions.IEnumerableExpression<T>
+  nameWithType.vb: IEnumerableExpression(Of T)
+  fullName.vb: NMF.Expressions.IEnumerableExpression(Of T)
+  name.vb: IEnumerableExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Expressions
+  commentId: N:NMF.Expressions
+  name: NMF.Expressions
+  nameWithType: NMF.Expressions
+  fullName: NMF.Expressions
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Expressions
+    name: Expressions
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Expressions
+    name: Expressions
+- uid: NMF.Glsp.Notation.NotationElement.ReferencedElements
+  commentId: P:NMF.Glsp.Notation.NotationElement.ReferencedElements
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_ReferencedElements
+  name: ReferencedElements
+  nameWithType: NotationElement.ReferencedElements
+  fullName: NMF.Glsp.Notation.NotationElement.ReferencedElements
+- uid: NMF.Glsp.Notation.Diagram.ReferencedElements*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.ReferencedElements
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_ReferencedElements
+  name: ReferencedElements
+  nameWithType: Diagram.ReferencedElements
+  fullName: NMF.Glsp.Notation.Diagram.ReferencedElements
+- uid: NMF.Models.IModelElement.ReferencedElements
+  commentId: P:NMF.Models.IModelElement.ReferencedElements
+  parent: NMF.Models.IModelElement
+  name: ReferencedElements
+  nameWithType: IModelElement.ReferencedElements
+  fullName: NMF.Models.IModelElement.ReferencedElements
+- uid: NMF.Glsp.Notation.Diagram.ClassInstance*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.ClassInstance
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_ClassInstance
+  name: ClassInstance
+  nameWithType: Diagram.ClassInstance
+  fullName: NMF.Glsp.Notation.Diagram.ClassInstance
+- uid: NMF.Models.Meta.IClass
+  commentId: T:NMF.Models.Meta.IClass
+  parent: NMF.Models.Meta
+  name: IClass
+  nameWithType: IClass
+  fullName: NMF.Models.Meta.IClass
+- uid: NMF.Models.Meta
+  commentId: N:NMF.Models.Meta
+  name: NMF.Models.Meta
+  nameWithType: NMF.Models.Meta
+  fullName: NMF.Models.Meta
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Meta
+    name: Meta
+- uid: NMF.Glsp.Notation.IDiagram.DiagramTypeChanging
+  commentId: E:NMF.Glsp.Notation.IDiagram.DiagramTypeChanging
+  parent: NMF.Glsp.Notation.IDiagram
+  href: NMF.Glsp.Notation.IDiagram.html#NMF_Glsp_Notation_IDiagram_DiagramTypeChanging
+  name: DiagramTypeChanging
+  nameWithType: IDiagram.DiagramTypeChanging
+  fullName: NMF.Glsp.Notation.IDiagram.DiagramTypeChanging
+- uid: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+  commentId: T:System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<ValueChangedEventArgs>
+  nameWithType: EventHandler<ValueChangedEventArgs>
+  fullName: System.EventHandler<NMF.Expressions.ValueChangedEventArgs>
+  nameWithType.vb: EventHandler(Of ValueChangedEventArgs)
+  fullName.vb: System.EventHandler(Of NMF.Expressions.ValueChangedEventArgs)
+  name.vb: EventHandler(Of ValueChangedEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
+- uid: NMF.Glsp.Notation.IDiagram.DiagramTypeChanged
+  commentId: E:NMF.Glsp.Notation.IDiagram.DiagramTypeChanged
+  parent: NMF.Glsp.Notation.IDiagram
+  href: NMF.Glsp.Notation.IDiagram.html#NMF_Glsp_Notation_IDiagram_DiagramTypeChanged
+  name: DiagramTypeChanged
+  nameWithType: IDiagram.DiagramTypeChanged
+  fullName: NMF.Glsp.Notation.IDiagram.DiagramTypeChanged
+- uid: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_OnDiagramTypeChanging_NMF_Expressions_ValueChangedEventArgs_
+  name: OnDiagramTypeChanging
+  nameWithType: Diagram.OnDiagramTypeChanging
+  fullName: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanging
+- uid: NMF.Expressions.ValueChangedEventArgs
+  commentId: T:NMF.Expressions.ValueChangedEventArgs
+  parent: NMF.Expressions
+  name: ValueChangedEventArgs
+  nameWithType: ValueChangedEventArgs
+  fullName: NMF.Expressions.ValueChangedEventArgs
+- uid: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_OnDiagramTypeChanged_NMF_Expressions_ValueChangedEventArgs_
+  name: OnDiagramTypeChanged
+  nameWithType: Diagram.OnDiagramTypeChanged
+  fullName: NMF.Glsp.Notation.Diagram.OnDiagramTypeChanged
+- uid: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  commentId: M:NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  parent: NMF.Models.ModelElement
+  name: GetRelativePathForNonIdentifiedChild(IModelElement)
+  nameWithType: ModelElement.GetRelativePathForNonIdentifiedChild(IModelElement)
+  fullName: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+    name: GetRelativePathForNonIdentifiedChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetRelativePathForNonIdentifiedChild(NMF.Models.IModelElement)
+    name: GetRelativePathForNonIdentifiedChild
+  - name: (
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetRelativePathForNonIdentifiedChild_NMF_Models_IModelElement_
+  name: GetRelativePathForNonIdentifiedChild
+  nameWithType: Diagram.GetRelativePathForNonIdentifiedChild
+  fullName: NMF.Glsp.Notation.Diagram.GetRelativePathForNonIdentifiedChild
+- uid: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(System.String,System.Int32)
+  commentId: M:NMF.Glsp.Notation.NotationElement.GetModelElementForReference(System.String,System.Int32)
+  parent: NMF.Glsp.Notation.NotationElement
+  isExternal: true
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetModelElementForReference_System_String_System_Int32_
+  name: GetModelElementForReference(string, int)
+  nameWithType: NotationElement.GetModelElementForReference(string, int)
+  fullName: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(string, int)
+  nameWithType.vb: NotationElement.GetModelElementForReference(String, Integer)
+  fullName.vb: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(String, Integer)
+  name.vb: GetModelElementForReference(String, Integer)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(System.String,System.Int32)
+    name: GetModelElementForReference
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetModelElementForReference_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.GetModelElementForReference(System.String,System.Int32)
+    name: GetModelElementForReference
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetModelElementForReference_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetModelElementForReference*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetModelElementForReference
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetModelElementForReference_System_String_System_Int32_
+  name: GetModelElementForReference
+  nameWithType: Diagram.GetModelElementForReference
+  fullName: NMF.Glsp.Notation.Diagram.GetModelElementForReference
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NMF.Glsp.Notation.NotationElement.GetAttributeValue(System.String,System.Int32)
+  commentId: M:NMF.Glsp.Notation.NotationElement.GetAttributeValue(System.String,System.Int32)
+  parent: NMF.Glsp.Notation.NotationElement
+  isExternal: true
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetAttributeValue_System_String_System_Int32_
+  name: GetAttributeValue(string, int)
+  nameWithType: NotationElement.GetAttributeValue(string, int)
+  fullName: NMF.Glsp.Notation.NotationElement.GetAttributeValue(string, int)
+  nameWithType.vb: NotationElement.GetAttributeValue(String, Integer)
+  fullName.vb: NMF.Glsp.Notation.NotationElement.GetAttributeValue(String, Integer)
+  name.vb: GetAttributeValue(String, Integer)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.GetAttributeValue(System.String,System.Int32)
+    name: GetAttributeValue
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetAttributeValue_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.GetAttributeValue(System.String,System.Int32)
+    name: GetAttributeValue
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetAttributeValue_System_String_System_Int32_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetAttributeValue*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetAttributeValue
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetAttributeValue_System_String_System_Int32_
+  name: GetAttributeValue
+  nameWithType: Diagram.GetAttributeValue
+  fullName: NMF.Glsp.Notation.Diagram.GetAttributeValue
+- uid: NMF.Models.ModelElement.GetCollectionForFeature(System.String)
+  commentId: M:NMF.Models.ModelElement.GetCollectionForFeature(System.String)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetCollectionForFeature(string)
+  nameWithType: ModelElement.GetCollectionForFeature(string)
+  fullName: NMF.Models.ModelElement.GetCollectionForFeature(string)
+  nameWithType.vb: ModelElement.GetCollectionForFeature(String)
+  fullName.vb: NMF.Models.ModelElement.GetCollectionForFeature(String)
+  name.vb: GetCollectionForFeature(String)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetCollectionForFeature(System.String)
+    name: GetCollectionForFeature
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetCollectionForFeature(System.String)
+    name: GetCollectionForFeature
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetCollectionForFeature*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetCollectionForFeature
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetCollectionForFeature_System_String_
+  name: GetCollectionForFeature
+  nameWithType: Diagram.GetCollectionForFeature
+  fullName: NMF.Glsp.Notation.Diagram.GetCollectionForFeature
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ilist
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: NMF.Glsp.Notation.NotationElement.SetFeature(System.String,System.Object)
+  commentId: M:NMF.Glsp.Notation.NotationElement.SetFeature(System.String,System.Object)
+  parent: NMF.Glsp.Notation.NotationElement
+  isExternal: true
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SetFeature_System_String_System_Object_
+  name: SetFeature(string, object)
+  nameWithType: NotationElement.SetFeature(string, object)
+  fullName: NMF.Glsp.Notation.NotationElement.SetFeature(string, object)
+  nameWithType.vb: NotationElement.SetFeature(String, Object)
+  fullName.vb: NMF.Glsp.Notation.NotationElement.SetFeature(String, Object)
+  name.vb: SetFeature(String, Object)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.SetFeature(System.String,System.Object)
+    name: SetFeature
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SetFeature_System_String_System_Object_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.SetFeature(System.String,System.Object)
+    name: SetFeature
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_SetFeature_System_String_System_Object_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.SetFeature*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.SetFeature
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_SetFeature_System_String_System_Object_
+  name: SetFeature
+  nameWithType: Diagram.SetFeature
+  fullName: NMF.Glsp.Notation.Diagram.SetFeature
+- uid: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(System.String)
+  commentId: M:NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(System.String)
+  parent: NMF.Glsp.Notation.NotationElement
+  isExternal: true
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForAttribute_System_String_
+  name: GetExpressionForAttribute(string)
+  nameWithType: NotationElement.GetExpressionForAttribute(string)
+  fullName: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(string)
+  nameWithType.vb: NotationElement.GetExpressionForAttribute(String)
+  fullName.vb: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(String)
+  name.vb: GetExpressionForAttribute(String)
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(System.String)
+    name: GetExpressionForAttribute
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForAttribute_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.GetExpressionForAttribute(System.String)
+    name: GetExpressionForAttribute
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetExpressionForAttribute_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetExpressionForAttribute
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetExpressionForAttribute_System_String_
+  name: GetExpressionForAttribute
+  nameWithType: Diagram.GetExpressionForAttribute
+  fullName: NMF.Glsp.Notation.Diagram.GetExpressionForAttribute
+- uid: NMF.Expressions.INotifyExpression{System.Object}
+  commentId: T:NMF.Expressions.INotifyExpression{System.Object}
+  parent: NMF.Expressions
+  definition: NMF.Expressions.INotifyExpression`1
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: INotifyExpression<object>
+  nameWithType: INotifyExpression<object>
+  fullName: NMF.Expressions.INotifyExpression<object>
+  nameWithType.vb: INotifyExpression(Of Object)
+  fullName.vb: NMF.Expressions.INotifyExpression(Of Object)
+  name.vb: INotifyExpression(Of Object)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Expressions.INotifyExpression`1
+  commentId: T:NMF.Expressions.INotifyExpression`1
+  name: INotifyExpression<T>
+  nameWithType: INotifyExpression<T>
+  fullName: NMF.Expressions.INotifyExpression<T>
+  nameWithType.vb: INotifyExpression(Of T)
+  fullName.vb: NMF.Expressions.INotifyExpression(Of T)
+  name.vb: INotifyExpression(Of T)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NMF.Expressions.INotifyExpression`1
+    name: INotifyExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.Models.ModelElement.GetCompositionName(System.Object)
+  commentId: M:NMF.Models.ModelElement.GetCompositionName(System.Object)
+  parent: NMF.Models.ModelElement
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: GetCompositionName(object)
+  nameWithType: ModelElement.GetCompositionName(object)
+  fullName: NMF.Models.ModelElement.GetCompositionName(object)
+  nameWithType.vb: ModelElement.GetCompositionName(Object)
+  fullName.vb: NMF.Models.ModelElement.GetCompositionName(Object)
+  name.vb: GetCompositionName(Object)
+  spec.csharp:
+  - uid: NMF.Models.ModelElement.GetCompositionName(System.Object)
+    name: GetCompositionName
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.ModelElement.GetCompositionName(System.Object)
+    name: GetCompositionName
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetCompositionName*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetCompositionName
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetCompositionName_System_Object_
+  name: GetCompositionName
+  nameWithType: Diagram.GetCompositionName
+  fullName: NMF.Glsp.Notation.Diagram.GetCompositionName
+- uid: NMF.Glsp.Notation.NotationElement.GetClass
+  commentId: M:NMF.Glsp.Notation.NotationElement.GetClass
+  parent: NMF.Glsp.Notation.NotationElement
+  href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetClass
+  name: GetClass()
+  nameWithType: NotationElement.GetClass()
+  fullName: NMF.Glsp.Notation.NotationElement.GetClass()
+  spec.csharp:
+  - uid: NMF.Glsp.Notation.NotationElement.GetClass
+    name: GetClass
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetClass
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Glsp.Notation.NotationElement.GetClass
+    name: GetClass
+    href: NMF.Glsp.Notation.NotationElement.html#NMF_Glsp_Notation_NotationElement_GetClass
+  - name: (
+  - name: )
+- uid: NMF.Glsp.Notation.Diagram.GetClass*
+  commentId: Overload:NMF.Glsp.Notation.Diagram.GetClass
+  href: NMF.Glsp.Notation.Diagram.html#NMF_Glsp_Notation_Diagram_GetClass
+  name: GetClass
+  nameWithType: Diagram.GetClass
+  fullName: NMF.Glsp.Notation.Diagram.GetClass
+- uid: NMF.Models.IModelElement.GetClass
+  commentId: M:NMF.Models.IModelElement.GetClass
+  parent: NMF.Models.IModelElement
+  name: GetClass()
+  nameWithType: IModelElement.GetClass()
+  fullName: NMF.Models.IModelElement.GetClass()
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.GetClass
+    name: GetClass
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.GetClass
+    name: GetClass
+  - name: (
+  - name: )

@@ -12,7 +12,7 @@ items:
   - NMF.CodeGen.NamespaceGenerator`1.GetName(`0)
   - NMF.CodeGen.NamespaceGenerator`1.GetNamespaceConflictsIdentifier
   - NMF.CodeGen.NamespaceGenerator`1.IsNamespaceConflict(System.String,System.CodeDom.CodeNamespace)
-  - NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String)
+  - NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String,System.String)
   - NMF.CodeGen.NamespaceGenerator`1.IsValidName(System.String,System.CodeDom.CodeNamespace)
   - NMF.CodeGen.NamespaceGenerator`1.RequireType``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeTypeDeclaration},System.Func{`0,``0})
   - NMF.CodeGen.NamespaceGenerator`1.RequireTypes``1(NMF.Transformations.TransformationRuleBase{``0,System.CodeDom.CodeTypeDeclaration},System.Func{`0,System.Collections.Generic.IEnumerable{``0}})
@@ -27,11 +27,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: NamespaceGenerator
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -226,11 +226,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 20
+    startLine: 19
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -257,11 +257,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreateOutput
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -298,11 +298,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: DefaultImports
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 39
+    startLine: 38
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -331,11 +331,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetName
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 49
+    startLine: 48
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -368,11 +368,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Transform
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -409,11 +409,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetNamespaceConflictsIdentifier
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 133
+    startLine: 142
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -428,44 +428,47 @@ items:
   overload: NMF.CodeGen.NamespaceGenerator`1.GetNamespaceConflictsIdentifier*
   nameWithType.vb: NamespaceGenerator(Of T).GetNamespaceConflictsIdentifier()
   fullName.vb: NMF.CodeGen.NamespaceGenerator(Of T).GetNamespaceConflictsIdentifier()
-- uid: NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String)
-  commentId: M:NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String)
-  id: IsSystemNameConflict(System.String)
+- uid: NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String,System.String)
+  commentId: M:NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict(System.String,System.String)
+  id: IsSystemNameConflict(System.String,System.String)
   parent: NMF.CodeGen.NamespaceGenerator`1
   langs:
   - csharp
   - vb
-  name: IsSystemNameConflict(string)
-  nameWithType: NamespaceGenerator<T>.IsSystemNameConflict(string)
-  fullName: NMF.CodeGen.NamespaceGenerator<T>.IsSystemNameConflict(string)
+  name: IsSystemNameConflict(string, string)
+  nameWithType: NamespaceGenerator<T>.IsSystemNameConflict(string, string)
+  fullName: NMF.CodeGen.NamespaceGenerator<T>.IsSystemNameConflict(string, string)
   type: Method
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsSystemNameConflict
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 263
+    startLine: 297
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
   summary: Determines whether the given type name is a conflict with a system type
   example: []
   syntax:
-    content: protected virtual bool IsSystemNameConflict(string typeName)
+    content: protected virtual bool IsSystemNameConflict(string typeName, string refNs)
     parameters:
     - id: typeName
       type: System.String
       description: ''
+    - id: refNs
+      type: System.String
+      description: the suggested namespace
     return:
       type: System.Boolean
       description: ''
-    content.vb: Protected Overridable Function IsSystemNameConflict(typeName As String) As Boolean
+    content.vb: Protected Overridable Function IsSystemNameConflict(typeName As String, refNs As String) As Boolean
   overload: NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict*
-  nameWithType.vb: NamespaceGenerator(Of T).IsSystemNameConflict(String)
-  fullName.vb: NMF.CodeGen.NamespaceGenerator(Of T).IsSystemNameConflict(String)
-  name.vb: IsSystemNameConflict(String)
+  nameWithType.vb: NamespaceGenerator(Of T).IsSystemNameConflict(String, String)
+  fullName.vb: NMF.CodeGen.NamespaceGenerator(Of T).IsSystemNameConflict(String, String)
+  name.vb: IsSystemNameConflict(String, String)
 - uid: NMF.CodeGen.NamespaceGenerator`1.AssembliesToCheck
   commentId: P:NMF.CodeGen.NamespaceGenerator`1.AssembliesToCheck
   id: AssembliesToCheck
@@ -480,11 +483,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AssembliesToCheck
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 281
+    startLine: 313
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -513,11 +516,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireType
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 457
+    startLine: 497
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -557,11 +560,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsValidName
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 505
+    startLine: 545
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -598,11 +601,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsNamespaceConflict
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 520
+    startLine: 560
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -639,11 +642,11 @@ items:
   source:
     remote:
       path: Transformations/CodeGen/NamespaceGenerator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RequireTypes
     path: src/Transformations/CodeGen/NamespaceGenerator.cs
-    startLine: 540
+    startLine: 580
   assemblies:
   - NMF.CodeGen
   namespace: NMF.CodeGen
@@ -27514,7 +27517,7 @@ references:
   fullName.vb: NMF.CodeGen.NamespaceGenerator(Of T).GetNamespaceConflictsIdentifier
 - uid: NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict*
   commentId: Overload:NMF.CodeGen.NamespaceGenerator`1.IsSystemNameConflict
-  href: NMF.CodeGen.NamespaceGenerator-1.html#NMF_CodeGen_NamespaceGenerator_1_IsSystemNameConflict_System_String_
+  href: NMF.CodeGen.NamespaceGenerator-1.html#NMF_CodeGen_NamespaceGenerator_1_IsSystemNameConflict_System_String_System_String_
   name: IsSystemNameConflict
   nameWithType: NamespaceGenerator<T>.IsSystemNameConflict
   fullName: NMF.CodeGen.NamespaceGenerator<T>.IsSystemNameConflict

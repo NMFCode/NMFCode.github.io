@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: EStringToStringMapEntry
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -89,7 +89,9 @@ items:
   - NMF.Models.ModelElement.IsIdentified
   - NMF.Models.ModelElement.ToIdentifierString
   - NMF.Models.ModelElement.ToString
-  - NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  - NMF.Models.ModelElement.IdentifierString
+  - NMF.Models.ModelElement.ClassName
+  - NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   - NMF.Models.ModelElement.Resolve(System.Uri)
   - NMF.Models.ModelElement.Resolve(System.String)
   - NMF.Models.ModelElement.GetRelativePathForChild(NMF.Models.IModelElement)
@@ -161,7 +163,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Key
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -215,7 +217,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Value
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -269,7 +271,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassInstance
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -300,7 +302,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: KeyChanging
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -331,7 +333,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: KeyChanged
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -362,7 +364,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ValueChanging
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -393,7 +395,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ValueChanged
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -424,7 +426,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnKeyChanging
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -456,7 +458,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnKeyChanged
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -488,7 +490,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnValueChanging
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -520,7 +522,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OnValueChanged
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -552,7 +554,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetAttributeValue
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -594,7 +596,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetFeature
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -633,7 +635,7 @@ items:
   source:
     remote:
       path: Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetClass
     path: src/Interop/EcoreInterop/Model/EStringToStringMapEntry.cs
@@ -1146,31 +1148,37 @@ references:
     name: ToString
   - name: (
   - name: )
-- uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-  commentId: M:NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+- uid: NMF.Models.ModelElement.IdentifierString
+  commentId: P:NMF.Models.ModelElement.IdentifierString
   parent: NMF.Models.ModelElement
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.eventargs
-  name: OnKeyChanged(EventArgs)
-  nameWithType: ModelElement.OnKeyChanged(EventArgs)
-  fullName: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
+  name: IdentifierString
+  nameWithType: ModelElement.IdentifierString
+  fullName: NMF.Models.ModelElement.IdentifierString
+- uid: NMF.Models.ModelElement.ClassName
+  commentId: P:NMF.Models.ModelElement.ClassName
+  parent: NMF.Models.ModelElement
+  name: ClassName
+  nameWithType: ModelElement.ClassName
+  fullName: NMF.Models.ModelElement.ClassName
+- uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  commentId: M:NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+  parent: NMF.Models.ModelElement
+  name: UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  nameWithType: ModelElement.UpdateRegisteredIdentifier(ValueChangedEventArgs)
+  fullName: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
   spec.csharp:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-    name: OnKeyChanged
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
   spec.vb:
-  - uid: NMF.Models.ModelElement.OnKeyChanged(System.EventArgs)
-    name: OnKeyChanged
+  - uid: NMF.Models.ModelElement.UpdateRegisteredIdentifier(NMF.Expressions.ValueChangedEventArgs)
+    name: UpdateRegisteredIdentifier
   - name: (
-  - uid: System.EventArgs
-    name: EventArgs
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - uid: NMF.Expressions.ValueChangedEventArgs
+    name: ValueChangedEventArgs
   - name: )
 - uid: NMF.Models.ModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.ModelElement.Resolve(System.Uri)

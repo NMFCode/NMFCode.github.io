@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.Grammars.GrammarContext
+  commentId: T:NMF.AnyText.Grammars.GrammarContext
+  id: GrammarContext
+  parent: NMF.AnyText.Grammars
+  children:
+  - NMF.AnyText.Grammars.GrammarContext.#ctor(System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule},NMF.AnyText.Grammars.Grammar)
+  - NMF.AnyText.Grammars.GrammarContext.Keywords
+  - NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule``1(NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  - NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String)
+  - NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String,NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  - NMF.AnyText.Grammars.GrammarContext.ResolveRule``1
+  langs:
+  - csharp
+  - vb
+  name: GrammarContext
+  nameWithType: GrammarContext
+  fullName: NMF.AnyText.Grammars.GrammarContext
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: GrammarContext
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Denotes the context in which a rule is initialized
+  example: []
+  syntax:
+    content: public class GrammarContext
+    content.vb: Public Class GrammarContext
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.Grammars.GrammarContext.#ctor(System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule},NMF.AnyText.Grammars.Grammar)
+  commentId: M:NMF.AnyText.Grammars.GrammarContext.#ctor(System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule},NMF.AnyText.Grammars.Grammar)
+  id: '#ctor(System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule},NMF.AnyText.Grammars.Grammar)'
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: GrammarContext(IDictionary<Type, Rule>, Grammar)
+  nameWithType: GrammarContext.GrammarContext(IDictionary<Type, Rule>, Grammar)
+  fullName: NMF.AnyText.Grammars.GrammarContext.GrammarContext(System.Collections.Generic.IDictionary<System.Type, NMF.AnyText.Rules.Rule>, NMF.AnyText.Grammars.Grammar)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 26
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Creates a new instance
+  example: []
+  syntax:
+    content: public GrammarContext(IDictionary<Type, Rule> rules, Grammar grammar)
+    parameters:
+    - id: rules
+      type: System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule}
+      description: a dictionary of rules that should be used in this context
+    - id: grammar
+      type: NMF.AnyText.Grammars.Grammar
+      description: the context grammar, used to resolve keywords
+    content.vb: Public Sub New(rules As IDictionary(Of Type, Rule), grammar As Grammar)
+  overload: NMF.AnyText.Grammars.GrammarContext.#ctor*
+  nameWithType.vb: GrammarContext.New(IDictionary(Of Type, Rule), Grammar)
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.New(System.Collections.Generic.IDictionary(Of System.Type, NMF.AnyText.Rules.Rule), NMF.AnyText.Grammars.Grammar)
+  name.vb: New(IDictionary(Of Type, Rule), Grammar)
+- uid: NMF.AnyText.Grammars.GrammarContext.Keywords
+  commentId: P:NMF.AnyText.Grammars.GrammarContext.Keywords
+  id: Keywords
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: Keywords
+  nameWithType: GrammarContext.Keywords
+  fullName: NMF.AnyText.Grammars.GrammarContext.Keywords
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Keywords
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 35
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Gets the keywords used in the grammar
+  example: []
+  syntax:
+    content: public ICollection<LiteralRule> Keywords { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{NMF.AnyText.Rules.LiteralRule}
+    content.vb: Public ReadOnly Property Keywords As ICollection(Of LiteralRule)
+  overload: NMF.AnyText.Grammars.GrammarContext.Keywords*
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveRule``1
+  commentId: M:NMF.AnyText.Grammars.GrammarContext.ResolveRule``1
+  id: ResolveRule``1
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: ResolveRule<T>()
+  nameWithType: GrammarContext.ResolveRule<T>()
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveRule<T>()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ResolveRule
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 42
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Resolves the grammar rule of the given type
+  example: []
+  syntax:
+    content: 'public T ResolveRule<T>() where T : Rule'
+    typeParameters:
+    - id: T
+      description: the rule type
+    return:
+      type: '{T}'
+      description: the rule instance with the given rule type
+    content.vb: Public Function ResolveRule(Of T As Rule)() As T
+  overload: NMF.AnyText.Grammars.GrammarContext.ResolveRule*
+  nameWithType.vb: GrammarContext.ResolveRule(Of T)()
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.ResolveRule(Of T)()
+  name.vb: ResolveRule(Of T)()
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule``1(NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  commentId: M:NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule``1(NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  id: ResolveFormattedRule``1(NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: ResolveFormattedRule<T>(params FormattingInstruction[])
+  nameWithType: GrammarContext.ResolveFormattedRule<T>(params FormattingInstruction[])
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule<T>(params NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ResolveFormattedRule
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 57
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Resolves the grammar rule of the given type and adds formatting instructions
+  example: []
+  syntax:
+    content: 'public FormattedRule ResolveFormattedRule<T>(params FormattingInstruction[] formattingInstructions) where T : Rule'
+    parameters:
+    - id: formattingInstructions
+      type: NMF.AnyText.PrettyPrinting.FormattingInstruction[]
+      description: formatting instructions
+    typeParameters:
+    - id: T
+      description: the rule type
+    return:
+      type: NMF.AnyText.PrettyPrinting.FormattedRule
+      description: the rule instance with the given rule type
+    content.vb: Public Function ResolveFormattedRule(Of T As Rule)(ParamArray formattingInstructions As FormattingInstruction()) As FormattedRule
+  overload: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule*
+  nameWithType.vb: GrammarContext.ResolveFormattedRule(Of T)(ParamArray FormattingInstruction())
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule(Of T)(ParamArray NMF.AnyText.PrettyPrinting.FormattingInstruction())
+  name.vb: ResolveFormattedRule(Of T)(ParamArray FormattingInstruction())
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String)
+  commentId: M:NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String)
+  id: ResolveKeyword(System.String)
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: ResolveKeyword(string)
+  nameWithType: GrammarContext.ResolveKeyword(string)
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ResolveKeyword
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 71
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Resolves the rule for the given keyword
+  example: []
+  syntax:
+    content: public FormattedRule ResolveKeyword(string keyword)
+    parameters:
+    - id: keyword
+      type: System.String
+      description: the keyword
+    return:
+      type: NMF.AnyText.PrettyPrinting.FormattedRule
+      description: a literal rule that represents matching the provided keyword
+    content.vb: Public Function ResolveKeyword(keyword As String) As FormattedRule
+  overload: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword*
+  nameWithType.vb: GrammarContext.ResolveKeyword(String)
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(String)
+  name.vb: ResolveKeyword(String)
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String,NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  commentId: M:NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(System.String,NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  id: ResolveKeyword(System.String,NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  parent: NMF.AnyText.Grammars.GrammarContext
+  langs:
+  - csharp
+  - vb
+  name: ResolveKeyword(string, params FormattingInstruction[])
+  nameWithType: GrammarContext.ResolveKeyword(string, params FormattingInstruction[])
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(string, params NMF.AnyText.PrettyPrinting.FormattingInstruction[])
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Grammars/GrammarContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ResolveKeyword
+    path: src/AnyText/AnyText.Core/Grammars/GrammarContext.cs
+    startLine: 82
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Grammars
+  summary: Resolves the rule for the given keyword
+  example: []
+  syntax:
+    content: public FormattedRule ResolveKeyword(string keyword, params FormattingInstruction[] formattingInstructions)
+    parameters:
+    - id: keyword
+      type: System.String
+      description: the keyword
+    - id: formattingInstructions
+      type: NMF.AnyText.PrettyPrinting.FormattingInstruction[]
+      description: formatting instructions for this keyword
+    return:
+      type: NMF.AnyText.PrettyPrinting.FormattedRule
+      description: a literal rule that represents matching the provided keyword
+    content.vb: Public Function ResolveKeyword(keyword As String, ParamArray formattingInstructions As FormattingInstruction()) As FormattedRule
+  overload: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword*
+  nameWithType.vb: GrammarContext.ResolveKeyword(String, ParamArray FormattingInstruction())
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword(String, ParamArray NMF.AnyText.PrettyPrinting.FormattingInstruction())
+  name.vb: ResolveKeyword(String, ParamArray FormattingInstruction())
+references:
+- uid: NMF.AnyText.Grammars
+  commentId: N:NMF.AnyText.Grammars
+  href: NMF.html
+  name: NMF.AnyText.Grammars
+  nameWithType: NMF.AnyText.Grammars
+  fullName: NMF.AnyText.Grammars
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Grammars
+    name: Grammars
+    href: NMF.AnyText.Grammars.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Grammars
+    name: Grammars
+    href: NMF.AnyText.Grammars.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.Grammars.GrammarContext.#ctor*
+  commentId: Overload:NMF.AnyText.Grammars.GrammarContext.#ctor
+  href: NMF.AnyText.Grammars.GrammarContext.html#NMF_AnyText_Grammars_GrammarContext__ctor_System_Collections_Generic_IDictionary_System_Type_NMF_AnyText_Rules_Rule__NMF_AnyText_Grammars_Grammar_
+  name: GrammarContext
+  nameWithType: GrammarContext.GrammarContext
+  fullName: NMF.AnyText.Grammars.GrammarContext.GrammarContext
+  nameWithType.vb: GrammarContext.New
+  fullName.vb: NMF.AnyText.Grammars.GrammarContext.New
+  name.vb: New
+- uid: System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule}
+  commentId: T:System.Collections.Generic.IDictionary{System.Type,NMF.AnyText.Rules.Rule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<Type, Rule>
+  nameWithType: IDictionary<Type, Rule>
+  fullName: System.Collections.Generic.IDictionary<System.Type, NMF.AnyText.Rules.Rule>
+  nameWithType.vb: IDictionary(Of Type, Rule)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.Type, NMF.AnyText.Rules.Rule)
+  name.vb: IDictionary(Of Type, Rule)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: )
+- uid: NMF.AnyText.Grammars.Grammar
+  commentId: T:NMF.AnyText.Grammars.Grammar
+  parent: NMF.AnyText.Grammars
+  href: NMF.AnyText.Grammars.Grammar.html
+  name: Grammar
+  nameWithType: Grammar
+  fullName: NMF.AnyText.Grammars.Grammar
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.Grammars.GrammarContext.Keywords*
+  commentId: Overload:NMF.AnyText.Grammars.GrammarContext.Keywords
+  href: NMF.AnyText.Grammars.GrammarContext.html#NMF_AnyText_Grammars_GrammarContext_Keywords
+  name: Keywords
+  nameWithType: GrammarContext.Keywords
+  fullName: NMF.AnyText.Grammars.GrammarContext.Keywords
+- uid: System.Collections.Generic.ICollection{NMF.AnyText.Rules.LiteralRule}
+  commentId: T:System.Collections.Generic.ICollection{NMF.AnyText.Rules.LiteralRule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<LiteralRule>
+  nameWithType: ICollection<LiteralRule>
+  fullName: System.Collections.Generic.ICollection<NMF.AnyText.Rules.LiteralRule>
+  nameWithType.vb: ICollection(Of LiteralRule)
+  fullName.vb: System.Collections.Generic.ICollection(Of NMF.AnyText.Rules.LiteralRule)
+  name.vb: ICollection(Of LiteralRule)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: NMF.AnyText.Rules.LiteralRule
+    name: LiteralRule
+    href: NMF.AnyText.Rules.LiteralRule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.LiteralRule
+    name: LiteralRule
+    href: NMF.AnyText.Rules.LiteralRule.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveRule*
+  commentId: Overload:NMF.AnyText.Grammars.GrammarContext.ResolveRule
+  href: NMF.AnyText.Grammars.GrammarContext.html#NMF_AnyText_Grammars_GrammarContext_ResolveRule__1
+  name: ResolveRule
+  nameWithType: GrammarContext.ResolveRule
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveRule
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule*
+  commentId: Overload:NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule
+  href: NMF.AnyText.Grammars.GrammarContext.html#NMF_AnyText_Grammars_GrammarContext_ResolveFormattedRule__1_NMF_AnyText_PrettyPrinting_FormattingInstruction___
+  name: ResolveFormattedRule
+  nameWithType: GrammarContext.ResolveFormattedRule
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveFormattedRule
+- uid: NMF.AnyText.PrettyPrinting.FormattingInstruction[]
+  isExternal: true
+  href: NMF.AnyText.PrettyPrinting.FormattingInstruction.html
+  name: FormattingInstruction[]
+  nameWithType: FormattingInstruction[]
+  fullName: NMF.AnyText.PrettyPrinting.FormattingInstruction[]
+  nameWithType.vb: FormattingInstruction()
+  fullName.vb: NMF.AnyText.PrettyPrinting.FormattingInstruction()
+  name.vb: FormattingInstruction()
+  spec.csharp:
+  - uid: NMF.AnyText.PrettyPrinting.FormattingInstruction
+    name: FormattingInstruction
+    href: NMF.AnyText.PrettyPrinting.FormattingInstruction.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.PrettyPrinting.FormattingInstruction
+    name: FormattingInstruction
+    href: NMF.AnyText.PrettyPrinting.FormattingInstruction.html
+  - name: (
+  - name: )
+- uid: NMF.AnyText.PrettyPrinting.FormattedRule
+  commentId: T:NMF.AnyText.PrettyPrinting.FormattedRule
+  parent: NMF.AnyText.PrettyPrinting
+  href: NMF.AnyText.PrettyPrinting.FormattedRule.html
+  name: FormattedRule
+  nameWithType: FormattedRule
+  fullName: NMF.AnyText.PrettyPrinting.FormattedRule
+- uid: NMF.AnyText.PrettyPrinting
+  commentId: N:NMF.AnyText.PrettyPrinting
+  href: NMF.html
+  name: NMF.AnyText.PrettyPrinting
+  nameWithType: NMF.AnyText.PrettyPrinting
+  fullName: NMF.AnyText.PrettyPrinting
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.PrettyPrinting
+    name: PrettyPrinting
+    href: NMF.AnyText.PrettyPrinting.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.PrettyPrinting
+    name: PrettyPrinting
+    href: NMF.AnyText.PrettyPrinting.html
+- uid: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword*
+  commentId: Overload:NMF.AnyText.Grammars.GrammarContext.ResolveKeyword
+  href: NMF.AnyText.Grammars.GrammarContext.html#NMF_AnyText_Grammars_GrammarContext_ResolveKeyword_System_String_
+  name: ResolveKeyword
+  nameWithType: GrammarContext.ResolveKeyword
+  fullName: NMF.AnyText.Grammars.GrammarContext.ResolveKeyword
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

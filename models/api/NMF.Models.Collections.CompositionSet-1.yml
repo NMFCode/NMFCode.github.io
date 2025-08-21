@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CompositionSet
     path: src/Models/Models/Collections/CompositionSet.cs
-    startLine: 16
+    startLine: 9
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -92,11 +92,11 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Collections/CompositionSet.cs
-    startLine: 22
+    startLine: 15
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
@@ -127,22 +127,25 @@ items:
   source:
     remote:
       path: Models/Models/Collections/CompositionSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Collections/CompositionSet.cs
-    startLine: 27
+    startLine: 20
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Collections
+  summary: Sets the opposite of the given item
   example: []
   syntax:
     content: protected override void SetOpposite(T item, IModelElement newParent)
     parameters:
     - id: item
       type: '{T}'
+      description: the item
     - id: newParent
       type: NMF.Models.IModelElement
+      description: the new parent or null, if the item is removed from the collection
     content.vb: Protected Overrides Sub SetOpposite(item As T, newParent As IModelElement)
   overridden: NMF.Collections.ObjectModel.OppositeSet{NMF.Models.IModelElement,{T}}.SetOpposite({T},NMF.Models.IModelElement)
   overload: NMF.Models.Collections.CompositionSet`1.SetOpposite*

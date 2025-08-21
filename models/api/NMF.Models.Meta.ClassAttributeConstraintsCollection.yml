@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ClassAttributeConstraintsCollection
     path: src/Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-    startLine: 34
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Denotes a class to implement the AttributeConstraints reference
+  example: []
   syntax:
     content: 'public class ClassAttributeConstraintsCollection : ObservableOppositeList<IClass, IAttributeConstraint>, IReadOnlyList<IAttributeConstraint>, IReadOnlyCollection<IAttributeConstraint>, IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression<IAttributeConstraint>, IList<IAttributeConstraint>, ICollectionExpression<IAttributeConstraint>, IEnumerableExpression<IAttributeConstraint>, IEnumerableExpression, ICollection<IAttributeConstraint>, IEnumerable<IAttributeConstraint>, IEnumerable'
     content.vb: Public Class ClassAttributeConstraintsCollection Inherits ObservableOppositeList(Of IClass, IAttributeConstraint) Implements IReadOnlyList(Of IAttributeConstraint), IReadOnlyCollection(Of IAttributeConstraint), IList, ICollection, INotifyCollectionChanging, INotifyPropertyChanged, INotifyCollectionChanged, IListExpression(Of IAttributeConstraint), IList(Of IAttributeConstraint), ICollectionExpression(Of IAttributeConstraint), IEnumerableExpression(Of IAttributeConstraint), IEnumerableExpression, ICollection(Of IAttributeConstraint), IEnumerable(Of IAttributeConstraint), IEnumerable
@@ -103,19 +105,22 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-    startLine: 37
+    startLine: 45
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ClassAttributeConstraintsCollection(IClass parent)
     parameters:
     - id: parent
       type: NMF.Models.Meta.IClass
+      description: the parent Class
     content.vb: Public Sub New(parent As IClass)
   overload: NMF.Models.Meta.ClassAttributeConstraintsCollection.#ctor*
   nameWithType.vb: ClassAttributeConstraintsCollection.New(IClass)
@@ -135,23 +140,26 @@ items:
   source:
     remote:
       path: Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Models/Models/Meta/ClassAttributeConstraintsCollection.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
+  summary: Sets the opposite of the given item
   example: []
   syntax:
-    content: protected override void SetOpposite(IAttributeConstraint item, IClass parent)
+    content: protected override void SetOpposite(IAttributeConstraint item, IClass newParent)
     parameters:
     - id: item
       type: NMF.Models.Meta.IAttributeConstraint
-    - id: parent
+      description: the item
+    - id: newParent
       type: NMF.Models.Meta.IClass
-    content.vb: Protected Overrides Sub SetOpposite(item As IAttributeConstraint, parent As IClass)
+      description: the new parent or null, if the item is removed from the collection
+    content.vb: Protected Overrides Sub SetOpposite(item As IAttributeConstraint, newParent As IClass)
   overridden: NMF.Collections.ObjectModel.ObservableOppositeList{NMF.Models.Meta.IClass,NMF.Models.Meta.IAttributeConstraint}.SetOpposite(NMF.Models.Meta.IAttributeConstraint,NMF.Models.Meta.IClass)
   overload: NMF.Models.Meta.ClassAttributeConstraintsCollection.SetOpposite*
 references:

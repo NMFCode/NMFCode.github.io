@@ -24,19 +24,23 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ObservableOppositeOrderedSet
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Denotes an abstract base class for an observable ordered set with opposites
+  example: []
   syntax:
     content: 'public abstract class ObservableOppositeOrderedSet<TParent, TCollected> : ObservableOrderedSet<TCollected>, INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression<TCollected>, IListExpression<TCollected>, ISetExpression<TCollected>, ICollectionExpression<TCollected>, IEnumerableExpression<TCollected>, IOrderedSet<TCollected>, IList<TCollected>, ISet<TCollected>, ICollection<TCollected>, IEnumerable<TCollected>, ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable'
     typeParameters:
     - id: TParent
+      description: The type of the parent element
     - id: TCollected
+      description: The type of the collected elements
     content.vb: Public MustInherit Class ObservableOppositeOrderedSet(Of TParent, TCollected) Inherits ObservableOrderedSet(Of TCollected) Implements INotifyCollectionChanged, INotifyCollectionChanging, INotifyPropertyChanged, IOrderedSetExpression(Of TCollected), IListExpression(Of TCollected), ISetExpression(Of TCollected), ICollectionExpression(Of TCollected), IEnumerableExpression(Of TCollected), IOrderedSet(Of TCollected), IList(Of TCollected), ISet(Of TCollected), ICollection(Of TCollected), IEnumerable(Of TCollected), ICollectionExpression, IEnumerableExpression, IList, ICollection, IEnumerable
   inheritance:
   - System.Object
@@ -102,6 +106,8 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - NMF.Expressions.IEnumerableExpression{`1}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet(Of TParent, TCollected)
   name.vb: ObservableOppositeOrderedSet(Of TParent, TCollected)
@@ -119,14 +125,16 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parent
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Gets the parent element
+  example: []
   syntax:
     content: public TParent Parent { get; }
     parameters: []
@@ -150,21 +158,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SetOpposite
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Sets the opposite value
+  example: []
   syntax:
     content: protected abstract void SetOpposite(TCollected item, TParent newParent)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The item to set the opposite
     - id: newParent
       type: '{TParent}'
+      description: The new parent or null, if the element was removed
     content.vb: Protected MustOverride Sub SetOpposite(item As TCollected, newParent As TParent)
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.SetOpposite*
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected).SetOpposite(TCollected, TParent)
@@ -183,21 +195,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 16
+    startLine: 32
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Creates a new instance
+  example: []
   syntax:
     content: protected ObservableOppositeOrderedSet(TParent parent)
     parameters:
     - id: parent
       type: '{TParent}'
+      description: the parent element
     content.vb: Protected Sub New(parent As TParent)
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if the parent element is null
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected).New(TParent)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet(Of TParent, TCollected).New(TParent)
   name.vb: New(TParent)
@@ -215,20 +234,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 23
+    startLine: 40
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Clear
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected).Clear()
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet(Of TParent, TCollected).Clear()
 - uid: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Add(`1)
@@ -245,22 +269,25 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 60
+    startLine: 79
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(TCollected item)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As TCollected) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Add({TCollected})
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Add*
@@ -280,25 +307,35 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 98
+    startLine: 121
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public override void Insert(int index, TCollected item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{TCollected}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overrides Sub Insert(index As Integer, item As TCollected)
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Insert(System.Int32,{TCollected})
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected).Insert(Integer, TCollected)
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet(Of TParent, TCollected).Insert(Integer, TCollected)
   name.vb: Insert(Integer, TCollected)
@@ -316,24 +353,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 115
+    startLine: 141
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Removes the given item at the given arrayIndex
   example: []
   syntax:
     content: protected override bool Remove(TCollected item, int index)
     parameters:
     - id: item
       type: '{TCollected}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overrides Function Remove(item As TCollected, index As Integer) As Boolean
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Remove({TCollected},System.Int32)
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Remove*
@@ -354,24 +395,28 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Replace
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 153
+    startLine: 182
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Replaces the item at the given arrayIndex
   example: []
   syntax:
     content: protected override void Replace(int index, TCollected oldValue, TCollected newValue)
     parameters:
     - id: index
       type: System.Int32
+      description: The arrayIndex on which the item is replaced
     - id: oldValue
       type: '{TCollected}'
+      description: The old value
     - id: newValue
       type: '{TCollected}'
+      description: The new value
     content.vb: Protected Overrides Sub Replace(index As Integer, oldValue As TCollected, newValue As TCollected)
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Replace(System.Int32,{TCollected},{TCollected})
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Replace*
@@ -392,19 +437,21 @@ items:
   source:
     remote:
       path: Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/Collections/Collections/ObjectModel/ObservableOppositeCollection.cs
-    startLine: 188
+    startLine: 224
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.ObjectModel
+  summary: Returns a string that represents the current object.
   example: []
   syntax:
     content: public override string ToString()
     return:
       type: System.String
+      description: A string that represents the current object.
     content.vb: Public Overrides Function ToString() As String
   overridden: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.ToString
   overload: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.ToString*
@@ -2008,6 +2055,49 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: NMF.Expressions.IEnumerableExpression{`1}.NMF.Collections.CollectionExtensions.IgnoreUpdates``1
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  parent: NMF.Collections.CollectionExtensions
+  definition: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<TCollected>(IEnumerableExpression<TCollected>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<TCollected>(IEnumerableExpression<TCollected>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<TCollected>(NMF.Expressions.IEnumerableExpression<TCollected>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of TCollected)(IEnumerableExpression(Of TCollected))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of TCollected)(NMF.Expressions.IEnumerableExpression(Of TCollected))
+  name.vb: IgnoreUpdates(Of TCollected)(IEnumerableExpression(Of TCollected))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`1})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: TCollected
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: TCollected
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{`1})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCollected
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCollected
+  - name: )
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3423,6 +3513,76 @@ references:
   fullName: NMF.Collections.Generic.DecoratedSet<T>.Count
   nameWithType.vb: DecoratedSet(Of T).Count
   fullName.vb: NMF.Collections.Generic.DecoratedSet(Of T).Count
+- uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  commentId: M:NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+  href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  name: IgnoreUpdates<T>(IEnumerableExpression<T>)
+  nameWithType: CollectionExtensions.IgnoreUpdates<T>(IEnumerableExpression<T>)
+  fullName: NMF.Collections.CollectionExtensions.IgnoreUpdates<T>(NMF.Expressions.IEnumerableExpression<T>)
+  nameWithType.vb: CollectionExtensions.IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  fullName.vb: NMF.Collections.CollectionExtensions.IgnoreUpdates(Of T)(NMF.Expressions.IEnumerableExpression(Of T))
+  name.vb: IgnoreUpdates(Of T)(IEnumerableExpression(Of T))
+  spec.csharp:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.Collections.CollectionExtensions.IgnoreUpdates``1(NMF.Expressions.IEnumerableExpression{``0})
+    name: IgnoreUpdates
+    href: NMF.Collections.CollectionExtensions.html#NMF_Collections_CollectionExtensions_IgnoreUpdates__1_NMF_Expressions_IEnumerableExpression___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.IEnumerableExpression`1
+    name: IEnumerableExpression
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NMF.Collections.CollectionExtensions
+  commentId: T:NMF.Collections.CollectionExtensions
+  parent: NMF.Collections
+  href: NMF.Collections.CollectionExtensions.html
+  name: CollectionExtensions
+  nameWithType: CollectionExtensions
+  fullName: NMF.Collections.CollectionExtensions
+- uid: NMF.Collections
+  commentId: N:NMF.Collections
+  href: NMF.html
+  name: NMF.Collections
+  nameWithType: NMF.Collections
+  fullName: NMF.Collections
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.Collections
+    name: Collections
+    href: NMF.Collections.html
 - uid: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Parent*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.Parent
   href: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet-2.html#NMF_Collections_ObjectModel_ObservableOppositeOrderedSet_2_Parent
@@ -3459,6 +3619,13 @@ references:
   name: TCollected
   nameWithType: TCollected
   fullName: TCollected
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.#ctor*
   commentId: Overload:NMF.Collections.ObjectModel.ObservableOppositeOrderedSet`2.#ctor
   href: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet-2.html#NMF_Collections_ObjectModel_ObservableOppositeOrderedSet_2__ctor__0_
@@ -3468,6 +3635,13 @@ references:
   nameWithType.vb: ObservableOppositeOrderedSet(Of TParent, TCollected).New
   fullName.vb: NMF.Collections.ObjectModel.ObservableOppositeOrderedSet(Of TParent, TCollected).New
   name.vb: New
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Clear
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`1}.Clear
   parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}
@@ -3583,6 +3757,13 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}.Insert(System.Int32,{TCollected})
   commentId: M:NMF.Collections.ObjectModel.ObservableOrderedSet{`1}.Insert(System.Int32,`1)
   parent: NMF.Collections.ObjectModel.ObservableOrderedSet{{TCollected}}

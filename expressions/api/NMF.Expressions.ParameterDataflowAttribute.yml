@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ParameterDataflowAttribute
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-    startLine: 10
+    startLine: 7
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -114,11 +114,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TargetObjectIndex
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-    startLine: 16
+    startLine: 13
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -143,11 +143,11 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: SourceIndex
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-    startLine: 21
+    startLine: 18
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
@@ -174,7 +174,7 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FunctionIndex
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
@@ -182,6 +182,8 @@ items:
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: The index of the function to which the source element flows
+  example: []
   syntax:
     content: public int FunctionIndex { get; }
     parameters: []
@@ -203,14 +205,16 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: FunctionParameterIndex
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: The index of the parameter for which the source is used
+  example: []
   syntax:
     content: public int FunctionParameterIndex { get; }
     parameters: []
@@ -232,23 +236,28 @@ items:
   source:
     remote:
       path: Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Expressions/Public/ParameterDataflowAttribute.cs
-    startLine: 27
+    startLine: 36
   assemblies:
   - NMF.Expressions
   namespace: NMF.Expressions
+  summary: Specifies that elements of a source parameter are used as argument for a function given in another parameter
+  example: []
   syntax:
     content: public ParameterDataflowAttribute(int functionIndex, int functionParameterIndex, int source)
     parameters:
     - id: functionIndex
       type: System.Int32
+      description: The index of the function to which the source element flows
     - id: functionParameterIndex
       type: System.Int32
+      description: The index of the parameter for which the source is used
     - id: source
       type: System.Int32
+      description: The index of the parameter that is the source of the dependency
     content.vb: Public Sub New(functionIndex As Integer, functionParameterIndex As Integer, source As Integer)
   overload: NMF.Expressions.ParameterDataflowAttribute.#ctor*
   nameWithType.vb: ParameterDataflowAttribute.New(Integer, Integer, Integer)

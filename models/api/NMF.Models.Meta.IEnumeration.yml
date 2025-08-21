@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IEnumeration.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IEnumeration
     path: src/Models/Models/Meta/IEnumeration.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -53,12 +53,12 @@ items:
   - NMF.Models.Meta.IMetaElement.Name
   - NMF.Models.Meta.IMetaElement.Summary
   - NMF.Models.Meta.IMetaElement.Remarks
-  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.NameChanged
-  - NMF.Models.Meta.IMetaElement.SummaryChanging
+  - NMF.Models.Meta.IMetaElement.NameChanging
   - NMF.Models.Meta.IMetaElement.SummaryChanged
-  - NMF.Models.Meta.IMetaElement.RemarksChanging
+  - NMF.Models.Meta.IMetaElement.SummaryChanging
   - NMF.Models.Meta.IMetaElement.RemarksChanged
+  - NMF.Models.Meta.IMetaElement.RemarksChanging
   - NMF.Models.IModelElement.Delete
   - NMF.Models.IModelElement.Deleted
   - NMF.Models.IModelElement.Deleting
@@ -66,6 +66,7 @@ items:
   - NMF.Models.IModelElement.ToIdentifierString
   - NMF.Models.IModelElement.RelativeUri
   - NMF.Models.IModelElement.AbsoluteUri
+  - NMF.Models.IModelElement.Resolve(System.String)
   - NMF.Models.IModelElement.Resolve(System.Uri)
   - NMF.Models.IModelElement.GetContainerReference(NMF.Models.IModelElement,System.Int32@)
   - NMF.Models.IModelElement.Model
@@ -76,6 +77,8 @@ items:
   - NMF.Models.IModelElement.Extensions
   - NMF.Models.IModelElement.GetExtension``1
   - NMF.Models.IModelElement.GetClass
+  - NMF.Models.IModelElement.IdentifierString
+  - NMF.Models.IModelElement.ClassName
   - NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   - NMF.Models.IModelElement.GetAttributeValues(NMF.Models.Meta.IAttribute)
   - NMF.Models.IModelElement.CallOperation(NMF.Models.Meta.IOperation,System.Object[])
@@ -128,11 +131,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IEnumeration.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsFlagged
     path: src/Models/Models/Meta/IEnumeration.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -140,6 +143,8 @@ items:
   example: []
   syntax:
     content: >-
+      [TypeConverter(typeof(LowercaseBooleanConverter))]
+
       [XmlAttribute(true)]
 
       bool IsFlagged { get; set; }
@@ -147,11 +152,18 @@ items:
     return:
       type: System.Boolean
     content.vb: >-
+      <TypeConverter(GetType(LowercaseBooleanConverter))>
+
       <XmlAttribute(True)>
 
       Property IsFlagged As Boolean
   overload: NMF.Models.Meta.IEnumeration.IsFlagged*
   attributes:
+  - type: System.ComponentModel.TypeConverterAttribute
+    ctor: System.ComponentModel.TypeConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: NMF.Models.LowercaseBooleanConverter
   - type: NMF.Serialization.XmlAttributeAttribute
     ctor: NMF.Serialization.XmlAttributeAttribute.#ctor(System.Boolean)
     arguments:
@@ -171,11 +183,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IEnumeration.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Literals
     path: src/Models/Models/Meta/IEnumeration.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -225,35 +237,6 @@ items:
     arguments:
     - type: System.String
       value: Enumeration
-- uid: NMF.Models.Meta.IEnumeration.IsFlaggedChanging
-  commentId: E:NMF.Models.Meta.IEnumeration.IsFlaggedChanging
-  id: IsFlaggedChanging
-  parent: NMF.Models.Meta.IEnumeration
-  langs:
-  - csharp
-  - vb
-  name: IsFlaggedChanging
-  nameWithType: IEnumeration.IsFlaggedChanging
-  fullName: NMF.Models.Meta.IEnumeration.IsFlaggedChanging
-  type: Event
-  source:
-    remote:
-      path: Models/Models/Meta/IEnumeration.cs
-      branch: master
-      repo: https://github.com/NMFCode/NMF.git
-    id: IsFlaggedChanging
-    path: src/Models/Models/Meta/IEnumeration.cs
-    startLine: 71
-  assemblies:
-  - NMF.Models
-  namespace: NMF.Models.Meta
-  summary: Gets fired before the IsFlagged property changes its value
-  example: []
-  syntax:
-    content: event EventHandler<ValueChangedEventArgs> IsFlaggedChanging
-    return:
-      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
-    content.vb: Event IsFlaggedChanging As EventHandler(Of ValueChangedEventArgs)
 - uid: NMF.Models.Meta.IEnumeration.IsFlaggedChanged
   commentId: E:NMF.Models.Meta.IEnumeration.IsFlaggedChanged
   id: IsFlaggedChanged
@@ -268,11 +251,11 @@ items:
   source:
     remote:
       path: Models/Models/Meta/IEnumeration.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsFlaggedChanged
     path: src/Models/Models/Meta/IEnumeration.cs
-    startLine: 76
+    startLine: 73
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Meta
@@ -283,6 +266,35 @@ items:
     return:
       type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
     content.vb: Event IsFlaggedChanged As EventHandler(Of ValueChangedEventArgs)
+- uid: NMF.Models.Meta.IEnumeration.IsFlaggedChanging
+  commentId: E:NMF.Models.Meta.IEnumeration.IsFlaggedChanging
+  id: IsFlaggedChanging
+  parent: NMF.Models.Meta.IEnumeration
+  langs:
+  - csharp
+  - vb
+  name: IsFlaggedChanging
+  nameWithType: IEnumeration.IsFlaggedChanging
+  fullName: NMF.Models.Meta.IEnumeration.IsFlaggedChanging
+  type: Event
+  source:
+    remote:
+      path: Models/Models/Meta/IEnumeration.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsFlaggedChanging
+    path: src/Models/Models/Meta/IEnumeration.cs
+    startLine: 78
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Meta
+  summary: Gets fired before the IsFlagged property changes its value
+  example: []
+  syntax:
+    content: event EventHandler<ValueChangedEventArgs> IsFlaggedChanging
+    return:
+      type: System.EventHandler{NMF.Expressions.ValueChangedEventArgs}
+    content.vb: Event IsFlaggedChanging As EventHandler(Of ValueChangedEventArgs)
 references:
 - uid: NMF.Models.Meta
   commentId: N:NMF.Models.Meta
@@ -356,13 +368,6 @@ references:
   name: Remarks
   nameWithType: IMetaElement.Remarks
   fullName: NMF.Models.Meta.IMetaElement.Remarks
-- uid: NMF.Models.Meta.IMetaElement.NameChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
-  parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
-  name: NameChanging
-  nameWithType: IMetaElement.NameChanging
-  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.NameChanged
   commentId: E:NMF.Models.Meta.IMetaElement.NameChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -370,13 +375,13 @@ references:
   name: NameChanged
   nameWithType: IMetaElement.NameChanged
   fullName: NMF.Models.Meta.IMetaElement.NameChanged
-- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
+- uid: NMF.Models.Meta.IMetaElement.NameChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.NameChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
-  name: SummaryChanging
-  nameWithType: IMetaElement.SummaryChanging
-  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_NameChanging
+  name: NameChanging
+  nameWithType: IMetaElement.NameChanging
+  fullName: NMF.Models.Meta.IMetaElement.NameChanging
 - uid: NMF.Models.Meta.IMetaElement.SummaryChanged
   commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -384,13 +389,13 @@ references:
   name: SummaryChanged
   nameWithType: IMetaElement.SummaryChanged
   fullName: NMF.Models.Meta.IMetaElement.SummaryChanged
-- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
-  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+- uid: NMF.Models.Meta.IMetaElement.SummaryChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.SummaryChanging
   parent: NMF.Models.Meta.IMetaElement
-  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
-  name: RemarksChanging
-  nameWithType: IMetaElement.RemarksChanging
-  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_SummaryChanging
+  name: SummaryChanging
+  nameWithType: IMetaElement.SummaryChanging
+  fullName: NMF.Models.Meta.IMetaElement.SummaryChanging
 - uid: NMF.Models.Meta.IMetaElement.RemarksChanged
   commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanged
   parent: NMF.Models.Meta.IMetaElement
@@ -398,6 +403,13 @@ references:
   name: RemarksChanged
   nameWithType: IMetaElement.RemarksChanged
   fullName: NMF.Models.Meta.IMetaElement.RemarksChanged
+- uid: NMF.Models.Meta.IMetaElement.RemarksChanging
+  commentId: E:NMF.Models.Meta.IMetaElement.RemarksChanging
+  parent: NMF.Models.Meta.IMetaElement
+  href: NMF.Models.Meta.IMetaElement.html#NMF_Models_Meta_IMetaElement_RemarksChanging
+  name: RemarksChanging
+  nameWithType: IMetaElement.RemarksChanging
+  fullName: NMF.Models.Meta.IMetaElement.RemarksChanging
 - uid: NMF.Models.IModelElement.Delete
   commentId: M:NMF.Models.IModelElement.Delete
   parent: NMF.Models.IModelElement
@@ -471,6 +483,37 @@ references:
   name: AbsoluteUri
   nameWithType: IModelElement.AbsoluteUri
   fullName: NMF.Models.IModelElement.AbsoluteUri
+- uid: NMF.Models.IModelElement.Resolve(System.String)
+  commentId: M:NMF.Models.IModelElement.Resolve(System.String)
+  parent: NMF.Models.IModelElement
+  isExternal: true
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  name: Resolve(string)
+  nameWithType: IModelElement.Resolve(string)
+  fullName: NMF.Models.IModelElement.Resolve(string)
+  nameWithType.vb: IModelElement.Resolve(String)
+  fullName.vb: NMF.Models.IModelElement.Resolve(String)
+  name.vb: Resolve(String)
+  spec.csharp:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.Models.IModelElement.Resolve(System.String)
+    name: Resolve
+    href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_Resolve_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: NMF.Models.IModelElement.Resolve(System.Uri)
   commentId: M:NMF.Models.IModelElement.Resolve(System.Uri)
   parent: NMF.Models.IModelElement
@@ -633,6 +676,20 @@ references:
     href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_GetClass
   - name: (
   - name: )
+- uid: NMF.Models.IModelElement.IdentifierString
+  commentId: P:NMF.Models.IModelElement.IdentifierString
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_IdentifierString
+  name: IdentifierString
+  nameWithType: IModelElement.IdentifierString
+  fullName: NMF.Models.IModelElement.IdentifierString
+- uid: NMF.Models.IModelElement.ClassName
+  commentId: P:NMF.Models.IModelElement.ClassName
+  parent: NMF.Models.IModelElement
+  href: NMF.Models.IModelElement.html#NMF_Models_IModelElement_ClassName
+  name: ClassName
+  nameWithType: IModelElement.ClassName
+  fullName: NMF.Models.IModelElement.ClassName
 - uid: NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   commentId: M:NMF.Models.IModelElement.GetAttributeValue(NMF.Models.Meta.IAttribute,System.Int32)
   parent: NMF.Models.IModelElement

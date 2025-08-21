@@ -8,6 +8,7 @@ items:
   - NMF.Models.Repository.ModelCollection.#ctor(NMF.Models.Repository.IModelRepository)
   - NMF.Models.Repository.ModelCollection.Add(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model})
   - NMF.Models.Repository.ModelCollection.Add(System.Uri,NMF.Models.Model)
+  - NMF.Models.Repository.ModelCollection.AllowOverride
   - NMF.Models.Repository.ModelCollection.Clear
   - NMF.Models.Repository.ModelCollection.Contains(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model})
   - NMF.Models.Repository.ModelCollection.ContainsKey(System.Uri)
@@ -32,14 +33,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelCollection
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a collection of models
+  example: []
   syntax:
     content: 'public class ModelCollection : IDictionary<Uri, Model>, ICollection<KeyValuePair<Uri, Model>>, IEnumerable<KeyValuePair<Uri, Model>>, IEnumerable'
     content.vb: Public Class ModelCollection Implements IDictionary(Of Uri, Model), ICollection(Of KeyValuePair(Of Uri, Model)), IEnumerable(Of KeyValuePair(Of Uri, Model)), IEnumerable
@@ -60,6 +63,37 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: NMF.Models.Repository.ModelCollection.AllowOverride
+  commentId: P:NMF.Models.Repository.ModelCollection.AllowOverride
+  id: AllowOverride
+  parent: NMF.Models.Repository.ModelCollection
+  langs:
+  - csharp
+  - vb
+  name: AllowOverride
+  nameWithType: ModelCollection.AllowOverride
+  fullName: NMF.Models.Repository.ModelCollection.AllowOverride
+  type: Property
+  source:
+    remote:
+      path: Models/Models/Repository/ModelCollection.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AllowOverride
+    path: src/Models/Models/Repository/ModelCollection.cs
+    startLine: 17
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models.Repository
+  summary: true, if elements in the model collection may be overridden, otherwise false
+  example: []
+  syntax:
+    content: protected virtual bool AllowOverride { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable ReadOnly Property AllowOverride As Boolean
+  overload: NMF.Models.Repository.ModelCollection.AllowOverride*
 - uid: NMF.Models.Repository.ModelCollection.#ctor(NMF.Models.Repository.IModelRepository)
   commentId: M:NMF.Models.Repository.ModelCollection.#ctor(NMF.Models.Repository.IModelRepository)
   id: '#ctor(NMF.Models.Repository.IModelRepository)'
@@ -74,19 +108,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 13
+    startLine: 23
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ModelCollection(IModelRepository repo)
     parameters:
     - id: repo
       type: NMF.Models.Repository.IModelRepository
+      description: the parent repository
     content.vb: Public Sub New(repo As IModelRepository)
   overload: NMF.Models.Repository.ModelCollection.#ctor*
   nameWithType.vb: ModelCollection.New(IModelRepository)
@@ -106,14 +143,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Repository
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 18
+    startLine: 31
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets the parent repository
+  example: []
   syntax:
     content: public IModelRepository Repository { get; }
     parameters: []
@@ -135,24 +174,37 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: this[]
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 26
+    startLine: 40
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets or sets the element with the specified key.
   example: []
   syntax:
     content: public Model this[Uri key] { get; set; }
     parameters:
     - id: key
       type: System.Uri
+      description: The key of the element to get or set.
     return:
       type: NMF.Models.Model
+      description: The element with the specified key.
     content.vb: Public Default Property this[](key As Uri) As Model
   overload: NMF.Models.Repository.ModelCollection.Item*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.Collections.Generic.KeyNotFoundException
+    commentId: T:System.Collections.Generic.KeyNotFoundException
+    description: The property is retrieved and <code class="paramref">key</code> is not found.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The property is set and the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.Item(System.Uri)
   nameWithType.vb: ModelCollection.this[](Uri)
@@ -172,20 +224,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 39
+    startLine: 60
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int Count { get; }
     parameters: []
     return:
       type: System.Int32
+      description: The number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Count As Integer
   overload: NMF.Models.Repository.ModelCollection.Count*
   implements:
@@ -204,20 +258,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsReadOnly
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 47
+    startLine: 69
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets a value indicating whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public ReadOnly Property IsReadOnly As Boolean
   overload: NMF.Models.Repository.ModelCollection.IsReadOnly*
   implements:
@@ -236,20 +292,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Keys
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 55
+    startLine: 78
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets an <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> containing the keys of the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public ICollection<Uri> Keys { get; }
     parameters: []
     return:
       type: System.Collections.Generic.ICollection{System.Uri}
+      description: An <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> containing the keys of the object that implements <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Keys As ICollection(Of Uri)
   overload: NMF.Models.Repository.ModelCollection.Keys*
   implements:
@@ -268,20 +326,22 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Values
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 63
+    startLine: 87
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets an <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> containing the values in the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public ICollection<Model> Values { get; }
     parameters: []
     return:
       type: System.Collections.Generic.ICollection{NMF.Models.Model}
+      description: An <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> containing the values in the object that implements <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Values As ICollection(Of Model)
   overload: NMF.Models.Repository.ModelCollection.Values*
   implements:
@@ -300,22 +360,28 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 71
+    startLine: 96
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Adds an item to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Add(KeyValuePair<Uri, Model> item)
     parameters:
     - id: item
       type: System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}
+      description: The object to add to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub Add(item As KeyValuePair(Of Uri, Model))
   overload: NMF.Models.Repository.ModelCollection.Add*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}}.Add(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model})
   nameWithType.vb: ModelCollection.Add(KeyValuePair(Of Uri, Model))
@@ -335,24 +401,37 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 76
+    startLine: 102
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Adds an element with the provided key and value to the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public virtual void Add(Uri key, Model value)
     parameters:
     - id: key
       type: System.Uri
+      description: The object to use as the key of the element to add.
     - id: value
       type: NMF.Models.Model
+      description: The object to use as the value of the element to add.
     content.vb: Public Overridable Sub Add(key As Uri, value As Model)
   overload: NMF.Models.Repository.ModelCollection.Add*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: An element with the same key already exists in the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.Add(System.Uri,NMF.Models.Model)
 - uid: NMF.Models.Repository.ModelCollection.Clear
@@ -369,19 +448,24 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 82
+    startLine: 109
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
   overload: NMF.Models.Repository.ModelCollection.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}}.Clear
 - uid: NMF.Models.Repository.ModelCollection.Contains(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model})
@@ -398,22 +482,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 87
+    startLine: 119
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Determines whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public bool Contains(KeyValuePair<Uri, Model> item)
     parameters:
     - id: item
       type: System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Contains(item As KeyValuePair(Of Uri, Model)) As Boolean
   overload: NMF.Models.Repository.ModelCollection.Contains*
   implements:
@@ -435,24 +522,31 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ContainsKey
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 92
+    startLine: 125
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Determines whether the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> contains an element with the specified key.
   example: []
   syntax:
     content: public bool ContainsKey(Uri key)
     parameters:
     - id: key
       type: System.Uri
+      description: The key to locate in the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> contains an element with the key; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function ContainsKey(key As Uri) As Boolean
   overload: NMF.Models.Repository.ModelCollection.ContainsKey*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.ContainsKey(System.Uri)
 - uid: NMF.Models.Repository.ModelCollection.CopyTo(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}[],System.Int32)
@@ -469,24 +563,37 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 97
+    startLine: 131
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Copies the elements of the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(KeyValuePair<Uri, Model>[] array, int arrayIndex)
     parameters:
     - id: array
       type: System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}[]
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: arrayIndex
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As KeyValuePair(Of Uri, Model)(), arrayIndex As Integer)
   overload: NMF.Models.Repository.ModelCollection.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
   implements:
   - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}}.CopyTo(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}[],System.Int32)
   nameWithType.vb: ModelCollection.CopyTo(KeyValuePair(Of Uri, Model)(), Integer)
@@ -506,19 +613,21 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 102
+    startLine: 137
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public IEnumerator<KeyValuePair<Uri, Model>> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public Function GetEnumerator() As IEnumerator(Of KeyValuePair(Of Uri, Model))
   overload: NMF.Models.Repository.ModelCollection.GetEnumerator*
   implements:
@@ -537,24 +646,31 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 107
+    startLine: 143
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public bool Remove(KeyValuePair<Uri, Model> item)
     parameters:
     - id: item
       type: System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function Remove(item As KeyValuePair(Of Uri, Model)) As Boolean
   overload: NMF.Models.Repository.ModelCollection.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model}}.Remove(System.Collections.Generic.KeyValuePair{System.Uri,NMF.Models.Model})
   nameWithType.vb: ModelCollection.Remove(KeyValuePair(Of Uri, Model))
@@ -574,24 +690,34 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 112
+    startLine: 153
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Removes the element with the specified key from the <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public bool Remove(Uri key)
     parameters:
     - id: key
       type: System.Uri
+      description: The key of the element to remove.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is successfully removed; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.  This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">key</code> was not found in the original <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function Remove(key As Uri) As Boolean
   overload: NMF.Models.Repository.ModelCollection.Remove*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.Remove(System.Uri)
 - uid: NMF.Models.Repository.ModelCollection.TryGetValue(System.Uri,NMF.Models.Model@)
@@ -608,26 +734,34 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ModelCollection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: TryGetValue
     path: src/Models/Models/Repository/ModelCollection.cs
-    startLine: 117
+    startLine: 163
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets the value associated with the specified key.
   example: []
   syntax:
     content: public bool TryGetValue(Uri key, out Model value)
     parameters:
     - id: key
       type: System.Uri
+      description: The key whose value to get.
     - id: value
       type: NMF.Models.Model
+      description: When this method returns, the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <code class="paramref">value</code> parameter. This parameter is passed uninitialized.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the object that implements <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> contains an element with the specified key; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function TryGetValue(key As Uri, value As Model) As Boolean
   overload: NMF.Models.Repository.ModelCollection.TryGetValue*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">key</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
   implements:
   - System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.TryGetValue(System.Uri,NMF.Models.Model@)
   nameWithType.vb: ModelCollection.TryGetValue(Uri, Model)
@@ -1226,6 +1360,23 @@ references:
     name: Collections
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: NMF.Models.Repository.ModelCollection.AllowOverride*
+  commentId: Overload:NMF.Models.Repository.ModelCollection.AllowOverride
+  href: NMF.Models.Repository.ModelCollection.html#NMF_Models_Repository_ModelCollection_AllowOverride
+  name: AllowOverride
+  nameWithType: ModelCollection.AllowOverride
+  fullName: NMF.Models.Repository.ModelCollection.AllowOverride
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: NMF.Models.Repository.ModelCollection.#ctor*
   commentId: Overload:NMF.Models.Repository.ModelCollection.#ctor
   href: NMF.Models.Repository.ModelCollection.html#NMF_Models_Repository_ModelCollection__ctor_NMF_Models_Repository_IModelRepository_
@@ -1248,6 +1399,27 @@ references:
   name: Repository
   nameWithType: ModelCollection.Repository
   fullName: NMF.Models.Repository.ModelCollection.Repository
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.Collections.Generic.KeyNotFoundException
+  commentId: T:System.Collections.Generic.KeyNotFoundException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception
+  name: KeyNotFoundException
+  nameWithType: KeyNotFoundException
+  fullName: System.Collections.Generic.KeyNotFoundException
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Models.Repository.ModelCollection.Item*
   commentId: Overload:NMF.Models.Repository.ModelCollection.Item
   href: NMF.Models.Repository.ModelCollection.html#NMF_Models_Repository_ModelCollection_Item_System_Uri_
@@ -1399,17 +1571,6 @@ references:
   fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.Uri, NMF.Models.Model>>.IsReadOnly
   nameWithType.vb: ICollection(Of KeyValuePair(Of Uri, Model)).IsReadOnly
   fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of System.Uri, NMF.Models.Model)).IsReadOnly
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: System.Collections.Generic.ICollection`1.IsReadOnly
   commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
   isExternal: true
@@ -1704,6 +1865,13 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.Add(System.Uri,NMF.Models.Model)
   commentId: M:System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}.Add(System.Uri,NMF.Models.Model)
   parent: System.Collections.Generic.IDictionary{System.Uri,NMF.Models.Model}
@@ -1981,6 +2149,20 @@ references:
   - name: (
   - name: TKey
   - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Models.Repository.ModelCollection.CopyTo*
   commentId: Overload:NMF.Models.Repository.ModelCollection.CopyTo
   href: NMF.Models.Repository.ModelCollection.html#NMF_Models_Repository_ModelCollection_CopyTo_System_Collections_Generic_KeyValuePair_System_Uri_NMF_Models_Model____System_Int32_

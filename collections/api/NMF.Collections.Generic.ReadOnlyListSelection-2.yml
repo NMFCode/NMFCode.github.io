@@ -26,19 +26,23 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReadOnlyListSelection
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Denotes a readonly view on a list selection
+  example: []
   syntax:
     content: 'public class ReadOnlyListSelection<TSource, T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: TSource
+      description: The element type of the source collection
     - id: T
+      description: The element type
     content.vb: Public Class ReadOnlyListSelection(Of TSource, T) Implements IList(Of T), ICollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
@@ -72,21 +76,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 14
+    startLine: 23
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ReadOnlyListSelection(IList<TSource> source, Func<TSource, T> selector)
     parameters:
     - id: source
       type: System.Collections.Generic.IList{{TSource}}
+      description: The source list
     - id: selector
       type: System.Func{{TSource},{T}}
+      description: The selector
     content.vb: Public Sub New(source As IList(Of TSource), selector As Func(Of TSource, T))
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.#ctor*
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).New(IList(Of TSource), Func(Of TSource, T))
@@ -106,22 +114,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IndexOf
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 20
+    startLine: 30
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines the index of a specific item in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int IndexOf(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Int32
+      description: The index of <code class="paramref">item</code> if found in the list; otherwise, -1.
     content.vb: Public Function IndexOf(item As T) As Integer
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.IndexOf*
   implements:
@@ -142,24 +153,34 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: this[]
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 35
+    startLine: 46
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets or sets the element at the specified index.
   example: []
   syntax:
     content: public T this[int index] { get; set; }
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to get or set.
     return:
       type: '{T}'
+      description: The element at the specified index.
     content.vb: Public Default Property this[](index As Integer) As T
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Item*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The property is set and the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Item(System.Int32)
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).this[](Integer)
@@ -179,22 +200,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 47
+    startLine: 59
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Adds an item to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to add to the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Sub Add(item As T)
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Add*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Add({T})
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).Add(T)
@@ -213,19 +240,24 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 52
+    startLine: 65
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public void Clear()
     content.vb: Public Sub Clear()
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Clear
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).Clear()
@@ -244,22 +276,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 57
+    startLine: 71
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> contains a specific value.
   example: []
   syntax:
     content: public bool Contains(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Function Contains(item As T) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Contains*
   implements:
@@ -280,24 +315,37 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CopyTo
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 62
+    startLine: 77
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Copies the elements of the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> to an <xref href="System.Array" data-throw-if-not-resolved="false"></xref>, starting at a particular <xref href="System.Array" data-throw-if-not-resolved="false"></xref> index.
   example: []
   syntax:
     content: public void CopyTo(T[] array, int arrayIndex)
     parameters:
     - id: array
       type: '{T}[]'
+      description: The one-dimensional <xref href="System.Array" data-throw-if-not-resolved="false"></xref> that is the destination of the elements copied from <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>. The <xref href="System.Array" data-throw-if-not-resolved="false"></xref> must have zero-based indexing.
     - id: arrayIndex
       type: System.Int32
+      description: The zero-based index in <code class="paramref">array</code> at which copying begins.
     content.vb: Public Sub CopyTo(array As T(), arrayIndex As Integer)
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.CopyTo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">arrayIndex</code> is less than 0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The number of elements in the source <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.
   implements:
   - System.Collections.Generic.ICollection{{T}}.CopyTo({T}[],System.Int32)
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).CopyTo(T(), Integer)
@@ -317,20 +365,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 71
+    startLine: 87
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets the number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int Count { get; }
     parameters: []
     return:
       type: System.Int32
+      description: The number of elements contained in the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public ReadOnly Property Count As Integer
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Count*
   implements:
@@ -351,20 +401,22 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IsReadOnly
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 76
+    startLine: 93
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets a value indicating whether the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   example: []
   syntax:
     content: public bool IsReadOnly { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public ReadOnly Property IsReadOnly As Boolean
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.IsReadOnly*
   implements:
@@ -385,24 +437,31 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 81
+    startLine: 99
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public bool Remove(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function Remove(item As T) As Boolean
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Remove({T})
   nameWithType.vb: ReadOnlyListSelection(Of TSource, T).Remove(T)
@@ -421,19 +480,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/ReadOnlyListSelection.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Collections/Collections/Generic/ReadOnlyListSelection.cs
-    startLine: 86
+    startLine: 105
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public IEnumerator<T> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public Function GetEnumerator() As IEnumerator(Of T)
   overload: NMF.Collections.Generic.ReadOnlyListSelection`2.GetEnumerator*
   implements:
@@ -1138,6 +1199,20 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.ReadOnlyListSelection`2.Item*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyListSelection`2.Item
   href: NMF.Collections.Generic.ReadOnlyListSelection-2.html#NMF_Collections_Generic_ReadOnlyListSelection_2_Item_System_Int32_
@@ -1390,6 +1465,28 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.Array
+  commentId: T:System.Array
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: NMF.Collections.Generic.ReadOnlyListSelection`2.CopyTo*
   commentId: Overload:NMF.Collections.Generic.ReadOnlyListSelection`2.CopyTo
   href: NMF.Collections.Generic.ReadOnlyListSelection-2.html#NMF_Collections_Generic_ReadOnlyListSelection_2_CopyTo__1___System_Int32_

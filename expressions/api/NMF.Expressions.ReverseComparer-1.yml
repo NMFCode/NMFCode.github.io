@@ -17,18 +17,21 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ReverseComparer
     path: src/Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions
+  summary: Denotes a comparer that reverses another comparer
+  example: []
   syntax:
     content: 'public sealed class ReverseComparer<T> : IComparer<T>'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public NotInheritable Class ReverseComparer(Of T) Implements IComparer(Of T)
   inheritance:
   - System.Object
@@ -60,19 +63,22 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ReverseComparer(IComparer<T> baseComparer)
     parameters:
     - id: baseComparer
       type: System.Collections.Generic.IComparer{{T}}
+      description: The inner comparer or null
     content.vb: Public Sub New(baseComparer As IComparer(Of T))
   overload: NMF.Expressions.ReverseComparer`1.#ctor*
   nameWithType.vb: ReverseComparer(Of T).New(IComparer(Of T))
@@ -92,24 +98,31 @@ items:
   source:
     remote:
       path: Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Compare
     path: src/Expressions/Expressions.Linq/Linq/ReverseComparer.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions
+  summary: Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
   example: []
   syntax:
     content: public int Compare(T x, T y)
     parameters:
     - id: x
       type: '{T}'
+      description: The first object to compare.
     - id: y
       type: '{T}'
+      description: The second object to compare.
     return:
       type: System.Int32
+      description: >-
+        A signed integer that indicates the relative values of <code class="paramref">x</code> and <code class="paramref">y</code>, as shown in the following table.  
+
+         <table><thead><tr><th class="term"> Value</th><th class="description"> Meaning</th></tr></thead><tbody><tr><td class="term"> Less than zero</td><td class="description"><code class="paramref">x</code> is less than <code class="paramref">y</code>.</td></tr><tr><td class="term"> Zero</td><td class="description"><code class="paramref">x</code> equals <code class="paramref">y</code>.</td></tr><tr><td class="term"> Greater than zero</td><td class="description"><code class="paramref">x</code> is greater than <code class="paramref">y</code>.</td></tr></tbody></table>
     content.vb: Public Function Compare(x As T, y As T) As Integer
   overload: NMF.Expressions.ReverseComparer`1.Compare*
   implements:

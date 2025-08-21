@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ResourceMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ResourceMapLocator
     path: src/Models/Models/Repository/ResourceMapLocator.cs
@@ -26,6 +26,8 @@ items:
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Denotes a locator that maps to assembly embedded resources
+  example: []
   syntax:
     content: 'public class ResourceMapLocator : MapLocator, IModelLocator'
     content.vb: Public Class ResourceMapLocator Inherits MapLocator Implements IModelLocator
@@ -59,14 +61,16 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ResourceMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Assembly
     path: src/Models/Models/Repository/ResourceMapLocator.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Gets the assembly for which the resource mapper maps to
+  example: []
   syntax:
     content: public Assembly Assembly { get; }
     parameters: []
@@ -88,21 +92,28 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ResourceMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Models/Models/Repository/ResourceMapLocator.cs
-    startLine: 13
+    startLine: 21
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Creates a new instance
+  example: []
   syntax:
     content: public ResourceMapLocator(Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: the target assembly
     content.vb: Public Sub New(assembly As Assembly)
   overload: NMF.Models.Repository.ResourceMapLocator.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: thrown if the assembly is null
   nameWithType.vb: ResourceMapLocator.New(Assembly)
   fullName.vb: NMF.Models.Repository.ResourceMapLocator.New(System.Reflection.Assembly)
   name.vb: New(Assembly)
@@ -120,22 +131,25 @@ items:
   source:
     remote:
       path: Models/Models/Repository/ResourceMapLocator.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Open
     path: src/Models/Models/Repository/ResourceMapLocator.cs
-    startLine: 20
+    startLine: 29
   assemblies:
   - NMF.Models
   namespace: NMF.Models.Repository
+  summary: Opens the given URI
   example: []
   syntax:
     content: public override Stream Open(Uri repositoryId)
     parameters:
     - id: repositoryId
       type: System.Uri
+      description: the URI as used in the repository
     return:
       type: System.IO.Stream
+      description: A stream
     content.vb: Public Overrides Function Open(repositoryId As Uri) As Stream
   overridden: NMF.Models.Repository.MapLocator.Open(System.Uri)
   overload: NMF.Models.Repository.ResourceMapLocator.Open*
@@ -525,6 +539,13 @@ references:
     name: Reflection
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NMF.Models.Repository.ResourceMapLocator.#ctor*
   commentId: Overload:NMF.Models.Repository.ResourceMapLocator.#ctor
   href: NMF.Models.Repository.ResourceMapLocator.html#NMF_Models_Repository_ResourceMapLocator__ctor_System_Reflection_Assembly_

@@ -5,8 +5,11 @@ items:
   id: ModelHelper
   parent: NMF.Models
   children:
+  - NMF.Models.ModelHelper.CanCreateInstance``1
+  - NMF.Models.ModelHelper.CreateInstance``1
   - NMF.Models.ModelHelper.CreatePath(System.String)
   - NMF.Models.ModelHelper.CreatePath(System.String,System.Int32)
+  - NMF.Models.ModelHelper.ImplementationType``1
   - NMF.Models.ModelHelper.IndexOfReference``1(System.Collections.Generic.IList{``0},NMF.Models.IModelElement)
   - NMF.Models.ModelHelper.ParseIdentifierSegment(System.String,System.String@,System.String@,System.String@)
   - NMF.Models.ModelHelper.ParseSegment(System.String,System.String@,System.Int32@)
@@ -21,14 +24,16 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ModelHelper
     path: src/Models/Models/ModelHelper.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Denotes helper methods for model elements
+  example: []
   syntax:
     content: public static class ModelHelper
     content.vb: Public Module ModelHelper
@@ -56,11 +61,11 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreatePath
     path: src/Models/Models/ModelHelper.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -97,11 +102,11 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: CreatePath
     path: src/Models/Models/ModelHelper.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -135,11 +140,11 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IndexOfReference
     path: src/Models/Models/ModelHelper.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -179,11 +184,11 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ParseSegment
     path: src/Models/Models/ModelHelper.cs
-    startLine: 64
+    startLine: 67
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -223,11 +228,11 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: ParseIdentifierSegment
     path: src/Models/Models/ModelHelper.cs
-    startLine: 101
+    startLine: 104
   assemblies:
   - NMF.Models
   namespace: NMF.Models
@@ -270,28 +275,144 @@ items:
   source:
     remote:
       path: Models/Models/ModelHelper.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Parse
     path: src/Models/Models/ModelHelper.cs
-    startLine: 120
+    startLine: 129
   assemblies:
   - NMF.Models
   namespace: NMF.Models
+  summary: Parses the given text into the given type
+  example: []
   syntax:
     content: public static T Parse<T>(string text)
     parameters:
     - id: text
       type: System.String
+      description: The text that should be parsed
     typeParameters:
     - id: T
+      description: The type of element
     return:
       type: '{T}'
+      description: An instance of the semantic type
     content.vb: Public Shared Function Parse(Of T)(text As String) As T
   overload: NMF.Models.ModelHelper.Parse*
   nameWithType.vb: ModelHelper.Parse(Of T)(String)
   fullName.vb: NMF.Models.ModelHelper.Parse(Of T)(String)
   name.vb: Parse(Of T)(String)
+- uid: NMF.Models.ModelHelper.CanCreateInstance``1
+  commentId: M:NMF.Models.ModelHelper.CanCreateInstance``1
+  id: CanCreateInstance``1
+  parent: NMF.Models.ModelHelper
+  langs:
+  - csharp
+  - vb
+  name: CanCreateInstance<T>()
+  nameWithType: ModelHelper.CanCreateInstance<T>()
+  fullName: NMF.Models.ModelHelper.CanCreateInstance<T>()
+  type: Method
+  source:
+    remote:
+      path: Models/Models/ModelHelper.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CanCreateInstance
+    path: src/Models/Models/ModelHelper.cs
+    startLine: 154
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models
+  summary: True, if an instance of the element type can be created automatically, resolving DefaultImplementationType attributes
+  example: []
+  syntax:
+    content: public static bool CanCreateInstance<T>()
+    typeParameters:
+    - id: T
+      description: The type of elements to create
+    return:
+      type: System.Boolean
+      description: True, if an element of the given type can be instantiated, otherwise False
+    content.vb: Public Shared Function CanCreateInstance(Of T)() As Boolean
+  overload: NMF.Models.ModelHelper.CanCreateInstance*
+  nameWithType.vb: ModelHelper.CanCreateInstance(Of T)()
+  fullName.vb: NMF.Models.ModelHelper.CanCreateInstance(Of T)()
+  name.vb: CanCreateInstance(Of T)()
+- uid: NMF.Models.ModelHelper.CreateInstance``1
+  commentId: M:NMF.Models.ModelHelper.CreateInstance``1
+  id: CreateInstance``1
+  parent: NMF.Models.ModelHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance<T>()
+  nameWithType: ModelHelper.CreateInstance<T>()
+  fullName: NMF.Models.ModelHelper.CreateInstance<T>()
+  type: Method
+  source:
+    remote:
+      path: Models/Models/ModelHelper.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CreateInstance
+    path: src/Models/Models/ModelHelper.cs
+    startLine: 161
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models
+  summary: Creates an instance of the given element type
+  example: []
+  syntax:
+    content: public static T CreateInstance<T>()
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: Public Shared Function CreateInstance(Of T)() As T
+  overload: NMF.Models.ModelHelper.CreateInstance*
+  nameWithType.vb: ModelHelper.CreateInstance(Of T)()
+  fullName.vb: NMF.Models.ModelHelper.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+- uid: NMF.Models.ModelHelper.ImplementationType``1
+  commentId: M:NMF.Models.ModelHelper.ImplementationType``1
+  id: ImplementationType``1
+  parent: NMF.Models.ModelHelper
+  langs:
+  - csharp
+  - vb
+  name: ImplementationType<T>()
+  nameWithType: ModelHelper.ImplementationType<T>()
+  fullName: NMF.Models.ModelHelper.ImplementationType<T>()
+  type: Method
+  source:
+    remote:
+      path: Models/Models/ModelHelper.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ImplementationType
+    path: src/Models/Models/ModelHelper.cs
+    startLine: 168
+  assemblies:
+  - NMF.Models
+  namespace: NMF.Models
+  summary: Gets the type used to instantiate the given type
+  example: []
+  syntax:
+    content: public static Type ImplementationType<T>()
+    typeParameters:
+    - id: T
+      description: The interface type in question
+    return:
+      type: System.Type
+      description: The type used for the implementation
+    content.vb: Public Shared Function ImplementationType(Of T)() As Type
+  overload: NMF.Models.ModelHelper.ImplementationType*
+  nameWithType.vb: ModelHelper.ImplementationType(Of T)()
+  fullName.vb: NMF.Models.ModelHelper.ImplementationType(Of T)()
+  name.vb: ImplementationType(Of T)()
 references:
 - uid: NMF.Models
   commentId: N:NMF.Models
@@ -726,3 +847,29 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: NMF.Models.ModelHelper.CanCreateInstance*
+  commentId: Overload:NMF.Models.ModelHelper.CanCreateInstance
+  href: NMF.Models.ModelHelper.html#NMF_Models_ModelHelper_CanCreateInstance__1
+  name: CanCreateInstance
+  nameWithType: ModelHelper.CanCreateInstance
+  fullName: NMF.Models.ModelHelper.CanCreateInstance
+- uid: NMF.Models.ModelHelper.CreateInstance*
+  commentId: Overload:NMF.Models.ModelHelper.CreateInstance
+  href: NMF.Models.ModelHelper.html#NMF_Models_ModelHelper_CreateInstance__1
+  name: CreateInstance
+  nameWithType: ModelHelper.CreateInstance
+  fullName: NMF.Models.ModelHelper.CreateInstance
+- uid: NMF.Models.ModelHelper.ImplementationType*
+  commentId: Overload:NMF.Models.ModelHelper.ImplementationType
+  href: NMF.Models.ModelHelper.html#NMF_Models_ModelHelper_ImplementationType__1
+  name: ImplementationType
+  nameWithType: ModelHelper.ImplementationType
+  fullName: NMF.Models.ModelHelper.ImplementationType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

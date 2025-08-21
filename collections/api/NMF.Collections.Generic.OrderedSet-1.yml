@@ -26,18 +26,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: OrderedSet
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Denotes an implementation of an ordered set
+  example: []
   syntax:
     content: 'public class OrderedSet<T> : DecoratedSet<T>, IList, ICollection, IOrderedSet<T>, IList<T>, ISet<T>, ICollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Class OrderedSet(Of T) Inherits DecoratedSet(Of T) Implements IList, ICollection, IOrderedSet(Of T), IList(Of T), ISet(Of T), ICollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
@@ -93,22 +96,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Add
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Adds an element to the current set and returns a value to indicate if the element was successfully added.
   example: []
   syntax:
     content: public override bool Add(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The element to add to the set.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the element is added to the set; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the element is already in the set.
     content.vb: Public Overrides Function Add(item As T) As Boolean
   overridden: NMF.Collections.Generic.DecoratedSet{{T}}.Add({T})
   overload: NMF.Collections.Generic.OrderedSet`1.Add*
@@ -130,25 +136,32 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the first occurrence of a specific object from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override sealed bool Remove(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to remove from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public NotOverridable Overrides Function Remove(item As T) As Boolean
   overridden: NMF.Collections.Generic.DecoratedSet{{T}}.Remove({T})
   overload: NMF.Collections.Generic.OrderedSet`1.Remove*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.ICollection{{T}}.Remove({T})
   nameWithType.vb: OrderedSet(Of T).Remove(T)
@@ -167,23 +180,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Remove
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 32
+    startLine: 42
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the given item at the given arrayIndex
+  example: []
   syntax:
     content: protected virtual bool Remove(T item, int index)
     parameters:
     - id: item
       type: '{T}'
+      description: The item to remove
     - id: index
       type: System.Int32
+      description: The arrayIndex of the item
     return:
       type: System.Boolean
+      description: True, if the removal was successful, otherwise false
     content.vb: Protected Overridable Function Remove(item As T, index As Integer) As Boolean
   overload: NMF.Collections.Generic.OrderedSet`1.Remove*
   nameWithType.vb: OrderedSet(Of T).Remove(T, Integer)
@@ -203,20 +221,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Clear
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 45
+    startLine: 56
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes all items from the <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public override void Clear()
     content.vb: Public Overrides Sub Clear()
   overridden: NMF.Collections.Generic.DecoratedSet{{T}}.Clear
   overload: NMF.Collections.Generic.OrderedSet`1.Clear*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.ICollection%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.IList.Clear
   - System.Collections.Generic.ICollection{{T}}.Clear
@@ -236,19 +259,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 51
+    startLine: 63
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Returns an enumerator that iterates through the collection.
   example: []
   syntax:
     content: public override IEnumerator<T> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{{T}}
+      description: An enumerator that can be used to iterate through the collection.
     content.vb: Public Overrides Function GetEnumerator() As IEnumerator(Of T)
   overridden: NMF.Collections.Generic.DecoratedSet{{T}}.GetEnumerator
   overload: NMF.Collections.Generic.OrderedSet`1.GetEnumerator*
@@ -270,22 +295,25 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: IndexOf
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 56
+    startLine: 69
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Determines the index of a specific item in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int IndexOf(T item)
     parameters:
     - id: item
       type: '{T}'
+      description: The object to locate in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Int32
+      description: The index of <code class="paramref">item</code> if found in the list; otherwise, -1.
     content.vb: Public Function IndexOf(item As T) As Integer
   overload: NMF.Collections.Generic.OrderedSet`1.IndexOf*
   implements:
@@ -306,24 +334,34 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Insert
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 61
+    startLine: 75
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Inserts an item to the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> at the specified index.
   example: []
   syntax:
     content: public virtual void Insert(int index, T item)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index at which <code class="paramref">item</code> should be inserted.
     - id: item
       type: '{T}'
+      description: The object to insert into the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Overridable Sub Insert(index As Integer, item As T)
   overload: NMF.Collections.Generic.OrderedSet`1.Insert*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Insert(System.Int32,{T})
   nameWithType.vb: OrderedSet(Of T).Insert(Integer, T)
@@ -343,22 +381,36 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveAt
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 69
+    startLine: 84
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Removes the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> item at the specified index.
   example: []
   syntax:
     content: public void RemoveAt(int index)
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the item to remove.
     content.vb: Public Sub RemoveAt(index As Integer)
   overload: NMF.Collections.Generic.OrderedSet`1.RemoveAt*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> is read-only.  
+
+       -or-  
+
+       The <xref href="System.Collections.IList" data-throw-if-not-resolved="false"></xref> has a fixed size.
   implements:
   - System.Collections.IList.RemoveAt(System.Int32)
   - System.Collections.Generic.IList{{T}}.RemoveAt(System.Int32)
@@ -379,24 +431,34 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: this[]
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 74
+    startLine: 90
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Gets or sets the element at the specified index.
   example: []
   syntax:
     content: public T this[int index] { get; set; }
     parameters:
     - id: index
       type: System.Int32
+      description: The zero-based index of the element to get or set.
     return:
       type: '{T}'
+      description: The element at the specified index.
     content.vb: Public Default Property this[](index As Integer) As T
   overload: NMF.Collections.Generic.OrderedSet`1.Item*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is not a valid index in the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The property is set and the <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> is read-only.
   implements:
   - System.Collections.Generic.IList{{T}}.Item(System.Int32)
   nameWithType.vb: OrderedSet(Of T).this[](Integer)
@@ -416,23 +478,28 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: Replace
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 90
+    startLine: 112
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Replaces the item at the given arrayIndex
+  example: []
   syntax:
     content: protected virtual void Replace(int index, T oldValue, T newValue)
     parameters:
     - id: index
       type: System.Int32
+      description: The arrayIndex on which the item is replaced
     - id: oldValue
       type: '{T}'
+      description: The old value
     - id: newValue
       type: '{T}'
+      description: The new value
     content.vb: Protected Overridable Sub Replace(index As Integer, oldValue As T, newValue As T)
   overload: NMF.Collections.Generic.OrderedSet`1.Replace*
   nameWithType.vb: OrderedSet(Of T).Replace(Integer, T, T)
@@ -452,18 +519,21 @@ items:
   source:
     remote:
       path: Collections/Collections/Generic/OrderedSet.cs
-      branch: master
+      branch: main
       repo: https://github.com/NMFCode/NMF.git
     id: AsReadOnly
     path: src/Collections/Collections/Generic/OrderedSet.cs
-    startLine: 161
+    startLine: 192
   assemblies:
   - NMF.Collections
   namespace: NMF.Collections.Generic
+  summary: Returns a readonly view of the oredered set
+  example: []
   syntax:
     content: public ReadOnlyOrderedSet<T> AsReadOnly()
     return:
       type: NMF.Collections.Generic.ReadOnlyOrderedSet{{T}}
+      description: ''
     content.vb: Public Function AsReadOnly() As ReadOnlyOrderedSet(Of T)
   overload: NMF.Collections.Generic.OrderedSet`1.AsReadOnly*
   nameWithType.vb: OrderedSet(Of T).AsReadOnly()
@@ -2215,6 +2285,13 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
 - uid: NMF.Collections.Generic.DecoratedSet{{T}}.Remove({T})
   commentId: M:NMF.Collections.Generic.DecoratedSet{`0}.Remove(`0)
   parent: NMF.Collections.Generic.DecoratedSet{{T}}
@@ -2663,6 +2740,13 @@ references:
   - name: (
   - name: T
   - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: NMF.Collections.Generic.OrderedSet`1.Insert*
   commentId: Overload:NMF.Collections.Generic.OrderedSet`1.Insert
   href: NMF.Collections.Generic.OrderedSet-1.html#NMF_Collections_Generic_OrderedSet_1_Insert_System_Int32__0_
