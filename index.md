@@ -37,6 +37,8 @@ Detailed project information to the sub-projects of NMF can be found on the wiki
 * [Optimizations](optimizations/index.md)
 * [Interop](interop/index.md)
 * [Collections](collections/index.md)
+* [AnyText](anytext/index.md)
+* [GLSP](glsp/index.md)
 
 ## Publications
 

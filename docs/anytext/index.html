@@ -69,9 +69,38 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="nmf-anytext">NMF AnyText</h1>
 
-<p>NMF AnyText is a textual language workbench. That is, it is a framework to derive parsers and editor services from a grammar.
+<p>NMF AnyText is an open-source textual language workbench. That is, it is a framework to derive parsers and editor services from a grammar.
 AnyText does not contribute any UI. Rather, the editor services are implemented using the Language Server Protocol (LSP) from Microsoft, allowing to
 integrate the editor services in a variety of Integrated Development Environments (IDEs) such as Visual Studio Code.</p>
+<h2 id="features">Features</h2>
+<p>AnyText provides the following features:</p>
+<ul>
+<li><strong>Parser:</strong> AnyText creates a packrat parser to parse a given language based on an extended EBNF grammar</li>
+<li><strong>Model construction:</strong> Based on a successful parse tree, AnyText automatically creates an NMF model</li>
+<li><strong>Reference resolution:</strong> During model construction, references to other model elements are resolved automatically</li>
+<li><strong>Metamodel construction:</strong> AnyText is able to derive the abstract syntax of your language from the concrete syntax and subsequentially generate code for it</li>
+<li><strong>Incremental change propagation:</strong> AnyText is able to process changes of your text and incrementally update the semantic model instead of recreating it from scratch.</li>
+<li><strong>Synthesis:</strong> AnyText is able to generate a textual representation for your semantic model automatically based on a few formatting instructions.</li>
+<li><strong>Editor services:</strong> AnyText can provide editor services through LSP.</li>
+</ul>
+<p>The following editor services are supported through LSP:</p>
+<ul>
+<li><strong><a href="features/semanticTokens.html">Semantic Tokens</a></strong>: AnyText implements semantic tokens to allow to color the text in the editor.</li>
+<li><strong><a href="features/completions.html">Completions</a></strong>: AnyText can provide customizable code completions.</li>
+<li><strong><a href="features/symbols.html">Document Symbols</a></strong>: the client can obtain an outline of the document</li>
+<li><strong><a href="features/folding.html">Folding</a></strong>: code areas can be folded. This is enabled by default for document symbols but can be customized easily.</li>
+<li><strong><a href="features/diagnostics.html">Diagnostics</a></strong>: AnyText allows you to implement custom diagnostics</li>
+<li><strong><a href="features/codeLenses.html">Code Lenses</a></strong>: AnyText allows you to implement your own code lenses based on the semantic element.</li>
+<li><strong><a href="features/codeActions.html">Code Actions</a></strong>: AnyText allows you to implement code actions based on semantic elements.</li>
+<li><strong><a href="features/selectionRange.html">Selection Ranges</a></strong>: the client can select entire tokens independent of white spaces</li>
+<li><strong><a href="features/findreferences.html">Find References</a></strong>: the client can find references to a given element</li>
+<li><strong><a href="features/gotodefinition.html">Go to Definition</a></strong>: the client can find the definition of an element</li>
+<li><strong><a href="features/rename.html">Rename</a></strong>: the client can consistently rename an element</li>
+<li><strong><a href="features/formatting.html">Formatting</a></strong>: the client can reformat the text</li>
+<li><strong><a href="features/hover.html">Hover</a></strong>: the client gets possibly helpful information as a tooltip</li>
+<li><strong><a href="features/inlay.html">Inlay</a></strong>: the client can be asked to show text inlays that are visible but not actually part of the document</li>
+</ul>
+<p>If you need more features, please open an issue and describe the use case.</p>
 
 </article>
           </div>
@@ -81,7 +110,7 @@ integrate the editor services in a variety of Integrated Development Environment
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NMFCode/NMFdocs/blob/main/anytext/index.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
