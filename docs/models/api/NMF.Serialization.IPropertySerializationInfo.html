@@ -1,876 +1,839 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Interface IPropertySerializationInfo </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IPropertySerializationInfo ">
-    
-    <meta name="description" content="Denotes the serialization information for a property">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes the serialization information for a property">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Serialization.IPropertySerializationInfo">
-
-
-
-  <h1 id="NMF_Serialization_IPropertySerializationInfo" data-uid="NMF.Serialization.IPropertySerializationInfo" class="text-break">Interface IPropertySerializationInfo</h1>
-  <div class="markdown level0 summary"><p>Denotes the serialization information for a property</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Serialization.html">Serialization</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Serialization.dll</h6>
-  <h5 id="NMF_Serialization_IPropertySerializationInfo_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPropertySerializationInfo</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_DefaultValue.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.DefaultValue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L66">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_DefaultValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.DefaultValue*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_DefaultValue" data-uid="NMF.Serialization.IPropertySerializationInfo.DefaultValue">DefaultValue</h4>
-  <div class="markdown level1 summary"><p>Gets the default value</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object DefaultValue { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_ElementName.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.ElementName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L13">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_ElementName_" data-uid="NMF.Serialization.IPropertySerializationInfo.ElementName*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_ElementName" data-uid="NMF.Serialization.IPropertySerializationInfo.ElementName">ElementName</h4>
-  <div class="markdown level1 summary"><p>The element name that should be serialized</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string ElementName { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_IdentificationMode.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.IdentificationMode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L92">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_IdentificationMode_" data-uid="NMF.Serialization.IPropertySerializationInfo.IdentificationMode*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_IdentificationMode" data-uid="NMF.Serialization.IPropertySerializationInfo.IdentificationMode">IdentificationMode</h4>
-  <div class="markdown level1 summary"><p>Gets the identification mode of the property</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">XmlIdentificationMode IdentificationMode { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.XmlIdentificationMode.html">XmlIdentificationMode</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_IsIdentifier.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.IsIdentifier%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L87">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_IsIdentifier_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsIdentifier*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_IsIdentifier" data-uid="NMF.Serialization.IPropertySerializationInfo.IsIdentifier">IsIdentifier</h4>
-  <div class="markdown level1 summary"><p>True, if the property is an identifier, otherwise False</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsIdentifier { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_IsReadOnly.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L61">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_IsReadOnly_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsReadOnly*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_IsReadOnly" data-uid="NMF.Serialization.IPropertySerializationInfo.IsReadOnly">IsReadOnly</h4>
-  <div class="markdown level1 summary"><p>True, if the property is read-only, otherwise False</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsReadOnly { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_IsStringConvertible.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.IsStringConvertible%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L112">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_IsStringConvertible_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsStringConvertible*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_IsStringConvertible" data-uid="NMF.Serialization.IPropertySerializationInfo.IsStringConvertible">IsStringConvertible</h4>
-  <div class="markdown level1 summary"><p>True, if the value of this property allows roundtrip-serialization to string</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsStringConvertible { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_Namespace.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.Namespace%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L18">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_Namespace_" data-uid="NMF.Serialization.IPropertySerializationInfo.Namespace*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_Namespace" data-uid="NMF.Serialization.IPropertySerializationInfo.Namespace">Namespace</h4>
-  <div class="markdown level1 summary"><p>The namespace to which the element should be serialized or null</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Namespace { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_NamespacePrefix.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.NamespacePrefix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L23">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_NamespacePrefix_" data-uid="NMF.Serialization.IPropertySerializationInfo.NamespacePrefix*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_NamespacePrefix" data-uid="NMF.Serialization.IPropertySerializationInfo.NamespacePrefix">NamespacePrefix</h4>
-  <div class="markdown level1 summary"><p>The namespace prefix that should be used for serialization or null</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string NamespacePrefix { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_Opposite.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.Opposite%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L107">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_Opposite_" data-uid="NMF.Serialization.IPropertySerializationInfo.Opposite*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_Opposite" data-uid="NMF.Serialization.IPropertySerializationInfo.Opposite">Opposite</h4>
-  <div class="markdown level1 summary"><p>Gets the opposite property or null</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IPropertySerializationInfo Opposite { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.IPropertySerializationInfo.html">IPropertySerializationInfo</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_PropertyMinType.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.PropertyMinType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L102">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_PropertyMinType_" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyMinType*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_PropertyMinType" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyMinType">PropertyMinType</h4>
-  <div class="markdown level1 summary"><p>Gets the minimum type system type of the property</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Type PropertyMinType { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_PropertyType.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.PropertyType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L97">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_PropertyType_" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyType*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_PropertyType" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyType">PropertyType</h4>
-  <div class="markdown level1 summary"><p>Gets the property type</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ITypeSerializationInfo PropertyType { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_RequiresInitialization.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.RequiresInitialization%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L28">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_RequiresInitialization_" data-uid="NMF.Serialization.IPropertySerializationInfo.RequiresInitialization*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_RequiresInitialization" data-uid="NMF.Serialization.IPropertySerializationInfo.RequiresInitialization">RequiresInitialization</h4>
-  <div class="markdown level1 summary"><p>True, if the property requires initialization, otherwise False</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool RequiresInitialization { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_ShallCreateInstance.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.ShallCreateInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L48">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_ShallCreateInstance_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShallCreateInstance*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_ShallCreateInstance" data-uid="NMF.Serialization.IPropertySerializationInfo.ShallCreateInstance">ShallCreateInstance</h4>
-  <div class="markdown level1 summary"><p>Determines whether the instance should be created explicitly</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool ShallCreateInstance { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_AddToCollection_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.AddToCollection(System.Object%2CSystem.Object%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L43">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_AddToCollection_" data-uid="NMF.Serialization.IPropertySerializationInfo.AddToCollection*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_AddToCollection_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.AddToCollection(System.Object,System.Object,NMF.Serialization.XmlSerializationContext)">AddToCollection(object, object, XmlSerializationContext)</h4>
-  <div class="markdown level1 summary"><p>Adds the given object to the collection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void AddToCollection(object input, object item, XmlSerializationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The context object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The item that should be added</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The deserialization context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_ConvertFromString_System_String_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.ConvertFromString(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L119">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_ConvertFromString_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertFromString*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_ConvertFromString_System_String_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertFromString(System.String)">ConvertFromString(string)</h4>
-  <div class="markdown level1 summary"><p>Deserializes the provided text</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object ConvertFromString(string text)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>the text</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>The deserialized value</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_ConvertToString_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.ConvertToString(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L126">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_ConvertToString_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertToString*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_ConvertToString_System_Object_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertToString(System.Object)">ConvertToString(object)</h4>
-  <div class="markdown level1 summary"><p>Converts the provided object to a string</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string ConvertToString(object input)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The object to convert</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>A string representation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_GetValue_System_Object_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.GetValue(System.Object%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L74">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_GetValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.GetValue*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_GetValue_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.GetValue(System.Object,NMF.Serialization.XmlSerializationContext)">GetValue(object, XmlSerializationContext)</h4>
-  <div class="markdown level1 summary"><p>Gets the value of this property for the given input object</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object GetValue(object input, XmlSerializationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The context object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The serialization context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_Initialize_System_Object_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.Initialize(System.Object%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L35">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_Initialize_" data-uid="NMF.Serialization.IPropertySerializationInfo.Initialize*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_Initialize_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.Initialize(System.Object,NMF.Serialization.XmlSerializationContext)">Initialize(object, XmlSerializationContext)</h4>
-  <div class="markdown level1 summary"><p>Initializes the property for the given element</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Initialize(object input, XmlSerializationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The object instance for which the property should be initialized</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The deserialization context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_SetValue_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.SetValue(System.Object%2CSystem.Object%2CNMF.Serialization.XmlSerializationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L82">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_SetValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.SetValue*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_SetValue_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.SetValue(System.Object,System.Object,NMF.Serialization.XmlSerializationContext)">SetValue(object, object, XmlSerializationContext)</h4>
-  <div class="markdown level1 summary"><p>Sets the value for the property</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SetValue(object input, object value, XmlSerializationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The context object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value of the property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The deserialization context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo_ShouldSerializeValue_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo.ShouldSerializeValue(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L56">View Source</a>
-  </span>
-  <a id="NMF_Serialization_IPropertySerializationInfo_ShouldSerializeValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShouldSerializeValue*"></a>
-  <h4 id="NMF_Serialization_IPropertySerializationInfo_ShouldSerializeValue_System_Object_System_Object_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShouldSerializeValue(System.Object,System.Object)">ShouldSerializeValue(object, object)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the provided value should be serialized</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool ShouldSerializeValue(object obj, object value)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The context object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value in question</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True, if the value should be serialized, otherwise False</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_IPropertySerializationInfo.md&amp;value=---%0Auid%3A%20NMF.Serialization.IPropertySerializationInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L8" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NMF.Serialization.IPropertySerializationInfo">
+
+
+
+  <h1 id="NMF_Serialization_IPropertySerializationInfo" data-uid="NMF.Serialization.IPropertySerializationInfo" class="text-break">
+Interface IPropertySerializationInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Serialization.html">Serialization</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Serialization.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Denotes the serialization information for a property</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IPropertySerializationInfo</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_DefaultValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.DefaultValue*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_DefaultValue" data-uid="NMF.Serialization.IPropertySerializationInfo.DefaultValue">
+  DefaultValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the default value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object DefaultValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_ElementName_" data-uid="NMF.Serialization.IPropertySerializationInfo.ElementName*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_ElementName" data-uid="NMF.Serialization.IPropertySerializationInfo.ElementName">
+  ElementName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The element name that should be serialized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ElementName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_IdentificationMode_" data-uid="NMF.Serialization.IPropertySerializationInfo.IdentificationMode*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_IdentificationMode" data-uid="NMF.Serialization.IPropertySerializationInfo.IdentificationMode">
+  IdentificationMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the identification mode of the property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">XmlIdentificationMode IdentificationMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Serialization.XmlIdentificationMode.html">XmlIdentificationMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_IsIdentifier_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsIdentifier*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_IsIdentifier" data-uid="NMF.Serialization.IPropertySerializationInfo.IsIdentifier">
+  IsIdentifier
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if the property is an identifier, otherwise False</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsIdentifier { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_IsReadOnly_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsReadOnly*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_IsReadOnly" data-uid="NMF.Serialization.IPropertySerializationInfo.IsReadOnly">
+  IsReadOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if the property is read-only, otherwise False</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsReadOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_IsStringConvertible_" data-uid="NMF.Serialization.IPropertySerializationInfo.IsStringConvertible*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_IsStringConvertible" data-uid="NMF.Serialization.IPropertySerializationInfo.IsStringConvertible">
+  IsStringConvertible
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if the value of this property allows roundtrip-serialization to string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsStringConvertible { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_Namespace_" data-uid="NMF.Serialization.IPropertySerializationInfo.Namespace*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_Namespace" data-uid="NMF.Serialization.IPropertySerializationInfo.Namespace">
+  Namespace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to which the element should be serialized or null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Namespace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_NamespacePrefix_" data-uid="NMF.Serialization.IPropertySerializationInfo.NamespacePrefix*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_NamespacePrefix" data-uid="NMF.Serialization.IPropertySerializationInfo.NamespacePrefix">
+  NamespacePrefix
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace prefix that should be used for serialization or null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string NamespacePrefix { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_Opposite_" data-uid="NMF.Serialization.IPropertySerializationInfo.Opposite*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_Opposite" data-uid="NMF.Serialization.IPropertySerializationInfo.Opposite">
+  Opposite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the opposite property or null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPropertySerializationInfo Opposite { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Serialization.IPropertySerializationInfo.html">IPropertySerializationInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_PropertyMinType_" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyMinType*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_PropertyMinType" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyMinType">
+  PropertyMinType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the minimum type system type of the property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Type PropertyMinType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_PropertyType_" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyType*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_PropertyType" data-uid="NMF.Serialization.IPropertySerializationInfo.PropertyType">
+  PropertyType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the property type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITypeSerializationInfo PropertyType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Serialization.ITypeSerializationInfo.html">ITypeSerializationInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_RequiresInitialization_" data-uid="NMF.Serialization.IPropertySerializationInfo.RequiresInitialization*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_RequiresInitialization" data-uid="NMF.Serialization.IPropertySerializationInfo.RequiresInitialization">
+  RequiresInitialization
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if the property requires initialization, otherwise False</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool RequiresInitialization { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_ShallCreateInstance_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShallCreateInstance*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_ShallCreateInstance" data-uid="NMF.Serialization.IPropertySerializationInfo.ShallCreateInstance">
+  ShallCreateInstance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the instance should be created explicitly</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ShallCreateInstance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_AddToCollection_" data-uid="NMF.Serialization.IPropertySerializationInfo.AddToCollection*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_AddToCollection_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.AddToCollection(System.Object,System.Object,NMF.Serialization.XmlSerializationContext)">
+  AddToCollection(object, object, XmlSerializationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds the given object to the collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddToCollection(object input, object item, XmlSerializationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The context object</p>
+</dd>
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The item that should be added</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></dt>
+    <dd><p>The deserialization context</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_ConvertFromString_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertFromString*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_ConvertFromString_System_String_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertFromString(System.String)">
+  ConvertFromString(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes the provided text</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ConvertFromString(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the text</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The deserialized value</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_ConvertToString_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertToString*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_ConvertToString_System_Object_" data-uid="NMF.Serialization.IPropertySerializationInfo.ConvertToString(System.Object)">
+  ConvertToString(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the provided object to a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ConvertToString(object input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to convert</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string representation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_GetValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.GetValue*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_GetValue_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.GetValue(System.Object,NMF.Serialization.XmlSerializationContext)">
+  GetValue(object, XmlSerializationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the value of this property for the given input object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object GetValue(object input, XmlSerializationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The context object</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></dt>
+    <dd><p>The serialization context</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_Initialize_" data-uid="NMF.Serialization.IPropertySerializationInfo.Initialize*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_Initialize_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.Initialize(System.Object,NMF.Serialization.XmlSerializationContext)">
+  Initialize(object, XmlSerializationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes the property for the given element</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Initialize(object input, XmlSerializationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object instance for which the property should be initialized</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></dt>
+    <dd><p>The deserialization context</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_SetValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.SetValue*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_SetValue_System_Object_System_Object_NMF_Serialization_XmlSerializationContext_" data-uid="NMF.Serialization.IPropertySerializationInfo.SetValue(System.Object,System.Object,NMF.Serialization.XmlSerializationContext)">
+  SetValue(object, object, XmlSerializationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the value for the property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetValue(object input, object value, XmlSerializationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The context object</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value of the property</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Serialization.XmlSerializationContext.html">XmlSerializationContext</a></dt>
+    <dd><p>The deserialization context</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Serialization_IPropertySerializationInfo_ShouldSerializeValue_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShouldSerializeValue*"></a>
+
+  <h3 id="NMF_Serialization_IPropertySerializationInfo_ShouldSerializeValue_System_Object_System_Object_" data-uid="NMF.Serialization.IPropertySerializationInfo.ShouldSerializeValue(System.Object,System.Object)">
+  ShouldSerializeValue(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the provided value should be serialized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ShouldSerializeValue(object obj, object value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The context object</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value in question</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the value should be serialized, otherwise False</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization/XML/IPropertySerializationInfo.cs/#L8" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,1432 +1,1230 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Interface ILspServer </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ILspServer ">
-    
-    <meta name="description" content="Denotes an interface for an LSP server">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes an interface for an LSP server">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.AnyText.ILspServer">
+
+        <article data-uid="NMF.AnyText.ILspServer">
 
 
 
-  <h1 id="NMF_AnyText_ILspServer" data-uid="NMF.AnyText.ILspServer" class="text-break">Interface ILspServer</h1>
-  <div class="markdown level0 summary"><p>Denotes an interface for an LSP server</p>
+  <h1 id="NMF_AnyText_ILspServer" data-uid="NMF.AnyText.ILspServer" class="text-break">
+Interface ILspServer  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.AnyText.Lsp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Denotes an interface for an LSP server</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a></h6>
-  <h6><strong>Assembly</strong>: NMF.AnyText.Lsp.dll</h6>
-  <h5 id="NMF_AnyText_ILspServer_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ILspServer</code></pre>
   </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeAction.cs/#L13">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_AnyText_ILspServer_CodeAction_" data-uid="NMF.AnyText.ILspServer.CodeAction*"></a>
-  <h4 id="NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)">CodeAction(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)">
+  CodeAction(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeAction.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/codeAction</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/codeAction&quot;)]
 CodeAction[] CodeAction(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (CodeActionParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CodeAction</span>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs/#L14">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (CodeActionParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CodeAction</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_CodeLens_" data-uid="NMF.AnyText.ILspServer.CodeLens*"></a>
-  <h4 id="NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)">CodeLens(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)">
+  CodeLens(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/codeLens</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/codeLens&quot;)]
 CodeLens[] CodeLens(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (CodeLensParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CodeLens</span>[]</td>
-        <td><p>A Array of <a class="xref" href="NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_">CodeLens(JToken)</a> objects containing the available CodeLenses of the document.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_CodeLensResolve_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs/#L21">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (CodeLensParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CodeLens</span>[]</dt>
+    <dd><p>A Array of <a class="xref" href="NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_">CodeLens(JToken)</a> objects containing the available CodeLenses of the document.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_CodeLensResolve_" data-uid="NMF.AnyText.ILspServer.CodeLensResolve*"></a>
-  <h4 id="NMF_AnyText_ILspServer_CodeLensResolve_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)">CodeLensResolve(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_CodeLensResolve_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)">
+  CodeLensResolve(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.CodeLens.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>codeLense/resolve</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;codeLens/resolve&quot;)]
 CodeLens CodeLensResolve(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (CodeLens)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CodeLens</span></td>
-        <td><p>A <a class="xref" href="NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_">CodeLens(JToken)</a> object containing the executed CodeLens</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (CodeLens)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CodeLens</span></dt>
+    <dd><p>A <a class="xref" href="NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeLens_Newtonsoft_Json_Linq_JToken_">CodeLens(JToken)</a> object containing the executed CodeLens</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_DidChange_" data-uid="NMF.AnyText.ILspServer.DidChange*"></a>
-  <h4 id="NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)">DidChange(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)">
+  DidChange(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when the client signals a change</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/didChange&quot;)]
 void DidChange(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>the parameters of the request</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_DidClose_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L27">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>the parameters of the request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_DidClose_" data-uid="NMF.AnyText.ILspServer.DidClose*"></a>
-  <h4 id="NMF_AnyText_ILspServer_DidClose_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)">DidClose(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_DidClose_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)">
+  DidClose(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when the client closed a document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/didClose&quot;)]
 void DidClose(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>the parameters of the request</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_DidOpen_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L34">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>the parameters of the request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_DidOpen_" data-uid="NMF.AnyText.ILspServer.DidOpen*"></a>
-  <h4 id="NMF_AnyText_ILspServer_DidOpen_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)">DidOpen(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_DidOpen_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)">
+  DidOpen(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when the client opened a document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/didOpen&quot;)]
 void DidOpen(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>the parameters of the request</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L42">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>the parameters of the request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_DidSave_" data-uid="NMF.AnyText.ILspServer.DidSave*"></a>
-  <h4 id="NMF_AnyText_ILspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_" data-uid="NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)">DidSave(TextDocumentIdentifier, string)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_" data-uid="NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)">
+  DidSave(TextDocumentIdentifier, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when the client saved a document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/didSave&quot;)]
 void DidSave(TextDocumentIdentifier textDocument, string text)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TextDocumentIdentifier</span></td>
-        <td><span class="parametername">textDocument</span></td>
-        <td><p>the document to save</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>the actual text</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L107">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>textDocument</code> <span class="xref">TextDocumentIdentifier</span></dt>
+    <dd><p>the document to save</p>
+</dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the actual text</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_ExecuteCommand_" data-uid="NMF.AnyText.ILspServer.ExecuteCommand*"></a>
-  <h4 id="NMF_AnyText_ILspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)">ExecuteCommand(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)">
+  ExecuteCommand(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>workspace/ececuteCommand</code> request from the client. This is used to execute an action on the
 Server.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;workspace/executeCommand&quot;)]
 void ExecuteCommand(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (ExceuteCommandParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Exit.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Exit%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L48">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (ExceuteCommandParams)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Exit_" data-uid="NMF.AnyText.ILspServer.Exit*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Exit" data-uid="NMF.AnyText.ILspServer.Exit">Exit()</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Exit" data-uid="NMF.AnyText.ILspServer.Exit">
+  Exit()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when the client exits</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;exit&quot;)]
 void Exit()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Formatting_LspTypes_TextDocumentIdentifier_NMF_AnyText_FormattingOptions_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier%2CNMF.AnyText.FormattingOptions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Formatting.cs/#L15">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Formatting_" data-uid="NMF.AnyText.ILspServer.Formatting*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Formatting_LspTypes_TextDocumentIdentifier_NMF_AnyText_FormattingOptions_" data-uid="NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)">Formatting(TextDocumentIdentifier, FormattingOptions)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Formatting_LspTypes_TextDocumentIdentifier_NMF_AnyText_FormattingOptions_" data-uid="NMF.AnyText.ILspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)">
+  Formatting(TextDocumentIdentifier, FormattingOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Formatting.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/formatting</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/formatting&quot;)]
 TextEdit[] Formatting(TextDocumentIdentifier textDocument, FormattingOptions options)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TextDocumentIdentifier</span></td>
-        <td><span class="parametername">textDocument</span></td>
-        <td><p>The identifier of the text document to be formatted.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.FormattingOptions.html">FormattingOptions</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The formatting options provided by the client, such as indentation and spacing settings.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TextEdit</span>[]</td>
-        <td><p>An array of <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a> objects representing the formatting changes.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_FormattingRange_LspTypes_TextDocumentIdentifier_LspTypes_Range_NMF_AnyText_FormattingOptions_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier%2CLspTypes.Range%2CNMF.AnyText.FormattingOptions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Formatting.cs/#L25">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>textDocument</code> <span class="xref">TextDocumentIdentifier</span></dt>
+    <dd><p>The identifier of the text document to be formatted.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="NMF.AnyText.FormattingOptions.html">FormattingOptions</a></dt>
+    <dd><p>The formatting options provided by the client, such as indentation and spacing settings.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TextEdit</span>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a> objects representing the formatting changes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_FormattingRange_" data-uid="NMF.AnyText.ILspServer.FormattingRange*"></a>
-  <h4 id="NMF_AnyText_ILspServer_FormattingRange_LspTypes_TextDocumentIdentifier_LspTypes_Range_NMF_AnyText_FormattingOptions_" data-uid="NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)">FormattingRange(TextDocumentIdentifier, Range, FormattingOptions)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_FormattingRange_LspTypes_TextDocumentIdentifier_LspTypes_Range_NMF_AnyText_FormattingOptions_" data-uid="NMF.AnyText.ILspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)">
+  FormattingRange(TextDocumentIdentifier, Range, FormattingOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Formatting.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/rangeFormatting</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/rangeFormatting&quot;)]
 TextEdit[] FormattingRange(TextDocumentIdentifier textDocument, Range range, FormattingOptions options)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TextDocumentIdentifier</span></td>
-        <td><span class="parametername">textDocument</span></td>
-        <td><p>The identifier of the text document to be formatted.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Range</span></td>
-        <td><span class="parametername">range</span></td>
-        <td><p>The range within the document that should be formatted.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.FormattingOptions.html">FormattingOptions</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The formatting options provided by the client, such as indentation and spacing settings.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TextEdit</span>[]</td>
-        <td><p>An array of <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a> objects representing the formatting changes within the specified range.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_HandleCompletion_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L99">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>textDocument</code> <span class="xref">TextDocumentIdentifier</span></dt>
+    <dd><p>The identifier of the text document to be formatted.</p>
+</dd>
+    <dt><code>range</code> <span class="xref">Range</span></dt>
+    <dd><p>The range within the document that should be formatted.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="NMF.AnyText.FormattingOptions.html">FormattingOptions</a></dt>
+    <dd><p>The formatting options provided by the client, such as indentation and spacing settings.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TextEdit</span>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a> objects representing the formatting changes within the specified range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_HandleCompletion_" data-uid="NMF.AnyText.ILspServer.HandleCompletion*"></a>
-  <h4 id="NMF_AnyText_ILspServer_HandleCompletion_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)">HandleCompletion(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_HandleCompletion_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)">
+  HandleCompletion(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Suggests completions</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/completion&quot;)]
 CompletionList HandleCompletion(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CompletionList</span></td>
-        <td><p>A completion list</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Hover_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Hover.cs/#L14">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CompletionList</span></dt>
+    <dd><p>A completion list</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Hover_" data-uid="NMF.AnyText.ILspServer.Hover*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Hover_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)">Hover(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Hover_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.Hover(Newtonsoft.Json.Linq.JToken)">
+  Hover(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Hover.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/hover</code> request from the client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/hover&quot;)]
 Hover Hover(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (TextDocumentHover)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Hover</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Initialize(System.Nullable%7BSystem.Int32%7D%2CLspTypes._InitializeParams_ClientInfo%2CSystem.String%2CSystem.String%2CSystem.Uri%2CLspTypes.ClientCapabilities%2CLspTypes.TraceValue%2CLspTypes.WorkspaceFolder%5B%5D%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L64">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (TextDocumentHover)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Hover</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Initialize_" data-uid="NMF.AnyText.ILspServer.Initialize*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_" data-uid="NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)">Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_" data-uid="NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)">
+  Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes the server</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;initialize&quot;)]
 InitializeResult Initialize(int? processId, _InitializeParams_ClientInfo clientInfo, string locale, string rootPath, Uri rootUri, ClientCapabilities capabilities, TraceValue trace, WorkspaceFolder[] workspaceFolders, object InitializationOptions = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
-        <td><span class="parametername">processId</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">_InitializeParams_ClientInfo</span></td>
-        <td><span class="parametername">clientInfo</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">locale</span></td>
-        <td><p>the language</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">rootPath</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">rootUri</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">ClientCapabilities</span></td>
-        <td><span class="parametername">capabilities</span></td>
-        <td><p>capabilities of the client</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TraceValue</span></td>
-        <td><span class="parametername">trace</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">WorkspaceFolder</span>[]</td>
-        <td><span class="parametername">workspaceFolders</span></td>
-        <td><p>workspace folders</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">InitializationOptions</span></td>
-        <td><p>options for the initialization</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">InitializeResult</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Initialized.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Initialized%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L78">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>processId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>clientInfo</code> <span class="xref">_InitializeParams_ClientInfo</span></dt>
+    <dd></dd>
+    <dt><code>locale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the language</p>
+</dd>
+    <dt><code>rootPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>rootUri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd></dd>
+    <dt><code>capabilities</code> <span class="xref">ClientCapabilities</span></dt>
+    <dd><p>capabilities of the client</p>
+</dd>
+    <dt><code>trace</code> <span class="xref">TraceValue</span></dt>
+    <dd></dd>
+    <dt><code>workspaceFolders</code> <span class="xref">WorkspaceFolder</span>[]</dt>
+    <dd><p>workspace folders</p>
+</dd>
+    <dt><code>InitializationOptions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>options for the initialization</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">InitializeResult</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Initialized_" data-uid="NMF.AnyText.ILspServer.Initialized*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Initialized" data-uid="NMF.AnyText.ILspServer.Initialized">Initialized()</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Initialized" data-uid="NMF.AnyText.ILspServer.Initialized">
+  Initialized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes the server</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;initialized&quot;)]
 void Initialized()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_ProvideInlayHints_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L115">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_ProvideInlayHints_" data-uid="NMF.AnyText.ILspServer.ProvideInlayHints*"></a>
-  <h4 id="NMF_AnyText_ILspServer_ProvideInlayHints_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)">ProvideInlayHints(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_ProvideInlayHints_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)">
+  ProvideInlayHints(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Provides Inlay hints for the document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/inlayHint&quot;)]
 InlayHint[] ProvideInlayHints(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The parameters of the request</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.InlayClasses.InlayHint.html">InlayHint</a>[]</td>
-        <td><p>A list of inlay hints</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryDefinition_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.GoToDefinition.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The parameters of the request</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.InlayClasses.InlayHint.html">InlayHint</a>[]</dt>
+    <dd><p>A list of inlay hints</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryDefinition_" data-uid="NMF.AnyText.ILspServer.QueryDefinition*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryDefinition_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)">QueryDefinition(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryDefinition_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)">
+  QueryDefinition(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.GoToDefinition.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/definition</code> request from the client. This is used to retrieve the location
 of the definition of a symbol in a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/definition&quot;)]
 LocationLink QueryDefinition(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (TextDocumentPositionParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">LocationLink</span></td>
-        <td><p>A <span class="xref">LspTypes.LocationLink</span> object containing the document and position of the definition of a symbol.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryDocumentHighlights_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.DocumentHighlights.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (TextDocumentPositionParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LocationLink</span></dt>
+    <dd><p>A <span class="xref">LspTypes.LocationLink</span> object containing the document and position of the definition of a symbol.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryDocumentHighlights_" data-uid="NMF.AnyText.ILspServer.QueryDocumentHighlights*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryDocumentHighlights_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)">QueryDocumentHighlights(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryDocumentHighlights_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)">
+  QueryDocumentHighlights(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.DocumentHighlights.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/documentHighlight</code> request from the client. This is used to retrieve the locations and kinds
 of all highlights for a literal at a given position in the document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/documentHighlight&quot;)]
 DocumentHighlight[] QueryDocumentHighlights(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (DocumentHighlightParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DocumentHighlight</span>[]</td>
-        <td><p>An array of <span class="xref">LspTypes.DocumentHighlight</span> objects containing the range and kind of all matching highlights in the document.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryDocumentSymbols_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.DocumentSymbol.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (DocumentHighlightParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">DocumentHighlight</span>[]</dt>
+    <dd><p>An array of <span class="xref">LspTypes.DocumentHighlight</span> objects containing the range and kind of all matching highlights in the document.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryDocumentSymbols_" data-uid="NMF.AnyText.ILspServer.QueryDocumentSymbols*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryDocumentSymbols_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)">QueryDocumentSymbols(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryDocumentSymbols_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryDocumentSymbols(Newtonsoft.Json.Linq.JToken)">
+  QueryDocumentSymbols(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.DocumentSymbol.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/documentSymbol/full</code> request from the client. This is used to retrieve all document symbols for a document,
 which can be used to show the outline of and jump to notable parts of the document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/documentSymbol&quot;)]
 DocumentSymbol[] QueryDocumentSymbols(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (DocumentSymbolParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DocumentSymbol</span>[]</td>
-        <td><p>An array of <a class="xref" href="NMF.AnyText.DocumentSymbol.html">DocumentSymbol</a> objects, each containing details on a document symbol with subsequent children symbols.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryFoldingRanges_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.FoldingRanges.cs/#L19">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (DocumentSymbolParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">DocumentSymbol</span>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.DocumentSymbol.html">DocumentSymbol</a> objects, each containing details on a document symbol with subsequent children symbols.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryFoldingRanges_" data-uid="NMF.AnyText.ILspServer.QueryFoldingRanges*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryFoldingRanges_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)">QueryFoldingRanges(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryFoldingRanges_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryFoldingRanges(Newtonsoft.Json.Linq.JToken)">
+  QueryFoldingRanges(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.FoldingRanges.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/foldingRange/full</code> request from the client. This is used to retrieve all folding ranges for a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/foldingRange&quot;)]
 FoldingRange[] QueryFoldingRanges(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (FoldingRangeParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">FoldingRange</span>[]</td>
-        <td><p>An array of <a class="xref" href="NMF.AnyText.FoldingRange.html">FoldingRange</a> objects, each containing details on a folding range in the document.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryReferences_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.FindReferences.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (FoldingRangeParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FoldingRange</span>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.FoldingRange.html">FoldingRange</a> objects, each containing details on a folding range in the document.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryReferences_" data-uid="NMF.AnyText.ILspServer.QueryReferences*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryReferences_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)">QueryReferences(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryReferences_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)">
+  QueryReferences(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.FindReferences.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/references</code> request from the client. This is used to retrieve the locations
 of all references to a symbol in a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/references&quot;)]
 Location[] QueryReferences(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (ReferenceParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Location</span>[]</td>
-        <td><p>An array of <span class="xref">LspTypes.Location</span> objects containing the documents and locations of the references to a symbol.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QueryRenameWorkspaceEdit_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Rename.cs/#L20">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (ReferenceParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Location</span>[]</dt>
+    <dd><p>An array of <span class="xref">LspTypes.Location</span> objects containing the documents and locations of the references to a symbol.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QueryRenameWorkspaceEdit_" data-uid="NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QueryRenameWorkspaceEdit_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)">QueryRenameWorkspaceEdit(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QueryRenameWorkspaceEdit_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QueryRenameWorkspaceEdit(Newtonsoft.Json.Linq.JToken)">
+  QueryRenameWorkspaceEdit(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.Rename.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/rename</code> request from the client. This is used to determine the locations of a symbol
 in a workspace to perform a workspace-wide rename.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/rename&quot;)]
 WorkspaceEdit QueryRenameWorkspaceEdit(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (RenameParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">WorkspaceEdit</span></td>
-        <td><p>A <span class="xref">LspTypes.WorkspaceEdit</span> object containing the changes to be performed by the client.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QuerySelectionRanges_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SelectionRanges.cs/#L21">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (RenameParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">WorkspaceEdit</span></dt>
+    <dd><p>A <span class="xref">LspTypes.WorkspaceEdit</span> object containing the changes to be performed by the client.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QuerySelectionRanges_" data-uid="NMF.AnyText.ILspServer.QuerySelectionRanges*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QuerySelectionRanges_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)">QuerySelectionRanges(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QuerySelectionRanges_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySelectionRanges(Newtonsoft.Json.Linq.JToken)">
+  QuerySelectionRanges(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SelectionRanges.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/selectionRange</code> request from the client. This is used to retrieve selection ranges
 at an array of given positions in a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/selectionRange&quot;)]
 SelectionRange[] QuerySelectionRanges(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (SelectionRangeParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SelectionRange</span>[]</td>
-        <td><p>An array of <a class="xref" href="NMF.AnyText.SelectionRange.html">SelectionRange</a> objects, each containing details on a selection range in the document
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (SelectionRangeParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SelectionRange</span>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.SelectionRange.html">SelectionRange</a> objects, each containing details on a selection range in the document
 corresponding to the received positions.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QuerySemanticTokens_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L15">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QuerySemanticTokens_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokens*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QuerySemanticTokens_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)">QuerySemanticTokens(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QuerySemanticTokens_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)">
+  QuerySemanticTokens(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/semanticTokens/full</code> request from the client. This is used to retrieve all semantic
 tokens for a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/semanticTokens/full&quot;)]
 SemanticTokens QuerySemanticTokens(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (SemanticTokensParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SemanticTokens</span></td>
-        <td><p>A <span class="xref">LspTypes.SemanticTokens</span> object containing the full set of semantic tokens for the document.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QuerySemanticTokensDelta_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L24">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (SemanticTokensParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SemanticTokens</span></dt>
+    <dd><p>A <span class="xref">LspTypes.SemanticTokens</span> object containing the full set of semantic tokens for the document.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QuerySemanticTokensDelta_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensDelta*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QuerySemanticTokensDelta_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)">QuerySemanticTokensDelta(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QuerySemanticTokensDelta_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)">
+  QuerySemanticTokensDelta(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/semanticTokens/full/delta</code> request from the client. This is used to retrieve only
 the changes (delta) in semantic tokens for a document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/semanticTokens/full/delta&quot;)]
 SemanticTokensDelta QuerySemanticTokensDelta(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (SemanticTokensDeltaParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SemanticTokensDelta</span></td>
-        <td><p>A <span class="xref">LspTypes.SemanticTokensDelta</span> object containing only the delta of semantic tokens for the document.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_QuerySemanticTokensRange_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L33">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (SemanticTokensDeltaParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SemanticTokensDelta</span></dt>
+    <dd><p>A <span class="xref">LspTypes.SemanticTokensDelta</span> object containing only the delta of semantic tokens for the document.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_QuerySemanticTokensRange_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensRange*"></a>
-  <h4 id="NMF_AnyText_ILspServer_QuerySemanticTokensRange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)">QuerySemanticTokensRange(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_QuerySemanticTokensRange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)">
+  QuerySemanticTokensRange(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>textDoocument/semanticTokens/range</code> request from the client. This is used to retrieve semantic
 tokens within a specific range in the document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/semanticTokens/range&quot;)]
 SemanticTokens QuerySemanticTokensRange(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the range request. (SemanticTokensRangeParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SemanticTokens</span></td>
-        <td><p>A <span class="xref">LspTypes.SemanticTokens</span> object containing the semantic tokens within the specified range.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_SetTrace_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L91">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the range request. (SemanticTokensRangeParams)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SemanticTokens</span></dt>
+    <dd><p>A <span class="xref">LspTypes.SemanticTokens</span> object containing the semantic tokens within the specified range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_SetTrace_" data-uid="NMF.AnyText.ILspServer.SetTrace*"></a>
-  <h4 id="NMF_AnyText_ILspServer_SetTrace_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)">SetTrace(JToken)</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_SetTrace_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)">
+  SetTrace(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Handles the <code>$/setTrace</code> request from the client. This is used to set the trace setting of the server.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;$/setTrace&quot;)]
 void SetTrace(JToken arg)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">JToken</span></td>
-        <td><span class="parametername">arg</span></td>
-        <td><p>The JSON token containing the parameters of the request. (SetTraceParams)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer_Shutdown.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer.Shutdown%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L84">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arg</code> <span class="xref">JToken</span></dt>
+    <dd><p>The JSON token containing the parameters of the request. (SetTraceParams)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_Shutdown_" data-uid="NMF.AnyText.ILspServer.Shutdown*"></a>
-  <h4 id="NMF_AnyText_ILspServer_Shutdown" data-uid="NMF.AnyText.ILspServer.Shutdown">Shutdown()</h4>
+
+  <h3 id="NMF_AnyText_ILspServer_Shutdown" data-uid="NMF.AnyText.ILspServer.Shutdown">
+  Shutdown()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Shuts down the server</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;shutdown&quot;)]
 void Shutdown()</code></pre>
   </div>
 
-</article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ILspServer.md&amp;value=---%0Auid%3A%20NMF.AnyText.ILspServer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L7" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.SemanticToken.cs/#L7" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

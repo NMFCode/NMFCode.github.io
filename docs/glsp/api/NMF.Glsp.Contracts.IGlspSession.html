@@ -1,561 +1,595 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Interface IGlspSession </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IGlspSession ">
-    
-    <meta name="description" content="Denotes a session with a client">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes a session with a client">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Glsp.Contracts.IGlspSession">
-
-
-
-  <h1 id="NMF_Glsp_Contracts_IGlspSession" data-uid="NMF.Glsp.Contracts.IGlspSession" class="text-break">Interface IGlspSession</h1>
-  <div class="markdown level0 summary"><p>Denotes a session with a client</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Glsp.html">Glsp</a>.<a class="xref" href="NMF.Glsp.Contracts.html">Contracts</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Glsp.dll</h6>
-  <h5 id="NMF_Glsp_Contracts_IGlspSession_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IGlspSession</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_CanRedo.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.CanRedo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L59">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_CanRedo_" data-uid="NMF.Glsp.Contracts.IGlspSession.CanRedo*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_CanRedo" data-uid="NMF.Glsp.Contracts.IGlspSession.CanRedo">CanRedo</h4>
-  <div class="markdown level1 summary"><p>True, if there is a transaction to redo, otherwise false</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool CanRedo { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_CanUndo.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.CanUndo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L54">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_CanUndo_" data-uid="NMF.Glsp.Contracts.IGlspSession.CanUndo*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_CanUndo" data-uid="NMF.Glsp.Contracts.IGlspSession.CanUndo">CanUndo</h4>
-  <div class="markdown level1 summary"><p>True, if there is a transaction to undo, otherwise false</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool CanUndo { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_IsDirty.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.IsDirty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L38">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_IsDirty_" data-uid="NMF.Glsp.Contracts.IGlspSession.IsDirty*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_IsDirty" data-uid="NMF.Glsp.Contracts.IGlspSession.IsDirty">IsDirty</h4>
-  <div class="markdown level1 summary"><p>True, if the client session contains unsaved changes, otherwise false</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsDirty { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Language.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Language%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L23">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Language_" data-uid="NMF.Glsp.Contracts.IGlspSession.Language*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Language" data-uid="NMF.Glsp.Contracts.IGlspSession.Language">Language</h4>
-  <div class="markdown level1 summary"><p>Gets the graphical language used in this session</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">GraphicalLanguage Language { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Language.GraphicalLanguage.html">GraphicalLanguage</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Root.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Root%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L18">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Root_" data-uid="NMF.Glsp.Contracts.IGlspSession.Root*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Root" data-uid="NMF.Glsp.Contracts.IGlspSession.Root">Root</h4>
-  <div class="markdown level1 summary"><p>The root of the graph</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">GGraph Root { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Graph.GGraph.html">GGraph</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_SelectedElements.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.SelectedElements%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L33">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_SelectedElements_" data-uid="NMF.Glsp.Contracts.IGlspSession.SelectedElements*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_SelectedElements" data-uid="NMF.Glsp.Contracts.IGlspSession.SelectedElements">SelectedElements</h4>
-  <div class="markdown level1 summary"><p>The selected elements</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">GElement[] SelectedElements { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Graph.GElement.html">GElement</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Trace.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Trace%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L28">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Trace_" data-uid="NMF.Glsp.Contracts.IGlspSession.Trace*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Trace" data-uid="NMF.Glsp.Contracts.IGlspSession.Trace">Trace</h4>
-  <div class="markdown level1 summary"><p>Gets the trace to trace skeletons created for semantic objects</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ISkeletonTrace Trace { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Processing.ISkeletonTrace.html">ISkeletonTrace</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_InitializeAsync_System_Uri_.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L75">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_InitializeAsync_" data-uid="NMF.Glsp.Contracts.IGlspSession.InitializeAsync*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_InitializeAsync_System_Uri_" data-uid="NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)">InitializeAsync(Uri)</h4>
-  <div class="markdown level1 summary"><p>Initializes the client for the given source model URI</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task InitializeAsync(Uri uri)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">uri</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Redo.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Redo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L69">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Redo_" data-uid="NMF.Glsp.Contracts.IGlspSession.Redo*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Redo" data-uid="NMF.Glsp.Contracts.IGlspSession.Redo">Redo()</h4>
-  <div class="markdown level1 summary"><p>Redo the last transaction</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Redo()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_RequestAsync_NMF_Glsp_Protocol_BaseProtocol_RequestAction_.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L88">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_RequestAsync_" data-uid="NMF.Glsp.Contracts.IGlspSession.RequestAsync*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_RequestAsync_NMF_Glsp_Protocol_BaseProtocol_RequestAction_" data-uid="NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)">RequestAsync(RequestAction)</h4>
-  <div class="markdown level1 summary"><p>Sends a request to the client and waits for the response</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ResponseAction&gt; RequestAsync(RequestAction request)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.RequestAction.html">RequestAction</a></td>
-        <td><span class="parametername">request</span></td>
-        <td><p>The request to the client</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.ResponseAction.html">ResponseAction</a>&gt;</td>
-        <td><p>A task that completes when the client returns a response</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Save_System_Uri_.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L81">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Save_" data-uid="NMF.Glsp.Contracts.IGlspSession.Save*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Save_System_Uri_" data-uid="NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)">Save(Uri)</h4>
-  <div class="markdown level1 summary"><p>Saves the content at the given URI</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Save(Uri uri)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">uri</span></td>
-        <td><p>the URI where to save the session content or null, if the model should be saved at the default location</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_SendToClient_NMF_Glsp_Protocol_BaseProtocol_BaseAction_.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L44">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_SendToClient_" data-uid="NMF.Glsp.Contracts.IGlspSession.SendToClient*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_SendToClient_NMF_Glsp_Protocol_BaseProtocol_BaseAction_" data-uid="NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)">SendToClient(BaseAction)</h4>
-  <div class="markdown level1 summary"><p>Send the given action to the client</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SendToClient(BaseAction action)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.BaseAction.html">BaseAction</a></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action to send</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Synchronize.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Synchronize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L49">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Synchronize_" data-uid="NMF.Glsp.Contracts.IGlspSession.Synchronize*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Synchronize" data-uid="NMF.Glsp.Contracts.IGlspSession.Synchronize">Synchronize()</h4>
-  <div class="markdown level1 summary"><p>Sends the entire graph to the client</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Synchronize()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession_Undo.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession.Undo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L64">View Source</a>
-  </span>
-  <a id="NMF_Glsp_Contracts_IGlspSession_Undo_" data-uid="NMF.Glsp.Contracts.IGlspSession.Undo*"></a>
-  <h4 id="NMF_Glsp_Contracts_IGlspSession_Undo" data-uid="NMF.Glsp.Contracts.IGlspSession.Undo">Undo()</h4>
-  <div class="markdown level1 summary"><p>Undo the last transaction</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Undo()</code></pre>
-  </div>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Contracts_IGlspSession.md&amp;value=---%0Auid%3A%20NMF.Glsp.Contracts.IGlspSession%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L13" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NMF.Glsp.Contracts.IGlspSession">
+
+
+
+  <h1 id="NMF_Glsp_Contracts_IGlspSession" data-uid="NMF.Glsp.Contracts.IGlspSession" class="text-break">
+Interface IGlspSession  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Glsp.html">Glsp</a>.<a class="xref" href="NMF.Glsp.Contracts.html">Contracts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Glsp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Denotes a session with a client</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IGlspSession</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_CanRedo_" data-uid="NMF.Glsp.Contracts.IGlspSession.CanRedo*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_CanRedo" data-uid="NMF.Glsp.Contracts.IGlspSession.CanRedo">
+  CanRedo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if there is a transaction to redo, otherwise false</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool CanRedo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_CanUndo_" data-uid="NMF.Glsp.Contracts.IGlspSession.CanUndo*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_CanUndo" data-uid="NMF.Glsp.Contracts.IGlspSession.CanUndo">
+  CanUndo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if there is a transaction to undo, otherwise false</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool CanUndo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_IsDirty_" data-uid="NMF.Glsp.Contracts.IGlspSession.IsDirty*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_IsDirty" data-uid="NMF.Glsp.Contracts.IGlspSession.IsDirty">
+  IsDirty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if the client session contains unsaved changes, otherwise false</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsDirty { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Language_" data-uid="NMF.Glsp.Contracts.IGlspSession.Language*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Language" data-uid="NMF.Glsp.Contracts.IGlspSession.Language">
+  Language
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the graphical language used in this session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GraphicalLanguage Language { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Glsp.Language.GraphicalLanguage.html">GraphicalLanguage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Root_" data-uid="NMF.Glsp.Contracts.IGlspSession.Root*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Root" data-uid="NMF.Glsp.Contracts.IGlspSession.Root">
+  Root
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The root of the graph</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GGraph Root { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Glsp.Graph.GGraph.html">GGraph</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_SelectedElements_" data-uid="NMF.Glsp.Contracts.IGlspSession.SelectedElements*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_SelectedElements" data-uid="NMF.Glsp.Contracts.IGlspSession.SelectedElements">
+  SelectedElements
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The selected elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GElement[] SelectedElements { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Glsp.Graph.GElement.html">GElement</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Trace_" data-uid="NMF.Glsp.Contracts.IGlspSession.Trace*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Trace" data-uid="NMF.Glsp.Contracts.IGlspSession.Trace">
+  Trace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the trace to trace skeletons created for semantic objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISkeletonTrace Trace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Glsp.Processing.ISkeletonTrace.html">ISkeletonTrace</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_InitializeAsync_" data-uid="NMF.Glsp.Contracts.IGlspSession.InitializeAsync*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_InitializeAsync_System_Uri_" data-uid="NMF.Glsp.Contracts.IGlspSession.InitializeAsync(System.Uri)">
+  InitializeAsync(Uri)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes the client for the given source model URI</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task InitializeAsync(Uri uri)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Redo_" data-uid="NMF.Glsp.Contracts.IGlspSession.Redo*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Redo" data-uid="NMF.Glsp.Contracts.IGlspSession.Redo">
+  Redo()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Redo the last transaction</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Redo()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_RequestAsync_" data-uid="NMF.Glsp.Contracts.IGlspSession.RequestAsync*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_RequestAsync_NMF_Glsp_Protocol_BaseProtocol_RequestAction_" data-uid="NMF.Glsp.Contracts.IGlspSession.RequestAsync(NMF.Glsp.Protocol.BaseProtocol.RequestAction)">
+  RequestAsync(RequestAction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a request to the client and waits for the response</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ResponseAction&gt; RequestAsync(RequestAction request)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.RequestAction.html">RequestAction</a></dt>
+    <dd><p>The request to the client</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.ResponseAction.html">ResponseAction</a>&gt;</dt>
+    <dd><p>A task that completes when the client returns a response</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Save_" data-uid="NMF.Glsp.Contracts.IGlspSession.Save*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Save_System_Uri_" data-uid="NMF.Glsp.Contracts.IGlspSession.Save(System.Uri)">
+  Save(Uri)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves the content at the given URI</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Save(Uri uri)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd><p>the URI where to save the session content or null, if the model should be saved at the default location</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_SendToClient_" data-uid="NMF.Glsp.Contracts.IGlspSession.SendToClient*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_SendToClient_NMF_Glsp_Protocol_BaseProtocol_BaseAction_" data-uid="NMF.Glsp.Contracts.IGlspSession.SendToClient(NMF.Glsp.Protocol.BaseProtocol.BaseAction)">
+  SendToClient(BaseAction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Send the given action to the client</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SendToClient(BaseAction action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.BaseAction.html">BaseAction</a></dt>
+    <dd><p>The action to send</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Synchronize_" data-uid="NMF.Glsp.Contracts.IGlspSession.Synchronize*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Synchronize" data-uid="NMF.Glsp.Contracts.IGlspSession.Synchronize">
+  Synchronize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends the entire graph to the client</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Synchronize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Glsp_Contracts_IGlspSession_Undo_" data-uid="NMF.Glsp.Contracts.IGlspSession.Undo*"></a>
+
+  <h3 id="NMF_Glsp_Contracts_IGlspSession_Undo" data-uid="NMF.Glsp.Contracts.IGlspSession.Undo">
+  Undo()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Undo the last transaction</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Undo()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Contracts/IGlspSession.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

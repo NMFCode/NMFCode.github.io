@@ -1,92 +1,128 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class ApplyLabelEditOperation </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ApplyLabelEditOperation ">
-    
-    <meta name="description" content="A very common use case in domain models is the support of labels that display textual information to the user. For instance, the GGraph model has support for labels that can be attached to a node, edge, or port, and that contain some text that is rendered in the view. To apply new text to such a label element the client may send an ApplyLabelEditOperation to the server.">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="A very common use case in domain models is the support of labels that display textual information to the user. For instance, the GGraph model has support for labels that can be attached to a node, edge, or port, and that contain some text that is rendered in the view. To apply new text to such a label element the client may send an ApplyLabelEditOperation to the server.">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation">
+
+        <article data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation">
 
 
 
-  <h1 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation" class="text-break">Class ApplyLabelEditOperation</h1>
-  <div class="markdown level0 summary"><p>A very common use case in domain models is the support of labels that display textual information to the user.
+  <h1 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation" class="text-break">
+Class ApplyLabelEditOperation  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Glsp.html">Glsp</a>.<a class="xref" href="NMF.Glsp.Protocol.html">Protocol</a>.<a class="xref" href="NMF.Glsp.Protocol.Modification.html">Modification</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Glsp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A very common use case in domain models is the support of labels that display textual information to the user.
 For instance, the GGraph model has support for labels that can be attached to a node, edge, or port, and that
 contain some text that is rendered in the view. To apply new text to such a label element the client may send
 an ApplyLabelEditOperation to the server.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.BaseAction.html">BaseAction</a></div>
-    <div class="level2"><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.ExecutableAction.html">ExecutableAction</a></div>
-    <div class="level3"><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.Operation.html">Operation</a></div>
-    <div class="level4"><span class="xref">ApplyLabelEditOperation</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ApplyLabelEditOperation : Operation</code></pre>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.BaseAction.html">BaseAction</a></div>
+      <div><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.ExecutableAction.html">ExecutableAction</a></div>
+      <div><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.Operation.html">Operation</a></div>
+      <div><span class="xref">ApplyLabelEditOperation</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.Operation.html#NMF_Glsp_Protocol_BaseProtocol_Operation_IsOperation">Operation.IsOperation</a>
     </div>
@@ -114,236 +150,212 @@ an ApplyLabelEditOperation to the server.</p>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Glsp.html">Glsp</a>.<a class="xref" href="NMF.Glsp.Protocol.html">Protocol</a>.<a class="xref" href="NMF.Glsp.Protocol.Modification.html">Modification</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Glsp.dll</h6>
-  <h5 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ApplyLabelEditOperation : Operation</code></pre>
-  </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ApplyLabelEditOperationKind.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ApplyLabelEditOperationKind%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L21">View Source</a>
-  </span>
-  <h4 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ApplyLabelEditOperationKind" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ApplyLabelEditOperationKind">ApplyLabelEditOperationKind</h4>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ApplyLabelEditOperationKind" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ApplyLabelEditOperationKind">
+  ApplyLabelEditOperationKind
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The kind value used for this kind of action</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string ApplyLabelEditOperationKind = &quot;applyLabelEdit&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Kind.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Kind%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L24">View Source</a>
-  </span>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Kind_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Kind*"></a>
-  <h4 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Kind" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Kind">Kind</h4>
+
+  <h3 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Kind" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Kind">
+  Kind
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Unique identifier specifying the kind of action to process.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Kind { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.BaseAction.html#NMF_Glsp_Protocol_BaseProtocol_BaseAction_Kind">BaseAction.Kind</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_LabelId.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.LabelId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L29">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_LabelId_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.LabelId*"></a>
-  <h4 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_LabelId" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.LabelId">LabelId</h4>
+
+  <h3 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_LabelId" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.LabelId">
+  LabelId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Identifier of the label model element.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string LabelId { get; init; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Text.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L34">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Text_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Text*"></a>
-  <h4 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Text" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Text">Text</h4>
+
+  <h3 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_Text" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.Text">
+  Text
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Text that should be applied on the label.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Text { get; init; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ExecuteAsync_NMF_Glsp_Contracts_IGlspSession_.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ExecuteAsync(NMF.Glsp.Contracts.IGlspSession)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L37">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ExecuteAsync_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ExecuteAsync*"></a>
-  <h4 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ExecuteAsync_NMF_Glsp_Contracts_IGlspSession_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ExecuteAsync(NMF.Glsp.Contracts.IGlspSession)">ExecuteAsync(IGlspSession)</h4>
+
+  <h3 id="NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation_ExecuteAsync_NMF_Glsp_Contracts_IGlspSession_" data-uid="NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation.ExecuteAsync(NMF.Glsp.Contracts.IGlspSession)">
+  ExecuteAsync(IGlspSession)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Executes the action in the context of the given session</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Task ExecuteAsync(IGlspSession session)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Glsp.Contracts.IGlspSession.html">IGlspSession</a></td>
-        <td><span class="parametername">session</span></td>
-        <td><p>The session in which to execute the action</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Glsp.Protocol.BaseProtocol.ExecutableAction.html#NMF_Glsp_Protocol_BaseProtocol_ExecutableAction_ExecuteAsync_NMF_Glsp_Contracts_IGlspSession_">ExecutableAction.ExecuteAsync(IGlspSession)</a></div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>session</code> <a class="xref" href="NMF.Glsp.Contracts.IGlspSession.html">IGlspSession</a></dt>
+    <dd><p>The session in which to execute the action</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Glsp_Protocol_Modification_ApplyLabelEditOperation.md&amp;value=---%0Auid%3A%20NMF.Glsp.Protocol.Modification.ApplyLabelEditOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L16" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Glsp/Glsp/Protocol/Modification/ApplyLabelEditOperation.cs/#L16" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

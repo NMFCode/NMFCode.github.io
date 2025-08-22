@@ -1,88 +1,129 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class Grammar </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Grammar ">
-    
-    <meta name="description" content="Denotes an abstract grammar">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes an abstract grammar">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.AnyText.Grammars.Grammar">
+
+        <article data-uid="NMF.AnyText.Grammars.Grammar">
 
 
 
-  <h1 id="NMF_AnyText_Grammars_Grammar" data-uid="NMF.AnyText.Grammars.Grammar" class="text-break">Class Grammar</h1>
-  <div class="markdown level0 summary"><p>Denotes an abstract grammar</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">Grammar</span></div>
-      <div class="level2"><a class="xref" href="NMF.AnyText.Grammars.AdHocGrammar.html">AdHocGrammar</a></div>
-      <div class="level2"><a class="xref" href="NMF.AnyText.Grammars.ReflectiveGrammar.html">ReflectiveGrammar</a></div>
+  <h1 id="NMF_AnyText_Grammars_Grammar" data-uid="NMF.AnyText.Grammars.Grammar" class="text-break">
+Class Grammar  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a>.<a class="xref" href="NMF.AnyText.Grammars.html">Grammars</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.AnyText.Core.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>Denotes an abstract grammar</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Grammar</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Grammar</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.AnyText.Grammars.AdHocGrammar.html">AdHocGrammar</a></div>
+      <div><a class="xref" href="NMF.AnyText.Grammars.ReflectiveGrammar.html">ReflectiveGrammar</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -104,699 +145,656 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a>.<a class="xref" href="NMF.AnyText.Grammars.html">Grammars</a></h6>
-  <h6><strong>Assembly</strong>: NMF.AnyText.Core.dll</h6>
-  <h5 id="NMF_AnyText_Grammars_Grammar_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Grammar</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CommentRules.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CommentRules%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L103">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CommentRules_" data-uid="NMF.AnyText.Grammars.Grammar.CommentRules*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CommentRules" data-uid="NMF.AnyText.Grammars.Grammar.CommentRules">CommentRules</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CommentRules" data-uid="NMF.AnyText.Grammars.Grammar.CommentRules">
+  CommentRules
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets an array of comment rules used by this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CommentRule[] CommentRules { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.CommentRule.html">CommentRule</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_ExecutableActions.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.ExecutableActions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L218">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.CommentRule.html">CommentRule</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_ExecutableActions_" data-uid="NMF.AnyText.Grammars.Grammar.ExecutableActions*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_ExecutableActions" data-uid="NMF.AnyText.Grammars.Grammar.ExecutableActions">ExecutableActions</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_ExecutableActions" data-uid="NMF.AnyText.Grammars.Grammar.ExecutableActions">
+  ExecutableActions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Dictionary of executable actions.
 The key is the action identifier, and the value is the action executor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dictionary&lt;string, ActionInfo&gt; ExecutableActions { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="NMF.AnyText.ActionInfo.html">ActionInfo</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_Keywords.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.Keywords%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L38">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="NMF.AnyText.ActionInfo.html">ActionInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_Keywords_" data-uid="NMF.AnyText.Grammars.Grammar.Keywords*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_Keywords" data-uid="NMF.AnyText.Grammars.Grammar.Keywords">Keywords</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_Keywords" data-uid="NMF.AnyText.Grammars.Grammar.Keywords">
+  Keywords
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the keywords used in the grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ICollection&lt;LiteralRule&gt; Keywords { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.LiteralRule.html">LiteralRule</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_LanguageId.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.LanguageId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L177">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.LiteralRule.html">LiteralRule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_LanguageId_" data-uid="NMF.AnyText.Grammars.Grammar.LanguageId*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_LanguageId" data-uid="NMF.AnyText.Grammars.Grammar.LanguageId">LanguageId</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_LanguageId" data-uid="NMF.AnyText.Grammars.Grammar.LanguageId">
+  LanguageId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the language id for this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract string LanguageId { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_Root.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.Root%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L188">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_Root_" data-uid="NMF.AnyText.Grammars.Grammar.Root*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_Root" data-uid="NMF.AnyText.Grammars.Grammar.Root">Root</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_Root" data-uid="NMF.AnyText.Grammars.Grammar.Root">
+  Root
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the root rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Rule Root { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_Rules.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.Rules%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L33">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_Rules_" data-uid="NMF.AnyText.Grammars.Grammar.Rules*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_Rules" data-uid="NMF.AnyText.Grammars.Grammar.Rules">Rules</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_Rules" data-uid="NMF.AnyText.Grammars.Grammar.Rules">
+  Rules
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a collection of all rules in this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Rule&gt; Rules { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_TokenModifiers.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.TokenModifiers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L205">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_TokenModifiers_" data-uid="NMF.AnyText.Grammars.Grammar.TokenModifiers*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_TokenModifiers" data-uid="NMF.AnyText.Grammars.Grammar.TokenModifiers">TokenModifiers</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_TokenModifiers" data-uid="NMF.AnyText.Grammars.Grammar.TokenModifiers">
+  TokenModifiers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets an array of token modifiers used by this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string[] TokenModifiers { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_TokenTypes.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.TokenTypes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L200">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_TokenTypes_" data-uid="NMF.AnyText.Grammars.Grammar.TokenTypes*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_TokenTypes" data-uid="NMF.AnyText.Grammars.Grammar.TokenTypes">TokenTypes</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_TokenTypes" data-uid="NMF.AnyText.Grammars.Grammar.TokenTypes">
+  TokenTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets an array of token types used by this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string[] TokenTypes { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CompletionTriggerCharacters.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CompletionTriggerCharacters%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L130">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CompletionTriggerCharacters_" data-uid="NMF.AnyText.Grammars.Grammar.CompletionTriggerCharacters*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CompletionTriggerCharacters" data-uid="NMF.AnyText.Grammars.Grammar.CompletionTriggerCharacters">CompletionTriggerCharacters()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CompletionTriggerCharacters" data-uid="NMF.AnyText.Grammars.Grammar.CompletionTriggerCharacters">
+  CompletionTriggerCharacters()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Retrieves an array of characters that can trigger completion suggestions.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual string[] CompletionTriggerCharacters()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><p>An array of strings representing the trigger characters.
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>An array of strings representing the trigger characters.
 By default, this method returns array only containing periods (.)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CreateCustomRules.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CreateCustomRules%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L163">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CreateCustomRules_" data-uid="NMF.AnyText.Grammars.Grammar.CreateCustomRules*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CreateCustomRules" data-uid="NMF.AnyText.Grammars.Grammar.CreateCustomRules">CreateCustomRules()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CreateCustomRules" data-uid="NMF.AnyText.Grammars.Grammar.CreateCustomRules">
+  CreateCustomRules()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Create custom rules that are not resolvable by type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract IEnumerable&lt;Rule&gt; CreateCustomRules()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</td>
-        <td><p>a collection of custom rules</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CreateKeywordRule_System_String_.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CreateKeywordRule(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L118">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dd><p>a collection of custom rules</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CreateKeywordRule_" data-uid="NMF.AnyText.Grammars.Grammar.CreateKeywordRule*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CreateKeywordRule_System_String_" data-uid="NMF.AnyText.Grammars.Grammar.CreateKeywordRule(System.String)">CreateKeywordRule(string)</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CreateKeywordRule_System_String_" data-uid="NMF.AnyText.Grammars.Grammar.CreateKeywordRule(System.String)">
+  CreateKeywordRule(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates the keyword rule for the given keyword</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual LiteralRule CreateKeywordRule(string keyword)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">keyword</span></td>
-        <td><p>the keyword</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.LiteralRule.html">LiteralRule</a></td>
-        <td><p>A literal rule that represents matching the provided keyword</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CreateParseContext.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CreateParseContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L183">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keyword</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the keyword</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.LiteralRule.html">LiteralRule</a></dt>
+    <dd><p>A literal rule that represents matching the provided keyword</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CreateParseContext_" data-uid="NMF.AnyText.Grammars.Grammar.CreateParseContext*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CreateParseContext" data-uid="NMF.AnyText.Grammars.Grammar.CreateParseContext">CreateParseContext()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CreateParseContext" data-uid="NMF.AnyText.Grammars.Grammar.CreateParseContext">
+  CreateParseContext()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a parsing context for this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual ParseContext CreateParseContext()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.ParseContext.html">ParseContext</a></td>
-        <td><p>a parsing context for the current grammar</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CreateParser.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CreateParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L169">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.ParseContext.html">ParseContext</a></dt>
+    <dd><p>a parsing context for the current grammar</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CreateParser_" data-uid="NMF.AnyText.Grammars.Grammar.CreateParser*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CreateParser" data-uid="NMF.AnyText.Grammars.Grammar.CreateParser">CreateParser()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CreateParser" data-uid="NMF.AnyText.Grammars.Grammar.CreateParser">
+  CreateParser()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Create a parser for this grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Parser CreateParser()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Parser.html">Parser</a></td>
-        <td><p>a parser configured for this grammar</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_CreateTypedRules.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.CreateTypedRules%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L157">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>a parser configured for this grammar</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_CreateTypedRules_" data-uid="NMF.AnyText.Grammars.Grammar.CreateTypedRules*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_CreateTypedRules" data-uid="NMF.AnyText.Grammars.Grammar.CreateTypedRules">CreateTypedRules()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_CreateTypedRules" data-uid="NMF.AnyText.Grammars.Grammar.CreateTypedRules">
+  CreateTypedRules()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Create the typed rules as a dictionary</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract IDictionary&lt;Type, Rule&gt; CreateTypedRules()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</td>
-        <td><p>a dictionary of rules by type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_GetRootRule_NMF_AnyText_Grammars_GrammarContext_.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.GetRootRule(NMF.AnyText.Grammars.GrammarContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L212">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dd><p>a dictionary of rules by type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_GetRootRule_" data-uid="NMF.AnyText.Grammars.Grammar.GetRootRule*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_GetRootRule_NMF_AnyText_Grammars_GrammarContext_" data-uid="NMF.AnyText.Grammars.Grammar.GetRootRule(NMF.AnyText.Grammars.GrammarContext)">GetRootRule(GrammarContext)</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_GetRootRule_NMF_AnyText_Grammars_GrammarContext_" data-uid="NMF.AnyText.Grammars.Grammar.GetRootRule(NMF.AnyText.Grammars.GrammarContext)">
+  GetRootRule(GrammarContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the root rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract Rule GetRootRule(GrammarContext context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Grammars.GrammarContext.html">GrammarContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>a context to resolve the root rule</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></td>
-        <td><p>the root rule for this grammar</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_GetRule__1.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.GetRule%60%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L24">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="NMF.AnyText.Grammars.GrammarContext.html">GrammarContext</a></dt>
+    <dd><p>a context to resolve the root rule</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></dt>
+    <dd><p>the root rule for this grammar</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_GetRule_" data-uid="NMF.AnyText.Grammars.Grammar.GetRule*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_GetRule__1" data-uid="NMF.AnyText.Grammars.Grammar.GetRule``1">GetRule&lt;T&gt;()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_GetRule__1" data-uid="NMF.AnyText.Grammars.Grammar.GetRule``1">
+  GetRule&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the rule with the given rule type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public T GetRule&lt;T&gt;() where T : Rule</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><p>the rule with the provided type, if it exists and registered for this type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>the type of the rule</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_GetSymbolKindForType_System_Type_.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.GetSymbolKindForType(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L229">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>the rule with the provided type, if it exists and registered for this type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>the type of the rule</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_GetSymbolKindForType_" data-uid="NMF.AnyText.Grammars.Grammar.GetSymbolKindForType*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_GetSymbolKindForType_System_Type_" data-uid="NMF.AnyText.Grammars.Grammar.GetSymbolKindForType(System.Type)">GetSymbolKindForType(Type)</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_GetSymbolKindForType_System_Type_" data-uid="NMF.AnyText.Grammars.Grammar.GetSymbolKindForType(System.Type)">
+  GetSymbolKindForType(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Retrieves the <a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a> for a given type or one of its supertypes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SymbolKind GetSymbolKindForType(Type type)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>The type for which the corresponding <a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a> is being searched.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a></td>
-        <td><p>The matching <a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a> if the type or one of its supertypes is found in <code>_symbolKinds</code>.<br>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type for which the corresponding <a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a> is being searched.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a></dt>
+    <dd><p>The matching <a class="xref" href="NMF.AnyText.SymbolKind.html">SymbolKind</a> if the type or one of its supertypes is found in <code>_symbolKinds</code>.<br>
 If no matching entry is found, <a class="xref" href="NMF.AnyText.SymbolKind.html#NMF_AnyText_SymbolKind_String">String</a> is returned.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code class="paramref">type</code> is null.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar_Initialize.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar.Initialize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L43">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">type</code> is null.</p>
+</dd>
+  </dl>
+
+
+
   <a id="NMF_AnyText_Grammars_Grammar_Initialize_" data-uid="NMF.AnyText.Grammars.Grammar.Initialize*"></a>
-  <h4 id="NMF_AnyText_Grammars_Grammar_Initialize" data-uid="NMF.AnyText.Grammars.Grammar.Initialize">Initialize()</h4>
+
+  <h3 id="NMF_AnyText_Grammars_Grammar_Initialize" data-uid="NMF.AnyText.Grammars.Grammar.Initialize">
+  Initialize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes the current grammar</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
   </div>
 
-</article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_Grammars_Grammar.md&amp;value=---%0Auid%3A%20NMF.AnyText.Grammars.Grammar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L13" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Grammars/Grammar.cs/#L13" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

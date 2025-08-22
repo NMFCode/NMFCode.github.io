@@ -1,87 +1,128 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class ParseContext </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ParseContext ">
-    
-    <meta name="description" content="The context in which a text is parsed">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="The context in which a text is parsed">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.AnyText.ParseContext">
+
+        <article data-uid="NMF.AnyText.ParseContext">
 
 
 
-  <h1 id="NMF_AnyText_ParseContext" data-uid="NMF.AnyText.ParseContext" class="text-break">Class ParseContext</h1>
-  <div class="markdown level0 summary"><p>The context in which a text is parsed</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ParseContext</span></div>
-      <div class="level2"><a class="xref" href="NMF.AnyText.ModelParseContext.html">ModelParseContext</a></div>
+  <h1 id="NMF_AnyText_ParseContext" data-uid="NMF.AnyText.ParseContext" class="text-break">
+Class ParseContext  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.AnyText.Core.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>The context in which a text is parsed</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ParseContext</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ParseContext</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.AnyText.ModelParseContext.html">ModelParseContext</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -103,1217 +144,1052 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.AnyText.html">AnyText</a></h6>
-  <h6><strong>Assembly</strong>: NMF.AnyText.Core.dll</h6>
-  <h5 id="NMF_AnyText_ParseContext_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParseContext</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext__ctor_NMF_AnyText_Grammars_Grammar_NMF_AnyText_Matcher_System_StringComparison_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.%23ctor(NMF.AnyText.Grammars.Grammar%2CNMF.AnyText.Matcher%2CSystem.StringComparison)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L28">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="NMF_AnyText_ParseContext__ctor_" data-uid="NMF.AnyText.ParseContext.#ctor*"></a>
-  <h4 id="NMF_AnyText_ParseContext__ctor_NMF_AnyText_Grammars_Grammar_NMF_AnyText_Matcher_System_StringComparison_" data-uid="NMF.AnyText.ParseContext.#ctor(NMF.AnyText.Grammars.Grammar,NMF.AnyText.Matcher,System.StringComparison)">ParseContext(Grammar, Matcher, StringComparison)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext__ctor_NMF_AnyText_Grammars_Grammar_NMF_AnyText_Matcher_System_StringComparison_" data-uid="NMF.AnyText.ParseContext.#ctor(NMF.AnyText.Grammars.Grammar,NMF.AnyText.Matcher,System.StringComparison)">
+  ParseContext(Grammar, Matcher, StringComparison)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a new instance</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ParseContext(Grammar grammar, Matcher matcher, StringComparison stringComparison = StringComparison.OrdinalIgnoreCase)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a></td>
-        <td><span class="parametername">grammar</span></td>
-        <td><p>the grammar for this context</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Matcher.html">Matcher</a></td>
-        <td><span class="parametername">matcher</span></td>
-        <td><p>the matcher for the context</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stringcomparison">StringComparison</a></td>
-        <td><span class="parametername">stringComparison</span></td>
-        <td><p>the string comparison mode</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Errors.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Errors%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L322">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>grammar</code> <a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a></dt>
+    <dd><p>the grammar for this context</p>
+</dd>
+    <dt><code>matcher</code> <a class="xref" href="NMF.AnyText.Matcher.html">Matcher</a></dt>
+    <dd><p>the matcher for the context</p>
+</dd>
+    <dt><code>stringComparison</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stringcomparison">StringComparison</a></dt>
+    <dd><p>the string comparison mode</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_AnyText_ParseContext_Errors_" data-uid="NMF.AnyText.ParseContext.Errors*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Errors" data-uid="NMF.AnyText.ParseContext.Errors">Errors</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Errors" data-uid="NMF.AnyText.ParseContext.Errors">
+  Errors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the errors that occured while parsing</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;DiagnosticItem&gt; Errors { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Grammar.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Grammar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L42">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Grammar_" data-uid="NMF.AnyText.ParseContext.Grammar*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Grammar" data-uid="NMF.AnyText.ParseContext.Grammar">Grammar</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Grammar" data-uid="NMF.AnyText.ParseContext.Grammar">
+  Grammar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the grammar for this context</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Grammar Grammar { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Imports.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Imports%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L52">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Imports_" data-uid="NMF.AnyText.ParseContext.Imports*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Imports" data-uid="NMF.AnyText.ParseContext.Imports">Imports</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Imports" data-uid="NMF.AnyText.ParseContext.Imports">
+  Imports
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a collection of imports</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;string&gt; Imports { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Input.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Input%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L84">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Input_" data-uid="NMF.AnyText.ParseContext.Input*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Input" data-uid="NMF.AnyText.ParseContext.Input">Input</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Input" data-uid="NMF.AnyText.ParseContext.Input">
+  Input
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the input text in lines</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string[] Input { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_IsLastUpdateSuccessful.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.IsLastUpdateSuccessful%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L94">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_IsLastUpdateSuccessful_" data-uid="NMF.AnyText.ParseContext.IsLastUpdateSuccessful*"></a>
-  <h4 id="NMF_AnyText_ParseContext_IsLastUpdateSuccessful" data-uid="NMF.AnyText.ParseContext.IsLastUpdateSuccessful">IsLastUpdateSuccessful</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_IsLastUpdateSuccessful" data-uid="NMF.AnyText.ParseContext.IsLastUpdateSuccessful">
+  IsLastUpdateSuccessful
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Indicates whether the last update sent to the parser was successful</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsLastUpdateSuccessful { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L79">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication_" data-uid="NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication*"></a>
-  <h4 id="NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication" data-uid="NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication">LastSuccessfulRootRuleApplication</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication" data-uid="NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication">
+  LastSuccessfulRootRuleApplication
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the last successful root rule application</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public RuleApplication LastSuccessfulRootRuleApplication { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Matcher.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Matcher%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L89">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Matcher_" data-uid="NMF.AnyText.ParseContext.Matcher*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Matcher" data-uid="NMF.AnyText.ParseContext.Matcher">Matcher</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Matcher" data-uid="NMF.AnyText.ParseContext.Matcher">
+  Matcher
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the matcher used in this parse context</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Matcher Matcher { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Matcher.html">Matcher</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_Root.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.Root%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L57">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Matcher.html">Matcher</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Root_" data-uid="NMF.AnyText.ParseContext.Root*"></a>
-  <h4 id="NMF_AnyText_ParseContext_Root" data-uid="NMF.AnyText.ParseContext.Root">Root</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_Root" data-uid="NMF.AnyText.ParseContext.Root">
+  Root
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the semantic root of the parsed text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public object Root { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RootRule.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RootRule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L47">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RootRule_" data-uid="NMF.AnyText.ParseContext.RootRule*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RootRule" data-uid="NMF.AnyText.ParseContext.RootRule">RootRule</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RootRule" data-uid="NMF.AnyText.ParseContext.RootRule">
+  RootRule
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the root rule of this parse context</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Rule RootRule { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RootRuleApplication.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RootRuleApplication%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L74">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RootRuleApplication_" data-uid="NMF.AnyText.ParseContext.RootRuleApplication*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RootRuleApplication" data-uid="NMF.AnyText.ParseContext.RootRuleApplication">RootRuleApplication</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RootRuleApplication" data-uid="NMF.AnyText.ParseContext.RootRuleApplication">
+  RootRuleApplication
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the current root rule application</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public RuleApplication RootRuleApplication { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_StringComparison.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.StringComparison%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L99">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_StringComparison_" data-uid="NMF.AnyText.ParseContext.StringComparison*"></a>
-  <h4 id="NMF_AnyText_ParseContext_StringComparison" data-uid="NMF.AnyText.ParseContext.StringComparison">StringComparison</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_StringComparison" data-uid="NMF.AnyText.ParseContext.StringComparison">
+  StringComparison
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the string comparison mode</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public StringComparison StringComparison { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stringcomparison">StringComparison</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_NMF_AnyText_Rules_OneOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule%2CNMF.AnyText.Rules.RuleApplication%2CSystem.Collections.Generic.List%7BNMF.AnyText.Rules.RuleApplication%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L334">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stringcomparison">StringComparison</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_" data-uid="NMF.AnyText.ParseContext.AcceptOneOrMoreAdd*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_NMF_AnyText_Rules_OneOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_NMF_AnyText_Rules_OneOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
+  AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool AcceptOneOrMoreAdd(OneOrMoreRule rule, RuleApplication toAdd, List&lt;RuleApplication&gt; added)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.OneOrMoreRule.html">OneOrMoreRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">toAdd</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</td>
-        <td><span class="parametername">added</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AcceptSequenceAdd_NMF_AnyText_Rules_SequenceRule_NMF_AnyText_Rules_RuleApplication__System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AcceptSequenceAdd(NMF.AnyText.Rules.SequenceRule%2CNMF.AnyText.Rules.RuleApplication%40%2CSystem.Collections.Generic.List%7BNMF.AnyText.Rules.RuleApplication%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L324">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rule</code> <a class="xref" href="NMF.AnyText.Rules.OneOrMoreRule.html">OneOrMoreRule</a></dt>
+    <dd></dd>
+    <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd></dd>
+    <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_AcceptSequenceAdd_" data-uid="NMF.AnyText.ParseContext.AcceptSequenceAdd*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AcceptSequenceAdd_NMF_AnyText_Rules_SequenceRule_NMF_AnyText_Rules_RuleApplication__System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptSequenceAdd(NMF.AnyText.Rules.SequenceRule,NMF.AnyText.Rules.RuleApplication@,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">AcceptSequenceAdd(SequenceRule, ref RuleApplication, List&lt;RuleApplication&gt;)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AcceptSequenceAdd_NMF_AnyText_Rules_SequenceRule_NMF_AnyText_Rules_RuleApplication__System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptSequenceAdd(NMF.AnyText.Rules.SequenceRule,NMF.AnyText.Rules.RuleApplication@,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
+  AcceptSequenceAdd(SequenceRule, ref RuleApplication, List&lt;RuleApplication&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool AcceptSequenceAdd(SequenceRule sequence, ref RuleApplication toAdd, List&lt;RuleApplication&gt; added)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.SequenceRule.html">SequenceRule</a></td>
-        <td><span class="parametername">sequence</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">toAdd</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</td>
-        <td><span class="parametername">added</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AcceptZeroOrMoreAdd_NMF_AnyText_Rules_ZeroOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd(NMF.AnyText.Rules.ZeroOrMoreRule%2CNMF.AnyText.Rules.RuleApplication%2CSystem.Collections.Generic.List%7BNMF.AnyText.Rules.RuleApplication%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L329">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sequence</code> <a class="xref" href="NMF.AnyText.Rules.SequenceRule.html">SequenceRule</a></dt>
+    <dd></dd>
+    <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd></dd>
+    <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_AcceptZeroOrMoreAdd_" data-uid="NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AcceptZeroOrMoreAdd_NMF_AnyText_Rules_ZeroOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd(NMF.AnyText.Rules.ZeroOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">AcceptZeroOrMoreAdd(ZeroOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AcceptZeroOrMoreAdd_NMF_AnyText_Rules_ZeroOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd(NMF.AnyText.Rules.ZeroOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
+  AcceptZeroOrMoreAdd(ZeroOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool AcceptZeroOrMoreAdd(ZeroOrMoreRule star, RuleApplication toAdd, List&lt;RuleApplication&gt; added)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.ZeroOrMoreRule.html">ZeroOrMoreRule</a></td>
-        <td><span class="parametername">star</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">toAdd</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</td>
-        <td><span class="parametername">added</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AddDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AddDefinition(System.Object%2CNMF.AnyText.Rules.RuleApplication)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L157">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>star</code> <a class="xref" href="NMF.AnyText.Rules.ZeroOrMoreRule.html">ZeroOrMoreRule</a></dt>
+    <dd></dd>
+    <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd></dd>
+    <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_AddDefinition_" data-uid="NMF.AnyText.ParseContext.AddDefinition*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AddDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)">AddDefinition(object, RuleApplication)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AddDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)">
+  AddDefinition(object, RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Add a rule application to the list of definitions in the document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void AddDefinition(object key, RuleApplication value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the rule application</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The rule application</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AddDiagnosticItem_NMF_AnyText_DiagnosticItem_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AddDiagnosticItem(NMF.AnyText.DiagnosticItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L293">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the rule application</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>The rule application</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_AddDiagnosticItem_" data-uid="NMF.AnyText.ParseContext.AddDiagnosticItem*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AddDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.AddDiagnosticItem(NMF.AnyText.DiagnosticItem)">AddDiagnosticItem(DiagnosticItem)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AddDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.AddDiagnosticItem(NMF.AnyText.DiagnosticItem)">
+  AddDiagnosticItem(DiagnosticItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds the given diagnostic item</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void AddDiagnosticItem(DiagnosticItem diagnosticItem)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a></td>
-        <td><span class="parametername">diagnosticItem</span></td>
-        <td><p>the diagnostic item to add</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.AddReference(System.Object%2CNMF.AnyText.Rules.RuleApplication)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L187">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnosticItem</code> <a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a></dt>
+    <dd><p>the diagnostic item to add</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_AddReference_" data-uid="NMF.AnyText.ParseContext.AddReference*"></a>
-  <h4 id="NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)">AddReference(object, RuleApplication)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)">
+  AddReference(object, RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Add a rule application to the list of references in the document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void AddReference(object key, RuleApplication value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the rule application</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The rule application</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_EnqueueResolveAction_NMF_AnyText_ParseResolveAction_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L128">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the rule application</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>The rule application</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_EnqueueResolveAction_" data-uid="NMF.AnyText.ParseContext.EnqueueResolveAction*"></a>
-  <h4 id="NMF_AnyText_ParseContext_EnqueueResolveAction_NMF_AnyText_ParseResolveAction_" data-uid="NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)">EnqueueResolveAction(ParseResolveAction)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_EnqueueResolveAction_NMF_AnyText_ParseResolveAction_" data-uid="NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)">
+  EnqueueResolveAction(ParseResolveAction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Enqueues the given resolve action</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void EnqueueResolveAction(ParseResolveAction action)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.ParseResolveAction.html">ParseResolveAction</a></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>the resolve action</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_GetPotentialReferences__1_System_Object_System_String_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.GetPotentialReferences%60%601(System.Object%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L121">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="NMF.AnyText.ParseResolveAction.html">ParseResolveAction</a></dt>
+    <dd><p>the resolve action</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_GetPotentialReferences_" data-uid="NMF.AnyText.ParseContext.GetPotentialReferences*"></a>
-  <h4 id="NMF_AnyText_ParseContext_GetPotentialReferences__1_System_Object_System_String_" data-uid="NMF.AnyText.ParseContext.GetPotentialReferences``1(System.Object,System.String)">GetPotentialReferences&lt;T&gt;(object, string)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_GetPotentialReferences__1_System_Object_System_String_" data-uid="NMF.AnyText.ParseContext.GetPotentialReferences``1(System.Object,System.String)">
+  GetPotentialReferences&lt;T&gt;(object, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Retrieves all potential references for a given context element.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;T&gt; GetPotentialReferences&lt;T&gt;(object contextElement, string input)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">contextElement</span></td>
-        <td><p>The context element.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input from the user</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><p>A collection of references.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of references to retrieve.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RefreshRoot.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RefreshRoot%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L62">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contextElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The context element.</p>
+</dd>
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The input from the user</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>A collection of references.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of references to retrieve.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RefreshRoot_" data-uid="NMF.AnyText.ParseContext.RefreshRoot*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RefreshRoot" data-uid="NMF.AnyText.ParseContext.RefreshRoot">RefreshRoot()</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RefreshRoot" data-uid="NMF.AnyText.ParseContext.RefreshRoot">
+  RefreshRoot()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Refreshes the current root value</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RefreshRoot()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RemoveDefinition_System_Object_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RemoveDefinition(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L177">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RemoveDefinition_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RemoveDefinition_System_Object_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition(System.Object)">RemoveDefinition(object)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RemoveDefinition_System_Object_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition(System.Object)">
+  RemoveDefinition(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Remove a rule application from the list of definitions</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RemoveDefinition(object key)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the rule application</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RemoveDiagnosticItem_NMF_AnyText_DiagnosticItem_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RemoveDiagnosticItem(NMF.AnyText.DiagnosticItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L306">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the rule application</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RemoveDiagnosticItem_" data-uid="NMF.AnyText.ParseContext.RemoveDiagnosticItem*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RemoveDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.RemoveDiagnosticItem(NMF.AnyText.DiagnosticItem)">RemoveDiagnosticItem(DiagnosticItem)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RemoveDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.RemoveDiagnosticItem(NMF.AnyText.DiagnosticItem)">
+  RemoveDiagnosticItem(DiagnosticItem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Removes the given diagnostic item</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool RemoveDiagnosticItem(DiagnosticItem diagnosticItem)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a></td>
-        <td><span class="parametername">diagnosticItem</span></td>
-        <td><p>the diagnostic item</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the diagnostic item was present, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RemoveReference(System.Object%2CNMF.AnyText.Rules.RuleApplication)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L204">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnosticItem</code> <a class="xref" href="NMF.AnyText.DiagnosticItem.html">DiagnosticItem</a></dt>
+    <dd><p>the diagnostic item</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the diagnostic item was present, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RemoveReference_" data-uid="NMF.AnyText.ParseContext.RemoveReference*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RemoveReference(System.Object,NMF.AnyText.Rules.RuleApplication)">RemoveReference(object, RuleApplication)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RemoveReference(System.Object,NMF.AnyText.Rules.RuleApplication)">
+  RemoveReference(object, RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Remove a reference of an object from the corresponding list of references</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RemoveReference(object key, RuleApplication value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the referenced rule application</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The the referencing rule application to be removed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_RestoreContextElement_NMF_AnyText_Rules_RuleApplication_.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.RestoreContextElement(NMF.AnyText.Rules.RuleApplication)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L232">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the referenced rule application</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>The the referencing rule application to be removed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_RestoreContextElement_" data-uid="NMF.AnyText.ParseContext.RestoreContextElement*"></a>
-  <h4 id="NMF_AnyText_ParseContext_RestoreContextElement_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RestoreContextElement(NMF.AnyText.Rules.RuleApplication)">RestoreContextElement(RuleApplication)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_RestoreContextElement_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RestoreContextElement(NMF.AnyText.Rules.RuleApplication)">
+  RestoreContextElement(RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Calculates the context element for the given rule application</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public object RestoreContextElement(RuleApplication ruleApplication)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">ruleApplication</span></td>
-        <td><p>the rule application</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>A restored semantic context element or null, if it cannot be restored</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.TryGetDefinition(System.Object%2CNMF.AnyText.Rules.RuleApplication%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L168">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ruleApplication</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>the rule application</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>A restored semantic context element or null, if it cannot be restored</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_TryGetDefinition_" data-uid="NMF.AnyText.ParseContext.TryGetDefinition*"></a>
-  <h4 id="NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)">TryGetDefinition(object, out RuleApplication)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)">
+  TryGetDefinition(object, out RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Get the rule application for a definition</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDefinition(object key, out RuleApplication definition)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the rule application</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></td>
-        <td><span class="parametername">definition</span></td>
-        <td><p>The rule application for the definition</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True, if a definition is present for the given key</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.TryGetReferences(System.Object%2CSystem.Collections.Generic.ICollection%7BNMF.AnyText.Rules.RuleApplication%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L222">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the rule application</p>
+</dd>
+    <dt><code>definition</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>The rule application for the definition</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if a definition is present for the given key</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_TryGetReferences_" data-uid="NMF.AnyText.ParseContext.TryGetReferences*"></a>
-  <h4 id="NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___" data-uid="NMF.AnyText.ParseContext.TryGetReferences(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)">TryGetReferences(object, out ICollection&lt;RuleApplication&gt;)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___" data-uid="NMF.AnyText.ParseContext.TryGetReferences(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)">
+  TryGetReferences(object, out ICollection&lt;RuleApplication&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Get the rule applications for references</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetReferences(object key, out ICollection&lt;RuleApplication&gt; references)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The semantic element of the referenced rule application</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</td>
-        <td><span class="parametername">references</span></td>
-        <td><p>A list of rule applications that reference the rule application</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True, if references are present for the given key</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext.TryResolveReference%60%601(System.Object%2CSystem.String%2C%60%600%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L108">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The semantic element of the referenced rule application</p>
+</dd>
+    <dt><code>references</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd><p>A list of rule applications that reference the rule application</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if references are present for the given key</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_TryResolveReference_" data-uid="NMF.AnyText.ParseContext.TryResolveReference*"></a>
-  <h4 id="NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__" data-uid="NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)">TryResolveReference&lt;T&gt;(object, string, out T)</h4>
+
+  <h3 id="NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__" data-uid="NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)">
+  TryResolveReference&lt;T&gt;(object, string, out T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Resolves the given input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual bool TryResolveReference&lt;T&gt;(object contextElement, string input, out T resolved)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">contextElement</span></td>
-        <td><p>the element in the context of which the string is resolved</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">input</span></td>
-        <td><p>the textual reference</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">resolved</span></td>
-        <td><p>the resolved reference or the default</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the reference could be resolved, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contextElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>the element in the context of which the string is resolved</p>
+</dd>
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the textual reference</p>
+</dd>
+    <dt><code>resolved</code> <span class="xref">T</span></dt>
+    <dd><p>the resolved reference or the default</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the reference could be resolved, otherwise false</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_AnyText_ParseContext.md&amp;value=---%0Auid%3A%20NMF.AnyText.ParseContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L15" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L15" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

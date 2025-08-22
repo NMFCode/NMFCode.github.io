@@ -1,81 +1,115 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Struct Utf8JsonStreamReader </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Struct Utf8JsonStreamReader ">
-    
-    <meta name="description" content="Denotes a reader that reads directly from a buffer">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes a reader that reads directly from a buffer">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader">
+
+        <article data-uid="NMF.Serialization.Json.Utf8JsonStreamReader">
 
 
 
-  <h1 id="NMF_Serialization_Json_Utf8JsonStreamReader" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader" class="text-break">Struct Utf8JsonStreamReader</h1>
-  <div class="markdown level0 summary"><p>Denotes a reader that reads directly from a buffer</p>
+  <h1 id="NMF_Serialization_Json_Utf8JsonStreamReader" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader" class="text-break">
+Struct Utf8JsonStreamReader  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Serialization.html">Serialization</a>.<a class="xref" href="NMF.Serialization.Json.html">Json</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Serialization.Json.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Denotes a reader that reads directly from a buffer</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ref struct Utf8JsonStreamReader</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
     </div>
@@ -94,1662 +128,1514 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Serialization.html">Serialization</a>.<a class="xref" href="NMF.Serialization.Json.html">Json</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Serialization.Json.dll</h6>
-  <h5 id="NMF_Serialization_Json_Utf8JsonStreamReader_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ref struct Utf8JsonStreamReader</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_IO_Stream_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.%23ctor(System.IO.Stream%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L28">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_IO_Stream_System_Int32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor(System.IO.Stream,System.Int32)">Utf8JsonStreamReader(Stream, int)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_IO_Stream_System_Int32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor(System.IO.Stream,System.Int32)">
+  Utf8JsonStreamReader(Stream, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a new stream reader</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Utf8JsonStreamReader(Stream stream, int bufferSize)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
-        <td><span class="parametername">stream</span></td>
-        <td><p>the underlying stream</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">bufferSize</span></td>
-        <td><p>the buffer size</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_Text_Json_Utf8JsonReader_.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.%23ctor(System.Text.Json.Utf8JsonReader)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L45">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>the underlying stream</p>
+</dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the buffer size</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_Text_Json_Utf8JsonReader_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor(System.Text.Json.Utf8JsonReader)">Utf8JsonStreamReader(Utf8JsonReader)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader__ctor_System_Text_Json_Utf8JsonReader_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.#ctor(System.Text.Json.Utf8JsonReader)">
+  Utf8JsonStreamReader(Utf8JsonReader)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Wraps a Utf8JsonReader</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Utf8JsonStreamReader(Utf8JsonReader jsonReader)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader">Utf8JsonReader</a></td>
-        <td><span class="parametername">jsonReader</span></td>
-        <td><p>the reader that should be wrapped</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_CurrentDepth.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.CurrentDepth%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L115">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>jsonReader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader">Utf8JsonReader</a></dt>
+    <dd><p>the reader that should be wrapped</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_CurrentDepth_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.CurrentDepth*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_CurrentDepth" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.CurrentDepth">CurrentDepth</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_CurrentDepth" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.CurrentDepth">
+  CurrentDepth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the current depth of the reader</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly int CurrentDepth { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_HasValueSequence.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.HasValueSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L120">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_HasValueSequence_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.HasValueSequence*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_HasValueSequence" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.HasValueSequence">HasValueSequence</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_HasValueSequence" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.HasValueSequence">
+  HasValueSequence
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>True, if the underlying reader has a value sequence, otherwise False</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly bool HasValueSequence { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TokenStartIndex.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TokenStartIndex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L125">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenStartIndex_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenStartIndex*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenStartIndex" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenStartIndex">TokenStartIndex</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenStartIndex" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenStartIndex">
+  TokenStartIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the index, the last processed token starts</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly long TokenStartIndex { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TokenType.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TokenType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L130">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenType_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenType*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenType" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenType">TokenType</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TokenType" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TokenType">
+  TokenType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the type of the last processed token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly JsonTokenType TokenType { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.jsontokentype">JsonTokenType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_ValueSequence.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.ValueSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L135">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.json.jsontokentype">JsonTokenType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSequence_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSequence*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSequence" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSequence">ValueSequence</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSequence" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSequence">
+  ValueSequence
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the raw value sequence of the last processed token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly ReadOnlySequence&lt;byte&gt; ValueSequence { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.buffers.readonlysequence-1">ReadOnlySequence</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_ValueSpan.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.ValueSpan%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L140">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.buffers.readonlysequence-1">ReadOnlySequence</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSpan_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSpan*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSpan" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSpan">ValueSpan</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_ValueSpan" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.ValueSpan">
+  ValueSpan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the raw value span of the last processed token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly ReadOnlySpan&lt;byte&gt; ValueSpan { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_Dispose.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L110">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_Dispose_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Dispose*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_Dispose" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Dispose">Dispose()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_Dispose" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Disposes the reader</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly void Dispose()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetBoolean.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetBoolean%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L146">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBoolean_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBoolean*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBoolean" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBoolean">GetBoolean()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBoolean" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBoolean">
+  GetBoolean()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the boolean value of the last processed token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool GetBoolean()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true or false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetByte.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetByte%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L152">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true or false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetByte_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetByte*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetByte" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetByte">GetByte()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetByte" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetByte">
+  GetByte()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the byte value of the last processed token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte GetByte()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
-        <td><p>the byte value</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetBytesFromBase64.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetBytesFromBase64%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L158">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>the byte value</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBytesFromBase64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBytesFromBase64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBytesFromBase64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBytesFromBase64">GetBytesFromBase64()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetBytesFromBase64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetBytesFromBase64">
+  GetBytesFromBase64()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the bytes value extracted from a base64 string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] GetBytesFromBase64()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>a byte array</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetComment.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetComment%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L164">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>a byte array</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetComment_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetComment*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetComment" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetComment">GetComment()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetComment" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetComment">
+  GetComment()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as a comment</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string GetComment()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>the comment</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTime.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L170">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the comment</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTime_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTime*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTime" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTime">GetDateTime()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTime" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTime">
+  GetDateTime()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current toen value as a date time</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DateTime GetDateTime()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td><p>the datetime</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTimeOffset.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTimeOffset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L176">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>the datetime</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTimeOffset_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTimeOffset*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTimeOffset" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTimeOffset">GetDateTimeOffset()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDateTimeOffset" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDateTimeOffset">
+  GetDateTimeOffset()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as a data time offset</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DateTimeOffset GetDateTimeOffset()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></td>
-        <td><p>the date time offset</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetDecimal.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetDecimal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L182">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>the date time offset</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDecimal_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDecimal*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDecimal" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDecimal">GetDecimal()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDecimal" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDecimal">
+  GetDecimal()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as decimal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public decimal GetDecimal()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></td>
-        <td><p>the decimal</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetDouble.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetDouble%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L188">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>the decimal</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDouble_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDouble*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDouble" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDouble">GetDouble()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetDouble" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetDouble">
+  GetDouble()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as double</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public double GetDouble()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><p>the double</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetGuid.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetGuid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L194">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>the double</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetGuid_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetGuid*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetGuid" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetGuid">GetGuid()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetGuid" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetGuid">
+  GetGuid()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as guid</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Guid GetGuid()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
-        <td><p>the Guid</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetInt16.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetInt16%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L200">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>the Guid</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt16_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt16*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt16" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt16">GetInt16()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt16" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt16">
+  GetInt16()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as short</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public short GetInt16()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></td>
-        <td><p>the short</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetInt32.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetInt32%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L206">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd><p>the short</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt32*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt32" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt32">GetInt32()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt32" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt32">
+  GetInt32()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as integer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int GetInt32()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>the integer</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetInt64.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetInt64%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L212">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the integer</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt64">GetInt64()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetInt64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetInt64">
+  GetInt64()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as long</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public long GetInt64()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><p>the long</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetSByte.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetSByte%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L218">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>the long</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSByte_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSByte*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSByte" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSByte">GetSByte()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSByte" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSByte">
+  GetSByte()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as signed byte</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sbyte GetSByte()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></td>
-        <td><p>the signed byte</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetSingle.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetSingle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L224">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></dt>
+    <dd><p>the signed byte</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSingle_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSingle*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSingle" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSingle">GetSingle()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetSingle" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetSingle">
+  GetSingle()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as single</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float GetSingle()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><p>the single</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetString.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L230">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>the single</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetString_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetString*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetString" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetString">GetString()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetString" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetString">
+  GetString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string GetString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>the string</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt32.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt32%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L236">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt32*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt32" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt32">GetUInt32()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt32" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt32">
+  GetUInt32()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as unsigned integer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public uint GetUInt32()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><p>the unsigned integer</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt64.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt64%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L242">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>the unsigned integer</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt64">GetUInt64()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_GetUInt64" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.GetUInt64">
+  GetUInt64()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses the current token value as unsigned long</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ulong GetUInt64()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
-        <td><p>the unsigned long</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_Read.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.Read%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L58">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd><p>the unsigned long</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_Read_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Read*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_Read" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Read">Read()</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_Read" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.Read">
+  Read()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Attempts to read the next token</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Read()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the underlying reader could be moved forward, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetBytesFromBase64_System_Byte____.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetBytesFromBase64(System.Byte%5B%5D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L249">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the underlying reader could be moved forward, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetBytesFromBase64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetBytesFromBase64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetBytesFromBase64_System_Byte____" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetBytesFromBase64(System.Byte[]@)">TryGetBytesFromBase64(out byte[])</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetBytesFromBase64_System_Byte____" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetBytesFromBase64(System.Byte[]@)">
+  TryGetBytesFromBase64(out byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as base64 string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetBytesFromBase64(out byte[] value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the byte array represented as base64 or null, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTime_System_DateTime__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTime(System.DateTime%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L256">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>the byte array represented as base64 or null, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTime_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTime*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTime_System_DateTime__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTime(System.DateTime@)">TryGetDateTime(out DateTime)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTime_System_DateTime__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTime(System.DateTime@)">
+  TryGetDateTime(out DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L256"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as datetime</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDateTime(out DateTime value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the datetime or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTimeOffset_System_DateTimeOffset__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTimeOffset(System.DateTimeOffset%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L263">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>the datetime or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTimeOffset_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTimeOffset*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTimeOffset_System_DateTimeOffset__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTimeOffset(System.DateTimeOffset@)">TryGetDateTimeOffset(out DateTimeOffset)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDateTimeOffset_System_DateTimeOffset__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDateTimeOffset(System.DateTimeOffset@)">
+  TryGetDateTimeOffset(out DateTimeOffset)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as datetime with time zone</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDateTimeOffset(out DateTimeOffset value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the datetime with timezone or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Byte__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Byte%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L277">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>the datetime with timezone or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Byte__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Byte@)">TryGetDecimal(out byte)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Byte__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Byte@)">
+  TryGetDecimal(out byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as decimal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDecimal(out byte value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the decimal or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Decimal__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Decimal%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L270">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>the decimal or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Decimal__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Decimal@)">TryGetDecimal(out decimal)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDecimal_System_Decimal__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDecimal(System.Decimal@)">
+  TryGetDecimal(out decimal)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as decimal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDecimal(out decimal value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the decimal or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDouble_System_Double__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDouble(System.Double%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L284">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>the decimal or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDouble_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDouble*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDouble_System_Double__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDouble(System.Double@)">TryGetDouble(out double)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetDouble_System_Double__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetDouble(System.Double@)">
+  TryGetDouble(out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as double</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetDouble(out double value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the double or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetGuid_System_Guid__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetGuid(System.Guid%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L291">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>the double or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetGuid_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetGuid*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetGuid_System_Guid__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetGuid(System.Guid@)">TryGetGuid(out Guid)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetGuid_System_Guid__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetGuid(System.Guid@)">
+  TryGetGuid(out Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as Guid</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetGuid(out Guid value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the Guid or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt16_System_Int16__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt16(System.Int16%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L298">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>the Guid or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt16_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt16*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt16_System_Int16__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt16(System.Int16@)">TryGetInt16(out short)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt16_System_Int16__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt16(System.Int16@)">
+  TryGetInt16(out short)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as short</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetInt16(out short value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the short or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt32_System_Int32__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt32(System.Int32%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L305">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd><p>the short or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt32*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt32_System_Int32__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt32(System.Int32@)">TryGetInt32(out int)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt32_System_Int32__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt32(System.Int32@)">
+  TryGetInt32(out int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as integer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetInt32(out int value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the integer or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt64_System_Int64__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt64(System.Int64%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L312">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the integer or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt64_System_Int64__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt64(System.Int64@)">TryGetInt64(out long)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetInt64_System_Int64__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetInt64(System.Int64@)">
+  TryGetInt64(out long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as long</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetInt64(out long value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the long or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSByte_System_SByte__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSByte(System.SByte%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L319">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>the long or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSByte_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSByte*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSByte_System_SByte__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSByte(System.SByte@)">TryGetSByte(out sbyte)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSByte_System_SByte__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSByte(System.SByte@)">
+  TryGetSByte(out sbyte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as signed byte</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetSByte(out sbyte value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the signed byte or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSingle_System_Single__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSingle(System.Single%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L326">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></dt>
+    <dd><p>the signed byte or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSingle_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSingle*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSingle_System_Single__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSingle(System.Single@)">TryGetSingle(out float)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetSingle_System_Single__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetSingle(System.Single@)">
+  TryGetSingle(out float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as single</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetSingle(out float value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the single or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt16_System_UInt16__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt16(System.UInt16%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L333">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>the single or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt16_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt16*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt16_System_UInt16__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt16(System.UInt16@)">TryGetUInt16(out ushort)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt16_System_UInt16__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt16(System.UInt16@)">
+  TryGetUInt16(out ushort)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as unsigned short</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetUInt16(out ushort value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the unsigned short or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt32_System_UInt32__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt32(System.UInt32%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L340">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>the unsigned short or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt32_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt32*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt32_System_UInt32__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt32(System.UInt32@)">TryGetUInt32(out uint)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt32_System_UInt32__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt32(System.UInt32@)">
+  TryGetUInt32(out uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as unsigned integer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetUInt32(out uint value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the unsigned integer or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt64_System_UInt64__.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt64(System.UInt64%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L347">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>the unsigned integer or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt64_" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt64*"></a>
-  <h4 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt64_System_UInt64__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt64(System.UInt64@)">TryGetUInt64(out ulong)</h4>
+
+  <h3 id="NMF_Serialization_Json_Utf8JsonStreamReader_TryGetUInt64_System_UInt64__" data-uid="NMF.Serialization.Json.Utf8JsonStreamReader.TryGetUInt64(System.UInt64@)">
+  TryGetUInt64(out ulong)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Tries to parse the current token value as unsigned long</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool TryGetUInt64(out ulong value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>the unsigned long or zero, if the token could not be parsed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true, if the value was successfully parsed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd><p>the unsigned long or zero, if the token could not be parsed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the value was successfully parsed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Serialization_Json_Utf8JsonStreamReader.md&amp;value=---%0Auid%3A%20NMF.Serialization.Json.Utf8JsonStreamReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L11" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Models/Serialization.Json/Utf8JsonStreamReader.cs/#L11" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

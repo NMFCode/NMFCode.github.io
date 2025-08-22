@@ -1,86 +1,122 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class CodeDomHelper </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CodeDomHelper ">
-    
-    <meta name="description" content="A helper class to generate code using CodeDOM">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="A helper class to generate code using CodeDOM">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.CodeGen.CodeDomHelper">
+
+        <article data-uid="NMF.CodeGen.CodeDomHelper">
 
 
 
-  <h1 id="NMF_CodeGen_CodeDomHelper" data-uid="NMF.CodeGen.CodeDomHelper" class="text-break">Class CodeDomHelper</h1>
-  <div class="markdown level0 summary"><p>A helper class to generate code using CodeDOM</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">CodeDomHelper</span></div>
+  <h1 id="NMF_CodeGen_CodeDomHelper" data-uid="NMF.CodeGen.CodeDomHelper" class="text-break">
+Class CodeDomHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.CodeGen.html">CodeGen</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.CodeGen.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>A helper class to generate code using CodeDOM</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CodeDomHelper</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CodeDomHelper</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -102,2415 +138,1823 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.CodeGen.html">CodeGen</a></h6>
-  <h6><strong>Assembly</strong>: NMF.CodeGen.dll</h6>
-  <h5 id="NMF_CodeGen_CodeDomHelper_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class CodeDomHelper</code></pre>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_AddAttribute_System_CodeDom_CodeTypeMember_System_Type_System_Object___.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.AddAttribute(System.CodeDom.CodeTypeMember%2CSystem.Type%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L309">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_CodeGen_CodeDomHelper_AddAttribute_" data-uid="NMF.CodeGen.CodeDomHelper.AddAttribute*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_AddAttribute_System_CodeDom_CodeTypeMember_System_Type_System_Object___" data-uid="NMF.CodeGen.CodeDomHelper.AddAttribute(System.CodeDom.CodeTypeMember,System.Type,System.Object[])">AddAttribute(CodeTypeMember, Type, params object[])</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_AddAttribute_System_CodeDom_CodeTypeMember_System_Type_System_Object___" data-uid="NMF.CodeGen.CodeDomHelper.AddAttribute(System.CodeDom.CodeTypeMember,System.Type,System.Object[])">
+  AddAttribute(CodeTypeMember, Type, params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds an attribute of the given attribute type to the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void AddAttribute(this CodeTypeMember member, Type attributeType, params object[] arguments)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">member</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">attributeType</span></td>
-        <td><p>The type of the attribute</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">arguments</span></td>
-        <td><p>The arguments of the attribute, can either be primitive values, code expressions or code attribute arguments</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ApplyExpression__2_System_Linq_Expressions_Expression_System_Func___0___1___System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ApplyExpression%60%602(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2C%60%601%7D%7D%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L828">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>member</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>attributeType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type of the attribute</p>
+</dd>
+    <dt><code>arguments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The arguments of the attribute, can either be primitive values, code expressions or code attribute arguments</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ApplyExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__2_System_Linq_Expressions_Expression_System_Func___0___1___System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.CodeDom.CodeExpression)">ApplyExpression&lt;T1, TResult&gt;(Expression&lt;Func&lt;T1, TResult&gt;&gt;, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__2_System_Linq_Expressions_Expression_System_Func___0___1___System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.CodeDom.CodeExpression)">
+  ApplyExpression&lt;T1, TResult&gt;(Expression&lt;Func&lt;T1, TResult&gt;&gt;, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L828"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Applies the given expression to the given code expressions as input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeExpression ApplyExpression&lt;T1, TResult&gt;(Expression&lt;Func&lt;T1, TResult&gt;&gt; expression, CodeExpression argument)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T1, TResult&gt;&gt;</td>
-        <td><span class="parametername">expression</span></td>
-        <td><p>The expression to be converted to CodeDOM</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument</span></td>
-        <td><p>The first argument</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><p>The CodeDOM expression that contains the equivalent code</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T1</span></td>
-        <td><p>The type of the first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The type of the result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ApplyExpression__3_System_Linq_Expressions_Expression_System_Func___0___1___2___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ApplyExpression%60%603(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%7D%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L850">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T1, TResult&gt;&gt;</dt>
+    <dd><p>The expression to be converted to CodeDOM</p>
+</dd>
+    <dt><code>argument</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The first argument</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The CodeDOM expression that contains the equivalent code</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd><p>The type of the first argument</p>
+</dd>
+    <dt><code>TResult</code></dt>
+    <dd><p>The type of the result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ApplyExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__3_System_Linq_Expressions_Expression_System_Func___0___1___2___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``3(System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">ApplyExpression&lt;T1, T2, TResult&gt;(Expression&lt;Func&lt;T1, T2, TResult&gt;&gt;, CodeExpression, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__3_System_Linq_Expressions_Expression_System_Func___0___1___2___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``3(System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">
+  ApplyExpression&lt;T1, T2, TResult&gt;(Expression&lt;Func&lt;T1, T2, TResult&gt;&gt;, CodeExpression, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L850"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Applies the given expression to the given code expressions as input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeExpression ApplyExpression&lt;T1, T2, TResult&gt;(Expression&lt;Func&lt;T1, T2, TResult&gt;&gt; expression, CodeExpression argument1, CodeExpression argument2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;T1, T2, TResult&gt;&gt;</td>
-        <td><span class="parametername">expression</span></td>
-        <td><p>The expression to be converted to CodeDOM</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument1</span></td>
-        <td><p>The first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument2</span></td>
-        <td><p>The second argument</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><p>The CodeDOM expression that contains the equivalent code</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T1</span></td>
-        <td><p>The type of the first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T2</span></td>
-        <td><p>The type of the second argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The type of the result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ApplyExpression__4_System_Linq_Expressions_Expression_System_Func___0___1___2___3___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ApplyExpression%60%604(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2C%60%601%2C%60%602%2C%60%603%7D%7D%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L875">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;T1, T2, TResult&gt;&gt;</dt>
+    <dd><p>The expression to be converted to CodeDOM</p>
+</dd>
+    <dt><code>argument1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The first argument</p>
+</dd>
+    <dt><code>argument2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The second argument</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The CodeDOM expression that contains the equivalent code</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd><p>The type of the first argument</p>
+</dd>
+    <dt><code>T2</code></dt>
+    <dd><p>The type of the second argument</p>
+</dd>
+    <dt><code>TResult</code></dt>
+    <dd><p>The type of the result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ApplyExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__4_System_Linq_Expressions_Expression_System_Func___0___1___2___3___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">ApplyExpression&lt;T1, T2, T3, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, TResult&gt;&gt;, CodeExpression, CodeExpression, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__4_System_Linq_Expressions_Expression_System_Func___0___1___2___3___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">
+  ApplyExpression&lt;T1, T2, T3, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, TResult&gt;&gt;, CodeExpression, CodeExpression, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L875"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Applies the given expression to the given code expressions as input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeExpression ApplyExpression&lt;T1, T2, T3, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, TResult&gt;&gt; expression, CodeExpression argument1, CodeExpression argument2, CodeExpression argument3)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-4">Func</a>&lt;T1, T2, T3, TResult&gt;&gt;</td>
-        <td><span class="parametername">expression</span></td>
-        <td><p>The expression to be converted to CodeDOM</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument1</span></td>
-        <td><p>The first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument2</span></td>
-        <td><p>The second argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument3</span></td>
-        <td><p>The third argument</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><p>The CodeDOM expression that contains the equivalent code</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T1</span></td>
-        <td><p>The type of the first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T2</span></td>
-        <td><p>The type of the second argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T3</span></td>
-        <td><p>The type of the third argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The type of the result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ApplyExpression__5_System_Linq_Expressions_Expression_System_Func___0___1___2___3___4___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ApplyExpression%60%605(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2C%60%601%2C%60%602%2C%60%603%2C%60%604%7D%7D%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L903">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-4">Func</a>&lt;T1, T2, T3, TResult&gt;&gt;</dt>
+    <dd><p>The expression to be converted to CodeDOM</p>
+</dd>
+    <dt><code>argument1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The first argument</p>
+</dd>
+    <dt><code>argument2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The second argument</p>
+</dd>
+    <dt><code>argument3</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The third argument</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The CodeDOM expression that contains the equivalent code</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd><p>The type of the first argument</p>
+</dd>
+    <dt><code>T2</code></dt>
+    <dd><p>The type of the second argument</p>
+</dd>
+    <dt><code>T3</code></dt>
+    <dd><p>The type of the third argument</p>
+</dd>
+    <dt><code>TResult</code></dt>
+    <dd><p>The type of the result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ApplyExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__5_System_Linq_Expressions_Expression_System_Func___0___1___2___3___4___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">ApplyExpression&lt;T1, T2, T3, T4, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, T4, TResult&gt;&gt;, CodeExpression, CodeExpression, CodeExpression, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ApplyExpression__5_System_Linq_Expressions_Expression_System_Func___0___1___2___3___4___System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ApplyExpression``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)">
+  ApplyExpression&lt;T1, T2, T3, T4, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, T4, TResult&gt;&gt;, CodeExpression, CodeExpression, CodeExpression, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L903"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Applies the given expression to the given code expressions as input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeExpression ApplyExpression&lt;T1, T2, T3, T4, TResult&gt;(Expression&lt;Func&lt;T1, T2, T3, T4, TResult&gt;&gt; expression, CodeExpression argument1, CodeExpression argument2, CodeExpression argument3, CodeExpression argument4)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-5">Func</a>&lt;T1, T2, T3, T4, TResult&gt;&gt;</td>
-        <td><span class="parametername">expression</span></td>
-        <td><p>The expression to be converted to CodeDOM</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument1</span></td>
-        <td><p>The first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument2</span></td>
-        <td><p>The second argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument3</span></td>
-        <td><p>The third argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">argument4</span></td>
-        <td><p>The fourth argument</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><p>The CodeDOM expression that contains the equivalent code</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T1</span></td>
-        <td><p>The type of the first argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T2</span></td>
-        <td><p>The type of the second argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T3</span></td>
-        <td><p>The type of the third argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">T4</span></td>
-        <td><p>The type of the fourth argument</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The type of the result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L538">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-5">Func</a>&lt;T1, T2, T3, T4, TResult&gt;&gt;</dt>
+    <dd><p>The expression to be converted to CodeDOM</p>
+</dd>
+    <dt><code>argument1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The first argument</p>
+</dd>
+    <dt><code>argument2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The second argument</p>
+</dd>
+    <dt><code>argument3</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The third argument</p>
+</dd>
+    <dt><code>argument4</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The fourth argument</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The CodeDOM expression that contains the equivalent code</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T1</code></dt>
+    <dd><p>The type of the first argument</p>
+</dd>
+    <dt><code>T2</code></dt>
+    <dd><p>The type of the second argument</p>
+</dd>
+    <dt><code>T3</code></dt>
+    <dd><p>The type of the third argument</p>
+</dd>
+    <dt><code>T4</code></dt>
+    <dd><p>The type of the fourth argument</p>
+</dd>
+    <dt><code>TResult</code></dt>
+    <dd><p>The type of the result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateBackingField_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty)">CreateBackingField(CodeMemberProperty)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty)">
+  CreateBackingField(CodeMemberProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a backing field for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeFieldReferenceExpression CreateBackingField(this CodeMemberProperty property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><p>A reference to the generated backing field</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeTypeReference%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L550">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A reference to the generated backing field</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateBackingField_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">CreateBackingField(CodeMemberProperty, CodeTypeReference, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateBackingField_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateBackingField(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">
+  CreateBackingField(CodeMemberProperty, CodeTypeReference, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L550"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a backing field for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeFieldReferenceExpression CreateBackingField(this CodeMemberProperty property, CodeTypeReference type, CodeExpression initialValue)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>The type of the property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">initialValue</span></td>
-        <td><p>The initial value expression for the field</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><p>A reference to the generated backing field</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L474">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type of the property</p>
+</dd>
+    <dt><code>initialValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The initial value expression for the field</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A reference to the generated backing field</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty)">CreateOnChangedEventPattern(CodeMemberProperty)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty)">
+  CreateOnChangedEventPattern(CodeMemberProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L474"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generates an OnChanged-pattern for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeStatement CreateOnChangedEventPattern(this CodeMemberProperty property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></td>
-        <td><p>The statement to call the OnChanged method for the given property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeTypeReference%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L486">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></dt>
+    <dd><p>The statement to call the OnChanged method for the given property</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">CreateOnChangedEventPattern(CodeMemberProperty, CodeTypeReference, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateOnChangedEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangedEventPattern(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">
+  CreateOnChangedEventPattern(CodeMemberProperty, CodeTypeReference, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L486"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generates an OnChanged-pattern for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeStatement CreateOnChangedEventPattern(this CodeMemberProperty property, CodeTypeReference eventType, CodeExpression eventData)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">eventType</span></td>
-        <td><p>The event type</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">eventData</span></td>
-        <td><p>The event data</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></td>
-        <td><p>The statement to call the OnChanged method for the given property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L418">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+    <dt><code>eventType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The event type</p>
+</dd>
+    <dt><code>eventData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The event data</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></dt>
+    <dd><p>The statement to call the OnChanged method for the given property</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty)">CreateOnChangingEventPattern(CodeMemberProperty)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty)">
+  CreateOnChangingEventPattern(CodeMemberProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L418"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generates an OnChanging-pattern for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeStatement CreateOnChangingEventPattern(this CodeMemberProperty property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeTypeReference%2CSystem.CodeDom.CodeExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L430">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">CreateOnChangingEventPattern(CodeMemberProperty, CodeTypeReference, CodeExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateOnChangingEventPattern_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeTypeReference_System_CodeDom_CodeExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreateOnChangingEventPattern(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)">
+  CreateOnChangingEventPattern(CodeMemberProperty, CodeTypeReference, CodeExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L430"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generates an OnChanging-pattern for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeStatement CreateOnChangingEventPattern(this CodeMemberProperty property, CodeTypeReference eventType, CodeExpression eventData)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">eventType</span></td>
-        <td><p>The type of the changing event</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><span class="parametername">eventData</span></td>
-        <td><p>The event data for the changing event</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></td>
-        <td><p>A method that can be called on changing of a property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreatePrimitiveExpression_System_String_System_CodeDom_CodeTypeReference_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreatePrimitiveExpression(System.String%2CSystem.CodeDom.CodeTypeReference%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L342">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+    <dt><code>eventType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type of the changing event</p>
+</dd>
+    <dt><code>eventData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>The event data for the changing event</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a></dt>
+    <dd><p>A method that can be called on changing of a property</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreatePrimitiveExpression_" data-uid="NMF.CodeGen.CodeDomHelper.CreatePrimitiveExpression*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreatePrimitiveExpression_System_String_System_CodeDom_CodeTypeReference_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.CreatePrimitiveExpression(System.String,System.CodeDom.CodeTypeReference,System.Boolean)">CreatePrimitiveExpression(string, CodeTypeReference, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreatePrimitiveExpression_System_String_System_CodeDom_CodeTypeReference_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.CreatePrimitiveExpression(System.String,System.CodeDom.CodeTypeReference,System.Boolean)">
+  CreatePrimitiveExpression(string, CodeTypeReference, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a primitive expression from the serialized value</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeExpression CreatePrimitiveExpression(string value, CodeTypeReference type, bool isEnum)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The serialized value</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>The type for the primitive expression</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">isEnum</span></td>
-        <td><p>True, if the value is an enum, otherwise False</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></td>
-        <td><p>A code expression that represents the value as a code expression or null if there is no such expression</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateRaiseMethod_System_CodeDom_CodeMemberEvent_System_CodeDom_CodeTypeReference_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateRaiseMethod(System.CodeDom.CodeMemberEvent%2CSystem.CodeDom.CodeTypeReference)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L226">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The serialized value</p>
+</dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type for the primitive expression</p>
+</dd>
+    <dt><code>isEnum</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the value is an enum, otherwise False</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeexpression">CodeExpression</a></dt>
+    <dd><p>A code expression that represents the value as a code expression or null if there is no such expression</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateRaiseMethod_" data-uid="NMF.CodeGen.CodeDomHelper.CreateRaiseMethod*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateRaiseMethod_System_CodeDom_CodeMemberEvent_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.CreateRaiseMethod(System.CodeDom.CodeMemberEvent,System.CodeDom.CodeTypeReference)">CreateRaiseMethod(CodeMemberEvent, CodeTypeReference)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateRaiseMethod_System_CodeDom_CodeMemberEvent_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.CreateRaiseMethod(System.CodeDom.CodeMemberEvent,System.CodeDom.CodeTypeReference)">
+  CreateRaiseMethod(CodeMemberEvent, CodeTypeReference)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a method that raises the given event</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeMemberMethod CreateRaiseMethod(this CodeMemberEvent memberEvent, CodeTypeReference eventDataType)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberevent">CodeMemberEvent</a></td>
-        <td><span class="parametername">memberEvent</span></td>
-        <td><p>The event that is to be raised</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">eventDataType</span></td>
-        <td><p>The event arguments type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></td>
-        <td><p>A code method that raises the event</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_CreateTypeDeclarationWithReference_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.CreateTypeDeclarationWithReference(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L136">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberEvent</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberevent">CodeMemberEvent</a></dt>
+    <dd><p>The event that is to be raised</p>
+</dd>
+    <dt><code>eventDataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The event arguments type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></dt>
+    <dd><p>A code method that raises the event</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_CreateTypeDeclarationWithReference_" data-uid="NMF.CodeGen.CodeDomHelper.CreateTypeDeclarationWithReference*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_CreateTypeDeclarationWithReference_System_String_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.CreateTypeDeclarationWithReference(System.String,System.Boolean)">CreateTypeDeclarationWithReference(string, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_CreateTypeDeclarationWithReference_System_String_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.CreateTypeDeclarationWithReference(System.String,System.Boolean)">
+  CreateTypeDeclarationWithReference(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a type declaration with a reference attached to it</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeDeclaration CreateTypeDeclarationWithReference(string name, bool autoAssignNamespace)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The initial name of the type declaration</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">autoAssignNamespace</span></td>
-        <td><p>If true, the namespace is set in the user data such that the code generation helper can automatically deduct when the namespace can be omitted.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></td>
-        <td><p>The generated type declaration</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_DependentMembers_System_CodeDom_CodeTypeMember_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.DependentMembers(System.CodeDom.CodeTypeMember%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L72">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The initial name of the type declaration</p>
+</dd>
+    <dt><code>autoAssignNamespace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, the namespace is set in the user data such that the code generation helper can automatically deduct when the namespace can be omitted.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></dt>
+    <dd><p>The generated type declaration</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_DependentMembers_" data-uid="NMF.CodeGen.CodeDomHelper.DependentMembers*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_DependentMembers_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.DependentMembers(System.CodeDom.CodeTypeMember,System.Boolean)">DependentMembers(CodeTypeMember, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_DependentMembers_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.DependentMembers(System.CodeDom.CodeTypeMember,System.Boolean)">
+  DependentMembers(CodeTypeMember, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the dependent members of a code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static ICollection&lt;CodeTypeMember&gt; DependentMembers(this CodeTypeMember item, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection of dependent members should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</td>
-        <td><p>The collection of dependent members</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_DependentTypes_System_CodeDom_CodeTypeMember_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.DependentTypes(System.CodeDom.CodeTypeMember%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L61">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection of dependent members should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</dt>
+    <dd><p>The collection of dependent members</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_DependentTypes_" data-uid="NMF.CodeGen.CodeDomHelper.DependentTypes*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_DependentTypes_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.DependentTypes(System.CodeDom.CodeTypeMember,System.Boolean)">DependentTypes(CodeTypeMember, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_DependentTypes_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.DependentTypes(System.CodeDom.CodeTypeMember,System.Boolean)">
+  DependentTypes(CodeTypeMember, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the dependent types of a code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static ICollection&lt;CodeTypeDeclaration&gt; DependentTypes(this CodeTypeMember item, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection of dependent types should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a>&gt;</td>
-        <td><p>The collection of dependent types or null</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetBackingField_System_CodeDom_CodeMemberProperty_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetBackingField(System.CodeDom.CodeMemberProperty)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L528">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection of dependent types should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a>&gt;</dt>
+    <dd><p>The collection of dependent types or null</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetBackingField_" data-uid="NMF.CodeGen.CodeDomHelper.GetBackingField*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetBackingField_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.GetBackingField(System.CodeDom.CodeMemberProperty)">GetBackingField(CodeMemberProperty)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetBackingField_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.GetBackingField(System.CodeDom.CodeMemberProperty)">
+  GetBackingField(CodeMemberProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the backing field for the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeFieldReferenceExpression GetBackingField(this CodeMemberProperty property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><p>A code field reference to the backing field</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetOrCreateDefaultConstructor_System_CodeDom_CodeTypeDeclaration_System_Func_System_CodeDom_CodeConstructor__.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetOrCreateDefaultConstructor(System.CodeDom.CodeTypeDeclaration%2CSystem.Func%7BSystem.CodeDom.CodeConstructor%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1030">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The property</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A code field reference to the backing field</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetOrCreateDefaultConstructor_" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateDefaultConstructor*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetOrCreateDefaultConstructor_System_CodeDom_CodeTypeDeclaration_System_Func_System_CodeDom_CodeConstructor__" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateDefaultConstructor(System.CodeDom.CodeTypeDeclaration,System.Func{System.CodeDom.CodeConstructor})">GetOrCreateDefaultConstructor(CodeTypeDeclaration, Func&lt;CodeConstructor&gt;)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetOrCreateDefaultConstructor_System_CodeDom_CodeTypeDeclaration_System_Func_System_CodeDom_CodeConstructor__" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateDefaultConstructor(System.CodeDom.CodeTypeDeclaration,System.Func{System.CodeDom.CodeConstructor})">
+  GetOrCreateDefaultConstructor(CodeTypeDeclaration, Func&lt;CodeConstructor&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1030"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or creates the default constructor for the given code type declaration</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeConstructor GetOrCreateDefaultConstructor(this CodeTypeDeclaration generatedType, Func&lt;CodeConstructor&gt; constructorCreator = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></td>
-        <td><span class="parametername">generatedType</span></td>
-        <td><p>The generated type declaration</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor">CodeConstructor</a>&gt;</td>
-        <td><span class="parametername">constructorCreator</span></td>
-        <td><p>A function creating the default constructor if necessary</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor">CodeConstructor</a></td>
-        <td><p>The types default constructor</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetOrCreateUserItem__1_System_CodeDom_CodeObject_System_Object_System_Func___0__.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetOrCreateUserItem%60%601(System.CodeDom.CodeObject%2CSystem.Object%2CSystem.Func%7B%60%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L176">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>generatedType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></dt>
+    <dd><p>The generated type declaration</p>
+</dd>
+    <dt><code>constructorCreator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor">CodeConstructor</a>&gt;</dt>
+    <dd><p>A function creating the default constructor if necessary</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeconstructor">CodeConstructor</a></dt>
+    <dd><p>The types default constructor</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetOrCreateUserItem_" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateUserItem*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetOrCreateUserItem__1_System_CodeDom_CodeObject_System_Object_System_Func___0__" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateUserItem``1(System.CodeDom.CodeObject,System.Object,System.Func{``0})">GetOrCreateUserItem&lt;TValue&gt;(CodeObject, object, Func&lt;TValue&gt;)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetOrCreateUserItem__1_System_CodeDom_CodeObject_System_Object_System_Func___0__" data-uid="NMF.CodeGen.CodeDomHelper.GetOrCreateUserItem``1(System.CodeDom.CodeObject,System.Object,System.Func{``0})">
+  GetOrCreateUserItem&lt;TValue&gt;(CodeObject, object, Func&lt;TValue&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or creates the user item with the specified key</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TValue GetOrCreateUserItem&lt;TValue&gt;(this CodeObject item, object key, Func&lt;TValue&gt; valueCreator = null) where TValue : class</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The key for the user item</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;TValue&gt;</td>
-        <td><span class="parametername">valueCreator</span></td>
-        <td><p>A method that creates the default value if the user item does not yet exist or null, if no user item should be created</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TValue</span></td>
-        <td><p>The user item with the specified key</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue</span></td>
-        <td><p>The type of the user item</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetReferenceForType_System_CodeDom_CodeTypeDeclaration_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetReferenceForType(System.CodeDom.CodeTypeDeclaration)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L115">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></dt>
+    <dd><p>The code object</p>
+</dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The key for the user item</p>
+</dd>
+    <dt><code>valueCreator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;TValue&gt;</dt>
+    <dd><p>A method that creates the default value if the user item does not yet exist or null, if no user item should be created</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TValue</span></dt>
+    <dd><p>The user item with the specified key</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue</code></dt>
+    <dd><p>The type of the user item</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetReferenceForType_" data-uid="NMF.CodeGen.CodeDomHelper.GetReferenceForType*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetReferenceForType_System_CodeDom_CodeTypeDeclaration_" data-uid="NMF.CodeGen.CodeDomHelper.GetReferenceForType(System.CodeDom.CodeTypeDeclaration)">GetReferenceForType(CodeTypeDeclaration)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetReferenceForType_System_CodeDom_CodeTypeDeclaration_" data-uid="NMF.CodeGen.CodeDomHelper.GetReferenceForType(System.CodeDom.CodeTypeDeclaration)">
+  GetReferenceForType(CodeTypeDeclaration)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the type reference associated with the given code type declaration</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeReference GetReferenceForType(this CodeTypeDeclaration typeDeclaration)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></td>
-        <td><span class="parametername">typeDeclaration</span></td>
-        <td><p>The code type declaration</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><p>The type reference associated with the given type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetTypeForReference_System_CodeDom_CodeTypeReference_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetTypeForReference(System.CodeDom.CodeTypeReference)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L125">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeDeclaration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></dt>
+    <dd><p>The code type declaration</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type reference associated with the given type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetTypeForReference_" data-uid="NMF.CodeGen.CodeDomHelper.GetTypeForReference*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetTypeForReference_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.GetTypeForReference(System.CodeDom.CodeTypeReference)">GetTypeForReference(CodeTypeReference)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetTypeForReference_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.GetTypeForReference(System.CodeDom.CodeTypeReference)">
+  GetTypeForReference(CodeTypeReference)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the type declaration associated with the given code type reference</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeDeclaration GetTypeForReference(this CodeTypeReference typeReference)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">typeReference</span></td>
-        <td><p>The code type reference</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></td>
-        <td><p>The code type declaration associated with the given code type reference</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_GetUserCollection__1_System_CodeDom_CodeObject_System_Object_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.GetUserCollection%60%601(System.CodeDom.CodeObject%2CSystem.Object%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L161">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeReference</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The code type reference</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypedeclaration">CodeTypeDeclaration</a></dt>
+    <dd><p>The code type declaration associated with the given code type reference</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_GetUserCollection_" data-uid="NMF.CodeGen.CodeDomHelper.GetUserCollection*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_GetUserCollection__1_System_CodeDom_CodeObject_System_Object_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.GetUserCollection``1(System.CodeDom.CodeObject,System.Object,System.Boolean)">GetUserCollection&lt;TValue&gt;(CodeObject, object, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_GetUserCollection__1_System_CodeDom_CodeObject_System_Object_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.GetUserCollection``1(System.CodeDom.CodeObject,System.Object,System.Boolean)">
+  GetUserCollection&lt;TValue&gt;(CodeObject, object, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the user collection associated with the given code object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static List&lt;TValue&gt; GetUserCollection&lt;TValue&gt;(this CodeObject item, object key, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The user key for retrieving the collection</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TValue&gt;</td>
-        <td><p>The user collection or null</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue</span></td>
-        <td><p>The type of the collection elements</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ImplementGetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ImplementGetter(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeFieldReferenceExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L594">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></dt>
+    <dd><p>The code object</p>
+</dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The user key for retrieving the collection</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TValue&gt;</dt>
+    <dd><p>The user collection or null</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue</code></dt>
+    <dd><p>The type of the collection elements</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ImplementGetter_" data-uid="NMF.CodeGen.CodeDomHelper.ImplementGetter*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ImplementGetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ImplementGetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression)">ImplementGetter(CodeMemberProperty, CodeFieldReferenceExpression)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ImplementGetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_" data-uid="NMF.CodeGen.CodeDomHelper.ImplementGetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression)">
+  ImplementGetter(CodeMemberProperty, CodeFieldReferenceExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Implements the getter of the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ImplementGetter(this CodeMemberProperty property, CodeFieldReferenceExpression fieldRef)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><span class="parametername">fieldRef</span></td>
-        <td><p>A reference to the underlying field</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_CodeDom_CodeStatement___.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeFieldReferenceExpression%2CSystem.CodeDom.CodeStatement%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L606">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The property</p>
+</dd>
+    <dt><code>fieldRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A reference to the underlying field</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ImplementSetter_" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_CodeDom_CodeStatement___" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression,System.CodeDom.CodeStatement[])">ImplementSetter(CodeMemberProperty, CodeFieldReferenceExpression, params CodeStatement[])</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_CodeDom_CodeStatement___" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression,System.CodeDom.CodeStatement[])">
+  ImplementSetter(CodeMemberProperty, CodeFieldReferenceExpression, params CodeStatement[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L606"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Implements the setter of the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ImplementSetter(this CodeMemberProperty property, CodeFieldReferenceExpression fieldRef, params CodeStatement[] whenChanged)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><span class="parametername">fieldRef</span></td>
-        <td><p>A reference to the underlying field</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>[]</td>
-        <td><span class="parametername">whenChanged</span></td>
-        <td><p>A collection of statements that should be performed when the value of the property changed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_Collections_Generic_IEnumerable_System_CodeDom_CodeStatement__.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty%2CSystem.CodeDom.CodeFieldReferenceExpression%2CSystem.Collections.Generic.IEnumerable%7BSystem.CodeDom.CodeStatement%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L617">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+    <dt><code>fieldRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A reference to the underlying field</p>
+</dd>
+    <dt><code>whenChanged</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>[]</dt>
+    <dd><p>A collection of statements that should be performed when the value of the property changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ImplementSetter_" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_Collections_Generic_IEnumerable_System_CodeDom_CodeStatement__" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression,System.Collections.Generic.IEnumerable{System.CodeDom.CodeStatement})">ImplementSetter(CodeMemberProperty, CodeFieldReferenceExpression, IEnumerable&lt;CodeStatement&gt;)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ImplementSetter_System_CodeDom_CodeMemberProperty_System_CodeDom_CodeFieldReferenceExpression_System_Collections_Generic_IEnumerable_System_CodeDom_CodeStatement__" data-uid="NMF.CodeGen.CodeDomHelper.ImplementSetter(System.CodeDom.CodeMemberProperty,System.CodeDom.CodeFieldReferenceExpression,System.Collections.Generic.IEnumerable{System.CodeDom.CodeStatement})">
+  ImplementSetter(CodeMemberProperty, CodeFieldReferenceExpression, IEnumerable&lt;CodeStatement&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L617"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Implements the setter of the given property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ImplementSetter(this CodeMemberProperty property, CodeFieldReferenceExpression fieldRef, IEnumerable&lt;CodeStatement&gt; whenChanged)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The code property</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></td>
-        <td><span class="parametername">fieldRef</span></td>
-        <td><p>A reference to the underlying field</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</td>
-        <td><span class="parametername">whenChanged</span></td>
-        <td><p>A collection of statements that should be performed when the value of the property changed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatements_System_CodeDom_CodeTypeMember_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatements(System.CodeDom.CodeTypeMember%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L83">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The code property</p>
+</dd>
+    <dt><code>fieldRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codefieldreferenceexpression">CodeFieldReferenceExpression</a></dt>
+    <dd><p>A reference to the underlying field</p>
+</dd>
+    <dt><code>whenChanged</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</dt>
+    <dd><p>A collection of statements that should be performed when the value of the property changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatements_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatements*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatements_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatements(System.CodeDom.CodeTypeMember,System.Boolean)">ImpliedConstructorStatements(CodeTypeMember, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatements_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatements(System.CodeDom.CodeTypeMember,System.Boolean)">
+  ImpliedConstructorStatements(CodeTypeMember, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the implied constructor statements of the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static ICollection&lt;CodeStatement&gt; ImpliedConstructorStatements(this CodeTypeMember item, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection of implied statements should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</td>
-        <td><p>The collection of implied constructor statements</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatementsInternal_System_CodeDom_CodeTypeMember_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatementsInternal(System.CodeDom.CodeTypeMember%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L94">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection of implied statements should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</dt>
+    <dd><p>The collection of implied constructor statements</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatementsInternal_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatementsInternal*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatementsInternal_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatementsInternal(System.CodeDom.CodeTypeMember,System.Boolean)">ImpliedConstructorStatementsInternal(CodeTypeMember, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ImpliedConstructorStatementsInternal_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.ImpliedConstructorStatementsInternal(System.CodeDom.CodeTypeMember,System.Boolean)">
+  ImpliedConstructorStatementsInternal(CodeTypeMember, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the implied default constructor statements of the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static ICollection&lt;CodeStatement&gt; ImpliedConstructorStatementsInternal(CodeTypeMember item, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection of implied constructor statements should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</td>
-        <td><p>The collection of implied constructor statements</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_MarkCollectionProperty_System_CodeDom_CodeMemberProperty_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.MarkCollectionProperty(System.CodeDom.CodeMemberProperty)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L584">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection of implied constructor statements should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codestatement">CodeStatement</a>&gt;</dt>
+    <dd><p>The collection of implied constructor statements</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_MarkCollectionProperty_" data-uid="NMF.CodeGen.CodeDomHelper.MarkCollectionProperty*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_MarkCollectionProperty_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.MarkCollectionProperty(System.CodeDom.CodeMemberProperty)">MarkCollectionProperty(CodeMemberProperty)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_MarkCollectionProperty_System_CodeDom_CodeMemberProperty_" data-uid="NMF.CodeGen.CodeDomHelper.MarkCollectionProperty(System.CodeDom.CodeMemberProperty)">
+  MarkCollectionProperty(CodeMemberProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L584"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Marks the given code property as a collection property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void MarkCollectionProperty(this CodeMemberProperty property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The property</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_Merge_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.Merge(System.CodeDom.CodeTypeMember%2CSystem.CodeDom.CodeTypeMember)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1089">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codememberproperty">CodeMemberProperty</a></dt>
+    <dd><p>The property</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_Merge_" data-uid="NMF.CodeGen.CodeDomHelper.Merge*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_Merge_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember_" data-uid="NMF.CodeGen.CodeDomHelper.Merge(System.CodeDom.CodeTypeMember,System.CodeDom.CodeTypeMember)">Merge(CodeTypeMember, CodeTypeMember)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_Merge_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember_" data-uid="NMF.CodeGen.CodeDomHelper.Merge(System.CodeDom.CodeTypeMember,System.CodeDom.CodeTypeMember)">
+  Merge(CodeTypeMember, CodeTypeMember)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1089"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Merges the given members</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeMember Merge(this CodeTypeMember member, CodeTypeMember other)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">member</span></td>
-        <td><p>The first code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The second code member</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><p>A merged member</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_Namespace_System_CodeDom_CodeTypeReference_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.Namespace(System.CodeDom.CodeTypeReference)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L40">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>member</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The first code member</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The second code member</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>A merged member</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_Namespace_" data-uid="NMF.CodeGen.CodeDomHelper.Namespace*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_Namespace_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.Namespace(System.CodeDom.CodeTypeReference)">Namespace(CodeTypeReference)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_Namespace_System_CodeDom_CodeTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.Namespace(System.CodeDom.CodeTypeReference)">
+  Namespace(CodeTypeReference)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the namespace associated with the given type reference</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string Namespace(this CodeTypeReference typeReference)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">typeReference</span></td>
-        <td><p>The type reference</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The namespace associated with the type reference if any</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_SetMerge_System_CodeDom_CodeTypeMember_System_Func_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember__.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.SetMerge(System.CodeDom.CodeTypeMember%2CSystem.Func%7BSystem.CodeDom.CodeTypeMember%2CSystem.CodeDom.CodeTypeMember%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1077">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeReference</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type reference</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The namespace associated with the type reference if any</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_SetMerge_" data-uid="NMF.CodeGen.CodeDomHelper.SetMerge*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_SetMerge_System_CodeDom_CodeTypeMember_System_Func_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember__" data-uid="NMF.CodeGen.CodeDomHelper.SetMerge(System.CodeDom.CodeTypeMember,System.Func{System.CodeDom.CodeTypeMember,System.CodeDom.CodeTypeMember})">SetMerge(CodeTypeMember, Func&lt;CodeTypeMember, CodeTypeMember&gt;)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_SetMerge_System_CodeDom_CodeTypeMember_System_Func_System_CodeDom_CodeTypeMember_System_CodeDom_CodeTypeMember__" data-uid="NMF.CodeGen.CodeDomHelper.SetMerge(System.CodeDom.CodeTypeMember,System.Func{System.CodeDom.CodeTypeMember,System.CodeDom.CodeTypeMember})">
+  SetMerge(CodeTypeMember, Func&lt;CodeTypeMember, CodeTypeMember&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1077"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Defines the action that should be executed when the given member needs to be nerged with another member with the same name</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SetMerge(this CodeTypeMember member, Func&lt;CodeTypeMember, CodeTypeMember&gt; mergeAction)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">member</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</td>
-        <td><span class="parametername">mergeAction</span></td>
-        <td><p>The action that should be performed in that case</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_SetNamespace_System_CodeDom_CodeTypeReference_System_String_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.SetNamespace(System.CodeDom.CodeTypeReference%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L50">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>member</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>mergeAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</dt>
+    <dd><p>The action that should be performed in that case</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_SetNamespace_" data-uid="NMF.CodeGen.CodeDomHelper.SetNamespace*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_SetNamespace_System_CodeDom_CodeTypeReference_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.SetNamespace(System.CodeDom.CodeTypeReference,System.String)">SetNamespace(CodeTypeReference, string)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_SetNamespace_System_CodeDom_CodeTypeReference_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.SetNamespace(System.CodeDom.CodeTypeReference,System.String)">
+  SetNamespace(CodeTypeReference, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Associates the given type reference with the given namespace</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SetNamespace(this CodeTypeReference typeReference, string necessaryNamespace)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><span class="parametername">typeReference</span></td>
-        <td><p>The type reference</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">necessaryNamespace</span></td>
-        <td><p>The namespace to be associated with the given type reference</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_SetUserItem_System_CodeDom_CodeObject_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.SetUserItem(System.CodeDom.CodeObject%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L206">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeReference</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>The type reference</p>
+</dd>
+    <dt><code>necessaryNamespace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The namespace to be associated with the given type reference</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_SetUserItem_" data-uid="NMF.CodeGen.CodeDomHelper.SetUserItem*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_SetUserItem_System_CodeDom_CodeObject_System_Object_System_Object_" data-uid="NMF.CodeGen.CodeDomHelper.SetUserItem(System.CodeDom.CodeObject,System.Object,System.Object)">SetUserItem(CodeObject, object, object)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_SetUserItem_System_CodeDom_CodeObject_System_Object_System_Object_" data-uid="NMF.CodeGen.CodeDomHelper.SetUserItem(System.CodeDom.CodeObject,System.Object,System.Object)">
+  SetUserItem(CodeObject, object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Overrides the user item with the given key</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SetUserItem(this CodeObject item, object key, object value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code object</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The user item key</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value to set</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_Shadows_System_CodeDom_CodeTypeMember_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.Shadows(System.CodeDom.CodeTypeMember%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L105">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codeobject">CodeObject</a></dt>
+    <dd><p>The code object</p>
+</dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The user item key</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value to set</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_Shadows_" data-uid="NMF.CodeGen.CodeDomHelper.Shadows*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_Shadows_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.Shadows(System.CodeDom.CodeTypeMember,System.Boolean)">Shadows(CodeTypeMember, bool)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_Shadows_System_CodeDom_CodeTypeMember_System_Boolean_" data-uid="NMF.CodeGen.CodeDomHelper.Shadows(System.CodeDom.CodeTypeMember,System.Boolean)">
+  Shadows(CodeTypeMember, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a collection of members that are being shadowed by the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static ICollection&lt;CodeTypeMember&gt; Shadows(this CodeTypeMember item, bool createIfNecessary)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">createIfNecessary</span></td>
-        <td><p>True, if the collection should be created if not yet existing</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</td>
-        <td><p>The collection of shadowed members or null</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_SplitCompileUnit_System_CodeDom_CodeCompileUnit_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.SplitCompileUnit(System.CodeDom.CodeCompileUnit)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L657">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>createIfNecessary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the collection should be created if not yet existing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a>&gt;</dt>
+    <dd><p>The collection of shadowed members or null</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_SplitCompileUnit_" data-uid="NMF.CodeGen.CodeDomHelper.SplitCompileUnit*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_SplitCompileUnit_System_CodeDom_CodeCompileUnit_" data-uid="NMF.CodeGen.CodeDomHelper.SplitCompileUnit(System.CodeDom.CodeCompileUnit)">SplitCompileUnit(CodeCompileUnit)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_SplitCompileUnit_System_CodeDom_CodeCompileUnit_" data-uid="NMF.CodeGen.CodeDomHelper.SplitCompileUnit(System.CodeDom.CodeCompileUnit)">
+  SplitCompileUnit(CodeCompileUnit)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L657"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Splits the given code compile unit in multiple compile units to separate each type in its own compile unit</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, CodeCompileUnit&gt; SplitCompileUnit(CodeCompileUnit unit)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codecompileunit">CodeCompileUnit</a></td>
-        <td><span class="parametername">unit</span></td>
-        <td><p>The code compile unit</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codecompileunit">CodeCompileUnit</a>&gt;</td>
-        <td><p>A dictionary of full type names and code compile units that only contain this single type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ThrowException__1_System_CodeDom_CodeMemberMethod_System_Object___.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ThrowException%60%601(System.CodeDom.CodeMemberMethod%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L264">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>unit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codecompileunit">CodeCompileUnit</a></dt>
+    <dd><p>The code compile unit</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codecompileunit">CodeCompileUnit</a>&gt;</dt>
+    <dd><p>A dictionary of full type names and code compile units that only contain this single type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ThrowException_" data-uid="NMF.CodeGen.CodeDomHelper.ThrowException*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ThrowException__1_System_CodeDom_CodeMemberMethod_System_Object___" data-uid="NMF.CodeGen.CodeDomHelper.ThrowException``1(System.CodeDom.CodeMemberMethod,System.Object[])">ThrowException&lt;TException&gt;(CodeMemberMethod, params object[])</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ThrowException__1_System_CodeDom_CodeMemberMethod_System_Object___" data-uid="NMF.CodeGen.CodeDomHelper.ThrowException``1(System.CodeDom.CodeMemberMethod,System.Object[])">
+  ThrowException&lt;TException&gt;(CodeMemberMethod, params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds a statement to throw an exception of the given type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ThrowException&lt;TException&gt;(this CodeMemberMethod method, params object[] arguments)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></td>
-        <td><span class="parametername">method</span></td>
-        <td><p>The method that should throw the exception</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">arguments</span></td>
-        <td><p>The arguments that should be passed to the constructor of the exception</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TException</span></td>
-        <td><p>The type of the exception</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1040">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></dt>
+    <dd><p>The method that should throw the exception</p>
+</dd>
+    <dt><code>arguments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The arguments that should be passed to the constructor of the exception</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TException</code></dt>
+    <dd><p>The type of the exception</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ToTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type)">ToTypeReference(Type)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type)">
+  ToTypeReference(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1040"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a code type reference for the given type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeReference ToTypeReference(this Type type)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>The given system type for which to generate a type reference</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><p>A code reference with namespace set accordingly</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_System_CodeDom_CodeTypeReference___.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type%2CSystem.CodeDom.CodeTypeReference%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1065">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The given system type for which to generate a type reference</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>A code reference with namespace set accordingly</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ToTypeReference_" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_System_CodeDom_CodeTypeReference___" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type,System.CodeDom.CodeTypeReference[])">ToTypeReference(Type, params CodeTypeReference[])</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ToTypeReference_System_Type_System_CodeDom_CodeTypeReference___" data-uid="NMF.CodeGen.CodeDomHelper.ToTypeReference(System.Type,System.CodeDom.CodeTypeReference[])">
+  ToTypeReference(Type, params CodeTypeReference[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L1065"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a code type reference for the given type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CodeTypeReference ToTypeReference(this Type type, params CodeTypeReference[] parameters)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>The given system type for which to generate a type reference</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a>[]</td>
-        <td><span class="parametername">parameters</span></td>
-        <td><p>The type arguments</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></td>
-        <td><p>A code reference with namespace set accordingly</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ValidateArgument_System_CodeDom_CodeMemberMethod_System_String_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ValidateArgument(System.CodeDom.CodeMemberMethod%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L404">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The given system type for which to generate a type reference</p>
+</dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a>[]</dt>
+    <dd><p>The type arguments</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypereference">CodeTypeReference</a></dt>
+    <dd><p>A code reference with namespace set accordingly</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ValidateArgument_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArgument*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ValidateArgument_System_CodeDom_CodeMemberMethod_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArgument(System.CodeDom.CodeMemberMethod,System.String)">ValidateArgument(CodeMemberMethod, string)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ValidateArgument_System_CodeDom_CodeMemberMethod_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArgument(System.CodeDom.CodeMemberMethod,System.String)">
+  ValidateArgument(CodeMemberMethod, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L404"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generates code to validate that the given argument is not null</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ValidateArgument(this CodeMemberMethod method, string parameterName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></td>
-        <td><span class="parametername">method</span></td>
-        <td><p>The method that should be checked</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">parameterName</span></td>
-        <td><p>The parameter name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_ValidateArguments_System_CodeDom_CodeMemberMethod_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.ValidateArguments(System.CodeDom.CodeMemberMethod)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L644">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></dt>
+    <dd><p>The method that should be checked</p>
+</dd>
+    <dt><code>parameterName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The parameter name</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_ValidateArguments_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArguments*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_ValidateArguments_System_CodeDom_CodeMemberMethod_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArguments(System.CodeDom.CodeMemberMethod)">ValidateArguments(CodeMemberMethod)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_ValidateArguments_System_CodeDom_CodeMemberMethod_" data-uid="NMF.CodeGen.CodeDomHelper.ValidateArguments(System.CodeDom.CodeMemberMethod)">
+  ValidateArguments(CodeMemberMethod)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L644"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Validate all arguments to be not null</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ValidateArguments(this CodeMemberMethod method)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></td>
-        <td><span class="parametername">method</span></td>
-        <td><p>The method whose arguments should be validated</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeMemberMethod_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_String_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeMemberMethod%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L792">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></dt>
+    <dd><p>The method whose arguments should be validated</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeMemberMethod_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_String_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeMemberMethod,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">WriteDocumentation(CodeMemberMethod, string, string, IDictionary&lt;string, string&gt;, string)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeMemberMethod_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_String_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeMemberMethod,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+  WriteDocumentation(CodeMemberMethod, string, string, IDictionary&lt;string, string&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L792"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes documentation for the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void WriteDocumentation(this CodeMemberMethod member, string summary, string returns, IDictionary&lt;string, string&gt; parameters = null, string remarks = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></td>
-        <td><span class="parametername">member</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">summary</span></td>
-        <td><p>The summary documentation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">returns</span></td>
-        <td><p>The documentation for the return value</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
-        <td><span class="parametername">parameters</span></td>
-        <td><p>The documentation for the method parameters</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">remarks</span></td>
-        <td><p>The documentation remarks</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeTypeMember_System_String_System_String_.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeTypeMember%2CSystem.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L761">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>member</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codemembermethod">CodeMemberMethod</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>summary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The summary documentation</p>
+</dd>
+    <dt><code>returns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The documentation for the return value</p>
+</dd>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The documentation for the method parameters</p>
+</dd>
+    <dt><code>remarks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The documentation remarks</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation*"></a>
-  <h4 id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeTypeMember_System_String_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeTypeMember,System.String,System.String)">WriteDocumentation(CodeTypeMember, string, string)</h4>
+
+  <h3 id="NMF_CodeGen_CodeDomHelper_WriteDocumentation_System_CodeDom_CodeTypeMember_System_String_System_String_" data-uid="NMF.CodeGen.CodeDomHelper.WriteDocumentation(System.CodeDom.CodeTypeMember,System.String,System.String)">
+  WriteDocumentation(CodeTypeMember, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L761"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes documentation for the given code member</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void WriteDocumentation(this CodeTypeMember member, string summary, string remarks = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></td>
-        <td><span class="parametername">member</span></td>
-        <td><p>The code member</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">summary</span></td>
-        <td><p>The summary documentation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">remarks</span></td>
-        <td><p>The documentation remarks</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>member</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.codedom.codetypemember">CodeTypeMember</a></dt>
+    <dd><p>The code member</p>
+</dd>
+    <dt><code>summary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The summary documentation</p>
+</dd>
+    <dt><code>remarks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The documentation remarks</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_CodeGen_CodeDomHelper.md&amp;value=---%0Auid%3A%20NMF.CodeGen.CodeDomHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L19" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/CodeGen/CodeDomHelper.cs/#L19" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

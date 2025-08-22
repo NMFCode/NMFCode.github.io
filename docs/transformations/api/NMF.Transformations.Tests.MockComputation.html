@@ -1,92 +1,130 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class MockComputation </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MockComputation ">
-    
-    <meta name="description" content="Mocks a computation">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Mocks a computation">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Transformations.Tests.MockComputation">
+
+        <article data-uid="NMF.Transformations.Tests.MockComputation">
 
 
 
-  <h1 id="NMF_Transformations_Tests_MockComputation" data-uid="NMF.Transformations.Tests.MockComputation" class="text-break">Class MockComputation</h1>
-  <div class="markdown level0 summary"><p>Mocks a computation</p>
+  <h1 id="NMF_Transformations_Tests_MockComputation" data-uid="NMF.Transformations.Tests.MockComputation" class="text-break">
+Class MockComputation  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Transformations.html">Transformations</a>.<a class="xref" href="NMF.Transformations.Tests.html">Tests</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Transformations.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Mocks a computation</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></div>
-    <div class="level2"><span class="xref">MockComputation</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MockComputation : Computation, IPersistor, ITraceEntry</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="NMF.Transformations.Core.IPersistor.html">IPersistor</a></div>
-    <div><a class="xref" href="NMF.Transformations.Core.ITraceEntry.html">ITraceEntry</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></div>
+      <div><span class="xref">MockComputation</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="NMF.Transformations.Core.IPersistor.html">IPersistor</a></div>
+      <div><a class="xref" href="NMF.Transformations.Core.ITraceEntry.html">ITraceEntry</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="NMF.Transformations.Core.Computation.html#NMF_Transformations_Core_Computation_TransformationRule">Computation.TransformationRule</a>
     </div>
@@ -156,517 +194,451 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Transformations.html">Transformations</a>.<a class="xref" href="NMF.Transformations.Tests.html">Tests</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Transformations.dll</h6>
-  <h5 id="NMF_Transformations_Tests_MockComputation_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MockComputation : Computation, IPersistor, ITraceEntry</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.%23ctor(System.Object%5B%5D%2CNMF.Transformations.Core.GeneralTransformationRule%2CNMF.Transformations.Core.IComputationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L62">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.IComputationContext)">MockComputation(object[], GeneralTransformationRule, IComputationContext)</h4>
-  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, IComputationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The transformation context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.%23ctor(System.Object%5B%5D%2CNMF.Transformations.Core.GeneralTransformationRule%2CNMF.Transformations.Core.IComputationContext%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L41">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_System_Object_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.IComputationContext,System.Object)">MockComputation(object[], GeneralTransformationRule, IComputationContext, object)</h4>
-  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, IComputationContext context, object output)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The transformation context</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">output</span></td>
-        <td><p>The output for the transformation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.%23ctor(System.Object%5B%5D%2CNMF.Transformations.Core.GeneralTransformationRule%2CNMF.Transformations.Core.ITransformationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L54">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.ITransformationContext)">MockComputation(object[], GeneralTransformationRule, ITransformationContext)</h4>
-  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, ITransformationContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.ITransformationContext.html">ITransformationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The transformation context</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.%23ctor(System.Object%5B%5D%2CNMF.Transformations.Core.GeneralTransformationRule%2CNMF.Transformations.Core.ITransformationContext%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L31">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_System_Object_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.ITransformationContext,System.Object)">MockComputation(object[], GeneralTransformationRule, ITransformationContext, object)</h4>
-  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, ITransformationContext context, object output)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule for the mocked computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.ITransformationContext.html">ITransformationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The transformation context</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">output</span></td>
-        <td><p>The output for the transformation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_OnCreateOutput.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.OnCreateOutput%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L22">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_OnCreateOutput_" data-uid="NMF.Transformations.Tests.MockComputation.OnCreateOutput*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_OnCreateOutput" data-uid="NMF.Transformations.Tests.MockComputation.OnCreateOutput">OnCreateOutput</h4>
-  <div class="markdown level1 summary"><p>Gets or sets a function that should be called when the computation is asked to create its output</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Func&lt;object&gt; OnCreateOutput { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_OnTransform.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.OnTransform%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L17">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_OnTransform_" data-uid="NMF.Transformations.Tests.MockComputation.OnTransform*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_OnTransform" data-uid="NMF.Transformations.Tests.MockComputation.OnTransform">OnTransform</h4>
-  <div class="markdown level1 summary"><p>Gets or sets an action that should be called when the computation is asked to perform its Transform task</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action OnTransform { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_Output.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.Output%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L92">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_Output_" data-uid="NMF.Transformations.Tests.MockComputation.Output*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_Output" data-uid="NMF.Transformations.Tests.MockComputation.Output">Output</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the output of the MockComputation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object Output { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Tests_MockComputation_Output_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Unlike the version of the Computation base class, this version ignores the output delay and thus does not throw an exception when accessed when the computation is delayed</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_OutputCore.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.OutputCore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L117">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_OutputCore_" data-uid="NMF.Transformations.Tests.MockComputation.OutputCore*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_OutputCore" data-uid="NMF.Transformations.Tests.MockComputation.OutputCore">OutputCore</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the output internal</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override object OutputCore { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Transformations.Core.Computation.html#NMF_Transformations_Core_Computation_OutputCore">Computation.OutputCore</a></div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_CreateOutput_System_Collections_IEnumerable_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.CreateOutput(System.Collections.IEnumerable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L76">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_CreateOutput_" data-uid="NMF.Transformations.Tests.MockComputation.CreateOutput*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_CreateOutput_System_Collections_IEnumerable_" data-uid="NMF.Transformations.Tests.MockComputation.CreateOutput(System.Collections.IEnumerable)">CreateOutput(IEnumerable)</h4>
-  <div class="markdown level1 summary"><p>Creates the output for the given transformation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override object CreateOutput(IEnumerable context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></td>
-        <td><span class="parametername">context</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>The output</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Transformations.Core.Computation.html#NMF_Transformations_Core_Computation_CreateOutput_System_Collections_IEnumerable_">Computation.CreateOutput(IEnumerable)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_GetInput_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.GetInput(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L109">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_GetInput_" data-uid="NMF.Transformations.Tests.MockComputation.GetInput*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_GetInput_System_Int32_" data-uid="NMF.Transformations.Tests.MockComputation.GetInput(System.Int32)">GetInput(int)</h4>
-  <div class="markdown level1 summary"><p>Gets the input at the i-th position</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override object GetInput(int index)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index of the desired input parameter</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>The input parameter with the i-th position</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Transformations.Core.Computation.html#NMF_Transformations_Core_Computation_GetInput_System_Int32_">Computation.GetInput(int)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation_Transform.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation.Transform%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L67">View Source</a>
-  </span>
-  <a id="NMF_Transformations_Tests_MockComputation_Transform_" data-uid="NMF.Transformations.Tests.MockComputation.Transform*"></a>
-  <h4 id="NMF_Transformations_Tests_MockComputation_Transform" data-uid="NMF.Transformations.Tests.MockComputation.Transform">Transform()</h4>
-  <div class="markdown level1 summary"><p>Performs the Transform operation</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Transform()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="NMF.Transformations.Core.Computation.html#NMF_Transformations_Core_Computation_Transform">Computation.Transform()</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="NMF.Transformations.Core.IPersistor.html">IPersistor</a>
-  </div>
-  <div>
-      <a class="xref" href="NMF.Transformations.Core.ITraceEntry.html">ITraceEntry</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="NMF.Transformations.Core.TraceEntryExtensions.html#NMF_Transformations_Core_TraceEntryExtensions_CreateInputArray_NMF_Transformations_Core_ITraceEntry_">TraceEntryExtensions.CreateInputArray(ITraceEntry)</a>
   </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.IComputationContext)">
+  MockComputation(object[], GeneralTransformationRule, IComputationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, IComputationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The input for the mocked computation</p>
+</dd>
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule for the mocked computation</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></dt>
+    <dd><p>The transformation context</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_IComputationContext_System_Object_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.IComputationContext,System.Object)">
+  MockComputation(object[], GeneralTransformationRule, IComputationContext, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, IComputationContext context, object output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The input for the mocked computation</p>
+</dd>
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule for the mocked computation</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></dt>
+    <dd><p>The transformation context</p>
+</dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The output for the transformation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.ITransformationContext)">
+  MockComputation(object[], GeneralTransformationRule, ITransformationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, ITransformationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The input for the mocked computation</p>
+</dd>
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule for the mocked computation</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Transformations.Core.ITransformationContext.html">ITransformationContext</a></dt>
+    <dd><p>The transformation context</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation__ctor_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation__ctor_System_Object___NMF_Transformations_Core_GeneralTransformationRule_NMF_Transformations_Core_ITransformationContext_System_Object_" data-uid="NMF.Transformations.Tests.MockComputation.#ctor(System.Object[],NMF.Transformations.Core.GeneralTransformationRule,NMF.Transformations.Core.ITransformationContext,System.Object)">
+  MockComputation(object[], GeneralTransformationRule, ITransformationContext, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new mocked computation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MockComputation(object[] input, GeneralTransformationRule rule, ITransformationContext context, object output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The input for the mocked computation</p>
+</dd>
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule for the mocked computation</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Transformations.Core.ITransformationContext.html">ITransformationContext</a></dt>
+    <dd><p>The transformation context</p>
+</dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The output for the transformation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_OnCreateOutput_" data-uid="NMF.Transformations.Tests.MockComputation.OnCreateOutput*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_OnCreateOutput" data-uid="NMF.Transformations.Tests.MockComputation.OnCreateOutput">
+  OnCreateOutput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a function that should be called when the computation is asked to create its output</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;object&gt; OnCreateOutput { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_OnTransform_" data-uid="NMF.Transformations.Tests.MockComputation.OnTransform*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_OnTransform" data-uid="NMF.Transformations.Tests.MockComputation.OnTransform">
+  OnTransform
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets an action that should be called when the computation is asked to perform its Transform task</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action OnTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_Output_" data-uid="NMF.Transformations.Tests.MockComputation.Output*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_Output" data-uid="NMF.Transformations.Tests.MockComputation.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the output of the MockComputation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Output { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Tests_MockComputation_Output_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Unlike the version of the Computation base class, this version ignores the output delay and thus does not throw an exception when accessed when the computation is delayed</p>
+</div>
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_OutputCore_" data-uid="NMF.Transformations.Tests.MockComputation.OutputCore*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_OutputCore" data-uid="NMF.Transformations.Tests.MockComputation.OutputCore">
+  OutputCore
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the output internal</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override object OutputCore { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_CreateOutput_" data-uid="NMF.Transformations.Tests.MockComputation.CreateOutput*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_CreateOutput_System_Collections_IEnumerable_" data-uid="NMF.Transformations.Tests.MockComputation.CreateOutput(System.Collections.IEnumerable)">
+  CreateOutput(IEnumerable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates the output for the given transformation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object CreateOutput(IEnumerable context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The output</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_GetInput_" data-uid="NMF.Transformations.Tests.MockComputation.GetInput*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_GetInput_System_Int32_" data-uid="NMF.Transformations.Tests.MockComputation.GetInput(System.Int32)">
+  GetInput(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the input at the i-th position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetInput(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index of the desired input parameter</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The input parameter with the i-th position</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Transformations_Tests_MockComputation_Transform_" data-uid="NMF.Transformations.Tests.MockComputation.Transform*"></a>
+
+  <h3 id="NMF_Transformations_Tests_MockComputation_Transform" data-uid="NMF.Transformations.Tests.MockComputation.Transform">
+  Transform()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs the Transform operation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Transform()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Tests_MockComputation.md&amp;value=---%0Auid%3A%20NMF.Transformations.Tests.MockComputation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L10" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations/Tests/MockComputation.cs/#L10" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

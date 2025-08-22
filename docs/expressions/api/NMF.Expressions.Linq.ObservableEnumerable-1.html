@@ -1,101 +1,150 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class ObservableEnumerable&lt;T&gt; </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ObservableEnumerable&lt;T&gt; ">
-    
-    <meta name="description" content="Denotes an abstract base class for collection-valued DDG nodes">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes an abstract base class for collection-valued DDG nodes">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1">
+
+        <article data-uid="NMF.Expressions.Linq.ObservableEnumerable`1">
 
 
 
-  <h1 id="NMF_Expressions_Linq_ObservableEnumerable_1" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1" class="text-break">Class ObservableEnumerable&lt;T&gt;</h1>
-  <div class="markdown level0 summary"><p>Denotes an abstract base class for collection-valued DDG nodes</p>
+  <h1 id="NMF_Expressions_Linq_ObservableEnumerable_1" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1" class="text-break">
+Class ObservableEnumerable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Expressions.html">Expressions</a>.<a class="xref" href="NMF.Expressions.Linq.html">Linq</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Expressions.Linq.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Denotes an abstract base class for collection-valued DDG nodes</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ObservableEnumerable&lt;T&gt;</span></div>
-      <div class="level2"><a class="xref" href="NMF.Expressions.Linq.IncrementalLookup-2.html">IncrementalLookup&lt;TSource, TKey&gt;</a></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ObservableEnumerable&lt;T&gt; : INotifyEnumerable&lt;T&gt;, INotifyEnumerable, INotifiable, ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, INotifyCollectionChanged, IDisposable, ISuccessorList, IList, ICollection, IEnumerable</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="NMF.Expressions.INotifyEnumerable-1.html">INotifyEnumerable</a>&lt;T&gt;</div>
-    <div><a class="xref" href="NMF.Expressions.INotifyEnumerable.html">INotifyEnumerable</a></div>
-    <div><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><a class="xref" href="NMF.Expressions.ISuccessorList.html">ISuccessorList</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ilist">IList</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of elements</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ObservableEnumerable&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="NMF.Expressions.INotifyEnumerable-1.html">INotifyEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="NMF.Expressions.INotifyEnumerable.html">INotifyEnumerable</a></div>
+      <div><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="NMF.Expressions.ISuccessorList.html">ISuccessorList</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ilist">IList</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.Expressions.Linq.IncrementalLookup-2.html">IncrementalLookup&lt;TSource, TKey&gt;</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -114,1553 +163,11 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Expressions.html">Expressions</a>.<a class="xref" href="NMF.Expressions.Linq.html">Linq</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Expressions.Linq.dll</h6>
-  <h5 id="NMF_Expressions_Linq_ObservableEnumerable_1_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ObservableEnumerable&lt;T&gt; : INotifyEnumerable&lt;T&gt;, INotifyEnumerable, INotifiable, ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, INotifyCollectionChanged, IDisposable, ISuccessorList, IList, ICollection, IEnumerable</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of elements</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_AllSuccessors.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.AllSuccessors%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L316">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_AllSuccessors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.AllSuccessors*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_AllSuccessors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.AllSuccessors">AllSuccessors</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;INotifiable&gt; AllSuccessors { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Count.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L262">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Count_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Count*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Count" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Count">Count</h4>
-  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual int Count { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Dependencies.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Dependencies%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L282">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Dependencies_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dependencies*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Dependencies" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dependencies">Dependencies</h4>
-  <div class="markdown level1 summary"><p>Nodes that notify this node.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract IEnumerable&lt;INotifiable&gt; Dependencies { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_ExecutionMetaData.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.ExecutionMetaData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L285">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_ExecutionMetaData_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ExecutionMetaData*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_ExecutionMetaData" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ExecutionMetaData">ExecutionMetaData</h4>
-  <div class="markdown level1 summary"><p>Used by the execution engine during incremental execution.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExecutionMetaData ExecutionMetaData { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.ExecutionMetaData.html">ExecutionMetaData</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_HasEventSubscriber.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.HasEventSubscriber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L176">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_HasEventSubscriber_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasEventSubscriber*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_HasEventSubscriber" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasEventSubscriber">HasEventSubscriber</h4>
-  <div class="markdown level1 summary"><p>Indicates whether the collection has event subscribers attached</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool HasEventSubscriber { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_HasSuccessors.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.HasSuccessors%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L307">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_HasSuccessors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasSuccessors*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_HasSuccessors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasSuccessors">HasSuccessors</h4>
-  <div class="markdown level1 summary"><p>True, if there is any successor, otherwise False</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HasSuccessors { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_IsAttached.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.IsAttached%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L310">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsAttached_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsAttached*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsAttached" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsAttached">IsAttached</h4>
-  <div class="markdown level1 summary"><p>True, if successors are attached, otherwise False</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsAttached { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.IsFixedSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L319">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize">IsFixedSize</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool IsFixedSize { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_IsReadOnly.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L224">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsReadOnly_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsReadOnly" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly">IsReadOnly</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool IsReadOnly { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.IsSynchronized%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L322">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized">IsSynchronized</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsSynchronized { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Item_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Item(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L328">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Item_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Item*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Item_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Item(System.Int32)">this[int]</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual object this[int index] { get; set; }</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Successors.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Successors%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L279">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Successors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Successors*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Successors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Successors">Successors</h4>
-  <div class="markdown level1 summary"><p>The nodes that will get notified by this node.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISuccessorList Successors { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.ISuccessorList.html">ISuccessorList</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.SyncRoot%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L325">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot">SyncRoot</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object SyncRoot { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Add__0_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Add(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L212">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Add_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Add*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Add__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Add(`0)">Add(T)</h4>
-  <div class="markdown level1 summary"><p>Adds an item to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Add(T item)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The object to add to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Clear.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L218">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Clear_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Clear*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Clear" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Clear">Clear()</h4>
-  <div class="markdown level1 summary"><p>Removes all items from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Contains__0_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Contains(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L236">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Contains_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Contains*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Contains__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Contains(`0)">Contains(T)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> contains a specific value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Contains(T item)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L250">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo__0___System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo(`0[],System.Int32)">CopyTo(T[], int)</h4>
-  <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>T[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">arrayIndex</span></td>
-        <td><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p><code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
-        <td><p><code class="paramref">arrayIndex</code> is less than 0.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>The number of elements in the source <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Dispose.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L206">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Dispose_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dispose*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Dispose" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_GetEnumerator.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L198">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_GetEnumerator_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetEnumerator*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_GetEnumerator" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_GetSuccessor_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.GetSuccessor(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L392">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_GetSuccessor_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetSuccessor*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_GetSuccessor_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetSuccessor(System.Int32)">GetSuccessor(int)</h4>
-  <div class="markdown level1 summary"><p>Gets the successor at the given index</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public INotifiable GetSuccessor(int index)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></td>
-        <td><p>The DDG node with the given index</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Notify(System.Collections.Generic.IList%7BNMF.Expressions.INotificationResult%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L410">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Notify_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Notify*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})">Notify(IList&lt;INotificationResult&gt;)</h4>
-  <div class="markdown level1 summary"><p>Gets called when one of the dependencies signals a notification.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract INotificationResult Notify(IList&lt;INotificationResult&gt; sources)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="NMF.Expressions.INotificationResult.html">INotificationResult</a>&gt;</td>
-        <td><span class="parametername">sources</span></td>
-        <td><p>Contains information about what triggered this notification.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.INotificationResult.html">INotificationResult</a></td>
-        <td><p>An object describing the changes that happened in this notification.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItem__0_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnAddItem(%600%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L21">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItem*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItem__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItem(`0,System.Int32)">OnAddItem(T, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the collection changed event for an added item</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnAddItem(T item, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The item that is added</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index at which the item is added or -1</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItems_System_Collections_Generic_IEnumerable__0__System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnAddItems(System.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L33">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItems*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItems_System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItems(System.Collections.Generic.IEnumerable{`0},System.Int32)">OnAddItems(IEnumerable&lt;T&gt;, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the collection changed event for added items</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnAddItems(IEnumerable&lt;T&gt; items, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><span class="parametername">items</span></td>
-        <td><p>The items that are added</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The start index at which items are added</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnAttach.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnAttach%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L402">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAttach_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAttach*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAttach" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAttach">OnAttach()</h4>
-  <div class="markdown level1 summary"><p>Gets called when a successor attaches and there was no successor before</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnAttach()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnCleared.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnCleared%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L122">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCleared_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCleared*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCleared" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCleared">OnCleared()</h4>
-  <div class="markdown level1 summary"><p>Raises the event that the collection was cleared</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnCleared()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L188">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCollectionChanged_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCollectionChanged*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">OnCollectionChanged(NotifyCollectionChangedEventArgs)</h4>
-  <div class="markdown level1 summary"><p>Raises a collection changed event</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnCollectionChanged(NotifyCollectionChangedEventArgs e)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs">NotifyCollectionChangedEventArgs</a></td>
-        <td><span class="parametername">e</span></td>
-        <td><p>the event data</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnDetach.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnDetach%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L407">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnDetach_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnDetach*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnDetach" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnDetach">OnDetach()</h4>
-  <div class="markdown level1 summary"><p>Gets called when the last successor detaches</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void OnDetach()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItem__0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnMoveItem(%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L148">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItem*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItem__0_System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItem(`0,System.Int32,System.Int32)">OnMoveItem(T, int, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that the item was moved</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnMoveItem(T item, int oldIndex = 0, int newIndex = 0)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>the moved item</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">oldIndex</span></td>
-        <td><p>the old index</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">newIndex</span></td>
-        <td><p>the new index</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnMoveItems(System.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L161">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItems*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItems(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32)">OnMoveItems(IEnumerable&lt;T&gt;, int, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that the items were moved</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnMoveItems(IEnumerable&lt;T&gt; items, int oldIndex = 0, int newIndex = 0)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><span class="parametername">items</span></td>
-        <td><p>the moved items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">oldIndex</span></td>
-        <td><p>the old index</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">newIndex</span></td>
-        <td><p>the new index</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItem__0_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnRemoveItem(%600%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L77">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItem*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItem__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItem(`0,System.Int32)">OnRemoveItem(T, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that an item was removed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnRemoveItem(T item, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The item that was removed</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index at which the item was removed or -1</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnRemoveItems(System.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L89">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItems*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItems(System.Collections.Generic.IEnumerable{`0},System.Int32)">OnRemoveItems(IEnumerable&lt;T&gt;, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that items were removed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnRemoveItems(IEnumerable&lt;T&gt; items, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><span class="parametername">items</span></td>
-        <td><p>The items that have been removed</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index at which items have been removed</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItem__0__0_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnReplaceItem(%600%2C%600%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L135">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItem*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItem__0__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItem(`0,`0,System.Int32)">OnReplaceItem(T, T, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that the item was replaced</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnReplaceItem(T old, T item, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">old</span></td>
-        <td><p>the old item</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>the new item</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>the index of the elemnt or -1</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItems_System_Collections_Generic_IEnumerable__0__System_Collections_Generic_IEnumerable__0__System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.OnReplaceItems(System.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L106">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItems*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItems_System_Collections_Generic_IEnumerable__0__System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItems(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0},System.Int32)">OnReplaceItems(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the event that items were replaced</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void OnReplaceItems(IEnumerable&lt;T&gt; oldItems, IEnumerable&lt;T&gt; newItems, int index = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><span class="parametername">oldItems</span></td>
-        <td><p>the old items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</td>
-        <td><span class="parametername">newItems</span></td>
-        <td><p>the new items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>the index at which the items have been replaced</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_RaiseEvents_System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.RaiseEvents(System.Collections.Generic.IList%7B%600%7D%2CSystem.Collections.Generic.IList%7B%600%7D%2CSystem.Collections.Generic.IList%7B%600%7D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L58">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_RaiseEvents_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.RaiseEvents*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_RaiseEvents_System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.RaiseEvents(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0},System.Int32,System.Int32)">RaiseEvents(IList&lt;T&gt;, IList&lt;T&gt;, IList&lt;T&gt;, int, int)</h4>
-  <div class="markdown level1 summary"><p>Raises the events for the collections of changes</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void RaiseEvents(IList&lt;T&gt; added, IList&lt;T&gt; removed, IList&lt;T&gt; moved, int oldItemsStartIndex = -1, int newItemsStartIndex = -1)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</td>
-        <td><span class="parametername">added</span></td>
-        <td><p>A list of the added items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</td>
-        <td><span class="parametername">removed</span></td>
-        <td><p>A list of the removed items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</td>
-        <td><span class="parametername">moved</span></td>
-        <td><p>A list of the moved items</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">oldItemsStartIndex</span></td>
-        <td><p>the start index of old items or -1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">newItemsStartIndex</span></td>
-        <td><p>the start index of new items or -1</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Remove__0_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Remove(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L230">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Remove_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Remove*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Remove__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Remove(`0)">Remove(T)</h4>
-  <div class="markdown level1 summary"><p>Removes the first occurrence of a specific object from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Remove(T item)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Set_NMF_Expressions_INotifiable_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Set(NMF.Expressions.INotifiable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L332">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Set_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Set*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Set_NMF_Expressions_INotifiable_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Set(NMF.Expressions.INotifiable)">Set(INotifiable)</h4>
-  <div class="markdown level1 summary"><p>Add the given DDG node to the list</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Set(INotifiable node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The DDG node to add</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_SetDummy.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.SetDummy%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L353">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_SetDummy_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SetDummy*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_SetDummy" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SetDummy">SetDummy()</h4>
-  <div class="markdown level1 summary"><p>Sets a dummy</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetDummy()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_ToString.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L45">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_ToString_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ToString*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_ToString" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>A string that represents the current object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_Unset_NMF_Expressions_INotifiable_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.Unset(NMF.Expressions.INotifiable%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L364">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Unset_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Unset*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_Unset_NMF_Expressions_INotifiable_System_Boolean_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Unset(NMF.Expressions.INotifiable,System.Boolean)">Unset(INotifiable, bool)</h4>
-  <div class="markdown level1 summary"><p>Unset the given DDG node as successor</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Unset(INotifiable node, bool leaveDummy = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>the DDG node</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">leaveDummy</span></td>
-        <td><p>True, to leave the dummy in operation, otherwise False</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_UnsetAll.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.UnsetAll%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L381">View Source</a>
-  </span>
-  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_UnsetAll_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.UnsetAll*"></a>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_UnsetAll" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.UnsetAll">UnsetAll()</h4>
-  <div class="markdown level1 summary"><p>Clear the list</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UnsetAll()</code></pre>
-  </div>
-  <h3 id="events">Events
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1_CollectionChanged.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601.CollectionChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L195">View Source</a>
-  </span>
-  <h4 id="NMF_Expressions_Linq_ObservableEnumerable_1_CollectionChanged" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CollectionChanged">CollectionChanged</h4>
-  <div class="markdown level1 summary"><p>Occurs when the collection changes.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event NotifyCollectionChangedEventHandler CollectionChanged</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventhandler">NotifyCollectionChangedEventHandler</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="NMF.Expressions.INotifyEnumerable-1.html">INotifyEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="NMF.Expressions.INotifyEnumerable.html">INotifyEnumerable</a>
-  </div>
-  <div>
-      <a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
-  </div>
-  <div>
-      <a class="xref" href="NMF.Expressions.ISuccessorList.html">ISuccessorList</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ilist">IList</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="NMF.Expressions.Debug.DebugExtensions.html#NMF_Expressions_Debug_DebugExtensions_ExportToDgml_NMF_Expressions_INotifiable_System_String_">DebugExtensions.ExportToDgml(INotifiable, string)</a>
   </div>
@@ -1973,47 +480,1452 @@
   <div>
       <a class="xref" href="NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_WithUpdates__1_System_Collections_Generic_IEnumerable___0__System_Boolean_">ObservableExtensions.WithUpdates&lt;T&gt;(IEnumerable&lt;T&gt;, bool)</a>
   </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_AllSuccessors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.AllSuccessors*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_AllSuccessors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.AllSuccessors">
+  AllSuccessors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;INotifiable&gt; AllSuccessors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Count_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Count*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Count" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Count">
+  Count
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Count { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Dependencies_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dependencies*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Dependencies" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dependencies">
+  Dependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nodes that notify this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IEnumerable&lt;INotifiable&gt; Dependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_ExecutionMetaData_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ExecutionMetaData*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_ExecutionMetaData" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ExecutionMetaData">
+  ExecutionMetaData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used by the execution engine during incremental execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExecutionMetaData ExecutionMetaData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.ExecutionMetaData.html">ExecutionMetaData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_HasEventSubscriber_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasEventSubscriber*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_HasEventSubscriber" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasEventSubscriber">
+  HasEventSubscriber
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the collection has event subscribers attached</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool HasEventSubscriber { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_HasSuccessors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasSuccessors*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_HasSuccessors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.HasSuccessors">
+  HasSuccessors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if there is any successor, otherwise False</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSuccessors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsAttached_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsAttached*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsAttached" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsAttached">
+  IsAttached
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if successors are attached, otherwise False</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAttached { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsFixedSize" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsFixedSize">
+  IsFixedSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsFixedSize { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsReadOnly_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsReadOnly" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsReadOnly">
+  IsReadOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsReadOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_IsSynchronized" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.IsSynchronized">
+  IsSynchronized
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSynchronized { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Item_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Item*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Item_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Item(System.Int32)">
+  this[int]
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object this[int index] { get; set; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Successors_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Successors*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Successors" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Successors">
+  Successors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The nodes that will get notified by this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISuccessorList Successors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.ISuccessorList.html">ISuccessorList</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_SyncRoot" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SyncRoot">
+  SyncRoot
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L325"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object SyncRoot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Add_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Add*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Add__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Add(`0)">
+  Add(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds an item to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Add(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to add to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Clear_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Clear*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Clear" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes all items from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Contains_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Contains*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Contains__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Contains(`0)">
+  Contains(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> contains a specific value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Contains(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_CopyTo__0___System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CopyTo(`0[],System.Int32)">
+  CopyTo(T[], int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L250"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> T[]</dt>
+    <dd><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
+</dd>
+    <dt><code>arrayIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">arrayIndex</code> is less than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The number of elements in the source <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Dispose_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dispose*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Dispose" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_GetEnumerator_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetEnumerator*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_GetEnumerator" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetEnumerator">
+  GetEnumerator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</dt>
+    <dd><p>An enumerator that can be used to iterate through the collection.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_GetSuccessor_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetSuccessor*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_GetSuccessor_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.GetSuccessor(System.Int32)">
+  GetSuccessor(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L392"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the successor at the given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public INotifiable GetSuccessor(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></dt>
+    <dd><p>The DDG node with the given index</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Notify_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Notify*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})">
+  Notify(IList&lt;INotificationResult&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when one of the dependencies signals a notification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract INotificationResult Notify(IList&lt;INotificationResult&gt; sources)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sources</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="NMF.Expressions.INotificationResult.html">INotificationResult</a>&gt;</dt>
+    <dd><p>Contains information about what triggered this notification.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.INotificationResult.html">INotificationResult</a></dt>
+    <dd><p>An object describing the changes that happened in this notification.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItem*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItem__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItem(`0,System.Int32)">
+  OnAddItem(T, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the collection changed event for an added item</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnAddItem(T item, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The item that is added</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index at which the item is added or -1</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItems*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAddItems_System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAddItems(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+  OnAddItems(IEnumerable&lt;T&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the collection changed event for added items</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnAddItems(IEnumerable&lt;T&gt; items, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>items</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>The items that are added</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The start index at which items are added</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAttach_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAttach*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnAttach" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnAttach">
+  OnAttach()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L402"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when a successor attaches and there was no successor before</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAttach()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCleared_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCleared*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCleared" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCleared">
+  OnCleared()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that the collection was cleared</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnCleared()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCollectionChanged_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCollectionChanged*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnCollectionChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+  OnCollectionChanged(NotifyCollectionChangedEventArgs)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises a collection changed event</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnCollectionChanged(NotifyCollectionChangedEventArgs e)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>e</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs">NotifyCollectionChangedEventArgs</a></dt>
+    <dd><p>the event data</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnDetach_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnDetach*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnDetach" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnDetach">
+  OnDetach()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when the last successor detaches</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDetach()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItem*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItem__0_System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItem(`0,System.Int32,System.Int32)">
+  OnMoveItem(T, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that the item was moved</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnMoveItem(T item, int oldIndex = 0, int newIndex = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>the moved item</p>
+</dd>
+    <dt><code>oldIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the old index</p>
+</dd>
+    <dt><code>newIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the new index</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItems*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnMoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnMoveItems(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32)">
+  OnMoveItems(IEnumerable&lt;T&gt;, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that the items were moved</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnMoveItems(IEnumerable&lt;T&gt; items, int oldIndex = 0, int newIndex = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>items</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>the moved items</p>
+</dd>
+    <dt><code>oldIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the old index</p>
+</dd>
+    <dt><code>newIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the new index</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItem*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItem__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItem(`0,System.Int32)">
+  OnRemoveItem(T, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that an item was removed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnRemoveItem(T item, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The item that was removed</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index at which the item was removed or -1</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItems*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnRemoveItems_System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnRemoveItems(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+  OnRemoveItems(IEnumerable&lt;T&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that items were removed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnRemoveItems(IEnumerable&lt;T&gt; items, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>items</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>The items that have been removed</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The index at which items have been removed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItem_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItem*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItem__0__0_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItem(`0,`0,System.Int32)">
+  OnReplaceItem(T, T, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that the item was replaced</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnReplaceItem(T old, T item, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>old</code> <span class="xref">T</span></dt>
+    <dd><p>the old item</p>
+</dd>
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>the new item</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the index of the elemnt or -1</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItems_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItems*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_OnReplaceItems_System_Collections_Generic_IEnumerable__0__System_Collections_Generic_IEnumerable__0__System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.OnReplaceItems(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0},System.Int32)">
+  OnReplaceItems(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the event that items were replaced</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnReplaceItems(IEnumerable&lt;T&gt; oldItems, IEnumerable&lt;T&gt; newItems, int index = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldItems</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>the old items</p>
+</dd>
+    <dt><code>newItems</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>the new items</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the index at which the items have been replaced</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_RaiseEvents_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.RaiseEvents*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_RaiseEvents_System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__System_Int32_System_Int32_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.RaiseEvents(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0},System.Int32,System.Int32)">
+  RaiseEvents(IList&lt;T&gt;, IList&lt;T&gt;, IList&lt;T&gt;, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raises the events for the collections of changes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaiseEvents(IList&lt;T&gt; added, IList&lt;T&gt; removed, IList&lt;T&gt; moved, int oldItemsStartIndex = -1, int newItemsStartIndex = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</dt>
+    <dd><p>A list of the added items</p>
+</dd>
+    <dt><code>removed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</dt>
+    <dd><p>A list of the removed items</p>
+</dd>
+    <dt><code>moved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</dt>
+    <dd><p>A list of the moved items</p>
+</dd>
+    <dt><code>oldItemsStartIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the start index of old items or -1</p>
+</dd>
+    <dt><code>newItemsStartIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the start index of new items or -1</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Remove_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Remove*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Remove__0_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Remove(`0)">
+  Remove(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the first occurrence of a specific object from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Remove(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Set_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Set*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Set_NMF_Expressions_INotifiable_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Set(NMF.Expressions.INotifiable)">
+  Set(INotifiable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add the given DDG node to the list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(INotifiable node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></dt>
+    <dd><p>The DDG node to add</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_SetDummy_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SetDummy*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_SetDummy" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.SetDummy">
+  SetDummy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets a dummy</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDummy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_ToString_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ToString*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_ToString" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_Unset_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Unset*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_Unset_NMF_Expressions_INotifiable_System_Boolean_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.Unset(NMF.Expressions.INotifiable,System.Boolean)">
+  Unset(INotifiable, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unset the given DDG node as successor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unset(INotifiable node, bool leaveDummy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="NMF.Expressions.INotifiable.html">INotifiable</a></dt>
+    <dd><p>the DDG node</p>
+</dd>
+    <dt><code>leaveDummy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, to leave the dummy in operation, otherwise False</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ObservableEnumerable_1_UnsetAll_" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.UnsetAll*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_UnsetAll" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.UnsetAll">
+  UnsetAll()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clear the list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnsetAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="NMF_Expressions_Linq_ObservableEnumerable_1_CollectionChanged" data-uid="NMF.Expressions.Linq.ObservableEnumerable`1.CollectionChanged">
+  CollectionChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Occurs when the collection changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event NotifyCollectionChangedEventHandler CollectionChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventhandler">NotifyCollectionChangedEventHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_Linq_ObservableEnumerable_1.md&amp;value=---%0Auid%3A%20NMF.Expressions.Linq.ObservableEnumerable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L14" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Linq/ObservableEnumerable.cs/#L14" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,81 +1,118 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Interface IOperation </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IOperation ">
-    
-    <meta name="description" content="The public interface for Operation">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="The public interface for Operation">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Interop.Legacy.Cmof.IOperation">
+
+        <article data-uid="NMF.Interop.Legacy.Cmof.IOperation">
 
 
 
-  <h1 id="NMF_Interop_Legacy_Cmof_IOperation" data-uid="NMF.Interop.Legacy.Cmof.IOperation" class="text-break">Interface IOperation</h1>
-  <div class="markdown level0 summary"><p>The public interface for Operation</p>
+  <h1 id="NMF_Interop_Legacy_Cmof_IOperation" data-uid="NMF.Interop.Legacy.Cmof.IOperation" class="text-break">
+Interface IOperation  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Interop.html">Interop</a>.<a class="xref" href="NMF.Interop.Legacy.html">Legacy</a>.<a class="xref" href="NMF.Interop.Legacy.Cmof.html">Cmof</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.UMLInterop.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The public interface for Operation</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DefaultImplementationType(typeof(Operation))]
+[XmlDefaultImplementationType(typeof(Operation))]
+[ModelRepresentationClass(&quot;http://schema.omg.org/spec/MOF/2.0/cmof.xml#//Operation&quot;)]
+public interface IOperation : ITypedElement, IMultiplicityElement, IBehavioralFeature, IFeature, IRedefinableElement, INamespace, INamedElement, IElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="NMF.Interop.Legacy.Cmof.ITypedElement.html#NMF_Interop_Legacy_Cmof_ITypedElement_Type">ITypedElement.Type</a>
     </div>
@@ -340,31 +377,28 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging.propertychanging">INotifyPropertyChanging.PropertyChanging</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Interop.html">Interop</a>.<a class="xref" href="NMF.Interop.Legacy.html">Legacy</a>.<a class="xref" href="NMF.Interop.Legacy.Cmof.html">Cmof</a></h6>
-  <h6><strong>Assembly</strong>: NMF.UMLInterop.dll</h6>
-  <h5 id="NMF_Interop_Legacy_Cmof_IOperation_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[DefaultImplementationType(typeof(Operation))]
-[XmlDefaultImplementationType(typeof(Operation))]
-[ModelRepresentationClass(&quot;http://schema.omg.org/spec/MOF/2.0/cmof.xml#//Operation&quot;)]
-public interface IOperation : ITypedElement, IMultiplicityElement, IBehavioralFeature, IFeature, IRedefinableElement, INamespace, INamedElement, IElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_BodyCondition.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.BodyCondition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L111">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_BodyCondition_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.BodyCondition*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_BodyCondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.BodyCondition">BodyCondition</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_BodyCondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.BodyCondition">
+  BodyCondition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The bodyCondition property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;bodyCondition&quot;)]
@@ -372,35 +406,36 @@ public interface IOperation : ITypedElement, IMultiplicityElement, IBehavioralFe
 [Containment]
 IOrderedSetExpression&lt;IConstraint&gt; BodyCondition { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_Class.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.Class%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L126">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_Class_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Class*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_Class" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Class">Class</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_Class" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Class">
+  Class
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The class that owns the operation. Subsets RedefinableElement::redefinitionContext and NamedElement::namespace and Feature::featuringClassifier.
 The class that owns the operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;class&quot;)]
@@ -408,34 +443,35 @@ The class that owns the operation.</p>
 [XmlOpposite(&quot;ownedOperation&quot;)]
 IClass Class { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Legacy.Cmof.IClass.html">IClass</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_Datatype.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.Datatype%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L140">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Legacy.Cmof.IClass.html">IClass</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_Datatype_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Datatype*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_Datatype" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Datatype">Datatype</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_Datatype" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Datatype">
+  Datatype
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The DataType that owns this Operation. Subsets NamedElement::namespace, Feature::featuringClassifier, and RedefinableElement::redefinitionContext.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;datatype&quot;)]
@@ -443,68 +479,70 @@ IClass Class { get; set; }</code></pre>
 [XmlOpposite(&quot;ownedOperation&quot;)]
 IDataType Datatype { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Legacy.Cmof.IDataType.html">IDataType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_IsQuery.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.IsQuery%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L49">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Legacy.Cmof.IDataType.html">IDataType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_IsQuery_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.IsQuery*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_IsQuery" data-uid="NMF.Interop.Legacy.Cmof.IOperation.IsQuery">IsQuery</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_IsQuery" data-uid="NMF.Interop.Legacy.Cmof.IOperation.IsQuery">
+  IsQuery
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Specifies whether an execution of the BehavioralFeature leaves the state of the system unchanged (isQuery=true) or whether side effects may occur (isQuery=false). The default value is false.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[TypeConverter(typeof(LowercaseBooleanConverter))]
 [XmlElementName(&quot;isQuery&quot;)]
 [XmlAttribute(true)]
 bool IsQuery { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_Postcondition.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.Postcondition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L97">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_Postcondition_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Postcondition*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_Postcondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Postcondition">Postcondition</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_Postcondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Postcondition">
+  Postcondition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The postcondition property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;postcondition&quot;)]
@@ -512,34 +550,35 @@ bool IsQuery { get; set; }</code></pre>
 [Containment]
 IOrderedSetExpression&lt;IConstraint&gt; Postcondition { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_Precondition.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.Precondition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L83">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_Precondition_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Precondition*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_Precondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Precondition">Precondition</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_Precondition" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Precondition">
+  Precondition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The precondition property</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;precondition&quot;)]
@@ -547,268 +586,229 @@ IOrderedSetExpression&lt;IConstraint&gt; Postcondition { get; }</code></pre>
 [Containment]
 IOrderedSetExpression&lt;IConstraint&gt; Precondition { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_RedefinedOperation.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.RedefinedOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L67">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IConstraint.html">IConstraint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_RedefinedOperation_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.RedefinedOperation*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_RedefinedOperation" data-uid="NMF.Interop.Legacy.Cmof.IOperation.RedefinedOperation">RedefinedOperation</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_RedefinedOperation" data-uid="NMF.Interop.Legacy.Cmof.IOperation.RedefinedOperation">
+  RedefinedOperation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>References the Operations that are redefined by this Operation. Subsets RedefinableElement.redefinedElement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[XmlElementName(&quot;redefinedOperation&quot;)]
 [XmlAttribute(true)]
 ISetExpression&lt;IOperation&gt; RedefinedOperation { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.ISetExpression-1.html">ISetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IOperation.html">IOperation</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_At_most_one_return_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.At_most_one_return(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L165">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.ISetExpression-1.html">ISetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IOperation.html">IOperation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_At_most_one_return_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.At_most_one_return*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_At_most_one_return_System_Object_System_Object_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.At_most_one_return(System.Object,System.Object)">At_most_one_return(object, object)</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_At_most_one_return_System_Object_System_Object_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.At_most_one_return(System.Object,System.Object)">
+  At_most_one_return(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>An operation can have at most one return parameter; i.e., an owned parameter with the direction set to 'return'
 self.ownedParameter-&gt;select(par | par.direction = #return)-&gt;size() &lt;= 1</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool At_most_one_return(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_GetType.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.GetType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L171">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_GetType_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.GetType*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_GetType" data-uid="NMF.Interop.Legacy.Cmof.IOperation.GetType">GetType()</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_GetType" data-uid="NMF.Interop.Legacy.Cmof.IOperation.GetType">
+  GetType()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>If this operation has a return parameter, type equals the value of type for that parameter. Otherwise type is not defined.
 result = if returnResult-&gt;size() = 1 then returnResult-&gt;any().type else Set{} endif</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IType GetType()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Legacy.Cmof.IType.html">IType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_Only_body_for_query_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.Only_body_for_query(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L157">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Legacy.Cmof.IType.html">IType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_Only_body_for_query_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Only_body_for_query*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_Only_body_for_query_System_Object_System_Object_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Only_body_for_query(System.Object,System.Object)">Only_body_for_query(object, object)</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_Only_body_for_query_System_Object_System_Object_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.Only_body_for_query(System.Object,System.Object)">
+  Only_body_for_query(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A bodyCondition can only be specified for a query operation.
 bodyCondition-&gt;notEmpty() implies isQuery</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Only_body_for_query(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation_ReturnResult.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation.ReturnResult%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L176">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Legacy_Cmof_IOperation_ReturnResult_" data-uid="NMF.Interop.Legacy.Cmof.IOperation.ReturnResult*"></a>
-  <h4 id="NMF_Interop_Legacy_Cmof_IOperation_ReturnResult" data-uid="NMF.Interop.Legacy.Cmof.IOperation.ReturnResult">ReturnResult()</h4>
+
+  <h3 id="NMF_Interop_Legacy_Cmof_IOperation_ReturnResult" data-uid="NMF.Interop.Legacy.Cmof.IOperation.ReturnResult">
+  ReturnResult()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>result = ownedParameter-&gt;select (par | par.direction = #return)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">ISetExpression&lt;IParameter&gt; ReturnResult()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.ISetExpression-1.html">ISetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IParameter.html">IParameter</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.ISetExpression-1.html">ISetExpression</a>&lt;<a class="xref" href="NMF.Interop.Legacy.Cmof.IParameter.html">IParameter</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Legacy_Cmof_IOperation.md&amp;value=---%0Auid%3A%20NMF.Interop.Legacy.Cmof.IOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L40" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Legacy/Cmof20/IOperation.cs/#L40" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

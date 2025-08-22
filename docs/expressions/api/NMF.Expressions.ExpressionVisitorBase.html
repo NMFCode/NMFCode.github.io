@@ -1,89 +1,130 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class ExpressionVisitorBase </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ExpressionVisitorBase ">
-    
-    <meta name="description" content="Denotes a base class for customized expression visitors">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="Denotes a base class for customized expression visitors">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Expressions.ExpressionVisitorBase">
+
+        <article data-uid="NMF.Expressions.ExpressionVisitorBase">
 
 
 
-  <h1 id="NMF_Expressions_ExpressionVisitorBase" data-uid="NMF.Expressions.ExpressionVisitorBase" class="text-break">Class ExpressionVisitorBase</h1>
-  <div class="markdown level0 summary"><p>Denotes a base class for customized expression visitors</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor">ExpressionVisitor</a></div>
-    <div class="level2"><span class="xref">ExpressionVisitorBase</span></div>
-      <div class="level3"><a class="xref" href="NMF.Expressions.ApplyParametersVisitor.html">ApplyParametersVisitor</a></div>
-      <div class="level3"><a class="xref" href="NMF.Expressions.ExpressionAnalyzer.html">ExpressionAnalyzer</a></div>
+  <h1 id="NMF_Expressions_ExpressionVisitorBase" data-uid="NMF.Expressions.ExpressionVisitorBase" class="text-break">
+Class ExpressionVisitorBase  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Expressions.html">Expressions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Expressions.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>Denotes a base class for customized expression visitors</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ExpressionVisitorBase : ExpressionVisitor</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor">ExpressionVisitor</a></div>
+      <div><span class="xref">ExpressionVisitorBase</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.Expressions.ApplyParametersVisitor.html">ApplyParametersVisitor</a></div>
+      <div><a class="xref" href="NMF.Expressions.ExpressionAnalyzer.html">ExpressionAnalyzer</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visit#system-linq-expressions-expressionvisitor-visit(system-collections-objectmodel-readonlycollection((system-linq-expressions-expression)))">ExpressionVisitor.Visit(ReadOnlyCollection&lt;Expression&gt;)</a>
     </div>
@@ -126,1740 +167,1300 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Expressions.html">Expressions</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Expressions.dll</h6>
-  <h5 id="NMF_Expressions_ExpressionVisitorBase_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ExpressionVisitorBase : ExpressionVisitor</code></pre>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitBinary_System_Linq_Expressions_BinaryExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitBinary(System.Linq.Expressions.BinaryExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L13">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitBinary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBinary*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitBinary_System_Linq_Expressions_BinaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBinary(System.Linq.Expressions.BinaryExpression)">VisitBinary(BinaryExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression">BinaryExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitBinary(BinaryExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression">BinaryExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitbinary">ExpressionVisitor.VisitBinary(BinaryExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitBlock_System_Linq_Expressions_BlockExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitBlock(System.Linq.Expressions.BlockExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L26">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBlock*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitBlock_System_Linq_Expressions_BlockExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBlock(System.Linq.Expressions.BlockExpression)">VisitBlock(BlockExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.blockexpression">BlockExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitBlock(BlockExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.blockexpression">BlockExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitblock">ExpressionVisitor.VisitBlock(BlockExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitCatchBlock_System_Linq_Expressions_CatchBlock_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitCatchBlock(System.Linq.Expressions.CatchBlock)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L32">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitCatchBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitCatchBlock*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitCatchBlock_System_Linq_Expressions_CatchBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitCatchBlock(System.Linq.Expressions.CatchBlock)">VisitCatchBlock(CatchBlock)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override CatchBlock VisitCatchBlock(CatchBlock node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitcatchblock">ExpressionVisitor.VisitCatchBlock(CatchBlock)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitConditional_System_Linq_Expressions_ConditionalExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitConditional(System.Linq.Expressions.ConditionalExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L38">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitConditional_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConditional*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitConditional_System_Linq_Expressions_ConditionalExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConditional(System.Linq.Expressions.ConditionalExpression)">VisitConditional(ConditionalExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression">ConditionalExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitConditional(ConditionalExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression">ConditionalExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitconditional">ExpressionVisitor.VisitConditional(ConditionalExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitConstant_System_Linq_Expressions_ConstantExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitConstant(System.Linq.Expressions.ConstantExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L51">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitConstant_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConstant*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitConstant_System_Linq_Expressions_ConstantExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConstant(System.Linq.Expressions.ConstantExpression)">VisitConstant(ConstantExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.constantexpression">ConstantExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitConstant(ConstantExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.constantexpression">ConstantExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitconstant">ExpressionVisitor.VisitConstant(ConstantExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitDebugInfo_System_Linq_Expressions_DebugInfoExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitDebugInfo(System.Linq.Expressions.DebugInfoExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L57">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitDebugInfo_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDebugInfo*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitDebugInfo_System_Linq_Expressions_DebugInfoExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDebugInfo(System.Linq.Expressions.DebugInfoExpression)">VisitDebugInfo(DebugInfoExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.debuginfoexpression">DebugInfoExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitDebugInfo(DebugInfoExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.debuginfoexpression">DebugInfoExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdebuginfo">ExpressionVisitor.VisitDebugInfo(DebugInfoExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitDefault_System_Linq_Expressions_DefaultExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitDefault(System.Linq.Expressions.DefaultExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L63">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitDefault_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDefault*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitDefault_System_Linq_Expressions_DefaultExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDefault(System.Linq.Expressions.DefaultExpression)">VisitDefault(DefaultExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression">DefaultExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitDefault(DefaultExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression">DefaultExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitdefault">ExpressionVisitor.VisitDefault(DefaultExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitElementInit_System_Linq_Expressions_ElementInit_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitElementInit(System.Linq.Expressions.ElementInit)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L69">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitElementInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitElementInit*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitElementInit_System_Linq_Expressions_ElementInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitElementInit(System.Linq.Expressions.ElementInit)">VisitElementInit(ElementInit)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override ElementInit VisitElementInit(ElementInit node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitelementinit">ExpressionVisitor.VisitElementInit(ElementInit)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitExtension_System_Linq_Expressions_Expression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitExtension(System.Linq.Expressions.Expression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L102">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitExtension_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitExtension*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitExtension_System_Linq_Expressions_Expression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitExtension(System.Linq.Expressions.Expression)">VisitExtension(Expression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the extension expression.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitExtension(Expression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitextension">ExpressionVisitor.VisitExtension(Expression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitGoto_System_Linq_Expressions_GotoExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitGoto(System.Linq.Expressions.GotoExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L75">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitGoto_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitGoto*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitGoto_System_Linq_Expressions_GotoExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitGoto(System.Linq.Expressions.GotoExpression)">VisitGoto(GotoExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.gotoexpression">GotoExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitGoto(GotoExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.gotoexpression">GotoExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitgoto">ExpressionVisitor.VisitGoto(GotoExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitIndex_System_Linq_Expressions_IndexExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitIndex(System.Linq.Expressions.IndexExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L81">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitIndex_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitIndex*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitIndex_System_Linq_Expressions_IndexExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitIndex(System.Linq.Expressions.IndexExpression)">VisitIndex(IndexExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression">IndexExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitIndex(IndexExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression">IndexExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitindex">ExpressionVisitor.VisitIndex(IndexExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitInvocation_System_Linq_Expressions_InvocationExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitInvocation(System.Linq.Expressions.InvocationExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L108">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitInvocation_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitInvocation*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitInvocation_System_Linq_Expressions_InvocationExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitInvocation(System.Linq.Expressions.InvocationExpression)">VisitInvocation(InvocationExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.invocationexpression">InvocationExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitInvocation(InvocationExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.invocationexpression">InvocationExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitinvocation">ExpressionVisitor.VisitInvocation(InvocationExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitLabel_System_Linq_Expressions_LabelExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitLabel(System.Linq.Expressions.LabelExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L130">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLabel_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabel*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitLabel_System_Linq_Expressions_LabelExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabel(System.Linq.Expressions.LabelExpression)">VisitLabel(LabelExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labelexpression">LabelExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitLabel(LabelExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labelexpression">LabelExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlabel">ExpressionVisitor.VisitLabel(LabelExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitLabelTarget_System_Linq_Expressions_LabelTarget_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitLabelTarget(System.Linq.Expressions.LabelTarget)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L136">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLabelTarget_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabelTarget*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitLabelTarget_System_Linq_Expressions_LabelTarget_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabelTarget(System.Linq.Expressions.LabelTarget)">VisitLabelTarget(LabelTarget)</h4>
-  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override LabelTarget VisitLabelTarget(LabelTarget node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlabeltarget">ExpressionVisitor.VisitLabelTarget(LabelTarget)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitLambda__1_System_Linq_Expressions_Expression___0__.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitLambda%60%601(System.Linq.Expressions.Expression%7B%60%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L142">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLambda_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLambda*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitLambda__1_System_Linq_Expressions_Expression___0__" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLambda``1(System.Linq.Expressions.Expression{``0})">VisitLambda&lt;T&gt;(Expression&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitLambda&lt;T&gt;(Expression&lt;T&gt; node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;T&gt;</td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of the delegate.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlambda">ExpressionVisitor.VisitLambda&lt;T&gt;(Expression&lt;T&gt;)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitListInit_System_Linq_Expressions_ListInitExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitListInit(System.Linq.Expressions.ListInitExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L153">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitListInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitListInit*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitListInit_System_Linq_Expressions_ListInitExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitListInit(System.Linq.Expressions.ListInitExpression)">VisitListInit(ListInitExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression">ListInitExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitListInit(ListInitExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression">ListInitExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitlistinit">ExpressionVisitor.VisitListInit(ListInitExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitLoop_System_Linq_Expressions_LoopExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitLoop(System.Linq.Expressions.LoopExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L171">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLoop_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLoop*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitLoop_System_Linq_Expressions_LoopExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLoop(System.Linq.Expressions.LoopExpression)">VisitLoop(LoopExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.loopexpression">LoopExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitLoop(LoopExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.loopexpression">LoopExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitloop">ExpressionVisitor.VisitLoop(LoopExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMember_System_Linq_Expressions_MemberExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMember(System.Linq.Expressions.MemberExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L177">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMember_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMember*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMember_System_Linq_Expressions_MemberExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMember(System.Linq.Expressions.MemberExpression)">VisitMember(MemberExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression">MemberExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitMember(MemberExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression">MemberExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmember">ExpressionVisitor.VisitMember(MemberExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMemberAssignment_System_Linq_Expressions_MemberAssignment_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L188">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberAssignment_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberAssignment*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberAssignment_System_Linq_Expressions_MemberAssignment_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)">VisitMemberAssignment(MemberAssignment)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override MemberAssignment VisitMemberAssignment(MemberAssignment node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberassignment">ExpressionVisitor.VisitMemberAssignment(MemberAssignment)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMemberInit_System_Linq_Expressions_MemberInitExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L200">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberInit*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberInit_System_Linq_Expressions_MemberInitExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)">VisitMemberInit(MemberInitExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression">MemberInitExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitMemberInit(MemberInitExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression">MemberInitExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberinit">ExpressionVisitor.VisitMemberInit(MemberInitExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMemberListBinding_System_Linq_Expressions_MemberListBinding_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L218">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberListBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberListBinding*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberListBinding_System_Linq_Expressions_MemberListBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)">VisitMemberListBinding(MemberListBinding)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override MemberListBinding VisitMemberListBinding(MemberListBinding node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmemberlistbinding">ExpressionVisitor.VisitMemberListBinding(MemberListBinding)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMemberMemberBinding_System_Linq_Expressions_MemberMemberBinding_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L235">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberMemberBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberMemberBinding*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberMemberBinding_System_Linq_Expressions_MemberMemberBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)">VisitMemberMemberBinding(MemberMemberBinding)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override MemberMemberBinding VisitMemberMemberBinding(MemberMemberBinding node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmembermemberbinding">ExpressionVisitor.VisitMemberMemberBinding(MemberMemberBinding)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitMethodCall_System_Linq_Expressions_MethodCallExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L252">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMethodCall_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMethodCall*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitMethodCall_System_Linq_Expressions_MethodCallExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)">VisitMethodCall(MethodCallExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression">MethodCallExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitMethodCall(MethodCallExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression">MethodCallExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitmethodcall">ExpressionVisitor.VisitMethodCall(MethodCallExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitNew_System_Linq_Expressions_NewExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitNew(System.Linq.Expressions.NewExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L274">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitNew_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNew*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitNew_System_Linq_Expressions_NewExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNew(System.Linq.Expressions.NewExpression)">VisitNew(NewExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression">NewExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitNew(NewExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression">NewExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitnew">ExpressionVisitor.VisitNew(NewExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitNewArray_System_Linq_Expressions_NewArrayExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitNewArray(System.Linq.Expressions.NewArrayExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L294">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitNewArray_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNewArray*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitNewArray_System_Linq_Expressions_NewArrayExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNewArray(System.Linq.Expressions.NewArrayExpression)">VisitNewArray(NewArrayExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression">NewArrayExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitNewArray(NewArrayExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression">NewArrayExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitnewarray">ExpressionVisitor.VisitNewArray(NewArrayExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitParameter_System_Linq_Expressions_ParameterExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L313">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitParameter_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitParameter*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitParameter_System_Linq_Expressions_ParameterExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)">VisitParameter(ParameterExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression">ParameterExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitParameter(ParameterExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression">ParameterExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitparameter">ExpressionVisitor.VisitParameter(ParameterExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitRuntimeVariables_System_Linq_Expressions_RuntimeVariablesExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitRuntimeVariables(System.Linq.Expressions.RuntimeVariablesExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L319">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitRuntimeVariables_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitRuntimeVariables*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitRuntimeVariables_System_Linq_Expressions_RuntimeVariablesExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitRuntimeVariables(System.Linq.Expressions.RuntimeVariablesExpression)">VisitRuntimeVariables(RuntimeVariablesExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.runtimevariablesexpression">RuntimeVariablesExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitRuntimeVariables(RuntimeVariablesExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.runtimevariablesexpression">RuntimeVariablesExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitruntimevariables">ExpressionVisitor.VisitRuntimeVariables(RuntimeVariablesExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitSwitch_System_Linq_Expressions_SwitchExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitSwitch(System.Linq.Expressions.SwitchExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L325">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitSwitch_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitch*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitSwitch_System_Linq_Expressions_SwitchExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitch(System.Linq.Expressions.SwitchExpression)">VisitSwitch(SwitchExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchexpression">SwitchExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitSwitch(SwitchExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchexpression">SwitchExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitswitch">ExpressionVisitor.VisitSwitch(SwitchExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitSwitchCase_System_Linq_Expressions_SwitchCase_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitSwitchCase(System.Linq.Expressions.SwitchCase)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L331">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitSwitchCase_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitchCase*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitSwitchCase_System_Linq_Expressions_SwitchCase_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitchCase(System.Linq.Expressions.SwitchCase)">VisitSwitchCase(SwitchCase)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override SwitchCase VisitSwitchCase(SwitchCase node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitswitchcase">ExpressionVisitor.VisitSwitchCase(SwitchCase)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitTry_System_Linq_Expressions_TryExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitTry(System.Linq.Expressions.TryExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L337">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitTry_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTry*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitTry_System_Linq_Expressions_TryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTry(System.Linq.Expressions.TryExpression)">VisitTry(TryExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.tryexpression">TryExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitTry(TryExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.tryexpression">TryExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visittry">ExpressionVisitor.VisitTry(TryExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitTypeBinary_System_Linq_Expressions_TypeBinaryExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitTypeBinary(System.Linq.Expressions.TypeBinaryExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L343">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitTypeBinary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTypeBinary*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitTypeBinary_System_Linq_Expressions_TypeBinaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTypeBinary(System.Linq.Expressions.TypeBinaryExpression)">VisitTypeBinary(TypeBinaryExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.typebinaryexpression">TypeBinaryExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitTypeBinary(TypeBinaryExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.typebinaryexpression">TypeBinaryExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visittypebinary">ExpressionVisitor.VisitTypeBinary(TypeBinaryExpression)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase_VisitUnary_System_Linq_Expressions_UnaryExpression_.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase.VisitUnary(System.Linq.Expressions.UnaryExpression)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L354">View Source</a>
-  </span>
-  <a id="NMF_Expressions_ExpressionVisitorBase_VisitUnary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitUnary*"></a>
-  <h4 id="NMF_Expressions_ExpressionVisitorBase_VisitUnary_System_Linq_Expressions_UnaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitUnary(System.Linq.Expressions.UnaryExpression)">VisitUnary(UnaryExpression)</h4>
-  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression">UnaryExpression</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Expression VisitUnary(UnaryExpression node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression">UnaryExpression</a></td>
-        <td><span class="parametername">node</span></td>
-        <td><p>The expression to visit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></td>
-        <td><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor.visitunary">ExpressionVisitor.VisitUnary(UnaryExpression)</a></div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="NMF.Expressions.Linq.ExpressionExtensions.html#NMF_Expressions_Linq_ExpressionExtensions_AsOne__1___0_">ExpressionExtensions.AsOne&lt;T&gt;(T)</a>
   </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitBinary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBinary*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitBinary_System_Linq_Expressions_BinaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBinary(System.Linq.Expressions.BinaryExpression)">
+  VisitBinary(BinaryExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression">BinaryExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitBinary(BinaryExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.binaryexpression">BinaryExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBlock*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitBlock_System_Linq_Expressions_BlockExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitBlock(System.Linq.Expressions.BlockExpression)">
+  VisitBlock(BlockExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.blockexpression">BlockExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitBlock(BlockExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.blockexpression">BlockExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitCatchBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitCatchBlock*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitCatchBlock_System_Linq_Expressions_CatchBlock_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitCatchBlock(System.Linq.Expressions.CatchBlock)">
+  VisitCatchBlock(CatchBlock)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override CatchBlock VisitCatchBlock(CatchBlock node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.catchblock">CatchBlock</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitConditional_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConditional*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitConditional_System_Linq_Expressions_ConditionalExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConditional(System.Linq.Expressions.ConditionalExpression)">
+  VisitConditional(ConditionalExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression">ConditionalExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitConditional(ConditionalExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.conditionalexpression">ConditionalExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitConstant_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConstant*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitConstant_System_Linq_Expressions_ConstantExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitConstant(System.Linq.Expressions.ConstantExpression)">
+  VisitConstant(ConstantExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.constantexpression">ConstantExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitConstant(ConstantExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.constantexpression">ConstantExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitDebugInfo_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDebugInfo*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitDebugInfo_System_Linq_Expressions_DebugInfoExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDebugInfo(System.Linq.Expressions.DebugInfoExpression)">
+  VisitDebugInfo(DebugInfoExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.debuginfoexpression">DebugInfoExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitDebugInfo(DebugInfoExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.debuginfoexpression">DebugInfoExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitDefault_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDefault*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitDefault_System_Linq_Expressions_DefaultExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitDefault(System.Linq.Expressions.DefaultExpression)">
+  VisitDefault(DefaultExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression">DefaultExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitDefault(DefaultExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.defaultexpression">DefaultExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitElementInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitElementInit*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitElementInit_System_Linq_Expressions_ElementInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitElementInit(System.Linq.Expressions.ElementInit)">
+  VisitElementInit(ElementInit)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ElementInit VisitElementInit(ElementInit node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.elementinit">ElementInit</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitExtension_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitExtension*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitExtension_System_Linq_Expressions_Expression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitExtension(System.Linq.Expressions.Expression)">
+  VisitExtension(Expression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the extension expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitExtension(Expression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitGoto_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitGoto*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitGoto_System_Linq_Expressions_GotoExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitGoto(System.Linq.Expressions.GotoExpression)">
+  VisitGoto(GotoExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.gotoexpression">GotoExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitGoto(GotoExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.gotoexpression">GotoExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitIndex_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitIndex*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitIndex_System_Linq_Expressions_IndexExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitIndex(System.Linq.Expressions.IndexExpression)">
+  VisitIndex(IndexExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression">IndexExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitIndex(IndexExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.indexexpression">IndexExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitInvocation_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitInvocation*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitInvocation_System_Linq_Expressions_InvocationExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitInvocation(System.Linq.Expressions.InvocationExpression)">
+  VisitInvocation(InvocationExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.invocationexpression">InvocationExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitInvocation(InvocationExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.invocationexpression">InvocationExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLabel_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabel*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitLabel_System_Linq_Expressions_LabelExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabel(System.Linq.Expressions.LabelExpression)">
+  VisitLabel(LabelExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labelexpression">LabelExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitLabel(LabelExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labelexpression">LabelExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLabelTarget_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabelTarget*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitLabelTarget_System_Linq_Expressions_LabelTarget_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLabelTarget(System.Linq.Expressions.LabelTarget)">
+  VisitLabelTarget(LabelTarget)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override LabelTarget VisitLabelTarget(LabelTarget node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.labeltarget">LabelTarget</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLambda_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLambda*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitLambda__1_System_Linq_Expressions_Expression___0__" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLambda``1(System.Linq.Expressions.Expression{``0})">
+  VisitLambda&lt;T&gt;(Expression&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitLambda&lt;T&gt;(Expression&lt;T&gt; node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;T&gt;</dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the delegate.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitListInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitListInit*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitListInit_System_Linq_Expressions_ListInitExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitListInit(System.Linq.Expressions.ListInitExpression)">
+  VisitListInit(ListInitExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression">ListInitExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitListInit(ListInitExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.listinitexpression">ListInitExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitLoop_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLoop*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitLoop_System_Linq_Expressions_LoopExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitLoop(System.Linq.Expressions.LoopExpression)">
+  VisitLoop(LoopExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.loopexpression">LoopExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitLoop(LoopExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.loopexpression">LoopExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMember_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMember*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMember_System_Linq_Expressions_MemberExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMember(System.Linq.Expressions.MemberExpression)">
+  VisitMember(MemberExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression">MemberExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitMember(MemberExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberexpression">MemberExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberAssignment_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberAssignment*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberAssignment_System_Linq_Expressions_MemberAssignment_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberAssignment(System.Linq.Expressions.MemberAssignment)">
+  VisitMemberAssignment(MemberAssignment)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override MemberAssignment VisitMemberAssignment(MemberAssignment node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberassignment">MemberAssignment</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberInit_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberInit*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberInit_System_Linq_Expressions_MemberInitExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)">
+  VisitMemberInit(MemberInitExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression">MemberInitExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitMemberInit(MemberInitExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberinitexpression">MemberInitExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberListBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberListBinding*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberListBinding_System_Linq_Expressions_MemberListBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberListBinding(System.Linq.Expressions.MemberListBinding)">
+  VisitMemberListBinding(MemberListBinding)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override MemberListBinding VisitMemberListBinding(MemberListBinding node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.memberlistbinding">MemberListBinding</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMemberMemberBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberMemberBinding*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMemberMemberBinding_System_Linq_Expressions_MemberMemberBinding_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMemberMemberBinding(System.Linq.Expressions.MemberMemberBinding)">
+  VisitMemberMemberBinding(MemberMemberBinding)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override MemberMemberBinding VisitMemberMemberBinding(MemberMemberBinding node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.membermemberbinding">MemberMemberBinding</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitMethodCall_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMethodCall*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitMethodCall_System_Linq_Expressions_MethodCallExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)">
+  VisitMethodCall(MethodCallExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression">MethodCallExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitMethodCall(MethodCallExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.methodcallexpression">MethodCallExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitNew_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNew*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitNew_System_Linq_Expressions_NewExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNew(System.Linq.Expressions.NewExpression)">
+  VisitNew(NewExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression">NewExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitNew(NewExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newexpression">NewExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitNewArray_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNewArray*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitNewArray_System_Linq_Expressions_NewArrayExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitNewArray(System.Linq.Expressions.NewArrayExpression)">
+  VisitNewArray(NewArrayExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression">NewArrayExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitNewArray(NewArrayExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.newarrayexpression">NewArrayExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitParameter_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitParameter*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitParameter_System_Linq_Expressions_ParameterExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+  VisitParameter(ParameterExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L313"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression">ParameterExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitParameter(ParameterExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.parameterexpression">ParameterExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitRuntimeVariables_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitRuntimeVariables*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitRuntimeVariables_System_Linq_Expressions_RuntimeVariablesExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitRuntimeVariables(System.Linq.Expressions.RuntimeVariablesExpression)">
+  VisitRuntimeVariables(RuntimeVariablesExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.runtimevariablesexpression">RuntimeVariablesExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitRuntimeVariables(RuntimeVariablesExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.runtimevariablesexpression">RuntimeVariablesExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitSwitch_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitch*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitSwitch_System_Linq_Expressions_SwitchExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitch(System.Linq.Expressions.SwitchExpression)">
+  VisitSwitch(SwitchExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L325"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchexpression">SwitchExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitSwitch(SwitchExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchexpression">SwitchExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitSwitchCase_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitchCase*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitSwitchCase_System_Linq_Expressions_SwitchCase_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitSwitchCase(System.Linq.Expressions.SwitchCase)">
+  VisitSwitchCase(SwitchCase)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L331"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override SwitchCase VisitSwitchCase(SwitchCase node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.switchcase">SwitchCase</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitTry_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTry*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitTry_System_Linq_Expressions_TryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTry(System.Linq.Expressions.TryExpression)">
+  VisitTry(TryExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L337"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.tryexpression">TryExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitTry(TryExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.tryexpression">TryExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitTypeBinary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTypeBinary*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitTypeBinary_System_Linq_Expressions_TypeBinaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitTypeBinary(System.Linq.Expressions.TypeBinaryExpression)">
+  VisitTypeBinary(TypeBinaryExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.typebinaryexpression">TypeBinaryExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitTypeBinary(TypeBinaryExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.typebinaryexpression">TypeBinaryExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_ExpressionVisitorBase_VisitUnary_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitUnary*"></a>
+
+  <h3 id="NMF_Expressions_ExpressionVisitorBase_VisitUnary_System_Linq_Expressions_UnaryExpression_" data-uid="NMF.Expressions.ExpressionVisitorBase.VisitUnary(System.Linq.Expressions.UnaryExpression)">
+  VisitUnary(UnaryExpression)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits the children of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression">UnaryExpression</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Expression VisitUnary(UnaryExpression node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.unaryexpression">UnaryExpression</a></dt>
+    <dd><p>The expression to visit.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression">Expression</a></dt>
+    <dd><p>The modified expression, if it or any subexpression was modified; otherwise, returns the original expression.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Expressions_ExpressionVisitorBase.md&amp;value=---%0Auid%3A%20NMF.Expressions.ExpressionVisitorBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L9" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions/ExpressionVisitorBase.cs/#L9" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

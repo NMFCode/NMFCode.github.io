@@ -1,81 +1,118 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Interface IState </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IState ">
-    
-    <meta name="description" content="The public interface for State">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="The public interface for State">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Interop.Uml.IState">
+
+        <article data-uid="NMF.Interop.Uml.IState">
 
 
 
-  <h1 id="NMF_Interop_Uml_IState" data-uid="NMF.Interop.Uml.IState" class="text-break">Interface IState</h1>
-  <div class="markdown level0 summary"><p>The public interface for State</p>
+  <h1 id="NMF_Interop_Uml_IState" data-uid="NMF.Interop.Uml.IState" class="text-break">
+Interface IState  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Interop.html">Interop</a>.<a class="xref" href="NMF.Interop.Uml.html">Uml</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.UMLInterop.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The public interface for State</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DefaultImplementationType(typeof(State))]
+[XmlDefaultImplementationType(typeof(State))]
+[ModelRepresentationClass(&quot;http://www.eclipse.org/uml2/5.0.0/UML#//State&quot;)]
+public interface IState : IVertex, IRedefinableElement, INamespace, INamedElement, IElement, IEModelElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="NMF.Interop.Uml.IVertex.html#NMF_Interop_Uml_IVertex_Container">IVertex.Container</a>
     </div>
@@ -433,32 +470,29 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging.propertychanging">INotifyPropertyChanging.PropertyChanging</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Interop.html">Interop</a>.<a class="xref" href="NMF.Interop.Uml.html">Uml</a></h6>
-  <h6><strong>Assembly</strong>: NMF.UMLInterop.dll</h6>
-  <h5 id="NMF_Interop_Uml_IState_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[DefaultImplementationType(typeof(State))]
-[XmlDefaultImplementationType(typeof(State))]
-[ModelRepresentationClass(&quot;http://www.eclipse.org/uml2/5.0.0/UML#//State&quot;)]
-public interface IState : IVertex, IRedefinableElement, INamespace, INamedElement, IElement, IEModelElement, IModelElement, INotifyPropertyChanged, INotifyPropertyChanging</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Connection.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Connection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L51">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Interop_Uml_IState_Connection_" data-uid="NMF.Interop.Uml.IState.Connection*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Connection" data-uid="NMF.Interop.Uml.IState.Connection">Connection</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Connection" data-uid="NMF.Interop.Uml.IState.Connection">
+  Connection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The entry and exit connection points used in conjunction with this (submachine) State, i.e., as targets and sources, respectively, in the Region with the submachine State. A connection point reference references the corresponding definition of a connection point Pseudostate in the StateMachine referenced by the submachine State.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;connection&quot;)]
@@ -467,35 +501,36 @@ public interface IState : IVertex, IRedefinableElement, INamespace, INamedElemen
 [XmlOpposite(&quot;state&quot;)]
 IOrderedSetExpression&lt;IConnectionPointReference&gt; Connection { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IConnectionPointReference.html">IConnectionPointReference</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_ConnectionPoint.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.ConnectionPoint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L67">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IConnectionPointReference.html">IConnectionPointReference</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_ConnectionPoint_" data-uid="NMF.Interop.Uml.IState.ConnectionPoint*"></a>
-  <h4 id="NMF_Interop_Uml_IState_ConnectionPoint" data-uid="NMF.Interop.Uml.IState.ConnectionPoint">ConnectionPoint</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_ConnectionPoint" data-uid="NMF.Interop.Uml.IState.ConnectionPoint">
+  ConnectionPoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The entry and exit Pseudostates of a composite State. These can only be entry or exit Pseudostates, and they must have different names. They can only be defined for composite States.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;connectionPoint&quot;)]
@@ -504,35 +539,36 @@ IOrderedSetExpression&lt;IConnectionPointReference&gt; Connection { get; }</code
 [XmlOpposite(&quot;state&quot;)]
 IOrderedSetExpression&lt;IPseudostate&gt; ConnectionPoint { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IPseudostate.html">IPseudostate</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_DeferrableTrigger.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.DeferrableTrigger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L83">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IPseudostate.html">IPseudostate</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_DeferrableTrigger_" data-uid="NMF.Interop.Uml.IState.DeferrableTrigger*"></a>
-  <h4 id="NMF_Interop_Uml_IState_DeferrableTrigger" data-uid="NMF.Interop.Uml.IState.DeferrableTrigger">DeferrableTrigger</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_DeferrableTrigger" data-uid="NMF.Interop.Uml.IState.DeferrableTrigger">
+  DeferrableTrigger
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A list of Triggers that are candidates to be retained by the StateMachine if they trigger no Transitions out of the State (not consumed). A deferred Trigger is retained until the StateMachine reaches a State configuration where it is no longer deferred.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;deferrableTrigger&quot;)]
@@ -540,35 +576,36 @@ IOrderedSetExpression&lt;IPseudostate&gt; ConnectionPoint { get; }</code></pre>
 [Containment]
 IOrderedSetExpression&lt;ITrigger&gt; DeferrableTrigger { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.ITrigger.html">ITrigger</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_DoActivity.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.DoActivity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L98">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.ITrigger.html">ITrigger</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_DoActivity_" data-uid="NMF.Interop.Uml.IState.DoActivity*"></a>
-  <h4 id="NMF_Interop_Uml_IState_DoActivity" data-uid="NMF.Interop.Uml.IState.DoActivity">DoActivity</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_DoActivity" data-uid="NMF.Interop.Uml.IState.DoActivity">
+  DoActivity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>An optional Behavior that is executed while being in the State. The execution starts when this State is entered, and ceases either by itself when done, or when the State is exited, whichever comes first.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;doActivity&quot;)]
@@ -576,35 +613,36 @@ IOrderedSetExpression&lt;ITrigger&gt; DeferrableTrigger { get; }</code></pre>
 [Containment]
 IBehavior DoActivity { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Entry.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Entry%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L112">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Entry_" data-uid="NMF.Interop.Uml.IState.Entry*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Entry" data-uid="NMF.Interop.Uml.IState.Entry">Entry</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Entry" data-uid="NMF.Interop.Uml.IState.Entry">
+  Entry
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>An optional Behavior that is executed whenever this State is entered regardless of the Transition taken to reach the State. If defined, entry Behaviors are always executed to completion prior to any internal Behavior or Transitions performed within the State.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;entry&quot;)]
@@ -612,35 +650,36 @@ IBehavior DoActivity { get; set; }</code></pre>
 [Containment]
 IBehavior Entry { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Exit.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Exit%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L126">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Exit_" data-uid="NMF.Interop.Uml.IState.Exit*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Exit" data-uid="NMF.Interop.Uml.IState.Exit">Exit</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Exit" data-uid="NMF.Interop.Uml.IState.Exit">
+  Exit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>An optional Behavior that is executed whenever this State is exited regardless of which Transition was taken out of the State. If defined, exit Behaviors are always executed to completion only after all internal and transition Behaviors have completed execution.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;exit&quot;)]
@@ -648,69 +687,71 @@ IBehavior Entry { get; set; }</code></pre>
 [Containment]
 IBehavior Exit { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_RedefinedState.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.RedefinedState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L140">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IBehavior.html">IBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_RedefinedState_" data-uid="NMF.Interop.Uml.IState.RedefinedState*"></a>
-  <h4 id="NMF_Interop_Uml_IState_RedefinedState" data-uid="NMF.Interop.Uml.IState.RedefinedState">RedefinedState</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_RedefinedState" data-uid="NMF.Interop.Uml.IState.RedefinedState">
+  RedefinedState
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The State of which this State is a redefinition.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[XmlElementName(&quot;redefinedState&quot;)]
 [XmlAttribute(true)]
 IState RedefinedState { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IState.html">IState</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Region.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Region%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L187">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IState.html">IState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Region_" data-uid="NMF.Interop.Uml.IState.Region*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Region" data-uid="NMF.Interop.Uml.IState.Region">Region</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Region" data-uid="NMF.Interop.Uml.IState.Region">
+  Region
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The Regions owned directly by the State.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;region&quot;)]
@@ -719,35 +760,36 @@ IState RedefinedState { get; set; }</code></pre>
 [XmlOpposite(&quot;state&quot;)]
 IOrderedSetExpression&lt;IRegion&gt; Region { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IRegion.html">IRegion</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_StateInvariant.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.StateInvariant%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L156">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../collections/api/NMF.Collections.Generic.IOrderedSetExpression-1.html">IOrderedSetExpression</a>&lt;<a class="xref" href="NMF.Interop.Uml.IRegion.html">IRegion</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_StateInvariant_" data-uid="NMF.Interop.Uml.IState.StateInvariant*"></a>
-  <h4 id="NMF_Interop_Uml_IState_StateInvariant" data-uid="NMF.Interop.Uml.IState.StateInvariant">StateInvariant</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_StateInvariant" data-uid="NMF.Interop.Uml.IState.StateInvariant">
+  StateInvariant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Specifies conditions that are always true when this State is the current State. In ProtocolStateMachines state invariants are additional conditions to the preconditions of the outgoing Transitions, and to the postcondition of the incoming Transitions.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Browsable(false)]
 [XmlElementName(&quot;stateInvariant&quot;)]
@@ -755,381 +797,298 @@ IOrderedSetExpression&lt;IRegion&gt; Region { get; }</code></pre>
 [Containment]
 IConstraint StateInvariant { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IConstraint.html">IConstraint</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Submachine.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Submachine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L170">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IConstraint.html">IConstraint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Submachine_" data-uid="NMF.Interop.Uml.IState.Submachine*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Submachine" data-uid="NMF.Interop.Uml.IState.Submachine">Submachine</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Submachine" data-uid="NMF.Interop.Uml.IState.Submachine">
+  Submachine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The StateMachine that is to be inserted in place of the (submachine) State.
 &lt;p&gt;From package UML::StateMachines.&lt;/p&gt;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[XmlElementName(&quot;submachine&quot;)]
 [XmlAttribute(true)]
 [XmlOpposite(&quot;submachineState&quot;)]
 IStateMachine Submachine { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Interop.Uml.IStateMachine.html">IStateMachine</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Composite_states_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Composite_states(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L221">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Interop.Uml.IStateMachine.html">IStateMachine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Interop_Uml_IState_Composite_states_" data-uid="NMF.Interop.Uml.IState.Composite_states*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Composite_states_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Composite_states(System.Object,System.Object)">Composite_states(object, object)</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Composite_states_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Composite_states(System.Object,System.Object)">
+  Composite_states(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Only composite States can have entry or exit Pseudostates defined.
 connectionPoint-&gt;notEmpty() implies isComposite</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Composite_states(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td><p>The chain of diagnostics to which problems are to be appended.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The cache of context-specific information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Destinations_or_sources_of_transitions_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Destinations_or_sources_of_transitions(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L231">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The chain of diagnostics to which problems are to be appended.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The cache of context-specific information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Destinations_or_sources_of_transitions_" data-uid="NMF.Interop.Uml.IState.Destinations_or_sources_of_transitions*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Destinations_or_sources_of_transitions_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Destinations_or_sources_of_transitions(System.Object,System.Object)">Destinations_or_sources_of_transitions(object, object)</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Destinations_or_sources_of_transitions_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Destinations_or_sources_of_transitions(System.Object,System.Object)">
+  Destinations_or_sources_of_transitions(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The connection point references used as destinations/sources of Transitions associated with a submachine State must be defined as entry/exit points in the submachine StateMachine.
 self.isSubmachineState implies (self.connection-&gt;forAll (cp |
 cp.entry-&gt;forAll (ps | ps.stateMachine = self.submachine) and
 cp.exit-&gt;forAll (ps | ps.stateMachine = self.submachine)))</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Destinations_or_sources_of_transitions(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td><p>The chain of diagnostics to which problems are to be appended.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The cache of context-specific information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Entry_or_exit_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Entry_or_exit(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L205">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The chain of diagnostics to which problems are to be appended.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The cache of context-specific information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Entry_or_exit_" data-uid="NMF.Interop.Uml.IState.Entry_or_exit*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Entry_or_exit_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Entry_or_exit(System.Object,System.Object)">Entry_or_exit(object, object)</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Entry_or_exit_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Entry_or_exit(System.Object,System.Object)">
+  Entry_or_exit(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Only entry or exit Pseudostates can serve as connection points.
 connectionPoint-&gt;forAll(kind = PseudostateKind::entryPoint or kind = PseudostateKind::exitPoint)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Entry_or_exit(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td><p>The chain of diagnostics to which problems are to be appended.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The cache of context-specific information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Submachine_or_regions_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Submachine_or_regions(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L239">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The chain of diagnostics to which problems are to be appended.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The cache of context-specific information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Submachine_or_regions_" data-uid="NMF.Interop.Uml.IState.Submachine_or_regions*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Submachine_or_regions_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Submachine_or_regions(System.Object,System.Object)">Submachine_or_regions(object, object)</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Submachine_or_regions_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Submachine_or_regions(System.Object,System.Object)">
+  Submachine_or_regions(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A State is not allowed to have both a submachine and Regions.
 isComposite implies not isSubmachineState</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Submachine_or_regions(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td><p>The chain of diagnostics to which problems are to be appended.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The cache of context-specific information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState_Submachine_states_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState.Submachine_states(System.Object%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L213">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The chain of diagnostics to which problems are to be appended.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The cache of context-specific information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Interop_Uml_IState_Submachine_states_" data-uid="NMF.Interop.Uml.IState.Submachine_states*"></a>
-  <h4 id="NMF_Interop_Uml_IState_Submachine_states_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Submachine_states(System.Object,System.Object)">Submachine_states(object, object)</h4>
+
+  <h3 id="NMF_Interop_Uml_IState_Submachine_states_System_Object_System_Object_" data-uid="NMF.Interop.Uml.IState.Submachine_states(System.Object,System.Object)">
+  Submachine_states(object, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Only submachine States can have connection point references.
 isSubmachineState implies connection-&gt;notEmpty( )</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool Submachine_states(object diagnostics, object context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">diagnostics</span></td>
-        <td><p>The chain of diagnostics to which problems are to be appended.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The cache of context-specific information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>diagnostics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The chain of diagnostics to which problems are to be appended.</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The cache of context-specific information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Interop_Uml_IState.md&amp;value=---%0Auid%3A%20NMF.Interop.Uml.IState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L41" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Interop/UMLInterop/Uml/IState.cs/#L41" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

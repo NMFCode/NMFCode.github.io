@@ -1,90 +1,131 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class GeneralTransformationRule </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class GeneralTransformationRule ">
-    
-    <meta name="description" content="This class represents the base class for a transformation rule">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="This class represents the base class for a transformation rule">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Transformations.Core.GeneralTransformationRule">
+
+        <article data-uid="NMF.Transformations.Core.GeneralTransformationRule">
 
 
 
-  <h1 id="NMF_Transformations_Core_GeneralTransformationRule" data-uid="NMF.Transformations.Core.GeneralTransformationRule" class="text-break">Class GeneralTransformationRule</h1>
-  <div class="markdown level0 summary"><p>This class represents the base class for a transformation rule</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">GeneralTransformationRule</span></div>
-      <div class="level2"><a class="xref" href="NMF.Transformations.GeneralTransformationRule-1.html">GeneralTransformationRule&lt;TIn&gt;</a></div>
-      <div class="level2"><a class="xref" href="NMF.Transformations.GeneralTransformationRule-2.html">GeneralTransformationRule&lt;TIn1, TIn2&gt;</a></div>
-      <div class="level2"><a class="xref" href="NMF.Transformations.InPlaceTransformationRuleBase.html">InPlaceTransformationRuleBase</a></div>
-      <div class="level2"><a class="xref" href="NMF.Transformations.TransformationRuleBase-1.html">TransformationRuleBase&lt;T&gt;</a></div>
+  <h1 id="NMF_Transformations_Core_GeneralTransformationRule" data-uid="NMF.Transformations.Core.GeneralTransformationRule" class="text-break">
+Class GeneralTransformationRule  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Transformations.html">Transformations</a>.<a class="xref" href="NMF.Transformations.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Transformations.Core.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>This class represents the base class for a transformation rule</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class GeneralTransformationRule</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GeneralTransformationRule</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.Transformations.GeneralTransformationRule-1.html">GeneralTransformationRule&lt;TIn&gt;</a></div>
+      <div><a class="xref" href="NMF.Transformations.GeneralTransformationRule-2.html">GeneralTransformationRule&lt;TIn1, TIn2&gt;</a></div>
+      <div><a class="xref" href="NMF.Transformations.InPlaceTransformationRuleBase.html">InPlaceTransformationRuleBase</a></div>
+      <div><a class="xref" href="NMF.Transformations.TransformationRuleBase-1.html">TransformationRuleBase&lt;T&gt;</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -106,687 +147,662 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Transformations.html">Transformations</a>.<a class="xref" href="NMF.Transformations.Core.html">Core</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Transformations.Core.dll</h6>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class GeneralTransformationRule</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule__ctor.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L19">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule__ctor_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.#ctor*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule__ctor" data-uid="NMF.Transformations.Core.GeneralTransformationRule.#ctor">GeneralTransformationRule()</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule__ctor" data-uid="NMF.Transformations.Core.GeneralTransformationRule.#ctor">
+  GeneralTransformationRule()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a new transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected GeneralTransformationRule()</code></pre>
   </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_BaseRule.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.BaseRule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L103">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_BaseRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.BaseRule*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_BaseRule" data-uid="NMF.Transformations.Core.GeneralTransformationRule.BaseRule">BaseRule</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_BaseRule" data-uid="NMF.Transformations.Core.GeneralTransformationRule.BaseRule">
+  BaseRule
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the base rule, i.e. the rule the current rule can instantiate</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public GeneralTransformationRule BaseRule { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_Dependencies.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.Dependencies%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L73">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_Dependencies_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Dependencies*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_Dependencies" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Dependencies">Dependencies</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_Dependencies" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Dependencies">
+  Dependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a collection of dependencies for this transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IList&lt;ITransformationRuleDependency&gt; Dependencies { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="NMF.Transformations.Core.ITransformationRuleDependency.html">ITransformationRuleDependency</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_InputType.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.InputType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L37">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="NMF.Transformations.Core.ITransformationRuleDependency.html">ITransformationRuleDependency</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_InputType_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.InputType*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_InputType" data-uid="NMF.Transformations.Core.GeneralTransformationRule.InputType">InputType</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_InputType" data-uid="NMF.Transformations.Core.GeneralTransformationRule.InputType">
+  InputType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the type signature of the input arguments of this transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract Type[] InputType { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_IsUnique.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.IsUnique%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L92">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_IsUnique_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsUnique*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_IsUnique" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsUnique">IsUnique</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_IsUnique" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsUnique">
+  IsUnique
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this transformation rule is unique per input and context</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsUnique { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_NeedDependenciesForOutputCreation.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.NeedDependenciesForOutputCreation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L56">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_NeedDependenciesForOutputCreation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.NeedDependenciesForOutputCreation*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_NeedDependenciesForOutputCreation" data-uid="NMF.Transformations.Core.GeneralTransformationRule.NeedDependenciesForOutputCreation">NeedDependenciesForOutputCreation</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_NeedDependenciesForOutputCreation" data-uid="NMF.Transformations.Core.GeneralTransformationRule.NeedDependenciesForOutputCreation">
+  NeedDependenciesForOutputCreation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value indicating whether the output for all dependencies must have been created before this rule creates the output</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual bool NeedDependenciesForOutputCreation { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.OutputDelayLevel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L79">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputDelayLevel*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputDelayLevel">OutputDelayLevel</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputDelayLevel">
+  OutputDelayLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the output delay level</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte OutputDelayLevel { get; protected set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel_remarks">Remarks</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_OutputDelayLevel_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>The default delay level is 0. The delay level has an influence on the availability of the trace data during output creation.</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_OutputType.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.OutputType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L42">View Source</a>
-  </span>
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_OutputType_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputType*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_OutputType" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputType">OutputType</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_OutputType" data-uid="NMF.Transformations.Core.GeneralTransformationRule.OutputType">
+  OutputType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the type signature of the output type of this transformation</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract Type OutputType { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_Transformation.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.Transformation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L68">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_Transformation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Transformation*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_Transformation" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Transformation">Transformation</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_Transformation" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Transformation">
+  Transformation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the transformation, that this rule is assigned to</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Transformation Transformation { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.Transformation.html">Transformation</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.TransformationDelayLevel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L86">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Transformations.Core.Transformation.html">Transformation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.TransformationDelayLevel*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel" data-uid="NMF.Transformations.Core.GeneralTransformationRule.TransformationDelayLevel">TransformationDelayLevel</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel" data-uid="NMF.Transformations.Core.GeneralTransformationRule.TransformationDelayLevel">
+  TransformationDelayLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the transformation delay level</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte TransformationDelayLevel { get; protected set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel_remarks">Remarks</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_TransformationDelayLevel_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>The default transformation delay level is 0. The delay has an influence when computations are made</p>
 </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_Call_NMF_Transformations_Core_GeneralTransformationRule_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.Call(NMF.Transformations.Core.GeneralTransformationRule)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L255">View Source</a>
-  </span>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_Call_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Call*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_Call_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Call(NMF.Transformations.Core.GeneralTransformationRule)">Call(GeneralTransformationRule)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_Call_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Call(NMF.Transformations.Core.GeneralTransformationRule)">
+  Call(GeneralTransformationRule)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Requires the given transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Call(GeneralTransformationRule rule)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule that should be required</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_Call_NMF_Transformations_Core_GeneralTransformationRule__remarks">Remarks</h5>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule that should be required</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_Call_NMF_Transformations_Core_GeneralTransformationRule__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This version Always takes the input parameter as input for the dependent transformations. Thus, this method will throw an exception, if the types do not match</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_CreateComputation_System_Object___NMF_Transformations_Core_IComputationContext_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.CreateComputation(System.Object%5B%5D%2CNMF.Transformations.Core.IComputationContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L50">View Source</a>
-  </span>
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_CreateComputation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.CreateComputation*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_CreateComputation_System_Object___NMF_Transformations_Core_IComputationContext_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.CreateComputation(System.Object[],NMF.Transformations.Core.IComputationContext)">CreateComputation(object[], IComputationContext)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_CreateComputation_System_Object___NMF_Transformations_Core_IComputationContext_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.CreateComputation(System.Object[],NMF.Transformations.Core.IComputationContext)">
+  CreateComputation(object[], IComputationContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a new Computation instance for this transformation rule or the given input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract Computation CreateComputation(object[] input, IComputationContext context)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input arguments for this computation</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The context for this computation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></td>
-        <td><p>A computation object</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_HasCompliantInput_NMF_Transformations_Core_Computation_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.HasCompliantInput(NMF.Transformations.Core.Computation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L215">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The input arguments for this computation</p>
+</dd>
+    <dt><code>context</code> <a class="xref" href="NMF.Transformations.Core.IComputationContext.html">IComputationContext</a></dt>
+    <dd><p>The context for this computation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></dt>
+    <dd><p>A computation object</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_HasCompliantInput_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.HasCompliantInput*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_HasCompliantInput_NMF_Transformations_Core_Computation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.HasCompliantInput(NMF.Transformations.Core.Computation)">HasCompliantInput(Computation)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_HasCompliantInput_NMF_Transformations_Core_Computation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.HasCompliantInput(NMF.Transformations.Core.Computation)">
+  HasCompliantInput(Computation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value indicating whether the given computation has a compliant input to be instantiated by the current transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasCompliantInput(Computation computation)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></td>
-        <td><span class="parametername">computation</span></td>
-        <td><p>The computation that is a candidate for instantiation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True, if the input arguments match the input types of the current transformation rule, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_IsInstantiating_NMF_Transformations_Core_Computation_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.IsInstantiating(NMF.Transformations.Core.Computation)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L195">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>computation</code> <a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></dt>
+    <dd><p>The computation that is a candidate for instantiation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the input arguments match the input types of the current transformation rule, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_IsInstantiating_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsInstantiating*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_IsInstantiating_NMF_Transformations_Core_Computation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsInstantiating(NMF.Transformations.Core.Computation)">IsInstantiating(Computation)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_IsInstantiating_NMF_Transformations_Core_Computation_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.IsInstantiating(NMF.Transformations.Core.Computation)">
+  IsInstantiating(Computation)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether the current transformation rule can instantiate the output of the given computation</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsInstantiating(Computation computation)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></td>
-        <td><span class="parametername">computation</span></td>
-        <td><p>The computation that may be instantiated by the current rule</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True, if the computation instantiates the given computation, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L272">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>computation</code> <a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a></dt>
+    <dd><p>The computation that may be instantiated by the current rule</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the computation instantiates the given computation, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule)">MarkInstantiatingFor(GeneralTransformationRule)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule)">
+  MarkInstantiatingFor(GeneralTransformationRule)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Marks the current transformation rule instantiating for the specified rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void MarkInstantiatingFor(GeneralTransformationRule rule)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The base transformation rule</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_System_Predicate_NMF_Transformations_Core_Computation__.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule%2CSystem.Predicate%7BNMF.Transformations.Core.Computation%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L291">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The base transformation rule</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_System_Predicate_NMF_Transformations_Core_Computation__" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule,System.Predicate{NMF.Transformations.Core.Computation})">MarkInstantiatingFor(GeneralTransformationRule, Predicate&lt;Computation&gt;)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_System_Predicate_NMF_Transformations_Core_Computation__" data-uid="NMF.Transformations.Core.GeneralTransformationRule.MarkInstantiatingFor(NMF.Transformations.Core.GeneralTransformationRule,System.Predicate{NMF.Transformations.Core.Computation})">
+  MarkInstantiatingFor(GeneralTransformationRule, Predicate&lt;Computation&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Marks the current transformation rule instantiating for the specified rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void MarkInstantiatingFor(GeneralTransformationRule rule, Predicate&lt;Computation&gt; filter)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The base transformation rule</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a>&gt;</td>
-        <td><span class="parametername">filter</span></td>
-        <td><p>A method that filters the possible computations</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_System_Predicate_NMF_Transformations_Core_Computation___remarks">Remarks</h5>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The base transformation rule</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="NMF.Transformations.Core.Computation.html">Computation</a>&gt;</dt>
+    <dd><p>A method that filters the possible computations</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_MarkInstantiatingFor_NMF_Transformations_Core_GeneralTransformationRule_System_Predicate_NMF_Transformations_Core_Computation___remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>Note that in this version, the filter method is also responsible for checking the types!</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.RegisterDependencies%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L32">View Source</a>
-  </span>
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.RegisterDependencies*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies" data-uid="NMF.Transformations.Core.GeneralTransformationRule.RegisterDependencies">RegisterDependencies()</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies" data-uid="NMF.Transformations.Core.GeneralTransformationRule.RegisterDependencies">
+  RegisterDependencies()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Registers all the dependencies (both calling and non-calling) and additional configuration</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void RegisterDependencies()</code></pre>
   </div>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies_remarks">Remarks</h5>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_RegisterDependencies_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This method is called during initialization of the entire transformation and is independent of any transformation contexts. However, this method may rely on the <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html#NMF_Transformations_Core_GeneralTransformationRule_Transformation">Transformation</a>-property.</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule_Require_NMF_Transformations_Core_GeneralTransformationRule_.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule.Require(NMF.Transformations.Core.GeneralTransformationRule)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L237">View Source</a>
-  </span>
+
+
+
+
   <a id="NMF_Transformations_Core_GeneralTransformationRule_Require_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Require*"></a>
-  <h4 id="NMF_Transformations_Core_GeneralTransformationRule_Require_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Require(NMF.Transformations.Core.GeneralTransformationRule)">Require(GeneralTransformationRule)</h4>
+
+  <h3 id="NMF_Transformations_Core_GeneralTransformationRule_Require_NMF_Transformations_Core_GeneralTransformationRule_" data-uid="NMF.Transformations.Core.GeneralTransformationRule.Require(NMF.Transformations.Core.GeneralTransformationRule)">
+  Require(GeneralTransformationRule)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Requires the given transformation rule</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Require(GeneralTransformationRule rule)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></td>
-        <td><span class="parametername">rule</span></td>
-        <td><p>The transformation rule that should be required</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Transformations_Core_GeneralTransformationRule_Require_NMF_Transformations_Core_GeneralTransformationRule__remarks">Remarks</h5>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rule</code> <a class="xref" href="NMF.Transformations.Core.GeneralTransformationRule.html">GeneralTransformationRule</a></dt>
+    <dd><p>The transformation rule that should be required</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_Transformations_Core_GeneralTransformationRule_Require_NMF_Transformations_Core_GeneralTransformationRule__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This version Always takes the input parameter as input for the dependent transformations. Thus, this method will throw an exception, if the types do not match</p>
 </div>
 
-</article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Transformations_Core_GeneralTransformationRule.md&amp;value=---%0Auid%3A%20NMF.Transformations.Core.GeneralTransformationRule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L13" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Transformations/Transformations.Core/Core/GeneralTransformationRule.cs/#L13" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

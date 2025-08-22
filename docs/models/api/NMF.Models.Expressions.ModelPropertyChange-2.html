@@ -1,96 +1,143 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title>Class ModelPropertyChange&lt;TClass, TProperty&gt; </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ModelPropertyChange&lt;TClass, TProperty&gt; ">
-    
-    <meta name="description" content="The base class for simple property access proxies targeting a specific change event instead of the generic property changed event">
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../../styles/docfx.css">
-      <link rel="stylesheet" href="../../styles/main.css">
-      <meta property="docfx:navrel" content="../../toc.html">
-      <meta property="docfx:tocrel" content="../toc.html">
-    
-    
-    
+      
+      <meta name="description" content="The base class for simple property access proxies targeting a specific change event instead of the generic property changed event">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NMF.Models.Expressions.ModelPropertyChange`2">
+
+        <article data-uid="NMF.Models.Expressions.ModelPropertyChange`2">
 
 
 
-  <h1 id="NMF_Models_Expressions_ModelPropertyChange_2" data-uid="NMF.Models.Expressions.ModelPropertyChange`2" class="text-break">Class ModelPropertyChange&lt;TClass, TProperty&gt;</h1>
-  <div class="markdown level0 summary"><p>The base class for simple property access proxies targeting a specific change event instead of the generic property changed event</p>
+  <h1 id="NMF_Models_Expressions_ModelPropertyChange_2" data-uid="NMF.Models.Expressions.ModelPropertyChange`2" class="text-break">
+Class ModelPropertyChange&lt;TClass, TProperty&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Models.html">Models</a>.<a class="xref" href="NMF.Models.Expressions.html">Expressions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NMF.Models.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The base class for simple property access proxies targeting a specific change event instead of the generic property changed event</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ModelPropertyChange&lt;TClass, TProperty&gt;</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ModelPropertyChange&lt;TClass, TProperty&gt; : INotifyReversableExpression&lt;TProperty&gt;, INotifyExpression&lt;TProperty&gt;, INotifyExpression, INotifyReversableValue&lt;TProperty&gt;, INotifyValue&lt;TProperty&gt;, INotifiable, IDisposable where TClass : INotifyPropertyChanged</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableExpression-1.html">INotifyReversableExpression</a>&lt;TProperty&gt;</div>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</div>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression.html">INotifyExpression</a></div>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableValue-1.html">INotifyReversableValue</a>&lt;TProperty&gt;</div>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyValue-1.html">INotifyValue</a>&lt;TProperty&gt;</div>
-    <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TClass</code></dt>
+    <dd><p>The member type for the property</p>
+</dd>
+    <dt><code>TProperty</code></dt>
+    <dd><p>The property type</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ModelPropertyChange&lt;TClass, TProperty&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableExpression-1.html">INotifyReversableExpression</a>&lt;TProperty&gt;</div>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</div>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression.html">INotifyExpression</a></div>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableValue-1.html">INotifyReversableValue</a>&lt;TProperty&gt;</div>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyValue-1.html">INotifyValue</a>&lt;TProperty&gt;</div>
+      <div><a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -112,708 +159,669 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NMF.html">NMF</a>.<a class="xref" href="NMF.Models.html">Models</a>.<a class="xref" href="NMF.Models.Expressions.html">Expressions</a></h6>
-  <h6><strong>Assembly</strong>: NMF.Models.dll</h6>
-  <h5 id="NMF_Models_Expressions_ModelPropertyChange_2_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ModelPropertyChange&lt;TClass, TProperty&gt; : INotifyReversableExpression&lt;TProperty&gt;, INotifyExpression&lt;TProperty&gt;, INotifyExpression, INotifyReversableValue&lt;TProperty&gt;, INotifyValue&lt;TProperty&gt;, INotifiable, IDisposable where TClass : INotifyPropertyChanged</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TClass</span></td>
-        <td><p>The member type for the property</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TProperty</span></td>
-        <td><p>The property type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2__ctor__0_System_String_.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.%23ctor(%600%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L29">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2__ctor_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.#ctor*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2__ctor__0_System_String_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.#ctor(`0,System.String)">ModelPropertyChange(TClass, string)</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2__ctor__0_System_String_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.#ctor(`0,System.String)">
+  ModelPropertyChange(TClass, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a proxy for the given model instance</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected ModelPropertyChange(TClass modelElement, string propertyName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TClass</span></td>
-        <td><span class="parametername">modelElement</span></td>
-        <td><p>the model element</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">propertyName</span></td>
-        <td><p>The property name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_CanBeConstant.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.CanBeConstant%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L44">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelElement</code> <span class="xref">TClass</span></dt>
+    <dd><p>the model element</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The property name</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_CanBeConstant_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.CanBeConstant*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_CanBeConstant" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.CanBeConstant">CanBeConstant</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_CanBeConstant" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.CanBeConstant">
+  CanBeConstant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether the expression can be replaced by a constant expression</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CanBeConstant { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Dependencies.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Dependencies%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L109">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Dependencies_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dependencies*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Dependencies" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dependencies">Dependencies</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Dependencies" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dependencies">
+  Dependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Nodes that notify this node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;INotifiable&gt; Dependencies { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_ExecutionMetaData.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.ExecutionMetaData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L118">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_ExecutionMetaData_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ExecutionMetaData*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_ExecutionMetaData" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ExecutionMetaData">ExecutionMetaData</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_ExecutionMetaData" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ExecutionMetaData">
+  ExecutionMetaData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Used by the execution engine during incremental execution.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ExecutionMetaData ExecutionMetaData { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.ExecutionMetaData.html">ExecutionMetaData</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_IsConstant.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.IsConstant%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L55">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.ExecutionMetaData.html">ExecutionMetaData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_IsConstant_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsConstant*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_IsConstant" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsConstant">IsConstant</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_IsConstant" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsConstant">
+  IsConstant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether the current expression is a constant</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsConstant { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_IsParameterFree.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.IsParameterFree%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L66">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_IsParameterFree_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsParameterFree*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_IsParameterFree" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsParameterFree">IsParameterFree</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_IsParameterFree" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsParameterFree">
+  IsParameterFree
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether the current expression contains parameters</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsParameterFree { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_IsReversable.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.IsReversable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L97">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_IsReversable_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsReversable*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_IsReversable" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsReversable">IsReversable</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_IsReversable" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.IsReversable">
+  IsReversable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Checks whether it is allowed to set values</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsReversable { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_ModelElement.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.ModelElement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L22">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_ModelElement_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ModelElement*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_ModelElement" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ModelElement">ModelElement</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_ModelElement" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ModelElement">
+  ModelElement
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The model element</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TClass ModelElement { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TClass</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Successors.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Successors%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L106">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TClass</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Successors_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Successors*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Successors" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Successors">Successors</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Successors" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Successors">
+  Successors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The nodes that will get notified by this node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISuccessorList Successors { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.ISuccessorList.html">ISuccessorList</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Value.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Value%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L77">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.ISuccessorList.html">ISuccessorList</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Value_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Value*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Value" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Value">Value</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Value" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the current value</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract TProperty Value { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_ValueObject.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.ValueObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L86">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TProperty</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_ValueObject_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ValueObject*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_ValueObject" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ValueObject">ValueObject</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_ValueObject" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ValueObject">
+  ValueObject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the current value as object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public object ValueObject { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_NMF_Expressions_INotifiable_NMF_Expressions_INotifiable__.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.ApplyParameters(System.Collections.Generic.IDictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Collections.Generic.IDictionary%7BNMF.Expressions.INotifiable%2CNMF.Expressions.INotifiable%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L126">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ApplyParameters*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_NMF_Expressions_INotifiable_NMF_Expressions_INotifiable__" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ApplyParameters(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{NMF.Expressions.INotifiable,NMF.Expressions.INotifiable})">ApplyParameters(IDictionary&lt;string, object&gt;, IDictionary&lt;INotifiable, INotifiable&gt;)</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_NMF_Expressions_INotifiable_NMF_Expressions_INotifiable__" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ApplyParameters(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{NMF.Expressions.INotifiable,NMF.Expressions.INotifiable})">
+  ApplyParameters(IDictionary&lt;string, object&gt;, IDictionary&lt;INotifiable, INotifiable&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Applies the given set of parameters to the expression</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public INotifyExpression&lt;TProperty&gt; ApplyParameters(IDictionary&lt;string, object&gt; parameters, IDictionary&lt;INotifiable, INotifiable&gt; trace)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
-        <td><span class="parametername">parameters</span></td>
-        <td><p>A set of parameter values</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>, <a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</td>
-        <td><span class="parametername">trace</span></td>
-        <td><p>A trace to make sure parameters are only applied once for every DDG node</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</td>
-        <td><p>A new expression with all parameter placeholders replaced with the parameter values</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_NMF_Expressions_INotifiable_NMF_Expressions_INotifiable___remarks">Remarks</h5>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd><p>A set of parameter values</p>
+</dd>
+    <dt><code>trace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>, <a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>&gt;</dt>
+    <dd><p>A trace to make sure parameters are only applied once for every DDG node</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</dt>
+    <dd><p>A new expression with all parameter placeholders replaced with the parameter values</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_Models_Expressions_ModelPropertyChange_2_ApplyParameters_System_Collections_Generic_IDictionary_System_String_System_Object__System_Collections_Generic_IDictionary_NMF_Expressions_INotifiable_NMF_Expressions_INotifiable___remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>In case that the current expression is parameter free, it simply returns itself</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Attach.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Attach%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L134">View Source</a>
-  </span>
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Attach_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Attach*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Attach" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Attach">Attach()</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Attach" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Attach">
+  Attach()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Detach a listener to this value</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Attach()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Detach.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Detach%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L142">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Detach_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Detach*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Detach" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Detach">Detach()</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Detach" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Detach">
+  Detach()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Attach a listener to this value</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Detach()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Dispose.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L157">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose">Dispose()</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Dispose(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L167">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose_System_Boolean_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose(System.Boolean)">Dispose(bool)</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Dispose_System_Boolean_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Disposes the current object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">disposing</span></td>
-        <td><p>True, if managed resources should disposed, otherwise false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Notify(System.Collections.Generic.IList%7BNMF.Expressions.INotificationResult%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L173">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if managed resources should disposed, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Notify_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Notify*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})">Notify(IList&lt;INotificationResult&gt;)</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})">
+  Notify(IList&lt;INotificationResult&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets called when one of the dependencies signals a notification.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public INotificationResult Notify(IList&lt;INotificationResult&gt; sources)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotificationResult.html">INotificationResult</a>&gt;</td>
-        <td><span class="parametername">sources</span></td>
-        <td><p>Contains information about what triggered this notification.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.INotificationResult.html">INotificationResult</a></td>
-        <td><p>An object describing the changes that happened in this notification.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_Reduce.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.Reduce%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L151">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sources</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.INotificationResult.html">INotificationResult</a>&gt;</dt>
+    <dd><p>Contains information about what triggered this notification.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.INotificationResult.html">INotificationResult</a></dt>
+    <dd><p>An object describing the changes that happened in this notification.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_Models_Expressions_ModelPropertyChange_2_Reduce_" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Reduce*"></a>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_Reduce" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Reduce">Reduce()</h4>
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_Reduce" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.Reduce">
+  Reduce()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Simplifies the current expression</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public INotifyExpression&lt;TProperty&gt; Reduce()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</td>
-        <td><p>A simpler expression repüresenting the same incremental value (e.g. a constant if this expression can be constant), otherwise itself</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="events">Events
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2_ValueChanged.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602.ValueChanged%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L123">View Source</a>
-  </span>
-  <h4 id="NMF_Models_Expressions_ModelPropertyChange_2_ValueChanged" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ValueChanged">ValueChanged</h4>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression</a>&lt;TProperty&gt;</dt>
+    <dd><p>A simpler expression repüresenting the same incremental value (e.g. a constant if this expression can be constant), otherwise itself</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="NMF_Models_Expressions_ModelPropertyChange_2_ValueChanged" data-uid="NMF.Models.Expressions.ModelPropertyChange`2.ValueChanged">
+  ValueChanged
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets fired when the value changed</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event EventHandler&lt;ValueChangedEventArgs&gt; ValueChanged</code></pre>
   </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.ValueChangedEventArgs.html">ValueChangedEventArgs</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableExpression-1.html">INotifyReversableExpression&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression-1.html">INotifyExpression&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifyExpression.html">INotifyExpression</a>
-  </div>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifyReversableValue-1.html">INotifyReversableValue&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifyValue-1.html">INotifyValue&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="../../expressions/api/NMF.Expressions.INotifiable.html">INotifiable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
-  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="../../expressions/api/NMF.Expressions.ValueChangedEventArgs.html">ValueChangedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/new/main/apiSpec/new?filename=NMF_Models_Expressions_ModelPropertyChange_2.md&amp;value=---%0Auid%3A%20NMF.Models.Expressions.ModelPropertyChange%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L14" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMF/blob/main/Models/Models/ModelPropertyChange.cs/#L14" class="edit-link">Edit this page</a>
         </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
