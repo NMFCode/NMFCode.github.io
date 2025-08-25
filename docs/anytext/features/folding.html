@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> </title>
+      <title>Folding </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" ">
+      <meta name="title" content="Folding ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,12 +81,12 @@
         </div>
 
         <article data-uid="">
+<h1 id="folding">Folding</h1>
 
-<h2 id="folding">Folding</h2>
 <p>The <a href="https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_foldingRange">Folding Range Request</a> is used by the client to ask where in a document the editor can offer to fold a range of text.</p>
-<h3 id="default-implementation-in-anytext">Default Implementation in AnyText</h3>
+<h2 id="default-implementation-in-anytext">Default Implementation in AnyText</h2>
 <p>By default, AnyText folds document symbols. That means, if a rule is <a href="symbols.html">marked as a document symbol</a>, AnyText creates a folding range of that document symbol, if the document symbol spans multiple lines.</p>
-<h3 id="customization">Customization</h3>
+<h2 id="customization">Customization</h2>
 <p>Folding ranges are customized by overriding methods of the class <a href="../api/NMF.AnyText.Rules.Rule.html">Rule</a>. In particular, the method <em>IsFoldingRange</em> determines wether an application of this rule is a folding range and because LSP has a dedicated support for imports, there is another dedicated method <em>IsImports</em> to determine whether the rule application counts as an import statement.</p>
 <p>The type of the folding can be specified by overriding the method <em>HasFoldingKind</em>.</p>
 

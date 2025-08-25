@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> </title>
+      <title>Formatting Instructions </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" ">
+      <meta name="title" content="Formatting Instructions ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -81,8 +81,8 @@
         </div>
 
         <article data-uid="">
+<h1 id="formatting-instructions">Formatting Instructions</h1>
 
-<h2 id="formatting-instructions">Formatting Instructions</h2>
 <p>Formatting instructions in AnyText are used to control how a given parse tree should be printed to text. As soon as the pretty-printer has finished to process a rule application from a parse tree, all formatting instructions corresponding to the rule application are executed. Formatting instructions are stored at the caller of a rule (for instance in a sequence or a choice) such that the same rule can cause different formatting instructions depending on the context in which a rule was used in the parsing process.</p>
 <p>AnyText currently supports the following formatting instructions:</p>
 <ul>
@@ -91,12 +91,12 @@
 <li><strong>Indent</strong> <code>&lt;ind&gt;</code></li>
 <li><strong>Unindent</strong> <code>&lt;unind&gt;</code></li>
 </ul>
-<h3 id="avoid-space">Avoid Space</h3>
+<h2 id="avoid-space">Avoid Space</h2>
 <p>When formatting a document, AnyText will normally insert a single white space between literal tokens. If a formatting instruction to avoid a space is used, this additional space is suppressed. Note that often multiple rules end at the same location in the text and it does not matter which rule issued a formatting instruction to avoid a space. If any, then the white space is suppressed.</p>
 <p>The formatting instruction to avoid a space is idempotent: it only sets a flag in the pretty printer and if that flag is already set, another avoid space instruction has no effect.</p>
-<h3 id="newline">Newline</h3>
+<h2 id="newline">Newline</h2>
 <p>A newline formatting instruction does what it says, it inserts a line break. The new line is indented immediately with the current indentation level. The characters used for indentation are provided by the outside. Clients such as Visual Studio Code operate with default indentation strings such as a double white space or tab character.</p>
-<h3 id="indent--unindent">Indent / Unindent</h3>
+<h2 id="indent--unindent">Indent / Unindent</h2>
 <p>Thes two formatting instructions do not have an immediate effect on the printed result but increase or decrease the indentation level.</p>
 <p>The indentation level cannot be decreased lower than zero but on the other hand has no upper limit.</p>
 

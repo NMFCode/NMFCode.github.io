@@ -5,7 +5,7 @@ Studio Code directly. It can be useful either so experience the amount
 of editor support gained by AnyText, or if you want to try out the code
 generator to quickstart own AnyText projects.
 
-[!Installing the extension in Visual Studio Code](images/installVsix.png)
+![Installing the extension in Visual Studio Code](images/installVsix.png)
 
 The installation of the extension is depicted above, taken from [StackOverflow](https://stackoverflow.com/questions/42017617/how-to-install-vs-code-extension-manually).
 

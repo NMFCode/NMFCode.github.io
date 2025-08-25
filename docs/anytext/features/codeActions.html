@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> </title>
+      <title>Code Actions </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" ">
+      <meta name="title" content="Code Actions ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,12 +81,12 @@
         </div>
 
         <article data-uid="">
+<h1 id="code-actions">Code Actions</h1>
 
-<h2 id="code-actions">Code Actions</h2>
 <p><a href="https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_codeAction">Code Actions</a> allow the client to execute an action based on a given part of the text.</p>
-<h3 id="default-implementation-in-anytext">Default Implementation in AnyText</h3>
+<h2 id="default-implementation-in-anytext">Default Implementation in AnyText</h2>
 <p>By default, no code actions are provided.</p>
-<h3 id="customizations">Customizations</h3>
+<h2 id="customizations">Customizations</h2>
 <p>Code actions in AnyText are again resolved by the rules of rule applications. Thus, when the user selects some text, AnyText goes up in the parse tree and collects code actions along the way. To denote that a rule offers a code action, the property <em>CodeActions</em> can be overridden.</p>
 <p>The following demonstrates a code action to insert a comment header.</p>
 <pre><code class="lang-csharp">protected override IEnumerable&lt;CodeActionInfo&lt;Metamodel.Grammar&gt;&gt; CodeActions =&gt; new List&lt;CodeActionInfo&lt;Metamodel.Grammar&gt;&gt;

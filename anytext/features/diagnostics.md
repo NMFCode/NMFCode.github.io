@@ -1,12 +1,12 @@
-## Diagnostics
+# Diagnostics
 
 [Diagnostics](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_publishDiagnostics) are sent in LSP through a separate message sent by the server to the client in order to update any problems related to a given text.
 
-### Default Implementation in AnyText
+## Default Implementation in AnyText
 
 By default, AnyText uses diagnostics to inform a user about parse problems and failed reference resolutions.
 
-### Customization
+## Customization
 
 Diagnostics can be customized e.g. through custom validation messages. AnyText currently supports two kinds of validation: batch validation and incremental validation.
 

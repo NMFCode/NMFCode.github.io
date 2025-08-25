@@ -1,12 +1,12 @@
-## Code Actions
+# Code Actions
 
 [Code Actions](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_codeAction) allow the client to execute an action based on a given part of the text.
 
-### Default Implementation in AnyText
+## Default Implementation in AnyText
 
 By default, no code actions are provided.
 
-### Customizations
+## Customizations
 
 Code actions in AnyText are again resolved by the rules of rule applications. Thus, when the user selects some text, AnyText goes up in the parse tree and collects code actions along the way. To denote that a rule offers a code action, the property *CodeActions* can be overridden.
 
