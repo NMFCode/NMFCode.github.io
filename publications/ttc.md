@@ -1,14 +1,6 @@
 Transformtion Tool Contest
 ---
 
-### 2024
-
-G. Hinkel: **[Modeling a Warehouse system using refinements and decomposition: A
-contribution to the MULTI Warehouse challenge](https://doi.org/10.1145/3652620.3688209)** in _Proceedings of the ACM/IEEE 27th International Conference on Model
-Driven Engineering Languages and Systems, MODELS Companion 2024,
-Linz, Austria, September 22-27, 2024_, pp. 770-779, 2024
-**DOI:** [10.1145/3652620.3688209](https://dx.doi.org/10.1145/3652620.3688209)  
-
 
 
 ### 2023
@@ -63,18 +55,18 @@ the 2018 Software Technologies: Applications and Foundations, TTC@STAF
 
 ### 2017
 
-G. Hinkel: **[The TTC 2017 Outage System Case for Incremental Model Views](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017d.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
+G. Hinkel: **[The TTC 2017 Outage System Case for Incremental Model Views](https://ceur-ws.org/Vol-2026/paper1.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
 
-G. Hinkel: **[An NMF solution to the Smart Grid Case at the TTC 2017](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017e.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
+G. Hinkel: **[An NMF solution to the Smart Grid Case at the TTC 2017](https://ceur-ws.org/Vol-2026/paper5.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
 
-G. Hinkel: **[An NMF solution to the Families to Persons case at the TTC 2017](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017f.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
+G. Hinkel: **[An NMF solution to the Families to Persons case at the TTC 2017](https://ceur-ws.org/Vol-2026/paper6.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
 
-G. Hinkel: **[An NMF solution to the State Elimination Case at the TTC 2017](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017g.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
+G. Hinkel: **[An NMF solution to the State Elimination Case at the TTC 2017](https://ceur-ws.org/Vol-2026/paper7.pdf)** in _Proceedings of the 10th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2017) federation of conferences_, July. 2017
 
 
 ### 2016
 
-G. Hinkel: **[An NMF solution to the Class Responsibility Assignment Case](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2016g.pdf)** in _Proceedings of the 9th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2015) federation of conferences_, July. 2016
+G. Hinkel: **[An NMF solution to the Class Responsibility Assignment Case](https://ceur-ws.org/Vol-1758/paper3.pdf)** in _Proceedings of the 9th Transformation Tool Contest, a part of the Software Technologies: Applications and Foundations (STAF 2015) federation of conferences_, July. 2016
 
 
 ### 2015
@@ -86,11 +78,11 @@ G. Hinkel: **[An NMF Solution to the Java Refactoring Case](http://ceur-ws.org/V
 
 ### 2013
 
-G. Hinkel, T. Goldschmidt, and L. Happe: **[An NMF solution for the Petri Nets to State Charts case study at the TTC 2013](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2013b.pdf)** in _Proceedings Sixth Transformation Tool Contest, TTC 2013, Budapest, Hungary, 19-20 June, 2013._, pp. 95-100, 2013
+G. Hinkel, T. Goldschmidt, and L. Happe: **[An NMF solution for the Petri Nets to State Charts case study at the TTC 2013](https://doi.org/10.4204/EPTCS.135.12)** in _Proceedings Sixth Transformation Tool Contest, TTC 2013, Budapest, Hungary, 19-20 June, 2013._, pp. 95-100, 2013
 **DOI:** [10.4204/EPTCS.135.12](https://dx.doi.org/10.4204/EPTCS.135.12)  
 
 
-G. Hinkel, T. Goldschmidt, and L. Happe: **[An NMF solution for the Flowgraphs case at the TTC 2013](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2013c.pdf)** in _Proceedings Sixth Transformation Tool Contest, TTC 2013, Budapest, Hungary, 19-20 June, 2013._, pp. 37-42, 2013
+G. Hinkel, T. Goldschmidt, and L. Happe: **[An NMF solution for the Flowgraphs case at the TTC 2013](https://doi.org/10.4204/EPTCS.135.5)** in _Proceedings Sixth Transformation Tool Contest, TTC 2013, Budapest, Hungary, 19-20 June, 2013._, pp. 37-42, 2013
 **DOI:** [10.4204/EPTCS.135.5](https://dx.doi.org/10.4204/EPTCS.135.5)  
 
 

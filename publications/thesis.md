@@ -10,5 +10,5 @@ G. Hinkel: **Implicit Incremental Model Analyses and Transformations**, PhD thes
 
 ### 2013
 
-G. Hinkel: **[An approach to maintainable model transformations using an internal DSL](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2013a.pdf)**, Master's thesis, Karlsruhe Institute of Technology, 2013
+G. Hinkel: **An approach to maintainable model transformations using an internal DSL**, Master's thesis, Karlsruhe Institute of Technology, 2013
 

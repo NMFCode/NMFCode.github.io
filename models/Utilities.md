@@ -7,4 +7,4 @@ NMF Utilities is a very small library that provides some cross-cutting functiona
 * Functionality to obtain a Pascal cased or Camel cased version of a string
 * Operators to compute the transitive-reflexive closure
 
-To use this functionality, one simply has to add a reference to **NMF.Utilities.dll** and add a namespace import (using) statement to _NMF.Utilities_. 
+To use this functionality, one simply has to add a reference to **NMF.Utilities.dll** and add a namespace import (using) statement to _NMF.Utilities_.

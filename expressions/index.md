@@ -1,5 +1,7 @@
 # NMF Expressions
 
+## First Example
+
 NMF Expressions is a framework for incremental expression evaluation. Instead of executing a function, it returns an observable value, basically an object that throws an event whenever the result of that function changes. Observable Expressions are based on Linq Expressions and are thus only supported for single-line lambda expressions that do not have side-effects.
 
 >
@@ -14,11 +16,11 @@ person.Address.Add(new Address() {...});
 
 NMF Expressions is particularly good at letting you customize the incrementalization and provide custom incrementalizations for commonly used functions.
 
-# NMF Expressions Linq
+## NMF Expressions Linq
 
 NMF Expressions Linq is a new Linq implementation that results in an enumerable that provides an event to notify clients whenever the results of the Linq query change. Besides index-based operations (overloads of e.g. Select and Where that take an index parameter as well as Take, Skip), almost the entire Standard Query Operations Library is implemented. The exceptions to this include GroupJoin, some overloads of GroupBy, Single and Last. FirstOrDefault is implemented. Aggregators do not throw exceptions if collections are emty as collections are allowed to be emptied during status updates. This may happen for example as part of a reset of a child collection for e,g. Concat.
 
-NMF Expressions Linq is based on a newly introduced monad INotifyEnumerable that is joint of IEnumerable and INotifyCollectionChanged that further knows the parameterless methods Attach() and Detach() to attach or detach from or to an object model. If attached, the implementations will collect any changes tracable by INotifyCollectionChanged, INotifyPropertyChanged or custom proxies. In order to not interfere with the Linq implementation from the System.Linq namespace, NMF Expressions Linq does include a unit function called WithUpdates that generates an adapter to INotifyEnumerable. When using this adapter, the compiler will automatically choose a different set of extension methods enabling the query syntax, so you can write code as intuitive as this:
+NMF Expressions Linq is based on a newly introduced monad _INotifyEnumerable_ that is joint of _IEnumerable_ and _INotifyCollectionChanged_ that further knows the parameterless methods _Attach()_ and _Detach()_ to attach or detach from or to an object model. If attached, the implementations will collect any changes tracable by _INotifyCollectionChanged_, _INotifyPropertyChanged_ or custom proxies. In order to not interfere with the Linq implementation from the System.Linq namespace, NMF Expressions Linq does include a unit function called WithUpdates that generates an adapter to _INotifyEnumerable_. When using this adapter, the compiler will automatically choose a different set of extension methods enabling the query syntax, so you can write code as intuitive as this:
 
 >
 ```csharp
@@ -38,3 +40,13 @@ employees.Add(name: "Joe", workItems: 3, team: "A");
 ```
 
 All you have to do for this magic to work is really just including a new using statements to import NMF.Expressions.Linq and of course download and add a package reference to NMF-Expressions.
+
+## Publications
+
+If you want to read more about NMF Expressions, we recommend [the article about NMF Expressions in Software & Systems Modeling](https://dx.doi.org/10.1007/s10270-019-00719-y).
+
+Apart from that, you can also start with the following papers:
+
+- [A cross-technology benchmark for incremental graph queries](https://doi.org/10.1007/s10270-021-00927-5)
+- [An NMF Solution to the TTC 2018 Social Media Case](http://ceur-ws.org/Vol-2310/paper6.pdf)
+- [An NMF Solution to the TTC Train Benchmark Case](http://ceur-ws.org/Vol-1524/paper8.pdf)

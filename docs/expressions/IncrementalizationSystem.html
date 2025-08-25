@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Incrementalization Systems </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Incrementalization Systems ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/IncrementalizationSystem.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="incrementalization-systems">Incrementalization Systems</h1>
+
+<p>The process of turning a lambda expression into an notifiable expression is called incrementalization and is abstracted in NMF behind the interface <strong><a href="api/NMF.Expressions.INotifySystem.html">INotifySystem</a></strong>. The default implementation of such an incrementalization system is the <a href="api/NMF.Expressions.InstructionLevelNotifySystem.html">Instruction-level Incrementalization</a> that turns every node in the abstract syntax tree into a node in the dynamic dependency graph.</p>
+<p>However, this is not the only implementation provided by NMF. However, the other implementations rely on objects being models such that NMF can understand the hierarchy.</p>
+<h2 id="promotion-notify-system">Promotion Notify System</h2>
+<p>An alternative incrementalization system is the <a href="api/NMF.Expressions.PromotionNotifySystem.html">Promotion Notify System</a>. The idea here is that the incrementalization system attempts to obtain all necessary events that required elements have changed from the parameters. If this cannot be done, required expressions are promoted to arguments.</p>
+<p>For example, consider the following hypothetical example of a function that returns the full name of a person:</p>
+<pre><code class="lang-csharp">string GetFullName(IPerson p) =&gt; $&quot;{p.Name} {p.Family.Name}&quot;;
+</code></pre>
+<p>Here, the name of a person is an attribute and hence, changes to this attribute could be listened to by registering to the <em>PropertyChanged</em> event of the <em>INotifyPropertyChanged</em> interface.</p>
+<p>However, this unfortunately does not work for the expression <code>p.Family.Name</code> because <em>INotifyPropertyChanged</em> allows to register a hook when the <em>Family</em> changes, but not when the <em>Name</em> of the current family changes.</p>
+<p>The solution of the promotion notify system is to promote the expression <code>p.Family.Name</code> to a parameter. That is, a helper function <code>GetFullNameHelper(IPerson p, IFamily f)</code> is constructed such that <code>GetFullName(p) =&gt; GetFullNameHelper(p, p.Family)</code>. For this helper function, we now have that we can recalculate the entire function whenever the <em>Name</em> of the parameter <em>p</em> changes or the <em>Family</em> of parameter <em>f</em> changes. The deconstruction <code>GetFullName(p) =&gt; GetFullNameHelper(p, p.Family)</code> is incrementalized using instruction-level incrementalization.</p>
+<p>NMF Expression is aware that changes are propagated along compositions through the <em>BubbledChange</em> event. That is, if the <em>Family</em> reference was a composition, the helper function would not be necessary because any changes to the name of the family could also be fetched by listening to the <em>BubbledChange</em> event of <em>p</em>. However, modeling the family of a person as a composition would be a flaw because the container is unique and families could therefore only consist of a single person.</p>
+<p>Parameter Promotion is designed to support analyses that consist of many stateless operators such as arithmetics or string concatenations.</p>
+<h2 id="tree-extension-notify-system">Tree Extension Notify System</h2>
+<p>The <a href="api/NMF.Expressions.TreeExtensionNotifySystem.html">Tree Extension Notify System</a> works similar to the Parameter Promotion Notify System. However, instead of introducing a new parameter, the Tree Notify System goes up in the model hierarchy until it finds that all possible changes that could lead to the result of a method to change are captured by the <em>BubbledChange</em> event.</p>
+<h2 id="configured-notify-system">Configured Notify System</h2>
+<p>The <a href="api/NMF.Expressions.ConfiguredNotifySystem.html">Configured Notify System</a> uses a configuration file to decide which incrementalization strategy to use for a given method.</p>
+<h2 id="recording-notify-system">Recording Notify System</h2>
+<p>The <a href="api/NMF.Expressions.RecordingNotifySystem.html">Recording Notify System</a> acts as a proxy that executes a default strategy underneath but records the methods for which an incrementalization was requested in order to decide the incrementalization through configuration in the future.</p>
+<h2 id="choosing-a-notify-system">Choosing a Notify System</h2>
+<p>One can choose the incrementalization system by setting the property <em>DefaultSystem</em> of the class <a href="api/NMF.Expressions.NotifySystem.html">NotifySystem</a> appropriately.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/IncrementalizationSystem.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

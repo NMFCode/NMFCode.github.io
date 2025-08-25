@@ -10,6 +10,7 @@ If the video above does not work, [here is a direct link](https://www.youtube.co
 
 There are a range of NuGet-packages available that bundle some of the functionality of NMF. These packages are potentially more stable than the source code, but may not contain the latest features of NMF.
 The packages are:
+
 * NMF-Expressions [![Downloads](https://img.shields.io/nuget/dt/NMF-Expressions.svg)](https://www.nuget.org/packages/NMF-Expressions/): Contains the NMF library for incremental computation. This package has no other dependencies and can even be used independently of the modeling framework.
 * NMF-Repository [![Downloads](https://img.shields.io/nuget/dt/NMF-Repository.svg)](https://www.nuget.org/packages/NMF-Repository/): Conatins the repository management of NMF (depends on NMF-Expressions)
 * NMF-Basics [![Downloads](https://img.shields.io/nuget/dt/NMF-Basics.svg)](https://www.nuget.org/packages/NMF-Basics/): Contains the latter two plus a code generator to generate model representation code from any Ecore or NMeta metamodel. The code generator integrates with the Nuget Package Console.
@@ -30,15 +31,13 @@ Further, the [journal publications](publications/article.md) contain rich docume
 
 Detailed project information to the sub-projects of NMF can be found on the wiki pages to these projects:
 
-* [Models](models/index.md)
-* [Transformations](transformations/index.md)
-* [Expressions](expressions/index.md)
-* [Synchronizations](synchronizations/index.md)
-* [Optimizations](optimizations/index.md)
-* [Interop](interop/index.md)
-* [Collections](collections/index.md)
-* [AnyText](anytext/index.md)
-* [GLSP](glsp/index.md)
+* [Models](models/index.md) (model representation, change recording, hashing, etc.)
+* [Transformations](transformations/index.md) (simple, unidirectional transformations)
+* [Expressions](expressions/index.md) (change propagation, queries)
+* [Synchronizations](synchronizations/index.md) (bidirectional or incremental transformations)
+* [AnyText](anytext/index.md) (textual DSLs)
+* [GLSP](glsp/index.md) (graphical DSLs)
+* [Interop](interop/index.md) (interoperability with EMF)
 
 ## Publications
 
@@ -47,8 +46,6 @@ The publications about NMF are available on [a separate section](publications/in
 ## Roadmap
 
 At the moment, the lack of documentation is the biggest hurdle, so work in the near future will go either into resolving issues or adding documentation. Any help here is welcome! Further points of development will be a benchmark of the parallel change propagation and testing of dynamic deep modelling support.
-
-NMF has been the PhD project of Georg Hinkel. Further development is done at the moment rather as kind of a hobby.
 
 ## Contribute
 

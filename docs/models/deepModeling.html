@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Deep Modeling </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Deep Modeling ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/models/deepModeling.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="deep-modeling">Deep Modeling</h1>
+
+<p>This page is taken from the paper <a href="https://doi.org/10.1145/3652620.3688209">Modeling a Warehouse system using refinements and decomposition: A contribution to the MULTI Warehouse challenge</a>.</p>
+<p>Many domains include concepts that have a non-transitive <em>is-a</em>
+relationship. A mobile phone device is a mobile phone and mobile
+phone is a product type but the actual phone is not a product type.
+In traditional two-level modeling, this fact is ignored and hence
+often mitigated by highly complex constraints and unnecessary
+generic models, leading to a high accidental complexity.</p>
+<p>To overcome this limitation, <a href="https://dx.doi.org/10.1007/s10270-018-0701-6">NMF supports deep modeling through refinements and decomposition</a>.
+The core idea is to use the ability of the
+class <em>Class</em> that its instances can be instantiated in a broader sense,
+i.e. whenever an element is a clabject. If needed, we refine and
+decompose the features of <em>Class</em> in order to describe these features
+in domain-specific terms rather than general language terminology.
+The main advantage of this concept is that deep modeling can be
+implement as a slight, largely compatible extension to an EMOF-like
+meta-metamodel.</p>
+<p>Instantiation relationships can be modeled using structural decompositions and refinements. For us, transitivity is the key difference
+between the two <em>is-a</em> relationships specialization (which is transitive) and instantiation (which is not). This difference is
+tremendously important for NMF.</p>
+<p>Because <em>Class</em> is an element that describes the modeling language,
+the instantiation relationship of <em>Class</em> is often called a linguistic
+instantiation meanwhile instantiation relationships between
+domain elements are referred to as ontological instantiation. The
+core idea of the approach is to reuse this characteristic of <em>Class</em> in
+a broader scope and therefore tear down the difference between
+linguistic and ontological instantiation by making the latter a refinement of the former.</p>
+<p>Whenever we conceptually face a clabject, an element that is
+simultaneously a class and an object, the type of this element
+when considered an object must inherit from <em>Class</em>. This way,
+we inherit the ability that its instances (i.e., the clabjects) can be
+instantiated again. This instantiation is a non-transitive relationship
+and therefore satisfies the requirements we have for deep modeling.</p>
+<p>Remarkably, inheriting from <em>Class</em> in order to turn a specific
+model element to a clabject is only required if the modeling levels
+to be crossed really are instantiation levels. In case there are just
+specialization levels such as in the case of the <a href="structuralDecomposition.html">vehicles example</a>,
+inheriting from <em>Class</em> is a rather bad idea as it disrespects the
+transitive nature of specialization.</p>
+<p>Instantiation typically means that the properties that one model element has depend on another model element.
+This is for instance common in e-commerce applications, which is why deep modeling is applied in such domains.
+Other examples include component-based software architectures where the references to other components are determined by
+the type of component. In these cases, it can be beneficial to model the type element as a class that inherits from <em>Class</em>.</p>
+<p>Inheriting from <em>Class</em> means that instances automatically inherit the features from <em>Class</em> such as attributes and references. This can be useful
+in some scenarios. Iin the model of a warehouse system, one just wants to be able to define attributes for a given product type. In other scenarios,
+the domain might require some restrictions. For instance, the references of a software component are determined by the provided and required interfaces.
+In these cases, the reference <em>References</em> needs to be decomposed.</p>
+<p>If instantiation levels are used, often we have that a class characterizes another (in terms of Carvalho et al.), for example product specifications characterize products
+or component types characterize components. This is useful because the code generator is able to generate a more specific API: If it knows that the required
+interface of a component refine the <em>References</em> and a model element can have model elements assigned to a reference, the code generator generates an API
+to obtain the model element referenced by a given specific required interface. Furthermore, NMF also generates the necessary <a href="../expressions/proxies.html">proxy implementations</a> to
+allow for incremental change propagation.</p>
+<p>For examples, see how deep modeling in NMF is applied to model <a href="https://dx.doi.org/10.1007/s10270-018-0701-6">a warehouse</a> or <a href="https://doi.org/10.1007/s10270-018-0701-6">software architectures</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/models/deepModeling.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

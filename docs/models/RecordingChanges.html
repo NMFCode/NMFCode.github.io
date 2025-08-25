@@ -85,7 +85,7 @@
 
 <p>NMF allows users to record, serialize, deserialize, replay and invert changes made to a model generically. For this, a dedicated class <strong><a href="api/NMF.Models.Changes.ModelChangeRecorder.html">ModelChangeRecorder</a></strong> is used. An instance of this class will automatically register to <a href="ModelElement.html">bubbled events</a> and save the events temporarily. Upon user request, the captured events are interpreted and converted into a dedicated change model. This change model is (almost) a regular model and has builtin functionality to apply or invert it.</p>
 <h2 id="recording-model-changes">Recording model changes</h2>
-<p>To start recording changes to a model, you need an instance of the <strong>ModelChangeRecorder</strong> class and tell it which model elements you want to track. Because the elementary model changes will get bubbled upwards in the containment hierarchy, it usually suffices to track the root model element (or the model itself) of all trees you want to track. Model change recorders support the simultaneous tracking of multiple model elements and multiple model recorders can be attached to the same model elements. However, whenever the user requests to interpret the recorded change events, the resulting change model will contain changes of all model elements tracked by this change recorder (because the extraction works based on captured events).</p>
+<p>To start recording changes to a model, you need an instance of the <strong><a href="api/NMF.Models.Changes.ModelChangeRecorder.html">ModelChangeRecorder</a></strong> class and tell it which model elements you want to track. Because the elementary model changes will get bubbled upwards in the containment hierarchy, it usually suffices to track the root model element (or the model itself) of all trees you want to track. Model change recorders support the simultaneous tracking of multiple model elements and multiple model recorders can be attached to the same model elements. However, whenever the user requests to interpret the recorded change events, the resulting change model will contain changes of all model elements tracked by this change recorder (because the extraction works based on captured events).</p>
 <p>The following code suffices to start tracking a model called <em>model</em>.</p>
 <blockquote>
 </blockquote>
@@ -104,10 +104,11 @@ recorder.Start(model);
 </ol>
 <h2 id="deserializing-model-changes">Deserializing model changes</h2>
 <p>As a consequence of the last two properties, it is easily possible to deserialize a model change using the standard model serializer. Note that the model change sets loaded using this way will be in the standard <strong>Model</strong> class.</p>
-<p>Deserializing a change model will not execute the actual model changes. Instead, it will populate a <strong>ModelChangeSet</strong> with model elements describing the elementary model changes.</p>
+<p>Deserializing a change model will not execute the actual model changes. Instead, it will populate a <em><a href="api/NMF.Models.Changes.ModelChangeSet.html">ModelChangeSet</a></em> with model elements describing the elementary model changes.</p>
 <h2 id="applying-model-changes">Applying model changes</h2>
 <p>Applying a change set to an unmodified copy of the model is as easy as calling the <strong>Apply</strong> method on the respective change set.</p>
 <h2 id="inverting-model-changes">Inverting model changes</h2>
+<p>Using the API of the <em><a href="api/NMF.Models.Changes.ModelChangeSet.html">ModelChangeSet</a></em>, you can either create a change set representing the inverted changes or directly invert the changes. Note that collection resets cannot be inverted.</p>
 
 </article>
 

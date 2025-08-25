@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Program Inversion and Lenses </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Program Inversion and Lenses ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/lenses.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="program-inversion-and-lenses">Program Inversion and Lenses</h1>
+
+<p>Sometimes, it is not only interesting when the result of a function changed, it is also useful to obtrude a value, i.e., to invert the function. This is also supported by NMF by a mechanism first introduced by Foster et al. called lenses.</p>
+<p>The idea of a lens is simple: Given a function <span class="math">\(f: A \rightarrow B\)</span> acting as a get, the corresponding put function is a function <span class="math">\(g: A \times B \rightarrow A\)</span> that takes an original value and the obtruded value and returns the &quot;new original&quot;.</p>
+<p>Lenses are abstractions of properties and should fulfill two core well-behavedness properties: Put-Get and Get-Put.</p>
+<ul>
+<li>Put-Get means that when we put what is already there, the original does not change. That is, for every <span class="math">\(a \in A\)</span>, we have that <span class="math">\(g(a, f(a)) = a\)</span>.</li>
+<li>Get-Put means that when a value is stored using <em>put</em>, <em>get</em> returns it afterwards. That is, for every <span class="math">\(a \in A, b \in B\)</span> we have that <span class="math">\(f(g(a,b)) = b\)</span>.</li>
+</ul>
+<p>In the scope of NMF, lenses have been extended to the notion of <em>in-model-lenses</em> that further take a global state space into account and require that the getter function <em>f</em> is side-effect free.</p>
+<p>Lenses can be composed to a certain degree. That is, if <span class="math">\((f_1,g_1)\)</span> and <span class="math">\((f_2,g_2)\)</span> are lenses, under some conditions <span class="math">\((f_2 \circ f_1, (a,c) \mapsto g_1(a, g_2(f_1(a), c)))\)</span> is also a lens. NMF implements this composition of lenses such that for some given functions, a lens put can be obtained automatically.</p>
+<p>NMF can execute program inversion based on lenses with the static method <em>CreateSetter</em> of the class <em><a href="api/NMF.Expressions.SetExpressionRewriter.html">SetExpressionRewriter</a></em>. The result is a code expression of the inverted function that can then for instance get compiled.</p>
+<pre><code class="lang-csharp">var setter = SetExpressionRewriter.CreateSetter( i =&gt; i.Item + 42 ).Compile();
+setter.Invoke(i, 45); // Sets the property Item to 3 (result of 45 - 42)
+</code></pre>
+<p>NMF allows to specify a put function to turn a given function into a lens explicitly through the <a href="api/NMF.Expressions.LensPutAttribute.html">LensPutAttribute</a>. Because .NET does not allow to reference a method directly, this attribute references the type and name of the put function. These attributes are honored during program inversion.</p>
+<p>NMF distinguishes a special case, namely that the returned new original is always the same as the original value, e.g., because the obtruded value can be saved in a property. This is indicated by the signature of the put function to return <code>void</code> instead of <code>A</code>. Such a lens is called a <em>persistent lens</em>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/lenses.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

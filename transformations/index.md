@@ -30,4 +30,6 @@ PM> Install-Package NMF-Transformations
 
 Having installed NMF Transformations, you might want to see the [tutorials](TransformationTutorials.md). Alternatively, you can take a more top-down approach and start by reading the documentation for the core transformation framework [NMF Transformations Core](NMF-Transformations-Core.md).
 
-Currently, the documentation is just built up, so if you are missing something, it is likely to appear in the near future. Further documentation can be found in the master thesis, where NMF Transformations was first presented [(pdf, 2.81MB)](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2013a.pdf). Alternatively, you can always send an email to [Georg Hinkel](mailto:georg.hinkel@hs-rm.de) for any enquiries regarding NMF.
+## Publications
+
+There is a [paper on how NMF Transformations reuses tool support and modularity](https://dx.doi.org/10.1007/s10270-017-0578-9) and the master thesis from Georg Hinkel available upon request.

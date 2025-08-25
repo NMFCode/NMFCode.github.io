@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Execution Strategies </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Execution Strategies ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/executionStrategies.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="execution-strategies">Execution Strategies</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>If a single artifact is used from multiple places, it can happen that changes are propagated inconsistently. For instance, consider the function <span class="math">\(f: a \mapsto (a+1) \cdot (a+2)\)</span>. If <span class="math">\(a\)</span> changes, both the calculations <span class="math">\(a+1\)</span> and <span class="math">\(a+2\)</span> will notify that their value was changed. However, it is important that the value of a calculation <span class="math">\(f(a)\)</span> is only forwarded once both <span class="math">\((a+1)\)</span> and <span class="math">\((a+2)\)</span> notified their value change as otherwise, <span class="math">\(f(a)\)</span> could produce phantom values, i.e., values that are no possible outcomes of the function. In the example, it is clear that <em>f</em> always returns an even number, but if the value of <span class="math">\(f(a)\)</span> is updated before both <span class="math">\((a+1)\)</span> and <span class="math">\((a+2)\)</span> are propagated, this might not be the case.</p>
+<p>NMF Expressions therefore controls execution of change propagations through execution metadata. This metadata mainly consists of two numbers: the first one indicating how many dependencies might be affected by a given change, the other how many dependencies have been processed. In the above example, when <em>a</em> changes and the expression <span class="math">\((a+1)\)</span> has been processed to alter its value, the change of <span class="math">\(f(a)\)</span> is not processed because there is another dependency that might be affected by the change, namely <span class="math">\((a+2)\)</span>. For this, NMF Expressions uses a two-pass algorithm to first check the possible consequences of a change before propagating it.</p>
+<p>In order to propagate multiple changes at once, NMF Expressions implements a transaction system. That is, if multiple changes have to be propagated in a consistent way, one can use the static methods <em>BeginTransaction</em>, <em>CommitTransaction</em> and <em>RollbackTransaction</em> of the class <strong><a href="api/NMF.Expressions.ExecutionEngine.html">ExecutionEngine</a></strong> to start, commit or rollback a change propagation transaction.</p>
+<h2 id="execution-engines">Execution Engines</h2>
+<p>NMF Expression implements multiple strategies how incremental changes are to be propagated:</p>
+<ul>
+<li><strong><a href="api/NMF.Expressions.SequentialExecutionEngine.html">SequentialExecutionEngine</a></strong> propagates changes in a single thread. Whenever a change does not need to be propagated, change propagation stops immediately, unless a transaction was started.</li>
+<li><strong><a href="api/NMF.Expressions.ParallelExecutionEngine.html">ParallelExecutionEngine</a></strong> propagates changes in parallel.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/expressions/executionStrategies.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

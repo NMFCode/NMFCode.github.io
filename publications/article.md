@@ -26,12 +26,12 @@ application, and assessment](https://doi.org/10.1007/s10270-019-00752-x)** in _S
 ### 2019
 
 G. Hinkel, T. Goldschmidt, E. Burger, and R. Reussner: **[Using internal domain-specific languages to inherit tool support and
-modularity for model transformations](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017b.pdf)** in _Software and Systems Modeling_, vol. 18, no. 1, pp. 129-155, 2019
+modularity for model transformations](http://rdcu.be/oTED)** in _Software and Systems Modeling_, vol. 18, no. 1, pp. 129-155, 2019
 **DOI:** [10.1007/s10270-017-0578-9](https://dx.doi.org/10.1007/s10270-017-0578-9)  
 
 
 G. Hinkel and E. Burger: **[Change propagation and bidirectionality in internal transformation
-DSLs](http://sdqweb.ipd.kit.edu/publications/pdfs/hinkel2017c.pdf)** in _Software and Systems Modeling_, vol. 18, no. 1, pp. 249-278, 2019
+DSLs](http://rdcu.be/u9PT)** in _Software and Systems Modeling_, vol. 18, no. 1, pp. 249-278, 2019
 **DOI:** [10.1007/s10270-017-0617-6](https://dx.doi.org/10.1007/s10270-017-0617-6)  
 
 

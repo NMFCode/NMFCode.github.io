@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressing model elements </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressing model elements ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/models/Addressing-model-elements.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="addressing-model-elements">Addressing model elements</h1>
+
+<p>NMF uses identifiers to assign URIs to model elements automatically. Identifiers are attributes and assigned at a class level. If a class does not have an identifier set, an identifier is inherited from the base types. If a class inherits multiple identifiers, NMF uses the first identifier found in a depth-first search.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Never have more than one identifier for a class.</p>
+</div>
+<p>Identifiers can have either local or global scope. A local scope means that the identifier is unique within a container. A global scope means the identifier is unique across the entire model. A typical example of a local identifier is a name. Within a class, the name of an element must be unique, but an attribute or reference with the same name is allowed in a different class. A typical example of a global identifier is a Universally/Globally Unique Identifier (UUID or GUID).</p>
+<p>NMF assigns URIs to model elements in the following order:</p>
+<ol>
+<li>If an element has a globally unique identifier, this identifier is used as a fragment. For example, the relative URI of a model element with global identifier <code>foo</code> is <code>#foo</code>.</li>
+<li>If an element has a local identifier, this identifier is used as a segment. For example, the relative URI of a model element with local identifier <code>bar</code> in a container element with relative URI <code>#foo</code> is <code>#foo/bar</code>.</li>
+<li>If an element has no identifier but is contained in a single-valued or ordered feature, the name of the feature prefixed with <code>@</code> is used as a segment. In case of a collection-valued feature, the index is appended, separated by a dot. For example, the relative URI of a model element contained in the feature <code>bar</code> of a model element with relative URI <code>#foo</code> is <code>#foo/@bar</code>. If this feature was a collection and the element was at index 3, the relative URI would be <code>#foo/@bar.3</code>.</li>
+<li>If a model element is the single root element of a model and the flag <em>PromoteSingleRootElement</em> is active, its relative URI is null. Relative URIs to this element are the segments prefixed with <code>#//</code>.</li>
+<li>All other root elements of a model get a relative URI with their index, prefixed with a slash. The second root element has a relative URI <code>#//1</code>.</li>
+</ol>
+<p>An absolute URI is the concatenation of the Model URI of the containing model and the relative URI which is a fragment to it.</p>
+<p>NMF has a switch <em>PreferIdentifiers</em> as a static property of <a href="api/NMF.Models.ModelElement.html">ModelElement</a> that controls whether URIs generated by NMF prefer an identifier if available, or resort to index-based URIs. If a model element does not fall into any of the above categories, it does not have a relative or absolute URI. In that case, the serializer will generate an XMI ID for it.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/models/Addressing-model-elements.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

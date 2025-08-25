@@ -4,6 +4,8 @@ NMF AnyText is an open-source textual language workbench. That is, it is a frame
 AnyText does not contribute any UI. Rather, the editor services are implemented using the Language Server Protocol (LSP) from Microsoft, allowing to
 integrate the editor services in a variety of Integrated Development Environments (IDEs) such as Visual Studio Code.
 
+Please take a look at the [paper on AnyText](https://dx.doi.org/10.1145/3732771.3742716).
+
 ## Features
 
 AnyText provides the following features:

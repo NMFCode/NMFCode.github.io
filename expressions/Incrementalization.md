@@ -1,7 +1,9 @@
 # Model-based Incrementalization
 
+## Overview
+
 NMF provides elementary change notifications, offered
-through the industry standard interfaces INotifyPropertyChanged and INotifyCollectionChanged. These interfaces are required by many modern user interface
+through the industry standard interfaces _INotifyPropertyChanged_ and _INotifyCollectionChanged_. These interfaces are required by many modern user interface
 libraries, hence the model representation code can directly be used for these
 techniques.
 
@@ -37,3 +39,19 @@ The high abstraction level in the dynamic dependency graph is achieved by a
 manual incrementalization of analysis operators yielding valid results as a consequence of the underlying formalization as a categorial functor. NMF Expressions
 includes a library of such manually incrementalized operators, including most of
 the Standard Query Operators (SQO). As a consequence, developers can specify query analyses conveniently through the query syntax such as used in the listing above.
+
+In the following, the strategies are presented how NMF incrementalizes the SQO operators:
+
+## Select
+
+For a _Select_ operator, a dictionary is used to associate every element of the source collection with a dynamic dependency graph representing the result. To save space, duplicates have a special treatment that for the same element in the source collection, the dynamic dependency graph is only created once. Another special treatment is done for `null` values.
+
+There is a static property _KeepOrder_ to decide whether _Select_ operators keep the order of the underlying collection. If this flag is set, enumerating an incremental select enumerates the base collection and returns the current value of the associated dynamic dependency graph. If it is not set, the enumeration will only go through the dynamic dependency graphs and yield their current values.
+
+## Where
+
+The _Where_ operator works similar to a _Select_ and associates every element of the source collection with a dynamic dependency graph, taking extra care for duplicates and `null`s. Similar to _Select_ the _KeepOrder_ flag decides whether enumerations will also enumerate the underlying collection.
+
+## Others
+
+If you are interested how other operators work, please raise an issue.

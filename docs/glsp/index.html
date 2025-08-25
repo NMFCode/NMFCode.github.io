@@ -84,6 +84,113 @@
 <h1 id="nmf-glsp">NMF GLSP</h1>
 
 <p>NMF GLSP is a framework to develop graphical DSLs through the Graphical Language Server Protocol (GLSP). In particular, NMF GLSP is a framework to develop GLSP servers that connect to NMF models. The rationale is that the language engineer only has to develop the synchronization of the semantic model with the graphical model that is exposed via GLSP and subsequently rendered through existing GLSP client libraries such as <a href="https://eclipse.dev/glsp/">Eclipse GLSP</a>.</p>
+<p>For a start, we recommend to read the <a href="https://dx.doi.org/10.5381/JOT.2025.24.2.A11">paper on NMF GLSP</a>. Some parts of the documentation are taken from this paper.</p>
+<h2 id="language-structure">Language Structure</h2>
+<p>NMF GLSP provides the basis for the implementation of a concrete graphical language server. Such an
+implementation comprises the specification of the graphical
+language via NMF-GLSP and the invocation of this specification via dependency injection. The remaining server-side
+tasks (GLSP protocol implementation, model manipulation, undo/redo) have not to be specified via the DSL. They are either
+independent of the specific graphical model language or can be inferred by our framework from the DSL-based specification of
+the graphical language.</p>
+<p>The basic idea of our DSL is very similar to the construction of
+<a href="../synchronizations/index.html">NMF Synchronizations</a>, which in turn is based on the construction of the <a href="../transformations/index.html">NMF Transformation Language</a>: A graphical language is represented by a class that inherits from <a href="api/NMF.Glsp.Language.GraphicalLanguage.html">GraphicalLanguage</a> and consists of rules as nested
+classes that inherit from a few abstract base classes provided by the DSL. In order to create the rules for the synchronization, the
+GraphicalLanguage class instantiates each nested type and generally identifies rules with their type. Then, synchronization
+blocks are specified as calls inside a method <em>DefineLayout</em>.</p>
+<p>As the API knows the target model statically, the available methods
+represent synchronization blocks tied to specific <a href="../expressions/lenses.html">lenses</a> at the
+graphical model.</p>
+<p>The DSL defines three base classes, all of which take the
+semantic element type as a generic type parameter:</p>
+<ul>
+<li><strong><a href="api/NMF.Glsp.Language.NodeDescriptor-1.html">NodeDescriptor&lt;T&gt;</a></strong> for isomorphisms describing how to render a semantic model element as a node</li>
+<li><strong><a href="api/NMF.Glsp.Language.EdgeDescriptor-1.html">EdgeDescriptor&lt;T&gt;</a></strong> for isomorphisms describing how to render a semantic model element as an edge</li>
+<li><strong><a href="api/NMF.Glsp.Language.LabelDescriptor-1.html">LabelDescriptor&lt;T&gt;</a></strong> for isomorphisms describing how to render a semantic model element as a label.</li>
+</ul>
+<p><a href="api/NMF.Glsp.Language.EdgeDescriptor-1.html">EdgeDescriptor&lt;T&gt;</a> defines methods for the creation of synchronization blocks for the source and target of the
+respective edge or labels along the edge. NodeDescriptor defines methods to create synchronization blocks to denote
+child nodes, edges, compartments and child labels.</p>
+<p>The <a href="api/NMF.Glsp.Language.LabelDescriptor-1.html">LabelDescriptor&lt;T&gt;</a> class only defines methods to adjust
+the label text. All of these classes inherit methods to adjust the
+type attribute of the graph elements (which the client uses to
+decide how the element is rendered), configure the CSS classes
+and forward information as static content.</p>
+<p>In all cases, the classes representing the isomorphisms are
+also responsible for the creation of new elements. NMF provides
+reflection-based instance creation for generic type parameters
+(even if the generic type parameter is the interface for a meta-
+model class), but typically one wants to create pre-initialized
+objects. Therefore, all these classes have a common generic
+base class <a href="api/NMF.Glsp.Language.ElementDescriptor-1.html">ElementDescriptor&lt;T&gt;</a> that allows to override the
+creation of new elements.</p>
+<p>The major advantage of this construction is that, like NTL
+and NMF Synchronizations, our DSL can inherit modularization
+concepts from the host language, i.e., it is rather easy to create
+reusable DSL modules and inherit the tool support from the host
+language.</p>
+<h2 id="generating-children">Generating Children</h2>
+<p>As an example of this usage, the listing below sketches how to
+create a synchronization block defining that the semantic elements of a property States should be rendered using the
+rule <code>StateDescriptor</code>:</p>
+<pre><code class="lang-csharp">protected override void DefineLayout()
+{
+    Nodes(D&lt;StateDescriptor&gt;(), m =&gt; m.States)
+}
+</code></pre>
+<p>This listing uses a method <em>D</em> that selects the rule instance of a given rule type. The lens <code>.States</code>
+is denoted through its GET operation. NMF <a href="../expressions/lenses.html">infers</a> the PUT operation as well as the types and
+the lense of the left model from the context. The left lense
+<code>ChildNodes[type=&quot;State&quot;]</code> is automatically derived from the
+generic GLSP graphical model structure.</p>
+<h2 id="labels">Labels</h2>
+<p>Next to creating child nodes, another frequent requirement
+is to generate a label element for each semantic element and
+synchronize the text shown in this label with an attribute in the
+semantic model such as e.g., the name.</p>
+<p>Creating a label with a text synchronized with a specific
+attribute is a frequent use case. This has dedicated support in
+the DSL. In particular, a minimal implementation is depicted
+below:</p>
+<pre><code class="lang-csharp">Label(e =&gt; e.Name);
+</code></pre>
+<p>There are further parameters available to specify
+guards, fix the position of the label, to provide a custom PUT
+method or to specify explicitly whether users are allowed to edit
+the label text.</p>
+<h2 id="compartments">Compartments</h2>
+<p>Frequently, especially in UML, nodes can have compartments. Therefore, compartments have a dedicated support in
+our DSL: The rules derived from <a href="api/NMF.Glsp.Language.NodeDescriptor-1.html">NodeDescriptor</a> are responsible for a node and a hierarchy of compartments instead of only
+a single element. To visually indicate these compartments, we use the using-syntax in C#:</p>
+<pre><code class="lang-csharp">using (Compartment(&quot;comp:header&quot;))
+{
+    Label(e =&gt; e.Name);
+}
+</code></pre>
+<p>In order to support inheritance in the semantic model, we
+also introduce the concept of refinements in the isomorphisms.
+This means, an isomorphism class can refine another if it describes a more concrete semantic element type. In this case,
+the synchronization blocks of both the refined and the refining isomorphism are used.</p>
+<h2 id="invocation">Invocation</h2>
+<p>NMF GLSP integrates with  ASP.NET Core: n order to expose
+a given graphical language to a GLSP server, the language
+needs to be added to the ASP.NET Core dependency injection
+container and another call is necessary to expose the GLSP
+server on a given path. We created an API that integrates with
+the minimal API provided by ASP.NET Core.</p>
+<p>For example, a given language <code>StateMachineLanguage</code> can be exposed as follows:</p>
+<pre><code class="lang-csharp">var builder = WebApplicationBuilder . Create () ;
+builder.Services.AddWebSockets(opts =&gt; { }) ;
+builder.Services.AddGlspServer() ;
+builder.Services.AddLanguage&lt;StateMachineLanguage&gt;() ;
+// add more services ...
+var app = builder.Build();
+app.UseWebSockets();
+app.MapGlspWebSocketServer(&quot;/glsp&quot;);
+app.Run();
+</code></pre>
+<p>NMF GLSP uses the <a href="https://github.com/microsoft/vs-streamjsonrpc">StreamJsonRpc</a> library to implement the GLSP protocol and thus, there are also other transports supported than web sockets.</p>
+<h2 id="complete-example">Complete Example</h2>
+<p>The <a href="https://dx.doi.org/10.5381/JOT.2025.24.2.A11">paper on NMF GLSP</a> explains how to use NMF GLSP for a class diagram editor.</p>
 
 </article>
 

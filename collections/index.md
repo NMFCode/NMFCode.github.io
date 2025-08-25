@@ -3,18 +3,21 @@
 The goal of NMF Collections is to provide a library of collection classes that are missing in the .NET framework base class library. These classes are:
 
 * In the namespace **NMF.Collections.Generic**
- 	* **[DecoratedSet](api/NMF.Collections.Generic.DecoratedSet-1.yml)**: A decorator implementation around the _HashSet<T>_ from the BCL
- 	* **[OrderedSet](api/NMF.Collections.Generic.OrderedSet-1.yml)**: An implementation of an ordered set, i.e. the collections keeps track of the order in which items are added to the collection but acts as a set (no duplicate entries, fast Contains operation)
- 	* **[ReadOnlyListSelection](api/NMF.Collections.Generic.ReadOnlyListSelection-2.yml)**: This class provides a readonly _IList<T>_ implementation given a list of items and a selector. Basically, this class can be used to maintain the _IList<T>_ interface when using the _Select_ Query operator.
- 	* **[ReadOnlyOrderedSet](api/NMF.Collections.Generic.ReadOnlyOrderedSet-1.yml)**: A read-only wrapper for ordered sets
+
+  * **[DecoratedSet](api/NMF.Collections.Generic.DecoratedSet-1.yml)**: A decorator implementation around the _HashSet\<T>_ from the BCL
+  * **[OrderedSet](api/NMF.Collections.Generic.OrderedSet-1.yml)**: An implementation of an [ordered set](orderedSet.md), i.e. the collections keeps track of the order in which items are added to the collection but acts as a set (no duplicate entries, fast Contains operation)
+  * **[ReadOnlyListSelection](api/NMF.Collections.Generic.ReadOnlyListSelection-2.yml)**: This class provides a readonly _IList\<T>_ implementation given a list of items and a selector. Basically, this class can be used to maintain the _IList\<T>_ interface when using the _Select_ Query operator.
+  * **[ReadOnlyOrderedSet](api/NMF.Collections.Generic.ReadOnlyOrderedSet-1.yml)**: A read-only wrapper for ordered sets
+
 * In the namespace **NMF.Collections.ObjectModel**
- 	* **[ObservableList](api/NMF.Collections.ObjectModel.ObservableList-1.yml)**: A thin layer upon _ObservableCollection<T>_ (which in fact is a list) implementing _INotifyCollection_ from the [Expressions](../expressions/index.md) project
- 	* **[ObservableOrderedSet](api/NMF.Collections.ObjectModel.ObservableOrderedSet-1.yml)**: An observable implementation of an ordered set
- 	* **[ObservableReadOnlyOrderedSet](api/NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet-1.yml)**: A read-only wrapper for observable ordered sets
- 	* **[ObservableSet](api/NMF.Collections.ObjectModel.ObservableSet-1.yml)**: An implementation for observable hash sets
- 	* Opposite collections **OppositeList**, **OppositeSet** and **OppositeOrderedSet**
- 	* Observable variants of the opposite lists
+  * **[ObservableList](api/NMF.Collections.ObjectModel.ObservableList-1.yml)**: A thin layer upon _ObservableCollection\<T>_ (which in fact is a list) implementing _INotifyCollection_ from the [Expressions](../expressions/index.md) project
+  * **[ObservableOrderedSet](api/NMF.Collections.ObjectModel.ObservableOrderedSet-1.yml)**: An observable implementation of an ordered set
+  * **[ObservableReadOnlyOrderedSet](api/NMF.Collections.ObjectModel.ObservableReadOnlyOrderedSet-1.yml)**: A read-only wrapper for observable ordered sets
+  * **[ObservableSet](api/NMF.Collections.ObjectModel.ObservableSet-1.yml)**: An implementation for observable hash sets
+  * [Opposite collections](opposites.md) **[OppositeList](api/NMF.Collections.ObjectModel.OppositeList-2.yml)**, **[OppositeSet](api/NMF.Collections.ObjectModel.OppositeSet-2.yml)** and **[OppositeOrderedSet](api/NMF.Collections.ObjectModel.OppositeOrderedSet-2.yml)**
+  * Observable variants of the opposite lists
+  * A **[CustomCollection](api/NMF.Collections.ObjectModel.CustomCollection-1.yml)** that allows to add edit operations to an incremental collection, wrapping an instance of _[IEnumerableExpression](../expressions/api/NMF.Expressions.IEnumerableExpression-1.yml)_ to a _[ICollectionExpression](../expressions/api/NMF.Expressions.ICollectionExpression-1.yml)_.
 
 Opposite collections are collections that allow to easily set an indicator if an element is added to or removed from the collection.
 
-All collections implement the _ICollection_ interface. Lists and ordered sets implement the _IList_ interface. Ordered sets and sets implement the _ISet_ interface. Additionally, all collections also implement the _INotifyCollection_ interface from the [Expressions](http://nmfexpressions.codeplex.com) project.
+All collections implement the _ICollection_ interface. Lists and ordered sets implement the _IList_ interface. Ordered sets and sets implement the _ISet_ interface. Additionally, all collections also implement the _[INotifyCollection](../expressions/api/NMF.Expressions.INotifyCollection-1.yml)_ and _[ICollectionExpression](../expressions/api/NMF.Expressions.ICollectionExpression-1.yml)_ interfaces from the [Expressions](http://nmfexpressions.codeplex.com) project.
