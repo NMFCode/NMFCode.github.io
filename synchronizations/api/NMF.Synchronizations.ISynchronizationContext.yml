@@ -22,15 +22,15 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ISynchronizationContext
     path: src/Synchronizations/Synchronizations/ISynchronizationContext.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
   summary: Denotes a context of a model synchronization run
   example: []
   syntax:
-    content: 'public interface ISynchronizationContext : ITransformationEngineContext, ITransformationContext'
-    content.vb: Public Interface ISynchronizationContext Inherits ITransformationEngineContext, ITransformationContext
+    content: 'public interface ISynchronizationContext : ITransformationEngineContext, ITransformationContext, IDisposable'
+    content.vb: Public Interface ISynchronizationContext Inherits ITransformationEngineContext, ITransformationContext, IDisposable
   inheritedMembers:
   - NMF.Transformations.Core.ITransformationEngineContext.ExecutePending
   - NMF.Transformations.Core.ITransformationContext.IsThreadSafe
@@ -44,6 +44,7 @@ items:
   - NMF.Transformations.Core.ITransformationContext.Input
   - NMF.Transformations.Core.ITransformationContext.Outputs
   - NMF.Transformations.Core.ITransformationContext.ComputationCompleted
+  - System.IDisposable.Dispose
   extensionMethods:
   - NMF.Transformations.Core.ITransformationContext.NMF.Synchronizations.SynchronizationContextExtensions.MapLeft``2(NMF.Synchronizations.SynchronizationRule{{TLeft},{TRight}},{TLeft})
   - NMF.Transformations.Core.ITransformationContext.NMF.Synchronizations.SynchronizationContextExtensions.MapLefts``2(NMF.Synchronizations.SynchronizationRule{{TLeft},{TRight}},NMF.Expressions.IEnumerableExpression{{TLeft}})
@@ -67,7 +68,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Direction
     path: src/Synchronizations/Synchronizations/ISynchronizationContext.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -98,7 +99,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ChangePropagation
     path: src/Synchronizations/Synchronizations/ISynchronizationContext.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -129,7 +130,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Inconsistencies
     path: src/Synchronizations/Synchronizations/ISynchronizationContext.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -295,6 +296,28 @@ references:
   name: ComputationCompleted
   nameWithType: ITransformationContext.ComputationCompleted
   fullName: NMF.Transformations.Core.ITransformationContext.ComputationCompleted
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
 - uid: NMF.Transformations.Core.ITransformationContext.NMF.Synchronizations.SynchronizationContextExtensions.MapLeft``2(NMF.Synchronizations.SynchronizationRule{{TLeft},{TRight}},{TLeft})
   commentId: M:NMF.Synchronizations.SynchronizationContextExtensions.MapLeft``2(NMF.Transformations.Core.ITransformationContext,NMF.Synchronizations.SynchronizationRule{``0,``1},``0)
   parent: NMF.Synchronizations.SynchronizationContextExtensions
@@ -611,6 +634,14 @@ references:
   name: ITransformationContext
   nameWithType: ITransformationContext
   fullName: NMF.Transformations.Core.ITransformationContext
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: NMF.Synchronizations.SynchronizationContextExtensions.MapLeft``2(NMF.Transformations.Core.ITransformationContext,NMF.Synchronizations.SynchronizationRule{``0,``1},``0)
   commentId: M:NMF.Synchronizations.SynchronizationContextExtensions.MapLeft``2(NMF.Transformations.Core.ITransformationContext,NMF.Synchronizations.SynchronizationRule{``0,``1},``0)
   href: NMF.Synchronizations.SynchronizationContextExtensions.html#NMF_Synchronizations_SynchronizationContextExtensions_MapLeft__2_NMF_Transformations_Core_ITransformationContext_NMF_Synchronizations_SynchronizationRule___0___1____0_
@@ -937,6 +968,13 @@ references:
   - name: .
   - uid: NMF.Transformations.Core
     name: Core
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: NMF.Synchronizations.ISynchronizationContext.Direction*
   commentId: Overload:NMF.Synchronizations.ISynchronizationContext.Direction
   href: NMF.Synchronizations.ISynchronizationContext.html#NMF_Synchronizations_ISynchronizationContext_Direction

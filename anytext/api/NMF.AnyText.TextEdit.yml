@@ -6,6 +6,7 @@ items:
   parent: NMF.AnyText
   children:
   - NMF.AnyText.TextEdit.#ctor(NMF.AnyText.ParsePosition,NMF.AnyText.ParsePosition,System.String[])
+  - NMF.AnyText.TextEdit.AdjustPosition(NMF.AnyText.ParsePosition)
   - NMF.AnyText.TextEdit.Apply(System.String[])
   - NMF.AnyText.TextEdit.End
   - NMF.AnyText.TextEdit.NewText
@@ -25,7 +26,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TextEdit
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 11
+    startLine: 7
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -62,7 +63,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 22
+    startLine: 18
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -107,7 +108,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Start
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 40
+    startLine: 36
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -138,7 +139,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: End
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 45
+    startLine: 41
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -169,7 +170,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: NewText
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 50
+    startLine: 46
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -200,7 +201,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Apply
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 57
+    startLine: 53
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -220,6 +221,41 @@ items:
   nameWithType.vb: TextEdit.Apply(String())
   fullName.vb: NMF.AnyText.TextEdit.Apply(String())
   name.vb: Apply(String())
+- uid: NMF.AnyText.TextEdit.AdjustPosition(NMF.AnyText.ParsePosition)
+  commentId: M:NMF.AnyText.TextEdit.AdjustPosition(NMF.AnyText.ParsePosition)
+  id: AdjustPosition(NMF.AnyText.ParsePosition)
+  parent: NMF.AnyText.TextEdit
+  langs:
+  - csharp
+  - vb
+  name: AdjustPosition(ParsePosition)
+  nameWithType: TextEdit.AdjustPosition(ParsePosition)
+  fullName: NMF.AnyText.TextEdit.AdjustPosition(NMF.AnyText.ParsePosition)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/TextEdit.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AdjustPosition
+    path: src/AnyText/AnyText.Core/TextEdit.cs
+    startLine: 78
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Adjusts the given position due to the current text edit
+  example: []
+  syntax:
+    content: public ParsePosition AdjustPosition(ParsePosition position)
+    parameters:
+    - id: position
+      type: NMF.AnyText.ParsePosition
+      description: the incoming position
+    return:
+      type: NMF.AnyText.ParsePosition
+      description: ''
+    content.vb: Public Function AdjustPosition(position As ParsePosition) As ParsePosition
+  overload: NMF.AnyText.TextEdit.AdjustPosition*
 - uid: NMF.AnyText.TextEdit.UpdatePosition(NMF.AnyText.ParsePosition@)
   commentId: M:NMF.AnyText.TextEdit.UpdatePosition(NMF.AnyText.ParsePosition@)
   id: UpdatePosition(NMF.AnyText.ParsePosition@)
@@ -238,7 +274,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: UpdatePosition
     path: src/AnyText/AnyText.Core/TextEdit.cs
-    startLine: 81
+    startLine: 116
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -588,6 +624,12 @@ references:
   name: Apply
   nameWithType: TextEdit.Apply
   fullName: NMF.AnyText.TextEdit.Apply
+- uid: NMF.AnyText.TextEdit.AdjustPosition*
+  commentId: Overload:NMF.AnyText.TextEdit.AdjustPosition
+  href: NMF.AnyText.TextEdit.html#NMF_AnyText_TextEdit_AdjustPosition_NMF_AnyText_ParsePosition_
+  name: AdjustPosition
+  nameWithType: TextEdit.AdjustPosition
+  fullName: NMF.AnyText.TextEdit.AdjustPosition
 - uid: NMF.AnyText.TextEdit.UpdatePosition*
   commentId: Overload:NMF.AnyText.TextEdit.UpdatePosition
   href: NMF.AnyText.TextEdit.html#NMF_AnyText_TextEdit_UpdatePosition_NMF_AnyText_ParsePosition__

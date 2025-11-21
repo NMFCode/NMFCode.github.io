@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AnyText Grammar </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AnyText Grammar ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/grammar.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="anytext-grammar">AnyText Grammar</h1>
+
+<h2 id="grammar-declaration">Grammar declaration</h2>
+<p>A grammar declaration in AnyText starts with the keyword <code>grammar</code>, followed by the name of the grammar. If you generate a metamodel from the grammar, the name of the grammar will be the name of the resulting namespace.</p>
+<p>You can add a language ID in parantheses. In an LSP server, this language name is used as the language ID. It shoulbe be globally unique as clients such as Visual Studio Code might otherwise confuse your language with others. If you generate a metamodel from your grammar, the language id is also used as the prefix.</p>
+<p>The grammar declaration is concluded with the name of the root rule.</p>
+<h2 id="imports">Imports</h2>
+<p>Grammars can specify imports. These can be imports to files containing either grammars or metamodels or it can be URIs of those.</p>
+<p>An import is specified using the keyword <code>imports</code>, followed by the import specification as a relative or absolute file path or URI.</p>
+<h2 id="comments">Comments</h2>
+<p>Immediately after the imports, you can define comments for your language. The declaration of a comment starts with the keyword <code>comment</code>, followed by a character sequence that indicates the start of the comment in single quotes. Optionally, a comment declaration can also specify a stop indicator. If a comment declaration does not define a stop indicator, it is handled as a single-line comment, i.e., the comment includes all characters until the end of the line. If a comment specifies a stop indicator (by using the keyword <code>to</code> followed by the indicator in single-quotes), the comment is a multi-line comment.</p>
+<p>For example, the C-like single-line comment can be specified as</p>
+<pre><code class="lang-bash">comment '//'
+</code></pre>
+<p>The C-like multi-line comment can be specified as</p>
+<pre><code class="lang-bash">comment '/*' to '*/'
+</code></pre>
+<p>Escape rules inside comments are not supported.</p>
+<h2 id="rules">Rules</h2>
+<p>The heart and soul of a grammar is the collection of <a href="rules.html">rules</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/grammar.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

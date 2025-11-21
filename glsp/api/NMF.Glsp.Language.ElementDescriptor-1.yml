@@ -21,6 +21,7 @@ items:
   - NMF.Glsp.Language.ElementDescriptor`1.Profile(System.String,System.Func{`0})
   - NMF.Glsp.Language.ElementDescriptor`1.Refine``1(NMF.Glsp.Language.ElementDescriptor{``0})
   - NMF.Glsp.Language.ElementDescriptor`1.RenderPopup(`0,NMF.Glsp.Protocol.Types.Bounds)
+  - NMF.Glsp.Language.ElementDescriptor`1.SelectionIncludes(System.Func{`0,NMF.Models.IModelElement})
   - NMF.Glsp.Language.ElementDescriptor`1.SelectionIncludes(System.Func{`0,System.Collections.Generic.IEnumerable{NMF.Models.IModelElement}})
   - NMF.Glsp.Language.ElementDescriptor`1.ToolLabel(System.String)
   - NMF.Glsp.Language.ElementDescriptor`1.Type(System.String)
@@ -723,6 +724,42 @@ items:
   nameWithType.vb: ElementDescriptor(Of T).SelectionIncludes(Func(Of T, IEnumerable(Of IModelElement)))
   fullName.vb: NMF.Glsp.Language.ElementDescriptor(Of T).SelectionIncludes(System.Func(Of T, System.Collections.Generic.IEnumerable(Of NMF.Models.IModelElement)))
   name.vb: SelectionIncludes(Func(Of T, IEnumerable(Of IModelElement)))
+- uid: NMF.Glsp.Language.ElementDescriptor`1.SelectionIncludes(System.Func{`0,NMF.Models.IModelElement})
+  commentId: M:NMF.Glsp.Language.ElementDescriptor`1.SelectionIncludes(System.Func{`0,NMF.Models.IModelElement})
+  id: SelectionIncludes(System.Func{`0,NMF.Models.IModelElement})
+  parent: NMF.Glsp.Language.ElementDescriptor`1
+  langs:
+  - csharp
+  - vb
+  name: SelectionIncludes(Func<T, IModelElement>)
+  nameWithType: ElementDescriptor<T>.SelectionIncludes(Func<T, IModelElement>)
+  fullName: NMF.Glsp.Language.ElementDescriptor<T>.SelectionIncludes(System.Func<T, NMF.Models.IModelElement>)
+  type: Method
+  source:
+    remote:
+      path: Glsp/Glsp/Language/ElementDescriptor.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SelectionIncludes
+    path: src/Glsp/Glsp/Language/ElementDescriptor.cs
+    startLine: 281
+  assemblies:
+  - NMF.Glsp
+  namespace: NMF.Glsp.Language
+  summary: Specifies that when an element is selected, the selection should also include a collection of other model elements
+  remarks: This method is intended to be used inside of <xref href="NMF.Glsp.Language.DescriptorBase.DefineLayout" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: protected void SelectionIncludes(Func<T, IModelElement> selector)
+    parameters:
+    - id: selector
+      type: System.Func{{T},NMF.Models.IModelElement}
+      description: A function that selects model elements that should also be selected
+    content.vb: Protected Sub SelectionIncludes(selector As Func(Of T, IModelElement))
+  overload: NMF.Glsp.Language.ElementDescriptor`1.SelectionIncludes*
+  nameWithType.vb: ElementDescriptor(Of T).SelectionIncludes(Func(Of T, IModelElement))
+  fullName.vb: NMF.Glsp.Language.ElementDescriptor(Of T).SelectionIncludes(System.Func(Of T, NMF.Models.IModelElement))
+  name.vb: SelectionIncludes(Func(Of T, IModelElement))
 - uid: NMF.Glsp.Language.ElementDescriptor`1.Profile(System.String)
   commentId: M:NMF.Glsp.Language.ElementDescriptor`1.Profile(System.String)
   id: Profile(System.String)
@@ -741,7 +778,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Profile
     path: src/Glsp/Glsp/Language/ElementDescriptor.cs
-    startLine: 280
+    startLine: 296
   assemblies:
   - NMF.Glsp
   namespace: NMF.Glsp.Language
@@ -776,7 +813,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Profile
     path: src/Glsp/Glsp/Language/ElementDescriptor.cs
-    startLine: 292
+    startLine: 308
   assemblies:
   - NMF.Glsp
   namespace: NMF.Glsp.Language
@@ -2028,6 +2065,43 @@ references:
   - name: ','
   - name: " "
   - name: TResult
+  - name: )
+- uid: System.Func{{T},NMF.Models.IModelElement}
+  commentId: T:System.Func{`0,NMF.Models.IModelElement}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, IModelElement>
+  nameWithType: Func<T, IModelElement>
+  fullName: System.Func<T, NMF.Models.IModelElement>
+  nameWithType.vb: Func(Of T, IModelElement)
+  fullName.vb: System.Func(Of T, NMF.Models.IModelElement)
+  name.vb: Func(Of T, IModelElement)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NMF.Models.IModelElement
+    name: IModelElement
   - name: )
 - uid: NMF.Glsp.Language.ElementDescriptor`1.Profile*
   commentId: Overload:NMF.Glsp.Language.ElementDescriptor`1.Profile

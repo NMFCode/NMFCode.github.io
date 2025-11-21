@@ -85,7 +85,7 @@
 
 
   <h1 id="NMF_AnyText_RecursionContext" data-uid="NMF.AnyText.RecursionContext" class="text-break">
-Class RecursionContext  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class RecursionContext  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -151,9 +151,9 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
 
   <a id="NMF_AnyText_RecursionContext__ctor_" data-uid="NMF.AnyText.RecursionContext.#ctor*"></a>
 
-  <h3 id="NMF_AnyText_RecursionContext__ctor_NMF_AnyText_ParsePosition_" data-uid="NMF.AnyText.RecursionContext.#ctor(NMF.AnyText.ParsePosition)">
-  RecursionContext(ParsePosition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_RecursionContext__ctor_NMF_AnyText_ParsePosition_System_Collections_Generic_IReadOnlyCollection_NMF_AnyText_Rules_RecursiveContinuation__" data-uid="NMF.AnyText.RecursionContext.#ctor(NMF.AnyText.ParsePosition,System.Collections.Generic.IReadOnlyCollection{NMF.AnyText.Rules.RecursiveContinuation})">
+  RecursionContext(ParsePosition, IReadOnlyCollection&lt;RecursiveContinuation&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new recursion context at the given position</p>
@@ -161,13 +161,16 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RecursionContext(ParsePosition position)</code></pre>
+    <pre><code class="lang-csharp hljs">public RecursionContext(ParsePosition position, IReadOnlyCollection&lt;RecursiveContinuation&gt; continuations)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>position</code> <a class="xref" href="NMF.AnyText.ParsePosition.html">ParsePosition</a></dt>
     <dd><p>the position of the recursion context</p>
+</dd>
+    <dt><code>continuations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RecursiveContinuation.html">RecursiveContinuation</a>&gt;</dt>
+    <dd><p>the continuations possible in this context</p>
 </dd>
   </dl>
 
@@ -186,43 +189,11 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
 </h2>
 
 
-  <a id="NMF_AnyText_RecursionContext_AddContinuations_" data-uid="NMF.AnyText.RecursionContext.AddContinuations*"></a>
-
-  <h3 id="NMF_AnyText_RecursionContext_AddContinuations" data-uid="NMF.AnyText.RecursionContext.AddContinuations">
-  AddContinuations
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L45"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>True, if rules shall register continuations, otherwise false</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AddContinuations { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="NMF_AnyText_RecursionContext_Continuations_" data-uid="NMF.AnyText.RecursionContext.Continuations*"></a>
 
   <h3 id="NMF_AnyText_RecursionContext_Continuations" data-uid="NMF.AnyText.RecursionContext.Continuations">
   Continuations
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the list of possible continuations for the given recursion</p>
@@ -230,7 +201,7 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;RecursiveContinuation&gt; Continuations { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;RecursiveContinuation&gt; Continuations { get; }</code></pre>
   </div>
 
 
@@ -239,7 +210,7 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RecursiveContinuation.html">RecursiveContinuation</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RecursiveContinuation.html">RecursiveContinuation</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -254,7 +225,7 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NMF_AnyText_RecursionContext_Position" data-uid="NMF.AnyText.RecursionContext.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The position of this recursion</p>
@@ -282,43 +253,11 @@ Class RecursionContext  <a class="header-action link-secondary" title="View sour
 
 
 
-  <a id="NMF_AnyText_RecursionContext_RuleStack_" data-uid="NMF.AnyText.RecursionContext.RuleStack*"></a>
-
-  <h3 id="NMF_AnyText_RecursionContext_RuleStack" data-uid="NMF.AnyText.RecursionContext.RuleStack">
-  RuleStack
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L30"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets the stack of rules that participate in the recursion</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Stack&lt;Rule&gt; RuleStack { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.stack-1">Stack</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/RecursionContext.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

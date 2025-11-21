@@ -119,6 +119,12 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="NMF.AnyText.SynchronizingLspServer.html">SynchronizingLspServer</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
@@ -157,9 +163,9 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <a id="NMF_AnyText_LspServer__ctor_" data-uid="NMF.AnyText.LspServer.#ctor*"></a>
 
-  <h3 id="NMF_AnyText_LspServer__ctor_StreamJsonRpc_JsonRpc_NMF_AnyText_Grammars_Grammar___" data-uid="NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,NMF.AnyText.Grammars.Grammar[])">
-  LspServer(JsonRpc, params Grammar[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_LspServer__ctor_NMF_AnyText_Grammars_Grammar___" data-uid="NMF.AnyText.LspServer.#ctor(NMF.AnyText.Grammars.Grammar[])">
+  LspServer(params Grammar[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance</p>
@@ -167,14 +173,11 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LspServer(JsonRpc rpc, params Grammar[] grammars)</code></pre>
+    <pre><code class="lang-csharp hljs">public LspServer(params Grammar[] grammars)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>rpc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a></dt>
-    <dd><p>the RPC handler</p>
-</dd>
     <dt><code>grammars</code> <a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a>[]</dt>
     <dd><p>A collection of grammars</p>
 </dd>
@@ -193,9 +196,9 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <a id="NMF_AnyText_LspServer__ctor_" data-uid="NMF.AnyText.LspServer.#ctor*"></a>
 
-  <h3 id="NMF_AnyText_LspServer__ctor_StreamJsonRpc_JsonRpc_System_Collections_Generic_IEnumerable_NMF_AnyText_Grammars_Grammar__" data-uid="NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar})">
-  LspServer(JsonRpc, IEnumerable&lt;Grammar&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_LspServer__ctor_System_Collections_Generic_IEnumerable_NMF_AnyText_Grammars_Grammar__System_Boolean_" data-uid="NMF.AnyText.LspServer.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar},System.Boolean)">
+  LspServer(IEnumerable&lt;Grammar&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance</p>
@@ -203,16 +206,16 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LspServer(JsonRpc rpc, IEnumerable&lt;Grammar&gt; grammars)</code></pre>
+    <pre><code class="lang-csharp hljs">public LspServer(IEnumerable&lt;Grammar&gt; grammars, bool asyncChanges = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>rpc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a></dt>
-    <dd><p>the RPC handler</p>
-</dd>
     <dt><code>grammars</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a>&gt;</dt>
     <dd><p>A collection of grammars</p>
+</dd>
+    <dt><code>asyncChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if changes should be processed asynchronously, otherwise false</p>
 </dd>
   </dl>
 
@@ -227,15 +230,190 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NMF_AnyText_LspServer_Documents_" data-uid="NMF.AnyText.LspServer.Documents*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_Documents" data-uid="NMF.AnyText.LspServer.Documents">
+  Documents
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the raw dictionary of open documents</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IDictionary&lt;string, Parser&gt; Documents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="NMF.AnyText.Parser.html">Parser</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_Grammars_" data-uid="NMF.AnyText.LspServer.Grammars*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_Grammars" data-uid="NMF.AnyText.LspServer.Grammars">
+  Grammars
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the raw dictionary of grammars</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IDictionary&lt;string, Grammar&gt; Grammars { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="NMF.AnyText.Grammars.Grammar.html">Grammar</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_OpenDocuments_" data-uid="NMF.AnyText.LspServer.OpenDocuments*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_OpenDocuments" data-uid="NMF.AnyText.LspServer.OpenDocuments">
+  OpenDocuments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a collection of currently opened documents</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;Parser&gt; OpenDocuments { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Parser.html">Parser</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
+
+
+  <a id="NMF_AnyText_LspServer_ApplyWorkspaceEditAsync_" data-uid="NMF.AnyText.LspServer.ApplyWorkspaceEditAsync*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_" data-uid="NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)">
+  ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.ApplyWorkspaceEdit.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a <code>workspace/applyEdit</code> to the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ApplyWorkspaceEditResponse&gt; ApplyWorkspaceEditAsync(WorkspaceEdit edit, string label)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>edit</code> <a class="xref" href="NMF.AnyText.Workspace.WorkspaceEdit.html">WorkspaceEdit</a></dt>
+    <dd><p>The <code>WorkspaceEdit</code> to apply.</p>
+</dd>
+    <dt><code>label</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A descriptive label for the edit operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">ApplyWorkspaceEditResponse</span>&gt;</dt>
+    <dd><p>A <code>Task</code> representing the asynchronous operation, containing the <code>ApplyWorkspaceEditResponse</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_CloseDocument_" data-uid="NMF.AnyText.LspServer.CloseDocument*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_CloseDocument_NMF_AnyText_Parser_" data-uid="NMF.AnyText.LspServer.CloseDocument(NMF.AnyText.Parser)">
+  CloseDocument(Parser)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when a document is closed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CloseDocument(Parser parser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parser</code> <a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>the closed document</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
 
 
   <a id="NMF_AnyText_LspServer_CodeAction_" data-uid="NMF.AnyText.LspServer.CodeAction*"></a>
 
   <h3 id="NMF_AnyText_LspServer_CodeAction_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.CodeAction(Newtonsoft.Json.Linq.JToken)">
   CodeAction(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.CodeAction.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.CodeAction.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handles the <code>textDocument/codeAction</code> request from the client.</p>
@@ -351,7 +529,7 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NMF_AnyText_LspServer_DidChange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.DidChange(Newtonsoft.Json.Linq.JToken)">
   DidChange(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L219"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client signals a change</p>
@@ -384,7 +562,7 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NMF_AnyText_LspServer_DidClose_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.DidClose(Newtonsoft.Json.Linq.JToken)">
   DidClose(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L276"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client closed a document</p>
@@ -417,7 +595,7 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NMF_AnyText_LspServer_DidOpen_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.DidOpen(Newtonsoft.Json.Linq.JToken)">
   DidOpen(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L299"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client opened a document</p>
@@ -450,7 +628,7 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NMF_AnyText_LspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_" data-uid="NMF.AnyText.LspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)">
   DidSave(TextDocumentIdentifier, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L258"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client saved a document</p>
@@ -486,7 +664,7 @@ Class LspServer  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NMF_AnyText_LspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)">
   ExecuteCommand(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handles the <code>workspace/ececuteCommand</code> request from the client. This is used to execute an action on the
@@ -520,7 +698,7 @@ Server.</p>
 
   <h3 id="NMF_AnyText_LspServer_Exit" data-uid="NMF.AnyText.LspServer.Exit">
   Exit()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L338"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client exits</p>
@@ -668,6 +846,48 @@ Server.</p>
 
 
 
+  <a id="NMF_AnyText_LspServer_HandleExtensionCommand_" data-uid="NMF.AnyText.LspServer.HandleExtensionCommand*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_HandleExtensionCommand_System_String_System_Object___" data-uid="NMF.AnyText.LspServer.HandleExtensionCommand(System.String,System.Object[])">
+  HandleExtensionCommand(string, object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows derived classes to handle an extension command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool HandleExtensionCommand(string commandIdentifier, object[] args)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>commandIdentifier</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the identifier of the command</p>
+</dd>
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>command arguments</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the command was handled, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_LspServer_Hover_" data-uid="NMF.AnyText.LspServer.Hover*"></a>
 
   <h3 id="NMF_AnyText_LspServer_Hover_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.LspServer.Hover(Newtonsoft.Json.Linq.JToken)">
@@ -710,7 +930,7 @@ Server.</p>
 
   <h3 id="NMF_AnyText_LspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_" data-uid="NMF.AnyText.LspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)">
   Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the server</p>
@@ -767,7 +987,7 @@ Server.</p>
 
   <h3 id="NMF_AnyText_LspServer_Initialized" data-uid="NMF.AnyText.LspServer.Initialized">
   Initialized()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L204"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the server</p>
@@ -779,6 +999,120 @@ Server.</p>
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_OnDocumentUpdate_" data-uid="NMF.AnyText.LspServer.OnDocumentUpdate*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_OnDocumentUpdate_NMF_AnyText_Parser_System_Collections_Generic_IEnumerable_NMF_AnyText_TextEdit__System_String_" data-uid="NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.String)">
+  OnDocumentUpdate(Parser, IEnumerable&lt;TextEdit&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L250"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when a document should be updated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDocumentUpdate(Parser document, IEnumerable&lt;TextEdit&gt; edits, string uri)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>document</code> <a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>the parsed document</p>
+</dd>
+    <dt><code>edits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a>&gt;</dt>
+    <dd><p>the edits that should be performed</p>
+</dd>
+    <dt><code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the URI of the document</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_OpenNewDocument_" data-uid="NMF.AnyText.LspServer.OpenNewDocument*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_OpenNewDocument_NMF_AnyText_Parser_" data-uid="NMF.AnyText.LspServer.OpenNewDocument(NMF.AnyText.Parser)">
+  OpenNewDocument(Parser)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets called when a new document is opened</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OpenNewDocument(Parser parser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parser</code> <a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>the opened document</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_PostProcessCompletions_" data-uid="NMF.AnyText.LspServer.PostProcessCompletions*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_PostProcessCompletions_NMF_AnyText_Parser_System_Collections_Generic_IEnumerable_LspTypes_CompletionItem__" data-uid="NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{LspTypes.CompletionItem})">
+  PostProcessCompletions(Parser, IEnumerable&lt;CompletionItem&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.CompletionHandler.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs a post-processing on the given completion collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;CompletionItem&gt; PostProcessCompletions(Parser document, IEnumerable&lt;CompletionItem&gt; completions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>document</code> <a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>the document for which the completion list is requested</p>
+</dd>
+    <dt><code>completions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CompletionItem</span>&gt;</dt>
+    <dd><p>the current list of completions</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CompletionItem</span>&gt;</dt>
+    <dd><p>a potentially modified list of completions</p>
+</dd>
+  </dl>
 
 
 
@@ -842,7 +1176,7 @@ of the definition of a symbol in a document.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LocationLink QueryDefinition(JToken arg)</code></pre>
+    <pre><code class="lang-csharp hljs">public LocationLink[] QueryDefinition(JToken arg)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -854,8 +1188,8 @@ of the definition of a symbol in a document.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">LocationLink</span></dt>
-    <dd><p>A <span class="xref">LspTypes.LocationLink</span> object containing the document and position of the definition of a symbol.</p>
+    <dt><span class="xref">LocationLink</span>[]</dt>
+    <dd><p>A list of <span class="xref">LspTypes.LocationLink</span> objects containing the documents and positions of the definitions of a symbol.</p>
 </dd>
   </dl>
 
@@ -1228,9 +1562,9 @@ the changes (delta) in semantic tokens for a document.</p>
 
   <a id="NMF_AnyText_LspServer_SendLogMessageAsync_" data-uid="NMF.AnyText.LspServer.SendLogMessageAsync*"></a>
 
-  <h3 id="NMF_AnyText_LspServer_SendLogMessageAsync_NMF_AnyText_MessageType_System_String_" data-uid="NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String)">
-  SendLogMessageAsync(MessageType, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_LspServer_SendLogMessageAsync_NMF_AnyText_MessageType_System_String_System_Boolean_" data-uid="NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String,System.Boolean)">
+  SendLogMessageAsync(MessageType, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L349"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a log message to the client.</p>
@@ -1238,7 +1572,7 @@ the changes (delta) in semantic tokens for a document.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Task SendLogMessageAsync(MessageType type, string message)</code></pre>
+    <pre><code class="lang-csharp hljs">protected Task SendLogMessageAsync(MessageType type, string message, bool always = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1249,6 +1583,9 @@ the changes (delta) in semantic tokens for a document.</p>
     <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The message content.</p>
 </dd>
+    <dt><code>always</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether to always log this message even when not debugging. Warnings and errors are always logged regardless.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -1256,6 +1593,39 @@ the changes (delta) in semantic tokens for a document.</p>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_SetRpc_" data-uid="NMF.AnyText.LspServer.SetRpc*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_SetRpc_StreamJsonRpc_JsonRpc_" data-uid="NMF.AnyText.LspServer.SetRpc(StreamJsonRpc.JsonRpc)">
+  SetRpc(JsonRpc)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the JSON-RPC instance used by the server for communication with the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRpc(JsonRpc rpc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a> instance to be associated with the server.</p>
+</dd>
+  </dl>
+
 
 
 
@@ -1475,7 +1845,7 @@ the changes (delta) in semantic tokens for a document.</p>
 
   <h3 id="NMF_AnyText_LspServer_Shutdown" data-uid="NMF.AnyText.LspServer.Shutdown">
   Shutdown()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Shuts down the server</p>
@@ -1487,6 +1857,48 @@ the changes (delta) in semantic tokens for a document.</p>
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_LspServer_TryGetOpenDocument_" data-uid="NMF.AnyText.LspServer.TryGetOpenDocument*"></a>
+
+  <h3 id="NMF_AnyText_LspServer_TryGetOpenDocument_System_String_NMF_AnyText_Parser__" data-uid="NMF.AnyText.LspServer.TryGetOpenDocument(System.String,NMF.AnyText.Parser@)">
+  TryGetOpenDocument(string, out Parser)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/LspServer.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to fetch the given open document</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetOpenDocument(string documentUri, out Parser document)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>documentUri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the URI of the document</p>
+</dd>
+    <dt><code>document</code> <a class="xref" href="NMF.AnyText.Parser.html">Parser</a></dt>
+    <dd><p>the document or null, if it was not found</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the document was found, otherwise false</p>
+</dd>
+  </dl>
 
 
 

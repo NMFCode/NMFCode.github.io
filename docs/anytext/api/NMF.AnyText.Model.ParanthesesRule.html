@@ -85,7 +85,7 @@
 
 
   <h1 id="NMF_AnyText_Model_ParanthesesRule" data-uid="NMF.AnyText.Model.ParanthesesRule" class="text-break">
-Class ParanthesesRule  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class ParanthesesRule  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -171,10 +171,13 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Name">Rule.Name</a>
     </div>
     <div>
-      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_">Rule.OnActivate(RuleApplication, ParseContext)</a>
+      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_System_Boolean_">Rule.OnActivate(RuleApplication, ParseContext, bool)</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnDeactivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_">Rule.OnDeactivate(RuleApplication, ParseContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Recover_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_ParsePosition__">Rule.Recover(RuleApplication, RuleApplication, RuleApplication, ParseContext, out ParsePosition)</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnValueChange_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_Rules_RuleApplication_">Rule.OnValueChange(RuleApplication, ParseContext, RuleApplication)</a>
@@ -225,6 +228,9 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_IsLeftRecursive">Rule.IsLeftRecursive</a>
     </div>
     <div>
+      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Continuations">Rule.Continuations</a>
+    </div>
+    <div>
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_CanSynthesize_System_Object_NMF_AnyText_ParseContext_">Rule.CanSynthesize(object, ParseContext)</a>
     </div>
     <div>
@@ -246,7 +252,7 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_TokenModifiers">Rule.TokenModifiers</a>
     </div>
     <div>
-      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_">Rule.GetInlayHintText(RuleApplication)</a>
+      <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_">Rule.GetInlayHintText(RuleApplication, ParseContext)</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_SuggestCompletions_NMF_AnyText_ParseContext_NMF_AnyText_Rules_RuleApplication_System_String_NMF_AnyText_ParsePosition_">Rule.SuggestCompletions(ParseContext, RuleApplication, string, ParsePosition)</a>
@@ -292,11 +298,47 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
 </h2>
 
 
+  <a id="NMF_AnyText_Model_ParanthesesRule_AddLeftRecursionRules_" data-uid="NMF.AnyText.Model.ParanthesesRule.AddLeftRecursionRules*"></a>
+
+  <h3 id="NMF_AnyText_Model_ParanthesesRule_AddLeftRecursionRules_System_Collections_Generic_List_NMF_AnyText_Rules_Rule__System_Collections_Generic_List_NMF_AnyText_Rules_RecursiveContinuation__" data-uid="NMF.AnyText.Model.ParanthesesRule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})">
+  AddLeftRecursionRules(List&lt;Rule&gt;, List&lt;RecursiveContinuation&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds rules to the given left recursion trace</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddLeftRecursionRules(List&lt;Rule&gt; trace, List&lt;RecursiveContinuation&gt; continuations)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>trace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dd><p>the trace</p>
+</dd>
+    <dt><code>continuations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RecursiveContinuation.html">RecursiveContinuation</a>&gt;</dt>
+    <dd><p>a collection of recursion continuations</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_Model_ParanthesesRule_CanSynthesize_" data-uid="NMF.AnyText.Model.ParanthesesRule.CanSynthesize*"></a>
 
   <h3 id="NMF_AnyText_Model_ParanthesesRule_CanSynthesize_System_Object_NMF_AnyText_ParseContext_NMF_AnyText_SynthesisPlan_" data-uid="NMF.AnyText.Model.ParanthesesRule.CanSynthesize(System.Object,NMF.AnyText.ParseContext,NMF.AnyText.SynthesisPlan)">
   CanSynthesize(object, ParseContext, SynthesisPlan)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether the current rule can synthesize rule applications for the given semantic element</p>
@@ -339,9 +381,9 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
 
   <a id="NMF_AnyText_Model_ParanthesesRule_CreateRuleApplication_" data-uid="NMF.AnyText.Model.ParanthesesRule.CreateRuleApplication*"></a>
 
-  <h3 id="NMF_AnyText_Model_ParanthesesRule_CreateRuleApplication_NMF_AnyText_ParsePosition_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__NMF_AnyText_ParsePositionDelta_NMF_AnyText_ParsePositionDelta_" data-uid="NMF.AnyText.Model.ParanthesesRule.CreateRuleApplication(NMF.AnyText.ParsePosition,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication},NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta)">
-  CreateRuleApplication(ParsePosition, List&lt;RuleApplication&gt;, ParsePositionDelta, ParsePositionDelta)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_Model_ParanthesesRule_CreateRuleApplication_NMF_AnyText_ParsePosition_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__NMF_AnyText_ParsePositionDelta_NMF_AnyText_ParsePositionDelta_System_Object_" data-uid="NMF.AnyText.Model.ParanthesesRule.CreateRuleApplication(NMF.AnyText.ParsePosition,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication},NMF.AnyText.ParsePositionDelta,NMF.AnyText.ParsePositionDelta,System.Object)">
+  CreateRuleApplication(ParsePosition, List&lt;RuleApplication&gt;, ParsePositionDelta, ParsePositionDelta, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a rule application for a success</p>
@@ -349,7 +391,7 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override RuleApplication CreateRuleApplication(ParsePosition currentPosition, List&lt;RuleApplication&gt; inner, ParsePositionDelta length, ParsePositionDelta examined)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override RuleApplication CreateRuleApplication(ParsePosition currentPosition, List&lt;RuleApplication&gt; inner, ParsePositionDelta length, ParsePositionDelta examined, object semanticElement)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -365,6 +407,9 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
 </dd>
     <dt><code>examined</code> <a class="xref" href="NMF.AnyText.ParsePositionDelta.html">ParsePositionDelta</a></dt>
     <dd><p>the amount of text examined</p>
+</dd>
+    <dt><code>semanticElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>an already existing semantic model element</p>
 </dd>
   </dl>
 
@@ -389,7 +434,7 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="NMF_AnyText_Model_ParanthesesRule_HasFoldingKind_System_String__" data-uid="NMF.AnyText.Model.ParanthesesRule.HasFoldingKind(System.String@)">
   HasFoldingKind(out string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the folding kind for a rule if one is defined for the rule</p>
@@ -428,7 +473,7 @@ Class ParanthesesRule  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Model/ParanthesesRule.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

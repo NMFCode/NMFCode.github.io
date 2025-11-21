@@ -98,7 +98,7 @@ Class ModelParseContext  <a class="header-action link-secondary" title="View sou
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ModelParseContext : ParseContext</code></pre>
+    <pre><code class="lang-csharp hljs">public class ModelParseContext : ParseContext, IDisposable</code></pre>
   </div>
 
 
@@ -113,6 +113,12 @@ Class ModelParseContext  <a class="header-action link-secondary" title="View sou
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -120,6 +126,9 @@ Class ModelParseContext  <a class="header-action link-secondary" title="View sou
     <dd>
     <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Grammar">ParseContext.Grammar</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_FileUri">ParseContext.FileUri</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RootRule">ParseContext.RootRule</a>
@@ -152,16 +161,25 @@ Class ModelParseContext  <a class="header-action link-secondary" title="View sou
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_StringComparison">ParseContext.StringComparison</a>
     </div>
     <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsParsing">ParseContext.IsParsing</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsExecutingModelChanges">ParseContext.IsExecutingModelChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_CurrentDirectory">ParseContext.CurrentDirectory</a>
+    </div>
+    <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_EnqueueResolveAction_NMF_AnyText_ParseResolveAction_">ParseContext.EnqueueResolveAction(ParseResolveAction)</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_AddDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_">ParseContext.AddDefinition(object, RuleApplication)</a>
     </div>
     <div>
-      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__">ParseContext.TryGetDefinition(object, out RuleApplication)</a>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___">ParseContext.TryGetDefinitions(object, out ICollection&lt;RuleApplication&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_">ParseContext.RemoveDefinition(object)</a>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_">ParseContext.RemoveDefinition(object, RuleApplication)</a>
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_">ParseContext.AddReference(object, RuleApplication)</a>
@@ -192,6 +210,18 @@ Class ModelParseContext  <a class="header-action link-secondary" title="View sou
     </div>
     <div>
       <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_NMF_AnyText_Rules_OneOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__">ParseContext.AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_">ParseContext.TrackAndCreateWorkspaceEdit(TextEdit[], Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_ShouldParseChange">ParseContext.ShouldParseChange()</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose_System_Boolean_">ParseContext.Dispose(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose">ParseContext.Dispose()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>

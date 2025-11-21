@@ -153,7 +153,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser__ctor_NMF_AnyText_Grammars_Grammar_" data-uid="NMF.AnyText.Parser.#ctor(NMF.AnyText.Grammars.Grammar)">
   Parser(Grammar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new parser system</p>
@@ -186,7 +186,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser__ctor_NMF_AnyText_ParseContext_" data-uid="NMF.AnyText.Parser.#ctor(NMF.AnyText.ParseContext)">
   Parser(ParseContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new parser system</p>
@@ -219,7 +219,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser__ctor_NMF_AnyText_Rules_Rule_System_StringComparison_" data-uid="NMF.AnyText.Parser.#ctor(NMF.AnyText.Rules.Rule,System.StringComparison)">
   Parser(Rule, StringComparison)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new parser system</p>
@@ -259,7 +259,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_Context" data-uid="NMF.AnyText.Parser.Context">
   Context
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the parse context for this parser</p>
@@ -385,11 +385,11 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="NMF_AnyText_Parser_GetDefinition_" data-uid="NMF.AnyText.Parser.GetDefinition*"></a>
+  <a id="NMF_AnyText_Parser_GetDefinitions_" data-uid="NMF.AnyText.Parser.GetDefinitions*"></a>
 
-  <h3 id="NMF_AnyText_Parser_GetDefinition_NMF_AnyText_ParsePosition_" data-uid="NMF.AnyText.Parser.GetDefinition(NMF.AnyText.ParsePosition)">
-  GetDefinition(ParsePosition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.GoToDefinition.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_Parser_GetDefinitions_NMF_AnyText_ParsePosition_" data-uid="NMF.AnyText.Parser.GetDefinitions(NMF.AnyText.ParsePosition)">
+  GetDefinitions(ParsePosition)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.GoToDefinition.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the rule application for the definition of a symbol</p>
@@ -397,7 +397,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RuleApplication GetDefinition(ParsePosition position)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;RuleApplication&gt; GetDefinitions(ParsePosition position)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -409,8 +409,8 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
-    <dd><p>The rule application of the symbol definition</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd><p>The rule applications of the symbols definitions</p>
 </dd>
   </dl>
 
@@ -428,7 +428,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetDocumentHighlights_NMF_AnyText_ParsePosition_" data-uid="NMF.AnyText.Parser.GetDocumentHighlights(NMF.AnyText.ParsePosition)">
   GetDocumentHighlights(ParsePosition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentHighlights.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentHighlights.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the locations and kinds of document highlights for a literal at a given position</p>
@@ -467,7 +467,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetDocumentSymbolsForNonValidDocuments" data-uid="NMF.AnyText.Parser.GetDocumentSymbolsForNonValidDocuments">
   GetDocumentSymbolsForNonValidDocuments()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentSymbol.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentSymbol.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves document symbols for non-valid documents.</p>
@@ -500,7 +500,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetDocumentSymbolsFromRoot" data-uid="NMF.AnyText.Parser.GetDocumentSymbolsFromRoot">
   GetDocumentSymbolsFromRoot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentSymbol.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.DocumentSymbol.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the document symbols starting from the root rule application</p>
@@ -533,7 +533,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetFoldingRangesFromRoot" data-uid="NMF.AnyText.Parser.GetFoldingRangesFromRoot">
   GetFoldingRangesFromRoot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.FoldingRanges.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.FoldingRanges.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses folding ranges starting from the root rule application</p>
@@ -566,7 +566,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetInlayEntriesInRange_NMF_AnyText_ParseRange_" data-uid="NMF.AnyText.Parser.GetInlayEntriesInRange(NMF.AnyText.ParseRange)">
   GetInlayEntriesInRange(ParseRange)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Inlay.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Inlay.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the document symbols starting from the root rule application</p>
@@ -604,7 +604,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetReferences_NMF_AnyText_ParsePosition_" data-uid="NMF.AnyText.Parser.GetReferences(NMF.AnyText.ParsePosition)">
   GetReferences(ParsePosition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.FindReferences.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.FindReferences.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the locations for references of a symbol</p>
@@ -643,7 +643,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetRenameTextEdits_NMF_AnyText_ParsePosition_System_String_" data-uid="NMF.AnyText.Parser.GetRenameTextEdits(NMF.AnyText.ParsePosition,System.String)">
   GetRenameTextEdits(ParsePosition, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Rename.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Rename.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text edits for a rename operation of a symbol</p>
@@ -685,7 +685,7 @@ Class Parser  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NMF_AnyText_Parser_GetSelectionRanges_System_Collections_Generic_IEnumerable_NMF_AnyText_ParsePosition__" data-uid="NMF.AnyText.Parser.GetSelectionRanges(System.Collections.Generic.IEnumerable{NMF.AnyText.ParsePosition})">
   GetSelectionRanges(IEnumerable&lt;ParsePosition&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.SelectionRanges.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.SelectionRanges.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the selection range for given positions</p>
@@ -767,9 +767,51 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <a id="NMF_AnyText_Parser_Initialize_" data-uid="NMF.AnyText.Parser.Initialize*"></a>
 
-  <h3 id="NMF_AnyText_Parser_Initialize_System_String___" data-uid="NMF.AnyText.Parser.Initialize(System.String[])">
-  Initialize(string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_Parser_Initialize_System_Object_System_Boolean_" data-uid="NMF.AnyText.Parser.Initialize(System.Object,System.Boolean)">
+  Initialize(object, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes the parser system with a semantic object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(object semanticObject, bool skipValidation = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>semanticObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>the semantic object</p>
+</dd>
+    <dt><code>skipValidation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to true, the parser does not perform validation rules (default: false)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>thrown if no parse tree could be generated for the semantic object</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NMF_AnyText_Parser_Initialize_" data-uid="NMF.AnyText.Parser.Initialize*"></a>
+
+  <h3 id="NMF_AnyText_Parser_Initialize_System_String___System_Boolean_" data-uid="NMF.AnyText.Parser.Initialize(System.String[],System.Boolean)">
+  Initialize(string[], bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the parser system</p>
@@ -777,13 +819,16 @@ including delta-encoded line and character positions, length, token type, and mo
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object Initialize(string[] input)</code></pre>
+    <pre><code class="lang-csharp hljs">public object Initialize(string[] input, bool skipValidation = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
     <dd><p>the initial input</p>
+</dd>
+    <dt><code>skipValidation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to true, the parser does not perform validation rules (default: false)</p>
 </dd>
   </dl>
 
@@ -806,9 +851,9 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <a id="NMF_AnyText_Parser_Initialize_" data-uid="NMF.AnyText.Parser.Initialize*"></a>
 
-  <h3 id="NMF_AnyText_Parser_Initialize_System_String___System_Boolean_" data-uid="NMF.AnyText.Parser.Initialize(System.String[],System.Boolean)">
-  Initialize(string[], bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_Parser_Initialize_System_Uri_" data-uid="NMF.AnyText.Parser.Initialize(System.Uri)">
+  Initialize(Uri)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the parser system</p>
@@ -816,16 +861,13 @@ including delta-encoded line and character positions, length, token type, and mo
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object Initialize(string[] input, bool skipValidation)</code></pre>
+    <pre><code class="lang-csharp hljs">public object Initialize(Uri fileUri)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd><p>the initial input</p>
-</dd>
-    <dt><code>skipValidation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>if set to true, the parser does not perform validation rules</p>
+    <dt><code>fileUri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd><p>the Uri of the File</p>
 </dd>
   </dl>
 
@@ -850,7 +892,7 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <h3 id="NMF_AnyText_Parser_SuggestCompletions_NMF_AnyText_ParsePosition_System_String__" data-uid="NMF.AnyText.Parser.SuggestCompletions(NMF.AnyText.ParsePosition,System.String@)">
   SuggestCompletions(ParsePosition, out string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Completions.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.Completions.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates completion suggestions for the given position</p>
@@ -892,7 +934,7 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <h3 id="NMF_AnyText_Parser_Update_NMF_AnyText_TextEdit_" data-uid="NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit)">
   Update(TextEdit)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the parse result with the given edit</p>
@@ -931,7 +973,7 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <h3 id="NMF_AnyText_Parser_Update_NMF_AnyText_TextEdit_System_Boolean_" data-uid="NMF.AnyText.Parser.Update(NMF.AnyText.TextEdit,System.Boolean)">
   Update(TextEdit, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the parse result with the given edit</p>
@@ -973,7 +1015,7 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <h3 id="NMF_AnyText_Parser_Update_System_Collections_Generic_IEnumerable_NMF_AnyText_TextEdit__" data-uid="NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})">
   Update(IEnumerable&lt;TextEdit&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L185"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the parse result with the given edits</p>
@@ -1012,7 +1054,7 @@ including delta-encoded line and character positions, length, token type, and mo
 
   <h3 id="NMF_AnyText_Parser_Update_System_Collections_Generic_IEnumerable_NMF_AnyText_TextEdit__System_Boolean_" data-uid="NMF.AnyText.Parser.Update(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.Boolean)">
   Update(IEnumerable&lt;TextEdit&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the parse result with the given edits</p>
@@ -1037,6 +1079,45 @@ including delta-encoded line and character positions, length, token type, and mo
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd><p>the updated value parsed for the given input</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_Parser_Update_" data-uid="NMF.AnyText.Parser.Update*"></a>
+
+  <h3 id="NMF_AnyText_Parser_Update_System_Object_" data-uid="NMF.AnyText.Parser.Update(System.Object)">
+  Update(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Parser.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs necessary changes to update the text according to the given model element</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;TextEdit&gt; Update(object updatedElement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updatedElement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>a semantic model element that was updated outside the textual representation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a>&gt;</dt>
+    <dd><p>A list of changes necessary to reflect the updated element</p>
 </dd>
   </dl>
 

@@ -6,6 +6,7 @@ items:
   parent: NMF.AnyText
   children:
   - NMF.AnyText.LspTypesMapper.MapToLspTextEdits(System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit})
+  - NMF.AnyText.LspTypesMapper.MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit,System.String,System.Boolean)
   - NMF.AnyText.LspTypesMapper.SymbolKindMappings
   langs:
   - csharp
@@ -21,7 +22,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: LspTypesMapper
     path: src/AnyText/AnyText.Lsp/LspTypesMapper.cs
-    startLine: 10
+    startLine: 21
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: MapToLspTextEdits
     path: src/AnyText/AnyText.Lsp/LspTypesMapper.cs
-    startLine: 17
+    startLine: 28
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -96,7 +97,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SymbolKindMappings
     path: src/AnyText/AnyText.Lsp/LspTypesMapper.cs
-    startLine: 41
+    startLine: 52
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -107,6 +108,50 @@ items:
     return:
       type: System.Collections.ObjectModel.ReadOnlyDictionary{NMF.AnyText.SymbolKind,LspTypes.CompletionItemKind}
     content.vb: Public Shared ReadOnly SymbolKindMappings As ReadOnlyDictionary(Of SymbolKind, CompletionItemKind)
+- uid: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit,System.String,System.Boolean)
+  commentId: M:NMF.AnyText.LspTypesMapper.MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit,System.String,System.Boolean)
+  id: MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit,System.String,System.Boolean)
+  parent: NMF.AnyText.LspTypesMapper
+  langs:
+  - csharp
+  - vb
+  name: MapWorkspaceEdit(WorkspaceEdit, string, bool)
+  nameWithType: LspTypesMapper.MapWorkspaceEdit(WorkspaceEdit, string, bool)
+  fullName: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit, string, bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspTypesMapper.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: MapWorkspaceEdit
+    path: src/AnyText/AnyText.Lsp/LspTypesMapper.cs
+    startLine: 89
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Maps a  <xref href="NMF.AnyText.Workspace.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> objects to a <xref href="LspTypes.WorkspaceEdit" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static WorkspaceEdit MapWorkspaceEdit(WorkspaceEdit workspaceEdit, string workspaceUri, bool useDocumentChanges = false)
+    parameters:
+    - id: workspaceEdit
+      type: NMF.AnyText.Workspace.WorkspaceEdit
+      description: The <xref href="NMF.AnyText.Workspace.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> object to be mapped.
+    - id: workspaceUri
+      type: System.String
+      description: The workspace Uri for the edit.
+    - id: useDocumentChanges
+      type: System.Boolean
+      description: Option to use <xref href="NMF.AnyText.Workspace.DocumentChange" data-throw-if-not-resolved="false"></xref> instead of <xref href="NMF.AnyText.TextEdit" data-throw-if-not-resolved="false"></xref> changes.
+    return:
+      type: LspTypes.WorkspaceEdit
+      description: A <xref href="LspTypes.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> representing the mapped LSP workspace edit.
+    content.vb: Public Shared Function MapWorkspaceEdit(workspaceEdit As WorkspaceEdit, workspaceUri As String, useDocumentChanges As Boolean = False) As WorkspaceEdit
+  overload: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit*
+  nameWithType.vb: LspTypesMapper.MapWorkspaceEdit(WorkspaceEdit, String, Boolean)
+  fullName.vb: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit(NMF.AnyText.Workspace.WorkspaceEdit, String, Boolean)
+  name.vb: MapWorkspaceEdit(WorkspaceEdit, String, Boolean)
 references:
 - uid: NMF.AnyText
   commentId: N:NMF.AnyText
@@ -536,6 +581,7 @@ references:
   - name: <
   - uid: NMF.AnyText.SymbolKind
     name: SymbolKind
+    href: NMF.AnyText.SymbolKind.html
   - name: ','
   - name: " "
   - uid: LspTypes.CompletionItemKind
@@ -552,6 +598,7 @@ references:
   - name: " "
   - uid: NMF.AnyText.SymbolKind
     name: SymbolKind
+    href: NMF.AnyText.SymbolKind.html
   - name: ','
   - name: " "
   - uid: LspTypes.CompletionItemKind
@@ -629,3 +676,87 @@ references:
     name: ObjectModel
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.objectmodel
+- uid: NMF.AnyText.Workspace.WorkspaceEdit
+  commentId: T:NMF.AnyText.Workspace.WorkspaceEdit
+  parent: NMF.AnyText.Workspace
+  href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: NMF.AnyText.Workspace.WorkspaceEdit
+- uid: LspTypes.WorkspaceEdit
+  commentId: T:LspTypes.WorkspaceEdit
+  parent: LspTypes
+  isExternal: true
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: LspTypes.WorkspaceEdit
+- uid: NMF.AnyText.Workspace.DocumentChange
+  commentId: T:NMF.AnyText.Workspace.DocumentChange
+  href: NMF.AnyText.Workspace.DocumentChange.html
+  name: DocumentChange
+  nameWithType: DocumentChange
+  fullName: NMF.AnyText.Workspace.DocumentChange
+- uid: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit*
+  commentId: Overload:NMF.AnyText.LspTypesMapper.MapWorkspaceEdit
+  href: NMF.AnyText.LspTypesMapper.html#NMF_AnyText_LspTypesMapper_MapWorkspaceEdit_NMF_AnyText_Workspace_WorkspaceEdit_System_String_System_Boolean_
+  name: MapWorkspaceEdit
+  nameWithType: LspTypesMapper.MapWorkspaceEdit
+  fullName: NMF.AnyText.LspTypesMapper.MapWorkspaceEdit
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.Workspace
+  commentId: N:NMF.AnyText.Workspace
+  href: NMF.html
+  name: NMF.AnyText.Workspace
+  nameWithType: NMF.AnyText.Workspace
+  fullName: NMF.AnyText.Workspace
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+- uid: LspTypes
+  commentId: N:LspTypes
+  isExternal: true
+  name: LspTypes
+  nameWithType: LspTypes
+  fullName: LspTypes

@@ -85,7 +85,7 @@
 
 
   <h1 id="NMF_AnyText_Rules_RecursiveContinuation" data-uid="NMF.AnyText.Rules.RecursiveContinuation" class="text-break">
-Class RecursiveContinuation  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class RecursiveContinuation  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -151,9 +151,9 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
 
   <a id="NMF_AnyText_Rules_RecursiveContinuation__ctor_" data-uid="NMF.AnyText.Rules.RecursiveContinuation.#ctor*"></a>
 
-  <h3 id="NMF_AnyText_Rules_RecursiveContinuation__ctor_System_Collections_Generic_IEnumerable_NMF_AnyText_Rules_Rule__" data-uid="NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})">
-  RecursiveContinuation(IEnumerable&lt;Rule&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_Rules_RecursiveContinuation__ctor_System_Collections_Generic_IReadOnlyList_NMF_AnyText_Rules_Rule__" data-uid="NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule})">
+  RecursiveContinuation(IReadOnlyList&lt;Rule&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new continuation</p>
@@ -161,12 +161,12 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected RecursiveContinuation(IEnumerable&lt;Rule&gt; affectedRules)</code></pre>
+    <pre><code class="lang-csharp hljs">protected RecursiveContinuation(IReadOnlyList&lt;Rule&gt; affectedRules)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>affectedRules</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dt><code>affectedRules</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
     <dd><p>the rules that need to be invalidated when performing the recursion</p>
 </dd>
   </dl>
@@ -190,7 +190,7 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
 
   <h3 id="NMF_AnyText_Rules_RecursiveContinuation_AffectedRules" data-uid="NMF.AnyText.Rules.RecursiveContinuation.AffectedRules">
   AffectedRules
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the rules needed to invalidate before executing the recursion</p>
@@ -198,7 +198,7 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Rule&gt; AffectedRules { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Rule&gt; AffectedRules { get; }</code></pre>
   </div>
 
 
@@ -207,7 +207,7 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NMF.AnyText.Rules.Rule.html">Rule</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -226,7 +226,7 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
 
   <h3 id="NMF_AnyText_Rules_RecursiveContinuation_ResolveRecursion_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_RecursionContext_NMF_AnyText_ParsePosition__" data-uid="NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)">
   ResolveRecursion(RuleApplication, ParseContext, RecursionContext, ref ParsePosition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Grows the given base rule application</p>
@@ -274,7 +274,7 @@ Class RecursiveContinuation  <a class="header-action link-secondary" title="View
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

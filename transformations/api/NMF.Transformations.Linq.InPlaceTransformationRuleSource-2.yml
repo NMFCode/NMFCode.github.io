@@ -16,7 +16,9 @@ items:
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Filter
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.GetEnumerator
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.HandleDependency(NMF.Transformations.Core.Computation)
+  - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})
+  - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder(System.Boolean)
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Successors
   - NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.TransformationRule
   langs:
@@ -33,7 +35,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: InPlaceTransformationRuleSource
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 423
+    startLine: 447
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -87,7 +89,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 432
+    startLine: 456
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -125,7 +127,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TransformationRule
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 453
+    startLine: 477
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -158,7 +160,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Context
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 458
+    startLine: 482
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -191,7 +193,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Filter
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 463
+    startLine: 487
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -224,7 +226,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: HandleDependency
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 469
+    startLine: 493
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -260,7 +262,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ExecuteBefore
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 483
+    startLine: 507
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -295,7 +297,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Dispose
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 492
+    startLine: 516
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -327,7 +329,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Dispose
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 502
+    startLine: 526
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -362,7 +364,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GetEnumerator
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 522
+    startLine: 546
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -397,7 +399,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Successors
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 534
+    startLine: 558
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -432,7 +434,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Dependencies
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 537
+    startLine: 561
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -467,7 +469,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ExecutionMetaData
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 540
+    startLine: 564
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -484,6 +486,41 @@ items:
   - NMF.Expressions.INotifiable.ExecutionMetaData
   nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).ExecutionMetaData
   fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).ExecutionMetaData
+- uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered
+  commentId: P:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered
+  id: IsOrdered
+  parent: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2
+  langs:
+  - csharp
+  - vb
+  name: IsOrdered
+  nameWithType: InPlaceTransformationRuleSource<TIn1, TIn2>.IsOrdered
+  fullName: NMF.Transformations.Linq.InPlaceTransformationRuleSource<TIn1, TIn2>.IsOrdered
+  type: Property
+  source:
+    remote:
+      path: Transformations/Transformations/Linq/TransformationRuleSource.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsOrdered
+    path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
+    startLine: 567
+  assemblies:
+  - NMF.Transformations
+  namespace: NMF.Transformations.Linq
+  summary: Determines whether there is a dedicated order defined for this collection
+  example: []
+  syntax:
+    content: public bool IsOrdered { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsOrdered As Boolean
+  overload: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered*
+  implements:
+  - NMF.Expressions.INotifyEnumerable.IsOrdered
+  nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).IsOrdered
+  fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).IsOrdered
 - uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})
   commentId: M:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})
   id: Notify(System.Collections.Generic.IList{NMF.Expressions.INotificationResult})
@@ -502,7 +539,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Notify
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 543
+    startLine: 570
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -524,6 +561,43 @@ items:
   nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).Notify(IList(Of INotificationResult))
   fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).Notify(System.Collections.Generic.IList(Of NMF.Expressions.INotificationResult))
   name.vb: Notify(IList(Of INotificationResult))
+- uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder(System.Boolean)
+  commentId: M:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder(System.Boolean)
+  id: RequireOrder(System.Boolean)
+  parent: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2
+  langs:
+  - csharp
+  - vb
+  name: RequireOrder(bool)
+  nameWithType: InPlaceTransformationRuleSource<TIn1, TIn2>.RequireOrder(bool)
+  fullName: NMF.Transformations.Linq.InPlaceTransformationRuleSource<TIn1, TIn2>.RequireOrder(bool)
+  type: Method
+  source:
+    remote:
+      path: Transformations/Transformations/Linq/TransformationRuleSource.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: RequireOrder
+    path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
+    startLine: 576
+  assemblies:
+  - NMF.Transformations
+  namespace: NMF.Transformations.Linq
+  summary: Defines whether an order is required for the given collection
+  example: []
+  syntax:
+    content: public void RequireOrder(bool isOrderRequired)
+    parameters:
+    - id: isOrderRequired
+      type: System.Boolean
+      description: ''
+    content.vb: Public Sub RequireOrder(isOrderRequired As Boolean)
+  overload: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder*
+  implements:
+  - NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+  nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).RequireOrder(Boolean)
+  fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).RequireOrder(Boolean)
+  name.vb: RequireOrder(Boolean)
 - uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.CollectionChanged
   commentId: E:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.CollectionChanged
   id: CollectionChanged
@@ -542,7 +616,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: CollectionChanged
     path: src/Transformations/Transformations/Linq/TransformationRuleSource.cs
-    startLine: 551
+    startLine: 583
   assemblies:
   - NMF.Transformations
   namespace: NMF.Transformations.Linq
@@ -1686,6 +1760,20 @@ references:
   name: ExecutionMetaData
   nameWithType: ExecutionMetaData
   fullName: NMF.Expressions.ExecutionMetaData
+- uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered*
+  commentId: Overload:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.IsOrdered
+  href: NMF.Transformations.Linq.InPlaceTransformationRuleSource-2.html#NMF_Transformations_Linq_InPlaceTransformationRuleSource_2_IsOrdered
+  name: IsOrdered
+  nameWithType: InPlaceTransformationRuleSource<TIn1, TIn2>.IsOrdered
+  fullName: NMF.Transformations.Linq.InPlaceTransformationRuleSource<TIn1, TIn2>.IsOrdered
+  nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).IsOrdered
+  fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).IsOrdered
+- uid: NMF.Expressions.INotifyEnumerable.IsOrdered
+  commentId: P:NMF.Expressions.INotifyEnumerable.IsOrdered
+  parent: NMF.Expressions.INotifyEnumerable
+  name: IsOrdered
+  nameWithType: INotifyEnumerable.IsOrdered
+  fullName: NMF.Expressions.INotifyEnumerable.IsOrdered
 - uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Notify*
   commentId: Overload:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.Notify
   href: NMF.Transformations.Linq.InPlaceTransformationRuleSource-2.html#NMF_Transformations_Linq_InPlaceTransformationRuleSource_2_Notify_System_Collections_Generic_IList_NMF_Expressions_INotificationResult__
@@ -1797,6 +1885,43 @@ references:
   - name: Of
   - name: " "
   - name: T
+  - name: )
+- uid: NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder*
+  commentId: Overload:NMF.Transformations.Linq.InPlaceTransformationRuleSource`2.RequireOrder
+  href: NMF.Transformations.Linq.InPlaceTransformationRuleSource-2.html#NMF_Transformations_Linq_InPlaceTransformationRuleSource_2_RequireOrder_System_Boolean_
+  name: RequireOrder
+  nameWithType: InPlaceTransformationRuleSource<TIn1, TIn2>.RequireOrder
+  fullName: NMF.Transformations.Linq.InPlaceTransformationRuleSource<TIn1, TIn2>.RequireOrder
+  nameWithType.vb: InPlaceTransformationRuleSource(Of TIn1, TIn2).RequireOrder
+  fullName.vb: NMF.Transformations.Linq.InPlaceTransformationRuleSource(Of TIn1, TIn2).RequireOrder
+- uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+  commentId: M:NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+  parent: NMF.Expressions.INotifyEnumerable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: RequireOrder(bool)
+  nameWithType: INotifyEnumerable.RequireOrder(bool)
+  fullName: NMF.Expressions.INotifyEnumerable.RequireOrder(bool)
+  nameWithType.vb: INotifyEnumerable.RequireOrder(Boolean)
+  fullName.vb: NMF.Expressions.INotifyEnumerable.RequireOrder(Boolean)
+  name.vb: RequireOrder(Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+    name: RequireOrder
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+    name: RequireOrder
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
   commentId: E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged

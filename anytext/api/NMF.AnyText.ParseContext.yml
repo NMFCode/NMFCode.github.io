@@ -12,25 +12,33 @@ items:
   - NMF.AnyText.ParseContext.AddDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.AddDiagnosticItem(NMF.AnyText.DiagnosticItem)
   - NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
+  - NMF.AnyText.ParseContext.CurrentDirectory
+  - NMF.AnyText.ParseContext.Dispose
+  - NMF.AnyText.ParseContext.Dispose(System.Boolean)
   - NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)
   - NMF.AnyText.ParseContext.Errors
+  - NMF.AnyText.ParseContext.FileUri
   - NMF.AnyText.ParseContext.GetPotentialReferences``1(System.Object,System.String)
   - NMF.AnyText.ParseContext.Grammar
   - NMF.AnyText.ParseContext.Imports
   - NMF.AnyText.ParseContext.Input
+  - NMF.AnyText.ParseContext.IsExecutingModelChanges
   - NMF.AnyText.ParseContext.IsLastUpdateSuccessful
+  - NMF.AnyText.ParseContext.IsParsing
   - NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication
   - NMF.AnyText.ParseContext.Matcher
   - NMF.AnyText.ParseContext.RefreshRoot
-  - NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
+  - NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.RemoveDiagnosticItem(NMF.AnyText.DiagnosticItem)
   - NMF.AnyText.ParseContext.RemoveReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.RestoreContextElement(NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.Root
   - NMF.AnyText.ParseContext.RootRule
   - NMF.AnyText.ParseContext.RootRuleApplication
+  - NMF.AnyText.ParseContext.ShouldParseChange
   - NMF.AnyText.ParseContext.StringComparison
-  - NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
+  - NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  - NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
   - NMF.AnyText.ParseContext.TryGetReferences(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
   - NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)
   langs:
@@ -47,19 +55,21 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ParseContext
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 14
+    startLine: 12
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
   summary: The context in which a text is parsed
   example: []
   syntax:
-    content: public class ParseContext
-    content.vb: Public Class ParseContext
+    content: 'public class ParseContext : IDisposable'
+    content.vb: Public Class ParseContext Implements IDisposable
   inheritance:
   - System.Object
   derivedClasses:
   - NMF.AnyText.ModelParseContext
+  implements:
+  - System.IDisposable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -86,7 +96,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 27
+    startLine: 25
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -127,7 +137,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Grammar
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 41
+    startLine: 39
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -140,6 +150,37 @@ items:
       type: NMF.AnyText.Grammars.Grammar
     content.vb: Public ReadOnly Property Grammar As Grammar
   overload: NMF.AnyText.ParseContext.Grammar*
+- uid: NMF.AnyText.ParseContext.FileUri
+  commentId: P:NMF.AnyText.ParseContext.FileUri
+  id: FileUri
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: FileUri
+  nameWithType: ParseContext.FileUri
+  fullName: NMF.AnyText.ParseContext.FileUri
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: FileUri
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 44
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the file-Uri for this context
+  example: []
+  syntax:
+    content: public Uri FileUri { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property FileUri As Uri
+  overload: NMF.AnyText.ParseContext.FileUri*
 - uid: NMF.AnyText.ParseContext.RootRule
   commentId: P:NMF.AnyText.ParseContext.RootRule
   id: RootRule
@@ -158,7 +199,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RootRule
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 46
+    startLine: 49
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -189,7 +230,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Imports
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 51
+    startLine: 54
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -220,7 +261,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Root
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 56
+    startLine: 59
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -251,7 +292,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RefreshRoot
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 61
+    startLine: 64
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -279,7 +320,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RootRuleApplication
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 73
+    startLine: 76
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -310,7 +351,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: LastSuccessfulRootRuleApplication
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 78
+    startLine: 81
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -341,7 +382,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Input
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 83
+    startLine: 86
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -372,7 +413,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Matcher
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 88
+    startLine: 91
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -403,7 +444,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsLastUpdateSuccessful
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 93
+    startLine: 96
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -434,7 +475,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: StringComparison
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 98
+    startLine: 101
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -447,6 +488,99 @@ items:
       type: System.StringComparison
     content.vb: Public ReadOnly Property StringComparison As StringComparison
   overload: NMF.AnyText.ParseContext.StringComparison*
+- uid: NMF.AnyText.ParseContext.IsParsing
+  commentId: P:NMF.AnyText.ParseContext.IsParsing
+  id: IsParsing
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: IsParsing
+  nameWithType: ParseContext.IsParsing
+  fullName: NMF.AnyText.ParseContext.IsParsing
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsParsing
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 106
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets or sets a flag indicating whether the parser is currently in the process of parsing.
+  example: []
+  syntax:
+    content: public bool IsParsing { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsParsing As Boolean
+  overload: NMF.AnyText.ParseContext.IsParsing*
+- uid: NMF.AnyText.ParseContext.IsExecutingModelChanges
+  commentId: P:NMF.AnyText.ParseContext.IsExecutingModelChanges
+  id: IsExecutingModelChanges
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: IsExecutingModelChanges
+  nameWithType: ParseContext.IsExecutingModelChanges
+  fullName: NMF.AnyText.ParseContext.IsExecutingModelChanges
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsExecutingModelChanges
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 111
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: True, if changes to the text should imply changes to the semantic model, otherwise false
+  example: []
+  syntax:
+    content: public bool IsExecutingModelChanges { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsExecutingModelChanges As Boolean
+  overload: NMF.AnyText.ParseContext.IsExecutingModelChanges*
+- uid: NMF.AnyText.ParseContext.CurrentDirectory
+  commentId: P:NMF.AnyText.ParseContext.CurrentDirectory
+  id: CurrentDirectory
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: CurrentDirectory
+  nameWithType: ParseContext.CurrentDirectory
+  fullName: NMF.AnyText.ParseContext.CurrentDirectory
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CurrentDirectory
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 116
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Gets the directory the currently opened document is in
+  example: []
+  syntax:
+    content: public string CurrentDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CurrentDirectory As String
+  overload: NMF.AnyText.ParseContext.CurrentDirectory*
 - uid: NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)
   commentId: M:NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)
   id: TryResolveReference``1(System.Object,System.String,``0@)
@@ -465,7 +599,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TryResolveReference
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 107
+    startLine: 125
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -511,7 +645,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GetPotentialReferences
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 120
+    startLine: 138
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -555,7 +689,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: EnqueueResolveAction
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 127
+    startLine: 145
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -587,7 +721,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AddDefinition
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 156
+    startLine: 174
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -607,57 +741,57 @@ items:
   nameWithType.vb: ParseContext.AddDefinition(Object, RuleApplication)
   fullName.vb: NMF.AnyText.ParseContext.AddDefinition(Object, NMF.AnyText.Rules.RuleApplication)
   name.vb: AddDefinition(Object, RuleApplication)
-- uid: NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-  commentId: M:NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-  id: TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
+- uid: NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+  commentId: M:NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+  id: TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
   parent: NMF.AnyText.ParseContext
   langs:
   - csharp
   - vb
-  name: TryGetDefinition(object, out RuleApplication)
-  nameWithType: ParseContext.TryGetDefinition(object, out RuleApplication)
-  fullName: NMF.AnyText.ParseContext.TryGetDefinition(object, out NMF.AnyText.Rules.RuleApplication)
+  name: TryGetDefinitions(object, out ICollection<RuleApplication>)
+  nameWithType: ParseContext.TryGetDefinitions(object, out ICollection<RuleApplication>)
+  fullName: NMF.AnyText.ParseContext.TryGetDefinitions(object, out System.Collections.Generic.ICollection<NMF.AnyText.Rules.RuleApplication>)
   type: Method
   source:
     remote:
       path: AnyText/AnyText.Core/ParseContext.cs
       branch: main
       repo: https://github.com/NMFCode/NMF.git
-    id: TryGetDefinition
+    id: TryGetDefinitions
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 167
+    startLine: 196
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
   summary: Get the rule application for a definition
   example: []
   syntax:
-    content: public bool TryGetDefinition(object key, out RuleApplication definition)
+    content: public bool TryGetDefinitions(object key, out ICollection<RuleApplication> definitions)
     parameters:
     - id: key
       type: System.Object
       description: The semantic element of the rule application
-    - id: definition
-      type: NMF.AnyText.Rules.RuleApplication
-      description: The rule application for the definition
+    - id: definitions
+      type: System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}
+      description: The rule applications for the definitions
     return:
       type: System.Boolean
       description: True, if a definition is present for the given key
-    content.vb: Public Function TryGetDefinition(key As Object, definition As RuleApplication) As Boolean
-  overload: NMF.AnyText.ParseContext.TryGetDefinition*
-  nameWithType.vb: ParseContext.TryGetDefinition(Object, RuleApplication)
-  fullName.vb: NMF.AnyText.ParseContext.TryGetDefinition(Object, NMF.AnyText.Rules.RuleApplication)
-  name.vb: TryGetDefinition(Object, RuleApplication)
-- uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-  commentId: M:NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-  id: RemoveDefinition(System.Object)
+    content.vb: Public Function TryGetDefinitions(key As Object, definitions As ICollection(Of RuleApplication)) As Boolean
+  overload: NMF.AnyText.ParseContext.TryGetDefinitions*
+  nameWithType.vb: ParseContext.TryGetDefinitions(Object, ICollection(Of RuleApplication))
+  fullName.vb: NMF.AnyText.ParseContext.TryGetDefinitions(Object, System.Collections.Generic.ICollection(Of NMF.AnyText.Rules.RuleApplication))
+  name.vb: TryGetDefinitions(Object, ICollection(Of RuleApplication))
+- uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+  commentId: M:NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+  id: RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
   parent: NMF.AnyText.ParseContext
   langs:
   - csharp
   - vb
-  name: RemoveDefinition(object)
-  nameWithType: ParseContext.RemoveDefinition(object)
-  fullName: NMF.AnyText.ParseContext.RemoveDefinition(object)
+  name: RemoveDefinition(object, RuleApplication)
+  nameWithType: ParseContext.RemoveDefinition(object, RuleApplication)
+  fullName: NMF.AnyText.ParseContext.RemoveDefinition(object, NMF.AnyText.Rules.RuleApplication)
   type: Method
   source:
     remote:
@@ -666,23 +800,26 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveDefinition
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 176
+    startLine: 206
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
   summary: Remove a rule application from the list of definitions
   example: []
   syntax:
-    content: public void RemoveDefinition(object key)
+    content: public void RemoveDefinition(object key, RuleApplication value)
     parameters:
     - id: key
       type: System.Object
       description: The semantic element of the rule application
-    content.vb: Public Sub RemoveDefinition(key As Object)
+    - id: value
+      type: NMF.AnyText.Rules.RuleApplication
+      description: The rule application to be removed
+    content.vb: Public Sub RemoveDefinition(key As Object, value As RuleApplication)
   overload: NMF.AnyText.ParseContext.RemoveDefinition*
-  nameWithType.vb: ParseContext.RemoveDefinition(Object)
-  fullName.vb: NMF.AnyText.ParseContext.RemoveDefinition(Object)
-  name.vb: RemoveDefinition(Object)
+  nameWithType.vb: ParseContext.RemoveDefinition(Object, RuleApplication)
+  fullName.vb: NMF.AnyText.ParseContext.RemoveDefinition(Object, NMF.AnyText.Rules.RuleApplication)
+  name.vb: RemoveDefinition(Object, RuleApplication)
 - uid: NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   commentId: M:NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   id: AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
@@ -701,7 +838,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AddReference
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 186
+    startLine: 223
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -739,7 +876,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveReference
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 203
+    startLine: 244
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -777,7 +914,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TryGetReferences
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 221
+    startLine: 262
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -818,7 +955,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RestoreContextElement
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 231
+    startLine: 272
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -853,7 +990,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AddDiagnosticItem
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 292
+    startLine: 328
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -885,7 +1022,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RemoveDiagnosticItem
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 305
+    startLine: 344
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -920,7 +1057,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Errors
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 321
+    startLine: 360
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
@@ -951,21 +1088,27 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AcceptSequenceAdd
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 323
+    startLine: 370
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
+  summary: Decides whether the provided rule application shall be accepted
+  example: []
   syntax:
     content: protected virtual bool AcceptSequenceAdd(SequenceRule sequence, ref RuleApplication toAdd, List<RuleApplication> added)
     parameters:
     - id: sequence
       type: NMF.AnyText.Rules.SequenceRule
+      description: the sequence in which to add a rule application
     - id: toAdd
       type: NMF.AnyText.Rules.RuleApplication
+      description: the rule application that shall be accepted
     - id: added
       type: System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+      description: the rule applications accepted so far
     return:
       type: System.Boolean
+      description: true, if the rule application shall be accepted, otherwise false
     content.vb: Protected Overridable Function AcceptSequenceAdd(sequence As SequenceRule, toAdd As RuleApplication, added As List(Of RuleApplication)) As Boolean
   overload: NMF.AnyText.ParseContext.AcceptSequenceAdd*
   nameWithType.vb: ParseContext.AcceptSequenceAdd(SequenceRule, RuleApplication, List(Of RuleApplication))
@@ -989,21 +1132,27 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AcceptZeroOrMoreAdd
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 328
+    startLine: 382
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
+  summary: Decides whether the provided rule application shall be accepted
+  example: []
   syntax:
     content: protected virtual bool AcceptZeroOrMoreAdd(ZeroOrMoreRule star, RuleApplication toAdd, List<RuleApplication> added)
     parameters:
     - id: star
       type: NMF.AnyText.Rules.ZeroOrMoreRule
+      description: the star rule in which to add the rule application
     - id: toAdd
       type: NMF.AnyText.Rules.RuleApplication
+      description: the rule application that shall be accepted
     - id: added
       type: System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+      description: the rule applications accepted so far
     return:
       type: System.Boolean
+      description: true, if the rule application shall be accepted, otherwise false
     content.vb: Protected Overridable Function AcceptZeroOrMoreAdd(star As ZeroOrMoreRule, toAdd As RuleApplication, added As List(Of RuleApplication)) As Boolean
   overload: NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd*
   nameWithType.vb: ParseContext.AcceptZeroOrMoreAdd(ZeroOrMoreRule, RuleApplication, List(Of RuleApplication))
@@ -1027,26 +1176,179 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AcceptOneOrMoreAdd
     path: src/AnyText/AnyText.Core/ParseContext.cs
-    startLine: 333
+    startLine: 394
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText
+  summary: Decides whether the provided rule application shall be accepted
+  example: []
   syntax:
     content: protected virtual bool AcceptOneOrMoreAdd(OneOrMoreRule rule, RuleApplication toAdd, List<RuleApplication> added)
     parameters:
     - id: rule
       type: NMF.AnyText.Rules.OneOrMoreRule
+      description: the star rule in which to add the rule application
     - id: toAdd
       type: NMF.AnyText.Rules.RuleApplication
+      description: the rule application that shall be accepted
     - id: added
       type: System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication}
+      description: the rule applications accepted so far
     return:
       type: System.Boolean
+      description: true, if the rule application shall be accepted, otherwise false
     content.vb: Protected Overridable Function AcceptOneOrMoreAdd(rule As OneOrMoreRule, toAdd As RuleApplication, added As List(Of RuleApplication)) As Boolean
   overload: NMF.AnyText.ParseContext.AcceptOneOrMoreAdd*
   nameWithType.vb: ParseContext.AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List(Of RuleApplication))
   fullName.vb: NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule, NMF.AnyText.Rules.RuleApplication, System.Collections.Generic.List(Of NMF.AnyText.Rules.RuleApplication))
   name.vb: AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List(Of RuleApplication))
+- uid: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  commentId: M:NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  id: TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: TrackAndCreateWorkspaceEdit(TextEdit[], Uri)
+  nameWithType: ParseContext.TrackAndCreateWorkspaceEdit(TextEdit[], Uri)
+  fullName: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[], System.Uri)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: TrackAndCreateWorkspaceEdit
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 413
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Tracks and creates a new <xref href="NMF.AnyText.Workspace.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> with the provided text edits.
+  remarks: >-
+    This method increments an internal counter to track the number of pending workspace edits.
+
+    This is typically used to prevent the system from reparsing changes that were generated
+
+    by the synchronization logic itself, thus avoiding infinite loops.
+  example: []
+  syntax:
+    content: public WorkspaceEdit TrackAndCreateWorkspaceEdit(TextEdit[] edit, Uri documentUri)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.TextEdit[]
+      description: An array of <xref href="NMF.AnyText.TextEdit" data-throw-if-not-resolved="false"></xref> objects representing the changes to be applied.
+    - id: documentUri
+      type: System.Uri
+      description: The URI of the document to which the changes apply.
+    return:
+      type: NMF.AnyText.Workspace.WorkspaceEdit
+      description: A new <xref href="NMF.AnyText.Workspace.WorkspaceEdit" data-throw-if-not-resolved="false"></xref> instance containing the provided text edits.
+    content.vb: Public Function TrackAndCreateWorkspaceEdit(edit As TextEdit(), documentUri As Uri) As WorkspaceEdit
+  overload: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit*
+  nameWithType.vb: ParseContext.TrackAndCreateWorkspaceEdit(TextEdit(), Uri)
+  fullName.vb: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit(), System.Uri)
+  name.vb: TrackAndCreateWorkspaceEdit(TextEdit(), Uri)
+- uid: NMF.AnyText.ParseContext.ShouldParseChange
+  commentId: M:NMF.AnyText.ParseContext.ShouldParseChange
+  id: ShouldParseChange
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: ShouldParseChange()
+  nameWithType: ParseContext.ShouldParseChange()
+  fullName: NMF.AnyText.ParseContext.ShouldParseChange()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ShouldParseChange
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 438
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Determines whether a change should trigger a reparsing of the document.
+  remarks: >-
+    This method is designed to prevent infinite loops in a synchronization system.
+
+    It checks if there are any pending workspace edits that were generated by the system.
+  example: []
+  syntax:
+    content: public bool ShouldParseChange()
+    return:
+      type: System.Boolean
+      description: <code>false</code> if there are pending workspace edits from the system; otherwise, <code>true</code>.
+    content.vb: Public Function ShouldParseChange() As Boolean
+  overload: NMF.AnyText.ParseContext.ShouldParseChange*
+- uid: NMF.AnyText.ParseContext.Dispose(System.Boolean)
+  commentId: M:NMF.AnyText.ParseContext.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: Dispose(bool)
+  nameWithType: ParseContext.Dispose(bool)
+  fullName: NMF.AnyText.ParseContext.Dispose(bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Dispose
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 463
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Dispose of managed and unmanaged resources
+  example: []
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+      description: True, if managed resources should be disposed of
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: NMF.AnyText.ParseContext.Dispose*
+  nameWithType.vb: ParseContext.Dispose(Boolean)
+  fullName.vb: NMF.AnyText.ParseContext.Dispose(Boolean)
+  name.vb: Dispose(Boolean)
+- uid: NMF.AnyText.ParseContext.Dispose
+  commentId: M:NMF.AnyText.ParseContext.Dispose
+  id: Dispose
+  parent: NMF.AnyText.ParseContext
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ParseContext.Dispose()
+  fullName: NMF.AnyText.ParseContext.Dispose()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/ParseContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Dispose
+    path: src/AnyText/AnyText.Core/ParseContext.cs
+    startLine: 468
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText
+  summary: Dispose of managed and unmanaged resources
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: NMF.AnyText.ParseContext.Dispose*
+  implements:
+  - System.IDisposable.Dispose
 references:
 - uid: NMF.AnyText
   commentId: N:NMF.AnyText
@@ -1081,6 +1383,14 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -1374,6 +1684,20 @@ references:
   name: Grammar
   nameWithType: ParseContext.Grammar
   fullName: NMF.AnyText.ParseContext.Grammar
+- uid: NMF.AnyText.ParseContext.FileUri*
+  commentId: Overload:NMF.AnyText.ParseContext.FileUri
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_FileUri
+  name: FileUri
+  nameWithType: ParseContext.FileUri
+  fullName: NMF.AnyText.ParseContext.FileUri
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
 - uid: NMF.AnyText.ParseContext.RootRule*
   commentId: Overload:NMF.AnyText.ParseContext.RootRule
   href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RootRule
@@ -1612,12 +1936,24 @@ references:
   name: StringComparison
   nameWithType: ParseContext.StringComparison
   fullName: NMF.AnyText.ParseContext.StringComparison
-- uid: NMF.AnyText.ParseContext.TryResolveReference*
-  commentId: Overload:NMF.AnyText.ParseContext.TryResolveReference
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__
-  name: TryResolveReference
-  nameWithType: ParseContext.TryResolveReference
-  fullName: NMF.AnyText.ParseContext.TryResolveReference
+- uid: NMF.AnyText.ParseContext.IsParsing*
+  commentId: Overload:NMF.AnyText.ParseContext.IsParsing
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsParsing
+  name: IsParsing
+  nameWithType: ParseContext.IsParsing
+  fullName: NMF.AnyText.ParseContext.IsParsing
+- uid: NMF.AnyText.ParseContext.IsExecutingModelChanges*
+  commentId: Overload:NMF.AnyText.ParseContext.IsExecutingModelChanges
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsExecutingModelChanges
+  name: IsExecutingModelChanges
+  nameWithType: ParseContext.IsExecutingModelChanges
+  fullName: NMF.AnyText.ParseContext.IsExecutingModelChanges
+- uid: NMF.AnyText.ParseContext.CurrentDirectory*
+  commentId: Overload:NMF.AnyText.ParseContext.CurrentDirectory
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_CurrentDirectory
+  name: CurrentDirectory
+  nameWithType: ParseContext.CurrentDirectory
+  fullName: NMF.AnyText.ParseContext.CurrentDirectory
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1629,6 +1965,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: NMF.AnyText.ParseContext.TryResolveReference*
+  commentId: Overload:NMF.AnyText.ParseContext.TryResolveReference
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__
+  name: TryResolveReference
+  nameWithType: ParseContext.TryResolveReference
+  fullName: NMF.AnyText.ParseContext.TryResolveReference
 - uid: '{T}'
   commentId: '!:T'
   definition: T
@@ -1721,36 +2063,12 @@ references:
   name: AddDefinition
   nameWithType: ParseContext.AddDefinition
   fullName: NMF.AnyText.ParseContext.AddDefinition
-- uid: NMF.AnyText.ParseContext.TryGetDefinition*
-  commentId: Overload:NMF.AnyText.ParseContext.TryGetDefinition
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__
-  name: TryGetDefinition
-  nameWithType: ParseContext.TryGetDefinition
-  fullName: NMF.AnyText.ParseContext.TryGetDefinition
-- uid: NMF.AnyText.ParseContext.RemoveDefinition*
-  commentId: Overload:NMF.AnyText.ParseContext.RemoveDefinition
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_
-  name: RemoveDefinition
-  nameWithType: ParseContext.RemoveDefinition
-  fullName: NMF.AnyText.ParseContext.RemoveDefinition
-- uid: NMF.AnyText.ParseContext.AddReference*
-  commentId: Overload:NMF.AnyText.ParseContext.AddReference
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_
-  name: AddReference
-  nameWithType: ParseContext.AddReference
-  fullName: NMF.AnyText.ParseContext.AddReference
-- uid: NMF.AnyText.ParseContext.RemoveReference*
-  commentId: Overload:NMF.AnyText.ParseContext.RemoveReference
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_
-  name: RemoveReference
-  nameWithType: ParseContext.RemoveReference
-  fullName: NMF.AnyText.ParseContext.RemoveReference
-- uid: NMF.AnyText.ParseContext.TryGetReferences*
-  commentId: Overload:NMF.AnyText.ParseContext.TryGetReferences
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
-  name: TryGetReferences
-  nameWithType: ParseContext.TryGetReferences
-  fullName: NMF.AnyText.ParseContext.TryGetReferences
+- uid: NMF.AnyText.ParseContext.TryGetDefinitions*
+  commentId: Overload:NMF.AnyText.ParseContext.TryGetDefinitions
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
+  name: TryGetDefinitions
+  nameWithType: ParseContext.TryGetDefinitions
+  fullName: NMF.AnyText.ParseContext.TryGetDefinitions
 - uid: System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}
   commentId: T:System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}
   parent: System.Collections.Generic
@@ -1812,6 +2130,30 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: NMF.AnyText.ParseContext.RemoveDefinition*
+  commentId: Overload:NMF.AnyText.ParseContext.RemoveDefinition
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_
+  name: RemoveDefinition
+  nameWithType: ParseContext.RemoveDefinition
+  fullName: NMF.AnyText.ParseContext.RemoveDefinition
+- uid: NMF.AnyText.ParseContext.AddReference*
+  commentId: Overload:NMF.AnyText.ParseContext.AddReference
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_
+  name: AddReference
+  nameWithType: ParseContext.AddReference
+  fullName: NMF.AnyText.ParseContext.AddReference
+- uid: NMF.AnyText.ParseContext.RemoveReference*
+  commentId: Overload:NMF.AnyText.ParseContext.RemoveReference
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_
+  name: RemoveReference
+  nameWithType: ParseContext.RemoveReference
+  fullName: NMF.AnyText.ParseContext.RemoveReference
+- uid: NMF.AnyText.ParseContext.TryGetReferences*
+  commentId: Overload:NMF.AnyText.ParseContext.TryGetReferences
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
+  name: TryGetReferences
+  nameWithType: ParseContext.TryGetReferences
+  fullName: NMF.AnyText.ParseContext.TryGetReferences
 - uid: NMF.AnyText.ParseContext.RestoreContextElement*
   commentId: Overload:NMF.AnyText.ParseContext.RestoreContextElement
   href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RestoreContextElement_NMF_AnyText_Rules_RuleApplication_
@@ -1948,3 +2290,108 @@ references:
   name: OneOrMoreRule
   nameWithType: OneOrMoreRule
   fullName: NMF.AnyText.Rules.OneOrMoreRule
+- uid: NMF.AnyText.Workspace.WorkspaceEdit
+  commentId: T:NMF.AnyText.Workspace.WorkspaceEdit
+  parent: NMF.AnyText.Workspace
+  href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: NMF.AnyText.Workspace.WorkspaceEdit
+- uid: NMF.AnyText.TextEdit
+  commentId: T:NMF.AnyText.TextEdit
+  parent: NMF.AnyText
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit
+  nameWithType: TextEdit
+  fullName: NMF.AnyText.TextEdit
+- uid: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit*
+  commentId: Overload:NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_
+  name: TrackAndCreateWorkspaceEdit
+  nameWithType: ParseContext.TrackAndCreateWorkspaceEdit
+  fullName: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit
+- uid: NMF.AnyText.TextEdit[]
+  isExternal: true
+  href: NMF.AnyText.TextEdit.html
+  name: TextEdit[]
+  nameWithType: TextEdit[]
+  fullName: NMF.AnyText.TextEdit[]
+  nameWithType.vb: TextEdit()
+  fullName.vb: NMF.AnyText.TextEdit()
+  name.vb: TextEdit()
+  spec.csharp:
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: (
+  - name: )
+- uid: NMF.AnyText.Workspace
+  commentId: N:NMF.AnyText.Workspace
+  href: NMF.html
+  name: NMF.AnyText.Workspace
+  nameWithType: NMF.AnyText.Workspace
+  fullName: NMF.AnyText.Workspace
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+- uid: NMF.AnyText.ParseContext.ShouldParseChange*
+  commentId: Overload:NMF.AnyText.ParseContext.ShouldParseChange
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_ShouldParseChange
+  name: ShouldParseChange
+  nameWithType: ParseContext.ShouldParseChange
+  fullName: NMF.AnyText.ParseContext.ShouldParseChange
+- uid: NMF.AnyText.ParseContext.Dispose*
+  commentId: Overload:NMF.AnyText.ParseContext.Dispose
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose_System_Boolean_
+  name: Dispose
+  nameWithType: ParseContext.Dispose
+  fullName: NMF.AnyText.ParseContext.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

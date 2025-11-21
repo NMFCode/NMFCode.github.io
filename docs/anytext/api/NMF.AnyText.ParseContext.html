@@ -85,7 +85,7 @@
 
 
   <h1 id="NMF_AnyText_ParseContext" data-uid="NMF.AnyText.ParseContext" class="text-break">
-Class ParseContext  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Class ParseContext  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ParseContext</code></pre>
+    <pre><code class="lang-csharp hljs">public class ParseContext : IDisposable</code></pre>
   </div>
 
 
@@ -112,6 +112,12 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
@@ -159,7 +165,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext__ctor_NMF_AnyText_Grammars_Grammar_NMF_AnyText_Matcher_System_StringComparison_" data-uid="NMF.AnyText.ParseContext.#ctor(NMF.AnyText.Grammars.Grammar,NMF.AnyText.Matcher,System.StringComparison)">
   ParseContext(Grammar, Matcher, StringComparison)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance</p>
@@ -198,11 +204,43 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 </h2>
 
 
+  <a id="NMF_AnyText_ParseContext_CurrentDirectory_" data-uid="NMF.AnyText.ParseContext.CurrentDirectory*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_CurrentDirectory" data-uid="NMF.AnyText.ParseContext.CurrentDirectory">
+  CurrentDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the directory the currently opened document is in</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CurrentDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Errors_" data-uid="NMF.AnyText.ParseContext.Errors*"></a>
 
   <h3 id="NMF_AnyText_ParseContext_Errors" data-uid="NMF.AnyText.ParseContext.Errors">
   Errors
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L361"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the errors that occured while parsing</p>
@@ -230,11 +268,43 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <a id="NMF_AnyText_ParseContext_FileUri_" data-uid="NMF.AnyText.ParseContext.FileUri*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_FileUri" data-uid="NMF.AnyText.ParseContext.FileUri">
+  FileUri
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the file-Uri for this context</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri FileUri { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_Grammar_" data-uid="NMF.AnyText.ParseContext.Grammar*"></a>
 
   <h3 id="NMF_AnyText_ParseContext_Grammar" data-uid="NMF.AnyText.ParseContext.Grammar">
   Grammar
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the grammar for this context</p>
@@ -266,7 +336,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_Imports" data-uid="NMF.AnyText.ParseContext.Imports">
   Imports
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a collection of imports</p>
@@ -298,7 +368,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_Input" data-uid="NMF.AnyText.ParseContext.Input">
   Input
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the input text in lines</p>
@@ -326,11 +396,43 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <a id="NMF_AnyText_ParseContext_IsExecutingModelChanges_" data-uid="NMF.AnyText.ParseContext.IsExecutingModelChanges*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_IsExecutingModelChanges" data-uid="NMF.AnyText.ParseContext.IsExecutingModelChanges">
+  IsExecutingModelChanges
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True, if changes to the text should imply changes to the semantic model, otherwise false</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsExecutingModelChanges { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_IsLastUpdateSuccessful_" data-uid="NMF.AnyText.ParseContext.IsLastUpdateSuccessful*"></a>
 
   <h3 id="NMF_AnyText_ParseContext_IsLastUpdateSuccessful" data-uid="NMF.AnyText.ParseContext.IsLastUpdateSuccessful">
   IsLastUpdateSuccessful
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Indicates whether the last update sent to the parser was successful</p>
@@ -358,11 +460,43 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <a id="NMF_AnyText_ParseContext_IsParsing_" data-uid="NMF.AnyText.ParseContext.IsParsing*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_IsParsing" data-uid="NMF.AnyText.ParseContext.IsParsing">
+  IsParsing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a flag indicating whether the parser is currently in the process of parsing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsParsing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication_" data-uid="NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication*"></a>
 
   <h3 id="NMF_AnyText_ParseContext_LastSuccessfulRootRuleApplication" data-uid="NMF.AnyText.ParseContext.LastSuccessfulRootRuleApplication">
   LastSuccessfulRootRuleApplication
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the last successful root rule application</p>
@@ -394,7 +528,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_Matcher" data-uid="NMF.AnyText.ParseContext.Matcher">
   Matcher
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the matcher used in this parse context</p>
@@ -426,7 +560,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_Root" data-uid="NMF.AnyText.ParseContext.Root">
   Root
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the semantic root of the parsed text</p>
@@ -458,7 +592,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RootRule" data-uid="NMF.AnyText.ParseContext.RootRule">
   RootRule
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the root rule of this parse context</p>
@@ -490,7 +624,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RootRuleApplication" data-uid="NMF.AnyText.ParseContext.RootRuleApplication">
   RootRuleApplication
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the current root rule application</p>
@@ -522,7 +656,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_StringComparison" data-uid="NMF.AnyText.ParseContext.StringComparison">
   StringComparison
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the string comparison mode</p>
@@ -558,10 +692,11 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AcceptOneOrMoreAdd_NMF_AnyText_Rules_OneOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
   AcceptOneOrMoreAdd(OneOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L395"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Decides whether the provided rule application shall be accepted</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -571,17 +706,21 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>rule</code> <a class="xref" href="NMF.AnyText.Rules.OneOrMoreRule.html">OneOrMoreRule</a></dt>
-    <dd></dd>
+    <dd><p>the star rule in which to add the rule application</p>
+</dd>
     <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
-    <dd></dd>
+    <dd><p>the rule application that shall be accepted</p>
+</dd>
     <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>the rule applications accepted so far</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>true, if the rule application shall be accepted, otherwise false</p>
+</dd>
   </dl>
 
 
@@ -598,10 +737,11 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AcceptSequenceAdd_NMF_AnyText_Rules_SequenceRule_NMF_AnyText_Rules_RuleApplication__System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptSequenceAdd(NMF.AnyText.Rules.SequenceRule,NMF.AnyText.Rules.RuleApplication@,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
   AcceptSequenceAdd(SequenceRule, ref RuleApplication, List&lt;RuleApplication&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L371"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Decides whether the provided rule application shall be accepted</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -611,17 +751,21 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>sequence</code> <a class="xref" href="NMF.AnyText.Rules.SequenceRule.html">SequenceRule</a></dt>
-    <dd></dd>
+    <dd><p>the sequence in which to add a rule application</p>
+</dd>
     <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
-    <dd></dd>
+    <dd><p>the rule application that shall be accepted</p>
+</dd>
     <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>the rule applications accepted so far</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>true, if the rule application shall be accepted, otherwise false</p>
+</dd>
   </dl>
 
 
@@ -638,10 +782,11 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AcceptZeroOrMoreAdd_NMF_AnyText_Rules_ZeroOrMoreRule_NMF_AnyText_Rules_RuleApplication_System_Collections_Generic_List_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd(NMF.AnyText.Rules.ZeroOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})">
   AcceptZeroOrMoreAdd(ZeroOrMoreRule, RuleApplication, List&lt;RuleApplication&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L383"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Decides whether the provided rule application shall be accepted</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -651,17 +796,21 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>star</code> <a class="xref" href="NMF.AnyText.Rules.ZeroOrMoreRule.html">ZeroOrMoreRule</a></dt>
-    <dd></dd>
+    <dd><p>the star rule in which to add the rule application</p>
+</dd>
     <dt><code>toAdd</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
-    <dd></dd>
+    <dd><p>the rule application that shall be accepted</p>
+</dd>
     <dt><code>added</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>the rule applications accepted so far</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>true, if the rule application shall be accepted, otherwise false</p>
+</dd>
   </dl>
 
 
@@ -678,7 +827,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AddDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)">
   AddDefinition(object, RuleApplication)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L175"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Add a rule application to the list of definitions in the document</p>
@@ -714,7 +863,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AddDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.AddDiagnosticItem(NMF.AnyText.DiagnosticItem)">
   AddDiagnosticItem(DiagnosticItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L329"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the given diagnostic item</p>
@@ -747,7 +896,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_AddReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)">
   AddReference(object, RuleApplication)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L224"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Add a rule application to the list of references in the document</p>
@@ -779,11 +928,71 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <a id="NMF_AnyText_ParseContext_Dispose_" data-uid="NMF.AnyText.ParseContext.Dispose*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_Dispose" data-uid="NMF.AnyText.ParseContext.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L469"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispose of managed and unmanaged resources</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_AnyText_ParseContext_Dispose_" data-uid="NMF.AnyText.ParseContext.Dispose*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_Dispose_System_Boolean_" data-uid="NMF.AnyText.ParseContext.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L464"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispose of managed and unmanaged resources</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if managed resources should be disposed of</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ParseContext_EnqueueResolveAction_" data-uid="NMF.AnyText.ParseContext.EnqueueResolveAction*"></a>
 
   <h3 id="NMF_AnyText_ParseContext_EnqueueResolveAction_NMF_AnyText_ParseResolveAction_" data-uid="NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)">
   EnqueueResolveAction(ParseResolveAction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enqueues the given resolve action</p>
@@ -816,7 +1025,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_GetPotentialReferences__1_System_Object_System_String_" data-uid="NMF.AnyText.ParseContext.GetPotentialReferences``1(System.Object,System.String)">
   GetPotentialReferences&lt;T&gt;(object, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves all potential references for a given context element.</p>
@@ -864,7 +1073,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RefreshRoot" data-uid="NMF.AnyText.ParseContext.RefreshRoot">
   RefreshRoot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Refreshes the current root value</p>
@@ -889,9 +1098,9 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <a id="NMF_AnyText_ParseContext_RemoveDefinition_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition*"></a>
 
-  <h3 id="NMF_AnyText_ParseContext_RemoveDefinition_System_Object_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition(System.Object)">
-  RemoveDefinition(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)">
+  RemoveDefinition(object, RuleApplication)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Remove a rule application from the list of definitions</p>
@@ -899,13 +1108,16 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveDefinition(object key)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RemoveDefinition(object key, RuleApplication value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd><p>The semantic element of the rule application</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
+    <dd><p>The rule application to be removed</p>
 </dd>
   </dl>
 
@@ -924,7 +1136,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RemoveDiagnosticItem_NMF_AnyText_DiagnosticItem_" data-uid="NMF.AnyText.ParseContext.RemoveDiagnosticItem(NMF.AnyText.DiagnosticItem)">
   RemoveDiagnosticItem(DiagnosticItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L345"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the given diagnostic item</p>
@@ -963,7 +1175,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RemoveReference_System_Object_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RemoveReference(System.Object,NMF.AnyText.Rules.RuleApplication)">
   RemoveReference(object, RuleApplication)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Remove a reference of an object from the corresponding list of references</p>
@@ -999,7 +1211,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_RestoreContextElement_NMF_AnyText_Rules_RuleApplication_" data-uid="NMF.AnyText.ParseContext.RestoreContextElement(NMF.AnyText.Rules.RuleApplication)">
   RestoreContextElement(RuleApplication)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L273"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the context element for the given rule application</p>
@@ -1034,11 +1246,95 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <a id="NMF_AnyText_ParseContext_TryGetDefinition_" data-uid="NMF.AnyText.ParseContext.TryGetDefinition*"></a>
+  <a id="NMF_AnyText_ParseContext_ShouldParseChange_" data-uid="NMF.AnyText.ParseContext.ShouldParseChange*"></a>
 
-  <h3 id="NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__" data-uid="NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)">
-  TryGetDefinition(object, out RuleApplication)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NMF_AnyText_ParseContext_ShouldParseChange" data-uid="NMF.AnyText.ParseContext.ShouldParseChange">
+  ShouldParseChange()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L439"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether a change should trigger a reparsing of the document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldParseChange()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>false</code> if there are pending workspace edits from the system; otherwise, <code>true</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_AnyText_ParseContext_ShouldParseChange_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is designed to prevent infinite loops in a synchronization system.
+It checks if there are any pending workspace edits that were generated by the system.</p>
+</div>
+
+
+
+
+  <a id="NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_" data-uid="NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_" data-uid="NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)">
+  TrackAndCreateWorkspaceEdit(TextEdit[], Uri)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tracks and creates a new <a class="xref" href="NMF.AnyText.Workspace.WorkspaceEdit.html">WorkspaceEdit</a> with the provided text edits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkspaceEdit TrackAndCreateWorkspaceEdit(TextEdit[] edit, Uri documentUri)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>edit</code> <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a>[]</dt>
+    <dd><p>An array of <a class="xref" href="NMF.AnyText.TextEdit.html">TextEdit</a> objects representing the changes to be applied.</p>
+</dd>
+    <dt><code>documentUri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd><p>The URI of the document to which the changes apply.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.AnyText.Workspace.WorkspaceEdit.html">WorkspaceEdit</a></dt>
+    <dd><p>A new <a class="xref" href="NMF.AnyText.Workspace.WorkspaceEdit.html">WorkspaceEdit</a> instance containing the provided text edits.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method increments an internal counter to track the number of pending workspace edits.
+This is typically used to prevent the system from reparsing changes that were generated
+by the synchronization logic itself, thus avoiding infinite loops.</p>
+</div>
+
+
+
+
+  <a id="NMF_AnyText_ParseContext_TryGetDefinitions_" data-uid="NMF.AnyText.ParseContext.TryGetDefinitions*"></a>
+
+  <h3 id="NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___" data-uid="NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)">
+  TryGetDefinitions(object, out ICollection&lt;RuleApplication&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get the rule application for a definition</p>
@@ -1046,7 +1342,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool TryGetDefinition(object key, out RuleApplication definition)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGetDefinitions(object key, out ICollection&lt;RuleApplication&gt; definitions)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1054,8 +1350,8 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd><p>The semantic element of the rule application</p>
 </dd>
-    <dt><code>definition</code> <a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a></dt>
-    <dd><p>The rule application for the definition</p>
+    <dt><code>definitions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="NMF.AnyText.Rules.RuleApplication.html">RuleApplication</a>&gt;</dt>
+    <dd><p>The rule applications for the definitions</p>
 </dd>
   </dl>
 
@@ -1080,7 +1376,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_TryGetReferences_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___" data-uid="NMF.AnyText.ParseContext.TryGetReferences(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)">
   TryGetReferences(object, out ICollection&lt;RuleApplication&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L263"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get the rule applications for references</p>
@@ -1122,7 +1418,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="NMF_AnyText_ParseContext_TryResolveReference__1_System_Object_System_String___0__" data-uid="NMF.AnyText.ParseContext.TryResolveReference``1(System.Object,System.String,``0@)">
   TryResolveReference&lt;T&gt;(object, string, out T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resolves the given input</p>
@@ -1172,7 +1468,7 @@ Class ParseContext  <a class="header-action link-secondary" title="View source" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Core/ParseContext.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -1,0 +1,719 @@
+### YamlMime:ManagedReference
+items:
+- uid: NMF.AnyText.SynchronizationService
+  commentId: T:NMF.AnyText.SynchronizationService
+  id: SynchronizationService
+  parent: NMF.AnyText
+  children:
+  - NMF.AnyText.SynchronizationService.#ctor(NMF.AnyText.ILspServer,NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization})
+  - NMF.AnyText.SynchronizationService.CanSynchronize(System.Uri)
+  - NMF.AnyText.SynchronizationService.IsSynchronized(System.Uri)
+  - NMF.AnyText.SynchronizationService.StartSynchronizing(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.Parser},System.Boolean)
+  - NMF.AnyText.SynchronizationService.StopSynchronization(NMF.AnyText.Parser)
+  langs:
+  - csharp
+  - vb
+  name: SynchronizationService
+  nameWithType: SynchronizationService
+  fullName: NMF.AnyText.SynchronizationService
+  type: Class
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SynchronizationService
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 13
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Encapsulates all logic for handling model changes and synchronizing across different parsers.
+  example: []
+  syntax:
+    content: public class SynchronizationService
+    content.vb: Public Class SynchronizationService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NMF.AnyText.SynchronizationService.#ctor(NMF.AnyText.ILspServer,NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization})
+  commentId: M:NMF.AnyText.SynchronizationService.#ctor(NMF.AnyText.ILspServer,NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization})
+  id: '#ctor(NMF.AnyText.ILspServer,NMF.Models.Services.IModelServer,System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization})'
+  parent: NMF.AnyText.SynchronizationService
+  langs:
+  - csharp
+  - vb
+  name: SynchronizationService(ILspServer, IModelServer, IEnumerable<IModelSynchronization>)
+  nameWithType: SynchronizationService.SynchronizationService(ILspServer, IModelServer, IEnumerable<IModelSynchronization>)
+  fullName: NMF.AnyText.SynchronizationService.SynchronizationService(NMF.AnyText.ILspServer, NMF.Models.Services.IModelServer, System.Collections.Generic.IEnumerable<NMF.AnyText.IModelSynchronization>)
+  type: Constructor
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: .ctor
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 26
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Initializes a new instance of the <xref href="NMF.AnyText.SynchronizationService" data-throw-if-not-resolved="false"></xref> class with a reference to the LSP server.
+  example: []
+  syntax:
+    content: public SynchronizationService(ILspServer lspServer, IModelServer modelServer, IEnumerable<IModelSynchronization> synchronizations)
+    parameters:
+    - id: lspServer
+      type: NMF.AnyText.ILspServer
+      description: The language server instance for sending workspace edits.
+    - id: modelServer
+      type: NMF.Models.Services.IModelServer
+      description: The model server instance that is used by other syntaxes (GLSP Server).
+    - id: synchronizations
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization}
+      description: the synchronizations supported by this service
+    content.vb: Public Sub New(lspServer As ILspServer, modelServer As IModelServer, synchronizations As IEnumerable(Of IModelSynchronization))
+  overload: NMF.AnyText.SynchronizationService.#ctor*
+  nameWithType.vb: SynchronizationService.New(ILspServer, IModelServer, IEnumerable(Of IModelSynchronization))
+  fullName.vb: NMF.AnyText.SynchronizationService.New(NMF.AnyText.ILspServer, NMF.Models.Services.IModelServer, System.Collections.Generic.IEnumerable(Of NMF.AnyText.IModelSynchronization))
+  name.vb: New(ILspServer, IModelServer, IEnumerable(Of IModelSynchronization))
+- uid: NMF.AnyText.SynchronizationService.IsSynchronized(System.Uri)
+  commentId: M:NMF.AnyText.SynchronizationService.IsSynchronized(System.Uri)
+  id: IsSynchronized(System.Uri)
+  parent: NMF.AnyText.SynchronizationService
+  langs:
+  - csharp
+  - vb
+  name: IsSynchronized(Uri)
+  nameWithType: SynchronizationService.IsSynchronized(Uri)
+  fullName: NMF.AnyText.SynchronizationService.IsSynchronized(System.Uri)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: IsSynchronized
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 38
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Indicates whether the given uri is currently synchronized
+  example: []
+  syntax:
+    content: public bool IsSynchronized(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: the uri of the document
+    return:
+      type: System.Boolean
+      description: true, if a synchronization is active, otherwise false
+    content.vb: Public Function IsSynchronized(uri As Uri) As Boolean
+  overload: NMF.AnyText.SynchronizationService.IsSynchronized*
+- uid: NMF.AnyText.SynchronizationService.CanSynchronize(System.Uri)
+  commentId: M:NMF.AnyText.SynchronizationService.CanSynchronize(System.Uri)
+  id: CanSynchronize(System.Uri)
+  parent: NMF.AnyText.SynchronizationService
+  langs:
+  - csharp
+  - vb
+  name: CanSynchronize(Uri)
+  nameWithType: SynchronizationService.CanSynchronize(Uri)
+  fullName: NMF.AnyText.SynchronizationService.CanSynchronize(System.Uri)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CanSynchronize
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 48
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Indicates whether the given Uri can be synchronized
+  example: []
+  syntax:
+    content: public bool CanSynchronize(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: the uri of the document
+    return:
+      type: System.Boolean
+      description: true, if a synchronization is available, otherwise false
+    content.vb: Public Function CanSynchronize(uri As Uri) As Boolean
+  overload: NMF.AnyText.SynchronizationService.CanSynchronize*
+- uid: NMF.AnyText.SynchronizationService.StopSynchronization(NMF.AnyText.Parser)
+  commentId: M:NMF.AnyText.SynchronizationService.StopSynchronization(NMF.AnyText.Parser)
+  id: StopSynchronization(NMF.AnyText.Parser)
+  parent: NMF.AnyText.SynchronizationService
+  langs:
+  - csharp
+  - vb
+  name: StopSynchronization(Parser)
+  nameWithType: SynchronizationService.StopSynchronization(Parser)
+  fullName: NMF.AnyText.SynchronizationService.StopSynchronization(NMF.AnyText.Parser)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: StopSynchronization
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 64
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Stops all synchronizations of the given parser
+  example: []
+  syntax:
+    content: public void StopSynchronization(Parser parser)
+    parameters:
+    - id: parser
+      type: NMF.AnyText.Parser
+      description: the document whose synchronization shall be stopped
+    content.vb: Public Sub StopSynchronization(parser As Parser)
+  overload: NMF.AnyText.SynchronizationService.StopSynchronization*
+- uid: NMF.AnyText.SynchronizationService.StartSynchronizing(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.Parser},System.Boolean)
+  commentId: M:NMF.AnyText.SynchronizationService.StartSynchronizing(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.Parser},System.Boolean)
+  id: StartSynchronizing(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.Parser},System.Boolean)
+  parent: NMF.AnyText.SynchronizationService
+  langs:
+  - csharp
+  - vb
+  name: StartSynchronizing(Parser, IEnumerable<Parser>, bool)
+  nameWithType: SynchronizationService.StartSynchronizing(Parser, IEnumerable<Parser>, bool)
+  fullName: NMF.AnyText.SynchronizationService.StartSynchronizing(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable<NMF.AnyText.Parser>, bool)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Synchronizations/SynchronizationService.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: StartSynchronizing
+    path: src/AnyText/AnyText.Synchronizations/SynchronizationService.cs
+    startLine: 99
+  assemblies:
+  - NMF.AnyText.Synchronizations
+  namespace: NMF.AnyText
+  summary: Orchestrates synchronization between a source parser and a collection of other parsers.
+  example: []
+  syntax:
+    content: public void StartSynchronizing(Parser parser, IEnumerable<Parser> otherParsers, bool isManual = false)
+    parameters:
+    - id: parser
+      type: NMF.AnyText.Parser
+      description: The parser that triggered the synchronization.
+    - id: otherParsers
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Parser}
+      description: All other parsers to check for synchronization.
+    - id: isManual
+      type: System.Boolean
+      description: A flag indicating if the synchronization was manually triggered.
+    content.vb: Public Sub StartSynchronizing(parser As Parser, otherParsers As IEnumerable(Of Parser), isManual As Boolean = False)
+  overload: NMF.AnyText.SynchronizationService.StartSynchronizing*
+  nameWithType.vb: SynchronizationService.StartSynchronizing(Parser, IEnumerable(Of Parser), Boolean)
+  fullName.vb: NMF.AnyText.SynchronizationService.StartSynchronizing(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable(Of NMF.AnyText.Parser), Boolean)
+  name.vb: StartSynchronizing(Parser, IEnumerable(Of Parser), Boolean)
+references:
+- uid: NMF.AnyText
+  commentId: N:NMF.AnyText
+  href: NMF.html
+  name: NMF.AnyText
+  nameWithType: NMF.AnyText
+  fullName: NMF.AnyText
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NMF.AnyText.SynchronizationService
+  commentId: T:NMF.AnyText.SynchronizationService
+  href: NMF.AnyText.SynchronizationService.html
+  name: SynchronizationService
+  nameWithType: SynchronizationService
+  fullName: NMF.AnyText.SynchronizationService
+- uid: NMF.AnyText.SynchronizationService.#ctor*
+  commentId: Overload:NMF.AnyText.SynchronizationService.#ctor
+  href: NMF.AnyText.SynchronizationService.html#NMF_AnyText_SynchronizationService__ctor_NMF_AnyText_ILspServer_NMF_Models_Services_IModelServer_System_Collections_Generic_IEnumerable_NMF_AnyText_IModelSynchronization__
+  name: SynchronizationService
+  nameWithType: SynchronizationService.SynchronizationService
+  fullName: NMF.AnyText.SynchronizationService.SynchronizationService
+  nameWithType.vb: SynchronizationService.New
+  fullName.vb: NMF.AnyText.SynchronizationService.New
+  name.vb: New
+- uid: NMF.AnyText.ILspServer
+  commentId: T:NMF.AnyText.ILspServer
+  parent: NMF.AnyText
+  href: NMF.AnyText.ILspServer.html
+  name: ILspServer
+  nameWithType: ILspServer
+  fullName: NMF.AnyText.ILspServer
+- uid: NMF.Models.Services.IModelServer
+  commentId: T:NMF.Models.Services.IModelServer
+  parent: NMF.Models.Services
+  name: IModelServer
+  nameWithType: IModelServer
+  fullName: NMF.Models.Services.IModelServer
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.IModelSynchronization}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IModelSynchronization>
+  nameWithType: IEnumerable<IModelSynchronization>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.IModelSynchronization>
+  nameWithType.vb: IEnumerable(Of IModelSynchronization)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.IModelSynchronization)
+  name.vb: IEnumerable(Of IModelSynchronization)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.IModelSynchronization
+    name: IModelSynchronization
+    href: NMF.AnyText.IModelSynchronization.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.IModelSynchronization
+    name: IModelSynchronization
+    href: NMF.AnyText.IModelSynchronization.html
+  - name: )
+- uid: NMF.Models.Services
+  commentId: N:NMF.Models.Services
+  name: NMF.Models.Services
+  nameWithType: NMF.Models.Services
+  fullName: NMF.Models.Services
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+  spec.vb:
+  - uid: NMF
+    name: NMF
+  - name: .
+  - uid: NMF.Models
+    name: Models
+  - name: .
+  - uid: NMF.Models.Services
+    name: Services
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.SynchronizationService.IsSynchronized*
+  commentId: Overload:NMF.AnyText.SynchronizationService.IsSynchronized
+  href: NMF.AnyText.SynchronizationService.html#NMF_AnyText_SynchronizationService_IsSynchronized_System_Uri_
+  name: IsSynchronized
+  nameWithType: SynchronizationService.IsSynchronized
+  fullName: NMF.AnyText.SynchronizationService.IsSynchronized
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.SynchronizationService.CanSynchronize*
+  commentId: Overload:NMF.AnyText.SynchronizationService.CanSynchronize
+  href: NMF.AnyText.SynchronizationService.html#NMF_AnyText_SynchronizationService_CanSynchronize_System_Uri_
+  name: CanSynchronize
+  nameWithType: SynchronizationService.CanSynchronize
+  fullName: NMF.AnyText.SynchronizationService.CanSynchronize
+- uid: NMF.AnyText.SynchronizationService.StopSynchronization*
+  commentId: Overload:NMF.AnyText.SynchronizationService.StopSynchronization
+  href: NMF.AnyText.SynchronizationService.html#NMF_AnyText_SynchronizationService_StopSynchronization_NMF_AnyText_Parser_
+  name: StopSynchronization
+  nameWithType: SynchronizationService.StopSynchronization
+  fullName: NMF.AnyText.SynchronizationService.StopSynchronization
+- uid: NMF.AnyText.Parser
+  commentId: T:NMF.AnyText.Parser
+  parent: NMF.AnyText
+  href: NMF.AnyText.Parser.html
+  name: Parser
+  nameWithType: Parser
+  fullName: NMF.AnyText.Parser
+- uid: NMF.AnyText.SynchronizationService.StartSynchronizing*
+  commentId: Overload:NMF.AnyText.SynchronizationService.StartSynchronizing
+  href: NMF.AnyText.SynchronizationService.html#NMF_AnyText_SynchronizationService_StartSynchronizing_NMF_AnyText_Parser_System_Collections_Generic_IEnumerable_NMF_AnyText_Parser__System_Boolean_
+  name: StartSynchronizing
+  nameWithType: SynchronizationService.StartSynchronizing
+  fullName: NMF.AnyText.SynchronizationService.StartSynchronizing
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Parser}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Parser}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Parser>
+  nameWithType: IEnumerable<Parser>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Parser>
+  nameWithType.vb: IEnumerable(Of Parser)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Parser)
+  name.vb: IEnumerable(Of Parser)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.Parser
+    name: Parser
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Parser
+    name: Parser
+  - name: )

@@ -8,6 +8,7 @@ items:
   - NMF.AnyText.Rules.ZeroOrOneRule.#ctor
   - NMF.AnyText.Rules.ZeroOrOneRule.#ctor(NMF.AnyText.PrettyPrinting.FormattedRule)
   - NMF.AnyText.Rules.ZeroOrOneRule.#ctor(NMF.AnyText.Rules.Rule)
+  - NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
   - NMF.AnyText.Rules.ZeroOrOneRule.CanStartWith(NMF.AnyText.Rules.Rule,System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
   - NMF.AnyText.Rules.ZeroOrOneRule.CanSynthesize(System.Object,NMF.AnyText.ParseContext,NMF.AnyText.SynthesisPlan)
   - NMF.AnyText.Rules.ZeroOrOneRule.FormattingInstructions
@@ -30,7 +31,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ZeroOrOneRule
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 12
+    startLine: 8
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -44,8 +45,9 @@ items:
   - NMF.AnyText.Rules.Rule
   inheritedMembers:
   - NMF.AnyText.Rules.Rule.Name
-  - NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,System.Boolean)
   - NMF.AnyText.Rules.Rule.OnDeactivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  - NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.ParsePosition@)
   - NMF.AnyText.Rules.Rule.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.Rules.Rule.IsLiteral
   - NMF.AnyText.Rules.Rule.IsComment
@@ -64,6 +66,7 @@ items:
   - NMF.AnyText.Rules.Rule.PassAlongDocumentSymbols
   - NMF.AnyText.Rules.Rule.Invalidate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
   - NMF.AnyText.Rules.Rule.IsLeftRecursive
+  - NMF.AnyText.Rules.Rule.Continuations
   - NMF.AnyText.Rules.Rule.CanSynthesize(System.Object,NMF.AnyText.ParseContext)
   - NMF.AnyText.Rules.Rule.CreateSynthesisRequirements
   - NMF.AnyText.Rules.Rule.Synthesize(System.Object,NMF.AnyText.ParseContext,System.String)
@@ -72,7 +75,7 @@ items:
   - NMF.AnyText.Rules.Rule.CreateEpsilonRuleApplication(NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.Rules.Rule.CanStartWith(NMF.AnyText.Rules.Rule)
   - NMF.AnyText.Rules.Rule.TokenModifiers
-  - NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
+  - NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
   - NMF.AnyText.Rules.Rule.SuggestCompletions(NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication,System.String,NMF.AnyText.ParsePosition)
   - NMF.AnyText.Rules.Rule.TokenTypeIndex
   - NMF.AnyText.Rules.Rule.TokenModifierIndex
@@ -102,7 +105,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 17
+    startLine: 13
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -133,7 +136,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 23
+    startLine: 19
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -168,7 +171,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 32
+    startLine: 28
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -203,7 +206,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: CanStartWith
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 39
+    startLine: 35
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -227,6 +230,45 @@ items:
   nameWithType.vb: ZeroOrOneRule.CanStartWith(Rule, List(Of Rule))
   fullName.vb: NMF.AnyText.Rules.ZeroOrOneRule.CanStartWith(NMF.AnyText.Rules.Rule, System.Collections.Generic.List(Of NMF.AnyText.Rules.Rule))
   name.vb: CanStartWith(Rule, List(Of Rule))
+- uid: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  commentId: M:NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  id: AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  parent: NMF.AnyText.Rules.ZeroOrOneRule
+  langs:
+  - csharp
+  - vb
+  name: AddLeftRecursionRules(List<Rule>, List<RecursiveContinuation>)
+  nameWithType: ZeroOrOneRule.AddLeftRecursionRules(List<Rule>, List<RecursiveContinuation>)
+  fullName: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules(System.Collections.Generic.List<NMF.AnyText.Rules.Rule>, System.Collections.Generic.List<NMF.AnyText.Rules.RecursiveContinuation>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: AddLeftRecursionRules
+    path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
+    startLine: 46
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.Rules
+  summary: Adds rules to the given left recursion trace
+  example: []
+  syntax:
+    content: protected override void AddLeftRecursionRules(List<Rule> trace, List<RecursiveContinuation> continuations)
+    parameters:
+    - id: trace
+      type: System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
+      description: the trace
+    - id: continuations
+      type: System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation}
+      description: a collection of recursion continuations
+    content.vb: Protected Overrides Sub AddLeftRecursionRules(trace As List(Of Rule), continuations As List(Of RecursiveContinuation))
+  overridden: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  overload: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules*
+  nameWithType.vb: ZeroOrOneRule.AddLeftRecursionRules(List(Of Rule), List(Of RecursiveContinuation))
+  fullName.vb: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules(System.Collections.Generic.List(Of NMF.AnyText.Rules.Rule), System.Collections.Generic.List(Of NMF.AnyText.Rules.RecursiveContinuation))
+  name.vb: AddLeftRecursionRules(List(Of Rule), List(Of RecursiveContinuation))
 - uid: NMF.AnyText.Rules.ZeroOrOneRule.IsEpsilonAllowed(System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
   commentId: M:NMF.AnyText.Rules.ZeroOrOneRule.IsEpsilonAllowed(System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
   id: IsEpsilonAllowed(System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
@@ -245,7 +287,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsEpsilonAllowed
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 50
+    startLine: 56
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -283,7 +325,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: InnerRule
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 58
+    startLine: 64
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -314,7 +356,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: FormattingInstructions
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 63
+    startLine: 69
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -345,7 +387,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Match
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 66
+    startLine: 72
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -390,7 +432,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: CanSynthesize
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 122
+    startLine: 132
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -435,7 +477,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ToString
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 128
+    startLine: 138
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -467,7 +509,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Synthesize
     path: src/AnyText/AnyText.Core/Rules/ZeroOrOneRule.cs
-    startLine: 134
+    startLine: 144
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -550,17 +592,21 @@ references:
   name: Name
   nameWithType: Rule.Name
   fullName: NMF.AnyText.Rules.Rule.Name
-- uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
-  commentId: M:NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+- uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,System.Boolean)
+  commentId: M:NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,System.Boolean)
   parent: NMF.AnyText.Rules.Rule
-  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
-  name: OnActivate(RuleApplication, ParseContext)
-  nameWithType: Rule.OnActivate(RuleApplication, ParseContext)
-  fullName: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext)
+  isExternal: true
+  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_System_Boolean_
+  name: OnActivate(RuleApplication, ParseContext, bool)
+  nameWithType: Rule.OnActivate(RuleApplication, ParseContext, bool)
+  fullName: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, bool)
+  nameWithType.vb: Rule.OnActivate(RuleApplication, ParseContext, Boolean)
+  fullName.vb: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, Boolean)
+  name.vb: OnActivate(RuleApplication, ParseContext, Boolean)
   spec.csharp:
-  - uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  - uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,System.Boolean)
     name: OnActivate
-    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_System_Boolean_
   - name: (
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
@@ -570,11 +616,17 @@ references:
   - uid: NMF.AnyText.ParseContext
     name: ParseContext
     href: NMF.AnyText.ParseContext.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  - uid: NMF.AnyText.Rules.Rule.OnActivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,System.Boolean)
     name: OnActivate
-    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_OnActivate_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_System_Boolean_
   - name: (
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
@@ -584,6 +636,12 @@ references:
   - uid: NMF.AnyText.ParseContext
     name: ParseContext
     href: NMF.AnyText.ParseContext.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: NMF.AnyText.Rules.Rule.OnDeactivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
   commentId: M:NMF.AnyText.Rules.Rule.OnDeactivate(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
@@ -619,6 +677,76 @@ references:
   - uid: NMF.AnyText.ParseContext
     name: ParseContext
     href: NMF.AnyText.ParseContext.html
+  - name: )
+- uid: NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.ParsePosition@)
+  commentId: M:NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.ParsePosition@)
+  parent: NMF.AnyText.Rules.Rule
+  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Recover_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_ParsePosition__
+  name: Recover(RuleApplication, RuleApplication, RuleApplication, ParseContext, out ParsePosition)
+  nameWithType: Rule.Recover(RuleApplication, RuleApplication, RuleApplication, ParseContext, out ParsePosition)
+  fullName: NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.Rules.RuleApplication, NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, out NMF.AnyText.ParsePosition)
+  nameWithType.vb: Rule.Recover(RuleApplication, RuleApplication, RuleApplication, ParseContext, ParsePosition)
+  fullName.vb: NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.Rules.RuleApplication, NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext, NMF.AnyText.ParsePosition)
+  name.vb: Recover(RuleApplication, RuleApplication, RuleApplication, ParseContext, ParsePosition)
+  spec.csharp:
+  - uid: NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.ParsePosition@)
+    name: Recover
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Recover_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_ParsePosition__
+  - name: (
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.ParseContext
+    name: ParseContext
+    href: NMF.AnyText.ParseContext.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.Rules.Rule.Recover(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.ParsePosition@)
+    name: Recover
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Recover_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_ParsePosition__
+  - name: (
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.ParseContext
+    name: ParseContext
+    href: NMF.AnyText.ParseContext.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.ParsePosition
+    name: ParsePosition
+    href: NMF.AnyText.ParsePosition.html
   - name: )
 - uid: NMF.AnyText.Rules.Rule.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
   commentId: M:NMF.AnyText.Rules.Rule.OnValueChange(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication)
@@ -916,6 +1044,13 @@ references:
   name: IsLeftRecursive
   nameWithType: Rule.IsLeftRecursive
   fullName: NMF.AnyText.Rules.Rule.IsLeftRecursive
+- uid: NMF.AnyText.Rules.Rule.Continuations
+  commentId: P:NMF.AnyText.Rules.Rule.Continuations
+  parent: NMF.AnyText.Rules.Rule
+  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_Continuations
+  name: Continuations
+  nameWithType: Rule.Continuations
+  fullName: NMF.AnyText.Rules.Rule.Continuations
 - uid: NMF.AnyText.Rules.Rule.CanSynthesize(System.Object,NMF.AnyText.ParseContext)
   commentId: M:NMF.AnyText.Rules.Rule.CanSynthesize(System.Object,NMF.AnyText.ParseContext)
   parent: NMF.AnyText.Rules.Rule
@@ -1170,30 +1305,40 @@ references:
   name: TokenModifiers
   nameWithType: Rule.TokenModifiers
   fullName: NMF.AnyText.Rules.Rule.TokenModifiers
-- uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
-  commentId: M:NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
+- uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
+  commentId: M:NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
   parent: NMF.AnyText.Rules.Rule
-  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_
-  name: GetInlayHintText(RuleApplication)
-  nameWithType: Rule.GetInlayHintText(RuleApplication)
-  fullName: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
+  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
+  name: GetInlayHintText(RuleApplication, ParseContext)
+  nameWithType: Rule.GetInlayHintText(RuleApplication, ParseContext)
+  fullName: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication, NMF.AnyText.ParseContext)
   spec.csharp:
-  - uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
+  - uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
     name: GetInlayHintText
-    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
   - name: (
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.ParseContext
+    name: ParseContext
+    href: NMF.AnyText.ParseContext.html
   - name: )
   spec.vb:
-  - uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication)
+  - uid: NMF.AnyText.Rules.Rule.GetInlayHintText(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext)
     name: GetInlayHintText
-    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_GetInlayHintText_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_
   - name: (
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.ParseContext
+    name: ParseContext
+    href: NMF.AnyText.ParseContext.html
   - name: )
 - uid: NMF.AnyText.Rules.Rule.SuggestCompletions(NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication,System.String,NMF.AnyText.ParsePosition)
   commentId: M:NMF.AnyText.Rules.Rule.SuggestCompletions(NMF.AnyText.ParseContext,NMF.AnyText.Rules.RuleApplication,System.String,NMF.AnyText.ParsePosition)
@@ -1786,6 +1931,112 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  commentId: M:NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+  parent: NMF.AnyText.Rules.Rule
+  isExternal: true
+  href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_AddLeftRecursionRules_System_Collections_Generic_List_NMF_AnyText_Rules_Rule__System_Collections_Generic_List_NMF_AnyText_Rules_RecursiveContinuation__
+  name: AddLeftRecursionRules(List<Rule>, List<RecursiveContinuation>)
+  nameWithType: Rule.AddLeftRecursionRules(List<Rule>, List<RecursiveContinuation>)
+  fullName: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List<NMF.AnyText.Rules.Rule>, System.Collections.Generic.List<NMF.AnyText.Rules.RecursiveContinuation>)
+  nameWithType.vb: Rule.AddLeftRecursionRules(List(Of Rule), List(Of RecursiveContinuation))
+  fullName.vb: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List(Of NMF.AnyText.Rules.Rule), System.Collections.Generic.List(Of NMF.AnyText.Rules.RecursiveContinuation))
+  name.vb: AddLeftRecursionRules(List(Of Rule), List(Of RecursiveContinuation))
+  spec.csharp:
+  - uid: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+    name: AddLeftRecursionRules
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_AddLeftRecursionRules_System_Collections_Generic_List_NMF_AnyText_Rules_Rule__System_Collections_Generic_List_NMF_AnyText_Rules_RecursiveContinuation__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RecursiveContinuation
+    name: RecursiveContinuation
+    href: NMF.AnyText.Rules.RecursiveContinuation.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.Rules.Rule.AddLeftRecursionRules(System.Collections.Generic.List{NMF.AnyText.Rules.Rule},System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation})
+    name: AddLeftRecursionRules
+    href: NMF.AnyText.Rules.Rule.html#NMF_AnyText_Rules_Rule_AddLeftRecursionRules_System_Collections_Generic_List_NMF_AnyText_Rules_Rule__System_Collections_Generic_List_NMF_AnyText_Rules_RecursiveContinuation__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.Rule
+    name: Rule
+    href: NMF.AnyText.Rules.Rule.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RecursiveContinuation
+    name: RecursiveContinuation
+    href: NMF.AnyText.Rules.RecursiveContinuation.html
+  - name: )
+  - name: )
+- uid: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules*
+  commentId: Overload:NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules
+  href: NMF.AnyText.Rules.ZeroOrOneRule.html#NMF_AnyText_Rules_ZeroOrOneRule_AddLeftRecursionRules_System_Collections_Generic_List_NMF_AnyText_Rules_Rule__System_Collections_Generic_List_NMF_AnyText_Rules_RecursiveContinuation__
+  name: AddLeftRecursionRules
+  nameWithType: ZeroOrOneRule.AddLeftRecursionRules
+  fullName: NMF.AnyText.Rules.ZeroOrOneRule.AddLeftRecursionRules
+- uid: System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation}
+  commentId: T:System.Collections.Generic.List{NMF.AnyText.Rules.RecursiveContinuation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<RecursiveContinuation>
+  nameWithType: List<RecursiveContinuation>
+  fullName: System.Collections.Generic.List<NMF.AnyText.Rules.RecursiveContinuation>
+  nameWithType.vb: List(Of RecursiveContinuation)
+  fullName.vb: System.Collections.Generic.List(Of NMF.AnyText.Rules.RecursiveContinuation)
+  name.vb: List(Of RecursiveContinuation)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RecursiveContinuation
+    name: RecursiveContinuation
+    href: NMF.AnyText.Rules.RecursiveContinuation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RecursiveContinuation
+    name: RecursiveContinuation
+    href: NMF.AnyText.Rules.RecursiveContinuation.html
+  - name: )
 - uid: NMF.AnyText.Rules.Rule.IsEpsilonAllowed(System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
   commentId: M:NMF.AnyText.Rules.Rule.IsEpsilonAllowed(System.Collections.Generic.List{NMF.AnyText.Rules.Rule})
   parent: NMF.AnyText.Rules.Rule

@@ -125,9 +125,13 @@ items:
   - NMF.Expressions.Linq.ObservableExtensions.Union``1(NMF.Expressions.INotifyEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
   - NMF.Expressions.Linq.ObservableExtensions.Union``1(NMF.Expressions.INotifyEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})
   - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
   - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
+  - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
   - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
   - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
+  - NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
   - NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.ICollection{``0})
   - NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0})
   - NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)
@@ -189,12 +193,24 @@ items:
   summary: Gets or sets a global flag indicating whether projections and filters should maintain the element order
   example: []
   syntax:
-    content: public static bool KeepOrder { get; set; }
+    content: >-
+      [Obsolete("KeepOrder is obsolete. Please call RequireOrdered on the collection instead.")]
+
+      public static bool KeepOrder { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Shared Property KeepOrder As Boolean
+    content.vb: >-
+      <Obsolete("KeepOrder is obsolete. Please call RequireOrdered on the collection instead.")>
+
+      Public Shared Property KeepOrder As Boolean
   overload: NMF.Expressions.Linq.ObservableExtensions.KeepOrder*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: KeepOrder is obsolete. Please call RequireOrdered on the collection instead.
 - uid: NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
   id: RestoreIndices``1(NMF.Expressions.INotifyEnumerable{``0})
@@ -214,7 +230,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RestoreIndices
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -257,7 +273,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: All
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -309,7 +325,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Any
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -358,7 +374,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Any
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 68
+    startLine: 69
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -410,7 +426,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 81
+    startLine: 82
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -456,7 +472,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 93
+    startLine: 94
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -502,7 +518,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 105
+    startLine: 106
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -548,7 +564,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 117
+    startLine: 118
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -594,7 +610,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 129
+    startLine: 130
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -640,7 +656,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 141
+    startLine: 142
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -686,7 +702,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 153
+    startLine: 154
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -732,7 +748,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 165
+    startLine: 166
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -778,7 +794,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 177
+    startLine: 178
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -824,7 +840,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 189
+    startLine: 190
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -870,7 +886,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 202
+    startLine: 203
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -921,7 +937,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 216
+    startLine: 217
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -972,7 +988,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 230
+    startLine: 231
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1023,7 +1039,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 244
+    startLine: 245
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1074,7 +1090,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 258
+    startLine: 259
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1125,7 +1141,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 272
+    startLine: 273
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1176,7 +1192,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 286
+    startLine: 287
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1227,7 +1243,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 300
+    startLine: 301
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1278,7 +1294,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 314
+    startLine: 315
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1329,7 +1345,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Average
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 328
+    startLine: 329
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1380,7 +1396,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Cast
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 342
+    startLine: 343
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1423,7 +1439,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Concat
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 361
+    startLine: 362
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1469,7 +1485,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 376
+    startLine: 377
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1521,7 +1537,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Contains
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 391
+    startLine: 392
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1576,7 +1592,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 404
+    startLine: 405
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1625,7 +1641,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 418
+    startLine: 419
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1677,7 +1693,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Distinct
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 432
+    startLine: 433
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1720,7 +1736,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Distinct
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 445
+    startLine: 446
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1766,7 +1782,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Except
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 460
+    startLine: 461
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1812,7 +1828,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Except
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 474
+    startLine: 475
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1861,7 +1877,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: FirstOrDefault
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 488
+    startLine: 489
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1914,7 +1930,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: FirstOrDefault
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 503
+    startLine: 504
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -1970,7 +1986,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 519
+    startLine: 520
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2017,7 +2033,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 533
+    startLine: 534
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2067,7 +2083,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 547
+    startLine: 548
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2117,7 +2133,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 562
+    startLine: 563
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2170,7 +2186,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 579
+    startLine: 580
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2222,7 +2238,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 596
+    startLine: 597
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2280,7 +2296,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 612
+    startLine: 613
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2335,7 +2351,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 630
+    startLine: 631
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2396,7 +2412,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupJoin
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 659
+    startLine: 660
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2456,7 +2472,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GroupJoin
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 678
+    startLine: 679
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2519,7 +2535,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Intersect
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 693
+    startLine: 694
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2565,7 +2581,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Intersect
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 707
+    startLine: 708
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2614,7 +2630,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSubsetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 722
+    startLine: 723
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2666,7 +2682,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSubsetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 737
+    startLine: 738
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2721,7 +2737,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSupersetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 752
+    startLine: 753
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2773,7 +2789,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsProperSupersetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 767
+    startLine: 768
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2828,7 +2844,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsSubsetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 782
+    startLine: 783
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2880,7 +2896,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsSubsetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 797
+    startLine: 798
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2935,7 +2951,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsSupersetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 812
+    startLine: 813
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -2987,7 +3003,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsSupersetOf
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 827
+    startLine: 828
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3042,7 +3058,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Join
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 847
+    startLine: 848
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3102,7 +3118,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Join
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 866
+    startLine: 867
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3165,7 +3181,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 880
+    startLine: 881
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3214,7 +3230,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 895
+    startLine: 896
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3266,7 +3282,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 931
+    startLine: 932
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3320,7 +3336,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 950
+    startLine: 951
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3377,7 +3393,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 987
+    startLine: 988
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3426,7 +3442,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1002
+    startLine: 1003
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3478,7 +3494,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1039
+    startLine: 1040
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3532,7 +3548,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Max
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1056
+    startLine: 1057
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3589,7 +3605,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1096
+    startLine: 1097
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3638,7 +3654,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1111
+    startLine: 1112
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3690,7 +3706,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1147
+    startLine: 1148
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3744,7 +3760,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1165
+    startLine: 1166
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3801,7 +3817,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1202
+    startLine: 1203
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3850,7 +3866,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1217
+    startLine: 1218
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3902,7 +3918,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1254
+    startLine: 1255
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -3956,7 +3972,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Min
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1271
+    startLine: 1272
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4013,7 +4029,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OfType
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1310
+    startLine: 1311
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4055,7 +4071,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OfType
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1324
+    startLine: 1325
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4099,7 +4115,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OrderBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1340
+    startLine: 1341
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4146,7 +4162,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OrderBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1354
+    startLine: 1355
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4196,7 +4212,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OrderByDescending
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1369
+    startLine: 1370
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4243,7 +4259,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: OrderByDescending
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1383
+    startLine: 1384
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4293,7 +4309,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Select
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1396
+    startLine: 1397
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4340,7 +4356,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Select
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1410
+    startLine: 1411
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4390,7 +4406,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SelectMany
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1427
+    startLine: 1428
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4442,7 +4458,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SelectMany
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1444
+    startLine: 1445
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4500,7 +4516,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SelectMany
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1459
+    startLine: 1460
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4547,7 +4563,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SelectMany
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1475
+    startLine: 1476
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4597,7 +4613,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SetEquals
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1490
+    startLine: 1491
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4649,7 +4665,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SetEquals
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1505
+    startLine: 1506
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4704,7 +4720,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SingleOrDefault
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1522
+    startLine: 1523
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4757,7 +4773,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SingleOrDefault
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1537
+    startLine: 1538
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4813,7 +4829,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1551
+    startLine: 1552
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4859,7 +4875,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1563
+    startLine: 1564
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4905,7 +4921,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1575
+    startLine: 1576
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4951,7 +4967,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1587
+    startLine: 1588
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -4997,7 +5013,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1599
+    startLine: 1600
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5043,7 +5059,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1611
+    startLine: 1612
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5089,7 +5105,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1623
+    startLine: 1624
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5135,7 +5151,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1635
+    startLine: 1636
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5181,7 +5197,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1647
+    startLine: 1648
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5227,7 +5243,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1659
+    startLine: 1660
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5273,7 +5289,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1672
+    startLine: 1673
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5324,7 +5340,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1686
+    startLine: 1687
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5375,7 +5391,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1700
+    startLine: 1701
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5426,7 +5442,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1714
+    startLine: 1715
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5477,7 +5493,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1728
+    startLine: 1729
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5528,7 +5544,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1742
+    startLine: 1743
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5579,7 +5595,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1756
+    startLine: 1757
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5630,7 +5646,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1770
+    startLine: 1771
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5681,7 +5697,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1784
+    startLine: 1785
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5732,7 +5748,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Sum
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1798
+    startLine: 1799
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5783,7 +5799,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ThenBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1813
+    startLine: 1814
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5830,7 +5846,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ThenBy
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1827
+    startLine: 1828
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5880,7 +5896,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ThenByDescending
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1842
+    startLine: 1843
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5927,7 +5943,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ThenByDescending
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1856
+    startLine: 1857
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -5977,7 +5993,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TopX
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1870
+    startLine: 1871
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6033,7 +6049,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: TopX
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1886
+    startLine: 1887
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6092,7 +6108,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Union
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1932
+    startLine: 1933
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6137,7 +6153,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Union
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1945
+    startLine: 1946
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6185,7 +6201,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Where
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1957
+    startLine: 1958
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6211,6 +6227,54 @@ items:
   nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)))
   fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
   name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)))
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  id: Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+    startLine: 1971
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: public static INotifyEnumerable<T> Where<T>(this INotifyEnumerable<T> source, Expression<Func<T, bool>> filter, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.INotifyEnumerable{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.INotifyEnumerable{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: Public Shared Function Where(Of T)(source As INotifyEnumerable(Of T), filter As Expression(Of Func(Of T, Boolean)), preferPredicateRemove As Boolean) As INotifyEnumerable(Of T)
+  overload: NMF.Expressions.Linq.ObservableExtensions.Where*
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
 - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   id: Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
@@ -6230,7 +6294,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Where
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1970
+    startLine: 1984
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6259,6 +6323,57 @@ items:
   nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean))
   fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean))
   name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean))
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  id: Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<T, bool>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+    startLine: 2000
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: public static INotifyEnumerable<T> Where<T>(this INotifyEnumerable<T> source, Expression<Func<T, bool>> filter, Func<T, bool> filterCompiled, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.INotifyEnumerable{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: filterCompiled
+      type: System.Func{{T},System.Boolean}
+      description: A compiled version of filter
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.INotifyEnumerable{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: Public Shared Function Where(Of T)(source As INotifyEnumerable(Of T), filter As Expression(Of Func(Of T, Boolean)), filterCompiled As Func(Of T, Boolean), preferPredicateRemove As Boolean) As INotifyEnumerable(Of T)
+  overload: NMF.Expressions.Linq.ObservableExtensions.Where*
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
 - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
   id: Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
@@ -6278,7 +6393,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Where
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1984
+    startLine: 2014
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6304,6 +6419,54 @@ items:
   nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)))
   fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
   name.vb: Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)))
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  id: Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(INotifyCollection<T>, Expression<Func<T, bool>>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyCollection<T>, Expression<Func<T, bool>>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyCollection<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+    startLine: 2027
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: public static INotifyCollection<T> Where<T>(this INotifyCollection<T> source, Expression<Func<T, bool>> filter, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.INotifyCollection{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.INotifyCollection{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: Public Shared Function Where(Of T)(source As INotifyCollection(Of T), filter As Expression(Of Func(Of T, Boolean)), preferPredicateRemove As Boolean) As INotifyCollection(Of T)
+  overload: NMF.Expressions.Linq.ObservableExtensions.Where*
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), Boolean)
+  name.vb: Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
 - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   id: Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
@@ -6323,7 +6486,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Where
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 1997
+    startLine: 2040
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6352,6 +6515,57 @@ items:
   nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean))
   fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean))
   name.vb: Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean))
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  id: Where``1(NMF.Expressions.INotifyCollection{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(INotifyCollection<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyCollection<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyCollection<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<T, bool>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
+    startLine: 2056
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: public static INotifyCollection<T> Where<T>(this INotifyCollection<T> source, Expression<Func<T, bool>> filter, Func<T, bool> filterCompiled, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.INotifyCollection{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: filterCompiled
+      type: System.Func{{T},System.Boolean}
+      description: A compiled version of filter
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.INotifyCollection{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: Public Shared Function Where(Of T)(source As INotifyCollection(Of T), filter As Expression(Of Func(Of T, Boolean)), filterCompiled As Func(Of T, Boolean), preferPredicateRemove As Boolean) As INotifyCollection(Of T)
+  overload: NMF.Expressions.Linq.ObservableExtensions.Where*
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyCollection(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), Boolean)
+  name.vb: Where(Of T)(INotifyCollection(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
 - uid: NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1(System.Collections.Generic.IEnumerable{``0})
   id: WithUpdates``1(System.Collections.Generic.IEnumerable{``0})
@@ -6371,7 +6585,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: WithUpdates
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 2010
+    startLine: 2069
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6413,7 +6627,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: WithUpdates
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 2022
+    startLine: 2081
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -6458,7 +6672,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: WithUpdates
     path: src/Expressions/Expressions.Linq/Facade/ObservableExtensions.cs
-    startLine: 2056
+    startLine: 2115
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq

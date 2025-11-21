@@ -8,4 +8,4 @@ By default, AnyText answers this request by formatting the current parse tree.
 
 ## Customizations
 
-To customize the formatting behavior, insert [formatting instructions](../formattingInstructions.md) in your grammar.
+To customize the formatting behavior, insert [formatting instructions](../reference/formattingInstructions.md) in your grammar.

@@ -121,7 +121,9 @@ items:
   - NMF.Expressions.Linq.ExpressionExtensions.Union``1(NMF.Expressions.IEnumerableExpression{``0},System.Collections.Generic.IEnumerable{``0})
   - NMF.Expressions.Linq.ExpressionExtensions.Union``1(NMF.Expressions.IEnumerableExpression{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})
   - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
   - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean})
+  - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean},System.Boolean)
   - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.IEnumerableExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
   - NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.IEnumerableExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   langs:
@@ -7206,6 +7208,74 @@ items:
   nameWithType.vb: ExpressionExtensions.Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)))
   fullName.vb: NMF.Expressions.Linq.ExpressionExtensions.Where(Of T)(NMF.Expressions.ICollectionExpression(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
   name.vb: Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)))
+- uid: NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  id: Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ExpressionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(ICollectionExpression<T>, Expression<Func<T, bool>>, bool)
+  nameWithType: ExpressionExtensions.Where<T>(ICollectionExpression<T>, Expression<Func<T, bool>>, bool)
+  fullName: NMF.Expressions.Linq.ExpressionExtensions.Where<T>(NMF.Expressions.ICollectionExpression<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs
+    startLine: 1977
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: >-
+      [ParameterDataflow(1, 0, 0)]
+
+      [ExpressionCompileRewriter(typeof(ExpressionExtensions.Rewrites), "RewriteWhereCollectionWithPredicate")]
+
+      public static ICollectionExpression<T> Where<T>(this ICollectionExpression<T> source, Expression<Func<T, bool>> filter, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.ICollectionExpression{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.ICollectionExpression{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: >-
+      <ParameterDataflow(1, 0, 0)>
+
+      <ExpressionCompileRewriter(GetType(ExpressionExtensions.Rewrites), "RewriteWhereCollectionWithPredicate")>
+
+      Public Shared Function Where(Of T)(source As ICollectionExpression(Of T), filter As Expression(Of Func(Of T, Boolean)), preferPredicateRemove As Boolean) As ICollectionExpression(Of T)
+  overload: NMF.Expressions.Linq.ExpressionExtensions.Where*
+  attributes:
+  - type: NMF.Expressions.ParameterDataflowAttribute
+    ctor: NMF.Expressions.ParameterDataflowAttribute.#ctor(System.Int32,System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 0
+  nameWithType.vb: ExpressionExtensions.Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ExpressionExtensions.Where(Of T)(NMF.Expressions.ICollectionExpression(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), Boolean)
+  name.vb: Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
 - uid: NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean})
   commentId: M:NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean})
   id: Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean})
@@ -7225,7 +7295,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Where
     path: src/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs
-    startLine: 1978
+    startLine: 1993
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions.Linq
@@ -7273,6 +7343,76 @@ items:
   nameWithType.vb: ExpressionExtensions.Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Action(Of T, Boolean))
   fullName.vb: NMF.Expressions.Linq.ExpressionExtensions.Where(Of T)(NMF.Expressions.ICollectionExpression(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), System.Action(Of T, Boolean))
   name.vb: Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Action(Of T, Boolean))
+- uid: NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean},System.Boolean)
+  id: Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean},System.Boolean)
+  isExtensionMethod: true
+  parent: NMF.Expressions.Linq.ExpressionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Where<T>(ICollectionExpression<T>, Expression<Func<T, bool>>, Func<T, bool>, Action<T, bool>, bool)
+  nameWithType: ExpressionExtensions.Where<T>(ICollectionExpression<T>, Expression<Func<T, bool>>, Func<T, bool>, Action<T, bool>, bool)
+  fullName: NMF.Expressions.Linq.ExpressionExtensions.Where<T>(NMF.Expressions.ICollectionExpression<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<T, bool>, System.Action<T, bool>, bool)
+  type: Method
+  source:
+    remote:
+      path: Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Where
+    path: src/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs
+    startLine: 2009
+  assemblies:
+  - NMF.Expressions.Linq
+  namespace: NMF.Expressions.Linq
+  summary: Filters the given collection with the given predicate
+  example: []
+  syntax:
+    content: >-
+      [ParameterDataflow(1, 0, 0)]
+
+      public static ICollectionExpression<T> Where<T>(this ICollectionExpression<T> source, Expression<Func<T, bool>> filter, Func<T, bool> filterGetter, Action<T, bool> filterSetter, bool preferPredicateRemove)
+    parameters:
+    - id: source
+      type: NMF.Expressions.ICollectionExpression{{T}}
+      description: The current collection
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The predicate used for filtering
+    - id: filterGetter
+      type: System.Func{{T},System.Boolean}
+      description: A precompiled filter getter
+    - id: filterSetter
+      type: System.Action{{T},System.Boolean}
+      description: A precompiled filter setter
+    - id: preferPredicateRemove
+      type: System.Boolean
+      description: true, if removal via the predicate is preferred, otherwise false
+    typeParameters:
+    - id: T
+      description: The element type
+    return:
+      type: NMF.Expressions.ICollectionExpression{{T}}
+      description: A collection containing the elements that passed the filter
+    content.vb: >-
+      <ParameterDataflow(1, 0, 0)>
+
+      Public Shared Function Where(Of T)(source As ICollectionExpression(Of T), filter As Expression(Of Func(Of T, Boolean)), filterGetter As Func(Of T, Boolean), filterSetter As Action(Of T, Boolean), preferPredicateRemove As Boolean) As ICollectionExpression(Of T)
+  overload: NMF.Expressions.Linq.ExpressionExtensions.Where*
+  attributes:
+  - type: NMF.Expressions.ParameterDataflowAttribute
+    ctor: NMF.Expressions.ParameterDataflowAttribute.#ctor(System.Int32,System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 0
+  nameWithType.vb: ExpressionExtensions.Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Action(Of T, Boolean), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ExpressionExtensions.Where(Of T)(NMF.Expressions.ICollectionExpression(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), System.Action(Of T, Boolean), Boolean)
+  name.vb: Where(Of T)(ICollectionExpression(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Action(Of T, Boolean), Boolean)
 references:
 - uid: NMF.Expressions.INotifyValue`1
   commentId: T:NMF.Expressions.INotifyValue`1

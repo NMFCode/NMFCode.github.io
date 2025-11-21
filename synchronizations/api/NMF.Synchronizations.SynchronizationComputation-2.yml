@@ -53,13 +53,13 @@ items:
   summary: Denotes a computation in a synchronization
   example: []
   syntax:
-    content: 'public abstract class SynchronizationComputation<TIn, TOut> : Computation, IPersistor, ITraceEntry, INotifyValue<TOut>, INotifiable, IDisposable, ISuccessorList'
+    content: 'public abstract class SynchronizationComputation<TIn, TOut> : Computation, IPersistor, ITraceEntry, INotifyValue<TOut>, INotifiable, ISuccessorList, IDisposable'
     typeParameters:
     - id: TIn
       description: ''
     - id: TOut
       description: ''
-    content.vb: Public MustInherit Class SynchronizationComputation(Of TIn, TOut) Inherits Computation Implements IPersistor, ITraceEntry, INotifyValue(Of TOut), INotifiable, IDisposable, ISuccessorList
+    content.vb: Public MustInherit Class SynchronizationComputation(Of TIn, TOut) Inherits Computation Implements IPersistor, ITraceEntry, INotifyValue(Of TOut), INotifiable, ISuccessorList, IDisposable
   inheritance:
   - System.Object
   - NMF.Transformations.Core.Computation
@@ -68,8 +68,8 @@ items:
   - NMF.Transformations.Core.ITraceEntry
   - NMF.Expressions.INotifyValue{{TOut}}
   - NMF.Expressions.INotifiable
-  - System.IDisposable
   - NMF.Expressions.ISuccessorList
+  - System.IDisposable
   inheritedMembers:
   - NMF.Transformations.Core.Computation.TransformationRule
   - NMF.Transformations.Core.Computation.TransformationContext
@@ -740,7 +740,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: HasSuccessors
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 240
+    startLine: 247
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -775,7 +775,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: IsAttached
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 243
+    startLine: 250
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -810,7 +810,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Count
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 246
+    startLine: 253
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -845,7 +845,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AllSuccessors
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 251
+    startLine: 258
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -878,7 +878,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Set
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 255
+    startLine: 262
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -914,7 +914,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SetDummy
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 269
+    startLine: 276
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -946,7 +946,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Unset
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 279
+    startLine: 286
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -986,7 +986,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: UnsetAll
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 292
+    startLine: 299
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -1018,7 +1018,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: GetSuccessor
     path: src/Synchronizations/Synchronizations/SynchronizationComputation.cs
-    startLine: 302
+    startLine: 309
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -1122,6 +1122,12 @@ references:
   name: INotifiable
   nameWithType: INotifiable
   fullName: NMF.Expressions.INotifiable
+- uid: NMF.Expressions.ISuccessorList
+  commentId: T:NMF.Expressions.ISuccessorList
+  parent: NMF.Expressions
+  name: ISuccessorList
+  nameWithType: ISuccessorList
+  fullName: NMF.Expressions.ISuccessorList
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -1130,12 +1136,6 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: NMF.Expressions.ISuccessorList
-  commentId: T:NMF.Expressions.ISuccessorList
-  parent: NMF.Expressions
-  name: ISuccessorList
-  nameWithType: ISuccessorList
-  fullName: NMF.Expressions.ISuccessorList
 - uid: NMF.Transformations.Core.Computation.TransformationRule
   commentId: P:NMF.Transformations.Core.Computation.TransformationRule
   parent: NMF.Transformations.Core.Computation

@@ -8,6 +8,7 @@ items:
   - NMF.Synchronizations.SynchronizationContext.#ctor(NMF.Synchronizations.Synchronization,NMF.Synchronizations.SynchronizationDirection,NMF.Transformations.ChangePropagationMode)
   - NMF.Synchronizations.SynchronizationContext.ChangePropagation
   - NMF.Synchronizations.SynchronizationContext.Direction
+  - NMF.Synchronizations.SynchronizationContext.Dispose
   - NMF.Synchronizations.SynchronizationContext.Inconsistencies
   langs:
   - csharp
@@ -23,15 +24,15 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SynchronizationContext
     path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
   summary: Denotes a context in which a synchroniation takes place
   example: []
   syntax:
-    content: 'public class SynchronizationContext : TransformationContext, ISynchronizationContext, ITransformationEngineContext, ITransformationContext'
-    content.vb: Public Class SynchronizationContext Inherits TransformationContext Implements ISynchronizationContext, ITransformationEngineContext, ITransformationContext
+    content: 'public class SynchronizationContext : TransformationContext, ISynchronizationContext, ITransformationEngineContext, ITransformationContext, IDisposable'
+    content.vb: Public Class SynchronizationContext Inherits TransformationContext Implements ISynchronizationContext, ITransformationEngineContext, ITransformationContext, IDisposable
   inheritance:
   - System.Object
   - NMF.Transformations.Core.TransformationContext
@@ -39,6 +40,7 @@ items:
   - NMF.Synchronizations.ISynchronizationContext
   - NMF.Transformations.Core.ITransformationEngineContext
   - NMF.Transformations.Core.ITransformationContext
+  - System.IDisposable
   inheritedMembers:
   - NMF.Transformations.Core.TransformationContext.Transformation
   - NMF.Transformations.Core.TransformationContext.CallTransformation(NMF.Transformations.Core.GeneralTransformationRule,System.Object[],System.Collections.IEnumerable)
@@ -91,7 +93,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -132,7 +134,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Direction
     path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -165,7 +167,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ChangePropagation
     path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -198,7 +200,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Inconsistencies
     path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - NMF.Synchronizations
   namespace: NMF.Synchronizations
@@ -214,6 +216,36 @@ items:
   overload: NMF.Synchronizations.SynchronizationContext.Inconsistencies*
   implements:
   - NMF.Synchronizations.ISynchronizationContext.Inconsistencies
+- uid: NMF.Synchronizations.SynchronizationContext.Dispose
+  commentId: M:NMF.Synchronizations.SynchronizationContext.Dispose
+  id: Dispose
+  parent: NMF.Synchronizations.SynchronizationContext
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: SynchronizationContext.Dispose()
+  fullName: NMF.Synchronizations.SynchronizationContext.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Synchronizations/Synchronizations/SynchronizationContext.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Dispose
+    path: src/Synchronizations/Synchronizations/SynchronizationContext.cs
+    startLine: 45
+  assemblies:
+  - NMF.Synchronizations
+  namespace: NMF.Synchronizations
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: NMF.Synchronizations.SynchronizationContext.Dispose*
+  implements:
+  - System.IDisposable.Dispose
 references:
 - uid: NMF.Synchronizations
   commentId: N:NMF.Synchronizations
@@ -273,6 +305,14 @@ references:
   name: ITransformationContext
   nameWithType: ITransformationContext
   fullName: NMF.Transformations.Core.ITransformationContext
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: NMF.Transformations.Core.TransformationContext.Transformation
   commentId: P:NMF.Transformations.Core.TransformationContext.Transformation
   parent: NMF.Transformations.Core.TransformationContext
@@ -1669,3 +1709,31 @@ references:
   - name: .
   - uid: NMF.Expressions
     name: Expressions
+- uid: NMF.Synchronizations.SynchronizationContext.Dispose*
+  commentId: Overload:NMF.Synchronizations.SynchronizationContext.Dispose
+  href: NMF.Synchronizations.SynchronizationContext.html#NMF_Synchronizations_SynchronizationContext_Dispose
+  name: Dispose
+  nameWithType: SynchronizationContext.Dispose
+  fullName: NMF.Synchronizations.SynchronizationContext.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

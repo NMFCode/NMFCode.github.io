@@ -6160,9 +6160,62 @@ public static ICollectionExpression&lt;T&gt; Where&lt;T&gt;(this ICollectionExpr
 
   <a id="NMF_Expressions_Linq_ExpressionExtensions_Where_" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where*"></a>
 
+  <h3 id="NMF_Expressions_Linq_ExpressionExtensions_Where__1_NMF_Expressions_ICollectionExpression___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
+  Where&lt;T&gt;(ICollectionExpression&lt;T&gt;, Expression&lt;Func&lt;T, bool&gt;&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs/#L1978"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filters the given collection with the given predicate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ParameterDataflow(1, 0, 0)]
+[ExpressionCompileRewriter(typeof(ExpressionExtensions.Rewrites), &quot;RewriteWhereCollectionWithPredicate&quot;)]
+public static ICollectionExpression&lt;T&gt; Where&lt;T&gt;(this ICollectionExpression&lt;T&gt; source, Expression&lt;Func&lt;T, bool&gt;&gt; filter, bool preferPredicateRemove)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="NMF.Expressions.ICollectionExpression-1.html">ICollectionExpression</a>&lt;T&gt;</dt>
+    <dd><p>The current collection</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>The predicate used for filtering</p>
+</dd>
+    <dt><code>preferPredicateRemove</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if removal via the predicate is preferred, otherwise false</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.ICollectionExpression-1.html">ICollectionExpression</a>&lt;T&gt;</dt>
+    <dd><p>A collection containing the elements that passed the filter</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The element type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ExpressionExtensions_Where_" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where*"></a>
+
   <h3 id="NMF_Expressions_Linq_ExpressionExtensions_Where__1_NMF_Expressions_ICollectionExpression___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Action___0_System_Boolean__" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean})">
   Where&lt;T&gt;(ICollectionExpression&lt;T&gt;, Expression&lt;Func&lt;T, bool&gt;&gt;, Func&lt;T, bool&gt;, Action&lt;T, bool&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs/#L1979"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs/#L1994"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Filters the given collection with the given predicate</p>
@@ -6187,6 +6240,64 @@ public static ICollectionExpression&lt;T&gt; Where&lt;T&gt;(this ICollectionExpr
 </dd>
     <dt><code>filterSetter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
     <dd><p>A precompiled filter setter</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NMF.Expressions.ICollectionExpression-1.html">ICollectionExpression</a>&lt;T&gt;</dt>
+    <dd><p>A collection containing the elements that passed the filter</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The element type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NMF_Expressions_Linq_ExpressionExtensions_Where_" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where*"></a>
+
+  <h3 id="NMF_Expressions_Linq_ExpressionExtensions_Where__1_NMF_Expressions_ICollectionExpression___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Action___0_System_Boolean__System_Boolean_" data-uid="NMF.Expressions.Linq.ExpressionExtensions.Where``1(NMF.Expressions.ICollectionExpression{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Action{``0,System.Boolean},System.Boolean)">
+  Where&lt;T&gt;(ICollectionExpression&lt;T&gt;, Expression&lt;Func&lt;T, bool&gt;&gt;, Func&lt;T, bool&gt;, Action&lt;T, bool&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/Expressions/Expressions.Linq/Facade/ExpressionExtensions.cs/#L2010"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filters the given collection with the given predicate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ParameterDataflow(1, 0, 0)]
+public static ICollectionExpression&lt;T&gt; Where&lt;T&gt;(this ICollectionExpression&lt;T&gt; source, Expression&lt;Func&lt;T, bool&gt;&gt; filter, Func&lt;T, bool&gt; filterGetter, Action&lt;T, bool&gt; filterSetter, bool preferPredicateRemove)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="NMF.Expressions.ICollectionExpression-1.html">ICollectionExpression</a>&lt;T&gt;</dt>
+    <dd><p>The current collection</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>The predicate used for filtering</p>
+</dd>
+    <dt><code>filterGetter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A precompiled filter getter</p>
+</dd>
+    <dt><code>filterSetter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A precompiled filter setter</p>
+</dd>
+    <dt><code>preferPredicateRemove</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if removal via the predicate is preferred, otherwise false</p>
 </dd>
   </dl>
 

@@ -9,7 +9,11 @@ items:
   - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.Indent
   - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.SupressSpace
   - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.Unindent
+  - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine
   - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteNewLine
+  - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw(System.String)
+  - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.Char)
+  - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.String)
   - NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteToken(System.String,System.Boolean)
   langs:
   - csharp
@@ -25,7 +29,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: PrettyPrintWriter
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 12
+    startLine: 7
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -62,7 +66,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SupressSpace
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 23
+    startLine: 18
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -90,7 +94,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 34
+    startLine: 29
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -128,7 +132,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Indent
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 43
+    startLine: 38
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -156,7 +160,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Unindent
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 51
+    startLine: 46
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -166,6 +170,104 @@ items:
     content: public void Unindent()
     content.vb: Public Sub Unindent()
   overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.Unindent*
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.String)
+  commentId: M:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.String)
+  id: WriteText(System.String)
+  parent: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteText(string)
+  nameWithType: PrettyPrintWriter.WriteText(string)
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: WriteText
+    path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+    startLine: 55
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.PrettyPrinting
+  summary: Writes the given text to the inner text writer
+  example: []
+  syntax:
+    content: protected virtual void WriteText(string token)
+    parameters:
+    - id: token
+      type: System.String
+      description: the token to write
+    content.vb: Protected Overridable Sub WriteText(token As String)
+  overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText*
+  nameWithType.vb: PrettyPrintWriter.WriteText(String)
+  fullName.vb: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(String)
+  name.vb: WriteText(String)
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.Char)
+  commentId: M:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(System.Char)
+  id: WriteText(System.Char)
+  parent: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteText(char)
+  nameWithType: PrettyPrintWriter.WriteText(char)
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(char)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: WriteText
+    path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+    startLine: 64
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.PrettyPrinting
+  summary: Writes the given text to the inner text writer
+  example: []
+  syntax:
+    content: protected virtual void WriteText(char token)
+    parameters:
+    - id: token
+      type: System.Char
+      description: the token to write
+    content.vb: Protected Overridable Sub WriteText(token As Char)
+  overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText*
+  nameWithType.vb: PrettyPrintWriter.WriteText(Char)
+  fullName.vb: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText(Char)
+  name.vb: WriteText(Char)
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine
+  commentId: M:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine
+  id: WriteLine
+  parent: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteLine()
+  nameWithType: PrettyPrintWriter.WriteLine()
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine()
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: WriteLine
+    path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+    startLine: 72
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.PrettyPrinting
+  summary: Writes a new line to the inner text writer
+  example: []
+  syntax:
+    content: protected virtual void WriteLine()
+    content.vb: Protected Overridable Sub WriteLine()
+  overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine*
 - uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteToken(System.String,System.Boolean)
   commentId: M:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteToken(System.String,System.Boolean)
   id: WriteToken(System.String,System.Boolean)
@@ -184,7 +286,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: WriteToken
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 61
+    startLine: 82
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -222,7 +324,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: WriteNewLine
     path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
-    startLine: 83
+    startLine: 104
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -232,6 +334,41 @@ items:
     content: public void WriteNewLine()
     content.vb: Public Sub WriteNewLine()
   overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteNewLine*
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw(System.String)
+  commentId: M:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw(System.String)
+  id: WriteRaw(System.String)
+  parent: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteRaw(string)
+  nameWithType: PrettyPrintWriter.WriteRaw(string)
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw(string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: WriteRaw
+    path: src/AnyText/AnyText.Core/PrettyPrinting/PrettyPrintWriter.cs
+    startLine: 118
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.PrettyPrinting
+  summary: Writes raw (unformatted) text
+  example: []
+  syntax:
+    content: public void WriteRaw(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: the unformatted text
+    content.vb: Public Sub WriteRaw(text As String)
+  overload: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw*
+  nameWithType.vb: PrettyPrintWriter.WriteRaw(String)
+  fullName.vb: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw(String)
+  name.vb: WriteRaw(String)
 references:
 - uid: NMF.AnyText.PrettyPrinting
   commentId: N:NMF.AnyText.PrettyPrinting
@@ -573,6 +710,29 @@ references:
   name: Unindent
   nameWithType: PrettyPrintWriter.Unindent
   fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.Unindent
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText*
+  commentId: Overload:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText
+  href: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.html#NMF_AnyText_PrettyPrinting_PrettyPrintWriter_WriteText_System_String_
+  name: WriteText
+  nameWithType: PrettyPrintWriter.WriteText
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteText
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine*
+  commentId: Overload:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine
+  href: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.html#NMF_AnyText_PrettyPrinting_PrettyPrintWriter_WriteLine
+  name: WriteLine
+  nameWithType: PrettyPrintWriter.WriteLine
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteLine
 - uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteToken*
   commentId: Overload:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteToken
   href: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.html#NMF_AnyText_PrettyPrinting_PrettyPrintWriter_WriteToken_System_String_System_Boolean_
@@ -596,3 +756,9 @@ references:
   name: WriteNewLine
   nameWithType: PrettyPrintWriter.WriteNewLine
   fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteNewLine
+- uid: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw*
+  commentId: Overload:NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw
+  href: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.html#NMF_AnyText_PrettyPrinting_PrettyPrintWriter_WriteRaw_System_String_
+  name: WriteRaw
+  nameWithType: PrettyPrintWriter.WriteRaw
+  fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter.WriteRaw

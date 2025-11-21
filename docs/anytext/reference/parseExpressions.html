@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Parse Expressions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Parse Expressions ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/parseExpressions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="parse-expressions">Parse Expressions</h1>
+
+<p>AnyText uses <a href="https://doi.org/10.1145/583852">Parse Expression Grammars (PEGs) introduced by Bryan Ford</a>.</p>
+<h2 id="parse-expression-grammars">Parse Expression Grammars</h2>
+<p>The basic idea is that a <a href="rules.html">rule</a> denotes a parse expression and if <code>A</code> and <code>B</code> are parsing expressions, then:</p>
+<ul>
+<li><code>A | B</code> denotes the ordered choice. This means that the parser will not try to match <code>B</code> unless matching <code>A</code> fails. This is in stark contrast to context-free grammars where the order of productions does not matter. In the literature, one therefore often finds <code>/</code> as notation to make the difference clearer, but AnyText decided to use the operator <code>|</code> for better compatibility with Xtext and Langium.</li>
+<li><code>A B</code> is the ordered sequence in which a parser would match <code>A</code> and then <code>B</code>, if matching <code>A</code> succeeded.</li>
+<li><code>'a'</code> is a parse expression for any character sequence <code>a</code>. AnyText will treat these literals as keywords or operators (by default, an alphabetic literal is a keyword, everything else is an operator)</li>
+<li><code>A*</code> is a parse expression that matches <code>A</code> arbitrarily many times or not at all.</li>
+<li><code>A+</code> is a parse expression that matches <code>A</code> arbitrarily many times, but at least once.</li>
+<li><code>A?</code> is a parse expression that matches <code>A</code> optionally, i.e., once or not at all.</li>
+<li><code>(A)</code> is a parse expression.</li>
+<li><code>&amp;A</code> is a positive lookahead. This means, the parser will see whether the non-terminal <code>A</code> can expand at the current position, but the parser will not change the current position.</li>
+<li><code>!A</code> is a negative lookahead. This is similar to a positive lookahead except that the parser will accept the position if matching <code>A</code> fails and will fail if matching <code>A</code> succeeds.</li>
+</ul>
+<p>Thanks to the unlimited lookaheads, PEGs can parse some grammars that are not context-free. In DSLs, they are useful to exclude certain scenarios.</p>
+<h2 id="assignments">Assignments</h2>
+<p>In order define how semantic models are created from parse trees, AnyText supports the following assignment expressions, where again <code>A</code> is a parse expression:</p>
+<ul>
+<li><code>feature=A</code> assigns the semantic value of <code>A</code> to the property <code>feature</code> of the current semantic element.</li>
+<li><code>feature+=A</code> adds the semantic value of <code>A</code> to the collection <code>feature</code> of the current semantic element.</li>
+<li><code>feature?=A</code> assigns the value <code>true</code> to the property <code>feature</code> of the current semantic element.</li>
+</ul>
+<p>All of these assignments are executed for every rule application that gets activated, i.e., gets part of the parse tree.</p>
+<p>If <code>R</code> is a class rule, then the following assignments are also supported:</p>
+<ul>
+<li><code>feature=[R]</code> assigns a reference to the rule <code>R</code> to the property <code>feature</code> of the current semantic element. AnyText looks up the identifier of <code>R</code> to determine the parse expression used to parse the reference.</li>
+<li><code>feature=[R:A]</code> assigns a reference to the rule <code>R</code> to the property <code>feature</code> of the current semantic element. The parse expression <code>A</code> is used to indicate the text for the reference.</li>
+<li><code>feature+=[R]</code> adds a reference to the rule <code>R</code> to the property <code>feature</code> of the current semantic element. AnyText looks up the identifier of <code>R</code> to determine the parse expression used to parse the reference.</li>
+<li><code>feature+=[R:A]</code> adds a reference to the rule <code>R</code> to the property <code>feature</code> of the current semantic element. The parse expression <code>A</code> is used to indicate the text for the reference.</li>
+</ul>
+<p>Reference resolution is done in the semantic model. By default, AnyText will look up in the containment hierarchy to find a model element with the given identifier. However, this can (and in many cases: has to) be overridden in the generated code. Also, it is possible to customize how AnyText will synthesize text for a given element reference.</p>
+<h2 id="identifiers">Identifiers</h2>
+<p>By default, AnyText will treat feature assignments of features called <code>name</code> or <code>id</code> as an identifier. However, this can be customized with a dedicated command-line argument <code>-i</code> or <code>--identifierNames</code> of the code generator. You can specify multiple feature names separated by a space. Note that if you specify this command-line parameter, the default values no longer apply.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/parseExpressions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

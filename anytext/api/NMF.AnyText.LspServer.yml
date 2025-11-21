@@ -5,8 +5,10 @@ items:
   id: LspServer
   parent: NMF.AnyText
   children:
-  - NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,NMF.AnyText.Grammars.Grammar[])
-  - NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar})
+  - NMF.AnyText.LspServer.#ctor(NMF.AnyText.Grammars.Grammar[])
+  - NMF.AnyText.LspServer.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar},System.Boolean)
+  - NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  - NMF.AnyText.LspServer.CloseDocument(NMF.AnyText.Parser)
   - NMF.AnyText.LspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
@@ -14,14 +16,21 @@ items:
   - NMF.AnyText.LspServer.DidClose(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
+  - NMF.AnyText.LspServer.Documents
   - NMF.AnyText.LspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.Exit
   - NMF.AnyText.LspServer.Formatting(LspTypes.TextDocumentIdentifier,NMF.AnyText.FormattingOptions)
   - NMF.AnyText.LspServer.FormattingRange(LspTypes.TextDocumentIdentifier,LspTypes.Range,NMF.AnyText.FormattingOptions)
+  - NMF.AnyText.LspServer.Grammars
   - NMF.AnyText.LspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.LspServer.HandleExtensionCommand(System.String,System.Object[])
   - NMF.AnyText.LspServer.Hover(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
   - NMF.AnyText.LspServer.Initialized
+  - NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.String)
+  - NMF.AnyText.LspServer.OpenDocuments
+  - NMF.AnyText.LspServer.OpenNewDocument(NMF.AnyText.Parser)
+  - NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{LspTypes.CompletionItem})
   - NMF.AnyText.LspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
@@ -33,13 +42,15 @@ items:
   - NMF.AnyText.LspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
-  - NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String)
+  - NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String,System.Boolean)
+  - NMF.AnyText.LspServer.SetRpc(StreamJsonRpc.JsonRpc)
   - NMF.AnyText.LspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.LspServer.ShowDocument(System.String,LspTypes.Range,System.Boolean,System.Boolean)
   - NMF.AnyText.LspServer.ShowMessageNotify(System.String,NMF.AnyText.MessageType)
   - NMF.AnyText.LspServer.ShowMessageRequestAsync(System.String,NMF.AnyText.MessageType,System.Collections.Generic.IEnumerable{System.String})
   - NMF.AnyText.LspServer.ShowReferencesNotifyAsync(NMF.AnyText.ParsePosition)
   - NMF.AnyText.LspServer.Shutdown
+  - NMF.AnyText.LspServer.TryGetOpenDocument(System.String,NMF.AnyText.Parser@)
   langs:
   - csharp
   - vb
@@ -65,6 +76,8 @@ items:
     content.vb: Public Class LspServer Implements ILspServer
   inheritance:
   - System.Object
+  derivedClasses:
+  - NMF.AnyText.SynchronizingLspServer
   implements:
   - NMF.AnyText.ILspServer
   inheritedMembers:
@@ -75,6 +88,49 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  commentId: M:NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  id: ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  nameWithType: LspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  fullName: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.ApplyWorkspaceEdit.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ApplyWorkspaceEditAsync
+    path: src/AnyText/AnyText.Lsp/LspServer.ApplyWorkspaceEdit.cs
+    startLine: 11
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Sends a <code>workspace/applyEdit</code> to the client.
+  example: []
+  syntax:
+    content: public Task<ApplyWorkspaceEditResponse> ApplyWorkspaceEditAsync(WorkspaceEdit edit, string label)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.Workspace.WorkspaceEdit
+      description: The <code>WorkspaceEdit</code> to apply.
+    - id: label
+      type: System.String
+      description: A descriptive label for the edit operation.
+    return:
+      type: System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+      description: A <code>Task</code> representing the asynchronous operation, containing the <code>ApplyWorkspaceEditResponse</code>.
+    content.vb: Public Function ApplyWorkspaceEditAsync(edit As WorkspaceEdit, label As String) As Task(Of ApplyWorkspaceEditResponse)
+  overload: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync*
+  implements:
+  - NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  nameWithType.vb: LspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, String)
+  fullName.vb: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, String)
+  name.vb: ApplyWorkspaceEditAsync(WorkspaceEdit, String)
 - uid: NMF.AnyText.LspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.LspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   id: CodeAction(Newtonsoft.Json.Linq.JToken)
@@ -93,7 +149,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: CodeAction
     path: src/AnyText/AnyText.Lsp/LspServer.CodeAction.cs
-    startLine: 23
+    startLine: 13
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -222,16 +278,57 @@ items:
   overload: NMF.AnyText.LspServer.HandleCompletion*
   implements:
   - NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)
-- uid: NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,NMF.AnyText.Grammars.Grammar[])
-  commentId: M:NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,NMF.AnyText.Grammars.Grammar[])
-  id: '#ctor(StreamJsonRpc.JsonRpc,NMF.AnyText.Grammars.Grammar[])'
+- uid: NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{LspTypes.CompletionItem})
+  commentId: M:NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{LspTypes.CompletionItem})
+  id: PostProcessCompletions(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{LspTypes.CompletionItem})
   parent: NMF.AnyText.LspServer
   langs:
   - csharp
   - vb
-  name: LspServer(JsonRpc, params Grammar[])
-  nameWithType: LspServer.LspServer(JsonRpc, params Grammar[])
-  fullName: NMF.AnyText.LspServer.LspServer(StreamJsonRpc.JsonRpc, params NMF.AnyText.Grammars.Grammar[])
+  name: PostProcessCompletions(Parser, IEnumerable<CompletionItem>)
+  nameWithType: LspServer.PostProcessCompletions(Parser, IEnumerable<CompletionItem>)
+  fullName: NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable<LspTypes.CompletionItem>)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.CompletionHandler.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: PostProcessCompletions
+    path: src/AnyText/AnyText.Lsp/LspServer.CompletionHandler.cs
+    startLine: 65
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Performs a post-processing on the given completion collection
+  example: []
+  syntax:
+    content: protected virtual IEnumerable<CompletionItem> PostProcessCompletions(Parser document, IEnumerable<CompletionItem> completions)
+    parameters:
+    - id: document
+      type: NMF.AnyText.Parser
+      description: the document for which the completion list is requested
+    - id: completions
+      type: System.Collections.Generic.IEnumerable{LspTypes.CompletionItem}
+      description: the current list of completions
+    return:
+      type: System.Collections.Generic.IEnumerable{LspTypes.CompletionItem}
+      description: a potentially modified list of completions
+    content.vb: Protected Overridable Function PostProcessCompletions(document As Parser, completions As IEnumerable(Of CompletionItem)) As IEnumerable(Of CompletionItem)
+  overload: NMF.AnyText.LspServer.PostProcessCompletions*
+  nameWithType.vb: LspServer.PostProcessCompletions(Parser, IEnumerable(Of CompletionItem))
+  fullName.vb: NMF.AnyText.LspServer.PostProcessCompletions(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable(Of LspTypes.CompletionItem))
+  name.vb: PostProcessCompletions(Parser, IEnumerable(Of CompletionItem))
+- uid: NMF.AnyText.LspServer.#ctor(NMF.AnyText.Grammars.Grammar[])
+  commentId: M:NMF.AnyText.LspServer.#ctor(NMF.AnyText.Grammars.Grammar[])
+  id: '#ctor(NMF.AnyText.Grammars.Grammar[])'
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: LspServer(params Grammar[])
+  nameWithType: LspServer.LspServer(params Grammar[])
+  fullName: NMF.AnyText.LspServer.LspServer(params NMF.AnyText.Grammars.Grammar[])
   type: Constructor
   source:
     remote:
@@ -240,36 +337,33 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 33
+    startLine: 37
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
   summary: Creates a new instance
   example: []
   syntax:
-    content: public LspServer(JsonRpc rpc, params Grammar[] grammars)
+    content: public LspServer(params Grammar[] grammars)
     parameters:
-    - id: rpc
-      type: StreamJsonRpc.JsonRpc
-      description: the RPC handler
     - id: grammars
       type: NMF.AnyText.Grammars.Grammar[]
       description: A collection of grammars
-    content.vb: Public Sub New(rpc As JsonRpc, ParamArray grammars As Grammar())
+    content.vb: Public Sub New(ParamArray grammars As Grammar())
   overload: NMF.AnyText.LspServer.#ctor*
-  nameWithType.vb: LspServer.New(JsonRpc, ParamArray Grammar())
-  fullName.vb: NMF.AnyText.LspServer.New(StreamJsonRpc.JsonRpc, ParamArray NMF.AnyText.Grammars.Grammar())
-  name.vb: New(JsonRpc, ParamArray Grammar())
-- uid: NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar})
-  commentId: M:NMF.AnyText.LspServer.#ctor(StreamJsonRpc.JsonRpc,System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar})
-  id: '#ctor(StreamJsonRpc.JsonRpc,System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar})'
+  nameWithType.vb: LspServer.New(ParamArray Grammar())
+  fullName.vb: NMF.AnyText.LspServer.New(ParamArray NMF.AnyText.Grammars.Grammar())
+  name.vb: New(ParamArray Grammar())
+- uid: NMF.AnyText.LspServer.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar},System.Boolean)
+  commentId: M:NMF.AnyText.LspServer.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar},System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar},System.Boolean)'
   parent: NMF.AnyText.LspServer
   langs:
   - csharp
   - vb
-  name: LspServer(JsonRpc, IEnumerable<Grammar>)
-  nameWithType: LspServer.LspServer(JsonRpc, IEnumerable<Grammar>)
-  fullName: NMF.AnyText.LspServer.LspServer(StreamJsonRpc.JsonRpc, System.Collections.Generic.IEnumerable<NMF.AnyText.Grammars.Grammar>)
+  name: LspServer(IEnumerable<Grammar>, bool)
+  nameWithType: LspServer.LspServer(IEnumerable<Grammar>, bool)
+  fullName: NMF.AnyText.LspServer.LspServer(System.Collections.Generic.IEnumerable<NMF.AnyText.Grammars.Grammar>, bool)
   type: Constructor
   source:
     remote:
@@ -278,26 +372,194 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
   summary: Creates a new instance
   example: []
   syntax:
-    content: public LspServer(JsonRpc rpc, IEnumerable<Grammar> grammars)
+    content: public LspServer(IEnumerable<Grammar> grammars, bool asyncChanges = false)
     parameters:
-    - id: rpc
-      type: StreamJsonRpc.JsonRpc
-      description: the RPC handler
     - id: grammars
       type: System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar}
       description: A collection of grammars
-    content.vb: Public Sub New(rpc As JsonRpc, grammars As IEnumerable(Of Grammar))
+    - id: asyncChanges
+      type: System.Boolean
+      description: true, if changes should be processed asynchronously, otherwise false
+    content.vb: Public Sub New(grammars As IEnumerable(Of Grammar), asyncChanges As Boolean = False)
   overload: NMF.AnyText.LspServer.#ctor*
-  nameWithType.vb: LspServer.New(JsonRpc, IEnumerable(Of Grammar))
-  fullName.vb: NMF.AnyText.LspServer.New(StreamJsonRpc.JsonRpc, System.Collections.Generic.IEnumerable(Of NMF.AnyText.Grammars.Grammar))
-  name.vb: New(JsonRpc, IEnumerable(Of Grammar))
+  nameWithType.vb: LspServer.New(IEnumerable(Of Grammar), Boolean)
+  fullName.vb: NMF.AnyText.LspServer.New(System.Collections.Generic.IEnumerable(Of NMF.AnyText.Grammars.Grammar), Boolean)
+  name.vb: New(IEnumerable(Of Grammar), Boolean)
+- uid: NMF.AnyText.LspServer.OpenDocuments
+  commentId: P:NMF.AnyText.LspServer.OpenDocuments
+  id: OpenDocuments
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: OpenDocuments
+  nameWithType: LspServer.OpenDocuments
+  fullName: NMF.AnyText.LspServer.OpenDocuments
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OpenDocuments
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 94
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets a collection of currently opened documents
+  example: []
+  syntax:
+    content: public ICollection<Parser> OpenDocuments { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{NMF.AnyText.Parser}
+    content.vb: Public ReadOnly Property OpenDocuments As ICollection(Of Parser)
+  overload: NMF.AnyText.LspServer.OpenDocuments*
+- uid: NMF.AnyText.LspServer.TryGetOpenDocument(System.String,NMF.AnyText.Parser@)
+  commentId: M:NMF.AnyText.LspServer.TryGetOpenDocument(System.String,NMF.AnyText.Parser@)
+  id: TryGetOpenDocument(System.String,NMF.AnyText.Parser@)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: TryGetOpenDocument(string, out Parser)
+  nameWithType: LspServer.TryGetOpenDocument(string, out Parser)
+  fullName: NMF.AnyText.LspServer.TryGetOpenDocument(string, out NMF.AnyText.Parser)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: TryGetOpenDocument
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 102
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Tries to fetch the given open document
+  example: []
+  syntax:
+    content: public bool TryGetOpenDocument(string documentUri, out Parser document)
+    parameters:
+    - id: documentUri
+      type: System.String
+      description: the URI of the document
+    - id: document
+      type: NMF.AnyText.Parser
+      description: the document or null, if it was not found
+    return:
+      type: System.Boolean
+      description: true, if the document was found, otherwise false
+    content.vb: Public Function TryGetOpenDocument(documentUri As String, document As Parser) As Boolean
+  overload: NMF.AnyText.LspServer.TryGetOpenDocument*
+  nameWithType.vb: LspServer.TryGetOpenDocument(String, Parser)
+  fullName.vb: NMF.AnyText.LspServer.TryGetOpenDocument(String, NMF.AnyText.Parser)
+  name.vb: TryGetOpenDocument(String, Parser)
+- uid: NMF.AnyText.LspServer.Documents
+  commentId: P:NMF.AnyText.LspServer.Documents
+  id: Documents
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: Documents
+  nameWithType: LspServer.Documents
+  fullName: NMF.AnyText.LspServer.Documents
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Documents
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 110
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets the raw dictionary of open documents
+  example: []
+  syntax:
+    content: protected IDictionary<string, Parser> Documents { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Parser}
+    content.vb: Protected ReadOnly Property Documents As IDictionary(Of String, Parser)
+  overload: NMF.AnyText.LspServer.Documents*
+- uid: NMF.AnyText.LspServer.Grammars
+  commentId: P:NMF.AnyText.LspServer.Grammars
+  id: Grammars
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: Grammars
+  nameWithType: LspServer.Grammars
+  fullName: NMF.AnyText.LspServer.Grammars
+  type: Property
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Grammars
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 115
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets the raw dictionary of grammars
+  example: []
+  syntax:
+    content: protected IDictionary<string, Grammar> Grammars { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Grammars.Grammar}
+    content.vb: Protected ReadOnly Property Grammars As IDictionary(Of String, Grammar)
+  overload: NMF.AnyText.LspServer.Grammars*
+- uid: NMF.AnyText.LspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  commentId: M:NMF.AnyText.LspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  id: SetRpc(StreamJsonRpc.JsonRpc)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: SetRpc(JsonRpc)
+  nameWithType: LspServer.SetRpc(JsonRpc)
+  fullName: NMF.AnyText.LspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SetRpc
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 118
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Sets the JSON-RPC instance used by the server for communication with the client.
+  example: []
+  syntax:
+    content: public void SetRpc(JsonRpc rpc)
+    parameters:
+    - id: rpc
+      type: StreamJsonRpc.JsonRpc
+      description: The <xref href="StreamJsonRpc.JsonRpc" data-throw-if-not-resolved="false"></xref> instance to be associated with the server.
+    content.vb: Public Sub SetRpc(rpc As JsonRpc)
+  overload: NMF.AnyText.LspServer.SetRpc*
+  implements:
+  - NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
 - uid: NMF.AnyText.LspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
   commentId: M:NMF.AnyText.LspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
   id: Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)
@@ -316,7 +578,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Initialize
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 59
+    startLine: 124
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -380,7 +642,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Initialized
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 138
+    startLine: 203
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -410,7 +672,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Shutdown
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 144
+    startLine: 209
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -440,7 +702,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidChange
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 147
+    startLine: 218
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -456,6 +718,47 @@ items:
   overload: NMF.AnyText.LspServer.DidChange*
   implements:
   - NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
+- uid: NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.String)
+  commentId: M:NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.String)
+  id: OnDocumentUpdate(NMF.AnyText.Parser,System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit},System.String)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: OnDocumentUpdate(Parser, IEnumerable<TextEdit>, string)
+  nameWithType: LspServer.OnDocumentUpdate(Parser, IEnumerable<TextEdit>, string)
+  fullName: NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable<NMF.AnyText.TextEdit>, string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OnDocumentUpdate
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 249
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when a document should be updated
+  example: []
+  syntax:
+    content: protected virtual void OnDocumentUpdate(Parser document, IEnumerable<TextEdit> edits, string uri)
+    parameters:
+    - id: document
+      type: NMF.AnyText.Parser
+      description: the parsed document
+    - id: edits
+      type: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+      description: the edits that should be performed
+    - id: uri
+      type: System.String
+      description: the URI of the document
+    content.vb: Protected Overridable Sub OnDocumentUpdate(document As Parser, edits As IEnumerable(Of TextEdit), uri As String)
+  overload: NMF.AnyText.LspServer.OnDocumentUpdate*
+  nameWithType.vb: LspServer.OnDocumentUpdate(Parser, IEnumerable(Of TextEdit), String)
+  fullName.vb: NMF.AnyText.LspServer.OnDocumentUpdate(NMF.AnyText.Parser, System.Collections.Generic.IEnumerable(Of NMF.AnyText.TextEdit), String)
+  name.vb: OnDocumentUpdate(Parser, IEnumerable(Of TextEdit), String)
 - uid: NMF.AnyText.LspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
   commentId: M:NMF.AnyText.LspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)
   id: DidSave(LspTypes.TextDocumentIdentifier,System.String)
@@ -474,7 +777,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidSave
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 161
+    startLine: 257
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -514,7 +817,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidClose
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 179
+    startLine: 275
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -530,6 +833,70 @@ items:
   overload: NMF.AnyText.LspServer.DidClose*
   implements:
   - NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)
+- uid: NMF.AnyText.LspServer.CloseDocument(NMF.AnyText.Parser)
+  commentId: M:NMF.AnyText.LspServer.CloseDocument(NMF.AnyText.Parser)
+  id: CloseDocument(NMF.AnyText.Parser)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: CloseDocument(Parser)
+  nameWithType: LspServer.CloseDocument(Parser)
+  fullName: NMF.AnyText.LspServer.CloseDocument(NMF.AnyText.Parser)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: CloseDocument
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 289
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when a document is closed
+  example: []
+  syntax:
+    content: protected virtual void CloseDocument(Parser parser)
+    parameters:
+    - id: parser
+      type: NMF.AnyText.Parser
+      description: the closed document
+    content.vb: Protected Overridable Sub CloseDocument(parser As Parser)
+  overload: NMF.AnyText.LspServer.CloseDocument*
+- uid: NMF.AnyText.LspServer.OpenNewDocument(NMF.AnyText.Parser)
+  commentId: M:NMF.AnyText.LspServer.OpenNewDocument(NMF.AnyText.Parser)
+  id: OpenNewDocument(NMF.AnyText.Parser)
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: OpenNewDocument(Parser)
+  nameWithType: LspServer.OpenNewDocument(Parser)
+  fullName: NMF.AnyText.LspServer.OpenNewDocument(NMF.AnyText.Parser)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: OpenNewDocument
+    path: src/AnyText/AnyText.Lsp/LspServer.cs
+    startLine: 295
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Gets called when a new document is opened
+  example: []
+  syntax:
+    content: protected virtual void OpenNewDocument(Parser parser)
+    parameters:
+    - id: parser
+      type: NMF.AnyText.Parser
+      description: the opened document
+    content.vb: Protected Overridable Sub OpenNewDocument(parser As Parser)
+  overload: NMF.AnyText.LspServer.OpenNewDocument*
 - uid: NMF.AnyText.LspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.LspServer.DidOpen(Newtonsoft.Json.Linq.JToken)
   id: DidOpen(Newtonsoft.Json.Linq.JToken)
@@ -548,7 +915,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidOpen
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 189
+    startLine: 298
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -582,7 +949,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Exit
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 220
+    startLine: 337
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -594,16 +961,16 @@ items:
   overload: NMF.AnyText.LspServer.Exit*
   implements:
   - NMF.AnyText.ILspServer.Exit
-- uid: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String)
-  commentId: M:NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String)
-  id: SendLogMessageAsync(NMF.AnyText.MessageType,System.String)
+- uid: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String,System.Boolean)
+  commentId: M:NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType,System.String,System.Boolean)
+  id: SendLogMessageAsync(NMF.AnyText.MessageType,System.String,System.Boolean)
   parent: NMF.AnyText.LspServer
   langs:
   - csharp
   - vb
-  name: SendLogMessageAsync(MessageType, string)
-  nameWithType: LspServer.SendLogMessageAsync(MessageType, string)
-  fullName: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType, string)
+  name: SendLogMessageAsync(MessageType, string, bool)
+  nameWithType: LspServer.SendLogMessageAsync(MessageType, string, bool)
+  fullName: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType, string, bool)
   type: Method
   source:
     remote:
@@ -612,14 +979,14 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SendLogMessageAsync
     path: src/AnyText/AnyText.Lsp/LspServer.cs
-    startLine: 230
+    startLine: 348
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
   summary: Sends a log message to the client.
   example: []
   syntax:
-    content: protected Task SendLogMessageAsync(MessageType type, string message)
+    content: protected Task SendLogMessageAsync(MessageType type, string message, bool always = false)
     parameters:
     - id: type
       type: NMF.AnyText.MessageType
@@ -627,13 +994,16 @@ items:
     - id: message
       type: System.String
       description: The message content.
+    - id: always
+      type: System.Boolean
+      description: Whether to always log this message even when not debugging. Warnings and errors are always logged regardless.
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Protected Function SendLogMessageAsync(type As MessageType, message As String) As Task
+    content.vb: Protected Function SendLogMessageAsync(type As MessageType, message As String, always As Boolean = False) As Task
   overload: NMF.AnyText.LspServer.SendLogMessageAsync*
-  nameWithType.vb: LspServer.SendLogMessageAsync(MessageType, String)
-  fullName.vb: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType, String)
-  name.vb: SendLogMessageAsync(MessageType, String)
+  nameWithType.vb: LspServer.SendLogMessageAsync(MessageType, String, Boolean)
+  fullName.vb: NMF.AnyText.LspServer.SendLogMessageAsync(NMF.AnyText.MessageType, String, Boolean)
+  name.vb: SendLogMessageAsync(MessageType, String, Boolean)
 - uid: NMF.AnyText.LspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.LspServer.QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
   id: QueryDocumentHighlights(Newtonsoft.Json.Linq.JToken)
@@ -727,7 +1097,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ExecuteCommand
     path: src/AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -746,6 +1116,47 @@ items:
   overload: NMF.AnyText.LspServer.ExecuteCommand*
   implements:
   - NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)
+- uid: NMF.AnyText.LspServer.HandleExtensionCommand(System.String,System.Object[])
+  commentId: M:NMF.AnyText.LspServer.HandleExtensionCommand(System.String,System.Object[])
+  id: HandleExtensionCommand(System.String,System.Object[])
+  parent: NMF.AnyText.LspServer
+  langs:
+  - csharp
+  - vb
+  name: HandleExtensionCommand(string, object[])
+  nameWithType: LspServer.HandleExtensionCommand(string, object[])
+  fullName: NMF.AnyText.LspServer.HandleExtensionCommand(string, object[])
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: HandleExtensionCommand
+    path: src/AnyText/AnyText.Lsp/LspServer.ExecuteCommand.cs
+    startLine: 30
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Allows derived classes to handle an extension command
+  example: []
+  syntax:
+    content: protected virtual bool HandleExtensionCommand(string commandIdentifier, object[] args)
+    parameters:
+    - id: commandIdentifier
+      type: System.String
+      description: the identifier of the command
+    - id: args
+      type: System.Object[]
+      description: command arguments
+    return:
+      type: System.Boolean
+      description: true, if the command was handled, otherwise false
+    content.vb: Protected Overridable Function HandleExtensionCommand(commandIdentifier As String, args As Object()) As Boolean
+  overload: NMF.AnyText.LspServer.HandleExtensionCommand*
+  nameWithType.vb: LspServer.HandleExtensionCommand(String, Object())
+  fullName.vb: NMF.AnyText.LspServer.HandleExtensionCommand(String, Object())
+  name.vb: HandleExtensionCommand(String, Object())
 - uid: NMF.AnyText.LspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.LspServer.QueryReferences(Newtonsoft.Json.Linq.JToken)
   id: QueryReferences(Newtonsoft.Json.Linq.JToken)
@@ -968,15 +1379,15 @@ items:
     of the definition of a symbol in a document.
   example: []
   syntax:
-    content: public LocationLink QueryDefinition(JToken arg)
+    content: public LocationLink[] QueryDefinition(JToken arg)
     parameters:
     - id: arg
       type: Newtonsoft.Json.Linq.JToken
       description: The JSON token containing the parameters of the request. (TextDocumentPositionParams)
     return:
-      type: LspTypes.LocationLink
-      description: A <xref href="LspTypes.LocationLink" data-throw-if-not-resolved="false"></xref> object containing the document and position of the definition of a symbol.
-    content.vb: Public Function QueryDefinition(arg As JToken) As LocationLink
+      type: LspTypes.LocationLink[]
+      description: A list of <xref href="LspTypes.LocationLink" data-throw-if-not-resolved="false"></xref> objects containing the documents and positions of the definitions of a symbol.
+    content.vb: Public Function QueryDefinition(arg As JToken) As LocationLink()
   overload: NMF.AnyText.LspServer.QueryDefinition*
   implements:
   - NMF.AnyText.ILspServer.QueryDefinition(Newtonsoft.Json.Linq.JToken)
@@ -1686,6 +2097,199 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync*
+  commentId: Overload:NMF.AnyText.LspServer.ApplyWorkspaceEditAsync
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_
+  name: ApplyWorkspaceEditAsync
+  nameWithType: LspServer.ApplyWorkspaceEditAsync
+  fullName: NMF.AnyText.LspServer.ApplyWorkspaceEditAsync
+- uid: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  commentId: M:NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  parent: NMF.AnyText.ILspServer
+  isExternal: true
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_
+  name: ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  nameWithType: ILspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  fullName: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, string)
+  nameWithType.vb: ILspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, String)
+  fullName.vb: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, String)
+  name.vb: ApplyWorkspaceEditAsync(WorkspaceEdit, String)
+  spec.csharp:
+  - uid: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+    name: ApplyWorkspaceEditAsync
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_
+  - name: (
+  - uid: NMF.AnyText.Workspace.WorkspaceEdit
+    name: WorkspaceEdit
+    href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+    name: ApplyWorkspaceEditAsync
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_
+  - name: (
+  - uid: NMF.AnyText.Workspace.WorkspaceEdit
+    name: WorkspaceEdit
+    href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NMF.AnyText.Workspace.WorkspaceEdit
+  commentId: T:NMF.AnyText.Workspace.WorkspaceEdit
+  parent: NMF.AnyText.Workspace
+  href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: NMF.AnyText.Workspace.WorkspaceEdit
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+  commentId: T:System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ApplyWorkspaceEditResponse>
+  nameWithType: Task<ApplyWorkspaceEditResponse>
+  fullName: System.Threading.Tasks.Task<LspTypes.ApplyWorkspaceEditResponse>
+  nameWithType.vb: Task(Of ApplyWorkspaceEditResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of LspTypes.ApplyWorkspaceEditResponse)
+  name.vb: Task(Of ApplyWorkspaceEditResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: LspTypes.ApplyWorkspaceEditResponse
+    name: ApplyWorkspaceEditResponse
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LspTypes.ApplyWorkspaceEditResponse
+    name: ApplyWorkspaceEditResponse
+    isExternal: true
+  - name: )
+- uid: NMF.AnyText.Workspace
+  commentId: N:NMF.AnyText.Workspace
+  href: NMF.html
+  name: NMF.AnyText.Workspace
+  nameWithType: NMF.AnyText.Workspace
+  fullName: NMF.AnyText.Workspace
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: NMF.AnyText.LspServer.CodeAction*
   commentId: Overload:NMF.AnyText.LspServer.CodeAction
   href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_CodeAction_Newtonsoft_Json_Linq_JToken_
@@ -1911,67 +2515,39 @@ references:
   name: CompletionList
   nameWithType: CompletionList
   fullName: LspTypes.CompletionList
-- uid: NMF.AnyText.LspServer.#ctor*
-  commentId: Overload:NMF.AnyText.LspServer.#ctor
-  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer__ctor_StreamJsonRpc_JsonRpc_NMF_AnyText_Grammars_Grammar___
-  name: LspServer
-  nameWithType: LspServer.LspServer
-  fullName: NMF.AnyText.LspServer.LspServer
-  nameWithType.vb: LspServer.New
-  fullName.vb: NMF.AnyText.LspServer.New
-  name.vb: New
-- uid: StreamJsonRpc.JsonRpc
-  commentId: T:StreamJsonRpc.JsonRpc
-  parent: StreamJsonRpc
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
-  name: JsonRpc
-  nameWithType: JsonRpc
-  fullName: StreamJsonRpc.JsonRpc
-- uid: NMF.AnyText.Grammars.Grammar[]
-  isExternal: true
-  name: Grammar[]
-  nameWithType: Grammar[]
-  fullName: NMF.AnyText.Grammars.Grammar[]
-  nameWithType.vb: Grammar()
-  fullName.vb: NMF.AnyText.Grammars.Grammar()
-  name.vb: Grammar()
-  spec.csharp:
-  - uid: NMF.AnyText.Grammars.Grammar
-    name: Grammar
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: NMF.AnyText.Grammars.Grammar
-    name: Grammar
-  - name: (
-  - name: )
-- uid: StreamJsonRpc
-  commentId: N:StreamJsonRpc
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc
-  name: StreamJsonRpc
-  nameWithType: StreamJsonRpc
-  fullName: StreamJsonRpc
-- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar}
-  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar}
+- uid: NMF.AnyText.LspServer.PostProcessCompletions*
+  commentId: Overload:NMF.AnyText.LspServer.PostProcessCompletions
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_PostProcessCompletions_NMF_AnyText_Parser_System_Collections_Generic_IEnumerable_LspTypes_CompletionItem__
+  name: PostProcessCompletions
+  nameWithType: LspServer.PostProcessCompletions
+  fullName: NMF.AnyText.LspServer.PostProcessCompletions
+- uid: NMF.AnyText.Parser
+  commentId: T:NMF.AnyText.Parser
+  parent: NMF.AnyText
+  href: NMF.AnyText.Parser.html
+  name: Parser
+  nameWithType: Parser
+  fullName: NMF.AnyText.Parser
+- uid: System.Collections.Generic.IEnumerable{LspTypes.CompletionItem}
+  commentId: T:System.Collections.Generic.IEnumerable{LspTypes.CompletionItem}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Grammar>
-  nameWithType: IEnumerable<Grammar>
-  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Grammars.Grammar>
-  nameWithType.vb: IEnumerable(Of Grammar)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Grammars.Grammar)
-  name.vb: IEnumerable(Of Grammar)
+  name: IEnumerable<CompletionItem>
+  nameWithType: IEnumerable<CompletionItem>
+  fullName: System.Collections.Generic.IEnumerable<LspTypes.CompletionItem>
+  nameWithType.vb: IEnumerable(Of CompletionItem)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of LspTypes.CompletionItem)
+  name.vb: IEnumerable(Of CompletionItem)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: NMF.AnyText.Grammars.Grammar
-    name: Grammar
+  - uid: LspTypes.CompletionItem
+    name: CompletionItem
+    isExternal: true
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -1981,8 +2557,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: NMF.AnyText.Grammars.Grammar
-    name: Grammar
+  - uid: LspTypes.CompletionItem
+    name: CompletionItem
+    isExternal: true
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -2049,6 +2626,338 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NMF.AnyText.LspServer.#ctor*
+  commentId: Overload:NMF.AnyText.LspServer.#ctor
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer__ctor_NMF_AnyText_Grammars_Grammar___
+  name: LspServer
+  nameWithType: LspServer.LspServer
+  fullName: NMF.AnyText.LspServer.LspServer
+  nameWithType.vb: LspServer.New
+  fullName.vb: NMF.AnyText.LspServer.New
+  name.vb: New
+- uid: NMF.AnyText.Grammars.Grammar[]
+  isExternal: true
+  href: NMF.AnyText.Grammars.Grammar.html
+  name: Grammar[]
+  nameWithType: Grammar[]
+  fullName: NMF.AnyText.Grammars.Grammar[]
+  nameWithType.vb: Grammar()
+  fullName.vb: NMF.AnyText.Grammars.Grammar()
+  name.vb: Grammar()
+  spec.csharp:
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Grammars.Grammar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Grammar>
+  nameWithType: IEnumerable<Grammar>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Grammars.Grammar>
+  nameWithType.vb: IEnumerable(Of Grammar)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Grammars.Grammar)
+  name.vb: IEnumerable(Of Grammar)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NMF.AnyText.LspServer.OpenDocuments*
+  commentId: Overload:NMF.AnyText.LspServer.OpenDocuments
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_OpenDocuments
+  name: OpenDocuments
+  nameWithType: LspServer.OpenDocuments
+  fullName: NMF.AnyText.LspServer.OpenDocuments
+- uid: System.Collections.Generic.ICollection{NMF.AnyText.Parser}
+  commentId: T:System.Collections.Generic.ICollection{NMF.AnyText.Parser}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<Parser>
+  nameWithType: ICollection<Parser>
+  fullName: System.Collections.Generic.ICollection<NMF.AnyText.Parser>
+  nameWithType.vb: ICollection(Of Parser)
+  fullName.vb: System.Collections.Generic.ICollection(Of NMF.AnyText.Parser)
+  name.vb: ICollection(Of Parser)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: NMF.AnyText.Parser
+    name: Parser
+    href: NMF.AnyText.Parser.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Parser
+    name: Parser
+    href: NMF.AnyText.Parser.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NMF.AnyText.LspServer.TryGetOpenDocument*
+  commentId: Overload:NMF.AnyText.LspServer.TryGetOpenDocument
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_TryGetOpenDocument_System_String_NMF_AnyText_Parser__
+  name: TryGetOpenDocument
+  nameWithType: LspServer.TryGetOpenDocument
+  fullName: NMF.AnyText.LspServer.TryGetOpenDocument
+- uid: NMF.AnyText.LspServer.Documents*
+  commentId: Overload:NMF.AnyText.LspServer.Documents
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_Documents
+  name: Documents
+  nameWithType: LspServer.Documents
+  fullName: NMF.AnyText.LspServer.Documents
+- uid: System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Parser}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Parser}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, Parser>
+  nameWithType: IDictionary<string, Parser>
+  fullName: System.Collections.Generic.IDictionary<string, NMF.AnyText.Parser>
+  nameWithType.vb: IDictionary(Of String, Parser)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, NMF.AnyText.Parser)
+  name.vb: IDictionary(Of String, Parser)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Parser
+    name: Parser
+    href: NMF.AnyText.Parser.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Parser
+    name: Parser
+    href: NMF.AnyText.Parser.html
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: NMF.AnyText.LspServer.Grammars*
+  commentId: Overload:NMF.AnyText.LspServer.Grammars
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_Grammars
+  name: Grammars
+  nameWithType: LspServer.Grammars
+  fullName: NMF.AnyText.LspServer.Grammars
+- uid: System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Grammars.Grammar}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,NMF.AnyText.Grammars.Grammar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, Grammar>
+  nameWithType: IDictionary<string, Grammar>
+  fullName: System.Collections.Generic.IDictionary<string, NMF.AnyText.Grammars.Grammar>
+  nameWithType.vb: IDictionary(Of String, Grammar)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, NMF.AnyText.Grammars.Grammar)
+  name.vb: IDictionary(Of String, Grammar)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NMF.AnyText.Grammars.Grammar
+    name: Grammar
+    href: NMF.AnyText.Grammars.Grammar.html
+  - name: )
+- uid: StreamJsonRpc.JsonRpc
+  commentId: T:StreamJsonRpc.JsonRpc
+  parent: StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
+  name: JsonRpc
+  nameWithType: JsonRpc
+  fullName: StreamJsonRpc.JsonRpc
+- uid: NMF.AnyText.LspServer.SetRpc*
+  commentId: Overload:NMF.AnyText.LspServer.SetRpc
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_SetRpc_StreamJsonRpc_JsonRpc_
+  name: SetRpc
+  nameWithType: LspServer.SetRpc
+  fullName: NMF.AnyText.LspServer.SetRpc
+- uid: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  commentId: M:NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  parent: NMF.AnyText.ILspServer
+  isExternal: true
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_SetRpc_StreamJsonRpc_JsonRpc_
+  name: SetRpc(JsonRpc)
+  nameWithType: ILspServer.SetRpc(JsonRpc)
+  fullName: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  spec.csharp:
+  - uid: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+    name: SetRpc
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_SetRpc_StreamJsonRpc_JsonRpc_
+  - name: (
+  - uid: StreamJsonRpc.JsonRpc
+    name: JsonRpc
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+    name: SetRpc
+    href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_SetRpc_StreamJsonRpc_JsonRpc_
+  - name: (
+  - uid: StreamJsonRpc.JsonRpc
+    name: JsonRpc
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
+  - name: )
+- uid: StreamJsonRpc
+  commentId: N:StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc
+  name: StreamJsonRpc
+  nameWithType: StreamJsonRpc
+  fullName: StreamJsonRpc
 - uid: NMF.AnyText.LspServer.Initialize*
   commentId: Overload:NMF.AnyText.LspServer.Initialize
   href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_
@@ -2210,17 +3119,6 @@ references:
   name: _InitializeParams_ClientInfo
   nameWithType: _InitializeParams_ClientInfo
   fullName: LspTypes._InitializeParams_ClientInfo
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Uri
   commentId: T:System.Uri
   parent: System
@@ -2380,6 +3278,45 @@ references:
     name: JToken
     isExternal: true
   - name: )
+- uid: NMF.AnyText.LspServer.OnDocumentUpdate*
+  commentId: Overload:NMF.AnyText.LspServer.OnDocumentUpdate
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_OnDocumentUpdate_NMF_AnyText_Parser_System_Collections_Generic_IEnumerable_NMF_AnyText_TextEdit__System_String_
+  name: OnDocumentUpdate
+  nameWithType: LspServer.OnDocumentUpdate
+  fullName: NMF.AnyText.LspServer.OnDocumentUpdate
+- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.TextEdit}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TextEdit>
+  nameWithType: IEnumerable<TextEdit>
+  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.TextEdit>
+  nameWithType.vb: IEnumerable(Of TextEdit)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.TextEdit)
+  name.vb: IEnumerable(Of TextEdit)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: )
 - uid: NMF.AnyText.LspServer.DidSave*
   commentId: Overload:NMF.AnyText.LspServer.DidSave
   href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_
@@ -2466,6 +3403,18 @@ references:
     name: JToken
     isExternal: true
   - name: )
+- uid: NMF.AnyText.LspServer.CloseDocument*
+  commentId: Overload:NMF.AnyText.LspServer.CloseDocument
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_CloseDocument_NMF_AnyText_Parser_
+  name: CloseDocument
+  nameWithType: LspServer.CloseDocument
+  fullName: NMF.AnyText.LspServer.CloseDocument
+- uid: NMF.AnyText.LspServer.OpenNewDocument*
+  commentId: Overload:NMF.AnyText.LspServer.OpenNewDocument
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_OpenNewDocument_NMF_AnyText_Parser_
+  name: OpenNewDocument
+  nameWithType: LspServer.OpenNewDocument
+  fullName: NMF.AnyText.LspServer.OpenNewDocument
 - uid: NMF.AnyText.LspServer.DidOpen*
   commentId: Overload:NMF.AnyText.LspServer.DidOpen
   href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_DidOpen_Newtonsoft_Json_Linq_JToken_
@@ -2525,7 +3474,7 @@ references:
   - name: )
 - uid: NMF.AnyText.LspServer.SendLogMessageAsync*
   commentId: Overload:NMF.AnyText.LspServer.SendLogMessageAsync
-  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_SendLogMessageAsync_NMF_AnyText_MessageType_System_String_
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_SendLogMessageAsync_NMF_AnyText_MessageType_System_String_System_Boolean_
   name: SendLogMessageAsync
   nameWithType: LspServer.SendLogMessageAsync
   fullName: NMF.AnyText.LspServer.SendLogMessageAsync
@@ -2544,43 +3493,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: LspTypes.DocumentHighlight
   commentId: T:LspTypes.DocumentHighlight
   isExternal: true
@@ -2722,6 +3634,35 @@ references:
   - uid: Newtonsoft.Json.Linq.JToken
     name: JToken
     isExternal: true
+  - name: )
+- uid: NMF.AnyText.LspServer.HandleExtensionCommand*
+  commentId: Overload:NMF.AnyText.LspServer.HandleExtensionCommand
+  href: NMF.AnyText.LspServer.html#NMF_AnyText_LspServer_HandleExtensionCommand_System_String_System_Object___
+  name: HandleExtensionCommand
+  nameWithType: LspServer.HandleExtensionCommand
+  fullName: NMF.AnyText.LspServer.HandleExtensionCommand
+- uid: System.Object[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
   - name: )
 - uid: LspTypes.Location
   commentId: T:LspTypes.Location
@@ -2989,7 +3930,6 @@ references:
   fullName: LspTypes.Range
 - uid: LspTypes.LocationLink
   commentId: T:LspTypes.LocationLink
-  parent: LspTypes
   isExternal: true
   name: LocationLink
   nameWithType: LocationLink
@@ -3025,6 +3965,26 @@ references:
   - uid: Newtonsoft.Json.Linq.JToken
     name: JToken
     isExternal: true
+  - name: )
+- uid: LspTypes.LocationLink[]
+  isExternal: true
+  name: LocationLink[]
+  nameWithType: LocationLink[]
+  fullName: LspTypes.LocationLink[]
+  nameWithType.vb: LocationLink()
+  fullName.vb: LspTypes.LocationLink()
+  name.vb: LocationLink()
+  spec.csharp:
+  - uid: LspTypes.LocationLink
+    name: LocationLink
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.LocationLink
+    name: LocationLink
+    isExternal: true
+  - name: (
   - name: )
 - uid: NMF.AnyText.LspServer.Hover*
   commentId: Overload:NMF.AnyText.LspServer.Hover
@@ -3332,17 +4292,6 @@ references:
   name: ShowDocument
   nameWithType: LspServer.ShowDocument
   fullName: NMF.AnyText.LspServer.ShowDocument
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: LspTypes.MessageActionItem
   commentId: T:LspTypes.MessageActionItem
   isExternal: true
@@ -3422,34 +4371,6 @@ references:
   - uid: LspTypes.MessageActionItem
     name: MessageActionItem
     isExternal: true
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
   - name: )
 - uid: NMF.AnyText.LspServer.ShowMessageNotify*
   commentId: Overload:NMF.AnyText.LspServer.ShowMessageNotify

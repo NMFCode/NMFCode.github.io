@@ -5,7 +5,7 @@ items:
   id: RecursiveContinuation
   parent: NMF.AnyText.Rules
   children:
-  - NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
+  - NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule})
   - NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
   - NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
   langs:
@@ -22,7 +22,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: RecursiveContinuation
     path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
-    startLine: 11
+    startLine: 7
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -41,16 +41,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
-  commentId: M:NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})
-  id: '#ctor(System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule})'
+- uid: NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule})
+  commentId: M:NMF.AnyText.Rules.RecursiveContinuation.#ctor(System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule})
+  id: '#ctor(System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule})'
   parent: NMF.AnyText.Rules.RecursiveContinuation
   langs:
   - csharp
   - vb
-  name: RecursiveContinuation(IEnumerable<Rule>)
-  nameWithType: RecursiveContinuation.RecursiveContinuation(IEnumerable<Rule>)
-  fullName: NMF.AnyText.Rules.RecursiveContinuation.RecursiveContinuation(System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.Rule>)
+  name: RecursiveContinuation(IReadOnlyList<Rule>)
+  nameWithType: RecursiveContinuation.RecursiveContinuation(IReadOnlyList<Rule>)
+  fullName: NMF.AnyText.Rules.RecursiveContinuation.RecursiveContinuation(System.Collections.Generic.IReadOnlyList<NMF.AnyText.Rules.Rule>)
   type: Constructor
   source:
     remote:
@@ -59,23 +59,23 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: .ctor
     path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
-    startLine: 18
+    startLine: 14
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
   summary: Creates a new continuation
   example: []
   syntax:
-    content: protected RecursiveContinuation(IEnumerable<Rule> affectedRules)
+    content: protected RecursiveContinuation(IReadOnlyList<Rule> affectedRules)
     parameters:
     - id: affectedRules
-      type: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
+      type: System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule}
       description: the rules that need to be invalidated when performing the recursion
-    content.vb: Protected Sub New(affectedRules As IEnumerable(Of Rule))
+    content.vb: Protected Sub New(affectedRules As IReadOnlyList(Of Rule))
   overload: NMF.AnyText.Rules.RecursiveContinuation.#ctor*
-  nameWithType.vb: RecursiveContinuation.New(IEnumerable(Of Rule))
-  fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.New(System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.Rule))
-  name.vb: New(IEnumerable(Of Rule))
+  nameWithType.vb: RecursiveContinuation.New(IReadOnlyList(Of Rule))
+  fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.New(System.Collections.Generic.IReadOnlyList(Of NMF.AnyText.Rules.Rule))
+  name.vb: New(IReadOnlyList(Of Rule))
 - uid: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
   commentId: P:NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
   id: AffectedRules
@@ -94,18 +94,18 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: AffectedRules
     path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
-    startLine: 26
+    startLine: 22
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
   summary: Gets the rules needed to invalidate before executing the recursion
   example: []
   syntax:
-    content: public List<Rule> AffectedRules { get; }
+    content: public IReadOnlyList<Rule> AffectedRules { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
-    content.vb: Public ReadOnly Property AffectedRules As List(Of Rule)
+      type: System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule}
+    content.vb: Public ReadOnly Property AffectedRules As IReadOnlyList(Of Rule)
   overload: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules*
 - uid: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
   commentId: M:NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion(NMF.AnyText.Rules.RuleApplication,NMF.AnyText.ParseContext,NMF.AnyText.RecursionContext,NMF.AnyText.ParsePosition@)
@@ -125,7 +125,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ResolveRecursion
     path: src/AnyText/AnyText.Core/Rules/RecursiveContinuation.cs
-    startLine: 36
+    startLine: 32
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.Rules
@@ -424,39 +424,39 @@ references:
   fullName: System
 - uid: NMF.AnyText.Rules.RecursiveContinuation.#ctor*
   commentId: Overload:NMF.AnyText.Rules.RecursiveContinuation.#ctor
-  href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation__ctor_System_Collections_Generic_IEnumerable_NMF_AnyText_Rules_Rule__
+  href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation__ctor_System_Collections_Generic_IReadOnlyList_NMF_AnyText_Rules_Rule__
   name: RecursiveContinuation
   nameWithType: RecursiveContinuation.RecursiveContinuation
   fullName: NMF.AnyText.Rules.RecursiveContinuation.RecursiveContinuation
   nameWithType.vb: RecursiveContinuation.New
   fullName.vb: NMF.AnyText.Rules.RecursiveContinuation.New
   name.vb: New
-- uid: System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
-  commentId: T:System.Collections.Generic.IEnumerable{NMF.AnyText.Rules.Rule}
+- uid: System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule}
+  commentId: T:System.Collections.Generic.IReadOnlyList{NMF.AnyText.Rules.Rule}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Rule>
-  nameWithType: IEnumerable<Rule>
-  fullName: System.Collections.Generic.IEnumerable<NMF.AnyText.Rules.Rule>
-  nameWithType.vb: IEnumerable(Of Rule)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of NMF.AnyText.Rules.Rule)
-  name.vb: IEnumerable(Of Rule)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<Rule>
+  nameWithType: IReadOnlyList<Rule>
+  fullName: System.Collections.Generic.IReadOnlyList<NMF.AnyText.Rules.Rule>
+  nameWithType.vb: IReadOnlyList(Of Rule)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of NMF.AnyText.Rules.Rule)
+  name.vb: IReadOnlyList(Of Rule)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: NMF.AnyText.Rules.Rule
     name: Rule
     href: NMF.AnyText.Rules.Rule.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -464,29 +464,29 @@ references:
     name: Rule
     href: NMF.AnyText.Rules.Rule.html
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -535,67 +535,6 @@ references:
   name: AffectedRules
   nameWithType: RecursiveContinuation.AffectedRules
   fullName: NMF.AnyText.Rules.RecursiveContinuation.AffectedRules
-- uid: System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
-  commentId: T:System.Collections.Generic.List{NMF.AnyText.Rules.Rule}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Rule>
-  nameWithType: List<Rule>
-  fullName: System.Collections.Generic.List<NMF.AnyText.Rules.Rule>
-  nameWithType.vb: List(Of Rule)
-  fullName.vb: System.Collections.Generic.List(Of NMF.AnyText.Rules.Rule)
-  name.vb: List(Of Rule)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: NMF.AnyText.Rules.Rule
-    name: Rule
-    href: NMF.AnyText.Rules.Rule.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: NMF.AnyText.Rules.Rule
-    name: Rule
-    href: NMF.AnyText.Rules.Rule.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion*
   commentId: Overload:NMF.AnyText.Rules.RecursiveContinuation.ResolveRecursion
   href: NMF.AnyText.Rules.RecursiveContinuation.html#NMF_AnyText_Rules_RecursiveContinuation_ResolveRecursion_NMF_AnyText_Rules_RuleApplication_NMF_AnyText_ParseContext_NMF_AnyText_RecursionContext_NMF_AnyText_ParsePosition__

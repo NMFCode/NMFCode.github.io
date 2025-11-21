@@ -30,13 +30,16 @@ items:
   summary: Denotes a parse context using model
   example: []
   syntax:
-    content: 'public class ModelParseContext : ParseContext'
-    content.vb: Public Class ModelParseContext Inherits ParseContext
+    content: 'public class ModelParseContext : ParseContext, IDisposable'
+    content.vb: Public Class ModelParseContext Inherits ParseContext Implements IDisposable
   inheritance:
   - System.Object
   - NMF.AnyText.ParseContext
+  implements:
+  - System.IDisposable
   inheritedMembers:
   - NMF.AnyText.ParseContext.Grammar
+  - NMF.AnyText.ParseContext.FileUri
   - NMF.AnyText.ParseContext.RootRule
   - NMF.AnyText.ParseContext.Imports
   - NMF.AnyText.ParseContext.Root
@@ -47,10 +50,13 @@ items:
   - NMF.AnyText.ParseContext.Matcher
   - NMF.AnyText.ParseContext.IsLastUpdateSuccessful
   - NMF.AnyText.ParseContext.StringComparison
+  - NMF.AnyText.ParseContext.IsParsing
+  - NMF.AnyText.ParseContext.IsExecutingModelChanges
+  - NMF.AnyText.ParseContext.CurrentDirectory
   - NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)
   - NMF.AnyText.ParseContext.AddDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
-  - NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-  - NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
+  - NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+  - NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.RemoveReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   - NMF.AnyText.ParseContext.TryGetReferences(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
@@ -61,6 +67,10 @@ items:
   - NMF.AnyText.ParseContext.AcceptSequenceAdd(NMF.AnyText.Rules.SequenceRule,NMF.AnyText.Rules.RuleApplication@,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})
   - NMF.AnyText.ParseContext.AcceptZeroOrMoreAdd(NMF.AnyText.Rules.ZeroOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})
   - NMF.AnyText.ParseContext.AcceptOneOrMoreAdd(NMF.AnyText.Rules.OneOrMoreRule,NMF.AnyText.Rules.RuleApplication,System.Collections.Generic.List{NMF.AnyText.Rules.RuleApplication})
+  - NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  - NMF.AnyText.ParseContext.ShouldParseChange
+  - NMF.AnyText.ParseContext.Dispose(System.Boolean)
+  - NMF.AnyText.ParseContext.Dispose
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -280,6 +290,14 @@ references:
   name: ParseContext
   nameWithType: ParseContext
   fullName: NMF.AnyText.ParseContext
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: NMF.AnyText.ParseContext.Grammar
   commentId: P:NMF.AnyText.ParseContext.Grammar
   parent: NMF.AnyText.ParseContext
@@ -287,6 +305,13 @@ references:
   name: Grammar
   nameWithType: ParseContext.Grammar
   fullName: NMF.AnyText.ParseContext.Grammar
+- uid: NMF.AnyText.ParseContext.FileUri
+  commentId: P:NMF.AnyText.ParseContext.FileUri
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_FileUri
+  name: FileUri
+  nameWithType: ParseContext.FileUri
+  fullName: NMF.AnyText.ParseContext.FileUri
 - uid: NMF.AnyText.ParseContext.RootRule
   commentId: P:NMF.AnyText.ParseContext.RootRule
   parent: NMF.AnyText.ParseContext
@@ -369,6 +394,27 @@ references:
   name: StringComparison
   nameWithType: ParseContext.StringComparison
   fullName: NMF.AnyText.ParseContext.StringComparison
+- uid: NMF.AnyText.ParseContext.IsParsing
+  commentId: P:NMF.AnyText.ParseContext.IsParsing
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsParsing
+  name: IsParsing
+  nameWithType: ParseContext.IsParsing
+  fullName: NMF.AnyText.ParseContext.IsParsing
+- uid: NMF.AnyText.ParseContext.IsExecutingModelChanges
+  commentId: P:NMF.AnyText.ParseContext.IsExecutingModelChanges
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_IsExecutingModelChanges
+  name: IsExecutingModelChanges
+  nameWithType: ParseContext.IsExecutingModelChanges
+  fullName: NMF.AnyText.ParseContext.IsExecutingModelChanges
+- uid: NMF.AnyText.ParseContext.CurrentDirectory
+  commentId: P:NMF.AnyText.ParseContext.CurrentDirectory
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_CurrentDirectory
+  name: CurrentDirectory
+  nameWithType: ParseContext.CurrentDirectory
+  fullName: NMF.AnyText.ParseContext.CurrentDirectory
 - uid: NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)
   commentId: M:NMF.AnyText.ParseContext.EnqueueResolveAction(NMF.AnyText.ParseResolveAction)
   parent: NMF.AnyText.ParseContext
@@ -435,21 +481,21 @@ references:
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
   - name: )
-- uid: NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-  commentId: M:NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
+- uid: NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+  commentId: M:NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
   parent: NMF.AnyText.ParseContext
   isExternal: true
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__
-  name: TryGetDefinition(object, out RuleApplication)
-  nameWithType: ParseContext.TryGetDefinition(object, out RuleApplication)
-  fullName: NMF.AnyText.ParseContext.TryGetDefinition(object, out NMF.AnyText.Rules.RuleApplication)
-  nameWithType.vb: ParseContext.TryGetDefinition(Object, RuleApplication)
-  fullName.vb: NMF.AnyText.ParseContext.TryGetDefinition(Object, NMF.AnyText.Rules.RuleApplication)
-  name.vb: TryGetDefinition(Object, RuleApplication)
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
+  name: TryGetDefinitions(object, out ICollection<RuleApplication>)
+  nameWithType: ParseContext.TryGetDefinitions(object, out ICollection<RuleApplication>)
+  fullName: NMF.AnyText.ParseContext.TryGetDefinitions(object, out System.Collections.Generic.ICollection<NMF.AnyText.Rules.RuleApplication>)
+  nameWithType.vb: ParseContext.TryGetDefinitions(Object, ICollection(Of RuleApplication))
+  fullName.vb: NMF.AnyText.ParseContext.TryGetDefinitions(Object, System.Collections.Generic.ICollection(Of NMF.AnyText.Rules.RuleApplication))
+  name.vb: TryGetDefinitions(Object, ICollection(Of RuleApplication))
   spec.csharp:
-  - uid: NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-    name: TryGetDefinition
-    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__
+  - uid: NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+    name: TryGetDefinitions
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
   - name: (
   - uid: System.Object
     name: object
@@ -459,14 +505,69 @@ references:
   - name: " "
   - name: out
   - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ParseContext.TryGetDefinitions(System.Object,System.Collections.Generic.ICollection{NMF.AnyText.Rules.RuleApplication}@)
+    name: TryGetDefinitions
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinitions_System_Object_System_Collections_Generic_ICollection_NMF_AnyText_Rules_RuleApplication___
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NMF.AnyText.Rules.RuleApplication
+    name: RuleApplication
+    href: NMF.AnyText.Rules.RuleApplication.html
+  - name: )
+  - name: )
+- uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+  commentId: M:NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+  parent: NMF.AnyText.ParseContext
+  isExternal: true
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_
+  name: RemoveDefinition(object, RuleApplication)
+  nameWithType: ParseContext.RemoveDefinition(object, RuleApplication)
+  fullName: NMF.AnyText.ParseContext.RemoveDefinition(object, NMF.AnyText.Rules.RuleApplication)
+  nameWithType.vb: ParseContext.RemoveDefinition(Object, RuleApplication)
+  fullName.vb: NMF.AnyText.ParseContext.RemoveDefinition(Object, NMF.AnyText.Rules.RuleApplication)
+  name.vb: RemoveDefinition(Object, RuleApplication)
+  spec.csharp:
+  - uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+    name: RemoveDefinition
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
   - name: )
   spec.vb:
-  - uid: NMF.AnyText.ParseContext.TryGetDefinition(System.Object,NMF.AnyText.Rules.RuleApplication@)
-    name: TryGetDefinition
-    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TryGetDefinition_System_Object_NMF_AnyText_Rules_RuleApplication__
+  - uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object,NMF.AnyText.Rules.RuleApplication)
+    name: RemoveDefinition
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_NMF_AnyText_Rules_RuleApplication_
   - name: (
   - uid: System.Object
     name: Object
@@ -477,37 +578,6 @@ references:
   - uid: NMF.AnyText.Rules.RuleApplication
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
-  - name: )
-- uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-  commentId: M:NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-  parent: NMF.AnyText.ParseContext
-  isExternal: true
-  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_
-  name: RemoveDefinition(object)
-  nameWithType: ParseContext.RemoveDefinition(object)
-  fullName: NMF.AnyText.ParseContext.RemoveDefinition(object)
-  nameWithType.vb: ParseContext.RemoveDefinition(Object)
-  fullName.vb: NMF.AnyText.ParseContext.RemoveDefinition(Object)
-  name.vb: RemoveDefinition(Object)
-  spec.csharp:
-  - uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-    name: RemoveDefinition
-    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: NMF.AnyText.ParseContext.RemoveDefinition(System.Object)
-    name: RemoveDefinition
-    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_RemoveDefinition_System_Object_
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
   commentId: M:NMF.AnyText.ParseContext.AddReference(System.Object,NMF.AnyText.Rules.RuleApplication)
@@ -920,6 +990,120 @@ references:
     name: RuleApplication
     href: NMF.AnyText.Rules.RuleApplication.html
   - name: )
+  - name: )
+- uid: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  commentId: M:NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+  parent: NMF.AnyText.ParseContext
+  isExternal: true
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_
+  name: TrackAndCreateWorkspaceEdit(TextEdit[], Uri)
+  nameWithType: ParseContext.TrackAndCreateWorkspaceEdit(TextEdit[], Uri)
+  fullName: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[], System.Uri)
+  nameWithType.vb: ParseContext.TrackAndCreateWorkspaceEdit(TextEdit(), Uri)
+  fullName.vb: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit(), System.Uri)
+  name.vb: TrackAndCreateWorkspaceEdit(TextEdit(), Uri)
+  spec.csharp:
+  - uid: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+    name: TrackAndCreateWorkspaceEdit
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_
+  - name: (
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ParseContext.TrackAndCreateWorkspaceEdit(NMF.AnyText.TextEdit[],System.Uri)
+    name: TrackAndCreateWorkspaceEdit
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_TrackAndCreateWorkspaceEdit_NMF_AnyText_TextEdit___System_Uri_
+  - name: (
+  - uid: NMF.AnyText.TextEdit
+    name: TextEdit
+    href: NMF.AnyText.TextEdit.html
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: )
+- uid: NMF.AnyText.ParseContext.ShouldParseChange
+  commentId: M:NMF.AnyText.ParseContext.ShouldParseChange
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_ShouldParseChange
+  name: ShouldParseChange()
+  nameWithType: ParseContext.ShouldParseChange()
+  fullName: NMF.AnyText.ParseContext.ShouldParseChange()
+  spec.csharp:
+  - uid: NMF.AnyText.ParseContext.ShouldParseChange
+    name: ShouldParseChange
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_ShouldParseChange
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ParseContext.ShouldParseChange
+    name: ShouldParseChange
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_ShouldParseChange
+  - name: (
+  - name: )
+- uid: NMF.AnyText.ParseContext.Dispose(System.Boolean)
+  commentId: M:NMF.AnyText.ParseContext.Dispose(System.Boolean)
+  parent: NMF.AnyText.ParseContext
+  isExternal: true
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose_System_Boolean_
+  name: Dispose(bool)
+  nameWithType: ParseContext.Dispose(bool)
+  fullName: NMF.AnyText.ParseContext.Dispose(bool)
+  nameWithType.vb: ParseContext.Dispose(Boolean)
+  fullName.vb: NMF.AnyText.ParseContext.Dispose(Boolean)
+  name.vb: Dispose(Boolean)
+  spec.csharp:
+  - uid: NMF.AnyText.ParseContext.Dispose(System.Boolean)
+    name: Dispose
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ParseContext.Dispose(System.Boolean)
+    name: Dispose
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NMF.AnyText.ParseContext.Dispose
+  commentId: M:NMF.AnyText.ParseContext.Dispose
+  parent: NMF.AnyText.ParseContext
+  href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose
+  name: Dispose()
+  nameWithType: ParseContext.Dispose()
+  fullName: NMF.AnyText.ParseContext.Dispose()
+  spec.csharp:
+  - uid: NMF.AnyText.ParseContext.Dispose
+    name: Dispose
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NMF.AnyText.ParseContext.Dispose
+    name: Dispose
+    href: NMF.AnyText.ParseContext.html#NMF_AnyText_ParseContext_Dispose
+  - name: (
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)

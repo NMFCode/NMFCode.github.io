@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AnyTextWebSocketServerExtensions ">
       
-      <meta name="description" content="Denotes extension methods to add GLSP server implementations to an ASP.NET Core dependency injection container">
+      <meta name="description" content="Denotes extension methods to add LSP server implementations to an ASP.NET Core dependency injection container">
       <link rel="icon" href="../../favicon.ico">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions" class="text-break">
-Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
   <dl><dt>Assembly</dt><dd>NMF.AnyText.AspNetCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Denotes extension methods to add GLSP server implementations to an ASP.NET Core dependency injection container</p>
+  <div class="markdown summary"><p>Denotes extension methods to add LSP server implementations to an ASP.NET Core dependency injection container</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -149,47 +149,14 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
 </h2>
 
 
-  <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddGlspServer_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddGlspServer*"></a>
-
-  <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddGlspServer_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddGlspServer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-  AddGlspServer(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L20"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Registers the GLSP server itself</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void AddGlspServer(this IServiceCollection services)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd><p>The service container the GLSP server should be added to</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddLanguage_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddLanguage*"></a>
 
   <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddLanguage__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddLanguage``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
   AddLanguage&lt;TLanguage&gt;(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Adds a graphical language</p>
+  <div class="markdown level1 summary"><p>Adds a language</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -200,7 +167,7 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd><p>The service container the graphical language should be added to</p>
+    <dd><p>The service container the language should be added to</p>
 </dd>
   </dl>
 
@@ -208,9 +175,180 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TLanguage</code></dt>
-    <dd><p>The type of graphical language</p>
+    <dd><p>The type of the language</p>
 </dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddLspServer_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddLspServer*"></a>
+
+  <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddLspServer_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddLspServer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+  AddLspServer(IServiceCollection)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers the LSP server itself</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddLspServer(this IServiceCollection services)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service container the LSP server should be added to</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronization_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronization*"></a>
+
+  <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronization__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_String_System_Boolean_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronization``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Boolean)">
+  AddSynchronization&lt;T&gt;(IServiceCollection, string, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Declares a synchronization between multiple files</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddSynchronization&lt;T&gt;(this IServiceCollection services, string leftExtension, string rightExtension, bool isAutomatic = false) where T : class, IModelElement</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service container the synchronization should be added to</p>
+</dd>
+    <dt><code>leftExtension</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the file extension of the left model</p>
+</dd>
+    <dt><code>rightExtension</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the file extension of the right model</p>
+</dd>
+    <dt><code>isAutomatic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the synchronization should be started automatically</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>the type of the model</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronization_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronization*"></a>
+
+  <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronization__4_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_String_System_Boolean_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronization``4(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Boolean)">
+  AddSynchronization&lt;TLeft, TRight, TSynchronization, TStartRule&gt;(IServiceCollection, string, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Declares a synchronization between multiple files</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddSynchronization&lt;TLeft, TRight, TSynchronization, TStartRule&gt;(this IServiceCollection services, string leftExtension, string rightExtension, bool isAutomatic = false) where TLeft : class, IModelElement where TRight : class, IModelElement where TSynchronization : ReflectiveSynchronization, new() where TStartRule : SynchronizationRule&lt;TLeft, TRight&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service container the synchronization should be added to</p>
+</dd>
+    <dt><code>leftExtension</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the file extension of the left model</p>
+</dd>
+    <dt><code>rightExtension</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the file extension of the right model</p>
+</dd>
+    <dt><code>isAutomatic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true, if the synchronization should be started automatically</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TLeft</code></dt>
+    <dd><p>the type of the left model</p>
+</dd>
+    <dt><code>TRight</code></dt>
+    <dd><p>the type of the right model</p>
+</dd>
+    <dt><code>TSynchronization</code></dt>
+    <dd><p>the type of the synchronization</p>
+</dd>
+    <dt><code>TStartRule</code></dt>
+    <dd><p>the type of the start rule</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronizingLspServer_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronizingLspServer*"></a>
+
+  <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_AddSynchronizingLspServer_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.AddSynchronizingLspServer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+  AddSynchronizingLspServer(IServiceCollection)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers the LSP server itself</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddSynchronizingLspServer(this IServiceCollection services)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service container the LSP server should be added to</p>
+</dd>
+  </dl>
+
+
 
 
 
@@ -225,10 +363,10 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
 
   <h3 id="Microsoft_Extensions_DependencyInjection_AnyTextWebSocketServerExtensions_MapLspWebSocketServer_Microsoft_AspNetCore_Routing_IEndpointRouteBuilder_System_String_" data-uid="Microsoft.Extensions.DependencyInjection.AnyTextWebSocketServerExtensions.MapLspWebSocketServer(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder,System.String)">
   MapLspWebSocketServer(IEndpointRouteBuilder, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Maps the GLSP server</p>
+  <div class="markdown level1 summary"><p>Maps the LSP server</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -242,7 +380,7 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
     <dd><p>The endpoint route builder</p>
 </dd>
     <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The path under which the GLSP server is called</p>
+    <dd><p>The path under which the LSP server is called</p>
 </dd>
   </dl>
 
@@ -261,7 +399,7 @@ Class AnyTextWebSocketServerExtensions  <a class="header-action link-secondary" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.AspNetCore/AnyTextWebSocketServerExtensions.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

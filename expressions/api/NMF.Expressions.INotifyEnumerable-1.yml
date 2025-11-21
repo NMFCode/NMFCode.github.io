@@ -19,7 +19,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: INotifyEnumerable
     path: src/Expressions/Expressions.Linq/Facade/INotifyEnumerable.cs
-    startLine: 16
+    startLine: 28
   assemblies:
   - NMF.Expressions.Linq
   namespace: NMF.Expressions
@@ -33,6 +33,8 @@ items:
     content.vb: Public Interface INotifyEnumerable(Of Out T) Inherits IEnumerable(Of T), INotifyEnumerable, IEnumerable, INotifyCollectionChanged, INotifiable, IDisposable
   inheritedMembers:
   - System.Collections.Generic.IEnumerable{{T}}.GetEnumerator
+  - NMF.Expressions.INotifyEnumerable.IsOrdered
+  - NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
   - System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
   - NMF.Expressions.INotifiable.Successors
   - NMF.Expressions.INotifiable.Dependencies
@@ -138,7 +140,9 @@ items:
   - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Union``1(System.Collections.Generic.IEnumerable{{T}})
   - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Union``1(System.Collections.Generic.IEnumerable{{T}},System.Collections.Generic.IEqualityComparer{{T}})
   - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}})
+  - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Boolean)
   - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Func{{T},System.Boolean})
+  - NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Func{{T},System.Boolean},System.Boolean)
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{{T},System.Int32}},System.Int32,{TResult}})
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ChunkExtensions.Chunk``2(System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{{T}},System.Int32,{TResult}})
   - System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ObservableExtensions.WithUpdates``1
@@ -192,6 +196,44 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
+  - name: )
+- uid: NMF.Expressions.INotifyEnumerable.IsOrdered
+  commentId: P:NMF.Expressions.INotifyEnumerable.IsOrdered
+  parent: NMF.Expressions.INotifyEnumerable
+  href: NMF.Expressions.INotifyEnumerable.html#NMF_Expressions_INotifyEnumerable_IsOrdered
+  name: IsOrdered
+  nameWithType: INotifyEnumerable.IsOrdered
+  fullName: NMF.Expressions.INotifyEnumerable.IsOrdered
+- uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+  commentId: M:NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+  parent: NMF.Expressions.INotifyEnumerable
+  isExternal: true
+  href: NMF.Expressions.INotifyEnumerable.html#NMF_Expressions_INotifyEnumerable_RequireOrder_System_Boolean_
+  name: RequireOrder(bool)
+  nameWithType: INotifyEnumerable.RequireOrder(bool)
+  fullName: NMF.Expressions.INotifyEnumerable.RequireOrder(bool)
+  nameWithType.vb: INotifyEnumerable.RequireOrder(Boolean)
+  fullName.vb: NMF.Expressions.INotifyEnumerable.RequireOrder(Boolean)
+  name.vb: RequireOrder(Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+    name: RequireOrder
+    href: NMF.Expressions.INotifyEnumerable.html#NMF_Expressions_INotifyEnumerable_RequireOrder_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.INotifyEnumerable.RequireOrder(System.Boolean)
+    name: RequireOrder
+    href: NMF.Expressions.INotifyEnumerable.html#NMF_Expressions_INotifyEnumerable_RequireOrder_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
   commentId: E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged
@@ -10086,6 +10128,109 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  definition: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, bool)
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Func{{T},System.Boolean})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   parent: NMF.Expressions.Linq.ObservableExtensions
@@ -10208,6 +10353,141 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+  - name: )
+- uid: NMF.Expressions.INotifyEnumerable`1.NMF.Expressions.Linq.ObservableExtensions.Where``1(System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}},System.Func{{T},System.Boolean},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  parent: NMF.Expressions.Linq.ObservableExtensions
+  definition: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<T, bool>, bool)
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{`0,System.Boolean},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{`0,System.Boolean},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: System.Collections.Generic.IEnumerable{`0}.NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{{T},System.Int32}},System.Int32,{TResult}})
   commentId: M:NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{``0,System.Int32}},System.Int32,``1})
@@ -10613,6 +10893,13 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: NMF.Expressions.INotifyEnumerable
+  commentId: T:NMF.Expressions.INotifyEnumerable
+  parent: NMF.Expressions
+  href: NMF.Expressions.INotifyEnumerable.html
+  name: INotifyEnumerable
+  nameWithType: INotifyEnumerable
+  fullName: NMF.Expressions.INotifyEnumerable
 - uid: System.Collections.Specialized.INotifyCollectionChanged
   commentId: T:System.Collections.Specialized.INotifyCollectionChanged
   parent: System.Collections.Specialized
@@ -20337,6 +20624,108 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+  isExternal: true
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, bool)
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean})
   isExternal: true
@@ -20458,6 +20847,140 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+  - name: )
+- uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  commentId: M:NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+  isExternal: true
+  href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  name: Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  nameWithType: ObservableExtensions.Where<T>(INotifyEnumerable<T>, Expression<Func<T, bool>>, Func<T, bool>, bool)
+  fullName: NMF.Expressions.Linq.ObservableExtensions.Where<T>(NMF.Expressions.INotifyEnumerable<T>, System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<T, bool>, bool)
+  nameWithType.vb: ObservableExtensions.Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  fullName.vb: NMF.Expressions.Linq.ObservableExtensions.Where(Of T)(NMF.Expressions.INotifyEnumerable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of T, Boolean), Boolean)
+  name.vb: Where(Of T)(INotifyEnumerable(Of T), Expression(Of Func(Of T, Boolean)), Func(Of T, Boolean), Boolean)
+  spec.csharp:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NMF.Expressions.Linq.ObservableExtensions.Where``1(NMF.Expressions.INotifyEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{``0,System.Boolean},System.Boolean)
+    name: Where
+    href: NMF.Expressions.Linq.ObservableExtensions.html#NMF_Expressions_Linq_ObservableExtensions_Where__1_NMF_Expressions_INotifyEnumerable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Func___0_System_Boolean__System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NMF.Expressions.INotifyEnumerable`1
+    name: INotifyEnumerable
+    href: NMF.Expressions.INotifyEnumerable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{``0,System.Int32}},System.Int32,``1})
   commentId: M:NMF.Expressions.Linq.ChunkExtensions.ChunkIndexed``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{NMF.Expressions.IEnumerableExpression{System.ValueTuple{``0,System.Int32}},System.Int32,``1})

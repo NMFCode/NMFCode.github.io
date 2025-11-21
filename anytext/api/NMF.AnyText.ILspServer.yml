@@ -5,6 +5,7 @@ items:
   id: ILspServer
   parent: NMF.AnyText
   children:
+  - NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
   - NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.ILspServer.CodeLens(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.ILspServer.CodeLensResolve(Newtonsoft.Json.Linq.JToken)
@@ -31,6 +32,7 @@ items:
   - NMF.AnyText.ILspServer.QuerySemanticTokens(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.ILspServer.QuerySemanticTokensDelta(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.ILspServer.QuerySemanticTokensRange(Newtonsoft.Json.Linq.JToken)
+  - NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
   - NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)
   - NMF.AnyText.ILspServer.Shutdown
   langs:
@@ -56,6 +58,47 @@ items:
   syntax:
     content: public interface ILspServer
     content.vb: Public Interface ILspServer
+- uid: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  commentId: M:NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  id: ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  nameWithType: ILspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  fullName: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, string)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.ApplyWorkspaceEdit.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: ApplyWorkspaceEditAsync
+    path: src/AnyText/AnyText.Lsp/ILspServer.ApplyWorkspaceEdit.cs
+    startLine: 20
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Sends a <code>workspace/applyEdit</code> to the client.
+  example: []
+  syntax:
+    content: Task<ApplyWorkspaceEditResponse> ApplyWorkspaceEditAsync(WorkspaceEdit edit, string label)
+    parameters:
+    - id: edit
+      type: NMF.AnyText.Workspace.WorkspaceEdit
+      description: The <code>WorkspaceEdit</code> to apply.
+    - id: label
+      type: System.String
+      description: A descriptive label for the edit operation.
+    return:
+      type: System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+      description: A <code>Task</code> representing the asynchronous operation, containing the <code>ApplyWorkspaceEditResponse</code>.
+    content.vb: Function ApplyWorkspaceEditAsync(edit As WorkspaceEdit, label As String) As Task(Of ApplyWorkspaceEditResponse)
+  overload: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync*
+  nameWithType.vb: ILspServer.ApplyWorkspaceEditAsync(WorkspaceEdit, String)
+  fullName.vb: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit, String)
+  name.vb: ApplyWorkspaceEditAsync(WorkspaceEdit, String)
 - uid: NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)
   id: CodeAction(Newtonsoft.Json.Linq.JToken)
@@ -196,6 +239,38 @@ items:
     arguments:
     - type: System.String
       value: codeLens/resolve
+- uid: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  commentId: M:NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  id: SetRpc(StreamJsonRpc.JsonRpc)
+  parent: NMF.AnyText.ILspServer
+  langs:
+  - csharp
+  - vb
+  name: SetRpc(JsonRpc)
+  nameWithType: ILspServer.SetRpc(JsonRpc)
+  fullName: NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Lsp/ILspServer.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: SetRpc
+    path: src/AnyText/AnyText.Lsp/ILspServer.cs
+    startLine: 19
+  assemblies:
+  - NMF.AnyText.Lsp
+  namespace: NMF.AnyText
+  summary: Sets the JSON-RPC instance used by the server for communication with the client.
+  example: []
+  syntax:
+    content: void SetRpc(JsonRpc rpc)
+    parameters:
+    - id: rpc
+      type: StreamJsonRpc.JsonRpc
+      description: The <xref href="StreamJsonRpc.JsonRpc" data-throw-if-not-resolved="false"></xref> instance to be associated with the server.
+    content.vb: Sub SetRpc(rpc As JsonRpc)
+  overload: NMF.AnyText.ILspServer.SetRpc*
 - uid: NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
   commentId: M:NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)
   id: DidChange(Newtonsoft.Json.Linq.JToken)
@@ -214,7 +289,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidChange
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 19
+    startLine: 25
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -258,7 +333,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidClose
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -302,7 +377,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidOpen
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 33
+    startLine: 39
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -346,7 +421,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: DidSave
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 41
+    startLine: 47
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -396,7 +471,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Exit
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 47
+    startLine: 53
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -436,7 +511,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Initialize
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 63
+    startLine: 69
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -510,7 +585,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Initialized
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 77
+    startLine: 83
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -550,7 +625,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Shutdown
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 83
+    startLine: 89
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -590,7 +665,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: SetTrace
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 90
+    startLine: 96
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -634,7 +709,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: HandleCompletion
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 98
+    startLine: 104
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -681,7 +756,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ExecuteCommand
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 106
+    startLine: 112
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -728,7 +803,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: ProvideInlayHints
     path: src/AnyText/AnyText.Lsp/ILspServer.cs
-    startLine: 114
+    startLine: 120
   assemblies:
   - NMF.AnyText.Lsp
   namespace: NMF.AnyText
@@ -1088,18 +1163,18 @@ items:
     content: >-
       [JsonRpcMethod("textDocument/definition")]
 
-      LocationLink QueryDefinition(JToken arg)
+      LocationLink[] QueryDefinition(JToken arg)
     parameters:
     - id: arg
       type: Newtonsoft.Json.Linq.JToken
       description: The JSON token containing the parameters of the request. (TextDocumentPositionParams)
     return:
-      type: LspTypes.LocationLink
-      description: A <xref href="LspTypes.LocationLink" data-throw-if-not-resolved="false"></xref> object containing the document and position of the definition of a symbol.
+      type: LspTypes.LocationLink[]
+      description: A list of <xref href="LspTypes.LocationLink" data-throw-if-not-resolved="false"></xref> objects containing the documents and positions of the definitions of a symbol.
     content.vb: >-
       <JsonRpcMethod("textDocument/definition")>
 
-      Function QueryDefinition(arg As JToken) As LocationLink
+      Function QueryDefinition(arg As JToken) As LocationLink()
   overload: NMF.AnyText.ILspServer.QueryDefinition*
   attributes:
   - type: StreamJsonRpc.JsonRpcMethodAttribute
@@ -1428,6 +1503,165 @@ references:
   - uid: NMF.AnyText
     name: AnyText
     href: NMF.AnyText.html
+- uid: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync*
+  commentId: Overload:NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_
+  name: ApplyWorkspaceEditAsync
+  nameWithType: ILspServer.ApplyWorkspaceEditAsync
+  fullName: NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync
+- uid: NMF.AnyText.Workspace.WorkspaceEdit
+  commentId: T:NMF.AnyText.Workspace.WorkspaceEdit
+  parent: NMF.AnyText.Workspace
+  href: NMF.AnyText.Workspace.WorkspaceEdit.html
+  name: WorkspaceEdit
+  nameWithType: WorkspaceEdit
+  fullName: NMF.AnyText.Workspace.WorkspaceEdit
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+  commentId: T:System.Threading.Tasks.Task{LspTypes.ApplyWorkspaceEditResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ApplyWorkspaceEditResponse>
+  nameWithType: Task<ApplyWorkspaceEditResponse>
+  fullName: System.Threading.Tasks.Task<LspTypes.ApplyWorkspaceEditResponse>
+  nameWithType.vb: Task(Of ApplyWorkspaceEditResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of LspTypes.ApplyWorkspaceEditResponse)
+  name.vb: Task(Of ApplyWorkspaceEditResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: LspTypes.ApplyWorkspaceEditResponse
+    name: ApplyWorkspaceEditResponse
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: LspTypes.ApplyWorkspaceEditResponse
+    name: ApplyWorkspaceEditResponse
+    isExternal: true
+  - name: )
+- uid: NMF.AnyText.Workspace
+  commentId: N:NMF.AnyText.Workspace
+  href: NMF.html
+  name: NMF.AnyText.Workspace
+  nameWithType: NMF.AnyText.Workspace
+  fullName: NMF.AnyText.Workspace
+  spec.csharp:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+  spec.vb:
+  - uid: NMF
+    name: NMF
+    href: NMF.html
+  - name: .
+  - uid: NMF.AnyText
+    name: AnyText
+    href: NMF.AnyText.html
+  - name: .
+  - uid: NMF.AnyText.Workspace
+    name: Workspace
+    href: NMF.AnyText.Workspace.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: NMF.AnyText.ILspServer.CodeAction*
   commentId: Overload:NMF.AnyText.ILspServer.CodeAction
   href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_
@@ -1569,6 +1803,27 @@ references:
   name: LspTypes
   nameWithType: LspTypes
   fullName: LspTypes
+- uid: StreamJsonRpc.JsonRpc
+  commentId: T:StreamJsonRpc.JsonRpc
+  parent: StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc
+  name: JsonRpc
+  nameWithType: JsonRpc
+  fullName: StreamJsonRpc.JsonRpc
+- uid: NMF.AnyText.ILspServer.SetRpc*
+  commentId: Overload:NMF.AnyText.ILspServer.SetRpc
+  href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_SetRpc_StreamJsonRpc_JsonRpc_
+  name: SetRpc
+  nameWithType: ILspServer.SetRpc
+  fullName: NMF.AnyText.ILspServer.SetRpc
+- uid: StreamJsonRpc
+  commentId: N:StreamJsonRpc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/streamjsonrpc
+  name: StreamJsonRpc
+  nameWithType: StreamJsonRpc
+  fullName: StreamJsonRpc
 - uid: NMF.AnyText.ILspServer.DidChange*
   commentId: Overload:NMF.AnyText.ILspServer.DidChange
   href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_
@@ -1600,24 +1855,6 @@ references:
   name: TextDocumentIdentifier
   nameWithType: TextDocumentIdentifier
   fullName: LspTypes.TextDocumentIdentifier
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: NMF.AnyText.ILspServer.Exit*
   commentId: Overload:NMF.AnyText.ILspServer.Exit
   href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Exit
@@ -1995,7 +2232,6 @@ references:
   fullName: LspTypes.Range
 - uid: LspTypes.LocationLink
   commentId: T:LspTypes.LocationLink
-  parent: LspTypes
   isExternal: true
   name: LocationLink
   nameWithType: LocationLink
@@ -2006,6 +2242,26 @@ references:
   name: QueryDefinition
   nameWithType: ILspServer.QueryDefinition
   fullName: NMF.AnyText.ILspServer.QueryDefinition
+- uid: LspTypes.LocationLink[]
+  isExternal: true
+  name: LocationLink[]
+  nameWithType: LocationLink[]
+  fullName: LspTypes.LocationLink[]
+  nameWithType.vb: LocationLink()
+  fullName.vb: LspTypes.LocationLink()
+  name.vb: LocationLink()
+  spec.csharp:
+  - uid: LspTypes.LocationLink
+    name: LocationLink
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: LspTypes.LocationLink
+    name: LocationLink
+    isExternal: true
+  - name: (
+  - name: )
 - uid: NMF.AnyText.ILspServer.Hover*
   commentId: Overload:NMF.AnyText.ILspServer.Hover
   href: NMF.AnyText.ILspServer.html#NMF_AnyText_ILspServer_Hover_Newtonsoft_Json_Linq_JToken_

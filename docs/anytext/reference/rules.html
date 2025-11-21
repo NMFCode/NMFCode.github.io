@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Rules </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Rules ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/rules.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="rules">Rules</h1>
+
+<p>The heart and soul of a grammar is the collection of rules. AnyText supports the following kinds of rules:</p>
+<ul>
+<li>Model Rules: The basic rules define a non-terminal that ends up as a model element</li>
+<li>Inheritance Rules: A simplified form of model rules indicate inheritance</li>
+<li>Data Rules (or terminal rules): A rule that defines simple data types like strings or numbers</li>
+<li>Fragment Rules: Fragment rules define non-terminals that do not end up as separate model elements but denote reusable model element populations</li>
+<li>Paranthesis Rules: Rules used for parantheses purposes</li>
+<li>Enum Rules: Rules used for enumerations</li>
+</ul>
+<p>Rules generally have names to reference them from other rules. Model rules and inheritance rules (class rules) return model elements. By default, the name of the class is the name of the rule, but this behavior can be overridden by an explicit declaration of the model class returned by this rule. This is done with the keyword <code>returns</code>, followed by the name of the class, optionally with a prefix. The same syntax is used for data rules to define the (primitive) type of the return and by enum rules to indicate the name of the returned enumeration.</p>
+<p>All rule types are structured with a header including their name and a body. Header and body are separated by <code>:</code>. All rules are terminated with <code>;</code>.</p>
+<p>The different rule kinds are explained in more detail in the following.</p>
+<h2 id="model-rules">Model Rules</h2>
+<p>Model rules are the default and are not started with a keyword. Whenever the parse tree of a document contains an instance of a model rule, an instance of the associated model class is created and added to the semantic model.</p>
+<p>The body of a model rule is a <a href="parseExpressions.html">parse expression</a>.</p>
+<h2 id="inheritance-rules">Inheritance Rules</h2>
+<p>An inheritance rule is a special kind of a model rule where the body parse expressions is a choice of references to other class rules (i.e., model rules or other inheritance rules) or parantheses rules. For an inheritance rule, no separate model element is constructed but the semantic model element for an instance of an inheritance rule is the semantic model element of the inner rule that actually matched.</p>
+<p>The name of inheritance rule comes from their effect when generating a metamodel from it: The classes generated for the references rules in an inheritance rule automatically inherit from the class generated for the inheritance rule, unless they are the same. If an existing metamodel is used, the classes referenced by the inner class rules must be the same as the class referenced by the inheritance rule or subtypes thereof. If this is not the case, AnyText will throw an Exception when generating the parser code.</p>
+<h2 id="data-rules">Data Rules</h2>
+<p>Data rules are indicated by the keyword <code>terminal</code> because they denote terminals in the PEG. In AnyText, terminal symbols are expressed through regular expressions with an optional surrounding character and escape rules.</p>
+<p>For the regular expression, AnyText uses the standard .NET regular expression syntax. Similar to JavaScript, regular expressions are encapsulated in <code>/</code>.</p>
+<p>In addition, data rules can define surrounding characters. Those are characters in which a string may be wrapped. For instance, a single-quoted string would use the surrounding character <code>'</code> while a double-quoted string would use the surrounding character <code>&quot;</code>. AnyText automatically removes surrounding characters when it extracts the semantic element.</p>
+<p>In addition, a data rule can define escape rules. Escape rules mean that some characters inside the terminal appear escaped in the text in order to avoid conflicts with the surrounding character. Thus, if surrounding characters are used, it is useful to declare escape rules for the surrounding character as the pretty-printer from AnyText will otherwise generate text that unintentionally terminates the string. In addition, it might be useful to further escape characters used to indicates escape rules.</p>
+<p>For example, a string surrounded by <code>'</code> (single-quoted string) may want to escape <code>'</code> with <code>\'</code>, but in order to use <code>\'</code> as text fragment, it is also necessary to escape <code>\</code> such that <code>\\'</code> will be unescaped to <code>\'</code>.</p>
+<p><strong>Note: The definition of escape rules does not have an effect on the regular expression. The regular expression has to cope with escape rules.</strong> However, AnyText automatically prefixes and suffixes the regular expression with the surround character, if any.</p>
+<p>Because AnyText operates scannerless, the order in which data rules are specified does not matter, because there is no lexer that will try to tokenize the input text. Rather, the AnyText packrat parser will always know the kind of terminal that is to be matched next. As a consequence, data rules can absolutely overlap. It is not a problem at all to have separate data rules for integers and floating point numbers, even though the text matched for an integer number might also match the text for a floating point.</p>
+<p>Data rules can also override the type of elements created from them using the <code>returns</code> keyword. By default, AnyText uses the standard string deserialization of this data type to convert the text into the target type, but this can be overridden (in code). AnyText also supports surround characters and escape rules in conjunction with a non-standard data type. This can be used for example to escape <code>-1</code> with <code>*</code>. If no custom data type is present, the data type of a data rule is always string.</p>
+<h2 id="fragment-rules">Fragment Rules</h2>
+<p>Often, parts of a model rule are reused in multiple model rules. In order to make parts (fragments) of model rules reusable, AnyText supports fragment rules. Hence, the semantic model element of a fragment rule is simply the semantic model element of its container, usually a model rule. However, fragments can be nested.</p>
+<p>Fragment rules are indicated by the keyword <code>fragment</code> before the name of the rule. Fragment rules must define the class on which they operate using the <code>processes</code> keyword immediately after the name of the fragment. Apart from this, fragment rules are like model rules.</p>
+<h2 id="parantheses-rules">Parantheses Rules</h2>
+<p>Especially in expression grammars, one can typically nest expressions arbitrarily inside parantheses without changing the semantics. In the semantic model, one typically do not even want to see parantheses. To support these scenarios, AnyText supports parantheses rule.</p>
+<p>Parantheses rules are indicated by the keyword <code>parantheses</code>. Their body consists of exactly three elements: An opening parantheses (in single-quotes, can be multiple characters), the inner class rule (i.e., model rule or inheritance rule) and the closing paranthesis, again in single-quotes.</p>
+<p>Note that parantheses rules will always agree to synthesize an element. Thus, they should come last in the alternatives of an inheritance rule, otherwise synthesis is not going to work.</p>
+<h2 id="enum-rules">Enum Rules</h2>
+<p>Enum rules or enumeration rules are rules to support enumerations. They define how enumerations should appear in text. Their body consists of literal specifications. Literal specifications consist of the Literal, followed by the operator <code>=&gt;</code> and the parse expression for that enumeration member. The parse expression can be more complex than a keyword, but it is recommended to just use a keyword. AnyText will ignore the semantic element of the parse tree and the semantic value of the enumeration will be the enumeration value associated with the matching child rule application.</p>
+<p>Enum rules can also specify custom types using the <code>returns</code> keyword. Multiple enum rules can target the same enumeration and an enumeration does not have to specify a literal specification for each member of the enumeration.</p>
+<p>Currently, flagged enumerations are not supported.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/reference/rules.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

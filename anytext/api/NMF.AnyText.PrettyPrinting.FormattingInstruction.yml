@@ -8,6 +8,7 @@ items:
   - NMF.AnyText.PrettyPrinting.FormattingInstruction.Apply(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
   - NMF.AnyText.PrettyPrinting.FormattingInstruction.Indent
   - NMF.AnyText.PrettyPrinting.FormattingInstruction.Newline
+  - NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
   - NMF.AnyText.PrettyPrinting.FormattingInstruction.SupressSpace
   - NMF.AnyText.PrettyPrinting.FormattingInstruction.Unindent
   langs:
@@ -24,7 +25,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: FormattingInstruction
     path: src/AnyText/AnyText.Core/PrettyPrinting/FormattingInstruction.cs
-    startLine: 11
+    startLine: 5
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -61,7 +62,7 @@ items:
       repo: https://github.com/NMFCode/NMF.git
     id: Apply
     path: src/AnyText/AnyText.Core/PrettyPrinting/FormattingInstruction.cs
-    startLine: 17
+    startLine: 11
   assemblies:
   - NMF.AnyText.Core
   namespace: NMF.AnyText.PrettyPrinting
@@ -75,6 +76,38 @@ items:
       description: the writer to apply the instruction on
     content.vb: Public MustOverride Sub Apply(writer As PrettyPrintWriter)
   overload: NMF.AnyText.PrettyPrinting.FormattingInstruction.Apply*
+- uid: NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
+  commentId: M:NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
+  id: Setup(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
+  parent: NMF.AnyText.PrettyPrinting.FormattingInstruction
+  langs:
+  - csharp
+  - vb
+  name: Setup(PrettyPrintWriter)
+  nameWithType: FormattingInstruction.Setup(PrettyPrintWriter)
+  fullName: NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup(NMF.AnyText.PrettyPrinting.PrettyPrintWriter)
+  type: Method
+  source:
+    remote:
+      path: AnyText/AnyText.Core/PrettyPrinting/FormattingInstruction.cs
+      branch: main
+      repo: https://github.com/NMFCode/NMF.git
+    id: Setup
+    path: src/AnyText/AnyText.Core/PrettyPrinting/FormattingInstruction.cs
+    startLine: 17
+  assemblies:
+  - NMF.AnyText.Core
+  namespace: NMF.AnyText.PrettyPrinting
+  summary: Performs setup instructions to the provided pretty print writer
+  example: []
+  syntax:
+    content: public abstract void Setup(PrettyPrintWriter writer)
+    parameters:
+    - id: writer
+      type: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+      description: the writer to apply the instruction on
+    content.vb: Public MustOverride Sub Setup(writer As PrettyPrintWriter)
+  overload: NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup*
 - uid: NMF.AnyText.PrettyPrinting.FormattingInstruction.Indent
   commentId: F:NMF.AnyText.PrettyPrinting.FormattingInstruction.Indent
   id: Indent
@@ -472,6 +505,12 @@ references:
   name: PrettyPrintWriter
   nameWithType: PrettyPrintWriter
   fullName: NMF.AnyText.PrettyPrinting.PrettyPrintWriter
+- uid: NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup*
+  commentId: Overload:NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup
+  href: NMF.AnyText.PrettyPrinting.FormattingInstruction.html#NMF_AnyText_PrettyPrinting_FormattingInstruction_Setup_NMF_AnyText_PrettyPrinting_PrettyPrintWriter_
+  name: Setup
+  nameWithType: FormattingInstruction.Setup
+  fullName: NMF.AnyText.PrettyPrinting.FormattingInstruction.Setup
 - uid: NMF.AnyText.PrettyPrinting.FormattingInstruction
   commentId: T:NMF.AnyText.PrettyPrinting.FormattingInstruction
   parent: NMF.AnyText.PrettyPrinting

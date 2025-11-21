@@ -117,6 +117,48 @@ Interface ILspServer  <a class="header-action link-secondary" title="View source
 </h2>
 
 
+  <a id="NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_" data-uid="NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync*"></a>
+
+  <h3 id="NMF_AnyText_ILspServer_ApplyWorkspaceEditAsync_NMF_AnyText_Workspace_WorkspaceEdit_System_String_" data-uid="NMF.AnyText.ILspServer.ApplyWorkspaceEditAsync(NMF.AnyText.Workspace.WorkspaceEdit,System.String)">
+  ApplyWorkspaceEditAsync(WorkspaceEdit, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.ApplyWorkspaceEdit.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a <code>workspace/applyEdit</code> to the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ApplyWorkspaceEditResponse&gt; ApplyWorkspaceEditAsync(WorkspaceEdit edit, string label)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>edit</code> <a class="xref" href="NMF.AnyText.Workspace.WorkspaceEdit.html">WorkspaceEdit</a></dt>
+    <dd><p>The <code>WorkspaceEdit</code> to apply.</p>
+</dd>
+    <dt><code>label</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A descriptive label for the edit operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">ApplyWorkspaceEditResponse</span>&gt;</dt>
+    <dd><p>A <code>Task</code> representing the asynchronous operation, containing the <code>ApplyWorkspaceEditResponse</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_CodeAction_" data-uid="NMF.AnyText.ILspServer.CodeAction*"></a>
 
   <h3 id="NMF_AnyText_ILspServer_CodeAction_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.CodeAction(Newtonsoft.Json.Linq.JToken)">
@@ -240,7 +282,7 @@ CodeLens CodeLensResolve(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_DidChange_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidChange(Newtonsoft.Json.Linq.JToken)">
   DidChange(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client signals a change</p>
@@ -274,7 +316,7 @@ void DidChange(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_DidClose_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidClose(Newtonsoft.Json.Linq.JToken)">
   DidClose(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client closed a document</p>
@@ -308,7 +350,7 @@ void DidClose(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_DidOpen_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.DidOpen(Newtonsoft.Json.Linq.JToken)">
   DidOpen(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client opened a document</p>
@@ -342,7 +384,7 @@ void DidOpen(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_DidSave_LspTypes_TextDocumentIdentifier_System_String_" data-uid="NMF.AnyText.ILspServer.DidSave(LspTypes.TextDocumentIdentifier,System.String)">
   DidSave(TextDocumentIdentifier, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client saved a document</p>
@@ -379,7 +421,7 @@ void DidSave(TextDocumentIdentifier textDocument, string text)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_ExecuteCommand_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ExecuteCommand(Newtonsoft.Json.Linq.JToken)">
   ExecuteCommand(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handles the <code>workspace/ececuteCommand</code> request from the client. This is used to execute an action on the
@@ -414,7 +456,7 @@ void ExecuteCommand(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_Exit" data-uid="NMF.AnyText.ILspServer.Exit">
   Exit()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets called when the client exits</p>
@@ -531,7 +573,7 @@ TextEdit[] FormattingRange(TextDocumentIdentifier textDocument, Range range, For
 
   <h3 id="NMF_AnyText_ILspServer_HandleCompletion_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.HandleCompletion(Newtonsoft.Json.Linq.JToken)">
   HandleCompletion(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Suggests completions</p>
@@ -609,7 +651,7 @@ Hover Hover(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_Initialize_System_Nullable_System_Int32__LspTypes__InitializeParams_ClientInfo_System_String_System_String_System_Uri_LspTypes_ClientCapabilities_LspTypes_TraceValue_LspTypes_WorkspaceFolder___System_Object_" data-uid="NMF.AnyText.ILspServer.Initialize(System.Nullable{System.Int32},LspTypes._InitializeParams_ClientInfo,System.String,System.String,System.Uri,LspTypes.ClientCapabilities,LspTypes.TraceValue,LspTypes.WorkspaceFolder[],System.Object)">
   Initialize(int?, _InitializeParams_ClientInfo, string, string, Uri, ClientCapabilities, TraceValue, WorkspaceFolder[], object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the server</p>
@@ -667,7 +709,7 @@ InitializeResult Initialize(int? processId, _InitializeParams_ClientInfo clientI
 
   <h3 id="NMF_AnyText_ILspServer_Initialized" data-uid="NMF.AnyText.ILspServer.Initialized">
   Initialized()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes the server</p>
@@ -695,7 +737,7 @@ void Initialized()</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_ProvideInlayHints_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.ProvideInlayHints(Newtonsoft.Json.Linq.JToken)">
   ProvideInlayHints(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Provides Inlay hints for the document</p>
@@ -745,7 +787,7 @@ of the definition of a symbol in a document.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonRpcMethod(&quot;textDocument/definition&quot;)]
-LocationLink QueryDefinition(JToken arg)</code></pre>
+LocationLink[] QueryDefinition(JToken arg)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -757,8 +799,8 @@ LocationLink QueryDefinition(JToken arg)</code></pre>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">LocationLink</span></dt>
-    <dd><p>A <span class="xref">LspTypes.LocationLink</span> object containing the document and position of the definition of a symbol.</p>
+    <dt><span class="xref">LocationLink</span>[]</dt>
+    <dd><p>A list of <span class="xref">LspTypes.LocationLink</span> objects containing the documents and positions of the definitions of a symbol.</p>
 </dd>
   </dl>
 
@@ -1141,11 +1183,44 @@ SemanticTokens QuerySemanticTokensRange(JToken arg)</code></pre>
 
 
 
+  <a id="NMF_AnyText_ILspServer_SetRpc_" data-uid="NMF.AnyText.ILspServer.SetRpc*"></a>
+
+  <h3 id="NMF_AnyText_ILspServer_SetRpc_StreamJsonRpc_JsonRpc_" data-uid="NMF.AnyText.ILspServer.SetRpc(StreamJsonRpc.JsonRpc)">
+  SetRpc(JsonRpc)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the JSON-RPC instance used by the server for communication with the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetRpc(JsonRpc rpc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/streamjsonrpc.jsonrpc">JsonRpc</a> instance to be associated with the server.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="NMF_AnyText_ILspServer_SetTrace_" data-uid="NMF.AnyText.ILspServer.SetTrace*"></a>
 
   <h3 id="NMF_AnyText_ILspServer_SetTrace_Newtonsoft_Json_Linq_JToken_" data-uid="NMF.AnyText.ILspServer.SetTrace(Newtonsoft.Json.Linq.JToken)">
   SetTrace(JToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handles the <code>$/setTrace</code> request from the client. This is used to set the trace setting of the server.</p>
@@ -1179,7 +1254,7 @@ void SetTrace(JToken arg)</code></pre>
 
   <h3 id="NMF_AnyText_ILspServer_Shutdown" data-uid="NMF.AnyText.ILspServer.Shutdown">
   Shutdown()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/NMFCode/NMF/blob/main/AnyText/AnyText.Lsp/ILspServer.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Shuts down the server</p>
