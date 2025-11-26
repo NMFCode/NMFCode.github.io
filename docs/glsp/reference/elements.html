@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>General element descriptions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="General element descriptions ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/glsp/reference/elements.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="general-element-descriptions">General element descriptions</h1>
+
+<p>This page describes specifications shared between descriptions of nodes, edges and labels.</p>
+<h2 id="element-types">Element Types</h2>
+<p>By default, all elements described by an element descriptor end up as elements in the graphical model and as such, they have a type. By default, the type of these elements is the name of the class of the elements where the prefix <code>I</code> is trimmed in case of interfaces. To disambiguate or to refine this, one can override this behavior by overriding the <a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_ElementTypeId">ElementId</a> property.</p>
+<h2 id="element-creation-and-profiles">Element Creation and Profiles</h2>
+<p>The class <a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html">ElementDescriptor</a> is also used to create semantic model elements if the corresponding graphical elements are added to the canvas. For this purpose, NMF GLSP iterates all element descriptors to populate the palette of the editor. If elements from the palette are inserted in the canvas, NMF GLSP uses the method <strong><a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_CreateElement_System_String_System_Object_">CreateElement</a></strong> to create the semantic model element.</p>
+<p>However, it is often also desirable to multiple entries in the palette representing to add the same elements in the drawing canvas but with different options. To support this, NMF GLSP uses profiles. Profiles are named configurations for elements. They are defined simply by declaring them inside the <strong>DefineLayout</strong> method. If the user uses a profile button in order to insert elements into the canvas, the name of the profile ends up as an argument to the <strong>CreateElement</strong> method. If the user uses the default option for this element, the <code>profile</code> argument will be <code>null</code>.</p>
+<p>The name of the tool in the palette to add elements to the drawing canvas is controlled by the method <strong><a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_ToolLabel_System_String_">ToolLabel</a></strong>. This method is virtual and thus allows customizations.</p>
+<h2 id="refinements">Refinements</h2>
+<p>NMF GLSP supports a kind of rule instantiation similar to <a href="../../transformations/index.html">NMF Transformations</a>. However, the method has been renamed to **<a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_Refine__1_NMF_Glsp_Language_ElementDescriptor___0__">Refine</a> as we believe this is more intuitive.</p>
+<p>The effect of this specification is that NMF GLSP will use this rule instead of the refined rule whenever the true element type matches the element type of the refining rule. Note that whereas NMF Transformations and NMF Synchronizations also support rule instantiation by custom guards, NMF GLSP currently only supports refinements by type.</p>
+<h2 id="css-classes">CSS Classes</h2>
+<p>Because SVG can be styled using CSS classes, NMF GLSP has multiple options to specify the CSS class of an object through overloads of the *<em>CssClass</em> method:</p>
+<ul>
+<li>One can <a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_CssClass_System_Linq_Expressions_Expression_System_Func__0_System_String___">select a CSS class generically</a> with a lambda expression returning the name of the CSS class or</li>
+<li>One can <a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_CssClass_System_String_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">select a CSS class statically and define a guard</a> where the guard is again typically specified as a lambda expression. The guard can be <code>null</code> in which case the CSS class is assigned statically.</li>
+</ul>
+<p>Note that assigning a CSS class statically does nothing more than increasing the payload of the GLSP communication and the CSS class can also be predefined at the client.</p>
+<h2 id="forwards">Forwards</h2>
+<p>NMF GLSP also allows to forward properties of the semantic model element to the graphical element, in case the frontend uses custom renderers that require those. There is a pair of methods <strong>Forward</strong> that attach data either unconditionally (which again effectively just increases the payload) or dynamically.</p>
+<p>To forward data to the graphical element, use the method <strong><a href="../api/NMF.Glsp.Language.ElementDescriptor-1.html#NMF_Glsp_Language_ElementDescriptor_1_Forward_System_String_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Forward</a></strong>. You can forward any kind of data as long it can be converted to JSON. NMF GLSP will use the default JSON converter to convert the object to a JSON message.</p>
+<h2 id="operations">Operations</h2>
+<p>Element descriptors also generically allow to specify custom operations. Custom operations are used to populate the context menu of a graphical element. Operations have a name (that is used to populate the menu entry) and a callback that is executed when the operation is to be performed.</p>
+<p>Note that operations in GLSP are executed within the transaction controller of NMF such that any changes made to the semantic model as a consequence of the operation will become part of the undo/redo stack.</p>
+<h2 id="selections">Selections</h2>
+<p>If a GLSP client uses the selection actions to notify the server that some elements have been selected, the GLSP server session forwards this information to the attached model server to define the selected elements. This may result in other services such as the property service to send updates to their clients.</p>
+<p>However, selection in GLSP is based on the graphical elements. When setting the selection at the model server, NMF GLSP resolves the graphical elements to the semantic model elements that these are created from in order to determine the selection. However, in some cases such as bidirectional references in a class diagram, a single graphical element can represent multiple model elements in the semantic model. In order to support such scenarios, all element descriptors can specify selection includes.</p>
+<p>Note that selection includes are not evaluated incrementally but statically everytime the selection changes through GLSP.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/glsp/reference/elements.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

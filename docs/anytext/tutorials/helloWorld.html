@@ -120,6 +120,38 @@
 <li><em>backend:</em> This is where the magic happens. You will find the grammar of your language in <code>backend/&lt;%= language-id %&gt;.anytext</code></li>
 </ul>
 <p>The generated grammar is a simple hello world grammar. It allows to specify a list of people using the <code>person</code> keyword and greet them using the <code>hello</code> keyword. Because the generator also generates the metamodel from the grammar, you find two code files next to the grammar: the generated parser and a code file including the entire abstract syntax code.</p>
+<pre><code class="lang-plain">grammar HelloWorld ( hello-world )
+root GreetingModel
+
+comment '//'
+
+GreetingModel:
+    ( people+=Person | greetings+=Greeting )*;
+
+Person:
+    'person' !'person' name=String &lt;nl&gt;;
+Greeting:
+    'hello' greeted=[Person] &lt;nl&gt;;
+
+terminal String:
+    /\w.*/;
+</code></pre>
+<p>The full example grammar is depicted above. The declaration of the grammar tells AnyText that the text in its entirity shall be treated as a <code>GreetingModel</code>. The definition of <code>GreetingModel</code> below that tells that a greeting model consists of arbitrary many (that is what the <code>*</code> is for) people or greetings. The definition of a person starts with the keyword <code>person</code> followed by the name of the person.</p>
+<h3 id="people">People</h3>
+<p>The name of the person is declared as string, denoted with the regular expression <code>\w.*</code>. This means, the name starts with an alphanumeric character followed by arbitrary many arbitrary characters. Because terminal symbols are single-line by default, this will match the rest of the line. This means, the name of a person can include the string <code>person</code>, even though <code>person</code> is also used as a keyword. This is because AnyText works scannerless and therefore, the parser knows exactly when it should look for the keyword <code>person</code> and when a string is asked for.</p>
+<p>This also means that the following file contents would not raise an error:</p>
+<pre><code class="lang-plain">person
+person A
+</code></pre>
+<p>This is because the text only contains a single person with the name <code>person A</code>. However, most likely this is not what the user intended. Thus, we integrate a negative lookahead <code>!'person'</code> that a keyword person should not be followed by itself.</p>
+<p>On the converse, if AnyText should generate text for a given model, we need a line break after the name of the person, otherwise the definition of the next person might be treated as part of the name of the previous person. To tell AnyText that it should insert a line break after a person, we add a <a href="../reference/formattingInstructions.html">formatting instruction</a> <code>&lt;nl&gt;</code> at the end of the rule.</p>
+<h3 id="greetings">Greetings</h3>
+<p>The definition of greetings looks mostly similar, except that the <em>greeted</em>-property is not assigned a string, but a reference to a person. In this case, AnyText automatically infers that the property <em>name</em> is the identifier of person, attempts to parse the same parse expression, namely a string, and uses the result to resolve the person greeted.</p>
+<p>Because AnyText knows this notion of reference, the resulting VS Code extension will also support editor features such as renaming a person and we get a code lens over person telling us the references of that person.</p>
+<h3 id="custom-code-lenses">Custom Code Lenses</h3>
+<p>The generated project also contains some manual code that is not overridden when you change the contents of the grammar. Its purpose is to demonstrate how you can fine-tune your language using manual code. Whereas the generated code for the parser contains a nested class for every <a href="../reference/rules.html">model rule</a> and <a href="../reference/parseExpressions.html">assignment</a>, this file only contains partial definitions of two classes: the parser class for the person rule and the parser class for the greeting rule.</p>
+<p>The only thing that the partial definition of the person rule does is to override the symbol kind. <a href="../features/symbols.html">Symbol kinds</a> are used for a range of editor features, if they are set. Because LSP is designed for programming languages, we are restricted to symbol kinds usually present in programming languages. Here, we chose <code>Object</code> which tells clients through the LSP that a person should be displayed like an object. More important, it tells clients that person is an important concept, with the consequence that people start appearing in the outline view.</p>
+<p>For greetings, we have a custom code lens that allows users to interact with the semantic model directly through the editor. That is, we define a lens to greet the person referenced. We could do anything here, but in that case, we only show a notification to mock that the person was greeted.</p>
 <h2 id="getting-started">Getting Started</h2>
 <p>To get started with your VS Code Extension, we suggest the following steps:</p>
 <ol>

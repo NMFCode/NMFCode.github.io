@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Specifying nodes in NMF GLSP </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Specifying nodes in NMF GLSP ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/glsp/reference/nodes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="specifying-nodes-in-nmf-glsp">Specifying nodes in NMF GLSP</h1>
+
+<p>The class generally responsible to specify a node in NMF GLSP is the <a href="../api/NMF.Glsp.Language.NodeDescriptor-1.html">NodeDescriptor</a>. A node descriptor describes how a model element of the semantic model manifests in a node in the diagram. All of the styling options for <a href="elements.html">elements</a> also apply to nodes.</p>
+<h2 id="general-layout">General Layout</h2>
+<p>In general, the visuals of a node like its shape or colors are handled by the GLSP client. The task from the GLSP server is rather to describe how the node for the semantic model element is structured, like what labels and other elements it consists of. In a class diagram, for instance, a class is represented by the following elements:</p>
+<ul>
+<li>A box representing the hull of the class</li>
+<li>A label with the name of the class</li>
+<li>Optionally further labels for stereotypes (for instance to specify that it is in fact an interface or abstract)</li>
+<li>Dividers to separate the different compartments</li>
+<li>Labels for the attributes and operations</li>
+</ul>
+<p>It is important to understand that these elements are not just a plain list but themselves have a structure. In particular, the label for the classes name and for stereotypes must be inside the first compartment, while labels for attributes go into separate compartments, each.</p>
+<p>In order to specify this, the <a href="../api/NMF.Glsp.Language.NodeDescriptor-1.html">NodeDescriptor</a> offers a range of methods:</p>
+<ul>
+<li><strong>Nodes</strong> specifies that the element created for the semantic model element should have a collection of child elements where the child nodes are described by the specified node descriptor.</li>
+<li><strong><a href="edges.html">Edges</a></strong> specifies that the element created for the semantic model element should have a collection of inner edges where the edges are described
+<ol>
+<li>either by a pair of node descriptors (in this case, the selector function should return a collection of pairs of model elements) or</li>
+<li>a single edge descriptor (in this case, the selector function should return a collection of model elements representing the edges)</li>
+</ol>
+</li>
+<li><strong><a href="labels.html">Labels</a></strong> specifies that the element created for the semantic model element should have a collection of labels where each label is described by the specified label descriptor.</li>
+</ul>
+<h2 id="compartments">Compartments</h2>
+<p>Often, it is necessary for the diagram to group child elements visually. For instance, a UML class diagram separates the labels generated for the name of a class from the labels created for attributes and those are again separated from the labels created for methods. In order to support this, NMF GLSP uses the notion of compartments.</p>
+<p>Compartments are specified using the method <a href="../api/NMF.Glsp.Language.NodeDescriptor-1.html#NMF_Glsp_Language_NodeDescriptor_1_Compartment_System_String_NMF_Glsp_Language_Layouting_LayoutStrategy_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">Compartment</a>. This method returns an <em>IDisposable</em> object that is meant to be used to control a <code>using</code> block. That is, if other elements (as above: child nodes, edges or labels) should appear inside a compartment, the method calls should be done inside a using block.</p>
+<pre><code class="lang-csharp">using (Compartment(&quot;comp:attributes&quot;))
+{
+    Labels(D&lt;AttributeDescriptor&gt;(), e =&gt; e.Attributes);
+}
+</code></pre>
+<p>The listing above demonstrates this to create a compartment for attributes and the labels of a class inside this compartment. If you omit the type of the compartment, the compartment type <code>comp</code> is used by default.</p>
+<p>Compartments can be nested, but currently there is no option to guard their presence.</p>
+<h2 id="child-element-layout">Child element layout</h2>
+<p>The method <strong>Layout</strong> specifies a given layout strategy. By default, inner nodes are laid out in absolute coordinates, typically manually. For some nodes, an automatic layout is desirable. Here, NMF GLSP has some predefined layout strategies:</p>
+<ul>
+<li><strong><a href="../api/NMF.Glsp.Language.Layouting.LayoutStrategy.html#NMF_Glsp_Language_Layouting_LayoutStrategy_Vbox">VBox</a></strong> specifies that the elements are laid out automatically by placing them vertically.</li>
+<li><strong><a href="../api/NMF.Glsp.Language.Layouting.LayoutStrategy.html#NMF_Glsp_Language_Layouting_LayoutStrategy_Hbox">Hbox</a></strong> specifies that the elements are laid out automatically by placing them horizontally.</li>
+<li><strong><a href="../api/NMF.Glsp.Language.Layouting.LayoutStrategy.html#NMF_Glsp_Language_Layouting_LayoutStrategy_FreeForm">FreeForm</a></strong> specifies that the elements are laid out manually (this is the default)</li>
+</ul>
+<p>Layout strategies can also be specified as an optional argument to a compartment. Otherwise, the method <strong>Layout</strong> is also effective for the current skeleton and thus can be nested in compartment sections.</p>
+<h2 id="embeddings">Embeddings</h2>
+<p>There is a dedicated method <strong><a href="../api/NMF.Glsp.Language.NodeDescriptor-1.html##NMF_Glsp_Language_NodeDescriptor_1_Embed_NMF_Glsp_Language_NodeDescriptor__0__System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">Embed</a></strong> to embed another descriptor inside the current node. This is particularly useful if you need to reuse the description of the root element in other places as well in order to replicate the structure of the drawing canvas inside some inner element.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/glsp/reference/nodes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

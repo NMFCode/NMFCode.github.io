@@ -50,6 +50,55 @@ The generated folder contains two subdirectories:
 
 The generated grammar is a simple hello world grammar. It allows to specify a list of people using the `person` keyword and greet them using the `hello` keyword. Because the generator also generates the metamodel from the grammar, you find two code files next to the grammar: the generated parser and a code file including the entire abstract syntax code.
 
+```plain
+grammar HelloWorld ( hello-world )
+root GreetingModel
+
+comment '//'
+
+GreetingModel:
+    ( people+=Person | greetings+=Greeting )*;
+
+Person:
+    'person' !'person' name=String <nl>;
+Greeting:
+    'hello' greeted=[Person] <nl>;
+
+terminal String:
+    /\w.*/;
+```
+
+The full example grammar is depicted above. The declaration of the grammar tells AnyText that the text in its entirity shall be treated as a `GreetingModel`. The definition of `GreetingModel` below that tells that a greeting model consists of arbitrary many (that is what the `*` is for) people or greetings. The definition of a person starts with the keyword `person` followed by the name of the person.
+
+### People
+
+The name of the person is declared as string, denoted with the regular expression `\w.*`. This means, the name starts with an alphanumeric character followed by arbitrary many arbitrary characters. Because terminal symbols are single-line by default, this will match the rest of the line. This means, the name of a person can include the string `person`, even though `person` is also used as a keyword. This is because AnyText works scannerless and therefore, the parser knows exactly when it should look for the keyword `person` and when a string is asked for.
+
+This also means that the following file contents would not raise an error:
+
+```plain
+person
+person A
+```
+
+This is because the text only contains a single person with the name `person A`. However, most likely this is not what the user intended. Thus, we integrate a negative lookahead `!'person'` that a keyword person should not be followed by itself.
+
+On the converse, if AnyText should generate text for a given model, we need a line break after the name of the person, otherwise the definition of the next person might be treated as part of the name of the previous person. To tell AnyText that it should insert a line break after a person, we add a [formatting instruction](../reference/formattingInstructions.md) `<nl>` at the end of the rule.
+
+### Greetings
+
+The definition of greetings looks mostly similar, except that the *greeted*-property is not assigned a string, but a reference to a person. In this case, AnyText automatically infers that the property *name* is the identifier of person, attempts to parse the same parse expression, namely a string, and uses the result to resolve the person greeted.
+
+Because AnyText knows this notion of reference, the resulting VS Code extension will also support editor features such as renaming a person and we get a code lens over person telling us the references of that person.
+
+### Custom Code Lenses
+
+The generated project also contains some manual code that is not overridden when you change the contents of the grammar. Its purpose is to demonstrate how you can fine-tune your language using manual code. Whereas the generated code for the parser contains a nested class for every [model rule](../reference/rules.md) and [assignment](../reference/parseExpressions.md), this file only contains partial definitions of two classes: the parser class for the person rule and the parser class for the greeting rule.
+
+The only thing that the partial definition of the person rule does is to override the symbol kind. [Symbol kinds](../features/symbols.md) are used for a range of editor features, if they are set. Because LSP is designed for programming languages, we are restricted to symbol kinds usually present in programming languages. Here, we chose `Object` which tells clients through the LSP that a person should be displayed like an object. More important, it tells clients that person is an important concept, with the consequence that people start appearing in the outline view.
+
+For greetings, we have a custom code lens that allows users to interact with the semantic model directly through the editor. That is, we define a lens to greet the person referenced. We could do anything here, but in that case, we only show a notification to mock that the person was greeted.
+
 ## Getting Started
 
 To get started with your VS Code Extension, we suggest the following steps:

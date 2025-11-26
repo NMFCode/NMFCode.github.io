@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AnyMeta </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AnyMeta ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/anymeta/anymeta.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="anymeta">AnyMeta</h1>
+
+<p>AnyMeta is a DSL built with AnyText to provide a textual representation of <a href="../../models/NMeta.html">NMeta</a> metamodels. AnyMeta is a rather simple declaration in a C-like syntax.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p>Namespaces in AnyMeta start with the keyword <code>namespace</code>, followed by the name of the namespace. After that, in parentheses, AnyMeta expects the prefix. Optionally, one can specify the namespace URI prefixed with the keyword <code>=</code>. Then, the body of the namespace declaration is enclosed in braces (<code>{}</code>) and consists of child namespaces and types.</p>
+<h2 id="classes">Classes</h2>
+<p>As in many programming languages, classes in AnyMeta start with the keyword <code>class</code>. Unlike many programming languages, classes in NMeta do not have a visibility, so the only available keyword before <code>class</code> is <code>abstract</code> to declare the class as an abstract class. Similar to C++ and C#, base types are denoted after a <code>:</code>, divided by commas. Classes in NMeta can specify that they are an <a href="../../models/deepModeling.html">instance of</a> another class, indicated by the optional keyword <code>instance of</code>. The contents of the class, consisting of attributes, references and operations, appear enclosed in braces.</p>
+<h2 id="attributes">Attributes</h2>
+<p>Attributes in AnyMeta are denoted similat to OCL as <code>name : type [bounds]</code>. Here, type references in AnyMeta are always qualified with the namespace prefix unless the type is declared in the same namespace. Bounds define both lower and upper bound. If both bounds coincide, a single number is sufficient, otherwise the bounds are separated by <code>..</code>. Attributes can be prefixed with the keywords <code>unique</code> and <code>ordered</code> in order to specify whether the collection types should enforce uniqueness or define an order of elements.</p>
+<p>Attributes can <a href="../../models/structuralDecomposition.html">refine</a> other attributes by using the <code>refines</code> keyword followed by the name of the refined attribute.</p>
+<h2 id="references">References</h2>
+<p>References are much like attributes except that they have the keyword <code>reference</code> in front of the name. For references, also the keyword <code>composite</code> is available to indicate that it is a containment reference. Next to refinements, references also can specify opposite references through the <code>opposite</code> keyword.</p>
+<h2 id="operations">Operations</h2>
+<p>Operations are specified also like attributes except that there is a list of parameters (in parentheses) immediately after the name. Parameters also have the syntax <code>name : type [bounds]</code>.</p>
+<h2 id="extensions">Extensions</h2>
+<p>Extensions start with the keyword <code>extension</code> followed by the name of the extension, the keyword <code>for</code> and the reference to the adorned class. Enclosed in braces, the extension contains attributes, references and operations.</p>
+<h2 id="enumerations">Enumerations</h2>
+<p>Enumerations start with the <code>enum</code> keyword followed by the name and a list of literals enclosed in curly braces.</p>
+<p>Literals are indicated by their name, optionally followed by the assigned value prefixed with <code>=</code>.</p>
+<h2 id="primitive-types">Primitive Types</h2>
+<p>Primitive types start with the keyword <code>primitive</code> followed by the name, the keyword <code>as</code> and the system type.</p>
+<h2 id="documentation">Documentation</h2>
+<p>All elements in AnyMeta can be prefixed with <code>#</code> in order to define the documentation (except parameters).</p>
+<h2 id="limitations">Limitations</h2>
+<p>Currently, AnyMeta does not support identifiers and identifier scopes. There is also no syntax yet to support multi-line documentation or remarks.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/NMFCode/NMFCode.github.io/blob/main/anytext/anymeta/anymeta.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
