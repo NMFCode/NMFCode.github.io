@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
       <meta name="docfx:navrel" content="../../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
       
       
@@ -104,12 +104,14 @@
 <li>An NMF GLSP diagram language for state machines</li>
 <li>A C# project that creates an GLSP server of your language</li>
 <li>A node project that implements the GLSP client</li>
-<li>A web application that packages your GLSP client into a web page</li>
 <li>A standalone web application that shows how to integrate the diagram into existing websites</li>
+<li>A web application that packages your GLSP client into a web page to be used by a Visual Studio Code extension</li>
 <li>A Visual Studio Code extension that integrates the GLSP server (using the web page from above)</li>
 <li>Visual Studio Code launch configurations such that you can easily debug your VS Code extension</li>
 </ul>
-<p>These artifacts are set up such that they integrate with each other. For example, the build directory of the LSP server is exactly where the VS Code extension is expecting it. However, the code generator currently does not compile everything, so you need to compile the different projects before running them.</p>
+<p>These artifacts are set up such that they integrate with each other. For example, the build directory of the GLSP server is exactly where the VS Code extension is expecting it.</p>
+<h2 id="launching-the-new-extension">Launching the new extension</h2>
+<p>If you let the code generator generate a Visual Studio Code extension, the code generator will also compile the newly generated code and generate a launch configuration file that allows you to launch your new GLSP-based extension directly from the run menu in Visual Studio Code.</p>
 <h2 id="the-generated-project-structure">The generated project structure</h2>
 <p>The generated folder contains two subdirectories:</p>
 <ul>

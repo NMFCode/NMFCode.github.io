@@ -121,7 +121,7 @@ def format_entry(ref, faname):
     reference = authors + ": "+ strong + title + strong
 
     if "journal" in ref:
-        journal = ref["journal"].replace('\&', '&')
+        journal = ref["journal"].replace('\\&', '&')
         reference += " in " + em + journal + em
     
         # Not all journal articles will have vol., no., and pp.

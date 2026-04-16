@@ -31,12 +31,16 @@ By default, the code generator is interactive and will ask for a range of detail
 - An NMF GLSP diagram language for state machines
 - A C\# project that creates an GLSP server of your language
 - A node project that implements the GLSP client
-- A web application that packages your GLSP client into a web page
 - A standalone web application that shows how to integrate the diagram into existing websites
+- A web application that packages your GLSP client into a web page to be used by a Visual Studio Code extension
 - A Visual Studio Code extension that integrates the GLSP server (using the web page from above)
 - Visual Studio Code launch configurations such that you can easily debug your VS Code extension
 
-These artifacts are set up such that they integrate with each other. For example, the build directory of the LSP server is exactly where the VS Code extension is expecting it. However, the code generator currently does not compile everything, so you need to compile the different projects before running them.
+These artifacts are set up such that they integrate with each other. For example, the build directory of the GLSP server is exactly where the VS Code extension is expecting it.
+
+## Launching the new extension
+
+If you let the code generator generate a Visual Studio Code extension, the code generator will also compile the newly generated code and generate a launch configuration file that allows you to launch your new GLSP-based extension directly from the run menu in Visual Studio Code.
 
 ## The generated project structure
 

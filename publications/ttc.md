@@ -1,6 +1,12 @@
 Transformtion Tool Contest
 ---
 
+### 2025
+
+G. Hinkel, S. Greiner, and T. Calvar: **[Universal Variability Language to Dot](https://ceur-ws.org/Vol-4122/short7.pdf)** in _Joint Proceedings of the STAF 2025 Workshops: OCL, OOPSLE, LLM4SE,
+ICMM, AgileMDE, AI4DPS, and TTC co-located with the International
+Conference on Software Technologies: Applications and Foundations
+(STAF 2025), Koblenz, Germany, June 10-13, 2025_, 2025
 
 
 ### 2023
